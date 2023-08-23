@@ -305,6 +305,9 @@ function uploadFile() {
 
                     
                     $('#img-preview').html("").css("height","0px");
+                    setTimeout(() => {
+                        $("#fileRespo").html("")
+                    }, 5000);
                     //  alert(ajax.responseText)
 
                     // chooseFile.get(0).reset(); 

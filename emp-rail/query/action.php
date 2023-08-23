@@ -196,13 +196,35 @@ if(isset($_POST['action'])){
         $obj->empdesg = $sectionRun['empdesg'];
         // $obj->pme_date = $sectionRun['pme_date'];
         // $obj->rme_date = $sectionRun['rme_date'];
+        $obj->pme_file = $sectionRun['pme_file'];
+        $obj->rme_file = $sectionRun['rme_file'];
         
-        $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
-        $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+        $obj->pme_date2 = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
+        $obj->rme_date2 = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+
+        $iddd= $sectionRun['id'];
+        if($sectionRun['pme_file']==''){
+
+            $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
+
+        }else{
+
+            $obj->pme_date = "<span>".$sectionRun['pme_date']."/<span> <a role='button' href='../admin-rail/images/pmeRmeFile/".$obj->pme_file."' target='_black' class='btn btn-sm btn-success m-1'>Show</a>";
+        }
+
+        if($sectionRun['rme_file']==''){
+
+            $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+        }else{
+
+            $obj->rme_date = "<span>".$sectionRun['rme_date']."</span> <a role='button' href='../admin-rail/images/pmeRmeFile/".$obj->rme_file."' target='_black' class='btn btn-sm btn-success m-1'>Show</a>";
+        }
 
         $data[] = $obj;
 
        }
+
+  
 
        $respo['status'] = true;
        $respo['msg'] = "Employee list found";
@@ -361,6 +383,7 @@ if(isset($_POST['action'])){
            $obj->id = $q_run['id'];
            $obj->ep_id = $q_run['ep_id'];
            $obj->ep_details = $q_run['ep_details'];
+           $obj->ep_option = $q_run['ep_option'];
            $data[] = $obj;
             
         }
@@ -389,10 +412,11 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
-
+        
+        $createdDateTime = date("Y-m-d h:i:s");
 
         $checkData = mysqli_query($con,"SELECT id FROM ep1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
-        if(mysqli_num_rows($checkData) >= 0){
+        if(mysqli_num_rows($checkData) > 0){
 
             $respo['status'] = false;
             $respo['msg'] = "You are already submit this form";
@@ -420,7 +444,6 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $createdDateTime = date("Y-m-d h:i:s");
         $insertQuery = "INSERT INTO ep1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep1_1,ep1_2,ep1_3,ep1_4,ep1_5,ep1_6,ep1_7,ep1_8,ep1_9,ep1_10,ep1_11,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep1_1','$ep1_2','$ep1_3','$ep1_4','$ep1_5','$ep1_6','$ep1_7','$ep1_8','$ep1_9','$ep1_10','$ep1_11','$createdDateTime','$createdDateTime')";
 
 

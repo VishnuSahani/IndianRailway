@@ -266,6 +266,7 @@ function openDialog(typeOfForm, dataList){
 
 
     dataList.forEach((element,index) => {
+        
 
         displayHtml += `
             <tr>
@@ -273,10 +274,17 @@ function openDialog(typeOfForm, dataList){
             <td>${element['ep_details']}</td>
             <td style="vertical-align:middle;width:22%" >
                 <select class="custom-select ${typeOfForm}Class" id="${element['ep_id']}">
-                    <option value="">Select Action</option>
-                    <option value="Done">Done</option>
-                    <option value="Not Done">Not Done</option>
-                </select>
+                    <option value="">Select Action</option>`;
+
+                    let optArr = element['ep_option'].split(",");
+                    optArr.forEach(opt => {
+                        displayHtml +=`<option value="${opt}">${opt}</option>`;
+
+                        
+                    });
+                    // <option value="Done">Done</option>
+                    // <option value="Not Done">Not Done</option>
+                    displayHtml += `</select>
             </td>
             </tr>
         `;
