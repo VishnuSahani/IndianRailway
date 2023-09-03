@@ -182,7 +182,7 @@ display:none;
 
 
 <!--<div class="wrapper row2" style="font-size:12px;">-->
-<nav class="navbar  navbar-expand-lg  sticky-top row2" >
+<nav class="navbar  navbar-expand-md  sticky-top row2" >
    <a class="navbar-brand" href="index.php" style="color:#FFFFFF;"><i class="fa fa-institution"></i> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"><i class="fa fa-navicon"></i></span>
@@ -202,6 +202,9 @@ display:none;
     
        <li class="nav-item ">
       <a class="nav-item nav-link " href="contact-us.php" style="color:#FFFFFF;">Contact us </a>
+      </li>
+       <li class="nav-item ">
+      <a class="nav-item nav-link " href="./BMC/" style="color:#FFFFFF;">BMC </a>
       </li>
 
 

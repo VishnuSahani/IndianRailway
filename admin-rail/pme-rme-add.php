@@ -41,6 +41,7 @@ $employeeId = $empBasicData['empid'];
     <h5 class="text-center">Add PME , Refresher Date </h5>
 </div>
 
+<!-- <i class="fa fa-file-pdf-o"></i>dd -->
 
 <div class="container ">
     <div class="row">
@@ -276,6 +277,8 @@ function checkSize(size) {
 
 
 function uploadFile() {
+
+    
     const chooseFile = document.getElementById("choose-file");
     const files = chooseFile.files[0];
     if (files && (files.type == 'image/jpeg' || files.type == "application/pdf")) {
@@ -289,10 +292,15 @@ function uploadFile() {
             formdata.append("subActionName", subActionName);
             formdata.append("report_id", $("#pmeRmeId").val());
 
+            $("#loader_show").removeClass('d-none');
+
+
             var ajax = new XMLHttpRequest();
             ajax.open("POST", "query/action.php");
             ajax.onreadystatechange = function() {
                 if (ajax.readyState == 4 && ajax.status == 200) {
+                    $("#loader_show").addClass('d-none');
+
                     let response = JSON.parse(ajax.responseText);
 
                     if(response['status']){

@@ -44,6 +44,16 @@ echo "<br> 15 day <br>";
  $d15 = strtotime("+15 days",strtotime($createdDateTime));
  echo date("Y-m-d h:i:s",$d15);
 
+
+ echo "<h1>test</h1>";
+
+ $date1 = date_create("01-07-2023");
+ $date2 = date_create("10-07-2023");
+
+  $diff = date_diff($date2,$date1);
+  echo $diff->format("%R%a");
+
  ?>
 </select>
+
 

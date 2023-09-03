@@ -58,8 +58,62 @@ if(isset($_POST['action'])){
             $obj->empid = $sectionRun['empid'];
             $obj->empname = $sectionRun['empname'];
             $obj->empdesg = $sectionRun['empdesg'];
-            $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
+
+            // $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
             $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+
+            // for pme rme file getting
+
+            $pme_date = $sectionRun['pme_date'];
+            $rme_date = $sectionRun['rme_date'];
+
+            $empId = $sectionRun['empid'];
+            $section_id = $sectionRun['section_id'];
+            $station_id = $sectionRun['station_id'];
+            $getQueryFile = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE empid='$empId' and pme_date='$pme_date' and rme_date='$rme_date' and section_id='$section_id' and station_id ='$station_id'");
+
+
+            if(mysqli_num_rows($getQueryFile) <= 0){
+                $obj->pme_date = $sectionRun['pme_date'];
+                $obj->rme_date = $sectionRun['rme_date'];
+                continue;
+            }
+
+            $sectionRunfile = mysqli_fetch_array($getQueryFile);
+
+
+            if($sectionRun['pme_date'] == ''){
+                $obj->pme_date = 'No Record';
+            }else{        
+
+                if($sectionRunfile['pme_file']==''){
+                    $obj->pme_date = $sectionRun['pme_date'];
+
+                }else{
+                    $pme_file = $sectionRunfile['pme_file'];
+                    $pme_date = $sectionRun['pme_date'];
+
+                    $obj->pme_date = "<a role='button' href='./images/pmeRmeFile/".$pme_file."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i></a> ($pme_date)";
+                    
+                }
+            }
+
+            if($sectionRun['rme_date'] == ''){
+                $obj->rme_date = 'No Record';
+            }else{        
+
+                if($sectionRunfile['rme_file']==''){
+                    $obj->rme_date = $sectionRun['rme_date'];
+
+                }else{
+                    $rme_file = $sectionRunfile['rme_file'];
+                    $rme_date = $sectionRun['rme_date'];
+
+                    $obj->rme_date = "<a role='button' href='./images/pmeRmeFile/".$rme_file."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i>
+                    </a> ($rme_date)";
+                    
+                }
+            }
 
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
@@ -322,25 +376,48 @@ if(isset($_POST['action'])){
         $obj->rme_file = $sectionRun['rme_file'];
         // $obj->rme_date = $sectionRun['rme_date'];
 
-        $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
-        $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
 
         $iddd= $sectionRun['id'];
-        if($sectionRun['pme_file']==''){
 
-            $obj->addPmeFileBtn = "<button type='button' onclick=openDialog('".$iddd."','pmeFile') class='btn btn-sm btn-info'>Add</button>";
+        if($sectionRun['pme_date'] == ''){
+            $obj->pme_date = 'No Record';
+            $obj->addPmeFileBtn = "<button type='button' class='btn btn-sm btn-info' disabled title='No PME Date added'>Add</button>";
         }else{
+            $obj->pme_date = $sectionRun['pme_date'];
 
-            $obj->addPmeFileBtn = "<a role='button' href='./images/pmeRmeFile/".$obj->pme_file."' target='_black' class='btn btn-sm btn-success m-1'>Show</a> <button type='button' onclick=deleteFile('".$iddd."','pmeFile') class='btn btn-sm btn-danger m-1'>Delete</button>";
+            if($sectionRun['pme_file']==''){
+
+                $obj->addPmeFileBtn = "<button type='button' onclick=openDialog('".$iddd."','pmeFile') class='btn btn-sm btn-info'>Add</button>";
+
+            }else{
+    
+                $obj->addPmeFileBtn = "<a role='button' href='./images/pmeRmeFile/".$obj->pme_file."' target='_black' class='btn btn-sm btn-success m-1'><i class='fa fa-file-pdf-o'></i></a> <button type='button' onclick=deleteFile('".$iddd."','pmeFile') class='btn btn-sm btn-danger m-1'>Delete</button>";
+            }
+
         }
 
-        if($sectionRun['rme_file']==''){
-
-            $obj->addRmeFileBtn = "<button type='button' onclick=openDialog('".$iddd."','rmeFile') class='btn btn-sm btn-info'>Add</button>";
+        if($sectionRun['rme_date']==''){
+            $obj->rme_date = 'No Record';
+            $obj->addRmeFileBtn = "<button type='button' class='btn btn-sm btn-info' disabled title='No Refresher Date added'>Add</button>";
         }else{
+            $obj->rme_date = $sectionRun['rme_date'];
 
-            $obj->addRmeFileBtn = "<a role='button' href='./images/pmeRmeFile/".$obj->rme_file."' target='_black' class='btn btn-sm btn-success m-1'>Show</a> <button type='button' onclick=deleteFile('".$iddd."','rmeFile') class='btn btn-sm btn-danger m-1'>Delete</button>";
+            if($sectionRun['rme_file']==''){
+
+                $obj->addRmeFileBtn = "<button type='button' onclick=openDialog('".$iddd."','rmeFile') class='btn btn-sm btn-info'>Add</button>";
+            }else{
+    
+                $obj->addRmeFileBtn = "<a role='button' href='./images/pmeRmeFile/".$obj->rme_file."' target='_black' class='btn btn-sm btn-success m-1'><i class='fa fa-file-pdf-o'></i></a> <button type='button' onclick=deleteFile('".$iddd."','rmeFile') class='btn btn-sm btn-danger m-1'>Delete</button>";
+            }
+
         }
+
+
+
+
+        
+
+      
 
         $data[] = $obj;
 
