@@ -7,7 +7,6 @@
     if(isset($_SESSION['userretailer']))
 {
   $id=$_SESSION['userretailer'];  
-   
 }
 
 // echo $name;
@@ -158,6 +157,7 @@
                 SSE/JE(Signal): Monthly SSE(Signal)/Incharge: Quarterly
 
             </div>
+            <form id="FormEP2">
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
                    
@@ -204,13 +204,13 @@
                                             <td style="vertical-align: middle;" rowspan="2">Operating Voltage (>100 Volts)</td>
                                             <td>(N to R)</td>
                                             <td>
-                                                <input type="text" id="op_v_N_R" class="form-control">
+                                                <input type="number" id="op_v_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>(R to N)</td>
                                             <td>
-                                                <input type="text" id="op_v_R_N" class="form-control">
+                                                <input type="number" id="op_v_R_N" class="form-control">
                                             </td>
                                         </tr>
 
@@ -219,13 +219,13 @@
                                             <td style="vertical-align: middle;" rowspan="2">Obstruction Voltage (>80 Volts)</td>
                                             <td>(N to R)</td>
                                             <td>
-                                                <input type="text" id="ob_v_N_R" class="form-control">
+                                                <input type="number" id="ob_v_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>(R to N)</td>
                                             <td>
-                                                <input type="text" id="ob_v_R_N" class="form-control">
+                                                <input type="number" id="ob_v_R_N" class="form-control">
                                             </td>
                                         </tr>
 
@@ -233,13 +233,13 @@
                                             <td style="vertical-align: middle;" rowspan="2">Detection Voltage (>24 Volts)</td>
                                             <td>(N to R)</td>
                                             <td>
-                                                <input type="text" id="det_v_N_R" class="form-control">
+                                                <input type="number" id="det_v_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>(R to N)</td>
                                             <td>
-                                                <input type="text" id="det_v_R_N" class="form-control">
+                                                <input type="number" id="det_v_R_N" class="form-control">
                                             </td>
                                         </tr>
 
@@ -247,63 +247,71 @@
                                             <td style="vertical-align: middle;" rowspan="2">Normal Working Current (1.5 - 2.5 Amp.)</td>
                                             <td>(N to R)</td>
                                             <td>
-                                                <input type="text" id="nwc_N_R" class="form-control">
+                                                <input type="number" id="nwc_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>(R to N)</td>
                                             <td>
-                                                <input type="text" id="nwc_R_N" class="form-control">
+                                                <input type="number" id="nwc_R_N" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Obstructure/Slipping Current (3-5 Amp.)</td>
+                                            <td style="vertical-align: middle;" rowspan="2">Obstruction/Slipping Current (3-5 Amp.)</td>
                                             <td>(N to R)</td>
                                             <td>
-                                                <input type="text" id="ob_sc_N_R" class="form-control">
+                                                <input type="number" id="ob_sc_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>(R to N)</td>
                                             <td>
-                                                <input type="text" id="ob_sc_R_N" class="form-control">
+                                                <input type="number" id="ob_sc_R_N" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Obstructure Test (3.25 mm)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;"  colspan="2">Obstruction Test (3.25 mm)</td>
+                                            <!-- <td>(N to R)</td> -->
                                             <td>
-                                                <input type="text" id="ob_t_N_R" class="form-control">
+                                                <select id="ob_t_N_R" class="custom-select">
+                                                    <option value="">Select</option>
+                                                    <option value="OK">OK</option>
+                                                    <option value="Not OK">Not OK</option>
+                                                </select>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>(R to N)</td>
                                             <td>
                                                 <input type="text" id="ob_t_R_N" class="form-control">
                                             </td>
-                                        </tr>
+                                        </tr> -->
 
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Go Test (1.6 mm Fail Safe Test)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;"  colspan="2">Go Test (1.6 mm Fail Safe Test)</td>
+                                            <!-- <td>(N to R)</td> -->
                                             <td>
-                                                <input type="text" id="gt_N_R" class="form-control">
+                                                <select id="gt_N_R" class="custom-select">
+                                                    <option value="">Select</option>
+                                                    <option value="OK">OK</option>
+                                                    <option value="Not OK">Not OK</option>
+                                                </select>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>(R to N)</td>
                                             <td>
                                                 <input type="text" id="gt_R_N" class="form-control">
                                             </td>
-                                        </tr>
+                                        </tr> -->
 
                                         <tr>
                                             <td style="vertical-align: middle;" colspan="2">Operating Time (4-5 Seconds)</td>
                                             <td>
-                                                <input type="text" id="operatingTimeSecond" class="form-control">
+                                                <input type="number" id="operatingTimeSecond" class="form-control">
                                             </td>
                                         </tr>
 
@@ -313,7 +321,7 @@
                                             अवरोध परिक्षण के दौरान परिचालन समय
                                         </td>
                                             <td>
-                                                <input type="text" id="operatingTime_dbt" class="form-control">
+                                                <input type="number" id="operatingTime_dbt" class="form-control">
                                             </td>
                                         </tr>
 
@@ -323,7 +331,7 @@
                                             फ्रिक्शन क्लच स्लिप कर रहा है या नहीं
                                         </td>
                                             <td>
-                                                <input type="text" id="friction_c_s" class="form-control">
+                                                <input type="number" id="friction_c_s" class="form-control">
                                             </td>
                                         </tr>
 
@@ -332,28 +340,28 @@
                                             Track Locking Test
                                         </td>
                                             <td>
-                                                <input type="text" id="track_locking" class="form-control">
+                                                <input type="number" id="track_locking" class="form-control">
                                             </td>
                                         </tr>
                                        
                                         <tr>
                                             <td style="vertical-align: middle;" colspan="2">
                                             <!-- Remark's inspection/brief description of maintenance -->
-                                            रिमार्क का निरिक्षण/अनुरक्षण का सञ्चिपट विवरण
+                                            रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण
                                         </td>
                                             <td>
-                                                <input type="text" id="remark_brief" class="form-control">
+                                                <input type="number" id="remark_brief" class="form-control">
                                             </td>
                                         </tr>
 
-                                        <tr>
+                                        <!-- <tr>
                                             <td style="vertical-align: middle;" colspan="2">
                                           Signature
                                         </td>
                                             <td>
                                                 <input type="text" id="signature" class="form-control">
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                      
 
 
@@ -428,6 +436,7 @@
                 <div id="ep2Form_status"></div>
                 <button type='button' id="ep2FormBtn" class="btn btn-success">Final Submit</button>
             </div>
+            </form>
 
         </div>
     </div>
@@ -986,7 +995,12 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailer']; ?>'
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ep1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
 
             $.ajax({
                 type: "POST",
@@ -1077,15 +1091,15 @@ $(document).ready(function() {
             let ob_sc_N_R = $("#ob_sc_N_R").val();
             let ob_sc_R_N = $("#ob_sc_R_N").val();
             let ob_t_N_R = $("#ob_t_N_R").val();
-            let ob_t_R_N = $("#ob_t_R_N").val();
+            // let ob_t_R_N = $("#ob_t_R_N").val();
             let gt_N_R = $("#gt_N_R").val();
-            let gt_R_N = $("#gt_R_N").val();
+            // let gt_R_N = $("#gt_R_N").val();
             let operatingTimeSecond = $("#operatingTimeSecond").val();
             let operatingTime_dbt = $("#operatingTime_dbt").val();
             let friction_c_s = $("#friction_c_s").val();
             let track_locking = $("#track_locking").val();
             let remark_brief = $("#remark_brief").val();
-            let signature = $("#signature").val();
+            // let signature = $("#signature").val();
 
             if (EP2_1 == '' || EP2_1.length == 0 || EP2_1 == null) {
                 $("#EP2_1").addClass("is-invalid");
@@ -1209,15 +1223,15 @@ $(document).ready(function() {
 
             }
             
-            if (ob_t_R_N == '' || ob_t_R_N.length == 0 || ob_t_R_N == null) {
-                $("#ob_t_R_N").addClass("is-invalid");
-                $("#ep2Form_status").html("Obstructure Test (R-N)").css("color", "red");
-                return;
-            } else {
-                $("#ep2Form_status").html("");
-                $("#ob_t_R_N").removeClass("is-invalid");
+            // if (ob_t_R_N == '' || ob_t_R_N.length == 0 || ob_t_R_N == null) {
+            //     $("#ob_t_R_N").addClass("is-invalid");
+            //     $("#ep2Form_status").html("Obstructure Test (R-N)").css("color", "red");
+            //     return;
+            // } else {
+            //     $("#ep2Form_status").html("");
+            //     $("#ob_t_R_N").removeClass("is-invalid");
 
-            }
+            // }
             
             if (gt_N_R == '' || gt_N_R.length == 0 || gt_N_R == null) {
                 $("#gt_N_R").addClass("is-invalid");
@@ -1229,15 +1243,15 @@ $(document).ready(function() {
 
             }
             
-            if (gt_R_N == '' || gt_R_N.length == 0 || gt_R_N == null) {
-                $("#gt_R_N").addClass("is-invalid");
-                $("#ep2Form_status").html("Go Test (R-N) is required").css("color", "red");
-                return;
-            } else {
-                $("#ep2Form_status").html("");
-                $("#gt_R_N").removeClass("is-invalid");
+            // if (gt_R_N == '' || gt_R_N.length == 0 || gt_R_N == null) {
+            //     $("#gt_R_N").addClass("is-invalid");
+            //     $("#ep2Form_status").html("Go Test (R-N) is required").css("color", "red");
+            //     return;
+            // } else {
+            //     $("#ep2Form_status").html("");
+            //     $("#gt_R_N").removeClass("is-invalid");
 
-            }
+            // }
             
             if (operatingTimeSecond == '' || operatingTimeSecond.length == 0 || operatingTimeSecond == null) {
                 $("#operatingTimeSecond").addClass("is-invalid");
@@ -1289,15 +1303,15 @@ $(document).ready(function() {
 
             }
             
-            if (signature == '' || signature.length == 0 || signature == null) {
-                $("#signature").addClass("is-invalid");
-                $("#ep2Form_status").html("Signature is required").css("color", "red");
-                return;
-            } else {
-                $("#ep2Form_status").html("");
-                $("#signature").removeClass("is-invalid");
+            // if (signature == '' || signature.length == 0 || signature == null) {
+            //     $("#signature").addClass("is-invalid");
+            //     $("#ep2Form_status").html("Signature is required").css("color", "red");
+            //     return;
+            // } else {
+            //     $("#ep2Form_status").html("");
+            //     $("#signature").removeClass("is-invalid");
 
-            }
+            // }
 
 
             
@@ -1340,11 +1354,17 @@ $(document).ready(function() {
             } else {
                 $("#ep2Form_status").html("");
                 $("#EP2_5").removeClass("is-invalid");
-
+                
             }
-
-
+            
+            
             let userID = '<?php echo $_SESSION['userretailer']; ?>'
+            
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ep2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
 
             $.ajax({
                 type: "POST",
@@ -1374,15 +1394,15 @@ $(document).ready(function() {
                     "ob_sc_N_R": ob_sc_N_R,
                     "ob_sc_R_N": ob_sc_R_N,
                     "ob_t_N_R": ob_t_N_R,
-                    "ob_t_R_N": ob_t_R_N,
+                    // "ob_t_R_N": ob_t_R_N,
                     "gt_N_R": gt_N_R,
-                    "gt_R_N": gt_R_N,
+                    // "gt_R_N": gt_R_N,
                     "operatingTimeSecond": operatingTimeSecond,
                     "operatingTime_dbt": operatingTime_dbt,
                     "friction_c_s": friction_c_s,
                     "track_locking": track_locking,
                     "remark_brief": remark_brief,
-                    "signature": signature,
+                    // "signature": signature,
                 },
                 beforeSend: function() {
                     $("#loader_show").removeClass('d-none');
@@ -1395,6 +1415,7 @@ $(document).ready(function() {
 
 
                     } else {
+                        $("#FormEP2")[0].reset();
                         $("#ep2Form_status").html(respo['msg']).css("color", "red");
 
                     }
@@ -1480,7 +1501,12 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailer']; ?>'
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ep4Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
 
             $.ajax({
                 type: "POST",
@@ -1627,7 +1653,12 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailer']; ?>'
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ep5Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
 
             $.ajax({
                 type: "POST",

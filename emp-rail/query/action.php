@@ -591,26 +591,26 @@ if(isset($_POST['action'])){
         $ob_sc_N_R = trim($_POST['ob_sc_N_R']);
         $ob_sc_R_N = trim($_POST['ob_sc_R_N']);
         $ob_t_N_R = trim($_POST['ob_t_N_R']);
-        $ob_t_R_N = trim($_POST['ob_t_R_N']);
+        // $ob_t_R_N = trim($_POST['ob_t_R_N']);
         $gt_N_R = trim($_POST['gt_N_R']);
-        $gt_R_N = trim($_POST['gt_R_N']);
+        // $gt_R_N = trim($_POST['gt_R_N']);
         $operatingTimeSecond = trim($_POST['operatingTimeSecond']);
         $operatingTime_dbt = trim($_POST['operatingTime_dbt']);
         $friction_c_s = trim($_POST['friction_c_s']);
         $track_locking = trim($_POST['track_locking']);
         $remark_brief = trim($_POST['remark_brief']);
-        $signature = trim($_POST['signature']);
+        // $signature = trim($_POST['signature']);
        
 
-        if(empty($EP2_1) || empty($EP2_2) || empty($EP2_3) || empty($EP2_4) || empty($EP2_5) || empty($op_v_N_R) || empty($op_v_R_N) || empty($ob_v_N_R) || empty($ob_v_R_N) || empty($det_v_N_R) || empty($det_v_R_N) || empty($nwc_N_R) || empty($nwc_R_N) || empty($ob_sc_N_R) || empty($ob_sc_R_N) || empty($ob_t_N_R) || empty($ob_t_R_N) || empty($gt_N_R) || empty($gt_R_N) || empty($operatingTimeSecond) || empty($operatingTime_dbt) || empty($friction_c_s) || empty($track_locking) || empty($remark_brief) || empty($signature)){
+        if(empty($EP2_1) || empty($EP2_2) || empty($EP2_3) || empty($EP2_4) || empty($EP2_5) || empty($op_v_N_R) || empty($op_v_R_N) || empty($ob_v_N_R) || empty($ob_v_R_N) || empty($det_v_N_R) || empty($det_v_R_N) || empty($nwc_N_R) || empty($nwc_R_N) || empty($ob_sc_N_R) || empty($ob_sc_R_N) || empty($ob_t_N_R) || empty($gt_N_R) || empty($operatingTimeSecond) || empty($operatingTime_dbt) || empty($friction_c_s) || empty($track_locking) || empty($remark_brief)){
 
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO ep2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,EP2_1,EP2_2,EP2_3,EP2_4,EP2_5,op_v_N_R,op_v_R_N,ob_v_N_R,ob_v_R_N,det_v_N_R,det_v_R_N,nwc_N_R,nwc_R_N,ob_sc_N_R,ob_sc_R_N,ob_t_N_R,ob_t_R_N,gt_N_R,gt_R_N,operatingTimeSecond,operatingTime_dbt,friction_c_s,track_locking,remark_brief,signature,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$EP2_1','$EP2_2','$EP2_3','$EP2_4','$EP2_5','$op_v_N_R','$op_v_R_N','$ob_v_N_R','$ob_v_R_N','$det_v_N_R','$det_v_R_N',
-        '$nwc_N_R','$nwc_R_N','$ob_sc_N_R','$ob_sc_R_N','$ob_t_N_R','$ob_t_R_N','$gt_N_R','$gt_R_N','$operatingTimeSecond','$operatingTime_dbt','$friction_c_s','$track_locking','$remark_brief','$signature','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO ep2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,EP2_1,EP2_2,EP2_3,EP2_4,EP2_5,op_v_N_R,op_v_R_N,ob_v_N_R,ob_v_R_N,det_v_N_R,det_v_R_N,nwc_N_R,nwc_R_N,ob_sc_N_R,ob_sc_R_N,ob_t_N_R,gt_N_R,operatingTimeSecond,operatingTime_dbt,friction_c_s,track_locking,remark_brief,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$EP2_1','$EP2_2','$EP2_3','$EP2_4','$EP2_5','$op_v_N_R','$op_v_R_N','$ob_v_N_R','$ob_v_R_N','$det_v_N_R','$det_v_R_N',
+        '$nwc_N_R','$nwc_R_N','$ob_sc_N_R','$ob_sc_R_N','$ob_t_N_R','$gt_N_R','$operatingTimeSecond','$operatingTime_dbt','$friction_c_s','$track_locking','$remark_brief','$createdDateTime','$createdDateTime')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -802,7 +802,8 @@ if(isset($_POST['action'])){
 
 
 
-    }else{
+    }    
+    else{
 
         $respo['status'] = false;
         $respo['msg'] = "Invalid Action";

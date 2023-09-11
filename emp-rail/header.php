@@ -132,7 +132,7 @@ background:#feeeb7a8;
  </div>
 </div>
 
-<nav class="navbar  navbar-expand-md  navbar-dark sticky-top" style="background-color: #2f539f;">
+<nav class="navbar  navbar-expand-sm  navbar-dark sticky-top" style="background-color: #2f539f;">
   <a class="navbar-brand" href="index.php" style="color:#FFFFFF;"><i class="fa fa-home"></i> </a>
 <!-- <a href="index.php" class="navbar-brand" >IBN DIGITAL</a> -->
 
@@ -146,6 +146,7 @@ background:#feeeb7a8;
 
 
 <li class="nav-item"><a href="view-station-component.php" class="nav-link  active">Maintenance</a></li> 
+<li class="nav-item"><a href="view-form-details.php" class="nav-link  active">Form</a></li> 
 
 
 
