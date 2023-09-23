@@ -78,6 +78,7 @@
                         <!-- <th>#</th> -->
                         <th>PME Date</th>
                         <th>Refresher Date</th>
+                        <th>Competency</th>
                         <th>Section Name</th>
                         <th>Station Name</th>
                     </tr>
@@ -112,6 +113,7 @@ var gbl_data = [];
     columns: [    
         { data: 'pme_date' },
         { data: 'rme_date' },
+        { data: 'competency' },
         { data: 'section_name' },
         { data: 'station_name' },
       

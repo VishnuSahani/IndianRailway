@@ -159,6 +159,7 @@ background:#feeeb7a8;
 <li class="nav-item"><a href="emp-info.php" class="nav-link  active">View Employee Data</a></li> 
 <li class="nav-item"><a href="add-station-component.php" class="nav-link  active">Add station Component</a></li> 
 <li class="nav-item"><a href="view-station-component.php" class="nav-link  active">View station Component</a></li> 
+<li class="nav-item"><a href="view-emp-form.php" class="nav-link  active">View Form</a></li> 
 
 
 

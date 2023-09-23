@@ -76,6 +76,7 @@ if(isset($_POST['action'])){
             if(mysqli_num_rows($getQueryFile) <= 0){
                 $obj->pme_date = $sectionRun['pme_date'];
                 $obj->rme_date = $sectionRun['rme_date'];
+                $obj->competency = "No Record";
                 continue;
             }
 
@@ -113,6 +114,130 @@ if(isset($_POST['action'])){
                     </a> ($rme_date)";
                     
                 }
+            }
+
+            if($sectionRunfile['competencyCertificate']==''){
+                $obj->competency = "No Record";
+
+            }else{
+                $competency = $sectionRunfile['competencyCertificate'];
+
+                $obj->competency = "<a role='button' href='./images/pmeRmeFile/".$competency."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i>
+                    </a>";
+
+            }
+
+            // $obj->rme_date = $sectionRun['rme_date'];
+            $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
+            $obj->href = $a;
+
+            $data[] = $obj;
+
+        }
+
+        $respo['status'] = true;
+        $respo['msg'] = "Employee list found";
+        $respo['data'] = $data;
+
+        echo json_encode($respo);
+        die();
+
+    }
+
+    if($action == "getEmployeeAllData"){
+
+
+
+
+        $getQuerySection = mysqli_query($con,"SELECT * FROM emp_info_rail");
+        if(mysqli_num_rows($getQuerySection) <= 0){
+            $respo['status'] = true;
+            $respo['msg'] = "Empoyee list is empty.";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $data = [];
+        while($sectionRun = mysqli_fetch_array($getQuerySection)){
+
+            $obj = new stdClass();
+            $obj->id = $sectionRun['id'];
+            $obj->section_name = $sectionRun['section_name'];
+            $obj->section_id = $sectionRun['section_id'];
+            $obj->station_name = $sectionRun['station_name'];
+            $obj->station_id = $sectionRun['station_id'];
+
+            $obj->empid = $sectionRun['empid'];
+            $obj->empname = $sectionRun['empname'];
+            $obj->empdesg = $sectionRun['empdesg'];
+
+            // $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
+            $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+
+            // for pme rme file getting
+
+            $pme_date = $sectionRun['pme_date'];
+            $rme_date = $sectionRun['rme_date'];
+
+            $empId = $sectionRun['empid'];
+            $section_id = $sectionRun['section_id'];
+            $station_id = $sectionRun['station_id'];
+            $getQueryFile = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE empid='$empId' and pme_date='$pme_date' and rme_date='$rme_date' and section_id='$section_id' and station_id ='$station_id'");
+
+
+            if(mysqli_num_rows($getQueryFile) <= 0){
+                $obj->pme_date = $sectionRun['pme_date'];
+                $obj->rme_date = $sectionRun['rme_date'];
+                $obj->competency = "No Record";
+                continue;
+            }
+
+            $sectionRunfile = mysqli_fetch_array($getQueryFile);
+
+
+            if($sectionRun['pme_date'] == ''){
+                $obj->pme_date = 'No Record';
+            }else{        
+
+                if($sectionRunfile['pme_file']==''){
+                    $obj->pme_date = $sectionRun['pme_date'];
+
+                }else{
+                    $pme_file = $sectionRunfile['pme_file'];
+                    $pme_date = $sectionRun['pme_date'];
+
+                    $obj->pme_date = "<a role='button' href='./images/pmeRmeFile/".$pme_file."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i></a> ($pme_date)";
+                    
+                }
+            }
+
+            if($sectionRun['rme_date'] == ''){
+                $obj->rme_date = 'No Record';
+            }else{        
+
+                if($sectionRunfile['rme_file']==''){
+                    $obj->rme_date = $sectionRun['rme_date'];
+
+                }else{
+                    $rme_file = $sectionRunfile['rme_file'];
+                    $rme_date = $sectionRun['rme_date'];
+
+                    $obj->rme_date = "<a role='button' href='./images/pmeRmeFile/".$rme_file."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i>
+                    </a> ($rme_date)";
+                    
+                }
+            }
+
+            if($sectionRunfile['competencyCertificate']==''){
+                $obj->competency = "No Record";
+
+            }else{
+                $competency = $sectionRunfile['competencyCertificate'];
+
+                $obj->competency = "<a role='button' href='./images/pmeRmeFile/".$competency."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i>
+                    </a>";
+
             }
 
             // $obj->rme_date = $sectionRun['rme_date'];
@@ -228,6 +353,9 @@ if(isset($_POST['action'])){
 
              if($subActionName == 'rmeFile'){
                 $updQ = "UPDATE pmerme_info_rail SET rme_file='$img_storeName' WHERE id = '$report_id'";
+             }elseif($subActionName == 'certificate'){
+                $updQ = "UPDATE pmerme_info_rail SET competencyCertificate='$img_storeName' WHERE id = '$report_id'";
+
              }
              
 
@@ -275,7 +403,7 @@ if(isset($_POST['action'])){
 
         $pmeRmeId = $_POST['pmeRmeId'];
         $subAction = $_POST['subAction'];
-        $delQuery = "SELECT pme_file,rme_file FROM pmerme_info_rail WHERE id = '$pmeRmeId'";
+        $delQuery = "SELECT pme_file,rme_file,competencyCertificate FROM pmerme_info_rail WHERE id = '$pmeRmeId'";
        
 
         $getImgName = mysqli_query($con,$delQuery);
@@ -298,6 +426,9 @@ if(isset($_POST['action'])){
         if($subAction == 'rmeFile'){
             $fileName = $delRun['rme_file'];
             $delUpdateQuery = "UPDATE pmerme_info_rail SET rme_file='' WHERE id = '$pmeRmeId'";
+        }elseif($subAction =="certificate"){
+            $fileName = $delRun['competencyCertificate'];
+            $delUpdateQuery = "UPDATE pmerme_info_rail SET competencyCertificate='' WHERE id = '$pmeRmeId'";
         }
 
         
@@ -375,9 +506,9 @@ if(isset($_POST['action'])){
         $obj->pme_file = $sectionRun['pme_file'];
         $obj->rme_file = $sectionRun['rme_file'];
         // $obj->rme_date = $sectionRun['rme_date'];
-
-
         $iddd= $sectionRun['id'];
+        
+        
 
         if($sectionRun['pme_date'] == ''){
             $obj->pme_date = 'No Record';
@@ -411,6 +542,19 @@ if(isset($_POST['action'])){
             }
 
         }
+
+        if($sectionRun['competencyCertificate']==''){
+
+            $obj->competency = "<button type='button' onclick=openDialog('".$iddd."','certificate') class='btn btn-sm btn-info'>Certificate</button>";
+        }else{
+            $obj->competency_file = $sectionRun['competencyCertificate'];
+
+            $obj->competency = "<a role='button' href='./images/pmeRmeFile/".$obj->competency_file."' target='_black' class='btn btn-sm btn-warning m-1'><i class='fa fa-file-pdf-o'></i></a> <button type='button' onclick=deleteFile('".$iddd."','certificate') class='btn btn-sm btn-danger m-1'>Delete</button>";
+
+        }
+
+
+
 
 
 

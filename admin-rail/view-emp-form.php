@@ -1,85 +1,88 @@
 <?php require('header.php');?>
 <?php require('include/db_config.php');
 
- //Include database configuration file
-    $id="";
 
-    if(isset($_SESSION['userretailer']))
-{
-  $id=$_SESSION['userretailer'];  
-   
-}
 
-// echo $name;
+// $query = mysqli_query($con,"SELECT * FROM emp_info_rail");
+//                             echo mysqli_num_rows($query);
+
+// if(mysqli_num_rows($query) <= 0){
+//     echo "No Employee added yet.";
+//     die();
+// }
+
+// $empBasicData = mysqli_fetch_array($query);
+
+// $employeeId = $empBasicData['empid'];
+
+// print_r($empBasicData);
+
 
 ?>
 
-
-
-
-
-
-<div class="container" style="margin-top:30px;">
-
-    <div class="alert alert-primary d-flex justify-content-between align-items-center">
-        <div></div>
-        <p class="text-center h5">Your Station Component </p>
-
-        <button type="button" onclick="location.reload()" class="btn btn-sm btn-success">Refresh</button>
-    </div>
-    <div class="container">
+<div class="container">
         <div class="row">
+            
             <div class="col-12">
+                <div class="alert alert-info h4">View Employee Submited Form</div>
                 <form>
-                    <div class="row">
-                        <div class="form-group col-xl-6 col-lg-6 col-12">
-                            <!-- <label for="sectionName">Section Name</label> -->
-                            <input type="hidden" id="sectionName" class="form-control" disabled
-                                value="<?php echo $empSectionName;?>">
-                            <input type="hidden" id="sectionId" class="form-control" disabled
-                                value="<?php echo $empSectionId;?>">
-                            <input type="hidden" id="compoNameTmp">
-                            <input type="hidden" id="subcompoNameTmp">
+                    <div class="form-group">
+                        <label for="empId">Select Employee <span class="text-danger">*</span></label>
+                        <select name="empId" id="empId" class="form-control" onchange="getSectionByEmpId(this.value)">
+                            <option value="">Select Employee</option>
+                            <?php
+                            $query = mysqli_query($con,"SELECT * FROM emp_info_rail");
+                            // echo mysqli_num_rows($query);
+
+                                while($empBasicData = mysqli_fetch_array($query)){
+                                    $empId = $empBasicData['empid'];
+                                    echo "<option value='$empId'>".$empBasicData['empname']."</option>";
+                                }
+                            ?>
+
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                       <div class="form-group col-12 col-md-6">
+                            <label for="sectionName">Section Name</label>
+                            <input type="text" class="form-control" id="sectionName" disabled>
+                            <input type="hidden" class="form-control" id="sectionId" disabled>
                         </div>
-
-                        <div class="form-group col-xl-6 col-lg-6 col-12">
-                            <!-- <label for="stationName">Station Name</label> -->
-                            <input type="hidden" id="stationName" class="form-control" disabled
-                                value="<?php echo $empStationName;?>">
-                            <input type="hidden" id="stationId" class="form-control" disabled
-                                value="<?php echo $empStationId;?>">
+                        <div class="form-group col-12 col-md-6">
+                            <label for="stationName">Station Name</label>
+                            <input type="text" class="form-control" id="stationName" disabled>
+                            <input type="hidden" class="form-control" id="stationId" disabled>
                         </div>
-
-
-                        <div class="form-group col-12">
+                    </div>
+                    
+                    <!---->
+                    
+                     <div class="form-group col-12">
+                            <div class="alert alert-success text-center h6">
+                                Station Component List
+                            </div>
 
                             <div class="d-flex flex-wrap my-2" id="componentDisplay">
 
                             </div>
-
-                            <div id="showError" class="text-danger text-center h6">
+                              <div id="showError" class="text-danger text-center h6">
 
                             </div>
                         </div>
-
-                        <div class="form-group col-12" id="formKeyDisplay">
+                        
+                         <div class="form-group col-12" id="formKeyDisplay">
 
                         </div>
                         <div class="form-group my-1 col-12" id="createSubcompo">
 
                         </div>
-
-
-
-
-
-
-                    </div>
-
+                    
+                    
                 </form>
-            </div>
-
-            <div class="table-responsive d-none" id="mainTable">
+                
+                
+                 <div class="table-responsive d-none" id="mainTable">
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -98,15 +101,11 @@
                     </tbody>
                 </table>
             </div>
+            </div>
         </div>
     </div>
-
-
-
-</div>
-<!--container close-->
-
-<!-- Modal EP1 -->
+    
+    <!-- Modal EP1 -->
 <div class="modal fade" id="componentForm_EP1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -530,13 +529,18 @@
     </div>
 </div>
 
+    
 
 
 <script>
-var g_st_compList = [];
-var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
-var formDataList = {};
 
+    var g_employeeData = {};
+    var g_st_compList = [];
+    var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];   
+    var formDataList = {};
+    
+    
+    
 
 function openDialog(typeOfForm, dataList,id) {
 
@@ -699,23 +703,11 @@ function showTable(formKeyName, subcomponame) {
     <td>${element['created_date']}</td>
     <td>${element['updated_date']}</td>
     <td style="vertical-align:middle;width:22%" >
-    `;
-    if(formKeyName.startsWith("EP")){
-        displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}')">
             See <i class="fas fa-eye"></i>
         </button>
-       `;
-
-    }else if(formKeyName.startsWith("T")){
-        displayHtml += `
-        <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}')">
-            See <i class="fas fa-eye"></i>T
-        </button>
-       `;
-    }
-    
-        displayHtml += ` 
+       
+       
     </td>
     </tr>
 `;
@@ -728,7 +720,8 @@ function showTable(formKeyName, subcomponame) {
 
 }
 
-function showSubComponent(formName,btnColor) {
+    
+    function showSubComponent(formName,btnColor) {
 
     $("#mainTable").addClass('d-none');
 
@@ -758,8 +751,9 @@ function showSubComponent(formName,btnColor) {
 
 
 }
-
-function displayFormData(keyList, btnColor = 'success') {
+    
+    
+    function displayFormData(keyList, btnColor = 'success') {
 
     document.getElementById("printTableData").innerHTML = "";
     $("#mainTable").addClass('d-none');
@@ -785,8 +779,8 @@ function displayFormData(keyList, btnColor = 'success') {
 
 
 }
-
-function getComponentForm(val) {
+    
+    function getComponentForm(val) {
     document.getElementById("formKeyDisplay").innerHTML = "";
     $("#createSubcompo").html("");
     document.getElementById("printTableData").innerHTML = "";
@@ -812,7 +806,7 @@ function getComponentForm(val) {
     let stationId = ($("#stationId").val()).trim();
     let stationName = ($("#stationName").val()).trim();
 
-    let userID = '<?php echo $_SESSION['userretailer']; ?>';
+    let userID = $("#empId").val();
     if (userID == '' || userID == null || userID == undefined) {
 
         alert("Something went wrong with user Id, Refresh the page and try again");
@@ -878,20 +872,13 @@ function getComponentForm(val) {
 
 
 }
+    function getComponent() {
 
-
-function getComponent() {
-
-    let sectionId = ($("#sectionId").val()).trim();
-    let sectionName = ($("#sectionName").val()).trim();
-    let stationId = ($("#stationId").val()).trim();
-    let stationName = ($("#stationName").val()).trim();
-
-    if (sectionId == '' || sectionName == "" || stationId == "" || stationName == "") {
-        alert("Please refresh page.");
-        return;
-    }
-
+    let sectionName = $("#sectionName").val();
+    let sectionId = $("#sectionId").val();
+    let stationId = $("#stationId").val();
+    let stationName = $("#stationName").val();
+ 
     $.ajax({
         type: "POST",
         url: "query/action.php",
@@ -905,8 +892,7 @@ function getComponent() {
         beforeSend: function() {
             g_st_compList = [];
             document.getElementById("componentDisplay").innerHTML = '';
-            document.getElementById("formKeyDisplay").innerHTML = "";
-            $("#createSubcompo").html("");
+            // document.getElementById("subComponentDisplay").innerHTML = "";
 
 
         },
@@ -936,12 +922,44 @@ function getComponent() {
         }
     });
 }
+    
+    function getSectionByEmpId(empId){
+        // alert(empId);
+        
+        $("#componentDisplay").html("")
+        $("#formKeyDisplay").html("")
+        $("#createSubcompo").html("")
+        
+          $("#mainTable").addClass('d-none');
 
-$(document).ready(function() {
-    getComponent();
-});
+
+    document.getElementById("printTableData").innerHTML = "";
+        
+        $.ajax({
+            type:"POST",
+            url:"query/action.php",
+            data:{
+                "action":"getSectionStationById",
+                "empId":empId
+            },
+            beforeSend:function(){
+                
+            },
+            success:function(response){
+                let respo = JSON.parse(response);
+                console.log("getSectionStationById respo =",respo);
+                if(respo['status']){
+                    g_employeeData = respo['data'];
+                    $("#sectionName").val(g_employeeData['section_name']);
+                    $("#sectionId").val(g_employeeData['section_id']);
+                    $("#stationName").val(g_employeeData['station_name']);
+                    $("#stationId").val(g_employeeData['station_id']);
+                    
+                     getComponent();
+                }
+            }
+        })
+    }
 </script>
 
-</body>
 
-</html>

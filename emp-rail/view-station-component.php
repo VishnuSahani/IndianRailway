@@ -543,6 +543,214 @@
 </div>
 
 
+
+<!-- Modal T1 -->
+<div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT1">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T1
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t1Form_status"></div>
+                <button type='button' id="t1FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal T2 -->
+<div class="modal fade" id="componentForm_T2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT2">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T2
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t2Form_status"></div>
+                <button type='button' id="t2FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal T3 -->
+<div class="modal fade" id="componentForm_T3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT3">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T3
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t3Form_status"></div>
+                <button type='button' id="t3FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal T5 -->
+<div class="modal fade" id="componentForm_T5" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT5">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T5
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t5_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t5Form_status"></div>
+                <button type='button' id="t5FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <script>
 var g_st_compList = [];
 var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
@@ -622,6 +830,8 @@ function createSubComponent(val) {
     }
 
 
+ 
+
     let subComponentData = componetData[0]['sub_component'].split(',');
 
 
@@ -632,22 +842,40 @@ function createSubComponent(val) {
     let divWrap = document.createElement("div");
     divWrap.className = "d-flex flex-wrap my-2";
 
+
     let btn = '';
     let stationComName = val.target.id.split("_")[1]
 
-    let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1]
+    let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1];
+    
     subComponentData.forEach((value, index) => {
 
         btn += `<div class="dropdown m-2" id='subCompo_${value}'>
   <button class="btn btn-${btnColor} dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
     ${value}
   </button>
-  <div class="dropdown-menu bg-light">
+  <div class="dropdown-menu bg-light">`;
+
+  if(componentName == "POINT"){
+    btn +=`
     <a class="dropdown-item" onclick="get_EP_formData('EP1','${value}','${stationComName}')">EP 1</a>
     <a class="dropdown-item" onclick="get_EP_formData('EP2','${value}','${stationComName}')">EP 2</a>
     <a class="dropdown-item" onclick="get_EP_formData('EP3','${value}','${stationComName}')">EP 3</a>
     <a class="dropdown-item" onclick="get_EP_formData('EP4','${value}','${stationComName}')">EP 4</a>
     <a class="dropdown-item" onclick="get_EP_formData('EP5','${value}','${stationComName}')">EP 5</a>
+    `;
+  }else if(componentName == "TRACK"){
+    btn +=`
+    <a class="dropdown-item" onclick="get_T_formData('T1','${value}','${stationComName}')">T1</a>
+    <a class="dropdown-item" onclick="get_T_formData('T2','${value}','${stationComName}')">T2</a>
+    <a class="dropdown-item" onclick="get_T_formData('T3','${value}','${stationComName}')">T3</a>
+    <a class="dropdown-item" onclick="get_T_formData('T4','${value}','${stationComName}')">T4</a>
+    <a class="dropdown-item" onclick="get_T_formData('T5','${value}','${stationComName}')">T5</a>
+    `;
+  }
+ 
+
+    btn +=`
   </div>
     </div>`;
 
@@ -777,6 +1005,8 @@ function get_EP_formData(EPtype, subCompo, compo) {
     // $("#modalSubCompoName").html(subCompo);
     // $("#modalSubCompoType").html(type);
 }
+
+
 
 function clearAllData() {
     g_st_compList = [];
@@ -1712,7 +1942,454 @@ $(document).ready(function() {
 
         }
     });
+
+    $("#t2FormBtn").click(function() {
+        if (confirm("Do you want to final submit T2 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let t2_1 = $("#t2_1").val();
+            let t2_2 = $("#t2_2").val();
+            let t2_3 = $("#t2_3").val();           
+
+            if (t2_1 == '' || t2_1.length == 0 || t2_1 == null) {
+                $("#t2_1").addClass("is-invalid");
+                $("#t2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#t2Form_status").html("");
+                $("#t2_1").removeClass("is-invalid");
+
+            }
+
+            if (t2_2 == '' || t2_2.length == 0 || t2_2 == null) {
+                $("#t2_2").addClass("is-invalid");
+                $("#t2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#t2Form_status").html("");
+                $("#t2_2").removeClass("is-invalid");
+
+            }
+
+            if (t2_3 == '' || t2_3.length == 0 || t2_3 == null) {
+                $("#t2_3").addClass("is-invalid");
+                $("#t2Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#t2Form_status").html("");
+                $("#t2_3").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#t2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "T2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "t2_1": t2_1,
+                    "t2_2": t2_2,
+                    "t2_3": t2_3,                  
+
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#t2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#t2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#t2Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#t2Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
+    $("#t3FormBtn").click(function() {
+        if (confirm("Do you want to final submit T3 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let t3_1 = $("#t3_1").val();
+            let t3_2 = $("#t3_2").val();
+            let t3_3 = $("#t3_3").val();           
+            let t3_4 = $("#t3_4").val();           
+
+            if (t3_1 == '' || t3_1.length == 0 || t3_1 == null) {
+                $("#t3_1").addClass("is-invalid");
+                $("#t3Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#t3Form_status").html("");
+                $("#t3_1").removeClass("is-invalid");
+
+            }
+
+            if (t3_2 == '' || t3_2.length == 0 || t3_2 == null) {
+                $("#t3_2").addClass("is-invalid");
+                $("#t3Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#t3Form_status").html("");
+                $("#t3_2").removeClass("is-invalid");
+
+            }
+
+            if (t3_3 == '' || t3_3.length == 0 || t3_3 == null) {
+                $("#t3_3").addClass("is-invalid");
+                $("#t3Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#t3Form_status").html("");
+                $("#t3_3").removeClass("is-invalid");
+
+            }
+
+            if (t3_4 == '' || t3_4.length == 0 || t3_4 == null) {
+                $("#t3_4").addClass("is-invalid");
+                $("#t3Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#t3Form_status").html("");
+                $("#t3_4").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#t2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "T3_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "t3_1": t3_1,
+                    "t3_2": t3_2,
+                    "t3_3": t3_3,                  
+                    "t3_4": t3_4,                  
+
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#t3Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#t3Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#t3Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#t3Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+    $("#t5FormBtn").click(function() {
+        if (confirm("Do you want to final submit T5 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let t5_1 = $("#t5_1").val();
+            let t5_2 = $("#t5_2").val();
+
+            if (t5_1 == '' || t5_1.length == 0 || t5_1 == null) {
+                $("#t5_1").addClass("is-invalid");
+                $("#t5Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#t5Form_status").html("");
+                $("#t5_1").removeClass("is-invalid");
+
+            }
+
+            if (t5_2 == '' || t5_2.length == 0 || t5_2 == null) {
+                $("#t5_2").addClass("is-invalid");
+                $("#t5Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#t5Form_status").html("");
+                $("#t5_2").removeClass("is-invalid");
+
+            }
+
+           
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#t2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "T5_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "t5_1": t5_1,
+                    "t5_2": t5_2,
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#t5Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#t5Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#t5Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#t5Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
 });
+
+
+
+// T Type form
+
+function openDialog_T(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "T1":
+        tableId = "t1_body";
+        $("#componentForm_T1").modal("show");
+        break;
+    case "T2":
+        tableId = "t2_body";
+        $("#componentForm_T2").modal("show");
+        break;
+    case "T3":
+        tableId = "t3_body";
+        $("#componentForm_T3").modal("show");
+        break;
+
+    case "T5":
+        tableId = "t5_body";
+        $("#componentForm_T5").modal("show");
+        break;
+
+
+}
+
+
+dataList.forEach((element, index) => {
+
+
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['t_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['t_id']}">
+                <option value="">Select Action</option>`;
+
+    let optArr = element['t_option'].split(",");
+    optArr.forEach(opt => {
+        displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+    // <option value="Done">Done</option>
+    // <option value="Not Done">Not Done</option>
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+function get_T_formData(tType,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getT_FormDetails",
+            "formType": tType,
+
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_T(tType, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
 </script>
 
 </body>

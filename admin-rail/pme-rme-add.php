@@ -107,7 +107,8 @@ $employeeId = $empBasicData['empid'];
                             <th>Section Name</th>
                             <th>Station Name</th>
                             <th>PME File</th>
-                            <th>Refresher File</th>
+                            <!-- <th>Refresher File</th> -->
+                            <th>Competency</th>
                         </tr>
 
                     </thead>
@@ -255,8 +256,11 @@ $(document).ready(() => {
             {
                 data: 'addPmeFileBtn'
             },
+            // {
+            //     data: 'addRmeFileBtn'
+            // },
             {
-                data: 'addRmeFileBtn'
+                data: 'competency'
             },
 
         ]
@@ -341,16 +345,20 @@ function _(id) {
 
 
 function openDialog(pmeRmeId,fileType) {
+    //certificate
     if(fileType == 'pmeFile'){
 
         $("#addFileModalLabel").html("PME File Upload");
         $("#subActionName").val("pmeFile");
 
-    }else{
+    }else if(fileType == "rmeFile"){
 
         $("#addFileModalLabel").html("Refresher File Upload");
         $("#subActionName").val("rmeFile");
         
+    }else{
+        $("#addFileModalLabel").html("Competency Certificate File Upload");
+        $("#subActionName").val("certificate");
     }
 
     $("#pmeRmeId").val(pmeRmeId);
@@ -364,6 +372,9 @@ function deleteFile(pmeRmeId,fileType){
     if(fileType == 'pmeFile'){
         
         msgShow = "Do you want to delete PME file";
+
+    }else if(fileType=="certificate"){
+        msgShow = "Do you want to delete Certificate";
 
     }
     if(confirm(msgShow) && pmeRmeId !=''){

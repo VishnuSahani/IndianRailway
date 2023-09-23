@@ -91,6 +91,51 @@ xhr.send();
     var gbl_data = [];
   var  myTableData;
 
+
+  
+function getAllData(){
+
+
+let action = "getEmployeeAllData";
+
+ var formdata = new FormData();
+formdata.append( "action",action);
+
+//alert(testData);
+var ajax = new XMLHttpRequest();
+ajax.open("POST","./query/action.php",true);
+  //req.open("GET", "searchStudent.php?q=" + str, true);
+
+ajax.send(formdata);
+
+ajax.onreadystatechange = function(){
+     if(ajax.readyState == 4 && ajax.status == 200) {
+
+      let respo = JSON.parse(ajax.responseText);
+      console.log(respo)
+
+              // createTablerow(respo['data']);
+
+
+          gbl_data = respo['data'];
+          
+          myTableData.clear();
+          myTableData.rows.add(gbl_data);
+          myTableData.draw(false);
+
+      
+    // if(respo['status']){
+
+
+    // } else {
+   
+    // }
+
+  }
+};
+
+}
+
   $(document).ready(()=>{
 
     myTableData = $('#myTable').DataTable( {
@@ -102,9 +147,12 @@ xhr.send();
         { data: 'empdesg' },
         { data: 'pme_date' },
         { data: 'rme_date' },
-        { data: 'href' }
+        { data: 'competency' },
+        { data: 'href' },
     ]
 } );
+
+getAllData();
 
   })
 
@@ -159,6 +207,9 @@ xhr.send();
  }
 
 
+ 
+
+
 function getData(testData){
 
 
@@ -208,6 +259,14 @@ ajax.onreadystatechange = function(){
 };
 
 }
+
+
+function resetEmpForm(){
+  $("#sectionId").val("")
+  $("#stationId").val("");
+  getAllData();
+}
+
 </script>
 
 
@@ -224,7 +283,7 @@ ajax.onreadystatechange = function(){
 
    <div class="form-row">
  
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-5">
       <label for="inputState">Select Section</label>
       <select name="sectionId" id="sectionId" onChange="getTest(this.value)" class="form-control">
         <option value="">Select Section</option>
@@ -237,9 +296,11 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 
 
 ?>
+
+
       </select>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-5">
       <label>Select Station</label>
       
       <select name="Test_Name" class="form-control" id="stationId" onchange="getData(this.value)">
@@ -247,6 +308,12 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
         
       </select>
 
+    </div>
+
+    <div class="form-group d-flex align-items-end justify-content-center col-md-2">
+    
+
+      <button type="button" class="btn btn btn-danger" onclick="resetEmpForm()">Reset</button>
     </div>
   </div>
  
@@ -263,12 +330,13 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 <!-- <th>S.No.</th> -->
 <th>Employee Id</th>
 
-<th>Employee Name</th>
-<th>Employee Designation</th>
+<th>Name</th>
+<th>Designation</th>
 
 <th> PME</th>
 <th>Refresher</th>
-<th>Add PME/Refresher</th>
+<th>Competency</th>
+<th>Add PME/Competency</th>
 
 
 </tr>
@@ -295,6 +363,8 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
    
 
 </div><!--container close-->
+
+
 
 
 <?php require('footer.php');?>
