@@ -148,7 +148,7 @@ if(isset($_POST['action'])){
         elseif($compoNameTmp == "TRACK"){
             // EP 1,2,4,5 form data
             $formType = "T";
-            /*
+            
             $qEP1 = mysqli_query($con,"SELECT * FROM t1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
 
             if(mysqli_num_rows($qEP1) <=0){
@@ -167,7 +167,7 @@ if(isset($_POST['action'])){
                 
                 $formData['T1'] = $ep1Data ;
 
-            }*/
+            }
 
 
             // ep1 end
@@ -211,7 +211,7 @@ if(isset($_POST['action'])){
 
                 while($runEp3 = mysqli_fetch_array($qEP3)){
 
-                    $ep4Data[] = $runEp3;
+                    $ep3Data[] = $runEp3;
 
                 }
                 
@@ -260,6 +260,84 @@ if(isset($_POST['action'])){
 
         
 
+    }
+    elseif($action == "updateSingleValueFormData"){
+        if(!isset($_POST['userID']) || empty($_POST['userID'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Your session is logout, try again";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        if(!isset($_POST['value']) || !isset($_POST['tableName']) || !isset($_POST['columnName']) || !isset($_POST['id'])){
+
+            $respo['status'] = false;
+           $respo['msg'] = "Something went wrong with parameter";
+           $respo['data'] = [];
+           echo json_encode($respo);
+           die();
+
+       }
+
+       $value = $_POST['value'];
+       $tbName = $_POST['tableName'];
+       $columnName = $_POST['columnName'];
+       $id = $_POST['id'];
+       $tableName = "";
+       $userID=$_POST['userID'];
+
+       switch($tbName){
+        case "EP1":
+            $tableName = "ep1_form";
+            break;
+
+        case "EP2":
+             $tableName = "ep2_form";
+             break;
+
+        case "EP3":
+            $tableName = "ep3_form";
+            break;
+
+        case "EP4":
+             $tableName = "ep4_form";
+             break;
+        case "EP5":
+            $tableName = "ep5_form";
+            break;
+        default:
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with Table name";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+
+
+       }
+
+       $updateQuery = mysqli_query($con,"UPDATE $tableName SET $columnName = '$value' WHERE id='$id' AND emp_id = '$userID'");
+
+       if($updateQuery){
+            $respo['status'] = true;
+            $respo['msg'] = "Data successfully updated";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+       }else{
+
+        $respo['status'] = false;
+        $respo['msg'] = "Something went wrong with DB";
+        $respo['data'] = [];
+        echo json_encode($respo);
+        die();
+       }
+
+       
+
+
+
+        
     }
     else{
         responseSend(false,"Invalid Action");

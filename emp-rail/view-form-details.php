@@ -531,13 +531,327 @@
 </div>
 
 
+<!-- Modal T1 -->
+<div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT1">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T1
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t1_body">
+
+                    </tbody>
+
+                    <tbody>
+                       <tr>
+                        <td colspan="3">
+                            <table class="table table-bordered">
+                                <thead class="text-center table-dark">
+                                    <tr>
+                                    <td rowspan="3">Date</td> <td colspan="6">SPG and Volt</td> <td rowspan="3"> Charging V</td><td rowspan="3">Current V</td><td rowspan="3"> --- </td><td rowspan="3">  िफड इंड पर वोल्टेज</td><td rowspan="3">Near Block</td> <td rowspan="3">Wire status</td> <td rowspan="3">Remark</td>
+                            
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Sale 1</td> <td colspan="2">Sale 2</td> <td colspan="2">Sale 3</td> 
+                            
+                                </tr>
+                                <tr>
+                                    <td>SPG</td> <td >V</td> <td>SPG</td><td>V</td> <td>SPG</td><td >V</td> 
+                            
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                     <tr>
+                                    <td ><input id="date1" class="form-control" type="date" disable="true" readonly></td> 
+                                    <td><input id="sale1_spg" class="form-control" type="text" disable="true" readonly></td>
+                                     <td ><input id="sale1_v" class="form-control" type="text" disable="true" readonly></td>
+                                      <td><input id="sale2_spg" class="form-control" type="text" disable="true" readonly></td>
+                                      <td><input id="sale2_v" class="form-control" type="text" disable="true" readonly></td>
+                                       <td><input id="sale3_spg" class="form-control" type="text" disable="true" readonly></td>
+                                    <td ><input id="sale3_v" class="form-control" type="text" disable="true" readonly></td> 
+                                 <td ><input id="charging_v" class="form-control" type="text" disable="true" readonly></td> 
+                                 <td ><input id="charging_current" class="form-control" type="text" disable="true" readonly></td>
+                                 <td ></td>
+                                 <td ><input id="feedVoltage" class="form-control" type="text" disable="true" readonly></td> 
+                                 <td ><input id="nearBlock" class="form-control" type="text" disable="true" readonly></td>
+                                   <td ><input id="wireStatus" class="form-control" type="text" disable="true" readonly></td> 
+                                   <td ><input id="remark1" class="form-control" type="text" disable="true" readonly></td> 
+                                    
+                            
+                                </tr>
+                                </tbody>
+                                <thead class="table-dark">
+                                    <tr>
+                                        <td>Date</td>
+                                    <td>Rail Volt</td>
+                                    <td>VT (PU Value < 250/300%)</td>
+                                    <td>Wire status</td>
+                                    <td>Magnetic Part</td>
+                                    <td></td>
+                                    <td>Rail Flag</td>
+                                    <td>Wire status</td>
+                                    <td>Remark</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input id="date2" class="form-control" type="text" disable="true" readonly></td>
+                                    <td><input id="railVoltage" class="form-control" type="text" disable="true" readonly></td>
+                                    <td><input id="vt_value" class="form-control" type="text" disable="true" readonly></td>
+                                    <td><input id="wireStatus2" class="form-control" type="text" disable="true" readonly></td>
+                                    <td><input id="magneticPart" class="form-control" type="text" disable="true" readonly></td>
+                                    <td></td>
+                                    <td><input id="railFlag2" class="form-control" type="text" disable="true" readonly></td>
+                                    <td><input id="jumberwireStatus" class="form-control" type="text" disable="true" readonly></td>
+                                    <td><input id="remark2" class="form-control" type="text" disable="true" readonly></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+
+                        </td>
+                       </tr>
+                    </tbody>
+
+                    
+                </table>
+
+            
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t1Form_status"></div>
+                <!-- <button type='button' id="t1FormBtn" class="btn btn-success">Final Submit</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal T2 -->
+<div class="modal fade" id="componentForm_T2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT2">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T2
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t2Form_status"></div>
+                <!-- <button type='button' id="t2FormBtn" class="btn btn-success">Final Submit</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal T3 -->
+<div class="modal fade" id="componentForm_T3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT3">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T3
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t3Form_status"></div>
+                <!-- <button type='button' id="t3FormBtn" class="btn btn-success">Final Submit</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal T5 -->
+<div class="modal fade" id="componentForm_T5" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT5">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T5
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="t5_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t5Form_status"></div>
+                <!-- <button type='button' id="t5FormBtn" class="btn btn-success">Final Submit</button> -->
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <script>
 var g_st_compList = [];
 var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
 var formDataList = {};
 
+function updateSingleValue(value,tableName,columnName,id){
+    console.log("value",value);
+    console.log("tableName",tableName);
+    console.log("columnName",columnName);
+    let userID = '<?php echo $_SESSION['userretailer']; ?>';
+    if(userID == '' || userID == null || userID == undefined){
+                
+    //  $("#t1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+    alert("Something went wrong with user Id, Refresh the page and try again");
+    return
+     }
 
+    $.ajax({
+        type:"POST",
+        url:"./query/form-data-action.php",
+        data:{
+            action:"updateSingleValueFormData",
+            value:value,
+            tableName:tableName,
+            columnName:columnName.toLowerCase(),
+            userID:userID,
+            id:id
+        },
+        beforeSend:function(){
+
+        },
+        success:function(response){
+            console.log("update single respo", response);
+        }
+    });
+
+}
 function openDialog(typeOfForm, dataList,id) {
 
 let tableId = '';
@@ -576,9 +890,22 @@ dataList.forEach((element, index) => {
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['ep_details']}</td>
-        <td style="vertical-align:middle;width:22%" >
-         <input type="text" class="form-control" disabled value="${value}"> 
+        <td style="vertical-align:middle;width:22%" >`;
 
+        if(value == 'Not Done'){
+
+            displayHtml += `<select class="form-control">
+                <option>${value}</option>
+                <option value='Done'>Done</option>
+            </select> <button type="button" onclick="updateSingleValue('Done','${typeOfForm}','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+
+        }else{
+            displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
+        }
+
+         
+         
+         displayHtml += `
         </td>
         </tr>
     `;
@@ -678,6 +1005,179 @@ function showFormDetails(id,EPtype){
 }
 
 
+//create t1
+function createTradeT1FormCreate(typeOfForm, dataList,id){
+    
+    let tableId = '';
+    let displayHtml = "";
+    let tableDataForm = formDataList[typeOfForm].filter((x)=>{ 
+        if(x['id'] == id){
+            return x;
+        }
+    })[0];
+
+    tableId = "t1_body";
+    $("#componentForm_T1").modal("show");
+
+    
+dataList.forEach((element, index) => {
+
+        let value = tableDataForm[element['t_id'].toLowerCase()]
+
+        displayHtml += `
+            <tr>
+            <th scope="row">${index+1}</th>
+            <td>${element['t_details']}</td>
+            <td style="vertical-align:middle;width:22%" >
+            <input type="text" class="form-control" disabled value="${value}"> `;
+
+
+        // <option value="Done">Done</option>
+        // <option value="Not Done">Not Done</option>
+        displayHtml += `
+            </td>
+            </tr>
+        `;
+
+
+    });
+
+    console.log("tableDataForm=>",tableDataForm);
+
+    
+    $("#date1").val(tableDataForm['date1']);    
+    $("#sale1_spg").val(tableDataForm['sale1_spg']);    
+    $("#sale1_v").val(tableDataForm['sale1_v']);    
+    $("#sale2_spg").val(tableDataForm['sale2_spg']);    
+    $("#sale2_v").val(tableDataForm['sale2_v']); 
+    $("#sale3_spg").val(tableDataForm['sale3_spg']);    
+    $("#sale3_v").val(tableDataForm['sale3_v']);    
+    $("#charging_v").val(tableDataForm['charging_v']);    
+    $("#charging_current").val(tableDataForm['charging_current']);    
+    $("#feedVoltage").val(tableDataForm['feedVoltage']);    
+    $("#nearBlock").val(tableDataForm['nearBlock']);    
+    $("#wireStatus").val(tableDataForm['wireStatus']);    
+    $("#remark1").val(tableDataForm['remark1']);   
+
+    $("#date2").val(tableDataForm['date2']);    
+    $("#railVoltage").val(tableDataForm['railVoltage']);    
+    $("#vt_value").val(tableDataForm['vt_value']);    
+    $("#wireStatus2").val(tableDataForm['wireStatus2']);    
+    $("#magneticPart").val(tableDataForm['magneticPart']);    
+    $("#railFlag2").val(tableDataForm['railFlag2']);    
+    $("#jumberwireStatus").val(tableDataForm['jumberwireStatus']);    
+    $("#remark2").val(tableDataForm['remark2']);  
+
+    document.getElementById(tableId).innerHTML = displayHtml;
+
+
+
+
+
+
+}
+
+// T Type form
+
+function openDialog_T(typeOfForm, dataList,id) {
+
+let tableId = '';
+let displayHtml = "";
+
+if(typeOfForm == "T1"){
+    createTradeT1FormCreate(typeOfForm, dataList,id)
+}
+
+let tableDataForm = formDataList[typeOfForm].filter((x)=>{ 
+    if(x['id'] == id){
+        return x;
+    }
+ })[0];
+
+switch (typeOfForm) {
+    // case "T1":
+    //     tableId = "t1_body";
+    //     $("#componentForm_T1").modal("show");
+    //     break;
+    case "T2":
+        tableId = "t2_body";
+        $("#componentForm_T2").modal("show");
+        break;
+    case "T3":
+        tableId = "t3_body";
+        $("#componentForm_T3").modal("show");
+        break;
+
+    case "T5":
+        tableId = "t5_body";
+        $("#componentForm_T5").modal("show");
+        break;
+
+
+}
+
+
+dataList.forEach((element, index) => {
+
+    let value = tableDataForm[element['t_id'].toLowerCase()]
+
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['t_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+        <input type="text" class="form-control" disabled value="${value}"> `;
+
+
+    // <option value="Done">Done</option>
+    // <option value="Not Done">Not Done</option>
+    displayHtml += `
+        </td>
+        </tr>
+    `;
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+function get_T_formData(id,tType){
+  
+
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getT_FormDetails",
+            "formType": tType,
+
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_T(tType, response['data'],id);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+
 function showTable(formKeyName, subcomponame) {
     console.log("keyName=", formKeyName);
 
@@ -688,7 +1188,6 @@ function showTable(formKeyName, subcomponame) {
 
 
     formData.forEach((element, index) => {
-
 
         displayHtml += `
     <tr>
@@ -703,14 +1202,14 @@ function showTable(formKeyName, subcomponame) {
     if(formKeyName.startsWith("EP")){
         displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}')">
-            See <i class="fas fa-eye"></i>
+            See <i class="fas fa-eye-close"></i>
         </button>
        `;
 
     }else if(formKeyName.startsWith("T")){
         displayHtml += `
-        <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}')">
-            See <i class="fas fa-eye"></i>T
+        <button type="button" class="btn btn-sm btn-success" onclick="get_T_formData('${element['id']}','${formKeyName}')">
+            See <i class="fas fa-eye-close"></i>
         </button>
        `;
     }
@@ -936,6 +1435,8 @@ function getComponent() {
         }
     });
 }
+
+
 
 $(document).ready(function() {
     getComponent();

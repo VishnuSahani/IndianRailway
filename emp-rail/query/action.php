@@ -898,6 +898,113 @@ if(isset($_POST['action'])){
 
         }
     }
+    //T1_formSubmit
+    elseif ($action == "T1_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM t1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }       
+
+        }
+
+        $t1_1 = trim($_POST['t1_1']);
+        $t1_2 = trim($_POST['t1_2']);
+        $t1_3 = trim($_POST['t1_3']);
+
+        $t1_4 = trim($_POST['t1_4']);
+        $t1_5 = trim($_POST['t1_5']);
+        $t1_6 = trim($_POST['t1_6']);
+        $t1_7 = trim($_POST['t1_7']);
+        $t1_8 = trim($_POST['t1_8']);
+
+        $date1 = trim($_POST['date1']);
+        $sale1_spg = trim($_POST['sale1_spg']);
+        $sale1_v = trim($_POST['sale1_v']);
+        $sale2_spg = trim($_POST['sale2_spg']);
+        $sale2_v = trim($_POST['sale2_v']);
+        $sale3_spg = trim($_POST['sale3_spg']);
+        $sale3_v = trim($_POST['sale3_v']);
+        $charging_v = trim($_POST['charging_v']);
+        $charging_current = trim($_POST['charging_current']);
+        $feedVoltage = trim($_POST['feedVoltage']);
+        $nearBlock = trim($_POST['nearBlock']);
+        $wireStatus = trim($_POST['wireStatus']);
+        $remark1 = trim($_POST['remark1']);
+        $date2 = trim($_POST['date2']);
+        $railVoltage = trim($_POST['railVoltage']);
+        $vt_value = trim($_POST['vt_value']);
+        $wireStatus2 = trim($_POST['wireStatus2']);
+        $magneticPart = trim($_POST['magneticPart']);
+        $railFlag2 = trim($_POST['railFlag2']);
+        $jumberwireStatus = trim($_POST['jumberwireStatus']);
+        $remark2 = trim($_POST['remark2']);
+      
+
+        if(empty($t1_1) || empty($t1_2) || empty($t1_3) || empty($t1_4) || empty($t1_5) || empty($t1_6) || empty($t1_7) || empty($t1_8)){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+
+        $insertQuery = "INSERT INTO t1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t1_1,t1_2,t1_3,t1_4,t1_5,t1_6,t1_7,t1_8,date1,sale1_spg,sale1_v,sale2_spg,sale2_v,sale3_spg,sale3_v,charging_v,charging_current,feedVoltage,nearBlock,wireStatus,remark1,date2,railVoltage,vt_value,wireStatus2,magneticPart,railFlag2,jumberwireStatus,remark2,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t1_1','$t1_2','$t1_3','$t1_4','$t1_5','$t1_6','$t1_7','$t1_8','$date1','$sale1_spg','$sale1_v','$sale2_spg','$sale2_v','$sale3_spg','$sale3_v','$charging_v','$charging_current','$feedVoltage','$nearBlock','$wireStatus','$remark1','$date2','$railVoltage','$vt_value','$wireStatus2','$magneticPart','$railFlag2','$jumberwireStatus','$remark2','$createdDateTime','$createdDateTime')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
     elseif ($action == "T2_formSubmit"){
         if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
             $respo['status'] = false;

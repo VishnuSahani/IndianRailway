@@ -7,6 +7,7 @@
     if(isset($_SESSION['userretailer']))
 {
   $id=$_SESSION['userretailer'];  
+   
 }
 
 // echo $name;
@@ -543,7 +544,6 @@
 </div>
 
 
-
 <!-- Modal T1 -->
 <div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT1" aria-hidden="true">
@@ -583,6 +583,110 @@
                     <tbody id="t1_body">
 
                     </tbody>
+                    <tbody>
+                        <tr>
+                            <th>7</th>
+                            <td>
+                                Measure and record Specific gravity (1180-1220) & voltage (1.8 to 2.2 V) of each & every cell by switching off charger, charger voltage and charging current, feed end/relay end voltage and currents, regulating resistance value & voltage across it, voltage across Choke and ensure all are in the acceptable ranges. Take suitable remedial action for values beyond acceptable range.
+                            </td>
+                            <td>
+                                <select class="custom-select T1Class" id="t1_7">
+                                    <option value="">Select Action</option>
+                                    <option value="Done">Done</option>
+                                    <option value="Not Done">Not Done</option>
+                                </select>
+                            </td>
+                        </tr>
+                       <tr>
+                        <td colspan="3">
+                            <table class="table table-bordered">
+                                <thead class="text-center table-dark">
+                                    <tr>
+                                    <td rowspan="3">Date</td> <td colspan="6">SPG and Volt</td> <td rowspan="3"> Charging V</td><td rowspan="3">Current V</td><td rowspan="3"> --- </td><td rowspan="3">  िफड इंड पर वोल्टेज</td><td rowspan="3">Near Block</td> <td rowspan="3">Wire status</td> <td rowspan="3">Remark</td>
+                            
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Sale 1</td> <td colspan="2">Sale 2</td> <td colspan="2">Sale 3</td> 
+                            
+                                </tr>
+                                <tr>
+                                    <td>SPG</td> <td >V</td> <td>SPG</td><td>V</td> <td>SPG</td><td >V</td> 
+                            
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                     <tr>
+                                    <td ><input id="date1" class="form-control" type="date"></td> 
+                                    <td><input id="sale1_spg" class="form-control" type="text"></td>
+                                     <td ><input id="sale1_v" class="form-control" type="text"></td>
+                                      <td><input id="sale2_spg" class="form-control" type="text"></td>
+                                      <td><input id="sale2_v" class="form-control" type="text"></td>
+                                       <td><input id="sale3_spg" class="form-control" type="text"></td>
+                                    <td ><input id="sale3_v" class="form-control" type="text"></td> 
+                                 <td ><input id="charging_v" class="form-control" type="text"></td> 
+                                 <td ><input id="charging_current" class="form-control" type="text"></td>
+                                 <td ></td>
+                                 <td ><input id="feedVoltage" class="form-control" type="text"></td> 
+                                 <td ><input id="nearBlock" class="form-control" type="text"></td>
+                                   <td ><input id="wireStatus" class="form-control" type="text"></td> 
+                                   <td ><input id="remark1" class="form-control" type="text"></td> 
+                                    
+                            
+                                </tr>
+                                </tbody>
+                                <thead class="table-dark">
+                                    <tr>
+                                        <td>Date</td>
+                                    <td>Rail Volt</td>
+                                    <td>VT (PU Value < 250/300%)</td>
+                                    <td>Wire status</td>
+                                    <td>Magnetic Part</td>
+                                    <td></td>
+                                    <td>Rail Flag</td>
+                                    <td>Wire status</td>
+                                    <td>Remark</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input id="date2" class="form-control" type="date"></td>
+                                    <td><input id="railVoltage" class="form-control" type="text"></td>
+                                    <td><input id="vt_value" class="form-control" type="text"></td>
+                                    <td><input id="wireStatus2" class="form-control" type="text"></td>
+                                    <td><input id="magneticPart" class="form-control" type="text"></td>
+                                    <td></td>
+                                    <td><input id="railFlag2" class="form-control" type="text"></td>
+                                    <td><input id="jumberwireStatus" class="form-control" type="text"></td>
+                                    <td><input id="remark2" class="form-control" type="text"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+
+                        </td>
+                       </tr>
+                        <tr>
+                            <th>8</th>
+                            <td>
+                               Checking of TF charger failure alarms.
+                            </td>
+                            <td>
+                                <select class="custom-select T1Class" id="t1_8">
+                                    <option value="">Select Action</option>
+                                    <option value="Done">Done</option>
+                                    <option value="Not Done">Not Done</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    
+                </table>
+
+            
                 </table>
             </div>
 
@@ -830,8 +934,6 @@ function createSubComponent(val) {
     }
 
 
- 
-
     let subComponentData = componetData[0]['sub_component'].split(',');
 
 
@@ -842,12 +944,10 @@ function createSubComponent(val) {
     let divWrap = document.createElement("div");
     divWrap.className = "d-flex flex-wrap my-2";
 
-
     let btn = '';
     let stationComName = val.target.id.split("_")[1]
 
-    let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1];
-    
+    let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1]
     subComponentData.forEach((value, index) => {
 
         btn += `<div class="dropdown m-2" id='subCompo_${value}'>
@@ -855,7 +955,7 @@ function createSubComponent(val) {
     ${value}
   </button>
   <div class="dropdown-menu bg-light">`;
-
+  
   if(componentName == "POINT"){
     btn +=`
     <a class="dropdown-item" onclick="get_EP_formData('EP1','${value}','${stationComName}')">EP 1</a>
@@ -873,8 +973,8 @@ function createSubComponent(val) {
     <a class="dropdown-item" onclick="get_T_formData('T5','${value}','${stationComName}')">T5</a>
     `;
   }
- 
-
+   
+   
     btn +=`
   </div>
     </div>`;
@@ -1005,8 +1105,6 @@ function get_EP_formData(EPtype, subCompo, compo) {
     // $("#modalSubCompoName").html(subCompo);
     // $("#modalSubCompoType").html(type);
 }
-
-
 
 function clearAllData() {
     g_st_compList = [];
@@ -1942,8 +2040,466 @@ $(document).ready(function() {
 
         }
     });
+    
+    $("#t1FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit T1 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
 
-    $("#t2FormBtn").click(function() {
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let t1_1 = $("#t1_1").val();
+            let t1_2 = $("#t1_2").val();
+            let t1_3 = $("#t1_3").val();  
+
+            let t1_4 = $("#t1_4").val();           
+            let t1_5 = $("#t1_5").val();           
+            let t1_6 = $("#t1_6").val();           
+            let t1_7 = $("#t1_7").val();           
+            let t1_8 = $("#t1_8").val();   
+
+            let date1 = $("#date1").val();    
+            let sale1_spg = $("#sale1_spg").val();    
+            let sale1_v = $("#sale1_v").val();    
+            let sale2_spg = $("#sale2_spg").val();    
+            let sale2_v = $("#sale2_v").val();    
+            let sale3_spg = $("#sale3_spg").val();    
+            let sale3_v = $("#sale3_v").val();    
+            let charging_v = $("#charging_v").val();    
+            let charging_current = $("#charging_current").val();    
+            let feedVoltage = $("#feedVoltage").val();    
+            let nearBlock = $("#nearBlock").val();    
+            let wireStatus = $("#wireStatus").val();    
+            let remark1 = $("#remark1").val();   
+
+            let date2 = $("#date2").val();    
+            let railVoltage = $("#railVoltage").val();    
+            let vt_value = $("#vt_value").val();    
+            let wireStatus2 = $("#wireStatus2").val();    
+            let magneticPart = $("#magneticPart").val();    
+            let railFlag2 = $("#railFlag2").val();    
+            let jumberwireStatus = $("#jumberwireStatus").val();    
+            let remark2 = $("#remark2").val();    
+            
+            
+
+            if (t1_1 == '' || t1_1.length == 0 || t1_1 == null) {
+                $("#t1_1").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_1").removeClass("is-invalid");
+
+            }
+
+            if (t1_2 == '' || t1_2.length == 0 || t1_2 == null) {
+                $("#t1_2").addClass("is-invalid");
+                $("#t2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#t2Form_status").html("");
+                $("#t1_2").removeClass("is-invalid");
+
+            }
+
+            if (t1_3 == '' || t1_3.length == 0 || t1_3 == null) {
+                $("#t1_3").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_3").removeClass("is-invalid");
+
+            }
+
+            if (t1_4 == '' || t1_4.length == 0 || t1_4 == null) {
+                $("#t1_4").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_4").removeClass("is-invalid");
+
+            }
+
+            if (t1_5 == '' || t1_5.length == 0 || t1_5 == null) {
+                $("#t1_5").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_5").removeClass("is-invalid");
+
+            }
+
+            if (t1_6 == '' || t1_6.length == 0 || t1_6 == null) {
+                $("#t1_6").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_6").removeClass("is-invalid");
+
+            }
+
+            if (t1_7 == '' || t1_7.length == 0 || t1_7 == null) {
+                $("#t1_7").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_7").removeClass("is-invalid");
+
+            }
+
+
+            if (t1_8 == '' || t1_8.length == 0 || t1_8 == null) {
+                $("#t1_8").addClass("is-invalid");
+                $("#t1Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#t1_8").removeClass("is-invalid");
+
+            }
+            if (date1 == '' || date1.length == 0 || date1 == null) {
+                $("#date1").addClass("is-invalid");
+                $("#t1Form_status").html("Date is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#date1").removeClass("is-invalid");
+
+            }
+            // //////
+
+            if (sale1_spg == '' || sale1_spg.length == 0 || sale1_spg == null) {
+                $("#sale1_spg").addClass("is-invalid");
+                $("#t1Form_status").html("Sale 1 SPG is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#sale1_spg").removeClass("is-invalid");
+
+            }
+
+            if (sale1_v == '' || sale1_v.length == 0 || sale1_v == null) {
+                $("#sale1_v").addClass("is-invalid");
+                $("#t1Form_status").html("Sale 1 Volt required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#sale1_v").removeClass("is-invalid");
+
+            }
+
+
+            if (sale2_spg == '' || sale2_spg.length == 0 || sale2_spg == null) {
+                $("#sale2_spg").addClass("is-invalid");
+                $("#t1Form_status").html("Sale 2 SPG is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#sale2_spg").removeClass("is-invalid");
+
+            }
+
+
+            if (sale2_v == '' || sale2_v.length == 0 || sale2_v == null) {
+                $("#sale2_v").addClass("is-invalid");
+                $("#t1Form_status").html("Sale 2 Volt is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#sale2_v").removeClass("is-invalid");
+
+            }
+
+
+            if (sale3_spg == '' || sale3_spg.length == 0 || sale3_spg == null) {
+                $("#sale3_spg").addClass("is-invalid");
+                $("#t1Form_status").html("Sale 3 SPG is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#sale3_spg").removeClass("is-invalid");
+
+            }
+
+
+            if (sale3_v == '' || sale3_v.length == 0 || sale3_v == null) {
+                $("#sale3_v").addClass("is-invalid");
+                $("#t1Form_status").html("Sale 3 Volt is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#sale3_v").removeClass("is-invalid");
+
+            }
+
+
+            if (charging_v == '' || charging_v.length == 0 || charging_v == null) {
+                $("#charging_v").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#charging_v").removeClass("is-invalid");
+
+            }
+
+
+            if (charging_current == '' || charging_current.length == 0 || charging_current == null) {
+                $("#charging_current").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#charging_current").removeClass("is-invalid");
+
+            }
+
+
+            if (feedVoltage == '' || feedVoltage.length == 0 || feedVoltage == null) {
+                $("#feedVoltage").addClass("is-invalid");
+                $("#t1Form_status").html("All Field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#feedVoltage").removeClass("is-invalid");
+
+            }
+
+
+            if (nearBlock == '' || nearBlock.length == 0 || nearBlock == null) {
+                $("#nearBlock").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#nearBlock").removeClass("is-invalid");
+
+            }
+
+
+            if (wireStatus == '' || wireStatus.length == 0 || wireStatus == null) {
+                $("#wireStatus").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#wireStatus").removeClass("is-invalid");
+
+            }
+
+
+            if (remark1 == '' || remark1.length == 0 || remark1 == null) {
+                $("#remark1").addClass("is-invalid");
+                $("#t1Form_status").html("Remark 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#remark1").removeClass("is-invalid");
+
+            }
+
+
+            if (date2 == '' || date2.length == 0 || date2 == null) {
+                $("#date2").addClass("is-invalid");
+                $("#t1Form_status").html("Date 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#date2").removeClass("is-invalid");
+
+            }
+
+
+            if (railVoltage == '' || railVoltage.length == 0 || railVoltage == null) {
+                $("#railVoltage").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#railVoltage").removeClass("is-invalid");
+
+            }
+
+
+            if (vt_value == '' || vt_value.length == 0 || vt_value == null) {
+                $("#vt_value").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#vt_value").removeClass("is-invalid");
+
+            }
+
+
+            if (wireStatus2 == '' || wireStatus2.length == 0 || wireStatus2 == null) {
+                $("#wireStatus2").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#wireStatus2").removeClass("is-invalid");
+
+            }
+
+
+            if (magneticPart == '' || magneticPart.length == 0 || magneticPart == null) {
+                $("#magneticPart").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#magneticPart").removeClass("is-invalid");
+
+            }
+
+
+            if (railFlag2 == '' || railFlag2.length == 0 || railFlag2 == null) {
+                $("#railFlag2").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#railFlag2").removeClass("is-invalid");
+
+            }
+
+
+            if (jumberwireStatus == '' || jumberwireStatus.length == 0 || jumberwireStatus == null) {
+                $("#jumberwireStatus").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#jumberwireStatus").removeClass("is-invalid");
+
+            }
+
+
+            if (remark2 == '' || remark2.length == 0 || remark2 == null) {
+                $("#remark2").addClass("is-invalid");
+                $("#t1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#t1Form_status").html("");
+                $("#remark2").removeClass("is-invalid");
+
+            }
+
+          
+
+
+
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#t1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "T1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "t1_1": t1_1,
+                    "t1_2": t1_2,
+                    "t1_3": t1_3,                  
+                    "t1_4": t1_4,                  
+                    "t1_5": t1_5,                  
+                    "t1_6": t1_6,                  
+                    "t1_7": t1_7,                  
+                    "t1_8": t1_8,
+                    date1:date1,
+                    sale1_spg:sale1_spg,
+                    sale1_v:sale1_v,
+                    sale2_spg:sale2_spg,
+                    sale2_v:sale2_v,
+                    sale3_spg:sale3_spg,
+                    sale3_v:sale3_v,
+                    charging_v:charging_v,
+                    charging_current:charging_current,
+                    feedVoltage:feedVoltage,
+                    nearBlock:nearBlock,
+                    wireStatus:wireStatus,
+                    remark1:remark1,
+                    date2:date2,
+                    railVoltage:railVoltage,
+                    vt_value:vt_value,
+                    wireStatus2:wireStatus2,
+                    magneticPart:magneticPart,
+                    railFlag2:railFlag2,
+                    jumberwireStatus:jumberwireStatus,
+                    remark2:remark2
+
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#t1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#t1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#t1Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#t1Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+    
+       $("#t2FormBtn").click(function() {
         if (confirm("Do you want to final submit T2 Form")) {
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
@@ -2291,6 +2847,7 @@ $(document).ready(function() {
         }
     });
 });
+
 
 
 
