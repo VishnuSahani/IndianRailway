@@ -854,8 +854,377 @@
     </div>
 </div>
 
+<!-- Modal CS1 -->
+<div class="modal fade" id="componentForm_CS1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelCS1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelCS1">
+                    <span class="badge badge-success h3">
+                        Schedule Code: CS1
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+            Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In charge: Half yearly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cs1_body">
+                    <tr>
+                            <th scope="row">1</th>
+                            <td>Cleaning of LED lighting unit & current regulator/integrated LED, all terminations, housing, signal units & around signal post.</td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_1">
+                                    <option value="">Select Action</option>
+                                    <option value="Done">Done</option>
+                                    <option value="Not Done">Not Done</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                    
+
+                        <tr>
+                            <th scope="row" rowspan="6">2</th>
+                                <td>Measurement of input voltage & current with clamp type ammeter at input terminals of current regulator/LED signal for all signal aspects and V/I reading shall be within specified range as below:</td>
+                                <td rowspan="6" style="vertical-align:middle;width:16%">
+                                    <select class="custom-select CS1Class" id="cs1_2">
+                                        <option value="">Select Action</option>
+                                        <option value="Done">Done</option>
+                                        <option value="Not Done">Not Done</option>
+                                    </select>
+                                </td>
+
+                            </tr>
+                            <tr>
+                            <td>(a) Main signal Voltage: 82.5 to137.5 V and Current: 112 to 154 mA</td>
+
+                            </tr>
+
+                            <tr>
+                            <td>(b) Calling on/A/AG Marker Voltage: 88 to 132 V and current: 120 to 165 mA.</td>
+                            </tr>
+                            <tr>
+                            <td>(c) Route signal Voltage: 88 to 132 V and Current: 23.75 to 26.25 mA per LED.</td>
+                            </tr>
+                            <tr>
+                            <td>(d) Shunt signal Voltage: 88 to 132 V and Current: 52.25 to 57.75 mA per LED.</td>
+                            </tr>
+                            <tr>
+                            <td>
+                            <table class="table table-bordered">
+                                <thead class="text-center table-dark">
+                                    <tr>
+                                        <td rowspan="2">Date</td>
+                                        <td colspan="7">LED</td>
+                                        <td rowspan="2"> Nut Bolt </td>
+                                        <td rowspan="2"> Dom Clean</td>
+                                        <td rowspan="2"> Cover</td>
+                                        <td rowspan="2">Remark </td>
+                                    </tr>
+                               
+                                <tr>
+                                    <td>RG</td> 
+                                    <td >HG</td>
+                                     <td>DG</td>
+                                     <td>HHG</td>
+                                      <td>ROUTE</td>
+                                      <td >C-ON</td> 
+                                      <td>Shunt</td>                            
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                     <tr>
+                                    <td ><input id="date" class="form-control" type="date"></td> 
+                                    <td><input id="rg" class="form-control" type="text"></td>
+                                     <td ><input id="hg" class="form-control" type="text"></td>
+                                      <td><input id="dg" class="form-control" type="text"></td>
+                                      <td><input id="hhg" class="form-control" type="text"></td>
+                                       <td><input id="route" class="form-control" type="text"></td>
+                                    <td ><input id="c_on" class="form-control" type="text"></td> 
+                                    <td ><input id="shout" class="form-control" type="text"></td> 
+                                 <td ><input id="nut_bolt" class="form-control" type="text"></td> 
+                                 <td ><input id="dome_clean" class="form-control" type="text"></td>
+                               
+                                 <td ><input id="cover" class="form-control" type="text"></td> 
+                                 <td ><input id="remark" class="form-control" type="text"></td>
+                                    
+                            
+                                </tr>
+                                </tbody>
+                             
+                            </table>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>
+                                Checking of tightness of all adjusting screws of LED signal unit as well as Current regulator/integrated LED.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_3">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>
+                                Ensure condition of signal post is satisfactory.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_4">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>
+                                Check condition of Signal foundation, ladder & ensure proper alignment of signal post.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_5">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>
+                                Ensure Signal unit condition, closing of door & locking arrangements are satisfactory.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_6">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>
+                                Ensure Signal post & CLS unit should be earthed & screen earthing is effective.
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_7">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>
+                                Complete signal unit should be cleaned for removing oxidation, rusting & tightened properly.
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_8">
+                                    <option value="">Select Action</option>
+                                    <option value="Done">Done</option>
+                                    <option value="Not Done">Not Done</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>
+                                Ensure that there is no opening/access for rain water/rodent entry.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_9">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>
+                                Ensure the cable terminations in location box should be cleaned for removing oxidation, rusting & tightened properly.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_10">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>
+                                Visual check of insulations of cables, PVC wires, proper termination without criss cross, condition of rubber gasket arrangement.
+
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_11">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th rowspan="3" scope="row">12</th>
+                            <td>
+                                (a) Check that where signals are Infringing with SOD, their Implantation distance is marked on Red colour on white back ground.
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_12a">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                (b) Blanking off to be done as given in chapter 19 of SEM.
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_12b">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                (c) Right hand signals to be provided with an arrow mark pointing towards the relevant track.
+                            </td>
+                            <td style="vertical-align:middle;width:16%">
+                                <select class="custom-select CS1Class" id="cs1_12c">
+                                    <option value="">Select Action</option>
+                                    <option value="OK">OK</option>
+                                    <option value="Not OK">Not OK</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                  
+
+                    
+                </table>
+
+            
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="cs1Form_status"></div>
+                <button type='button' id="cs1FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal CS2 -->
+<div class="modal fade" id="componentForm_CS2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelCS2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelCS2">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T2
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                Periodicity: Sectional SSE/JE : Half yearly
+                <div>
+                    SSE (signal)/Incharge : Yearly
+                </div>
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cs2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="cs2Form_status"></div>
+                <button type='button' id="cs2FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <script>
+
 var g_st_compList = [];
 var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
 
@@ -972,6 +1341,13 @@ function createSubComponent(val) {
     <a class="dropdown-item" onclick="get_T_formData('T4','${value}','${stationComName}')">T4</a>
     <a class="dropdown-item" onclick="get_T_formData('T5','${value}','${stationComName}')">T5</a>
     `;
+  }else if(componentName == "SIGNAL CS" || componentName == "SIGNAL"){
+
+   btn +=`
+    <a class="dropdown-item" onclick="get_CS_formData('CS1','${value}','${stationComName}')">CS1</a>
+    <a class="dropdown-item" onclick="get_CS_formData('CS2','${value}','${stationComName}')">CS2</a>
+    `;
+
   }
    
    
@@ -2113,10 +2489,10 @@ $(document).ready(function() {
 
             if (t1_2 == '' || t1_2.length == 0 || t1_2 == null) {
                 $("#t1_2").addClass("is-invalid");
-                $("#t2Form_status").html("Serial no 2 is required").css("color", "red");
+                $("#t1Form_status").html("Serial no 2 is required").css("color", "red");
                 return;
             } else {
-                $("#t2Form_status").html("");
+                $("#t1Form_status").html("");
                 $("#t1_2").removeClass("is-invalid");
 
             }
@@ -2499,7 +2875,7 @@ $(document).ready(function() {
         }
     });
     
-       $("#t2FormBtn").click(function() {
+    $("#t2FormBtn").click(function() {
         if (confirm("Do you want to final submit T2 Form")) {
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
@@ -2846,6 +3222,587 @@ $(document).ready(function() {
 
         }
     });
+
+    // CS 1 
+
+    $("#cs1FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit CS1 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let cs1_1 = $("#cs1_1").val();
+            let cs1_2 = $("#cs1_2").val();
+            let cs1_3 = $("#cs1_3").val();  
+
+            let cs1_4 = $("#cs1_4").val();           
+            let cs1_5 = $("#cs1_5").val();           
+            let cs1_6 = $("#cs1_6").val();           
+            let cs1_7 = $("#cs1_7").val();           
+            let cs1_8 = $("#cs1_8").val(); 
+
+            let cs1_9 = $("#cs1_9").val();   
+            let cs1_10 = $("#cs1_10").val();   
+            let cs1_11 = $("#cs1_11").val();   
+            let cs1_12a = $("#cs1_12a").val();   
+            let cs1_12b= $("#cs1_12b").val();   
+            let cs1_12c = $("#cs1_12c").val();   
+
+            let date = $("#date").val();    
+            let rg = $("#rg").val();    
+            let hg = $("#hg").val();    
+            let dg = $("#dg").val();    
+            let hhg = $("#hhg").val();    
+            let route = $("#route").val();    
+            let c_on = $("#c_on").val();    
+            let shout = $("#shout").val();    
+            let nut_bolt = $("#nut_bolt").val();    
+            let dome_clean = $("#dome_clean").val();    
+            let cover = $("#cover").val();    
+            let remark = $("#remark").val();           
+            
+
+            if (cs1_1 == '' || cs1_1.length == 0 || cs1_1 == null) {
+                $("#cs1_1").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_1").removeClass("is-invalid");
+
+            }
+
+           
+
+
+            if (date == '' || date.length == 0 || date == null) {
+                $("#date").addClass("is-invalid");
+                $("#cs1Form_status").html("Date is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#date").removeClass("is-invalid");
+
+            }
+            // //////
+
+            if (rg == '' || rg.length == 0 || rg == null) {
+                $("#rg").addClass("is-invalid");
+                $("#cs1Form_status").html("Sale 1 SPG is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#rg").removeClass("is-invalid");
+
+            }
+
+            if (hg == '' || hg.length == 0 || hg == null) {
+                $("#hg").addClass("is-invalid");
+                $("#cs1Form_status").html("Sale 1 Volt required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#hg").removeClass("is-invalid");
+
+            }
+
+
+            if (dg == '' || dg.length == 0 || dg == null) {
+                $("#dg").addClass("is-invalid");
+                $("#cs1Form_status").html("Sale 2 SPG is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#dg").removeClass("is-invalid");
+
+            }
+
+
+            if (hhg == '' || hhg.length == 0 || hhg == null) {
+                $("#hhg").addClass("is-invalid");
+                $("#cs1Form_status").html("Sale 2 Volt is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#hhg").removeClass("is-invalid");
+
+            }
+
+
+            if (route == '' || route.length == 0 || route == null) {
+                $("#route").addClass("is-invalid");
+                $("#cs1Form_status").html("Sale 3 SPG is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#route").removeClass("is-invalid");
+
+            }
+
+
+            if (c_on == '' || c_on.length == 0 || c_on == null) {
+                $("#c_on").addClass("is-invalid");
+                $("#cs1Form_status").html("Sale 3 Volt is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#c_on").removeClass("is-invalid");
+
+            }
+
+
+            if (shout == '' || shout.length == 0 || shout == null) {
+                $("#shout").addClass("is-invalid");
+                $("#cs1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#shout").removeClass("is-invalid");
+
+            }
+
+
+            if (nut_bolt == '' || nut_bolt.length == 0 || nut_bolt == null) {
+                $("#nut_bolt").addClass("is-invalid");
+                $("#cs1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#nut_bolt").removeClass("is-invalid");
+
+            }
+
+
+            if (cover == '' || cover.length == 0 || cover == null) {
+                $("#cover").addClass("is-invalid");
+                $("#cs1Form_status").html("All Field is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cover").removeClass("is-invalid");
+
+            }
+
+
+            if (remark == '' || remark.length == 0 || remark == null) {
+                $("#remark").addClass("is-invalid");
+                $("#cs1Form_status").html("All field is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#remark").removeClass("is-invalid");
+
+            }
+
+
+             if (cs1_2 == '' || cs1_2.length == 0 || cs1_2 == null) {
+                $("#cs1_2").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_2").removeClass("is-invalid");
+
+            }
+
+            if (cs1_3 == '' || cs1_3.length == 0 || cs1_3 == null) {
+                $("#cs1_3").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_3").removeClass("is-invalid");
+
+            }
+
+            if (cs1_4 == '' || cs1_4.length == 0 || cs1_4 == null) {
+                $("#cs1_4").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_4").removeClass("is-invalid");
+
+            }
+
+            if (cs1_5 == '' || cs1_5.length == 0 || cs1_5 == null) {
+                $("#cs1_5").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_5").removeClass("is-invalid");
+
+            }
+
+            if (cs1_6 == '' || cs1_6.length == 0 || cs1_6 == null) {
+                $("#cs1_6").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_6").removeClass("is-invalid");
+
+            }
+
+            if (cs1_7 == '' || cs1_7.length == 0 || cs1_7 == null) {
+                $("#cs1_7").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_7").removeClass("is-invalid");
+
+            }
+
+
+            if (cs1_8 == '' || cs1_8.length == 0 || cs1_8 == null) {
+                $("#cs1_8").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_8").removeClass("is-invalid");
+
+            }
+
+            if (cs1_9 == '' || cs1_9.length == 0 || cs1_9 == null) {
+                $("#cs1_9").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_9").removeClass("is-invalid");
+
+            }
+
+            if (cs1_10 == '' || cs1_10.length == 0 || cs1_10 == null) {
+                $("#cs1_10").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 10 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_10").removeClass("is-invalid");
+
+            }
+
+            if (cs1_11 == '' || cs1_11.length == 0 || cs1_11 == null) {
+                $("#cs1_11").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 11 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_11").removeClass("is-invalid");
+
+            }
+
+            if (cs1_12a == '' || cs1_12a.length == 0 || cs1_12a == null) {
+                $("#cs1_12a").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 12 A is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_12a").removeClass("is-invalid");
+
+            }
+
+            if (cs1_12b == '' || cs1_12b.length == 0 || cs1_12b == null) {
+                $("#cs1_12b").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 12 B is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_12b").removeClass("is-invalid");
+
+            }
+
+            if (cs1_12c == '' || cs1_12c.length == 0 || cs1_12c == null) {
+                $("#cs1_12c").addClass("is-invalid");
+                $("#cs1Form_status").html("Serial no 12 C is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#cs1_12c").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#cs1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "CS1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "cs1_1": cs1_1,
+                    "cs1_2": cs1_2,
+                    "cs1_3": cs1_3,                  
+                    "cs1_4": cs1_4,                  
+                    "cs1_5": cs1_5,                  
+                    "cs1_6": cs1_6,                  
+                    "cs1_7": cs1_7,                  
+                    "cs1_8": cs1_8,
+                    "cs1_9": cs1_9,
+                    "cs1_10": cs1_10,
+                    "cs1_11": cs1_11,
+                    "cs1_12a": cs1_12a,
+                    "cs1_12b": cs1_12b,
+                    "cs1_12c": cs1_12c,
+                    date:date,
+                    rg:rg,
+                    hg:hg,
+                    dg:dg,
+                    hhg:hhg,
+                    route:route,
+                    c_on:c_on,
+                    shout:shout,
+                    nut_bolt:nut_bolt,
+                    cover:cover,
+                    remark:remark,       
+
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#cs1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#cs1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#cs1Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#cs1Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
+    $("#cs2FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit CS2 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let cs2_1 = $("#cs2_1").val();
+            let cs2_2 = $("#cs2_2").val();
+            let cs2_3 = $("#cs2_3").val();  
+
+            let cs2_4 = $("#cs2_4").val();           
+            let cs2_5a = $("#cs2_5a").val();           
+            let cs2_5b = $("#cs2_5b").val();           
+            let cs2_6 = $("#cs2_6").val();           
+            let cs2_7 = $("#cs2_7").val();           
+            
+            if (cs2_1 == '' || cs2_1.length == 0 || cs2_1 == null) {
+                $("#cs2_1").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_1").removeClass("is-invalid");
+
+            }
+
+           
+             if (cs2_2 == '' || cs2_2.length == 0 || cs2_2 == null) {
+                $("#cs2_2").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_2").removeClass("is-invalid");
+
+            }
+
+            if (cs2_3 == '' || cs2_3.length == 0 || cs2_3 == null) {
+                $("#cs2_3").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_3").removeClass("is-invalid");
+
+            }
+
+            if (cs2_4 == '' || cs2_4.length == 0 || cs2_4 == null) {
+                $("#cs2_4").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_4").removeClass("is-invalid");
+
+            }
+
+            if (cs2_5a == '' || cs2_5a.length == 0 || cs2_5a == null) {
+                $("#cs2_5a").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_5a").removeClass("is-invalid");
+
+            }
+            if (cs2_5b == '' || cs2_5b.length == 0 || cs2_5b == null) {
+                $("#cs2_5b").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_5b").removeClass("is-invalid");
+
+            }
+
+            if (cs2_6 == '' || cs2_6.length == 0 || cs2_6 == null) {
+                $("#cs2_6").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_6").removeClass("is-invalid");
+
+            }
+
+            if (cs2_7 == '' || cs2_7.length == 0 || cs2_7 == null) {
+                $("#cs2_7").addClass("is-invalid");
+                $("#cs2Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#cs2Form_status").html("");
+                $("#cs2_7").removeClass("is-invalid");
+
+            }
+
+
+           
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#cs1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "CS2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "cs2_1": cs2_1,
+                    "cs2_2": cs2_2,
+                    "cs2_3": cs2_3,                  
+                    "cs2_4": cs2_4,                  
+                    "cs2_5a": cs2_5a,                  
+                    "cs2_5b": cs2_5b,                  
+                    "cs2_6": cs2_6,                  
+                    "cs2_7": cs2_7                    
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#cs2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#cs2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#cs2Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#cs2Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
 });
 
 
@@ -2937,6 +3894,139 @@ function get_T_formData(tType,subCompo,compo){
             if (response['status']) {
 
                 openDialog_T(tType, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+// fOR sIGNAL
+
+
+function openDialog_CS(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    // case "CS1":
+    //     tableId = "cs1_body";
+    //     $("#componentForm_CS1").modal("show");
+    //     break;
+    case "CS2":
+        tableId = "cs2_body";
+        $("#componentForm_CS2").modal("show");
+        break;
+}
+
+
+dataList.forEach((element, index) => {
+
+    if(element['cs_id'] == 'cs2_5'){
+
+        
+    displayHtml += `
+        <tr>
+            <th rowspan="3" scope="row">${index+1}</th>
+            <td>Implantation distance from center line of nearest track along with an arrow indicating towards nearest track should be painted on signal post in following colours</td>
+            <td style="vertical-align:middle;width:22%" >
+              
+            </td>
+        </tr>
+
+        <tr>
+            <td>(a) Black on white background for normal implantation.</td>
+            <td style="vertical-align:middle;width:22%" >
+                <select class="custom-select CS2Class" id="cs2_5a">
+                    <option value="">Select Action</option>
+                    <option value="Done">Done</option>
+                    <option value="Not Done">Not Done</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>(b) Red on white background for implantation distance < 2.36 meters.</td>
+            <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select CS2Class" id="cs2_5b">
+                    <option value="">Select Action</option>
+                    <option value="Done">Done</option>
+                    <option value="Not Done">Not Done</option>
+                </select>
+            </td>
+        </tr>
+    `;
+
+    }else{
+
+        
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['cs_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['cs_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['cs_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+    // <option value="Done">Done</option>
+    // <option value="Not Done">Not Done</option>
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+    }
+
+
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+function get_CS_formData(csType,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+
+    if(csType == 'CS1'){
+        $("#componentForm_CS1").modal("show");
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getCS_FormDetails",
+            "formType": csType,
+
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_CS(csType, response['data']);
 
             }
 

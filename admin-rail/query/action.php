@@ -775,6 +775,8 @@ if(isset($_POST['action'])){
 
     }
 
+    
+
     if($action == "componentModalForm"){
         if(!isset($_POST['name']) || !isset($_POST['email'])){
             $respo['status'] = false;
@@ -810,6 +812,121 @@ if(isset($_POST['action'])){
 
 
     }
+    if($action == "getSectionStationById"){
+        
+        if(!isset($_POST['empId']) || empty($_POST['empId'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request,Employee Id not set";
+            echo json_encode($respo);
+            die();
+
+        }
+        
+        $empId = trim($_POST['empId']);
+        
+        $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE empid='$empId'");
+        if(mysqli_num_rows($query) <= 0){
+              $respo['status'] = false;
+            $respo['msg'] = "Invalid Employee Id.";
+            echo json_encode($respo);
+            die();
+
+        }
+        
+        $runEmpData = mysqli_fetch_array($query);
+        
+         $respo['status'] = true;
+        $respo['msg'] = "Data found.";
+        $respo['data'] = $runEmpData;
+        echo json_encode($respo);
+        die();
+        
+        
+        
+    }
+
+    if ($action == 'getEP_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $tableName = "";
+        switch ($formType) {
+            case 'EP1':
+                $tableName = 'ep1_info';
+                break;
+
+            case 'EP2':
+                $tableName = 'ep2_info';
+                break;
+            case 'EP3':
+                $tableName = 'ep3_info';
+                break;
+
+            case 'EP4':
+                $tableName = 'ep4_info';
+                break;
+            case 'EP5':
+                $tableName = 'ep5_info';
+                break;
+            
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                break;
+        }
+
+        try{
+
+            $query = "SELECT * FROM ".$tableName;
+        $queryExe = mysqli_query($con,$query);
+        if(mysqli_num_rows($queryExe) <= 0){
+            $respo['status'] = false;
+            $respo['msg'] = "Data not found";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $data = [];
+        
+        while($q_run = mysqli_fetch_array($queryExe)) {
+            $obj = new stdClass();
+           $obj->id = $q_run['id'];
+           $obj->ep_id = $q_run['ep_id'];
+           $obj->ep_details = $q_run['ep_details'];
+           $obj->ep_option = $q_run['ep_option'];
+           $data[] = $obj;
+            
+        }
+
+       $respo['status'] = true;
+       $respo['msg'] = "List found";
+       $respo['data'] = $data;
+
+       echo json_encode($respo);
+       die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
+
 
 }else{
 

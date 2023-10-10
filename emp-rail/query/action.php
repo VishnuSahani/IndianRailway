@@ -1247,6 +1247,267 @@ if(isset($_POST['action'])){
 
 
     }
+    elseif ($action == 'getCS_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $tableName = "";
+        switch ($formType) {
+            // case 'CS1':
+            //     $tableName = 'cs1_info';
+            //     break;
+
+            case 'CS2':
+                $tableName = 'cs2_info';
+                break;
+            
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                break;
+        }
+
+        try{
+
+            $query = "SELECT * FROM ".$tableName;
+        $queryExe = mysqli_query($con,$query);
+        if(mysqli_num_rows($queryExe) <= 0){
+            $respo['status'] = false;
+            $respo['msg'] = "Data not found";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $data = [];
+        
+        while($q_run = mysqli_fetch_array($queryExe)) {
+            $obj = new stdClass();
+           $obj->id = $q_run['id'];
+           $obj->cs_id = $q_run['cs_id'];
+           $obj->cs_details = $q_run['cs_details'];
+           $obj->cs_option = $q_run['cs_option'];
+           $obj->cs_status = $q_run['status'];
+           $data[] = $obj;
+            
+        }
+
+       $respo['status'] = true;
+       $respo['msg'] = "List found";
+       $respo['data'] = $data;
+
+       echo json_encode($respo);
+       die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
+    // CS form
+    elseif ($action == "CS1_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM cs1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }       
+
+        }
+
+        $cs1_1 = trim($_POST['cs1_1']);
+        $cs1_2 = trim($_POST['cs1_2']);
+        $cs1_3 = trim($_POST['cs1_3']);
+
+        $cs1_4 = trim($_POST['cs1_4']);
+        $cs1_5 = trim($_POST['cs1_5']);
+        $cs1_6 = trim($_POST['cs1_6']);
+        $cs1_7 = trim($_POST['cs1_7']);
+        $cs1_8 = trim($_POST['cs1_8']);
+
+        $cs1_9 = trim($_POST['cs1_9']);
+        $cs1_10 = trim($_POST['cs1_10']);
+        $cs1_11 = trim($_POST['cs1_11']);
+        $cs1_12a = trim($_POST['cs1_12a']);
+        $cs1_12b = trim($_POST['cs1_12b']);
+        $cs1_12c = trim($_POST['cs1_12c']);
+        
+        $date = trim($_POST['date']);
+        $rg = trim($_POST['rg']);
+        $hg = trim($_POST['hg']);
+        $dg = trim($_POST['dg']);
+        $hhg = trim($_POST['hhg']);
+        $route = trim($_POST['route']);
+        $c_on = trim($_POST['c_on']);
+        $shout = trim($_POST['shout']);
+        $nut_bolt = trim($_POST['nut_bolt']);
+        $cover = trim($_POST['cover']);
+        $remark = trim($_POST['remark']);
+      
+
+        if(empty($cs1_1) || empty($cs1_2) || empty($cs1_3) || empty($cs1_4) || empty($cs1_5) || empty($cs1_6) || empty($cs1_7) || empty($cs1_8) || empty($cs1_9) || empty($cs1_10) || empty($cs1_11) || empty($cs1_12a) || empty($cs1_12b) || empty($cs1_12c)){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+
+        $insertQuery = "INSERT INTO cs1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs1_1,cs1_2,cs1_3,cs1_4,cs1_5,cs1_6,cs1_7,cs1_8,cs1_9,cs1_10,cs1_11,cs1_12a,cs1_12b,cs1_12c,date,rg,hg,dg,hhg,route,c_on,shout,nut_bolt,cover,remark,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs1_1','$cs1_2','$cs1_3','$cs1_4','$cs1_5','$cs1_6','$cs1_7','$cs1_8','$cs1_9','$cs1_10','$cs1_11','$cs1_12a','$cs1_12b','$cs1_12c','$date','$rg','$hg','$dg','$hhg','$route','$c_on','$shout','$nut_bolt','$cover','$remark','$createdDateTime','$createdDateTime')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+    elseif ($action == "CS2_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM cs2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }       
+
+        }
+
+        $cs2_1 = trim($_POST['cs2_1']);
+        $cs2_2 = trim($_POST['cs2_2']);
+        $cs2_3 = trim($_POST['cs2_3']);
+
+        $cs2_4 = trim($_POST['cs2_4']);
+        $cs2_5a = trim($_POST['cs2_5a']);
+        $cs2_5b = trim($_POST['cs2_5b']);
+        $cs2_6 = trim($_POST['cs2_6']);
+        $cs2_7 = trim($_POST['cs2_7']);
+
+      
+
+        if(empty($cs2_1) || empty($cs2_2) || empty($cs2_3) || empty($cs2_4) || empty($cs2_5a) || empty($cs2_5b) || empty($cs2_6) || empty($cs2_7)){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+
+        $insertQuery = "INSERT INTO cs2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs2_1,cs2_2,cs2_3,cs2_4,cs2_5a,cs2_5b,cs2_6,cs2_7,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs2_1','$cs2_2','$cs2_3','$cs2_4','$cs2_5a','$cs2_5b','$cs2_6','$cs2_7','$createdDateTime','$createdDateTime')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
     else{
 
         $respo['status'] = false;
