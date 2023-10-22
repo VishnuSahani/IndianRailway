@@ -345,6 +345,33 @@ if(isset($_POST['action'])){
             $img_size=$_FILES['files']['size'];
             $img_tmp=$_FILES['files']['tmp_name'];
 
+            // print_r($_FILES['files']);
+
+            if($img_type != 'image/jpeg' && $img_type != 'image/jpg' && $img_type != "application/pdf") {
+                             
+                $respo['status'] = false;
+                $respo['msg'] = "Kindly selete on JPG and PDF format file";
+                echo json_encode($respo);
+                die();
+            }
+
+            if($img_size >= (  3 * 1024 * 1024)){
+                $respo['status'] = false;
+                $respo['msg'] = "JPG/PDF file maximum 3MB are not allow";
+                echo json_encode($respo);
+                die();
+            }
+
+            $extra_dot = explode(".",$img_name);
+            if(count($extra_dot) > 2){
+
+                $respo['status'] = false;
+                $respo['msg'] = "Please remove unnecessary (.) dot from file name, Only .pdf and .jpg valid";
+                echo json_encode($respo);
+                die();
+
+            }
+
              $curentDate = date("Y-m-d h:i:s");
 
              $img_storeName = strtotime($curentDate)."_".$img_name;

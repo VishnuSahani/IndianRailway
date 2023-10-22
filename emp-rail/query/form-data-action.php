@@ -248,7 +248,7 @@ if(isset($_POST['action'])){
 
 
         }
-        elseif($compoNameTmp == ("SIGNAL" || "SIGNAL CS")){
+        elseif($compoNameTmp == "SIGNAL" || $compoNameTmp == "SIGNAL CS"){
             // EP 1,2,4,5 form data
             $formType = "CS";
             
@@ -296,6 +296,106 @@ if(isset($_POST['action'])){
                 $formData['CS2'] = $ep2Data ;
 
             }
+
+        }
+        elseif($compoNameTmp == "DL"){
+            // EP 1,2,4,5 form data
+            $formType = "DL";
+            
+            $qEP1 = mysqli_query($con,"SELECT * FROM dl1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP1) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep1Data = [];
+
+                while($runEp1 = mysqli_fetch_array($qEP1)){
+
+                    $ep1Data[] = $runEp1;
+
+                }
+                
+                $formData['DL1'] = $ep1Data ;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM dl2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['DL2'] = $ep2Data ;
+
+            }
+
+            // 2 end
+
+            
+            $qEP3 = mysqli_query($con,"SELECT * FROM dl3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP3) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep3Data = [];
+
+                while($runEp3 = mysqli_fetch_array($qEP3)){
+
+                    $ep3Data[] = $runEp3;
+
+                }
+                
+                $formData['DL3'] = $ep3Data ;
+
+            }
+
+
+        // 3  end
+
+        
+        $qEP4 = mysqli_query($con,"SELECT * FROM dl4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+        if(mysqli_num_rows($qEP4) <=0){
+
+            // $formData['EP1']=[];
+
+        }else{
+
+            $ep4Data = [];
+
+            while($runEp4 = mysqli_fetch_array($qEP4)){
+
+                $ep4Data[] = $runEp4;
+
+            }
+            
+            $formData['DL4'] = $ep4Data ;
+
+        }
+
+
+        // ep1 end
 
         }
         else{

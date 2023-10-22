@@ -1222,6 +1222,196 @@
     </div>
 </div>
 
+<!-- Modal DL1 -->
+<div class="modal fade" id="componentForm_DL1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelDL1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDL1">
+                    <span class="badge badge-success h3">
+                        Schedule Code: DL1
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Monthly, Sectional SSE/JE (Signal): Quarterly, SSE (Signal/Incharge: Half Yearly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dl1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dl1Form_status"></div>
+                <button type='button' id="dl1FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal DL2 -->
+<div class="modal fade" id="componentForm_DL2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelDL2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDL2">
+                    <span class="badge badge-success h3">
+                        Schedule Code: DL2
+                    </span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Sectional SSE/JE(Signal): Half Yearly, <br>
+            SSE (Signal)/Incharge: Yearly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dl2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dl2Form_status"></div>
+                <button type='button' id="dl2FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal DL3 -->
+<div class="modal fade" id="componentForm_DL3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelDL3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDL3">
+                    <span class="badge badge-success h3">
+                        Schedule Code: DL3
+                    </span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Sectional SSE/JE(Signal): Yearly,   SSE (Signal)/Incharge: Yearly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dl3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dl3Form_status"></div>
+                <button type='button' id="dl3FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal DL4 -->
+<div class="modal fade" id="componentForm_DL4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelDL4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDL4">
+                    <span class="badge badge-success h3">
+                    Schedule Code: DL4 (only for SSE/DLMC)
+                    </span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: SSE (Signal)/Incharge: Yearly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dl4_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dl4Form_status"></div>
+                <button type='button' id="dl4FormBtn" class="btn btn-success">Final Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <script>
 
@@ -1348,7 +1538,16 @@ function createSubComponent(val) {
     <a class="dropdown-item" onclick="get_CS_formData('CS2','${value}','${stationComName}')">CS2</a>
     `;
 
-  }
+  }else if(componentName == "DL"){
+
+btn +=`
+ <a class="dropdown-item" onclick="get_DL_formData('DL1','${value}','${stationComName}')">DL1</a>
+ <a class="dropdown-item" onclick="get_DL_formData('DL2','${value}','${stationComName}')">DL2</a>
+ <a class="dropdown-item" onclick="get_DL_formData('DL3','${value}','${stationComName}')">DL3</a>
+ <a class="dropdown-item" onclick="get_DL_formData('DL4','${value}','${stationComName}')">DL4</a>
+ `;
+
+}
    
    
     btn +=`
@@ -3803,6 +4002,568 @@ $(document).ready(function() {
 
         }
     });
+
+    // DL 1
+
+    $("#dl1FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit DL1 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let dl1_1 = $("#dl1_1").val();
+            let dl1_2 = $("#dl1_2").val();
+            let dl1_3 = $("#dl1_3").val();  
+
+            let dl1_4 = $("#dl1_4").val();           
+            let dl1_5 = $("#dl1_5").val();           
+            let dl1_6 = $("#dl1_6").val();           
+            let dl1_7 = $("#dl1_7").val();           
+            let dl1_8a = $("#dl1_8a").val();           
+            let dl1_8b = $("#dl1_8b").val();           
+            let dl1_9 = $("#dl1_9").val();           
+            
+            if (dl1_1 == '' || dl1_1.length == 0 || dl1_1 == null) {
+                $("#dl1_1").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_1").removeClass("is-invalid");
+
+            }
+
+           
+             if (dl1_2 == '' || dl1_2.length == 0 || dl1_2 == null) {
+                $("#dl1_2").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_2").removeClass("is-invalid");
+
+            }
+
+            if (dl1_3 == '' || dl1_3.length == 0 || dl1_3 == null) {
+                $("#dl1_3").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_3").removeClass("is-invalid");
+
+            }
+
+            if (dl1_4 == '' || dl1_4.length == 0 || dl1_4 == null) {
+                $("#dl1_4").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_4").removeClass("is-invalid");
+
+            }
+
+            if (dl1_5 == '' || dl1_5.length == 0 || dl1_5 == null) {
+                $("#dl1_5").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_5").removeClass("is-invalid");
+
+            }
+         
+
+            if (dl1_6 == '' || dl1_6.length == 0 || dl1_6 == null) {
+                $("#dl1_6").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_6").removeClass("is-invalid");
+
+            }
+
+            if (dl1_7 == '' || dl1_7.length == 0 || dl1_7 == null) {
+                $("#dl1_7").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_7").removeClass("is-invalid");
+
+            }
+
+            if (dl1_8a == '' || dl1_8a.length == 0 || dl1_8a == null) {
+                $("#dl1_8a").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 8A is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_8a").removeClass("is-invalid");
+
+            }
+
+            if (dl1_8b == '' || dl1_8b.length == 0 || dl1_8b == null) {
+                $("#dl1_8b").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 8B is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_8b").removeClass("is-invalid");
+
+            }
+
+            if (dl1_9 == '' || dl1_9.length == 0 || dl1_9 == null) {
+                $("#dl1_9").addClass("is-invalid");
+                $("#dl1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl1Form_status").html("");
+                $("#dl1_9").removeClass("is-invalid");
+
+            }
+
+
+           
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#dl1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "DL1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "dl1_1": dl1_1,
+                    "dl1_2": dl1_2,
+                    "dl1_3": dl1_3,                  
+                    "dl1_4": dl1_4,                  
+                    "dl1_5": dl1_5,                  
+                    "dl1_6": dl1_6,                  
+                    "dl1_7": dl1_7,                    
+                    "dl1_8a": dl1_8a,                    
+                    "dl1_8b": dl1_8b,                    
+                    "dl1_9": dl1_9,                    
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#dl1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#dl1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#dl1Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#dl1Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
+    $("#dl2FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit DL2 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let dl2_1 = $("#dl2_1").val();
+            let dl2_2 = $("#dl2_2").val();
+            let dl2_3a = $("#dl2_3a").val(); 
+            let dl2_3b = $("#dl2_3b").val();           
+                     
+            
+            if (dl2_1 == '' || dl2_1.length == 0 || dl2_1 == null) {
+                $("#dl2_1").addClass("is-invalid");
+                $("#dl2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl2Form_status").html("");
+                $("#dl2_1").removeClass("is-invalid");
+
+            }
+
+           
+             if (dl2_2 == '' || dl2_2.length == 0 || dl2_2 == null) {
+                $("#dl2_2").addClass("is-invalid");
+                $("#dl2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl2Form_status").html("");
+                $("#dl2_2").removeClass("is-invalid");
+
+            }
+
+            if (dl2_3a == '' || dl2_3a.length == 0 || dl2_3a == null) {
+                $("#dl2_3a").addClass("is-invalid");
+                $("#dl2Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl2Form_status").html("");
+                $("#dl2_3a").removeClass("is-invalid");
+
+            }
+
+            if (dl2_3b == '' || dl2_3b.length == 0 || dl2_3b == null) {
+                $("#dl2_3b").addClass("is-invalid");
+                $("#dl2Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl2Form_status").html("");
+                $("#dl2_3b").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#dl2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "DL2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "dl2_1": dl2_1,
+                    "dl2_2": dl2_2,
+                    "dl2_3a": dl2_3a,                  
+                    "dl2_3b": dl2_3b,                  
+                                      
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#dl2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#dl2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#dl2Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#dl2Form_status").html("");
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
+    $("#dl3FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit DL3 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let dl3_1 = $("#dl3_1").val();
+            let dl3_2 = $("#dl3_2").val();          
+                     
+            
+            if (dl3_1 == '' || dl3_1.length == 0 || dl3_1 == null) {
+                $("#dl3_1").addClass("is-invalid");
+                $("#dl3Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl3Form_status").html("");
+                $("#dl3_1").removeClass("is-invalid");
+
+            }
+
+           
+             if (dl3_2 == '' || dl3_2.length == 0 || dl3_2 == null) {
+                $("#dl3_2").addClass("is-invalid");
+                $("#dl3Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl3Form_status").html("");
+                $("#dl3_2").removeClass("is-invalid");
+
+            }
+
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#dl3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "DL3_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "dl3_1": dl3_1,
+                    "dl3_2": dl3_2,                  
+                                      
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#dl3Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#dl3Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#dl3Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#dl3Form_status").html("");
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
+    $("#dl4FormBtn").click(function() {
+        
+        if (confirm("Do you want to final submit DL4 Form")) {
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let dl4_1 = $("#dl4_1").val();
+            let dl4_2 = $("#dl4_2").val();
+            let dl4_3 = $("#dl4_3").val(); 
+                     
+            
+            if (dl4_1 == '' || dl4_1.length == 0 || dl4_1 == null) {
+                $("#dl4_1").addClass("is-invalid");
+                $("#dl4Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl4Form_status").html("");
+                $("#dl4_1").removeClass("is-invalid");
+
+            }
+
+           
+             if (dl4_2 == '' || dl4_2.length == 0 || dl4_2 == null) {
+                $("#dl4_2").addClass("is-invalid");
+                $("#dl4Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl4Form_status").html("");
+                $("#dl4_2").removeClass("is-invalid");
+
+            }
+
+            if (dl4_3 == '' || dl4_3.length == 0 || dl4_3 == null) {
+                $("#dl4_3").addClass("is-invalid");
+                $("#dl4Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl4Form_status").html("");
+                $("#dl4_3").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#dl4Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "DL4_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "dl4_1": dl4_1,
+                    "dl4_2": dl4_2,
+                    "dl4_3": dl4_3,                  
+                                      
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#dl4Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#dl4Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#dl4Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#dl4Form_status").html("");
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
 });
 
 
@@ -3997,6 +4758,106 @@ document.getElementById(tableId).innerHTML = displayHtml;
 
 }
 
+// for DL
+
+
+
+function openDialog_DL(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "DL1":
+        tableId = "dl1_body";
+        $("#componentForm_DL1").modal("show");
+        break;
+    case "DL2":
+        tableId = "dl2_body";
+        $("#componentForm_DL2").modal("show");
+        break;
+    case "DL3":
+        tableId = "dl3_body";
+        $("#componentForm_DL3").modal("show");
+        break;
+
+    case "DL4":
+        tableId = "dl4_body";
+        $("#componentForm_DL4").modal("show");
+        break;
+}
+
+
+dataList.forEach((element, index) => {
+
+    if(typeOfForm== 'DL1'){
+
+        let sn = index+1;
+        if(element['dl_id'] == 'dl1_8b'){
+            sn = '';
+        }
+
+        if(element['dl_id'] == 'dl1_9'){
+            sn = index;
+        }
+
+          
+        displayHtml += `
+            <tr>
+            <th scope="row">${sn}</th>
+            <td>${element['dl_details']}</td>
+            <td style="vertical-align:middle;width:22%" >
+                <select class="custom-select ${typeOfForm}Class" id="${element['dl_id']}">
+                    <option value="">Select Action</option>`;
+
+                    let optArr = element['dl_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                });
+    // <option value="Done">Done</option>
+    // <option value="Not Done">Not Done</option>
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+    }else{
+
+        
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['dl_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['dl_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['dl_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+    // <option value="Done">Done</option>
+    // <option value="Not Done">Not Done</option>
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+    }
+
+
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
 function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
@@ -4027,6 +4888,47 @@ function get_CS_formData(csType,subCompo,compo){
             if (response['status']) {
 
                 openDialog_CS(csType, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+function get_DL_formData(dL_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+
+    // if(dL_Type == 'CS1'){
+    //     $("#componentForm_CS1").modal("show");
+    //     return;
+    // }
+
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getDL_FormDetails",
+            "formType": dL_Type,
+
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_DL(dL_Type, response['data']);
 
             }
 

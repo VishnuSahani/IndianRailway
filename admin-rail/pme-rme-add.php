@@ -5,16 +5,37 @@ $empId = @$_GET['id'];
 
 // echo $empId;
 
-$query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE id = '$empId'");
+/*
+The FILTER_VALIDATE_INT filter is used to validate value as integer.
 
-if(mysqli_num_rows($query) <= 0){
-    echo "Invalid employee id <a href='emp-info.php'> Go back</a>";
+FILTER_VALIDATE_INT also allows us to specify a range for the integer variable.
+
+Possible options and flags:
+
+min_range - specifies the minimum integer value
+max_range - specifies the maximum integer value
+FILTER_FLAG_ALLOW_OCTAL - allows octal number values
+FILTER_FLAG_ALLOW_HEX - allows hexadecimal number values
+*/
+
+if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
+    $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE id = '$empId'");
+
+    if(mysqli_num_rows($query) <= 0){
+        echo "Invalid employee id <a href='emp-info.php'> Go back</a>";
+        die();
+    }
+
+    $empBasicData = mysqli_fetch_array($query);
+
+    $employeeId = $empBasicData['empid'];
+  } 
+  else {
+    echo("Invalid param found from url <a href='emp-info.php'> Go back</a>");
     die();
-}
+  }
 
-$empBasicData = mysqli_fetch_array($query);
 
-$employeeId = $empBasicData['empid'];
 
 // print_r($empBasicData);
 
@@ -282,7 +303,7 @@ function checkSize(size) {
 
 function uploadFile() {
 
-    
+
     const chooseFile = document.getElementById("choose-file");
     const files = chooseFile.files[0];
     if (files && (files.type == 'image/jpeg' || files.type == "application/pdf")) {
@@ -315,8 +336,8 @@ function uploadFile() {
 
                     }
 
-                    
-                    $('#img-preview').html("").css("height","0px");
+
+                    $('#img-preview').html("").css("height", "auto");
                     setTimeout(() => {
                         $("#fileRespo").html("")
                     }, 5000);
@@ -344,54 +365,54 @@ function _(id) {
 }
 
 
-function openDialog(pmeRmeId,fileType) {
+function openDialog(pmeRmeId, fileType) {
     //certificate
-    if(fileType == 'pmeFile'){
+    if (fileType == 'pmeFile') {
 
         $("#addFileModalLabel").html("PME File Upload");
         $("#subActionName").val("pmeFile");
 
-    }else if(fileType == "rmeFile"){
+    } else if (fileType == "rmeFile") {
 
         $("#addFileModalLabel").html("Refresher File Upload");
         $("#subActionName").val("rmeFile");
-        
-    }else{
+
+    } else {
         $("#addFileModalLabel").html("Competency Certificate File Upload");
         $("#subActionName").val("certificate");
     }
 
     $("#pmeRmeId").val(pmeRmeId);
     $("#addFileModal").modal("show")
-    
+
 
 }
 
-function deleteFile(pmeRmeId,fileType){
+function deleteFile(pmeRmeId, fileType) {
     let msgShow = "Do you want to delete Refresher file";
-    if(fileType == 'pmeFile'){
-        
+    if (fileType == 'pmeFile') {
+
         msgShow = "Do you want to delete PME file";
 
-    }else if(fileType=="certificate"){
+    } else if (fileType == "certificate") {
         msgShow = "Do you want to delete Certificate";
 
     }
-    if(confirm(msgShow) && pmeRmeId !=''){
+    if (confirm(msgShow) && pmeRmeId != '') {
         $.ajax({
-            type:"POST",
-            url:"query/action.php",
-            data:{
-                "action" : "deletePmeRmeFile",
-                "pmeRmeId" : pmeRmeId,
-                "subAction" : fileType,
+            type: "POST",
+            url: "query/action.php",
+            data: {
+                "action": "deletePmeRmeFile",
+                "pmeRmeId": pmeRmeId,
+                "subAction": fileType,
             },
-            beforeSend:function(){
+            beforeSend: function() {
 
             },
-            success:function(respo){
+            success: function(respo) {
                 let response = JSON.parse(respo);
-                if(response['status']){
+                if (response['status']) {
                     getPmeRmeData();
                 }
 

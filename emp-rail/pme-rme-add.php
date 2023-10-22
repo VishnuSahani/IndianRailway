@@ -5,6 +5,8 @@ $empId = @$_GET['id'];
 
 // echo $empId;
 
+/*
+
 $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE id = '$empId'");
 
 if(mysqli_num_rows($query) <= 0){
@@ -16,7 +18,41 @@ $empBasicData = mysqli_fetch_array($query);
 
 $employeeId = $empBasicData['empid'];
 
+*/
+
 // print_r($empBasicData);
+
+
+/*
+The FILTER_VALIDATE_INT filter is used to validate value as integer.
+
+FILTER_VALIDATE_INT also allows us to specify a range for the integer variable.
+
+Possible options and flags:
+
+min_range - specifies the minimum integer value
+max_range - specifies the maximum integer value
+FILTER_FLAG_ALLOW_OCTAL - allows octal number values
+FILTER_FLAG_ALLOW_HEX - allows hexadecimal number values
+*/
+
+if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
+    $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE id = '$empId'");
+
+    if(mysqli_num_rows($query) <= 0){
+        echo "Invalid employee id <a href='emp-info.php'> Go back</a>";
+        die();
+    }
+
+    $empBasicData = mysqli_fetch_array($query);
+
+    $employeeId = $empBasicData['empid'];
+  } 
+  else {
+    echo("Invalid param found from url <a href='emp-info.php'> Go back</a>");
+    die();
+  }
+
 
 ?>
 
