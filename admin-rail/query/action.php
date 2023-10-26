@@ -61,6 +61,8 @@ if(isset($_POST['action'])){
 
             // $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
             $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+            $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
+
 
             // for pme rme file getting
 
@@ -243,6 +245,7 @@ if(isset($_POST['action'])){
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
+            $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
 
             $data[] = $obj;
 

@@ -1,13 +1,12 @@
-<?php require('header.php');?>
+<?php require('header.php'); ?>
 <?php require('include/db_config.php');
 
- //Include database configuration file
-    $id="";
+//Include database configuration file
+$id = "";
 
-    if(isset($_SESSION['userretailer']))
-{
-  $id=$_SESSION['userretailer'];  
-   
+if (isset($_SESSION['userretailer'])) {
+    $id = $_SESSION['userretailer'];
+
 }
 
 // echo $name;
@@ -42,9 +41,9 @@
                         <div class="form-group col-xl-6 col-lg-6 col-12">
                             <!-- <label for="sectionName">Section Name</label> -->
                             <input type="hidden" id="sectionName" class="form-control" disabled
-                                value="<?php echo $empSectionName;?>">
+                                value="<?php echo $empSectionName; ?>">
                             <input type="hidden" id="sectionId" class="form-control" disabled
-                                value="<?php echo $empSectionId;?>">
+                                value="<?php echo $empSectionId; ?>">
                             <input type="hidden" id="compoNameTmp">
                             <input type="hidden" id="subcompoNameTmp">
                         </div>
@@ -52,9 +51,9 @@
                         <div class="form-group col-xl-6 col-lg-6 col-12">
                             <!-- <label for="stationName">Station Name</label> -->
                             <input type="hidden" id="stationName" class="form-control" disabled
-                                value="<?php echo $empStationName;?>">
+                                value="<?php echo $empStationName; ?>">
                             <input type="hidden" id="stationId" class="form-control" disabled
-                                value="<?php echo $empStationId;?>">
+                                value="<?php echo $empStationId; ?>">
                         </div>
 
 
@@ -141,7 +140,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -158,14 +157,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -216,7 +215,7 @@
     aria-labelledby="componentFormLabel2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
-            <div id="pdfBodyEP2">
+            <div id="pdfBodyEP2" style="font-size:12px">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabel2">
                         <span class="badge badge-success h3">
@@ -234,7 +233,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -251,14 +250,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -308,92 +307,98 @@
                                             <tr>
                                                 <td colspan="2">Date</td>
                                                 <td>
-                                                    <input type="date" id="EP2_1" disabled class="form-control">
+                                                    <!-- <input type="date" id="EP2_1" disabled class="form-control"> -->
+                                                    <div id="EP2_1" ></div>
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Operating Voltage (>100
-                                                    Volts)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">Operating Voltage (>100 Volts)</td>
                                                 <td>(N to R)</td>
                                                 <td>
-                                                    <input type="number" disabled id="op_v_N_R" class="form-control">
+                                                    <!-- <input type="number" disabled id="op_v_N_R" class="form-control"> -->
+                                                    <div id="op_v_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>(R to N)</td>
                                                 <td>
-                                                    <input type="number" disabled id="op_v_R_N" class="form-control">
+                                                    <!-- <input type="number" disabled id="op_v_R_N" class="form-control"> -->
+                                                    <div id="op_v_R_N"></div>
                                                 </td>
                                             </tr>
 
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Obstruction Voltage (>80
-                                                    Volts)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">Obstruction Voltage (>80 Volts)</td>
                                                 <td>(N to R)</td>
                                                 <td>
-                                                    <input type="number" disabled id="ob_v_N_R" class="form-control">
+                                                    <!-- <input type="number" disabled id="ob_v_N_R" class="form-control"> -->
+                                                    <div id="ob_v_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>(R to N)</td>
                                                 <td>
-                                                    <input type="number" disabled id="ob_v_R_N" class="form-control">
+                                                    <!-- <input type="number" disabled id="ob_v_R_N" class="form-control"> -->
+                                                    <div id="ob_v_R_N"></div>
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Detection Voltage (>24
-                                                    Volts)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">Detection Voltage (>24 Volts)</td>
                                                 <td>(N to R)</td>
                                                 <td>
-                                                    <input type="number" disabled id="det_v_N_R" class="form-control">
+                                                    <!-- <input type="number" disabled id="det_v_N_R" class="form-control"> -->
+                                                    <div id="det_v_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>(R to N)</td>
                                                 <td>
-                                                    <input type="number" disabled id="det_v_R_N" class="form-control">
+                                                    <!-- <input type="number" disabled id="det_v_R_N" class="form-control"> -->
+                                                    <div id="det_v_R_N"></div>
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Normal Working Current
-                                                    (1.5 - 2.5 Amp.)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">Normal Working Current (1.5 - 2.5 Amp.)</td>
                                                 <td>(N to R)</td>
                                                 <td>
-                                                    <input type="number" disabled id="nwc_N_R" class="form-control">
+                                                    <!-- <input type="number" disabled id="nwc_N_R" class="form-control"> -->
+                                                    <div id="nwc_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>(R to N)</td>
                                                 <td>
-                                                    <input type="number" disabled id="nwc_R_N" class="form-control">
+                                                    <!-- <input type="number" disabled id="nwc_R_N" class="form-control"> -->
+                                                    <div id="nwc_R_N"></div>
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Obstruction/Slipping
-                                                    Current (3-5 Amp.)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">Obstruction/Slipping Current (3-5 Amp.)</td>
                                                 <td>(N to R)</td>
                                                 <td>
-                                                    <input type="number" disabled id="ob_sc_N_R" class="form-control">
+                                                    <!-- <input type="number" disabled id="ob_sc_N_R" class="form-control"> -->
+                                                    <div id="ob_sc_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>(R to N)</td>
                                                 <td>
-                                                    <input type="number" disabled id="ob_sc_R_N" class="form-control">
+                                                    <!-- <input type="number" disabled id="ob_sc_R_N" class="form-control"> -->
+                                                    <div id="ob_sc_R_N"></div>
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" colspan="2">Obstruction Test (3.25
-                                                    mm)</td>
+                                                <td style="vertical-align: middle;" colspan="2">Obstruction Test (3.25 mm)</td>
                                                 <!-- <td>(N to R)</td> -->
                                                 <td>
-                                                    <input type="text" disabled id="ob_t_N_R" class="form-control">
+                                                    <!-- <input type="text" disabled id="ob_t_N_R" class="form-control"> -->
+                                                    <div id="ob_t_N_R"></div>
 
                                                 </td>
                                             </tr>
@@ -401,22 +406,21 @@
 
 
                                             <tr>
-                                                <td style="vertical-align: middle;" colspan="2">Go Test (1.6 mm Fail
-                                                    Safe Test)</td>
+                                                <td style="vertical-align: middle;" colspan="2">Go Test (1.6 mm Fail Safe Test)</td>
                                                 <!-- <td>(N to R)</td> -->
                                                 <td>
-                                                    <input type="text" disabled id="gt_N_R" class="custom-select">
+                                                    <!-- <input type="text" disabled id="gt_N_R" class="custom-select"> -->
+                                                    <div id="gt_N_R"></div>
 
                                                 </td>
                                             </tr>
 
 
                                             <tr>
-                                                <td style="vertical-align: middle;" colspan="2">Operating Time (4-5
-                                                    Seconds)</td>
+                                                <td style="vertical-align: middle;" colspan="2">Operating Time (4-5 Seconds)</td>
                                                 <td>
-                                                    <input type="number" disabled id="operatingTimeSecond"
-                                                        class="form-control">
+                                                    <!-- <input type="number" disabled id="operatingTimeSecond" class="form-control"> -->
+                                                    <div id="operatingTimeSecond"></div>
                                                 </td>
                                             </tr>
 
@@ -426,8 +430,8 @@
                                                     अवरोध परिक्षण के दौरान परिचालन समय
                                                 </td>
                                                 <td>
-                                                    <input type="number" disabled id="operatingTime_dbt"
-                                                        class="form-control">
+                                                    <!-- <input type="number" disabled id="operatingTime_dbt" class="form-control"> -->
+                                                    <div id="operatingTime_dbt"></div>
                                                 </td>
                                             </tr>
 
@@ -437,8 +441,8 @@
                                                     फ्रिक्शन क्लच स्लिप कर रहा है या नहीं
                                                 </td>
                                                 <td>
-                                                    <input type="number" disabled id="friction_c_s"
-                                                        class="form-control">
+                                                    <!-- <input type="number" disabled id="friction_c_s" class="form-control"> -->
+                                                    <div id="friction_c_s"></div>
                                                 </td>
                                             </tr>
 
@@ -447,8 +451,8 @@
                                                     Track Locking Test
                                                 </td>
                                                 <td>
-                                                    <input type="number" disabled id="track_locking"
-                                                        class="form-control">
+                                                    <!-- <input type="number" disabled id="track_locking" class="form-control"> -->
+                                                    <div id="track_locking"></div>
                                                 </td>
                                             </tr>
 
@@ -458,8 +462,8 @@
                                                     रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण
                                                 </td>
                                                 <td>
-                                                    <input type="number" disabled id="remark_brief"
-                                                        class="form-control">
+                                                    <!-- <input type="number" disabled id="remark_brief" class="form-control"> -->
+                                                    <div id="remark_brief"></div>
                                                 </td>
                                             </tr>
 
@@ -478,7 +482,8 @@
                                 <td>Checking of feed disconnection time under obstruction is not less than 10 Seconds.
                                 </td>
                                 <td>
-                                    <input type="text" disabled class="custom-select EP2Class" id="EP2_2">
+                                    <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_2"> -->
+                                    <div id="EP2_2"></div>
 
                                 </td>
                             </tr>
@@ -486,17 +491,19 @@
                                 <th scope="row">3</th>
                                 <td>Ensure Hose pipe/GI pipe in good condition and without gaps/access.</td>
                                 <td>
-                                    <input type="text" disabled class="custom-select EP2Class" id="EP2_3">
+                                    <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_3"> -->
+                                    <div id="EP2_3"></div>
 
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td>Check MS pins of Switch Extension piece/‘P’ bracket for any rib formation or
+                                <td>Check MS pins of Switch Extension piece/ 'P' bracket for any rib formation or
                                     excessive
                                     wear.</td>
                                 <td>
-                                    <input type="text" disabled class="custom-select EP2Class" id="EP2_4">
+                                    <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_4"> -->
+                                    <div id="EP2_4"></div>
 
                                 </td>
                             </tr>
@@ -516,7 +523,8 @@
 
                                 </td>
                                 <td style="vertical-align: middle;">
-                                    <input type="text" disabled class="custom-select EP2Class" id="EP2_5">
+                                    <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_5"> -->
+                                    <div id="EP2_5"></div>
 
                                 </td>
                             </tr>
@@ -566,7 +574,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -583,14 +591,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -663,7 +671,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -680,14 +688,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -740,7 +748,7 @@
     <div class="modal-dialog" style="max-width:100%">
         <!--  modal-dialog-centered modal-lg -->
         <div class="modal-content">
-            <div id="pdfBodyT1">
+            <div id="pdfBodyT1" style="font-size:11px">
 
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelT1">
@@ -759,7 +767,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -776,14 +784,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -800,8 +808,8 @@
                     <!-- <form id="modalFormComponent">
                    
                 </form> -->
-                    <table class="table table-bordered">
-                        <thead class="table-dark">
+                    <table class="" border="1">
+                        <thead class="">
                             <tr>
                                 <th scope="col">S.No</th>
                                 <th scope="col">Check the following</th>
@@ -815,8 +823,8 @@
                         <tbody>
                             <tr>
                                 <td colspan="3">
-                                    <table class="table table-bordered">
-                                        <thead class="text-center table-dark">
+                                    <table class="" border="1">
+                                        <thead class="" style="font-size:9px">
                                             <tr>
                                                 <td rowspan="3">Date</td>
                                                 <td colspan="6">SPG and Volt</td>
@@ -848,38 +856,64 @@
 
                                         <tbody>
                                             <tr>
-                                                <td><input id="date1" class="form-control" type="date" disable="true"
-                                                        readonly></td>
-                                                <td><input id="sale1_spg" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="sale1_v" class="form-control" type="text" disable="true"
-                                                        readonly></td>
-                                                <td><input id="sale2_spg" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="sale2_v" class="form-control" type="text" disable="true"
-                                                        readonly></td>
-                                                <td><input id="sale3_spg" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="sale3_v" class="form-control" type="text" disable="true"
-                                                        readonly></td>
-                                                <td><input id="charging_v" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="charging_current" class="form-control" type="text"
-                                                        disable="true" readonly></td>
+                                                <td>
+                                                    <!-- <input id="date1" class="form-control" type="date" disable="true" readonly> -->
+                                                    <div id="date1"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="sale1_spg" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="sale1_spg"></div>
+                                            </td>
+                                                <td>
+                                                    <!-- <input id="sale1_v" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="sale1_v"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="sale2_spg" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="sale2_spg"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="sale2_v" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="sale2_spg"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="sale3_spg" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="sale3_spg"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="sale3_v" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="sale3_v"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="charging_v" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="charging_v"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="charging_current" class="form-control" type="text"  disable="true" readonly> -->
+                                                    <div id="charging_current"></div>
+                                                    </td>
                                                 <td></td>
-                                                <td><input id="feedVoltage" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="nearBlock" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="wireStatus" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="remark1" class="form-control" type="text" disable="true"
-                                                        readonly></td>
+                                                <td>
+                                                    <!-- <input id="feedVoltage" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="feedVoltage"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="nearBlock" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="nearBlock"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="wireStatus" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="wireStatus"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="remark1" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="remark1"></div>
+                                                </td>
 
 
                                             </tr>
                                         </tbody>
-                                        <thead class="table-dark">
+                                        <thead class="">
                                             <tr>
                                                 <td>Date</td>
                                                 <td>Rail Volt</td>
@@ -894,23 +928,39 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><input id="date2" class="form-control" type="text" disable="true"
-                                                        readonly></td>
-                                                <td><input id="railVoltage" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="vt_value" class="form-control" type="text" disable="true"
-                                                        readonly></td>
-                                                <td><input id="wireStatus2" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="magneticPart" class="form-control" type="text"
-                                                        disable="true" readonly></td>
+                                                <td>
+                                                    <!-- <input id="date2" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="date2"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="railVoltage" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="railVoltage"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="vt_value" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="vt_value"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="wireStatus2" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="wireStatus2"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="magneticPart" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="magneticPart"></div>
+                                                    </td>
                                                 <td></td>
-                                                <td><input id="railFlag2" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="jumberwireStatus" class="form-control" type="text"
-                                                        disable="true" readonly></td>
-                                                <td><input id="remark2" class="form-control" type="text" disable="true"
-                                                        readonly></td>
+                                                <td>
+                                                    <!-- <input id="railFlag2" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="railFlag2"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="jumberwireStatus" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="jumberwireStatus"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="remark2" class="form-control" type="text" disable="true" readonly> -->
+                                                    <div id="remark2"></div>
+                                                    </td>
                                             </tr>
 
                                         </tbody>
@@ -971,7 +1021,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -988,14 +1038,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1031,7 +1081,7 @@
             <div class="card-footer d-flex justify-content-end">
                 <div id="t2Form_status"></div>
                 <!-- <button type='button' id="t2FormBtn" class="btn btn-success">Final Submit</button> -->
-                <button type='button' id="t2PdfBtn" onclick="generatePdf('T2','pdfBodyT1')"
+                <button type='button' id="t2PdfBtn" onclick="generatePdf('T2','pdfBodyT2')"
                     class="btn btn-success btn-sm">PDF</button>
                 <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
                     Close
@@ -1068,7 +1118,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1085,14 +1135,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1129,7 +1179,7 @@
             <div class="card-footer d-flex justify-content-end">
                 <div id="t3Form_status"></div>
                 <!-- <button type='button' id="t3FormBtn" class="btn btn-success">Final Submit</button> -->
-                <button type='button' id="t3PdfBtn" onclick="generatePdf('T3','pdfBodyT1')"
+                <button type='button' id="t3PdfBtn" onclick="generatePdf('T3','pdfBodyT3')"
                     class="btn btn-success btn-sm">PDF</button>
 
                 <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
@@ -1167,7 +1217,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1184,14 +1234,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1245,7 +1295,7 @@
     aria-labelledby="componentFormLabelCS1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
         <div class="modal-content">
-            <div id="pdfBodyCS1">
+            <div id="pdfBodyCS1" style="font-size:12px">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelCS1">
                         <span class="badge badge-success h3">
@@ -1263,7 +1313,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1280,14 +1330,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1301,11 +1351,9 @@
 
                 </div>
                 <div class="modal-body table-responsive">
-                    <!-- <form id="modalFormComponent">
-                   
-                </form> -->
-                    <table class="table table-bordered">
-                        <thead class="table-dark">
+                    
+                    <table class="" border='1'>
+                        <thead class="">
                             <tr>
                                 <th scope="col">S.No</th>
                                 <th scope="col">Check the following</th>
@@ -1318,7 +1366,8 @@
                                 <td>Cleaning of LED lighting unit & current regulator/integrated LED, all terminations,
                                     housing, signal units & around signal post.</td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_1">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_1"> -->
+                                    <div id="cs1_1"></div>
 
                                 </td>
                             </tr>
@@ -1331,7 +1380,8 @@
                                     current regulator/LED signal for all signal aspects and V/I reading shall be within
                                     specified range as below:</td>
                                 <td rowspan="6" style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_2">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_2"> -->
+                                    <div id="cs1_2"></div>
 
                                 </td>
 
@@ -1352,8 +1402,8 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <table class="table table-bordered">
-                                        <thead class="text-center table-dark">
+                                    <table style="width:100%" border='1'>
+                                        <thead>
                                             <tr>
                                                 <td rowspan="2">Date</td>
                                                 <td colspan="7">LED</td>
@@ -1376,34 +1426,56 @@
 
                                         <tbody>
                                             <tr>
-                                                <td><input id="date" readonly disable="true" class="form-control"
-                                                        type="date"></td>
-                                                <td><input id="rg" readonly disable="true" class="form-control"
-                                                        type="text">
+                                                <td>
+                                                    <!-- <input id="date" readonly disable="true" class="form-control" type="date"> -->
+                                                    <div id="date"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="rg" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="rg"></div>
                                                 </td>
-                                                <td><input id="hg" readonly disable="true" class="form-control"
-                                                        type="text">
-                                                </td>
-                                                <td><input id="dg" readonly disable="true" class="form-control"
-                                                        type="text">
-                                                </td>
-                                                <td><input id="hhg" readonly disable="true" class="form-control"
-                                                        type="text"></td>
-                                                <td><input id="route" readonly disable="true" class="form-control"
-                                                        type="text"></td>
-                                                <td><input id="c_on" readonly disable="true" class="form-control"
-                                                        type="text"></td>
-                                                <td><input id="shout" readonly disable="true" class="form-control"
-                                                        type="text"></td>
-                                                <td><input id="nut_bolt" readonly disable="true" class="form-control"
-                                                        type="text"></td>
-                                                <td><input id="dome_clean" readonly disable="true" class="form-control"
-                                                        type="text"></td>
+                                                <td>
+                                                    <!-- <input id="hg" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="hg"></div>
 
-                                                <td><input id="cover" readonly disable="true" class="form-control"
-                                                        type="text"></td>
-                                                <td><input id="remark" readonly disable="true" class="form-control"
-                                                        type="text"></td>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="dg" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="dg"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="hhg" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="hhg"></div>
+                                                </td>
+                                                <td>
+                                                    <!-- <input id="route" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="route"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="c_on" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="c_on"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="shout" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="shout"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="nut_bolt" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="nut_bolt"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="dome_clean" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="dome_clean"></div>
+                                                    </td>
+
+                                                <td>
+                                                    <!-- <input id="cover" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="cover"></div>
+                                                    </td>
+                                                <td>
+                                                    <!-- <input id="remark" readonly disable="true" class="form-control" type="text"> -->
+                                                    <div id="remark"></div>
+                                                    </td>
 
 
                                             </tr>
@@ -1422,7 +1494,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_3">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_3"> -->
+                                    <div id="cs1_3"></div>
 
                                 </td>
                             </tr>
@@ -1434,7 +1507,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_4">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_4"> -->
+                                    <div id="cs1_4"></div>
 
                                 </td>
                             </tr>
@@ -1447,7 +1521,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_5">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_5"> -->
+                                    <div id="cs1_5"></div>
 
                                 </td>
                             </tr>
@@ -1460,7 +1535,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_6">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_6"> -->
+                                    <div id="cs1_6"></div>
 
                                 </td>
                             </tr>
@@ -1471,7 +1547,8 @@
                                     Ensure Signal post & CLS unit should be earthed & screen earthing is effective.
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_7">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_7"> -->
+                                    <div id="cs1_7"></div>
 
                                 </td>
                             </tr>
@@ -1483,7 +1560,8 @@
                                     properly.
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_8">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_8"> -->
+                                    <div id="cs1_8"></div>
 
                                 </td>
                             </tr>
@@ -1495,7 +1573,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_9">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_9"> -->
+                                    <div id="cs1_9"></div>
 
                                 </td>
                             </tr>
@@ -1509,7 +1588,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_10">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_10"> -->
+                                    <div id="cs1_10"></div>
 
                                 </td>
                             </tr>
@@ -1522,7 +1602,8 @@
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_11">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_11"> -->
+                                    <div id="cs1_11"></div>
 
                                 </td>
                             </tr>
@@ -1534,7 +1615,8 @@
                                     marked on Red colour on white back ground.
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_12a">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_12a"> -->
+                                    <div id="cs1_12a"></div>
 
                                 </td>
                             </tr>
@@ -1544,7 +1626,8 @@
                                     (b) Blanking off to be done as given in chapter 19 of SEM.
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_12b">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_12b"> -->
+                                    <div id="cs1_12b"></div>
 
                                 </td>
                             </tr>
@@ -1555,7 +1638,8 @@
                                     track.
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <input class="form-control CS1Class" disable="true" readonly id="cs1_12c">
+                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_12c"> -->
+                                    <div id="cs1_12c"></div>
 
                                 </td>
                             </tr>
@@ -1611,7 +1695,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1628,14 +1712,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1706,7 +1790,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1723,14 +1807,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1800,7 +1884,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1817,14 +1901,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1891,7 +1975,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1908,14 +1992,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -1982,7 +2066,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...' ; ?>
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
 
                         </span>
 
@@ -1999,14 +2083,14 @@
                     <div class="col-6">
                         <span>Section:</span>
                         <span class="ml-2 font-weight-bold">
-                        <?php echo $empSectionName;?>
+                        <?php echo $empSectionName; ?>
                         </span>
                     </div>
                     <div class="col-6">
                     <span>Station:</span>
 
                     <span class="ml-2 font-weight-bold">
-                    <?php echo $empStationName;?>
+                    <?php echo $empStationName; ?>
 
                     </span>
 
@@ -2065,17 +2149,28 @@ function generatePdf(formType, html_Id) {
     console.log("from type", formType);
     console.log("html type", html_Id);
 
+    // var doc = new jsPDF('l', 'mm', [297, 210]);
+    // var doc = new jsPDF('l', 'mm', 'letter');
     var doc = new jsPDF();
 
     // Source HTMLElement or a string containing HTML.
     var elementHTML = document.querySelector("#" + html_Id);
-
+    // Add a new page before adding content
+    // doc.addPage();
     doc.html(elementHTML, {
         callback: function(doc) {
             // Save the PDF
-            // doc.save('sample-document.pdf');
-            doc.save(formType + '.pdf');
+            
+            // doc.save(formType + '.pdf'); // auto pdf downloading when click on btn
+            doc.output('dataurlnewwindow'); // open pdf in new window
             // doc.save();
+
+            /* 
+                doc.output('save', 'filename.pdf'); //Try to save PDF as a file (not works on ie before 10, and some mobile devices)
+                doc.output('datauristring');        //returns the data uri string
+                doc.output('datauri');              //opens the data uri in current window
+                doc.output('dataurlnewwindow');  
+             */
         },
         margin: [10, 10, 10, 10],
         autoPaging: 'text',
@@ -2189,7 +2284,7 @@ function openDialog(typeOfForm, dataList, id) {
 
         } else {
             // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
-            displayHtml += `<div class="alert alert-success">${value}</div>`;
+            displayHtml += `<div class="">${value}</div>`;
         }
 
 
@@ -2215,6 +2310,7 @@ function fillEP2FormData(id) {
     })[0];
 
     $("#componentForm_EP2").modal("show");
+    /*
     $("#EP2_1").val(ep2DataObj['ep2_1']);
     $("#EP2_2").val(ep2DataObj['ep2_2']);
     $("#EP2_3").val(ep2DataObj['ep2_3']);
@@ -2240,6 +2336,113 @@ function fillEP2FormData(id) {
     $("#friction_c_s").val(ep2DataObj['friction_c_s']);
     $("#track_locking").val(ep2DataObj['track_locking']);
     $("#remark_brief").val(ep2DataObj['remark_brief']);
+
+    */
+    $("#EP2_1").html(ep2DataObj['ep2_1']);
+    $("#EP2_2").html(ep2DataObj['ep2_2']);
+    $("#EP2_3").html(ep2DataObj['ep2_3']);
+    $("#EP2_4").html(ep2DataObj['ep2_4']);
+    $("#EP2_5").html(ep2DataObj['ep2_5']);
+
+
+    $("#op_v_N_R").html(ep2DataObj['op_v_N_R']);
+    $("#op_v_R_N").html(ep2DataObj['op_v_R_N']);
+
+    if(parseFloat(ep2DataObj['op_v_N_R']) < 100){
+        $("#op_v_N_R").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+    if(parseFloat(ep2DataObj['op_v_R_N']) < 100){
+        
+        $("#op_v_R_N").css('fontWeight','bold').css('fontSize','16px');
+    }
+
+    $("#ob_v_N_R").html(ep2DataObj['ob_v_N_R']);
+    $("#ob_v_R_N").html(ep2DataObj['ob_v_R_N']);
+
+    if(parseFloat(ep2DataObj['ob_v_N_R']) < 80){
+        $("#ob_v_N_R").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+    if(parseFloat(ep2DataObj['ob_v_R_N']) < 80){
+        
+        $("#ob_v_R_N").css('fontWeight','bold').css('fontSize','16px');
+    }
+
+
+    $("#det_v_N_R").html(ep2DataObj['det_v_N_R']);
+    $("#det_v_R_N").html(ep2DataObj['det_v_R_N']);
+
+    if(parseFloat(ep2DataObj['det_v_N_R']) < 24){
+        $("#det_v_N_R").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+    if(parseFloat(ep2DataObj['det_v_R_N']) < 24){
+        
+        $("#det_v_R_N").css('fontWeight','bold').css('fontSize','16px');
+    }
+
+
+    $("#nwc_N_R").html(ep2DataObj['nwc_N_R']);
+    $("#nwc_R_N").html(ep2DataObj['nwc_R_N']);
+
+    let n_NR = parseFloat(ep2DataObj['nwc_N_R']);
+    let n_RN = parseFloat(ep2DataObj['nwc_R_N']);
+
+    if(n_NR >= 1.5 && n_NR <=2.5 ){
+        
+    }else{
+        $("#nwc_N_R").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+
+    if(n_RN >= 1.5 && n_RN <=2.5 ){
+        
+    }else{
+        $("#nwc_R_N").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+
+
+    $("#ob_sc_N_R").html(ep2DataObj['ob_sc_N_R']);
+    $("#ob_sc_R_N").html(ep2DataObj['ob_sc_R_N']);
+
+    let ob_sc_NR = parseFloat(ep2DataObj['ob_sc_N_R']);
+    let ob_sc_RN = parseFloat(ep2DataObj['ob_sc_R_N']);
+
+    if(ob_sc_NR >= 3 && ob_sc_NR <= 5 ){
+        
+    }else{
+        $("#ob_sc_N_R").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+
+    if(ob_sc_RN >= 3 && ob_sc_RN <= 5 ){
+        
+    }else{
+        $("#ob_sc_R_N").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+
+
+    $("#ob_t_N_R").html(ep2DataObj['ob_t_N_R']);
+    // let ob_t_R_N = $("#ob_t_R_N").val();
+    $("#gt_N_R").html(ep2DataObj['gt_N_R']);
+    // let gt_R_N = $("#gt_R_N").val();
+    $("#operatingTimeSecond").html(ep2DataObj['operatingTimeSecond']);
+
+    if(parseFloat(ep2DataObj['operatingTimeSecond']) >=4 && parseFloat(ep2DataObj['operatingTimeSecond']) <=5){
+        
+    }else{
+        $("#operatingTimeSecond").css('fontWeight','bold').css('fontSize','16px');
+        
+    }
+
+
+    $("#operatingTime_dbt").html(ep2DataObj['operatingTime_dbt']);
+    $("#friction_c_s").html(ep2DataObj['friction_c_s']);
+    $("#track_locking").html(ep2DataObj['track_locking']);
+    $("#remark_brief").html(ep2DataObj['remark_brief']);
 }
 
 
@@ -2318,7 +2521,9 @@ function createTradeT1FormCreate(typeOfForm, dataList, id) {
             <th scope="row">${index+1}</th>
             <td>${element['t_details']}</td>
             <td style="vertical-align:middle;width:22%" >
-            <input type="text" class="form-control" disabled value="${value}"> `;
+            <div class="">${value}</div>
+            `;
+
 
 
         // <option value="Done">Done</option>
@@ -2333,7 +2538,7 @@ function createTradeT1FormCreate(typeOfForm, dataList, id) {
 
     console.log("tableDataForm=>", tableDataForm);
 
-
+/*
     $("#date1").val(tableDataForm['date1']);
     $("#sale1_spg").val(tableDataForm['sale1_spg']);
     $("#sale1_v").val(tableDataForm['sale1_v']);
@@ -2356,6 +2561,30 @@ function createTradeT1FormCreate(typeOfForm, dataList, id) {
     $("#railFlag2").val(tableDataForm['railFlag2']);
     $("#jumberwireStatus").val(tableDataForm['jumberwireStatus']);
     $("#remark2").val(tableDataForm['remark2']);
+    */
+
+    $("#date1").html(tableDataForm['date1']);
+    $("#sale1_spg").html(tableDataForm['sale1_spg']);
+    $("#sale1_v").html(tableDataForm['sale1_v']);
+    $("#sale2_spg").html(tableDataForm['sale2_spg']);
+    $("#sale2_v").html(tableDataForm['sale2_v']);
+    $("#sale3_spg").html(tableDataForm['sale3_spg']);
+    $("#sale3_v").html(tableDataForm['sale3_v']);
+    $("#charging_v").html(tableDataForm['charging_v']);
+    $("#charging_current").html(tableDataForm['charging_current']);
+    $("#feedVoltage").html(tableDataForm['feedVoltage']);
+    $("#nearBlock").html(tableDataForm['nearBlock']);
+    $("#wireStatus").html(tableDataForm['wireStatus']);
+    $("#remark1").html(tableDataForm['remark1']);
+
+    $("#date2").html(tableDataForm['date2']);
+    $("#railVoltage").html(tableDataForm['railVoltage']);
+    $("#vt_value").html(tableDataForm['vt_value']);
+    $("#wireStatus2").html(tableDataForm['wireStatus2']);
+    $("#magneticPart").html(tableDataForm['magneticPart']);
+    $("#railFlag2").html(tableDataForm['railFlag2']);
+    $("#jumberwireStatus").html(tableDataForm['jumberwireStatus']);
+    $("#remark2").html(tableDataForm['remark2']);
 
     document.getElementById(tableId).innerHTML = displayHtml;
 
@@ -2423,8 +2652,7 @@ function openDialog_DL(typeOfForm, dataList, id) {
         <th scope="row">${sn}</th>
         <td>${element['dl_details']}</td>
         <td style="vertical-align:middle;width:22%" >
-        <input type="text" class="form-control" disabled value="${value}">
-
+        <div class="">${value}</div>
         </td>
         </tr>
     `;
@@ -2437,8 +2665,7 @@ function openDialog_DL(typeOfForm, dataList, id) {
         <th scope="row">${index+1}</th>
         <td>${element['dl_details']}</td>
         <td style="vertical-align:middle;width:22%" >
-        <input type="text" class="form-control" disabled value="${value}">
-
+        <div class="">${value}</div>
         </td>
         </tr>
     `;
@@ -2501,7 +2728,7 @@ function openDialog_CS(typeOfForm, dataList, id) {
         <tr>
             <td>(a) Black on white background for normal implantation.</td>
             <td style="vertical-align:middle;width:22%" >
-            <input type="text" class="form-control" disabled value="${value_5a}">
+            <div class="">${value_5a}</div>
 
             </td>
         </tr>
@@ -2509,7 +2736,7 @@ function openDialog_CS(typeOfForm, dataList, id) {
         <tr>
             <td>(b) Red on white background for implantation distance < 2.36 meters.</td>
             <td style="vertical-align:middle;width:22%" >
-            <input type="text" class="form-control" disabled value="${value_5b}">
+            <div class="">${value_5b}</div>
 
             </td>
         </tr>
@@ -2523,8 +2750,7 @@ function openDialog_CS(typeOfForm, dataList, id) {
         <th scope="row">${index+1}</th>
         <td>${element['cs_details']}</td>
         <td style="vertical-align:middle;width:22%" >
-        <input type="text" class="form-control" disabled value="${value}">
-
+        <div class="">${value}</div>
         </td>
         </tr>
     `;
@@ -2588,7 +2814,7 @@ function openDialog_T(typeOfForm, dataList, id) {
         <th scope="row">${index+1}</th>
         <td>${element['t_details']}</td>
         <td style="vertical-align:middle;width:22%" >
-        <input type="text" class="form-control" disabled value="${value}"> `;
+        <div class="">${value}</div>`;
 
 
         // <option value="Done">Done</option>
@@ -2652,6 +2878,8 @@ function fillCS1FormData(id) {
 
     $("#componentForm_CS1").modal("show");
 
+    /*
+
     $("#cs1_1").val(cs1DataObj['cs1_1']);
     $("#cs1_2").val(cs1DataObj['cs1_2']);
     $("#cs1_3").val(cs1DataObj['cs1_3']);
@@ -2680,6 +2908,37 @@ function fillCS1FormData(id) {
     $("#dome_clean").val(cs1DataObj['dome_clean']);
     $("#cover").val(cs1DataObj['cover']);
     $("#remark").val(cs1DataObj['remark']);
+
+    */
+
+    $("#cs1_1").html(cs1DataObj['cs1_1']);
+    $("#cs1_2").html(cs1DataObj['cs1_2']);
+    $("#cs1_3").html(cs1DataObj['cs1_3']);
+    $("#cs1_4").html(cs1DataObj['cs1_4']);
+    $("#cs1_5").html(cs1DataObj['cs1_5']);
+
+    $("#cs1_6").html(cs1DataObj['cs1_6']);
+    $("#cs1_7").html(cs1DataObj['cs1_7']);
+    $("#cs1_8").html(cs1DataObj['cs1_8']);
+    $("#cs1_9").html(cs1DataObj['cs1_9']);
+    $("#cs1_10").html(cs1DataObj['cs1_10']);
+    $("#cs1_11").html(cs1DataObj['cs1_11']);
+    $("#cs1_12a").html(cs1DataObj['cs1_12a']);
+    $("#cs1_12b").html(cs1DataObj['cs1_12b']);
+    $("#cs1_12c").html(cs1DataObj['cs1_12c']);
+    $("#date").html(cs1DataObj['date']);
+    $("#rg").html(cs1DataObj['rg']);
+    $("#hg").html(cs1DataObj['hg']);
+    // let gt_R_N = $("#gt_R_N").val();
+    $("#dg").html(cs1DataObj['dg']);
+    $("#hhg").html(cs1DataObj['hhg']);
+    $("#route").html(cs1DataObj['route']);
+    $("#c_on").html(cs1DataObj['c_on']);
+    $("#shout").html(cs1DataObj['shout']);
+    $("#nut_bolt").html(cs1DataObj['nut_bolt']);
+    $("#dome_clean").html(cs1DataObj['dome_clean']);
+    $("#cover").html(cs1DataObj['cover']);
+    $("#remark").html(cs1DataObj['remark']);
 }
 
 function get_CS_formData(id, csType) {

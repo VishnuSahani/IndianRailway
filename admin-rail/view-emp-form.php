@@ -1,22 +1,7 @@
 <?php require('header.php');?>
 <?php require('include/db_config.php');
 
-
-
-// $query = mysqli_query($con,"SELECT * FROM emp_info_rail");
-//                             echo mysqli_num_rows($query);
-
-// if(mysqli_num_rows($query) <= 0){
-//     echo "No Employee added yet.";
-//     die();
-// }
-
-// $empBasicData = mysqli_fetch_array($query);
-
-// $employeeId = $empBasicData['empid'];
-
-// print_r($empBasicData);
-
+$selectedEmpId = '';
 
 ?>
 
@@ -956,6 +941,10 @@ function showTable(formKeyName, subcomponame) {
                     $("#stationId").val(g_employeeData['station_id']);
                     
                      getComponent();
+                }else{
+                    alert(respo['msg']);
+                    $("#empId").focus()
+                    $("#empId").val("")
                 }
             }
         })
@@ -963,3 +952,25 @@ function showTable(formKeyName, subcomponame) {
 </script>
 
 
+<?php
+    //$getEmpId = $_GET['id'];
+if(isset($_GET['id']) && !empty(trim($_GET['id']))){
+
+     $getEmpId = $_GET['id'];
+    
+    if (filter_var($getEmpId, FILTER_VALIDATE_INT)!== false) {
+    
+        $selectedEmpId = $getEmpId;
+    
+        echo '<script type="text/JavaScript">  
+        
+          $("#empId").val('.$selectedEmpId.');
+          getSectionByEmpId('.$selectedEmpId.')
+         </script>' ;
+    
+    }
+    
+    
+    
+    }
+?>

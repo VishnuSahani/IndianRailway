@@ -149,6 +149,7 @@ ajax.onreadystatechange = function(){
         { data: 'rme_date' },
         { data: 'competency' },
         { data: 'href' },
+        { data: 'form' },
     ]
 } );
 
@@ -337,6 +338,7 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 <th>Refresher</th>
 <th>Competency</th>
 <th>Add PME/Competency</th>
+<th>Form</th>
 
 
 </tr>
