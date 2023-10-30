@@ -957,6 +957,241 @@ if(isset($_POST['action'])){
         }
     }
 
+    // get Track form details
+    if ($action == 'getT_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $tableName = "";
+        switch ($formType) {
+            case 'T1':
+                $tableName = 't1_info';
+                break;
+
+            case 'T2':
+                $tableName = 't2_info';
+                break;
+            case 'T3':
+                $tableName = 't3_info';
+                break;
+
+            case 'T4':
+                $tableName = 't4_info';
+                break;
+            case 'T5':
+                $tableName = 't5_info';
+                break;
+            
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+        }
+
+        try{
+
+            $query = "SELECT * FROM ".$tableName;
+        $queryExe = mysqli_query($con,$query);
+        if(mysqli_num_rows($queryExe) <= 0){
+            $respo['status'] = false;
+            $respo['msg'] = "Data not found";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $data = [];
+        
+        while($q_run = mysqli_fetch_array($queryExe)) {
+            $obj = new stdClass();
+           $obj->id = $q_run['id'];
+           $obj->t_id = $q_run['t_id'];
+           $obj->t_details = $q_run['t_details'];
+           $obj->t_option = $q_run['t_option'];
+           $obj->t_status = $q_run['status'];
+           $data[] = $obj;
+            
+        }
+
+       $respo['status'] = true;
+       $respo['msg'] = "List found";
+       $respo['data'] = $data;
+
+       echo json_encode($respo);
+       die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
+
+    if ($action == 'getCS_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $tableName = "";
+        switch ($formType) {
+            // case 'CS1':
+            //     $tableName = 'cs1_info';
+            //     break;
+
+            case 'CS2':
+                $tableName = 'cs2_info';
+                break;
+            
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                break;
+        }
+
+        try{
+
+            $query = "SELECT * FROM ".$tableName;
+        $queryExe = mysqli_query($con,$query);
+        if(mysqli_num_rows($queryExe) <= 0){
+            $respo['status'] = false;
+            $respo['msg'] = "Data not found";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $data = [];
+        
+        while($q_run = mysqli_fetch_array($queryExe)) {
+            $obj = new stdClass();
+           $obj->id = $q_run['id'];
+           $obj->cs_id = $q_run['cs_id'];
+           $obj->cs_details = $q_run['cs_details'];
+           $obj->cs_option = $q_run['cs_option'];
+           $obj->cs_status = $q_run['status'];
+           $data[] = $obj;
+            
+        }
+
+       $respo['status'] = true;
+       $respo['msg'] = "List found";
+       $respo['data'] = $data;
+
+       echo json_encode($respo);
+       die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
+
+    // DL
+    if ($action == 'getDL_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $tableName = "";
+        switch ($formType) {
+            case 'DL1':
+                $tableName = 'dl1_info';
+                break;
+
+            case 'DL2':
+                $tableName = 'dl2_info';
+                break;
+            case 'DL3':
+                $tableName = 'dl3_info';
+                break;
+            case 'DL4':
+                $tableName = 'dl4_info';
+                break;
+            
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                break;
+        }
+
+        try{
+
+                $query = "SELECT * FROM ".$tableName;
+            $queryExe = mysqli_query($con,$query);
+            if(mysqli_num_rows($queryExe) <= 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+            
+            while($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+            $obj->id = $q_run['id'];
+            $obj->dl_id = $q_run['dl_id'];
+            $obj->dl_details = $q_run['dl_details'];
+            $obj->dl_option = $q_run['dl_option'];
+            $obj->dl_status = $q_run['status'];
+            $data[] = $obj;
+                
+            }
+
+        $respo['status'] = true;
+        $respo['msg'] = "List found";
+        $respo['data'] = $data;
+
+        echo json_encode($respo);
+        die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
 
 }else{
 
