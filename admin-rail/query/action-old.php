@@ -60,7 +60,9 @@ if(isset($_POST['action'])){
             $obj->empdesg = $sectionRun['empdesg'];
 
             // $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
-            $obj->rme_date = $sectionRun['rme_date']=='' || $sectionRun['rme_date'] == '0000-00-00'?'No Record':$sectionRun['rme_date'];
+            $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+            $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
+
 
             // for pme rme file getting
 
@@ -70,7 +72,6 @@ if(isset($_POST['action'])){
             $empId = $sectionRun['empid'];
             $section_id = $sectionRun['section_id'];
             $station_id = $sectionRun['station_id'];
-
             $getQueryFile = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE empid='$empId' and pme_date='$pme_date' and rme_date='$rme_date' and section_id='$section_id' and station_id ='$station_id'");
 
 
@@ -78,12 +79,13 @@ if(isset($_POST['action'])){
                 $obj->pme_date = $sectionRun['pme_date'];
                 $obj->rme_date = $sectionRun['rme_date'];
                 $obj->competency = "No Record";
-                // continue;
-            }else{
-                $sectionRunfile = mysqli_fetch_array($getQueryFile);
+                continue;
+            }
+
+            $sectionRunfile = mysqli_fetch_array($getQueryFile);
 
 
-            if($sectionRun['pme_date'] == '' || $sectionRun['pme_date'] == '0000-00-00'){
+            if($sectionRun['pme_date'] == ''){
                 $obj->pme_date = 'No Record';
             }else{        
 
@@ -99,7 +101,7 @@ if(isset($_POST['action'])){
                 }
             }
 
-            if($sectionRun['rme_date'] == '' || $sectionRun['rme_date'] == '0000-00-00'){
+            if($sectionRun['rme_date'] == ''){
                 $obj->rme_date = 'No Record';
             }else{        
 
@@ -126,14 +128,10 @@ if(isset($_POST['action'])){
                     </a>";
 
             }
-            }
-
-            
 
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
-             $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
 
             $data[] = $obj;
 
@@ -147,7 +145,7 @@ if(isset($_POST['action'])){
         die();
 
     }
-    
+
     if($action == "getEmployeeAllData"){
 
 
@@ -177,9 +175,7 @@ if(isset($_POST['action'])){
             $obj->empdesg = $sectionRun['empdesg'];
 
             // $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
-            // $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
-            $obj->rme_date = $sectionRun['rme_date']=='' || $sectionRun['rme_date'] == '0000-00-00'?'No Record':$sectionRun['rme_date'];
-
+            $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
 
             // for pme rme file getting
 
@@ -193,16 +189,16 @@ if(isset($_POST['action'])){
 
 
             if(mysqli_num_rows($getQueryFile) <= 0){
-                $obj->pme_date = $sectionRun['pme_date'] == '0000-00-00'?'No Record':$sectionRun['pme_date'];
-                $obj->rme_date = $sectionRun['rme_date'] == '0000-00-00'?'No Record':$sectionRun['rme_date'];
+                $obj->pme_date = $sectionRun['pme_date'];
+                $obj->rme_date = $sectionRun['rme_date'];
                 $obj->competency = "No Record";
-                // continue;
-            }else{
+                continue;
+            }
 
             $sectionRunfile = mysqli_fetch_array($getQueryFile);
 
 
-            if($sectionRun['pme_date'] == '' || $sectionRun['pme_date'] == '0000-00-00'){
+            if($sectionRun['pme_date'] == ''){
                 $obj->pme_date = 'No Record';
             }else{        
 
@@ -218,7 +214,7 @@ if(isset($_POST['action'])){
                 }
             }
 
-            if($sectionRun['rme_date'] == '' || $sectionRun['rme_date'] == '0000-00-00'){
+            if($sectionRun['rme_date'] == ''){
                 $obj->rme_date = 'No Record';
             }else{        
 
@@ -245,8 +241,6 @@ if(isset($_POST['action'])){
                     </a>";
 
             }
-            }
-
 
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
@@ -342,7 +336,7 @@ if(isset($_POST['action'])){
 
     }
 
-   if($action == "pmeRmeDocUpload"){
+    if($action == "pmeRmeDocUpload"){
 
         if(isset($_FILES['files']) && isset($_POST['report_id']) && isset($_POST['subActionName'])){
 
@@ -354,7 +348,6 @@ if(isset($_POST['action'])){
             $img_size=$_FILES['files']['size'];
             $img_tmp=$_FILES['files']['tmp_name'];
 
-            
             // print_r($_FILES['files']);
 
             if($img_type != 'image/jpeg' && $img_type != 'image/jpg' && $img_type != "application/pdf") {
@@ -381,7 +374,6 @@ if(isset($_POST['action'])){
                 die();
 
             }
-
 
              $curentDate = date("Y-m-d h:i:s");
 
@@ -429,7 +421,8 @@ if(isset($_POST['action'])){
 
     }
 
- if($action == "deletePmeRmeFile"){
+
+    if($action == "deletePmeRmeFile"){
         if(!isset($_POST['pmeRmeId']) || empty($_POST['pmeRmeId']) || !isset($_POST['subAction']) ){
              $respo['status'] = false;
                 $respo['msg'] = "Request error";
@@ -501,7 +494,7 @@ if(isset($_POST['action'])){
     }
 
 
-      if( $action == "getPmeRmeDate"){
+    if( $action == "getPmeRmeDate"){
 
         if(!isset($_POST['empId'])){
 
@@ -812,6 +805,8 @@ if(isset($_POST['action'])){
 
     }
 
+    
+
     if($action == "componentModalForm"){
         if(!isset($_POST['name']) || !isset($_POST['email'])){
             $respo['status'] = false;
@@ -847,7 +842,6 @@ if(isset($_POST['action'])){
 
 
     }
-    
     if($action == "getSectionStationById"){
         
         if(!isset($_POST['empId']) || empty($_POST['empId'])){
@@ -880,7 +874,7 @@ if(isset($_POST['action'])){
         
         
     }
-    
+
     if ($action == 'getEP_FormDetails'){
         if(!isset($_POST['formType']) || empty($_POST['formType'])){
             $respo['status'] = false;
@@ -963,7 +957,7 @@ if(isset($_POST['action'])){
         }
     }
 
-      // get Track form details
+    // get Track form details
     if ($action == 'getT_FormDetails'){
         if(!isset($_POST['formType']) || empty($_POST['formType'])){
             $respo['status'] = false;
@@ -1198,18 +1192,6 @@ if(isset($_POST['action'])){
 
         }
     }
-    
-    
-    
-    
-    // 
-      $respo['status'] = false;
-            $respo['msg'] = "Invalid Action provide";
-            $respo['data'] = [];
-
-            echo json_encode($respo);
-            die();
-    
 
 }else{
 
