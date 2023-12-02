@@ -500,6 +500,109 @@ if(isset($_POST['action'])){
 
     }
 
+    if($action == 'editPmeRmeDate'){
+
+        if(!isset($_POST['editPmeRmeDateValue'])){
+
+            $respo['status'] = false;
+           $respo['msg'] = "Date is not set.";
+           echo json_encode($respo);
+           die();
+       }
+
+       if(!isset($_POST['editPmeRmeId'])){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Data update Id is not set.";
+            echo json_encode($respo);
+            die();
+        }
+
+        //
+
+        if(!isset($_POST['editSubActionName'])){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Sub Action is not set.";
+            echo json_encode($respo);
+            die();
+        }
+
+
+        $editPmeRmeDateValue = trim($_POST['editPmeRmeDateValue']);
+        $editPmeRmeId = trim($_POST['editPmeRmeId']);
+        $editSubActionName = trim($_POST['editSubActionName']);
+
+        if(empty($editPmeRmeDateValue) || empty($editPmeRmeId) || empty($editSubActionName)){
+            $respo['status'] = false;
+            $respo['msg'] = "All field required.";
+            echo json_encode($respo);
+            die();
+        }
+
+        $checkData = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE id = '$editPmeRmeId'");
+        if(mysqli_num_rows($checkData) <= 0){
+            $respo['status'] = false;
+            $respo['msg'] = "No data found of give id.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $getData = mysqli_fetch_array($checkData);
+
+        $pmeRmeData;
+        
+        $empId = $getData['empid'];
+
+        if($editSubActionName == 'pmeDate'){
+
+            $pmeRmeData = $getData['pme_date'];
+            $updQ = "UPDATE pmerme_info_rail SET pme_date='$editPmeRmeDateValue' WHERE id = '$editPmeRmeId'";
+            $emp_info_rail_Data = "SELECT * FROM emp_info_rail WHERE empid = '$empId' && pme_date='$pmeRmeData'";
+            
+        }else{
+            
+            $pmeRmeData = $getData['rme_date'];
+            $updQ = "UPDATE pmerme_info_rail SET rme_date='$editPmeRmeDateValue' WHERE id = '$editPmeRmeId'";
+            $emp_info_rail_Data = "SELECT * FROM emp_info_rail WHERE empid = '$empId' && rme_date='$pmeRmeData'";
+        }
+        
+        //update pme rme date in emp_info
+        $empInfo_Query = mysqli_query($con,$emp_info_rail_Data);
+
+        if(mysqli_num_rows($empInfo_Query) > 0){
+
+            if($editSubActionName == 'pmeDate'){
+                $empDataUpdate = "UPDATE emp_info_rail SET pme_date = '$editPmeRmeDateValue' WHERE empid = '$empId'";
+                
+            }else{
+                $empDataUpdate = "UPDATE emp_info_rail SET rme_date = '$editPmeRmeDateValue' WHERE empid = '$empId'";
+
+            }
+            mysqli_query($con,$empDataUpdate);
+        }
+
+
+        $updtQuery = mysqli_query($con,$updQ); //update date in pme_rme_info
+
+        if($updtQuery){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Date update successfully";
+            echo json_encode($respo);
+            die();
+
+        }else{
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong try again";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+    }
 
       if( $action == "getPmeRmeDate"){
 
@@ -548,10 +651,11 @@ if(isset($_POST['action'])){
         
 
         if($sectionRun['pme_date'] == ''){
-            $obj->pme_date = 'No Record';
+            $obj->pme_date = "No Record <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','pmeDate','')>Edit</button>";
             $obj->addPmeFileBtn = "<button type='button' class='btn btn-sm btn-info' disabled title='No PME Date added'>Add</button>";
         }else{
-            $obj->pme_date = $sectionRun['pme_date'];
+            $p_date = $sectionRun['pme_date'];
+            $obj->pme_date = $p_date."  <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','pmeDate','".$p_date."')>Edit</button>";
 
             if($sectionRun['pme_file']==''){
 
@@ -565,10 +669,11 @@ if(isset($_POST['action'])){
         }
 
         if($sectionRun['rme_date']==''){
-            $obj->rme_date = 'No Record';
+            $obj->rme_date = "No Record <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','rmeDate','')>Edit</button>";
             $obj->addRmeFileBtn = "<button type='button' class='btn btn-sm btn-info' disabled title='No Refresher Date added'>Add</button>";
         }else{
-            $obj->rme_date = $sectionRun['rme_date'];
+            $r_date = $sectionRun['rme_date'];
+            $obj->rme_date = $r_date." <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','rmeDate','".$r_date."')>Edit</button>";
 
             if($sectionRun['rme_file']==''){
 

@@ -618,19 +618,19 @@
                                 <tbody>
                                      <tr>
                                     <td ><input id="date1" class="form-control" type="date"></td> 
-                                    <td><input id="sale1_spg" class="form-control" type="text"></td>
-                                     <td ><input id="sale1_v" class="form-control" type="text"></td>
-                                      <td><input id="sale2_spg" class="form-control" type="text"></td>
-                                      <td><input id="sale2_v" class="form-control" type="text"></td>
-                                       <td><input id="sale3_spg" class="form-control" type="text"></td>
-                                    <td ><input id="sale3_v" class="form-control" type="text"></td> 
-                                 <td ><input id="charging_v" class="form-control" type="text"></td> 
-                                 <td ><input id="charging_current" class="form-control" type="text"></td>
+                                    <td><input id="sale1_spg" class="form-control" style="width: 120px" type="text"></td>
+                                     <td ><input id="sale1_v" class="form-control" style="width: 120px" type="text"></td>
+                                      <td><input id="sale2_spg" class="form-control" style="width: 120px" type="text"></td>
+                                      <td><input id="sale2_v" class="form-control" style="width: 120px" type="text"></td>
+                                       <td><input id="sale3_spg" class="form-control" style="width: 120px" type="text"></td>
+                                    <td ><input id="sale3_v" class="form-control" style="width: 120px" type="text"></td> 
+                                 <td ><input id="charging_v" class="form-control" style="width: 120px" type="text"></td> 
+                                 <td ><input id="charging_current" class="form-control" style="width: 120px" type="text"></td>
                                  <td ></td>
-                                 <td ><input id="feedVoltage" class="form-control" type="text"></td> 
-                                 <td ><input id="nearBlock" class="form-control" type="text"></td>
-                                   <td ><input id="wireStatus" class="form-control" type="text"></td> 
-                                   <td ><input id="remark1" class="form-control" type="text"></td> 
+                                 <td ><input id="feedVoltage" class="form-control" style="width: 120px" type="text"></td> 
+                                 <td ><input id="nearBlock" class="form-control" style="width: 120px" type="text"></td>
+                                   <td ><input id="wireStatus" class="form-control" style="width: 120px" type="text"></td> 
+                                   <td ><input id="remark1" class="form-control" style="width: 120px" type="text"></td> 
                                     
                             
                                 </tr>
@@ -650,15 +650,15 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input id="date2" class="form-control" type="date"></td>
-                                    <td><input id="railVoltage" class="form-control" type="text"></td>
-                                    <td><input id="vt_value" class="form-control" type="text"></td>
-                                    <td><input id="wireStatus2" class="form-control" type="text"></td>
-                                    <td><input id="magneticPart" class="form-control" type="text"></td>
+                                        <td><input id="date2" class="form-control" style="width: 120px" type="date"></td>
+                                    <td><input id="railVoltage" class="form-control" style="width: 120px" type="text"></td>
+                                    <td><input id="vt_value" class="form-control" style="width: 120px" type="text"></td>
+                                    <td><input id="wireStatus2" class="form-control" style="width: 120px" type="text"></td>
+                                    <td><input id="magneticPart" class="form-control" style="width: 120px" type="text"></td>
                                     <td></td>
-                                    <td><input id="railFlag2" class="form-control" type="text"></td>
-                                    <td><input id="jumberwireStatus" class="form-control" type="text"></td>
-                                    <td><input id="remark2" class="form-control" type="text"></td>
+                                    <td><input id="railFlag2" class="form-control" style="width: 120px" type="text"></td>
+                                    <td><input id="jumberwireStatus" class="form-control" style="width: 120px" type="text"></td>
+                                    <td><input id="remark2" class="form-control" style="width: 120px" type="text"></td>
                                     </tr>
 
                                 </tbody>

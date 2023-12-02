@@ -146,7 +146,7 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
 
 
 
-<!-- Modal -->
+<!-- Modal file -->
 <div class="modal fade" id="addFileModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="addFileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -195,6 +195,58 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
 
                         <!--  -->
                         <div id="modalRespo"></div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal date update -->
+<div class="modal fade" id="editPmeRmeDateModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="editPmeRmeDateLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-light">
+                <h5 class="modal-title" id="editPmeRmeDateLabel">
+                    Date Edit
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editPmeRmeForm">
+                    <div class="form-row">
+
+                        <div class="form-group col-12">
+                            <label for="email">Select Date</label>
+                            <input type="date" id='editPmeRmeDateValue' class="form-control">
+                        </div>
+                        <div class="form-group col-12">
+                            <!-- <label for="name">Name <span class="text-danger">*</span></label> -->
+                            <input type="hidden" name="name" id="editPmeRmeId" class="form-control">
+                            <input type="hidden" name="editSubActionName" id="editSubActionName" class="form-control">
+                        </div>
+
+                        <!-- <div class="form-group" id="editPmeRmeRespo">
+
+                        </div> -->
+
+
+
+                        <div class="form-group col-12">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-secondary"
+                                    data-dismiss="modal">Close</button>
+                                <button type="submit"
+                                    class="btn btn-sm btn-success">Submit</button>
+                            </div>
+                        </div>
+
+                        <!--  -->
+                        <div class="text-danger" id="editPmeRmeRespo"></div>
                     </div>
                 </form>
             </div>
@@ -362,6 +414,27 @@ function uploadFile() {
 
 function _(id) {
     return document.getElementById(id);
+}
+
+function editPmeRmeDialog(pmeRmeId,dateType,dateValue){
+    if(dateType=='pmeDate'){
+        //
+        $("#editPmeRmeDateLabel").html("PME Date Update");
+        
+    }else{
+        $("#editPmeRmeDateLabel").html("Refresher Date Update");
+        
+    }
+
+    $("#editSubActionName").val(dateType);
+    $("#editPmeRmeId").val(pmeRmeId);
+    if(dateValue != ''){
+        console.log("new Date(dateValue)",new Date(dateValue));
+        $("#editPmeRmeDateValue").val(dateValue);
+
+    }
+    $("#editPmeRmeDateModal").modal("show")
+
 }
 
 
@@ -557,4 +630,63 @@ function getPmeRmeData() {
 
 
 getPmeRmeData();
+
+$(document).ready(()=>{
+    $("#editPmeRmeForm").submit((e)=>{
+        e.preventDefault()
+
+        let editPmeRmeDateValue = $("#editPmeRmeDateValue").val();
+        let editPmeRmeId = $("#editPmeRmeId").val();
+        let editSubActionName = $("#editSubActionName").val();
+
+        
+        if(editPmeRmeId == '' || editPmeRmeId == null || editPmeRmeId == undefined){
+            $('#editPmeRmeRespo').html("Refresh page and try again.");
+            return;
+        }
+
+        if(editPmeRmeDateValue == '' || editPmeRmeDateValue == null || editPmeRmeDateValue == undefined){
+            $('#editPmeRmeRespo').html("Please select date.");
+            return;
+        }
+
+        if(editSubActionName == '' || editSubActionName == null || editSubActionName == undefined){
+            $('#editPmeRmeRespo').html("Refresh page and try again.");
+            return;
+        }
+
+
+        $.ajax({
+            type:"POST",
+            url:"query/action.php",
+            data:{
+                action:'editPmeRmeDate',
+                editSubActionName : editSubActionName,
+                editPmeRmeId : editPmeRmeId,
+                editPmeRmeDateValue : editPmeRmeDateValue
+            },
+
+            beforeSend:()=>{
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success:(respo)=>{
+                $("#loader_show").addClass('d-none');
+                console.log("respo",respo);
+                let response = JSON.parse(respo);
+                if (response['status']) {
+                    getPmeRmeData();
+                }
+                    $("#editPmeRmeRespo").html(response['msg']).css('color','blue')
+
+           
+
+            }
+
+
+        });
+
+       
+    })
+})
 </script>
