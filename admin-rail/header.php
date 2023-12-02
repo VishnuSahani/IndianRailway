@@ -161,6 +161,7 @@ background:#feeeb7a8;
 <li class="nav-item"><a href="view-station-component.php" class="nav-link  active">View station Component</a></li> 
 <li class="nav-item"><a href="view-emp-form.php" class="nav-link  active">View Form</a></li> 
 <li class="nav-item"><a href="pme-due.php" class="nav-link  active">PME Due</a></li> 
+<li class="nav-item"><a href="view-assigned-station-data.php" class="nav-link  active">View assign station</a></li> 
 
 
 
