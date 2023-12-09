@@ -10,10 +10,10 @@
    
 }
     //echo $id;
-    $query = mysqli_query($con,"SELECT * FROM ibn_signup_retailer  WHERE binary ibn_id = '$id'");
+  //   $query = mysqli_query($con,"SELECT * FROM ibn_signup_retailer  WHERE binary ibn_id = '$id'");
 
-	$row = mysqli_fetch_array($query);
-	$idd = $row['id'];
+	// $row = mysqli_fetch_array($query);
+	// $idd = $row['id'];
 
 ?>
 

@@ -1,4 +1,6 @@
 <?php require('header.php'); ?>
+<script src="../jsPdf/jspdf.umd.min.js"></script>
+<script src="../jsPdf/html2canvas.js"></script>
 <script language="javascript">
   function submitForm() {
 
@@ -7,6 +9,48 @@
 
   }
 
+
+     
+window.jsPDF = window.jspdf.jsPDF;
+
+
+function generatePdf() {
+
+
+    // var doc = new jsPDF('l', 'mm', [297, 210]);
+    // var doc = new jsPDF('l', 'mm', 'letter');
+    var doc = new jsPDF();
+
+    // Source HTMLElement or a string containing HTML.
+    var elementHTML = document.querySelector("#dataTable");
+    // Add a new page before adding content
+    // doc.addPage();
+    doc.html(elementHTML, {
+        callback: function(doc) {
+            // Save the PDF
+            
+            // doc.save(formType + '.pdf'); // auto pdf downloading when click on btn
+            doc.output('dataurlnewwindow'); // open pdf in new window
+            // doc.save();
+
+            /* 
+                doc.output('save', 'filename.pdf'); //Try to save PDF as a file (not works on ie before 10, and some mobile devices)
+                doc.output('datauristring');        //returns the data uri string
+                doc.output('datauri');              //opens the data uri in current window
+                doc.output('dataurlnewwindow');  
+             */
+        },
+        margin: [10, 10, 10, 10],
+        autoPaging: 'text',
+        x: 0,
+        y: 0,
+        // filename: formType+'.pdf',
+        width: 190, //target width in the PDF document
+        windowWidth: 675 //window width in CSS pixels
+    });
+
+
+}
 
   $(document).ready(function () {
     $("#fetchval").on('change', function () {
@@ -35,7 +79,7 @@
     });
   });
 
-  <!--------------end------------->
+ // <!--------------end------------->
   $(document).ready(function () {
     $("#fetchval2").on('change', function () {
       /* var keyword2 = $(this).val();
@@ -70,7 +114,7 @@
     });
   });
 
-< !--------------end------------->
+//<---!--------------end------------->
     $(document).ready(function () {
       $("#fetchval3").on('change', function () {
         /*  var keyword3 = $(this).val();
@@ -104,7 +148,7 @@
           });
       });
     });
-  < !--- end------------->
+ /// < !--- end------------->
 </script>
 
 <div class="content-wrapper">
@@ -123,7 +167,10 @@
       </div>
       <div class="card-body">
         <div class="row">
+          <div class="col-12 text-right mb-2">
+        <button type='button' class="btn btn-sm btn-info" onclick="generatePdf()">Generate PDF</button>
 
+          </div>
         </div><!--row--->
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -150,7 +197,7 @@
               // include('include/db_config.php');
               $con=mysqli_connect("localhost","root","") or die(mysqli_error());
             //to select the database
-              $db=mysqli_select_db($con,"indian_rail_project2")or die(mysqli_error());
+              $db=mysqli_select_db($con,"indian_rail_project3")or die(mysqli_error());
 
 
               $sql = "update emp_info_rail set age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), date_of_app)), '%Y') + 0";
@@ -194,9 +241,9 @@
               while ($record = mysqli_fetch_object($recordset)) {
 
                 if (
-                  ($record->age >= 40 and $record->age <= 50 and $record->pmedue > 3)
-                  or ($record->age >= 50 and $record->age <= 55 and $record->pmedue > 2)
-                  or ($record->age >= 55 and $record->age <= 60 and $record->pmedue >= 0)
+                ($record->age >= 40 and $record->age <= 50 and $record->pmedue > 3)
+                or ($record->age >= 50 and $record->age <= 55 and $record->pmedue > 2)
+                or ($record->age >= 55 and $record->age <= 60 and $record->pmedue >= 0)
                 ) {
 
 
