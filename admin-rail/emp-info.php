@@ -86,12 +86,66 @@ xhr.send();
   
 </script>-->
 
+
+<!-- delete Modal -->
+<div class="modal fade" id="empDeleteModal" tabindex="-1" aria-labelledby="empDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="empDeleteModalLabel">Confirm</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you want to delete the employee <span class="font-weight-bold text-danger" id="deleteEmpName"></span>
+        <input type="hidden" id="deleteEmpId">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="deleteEmplyeeConfirm()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 
     var gbl_data = [];
   var  myTableData;
 
+  function deleteEmplyeeConfirm(){
 
+    let deleteEmpId = $("#deleteEmpId").val();
+    if(deleteEmpId != null && deleteEmpId != undefined && deleteEmpId != ''){
+      $.ajax({
+        type:"POST",
+        url:"query/action.php",
+        data:{action:"deleteEmployee",empId:deleteEmpId},
+        beforeSend:()=>{
+          $("#loader_show").removeClass('d-none');
+
+        },
+        success:(response)=>{
+          $("#loader_show").addClass('d-none');
+          let respo = JSON.parse(response)
+          if(respo['status']){
+            $("#empDeleteModal").modal("hide");
+            getAllData();
+
+          }
+          
+        }
+      });
+    }
+
+  }
+
+function deleteEmplyeeModal(empId,empName){
+  $('#deleteEmpName').html(empName.split("_").join(" "));
+  $('#deleteEmpId').val(empId);
+  $("#empDeleteModal").modal("show");
+}
   
 function getAllData(){
 
@@ -145,11 +199,13 @@ ajax.onreadystatechange = function(){
         { data: 'empid' },
         { data: 'empname' },
         { data: 'empdesg' },
+        { data: 'station_name' },
         { data: 'pme_date' },
         { data: 'rme_date' },
         { data: 'competency' },
         { data: 'href' },
         { data: 'form' },
+        { data: 'action' },
     ]
 } );
 
@@ -263,9 +319,10 @@ ajax.onreadystatechange = function(){
 
 
 function resetEmpForm(){
-  $("#sectionId").val("")
-  $("#stationId").val("");
-  getAllData();
+  // $("#sectionId").val("")
+  // $("#stationId").val("");
+  // getAllData();
+  location.reload();
 }
 
 </script>
@@ -305,8 +362,16 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
       <label>Select Station</label>
       
       <select name="Test_Name" class="form-control" id="stationId" onchange="getData(this.value)">
-        <option >Select Section First</option>
-        
+        <option >Select Station</option>
+        <?php
+              $que2=mysqli_query($con,"select * from Station_tbl ORDER BY station_name ASC");
+            while($row2=mysqli_fetch_array($que2))
+            {
+              echo "<option value='".$row2['station_id']."__".$row2['station_name']."'>",$row2['station_name'],"</option>";
+            }
+
+
+        ?>
       </select>
 
     </div>
@@ -333,12 +398,14 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 
 <th>Name</th>
 <th>Designation</th>
+<th>Station</th>
 
 <th> PME</th>
 <th>Refresher</th>
 <th>Competency</th>
 <th>Add PME/Competency</th>
 <th>Form</th>
+<th>Action</th>
 
 
 </tr>

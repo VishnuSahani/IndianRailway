@@ -12,7 +12,7 @@ if(isset($_POST['action'])){
 
     if($action == "getEmployeeData"){
 
-        if(!isset($_POST['stationId']) || !isset($_POST['sectionId'])){
+        if(!isset($_POST['stationId']) && !isset($_POST['sectionId'])){
 
              $respo['status'] = false;
             $respo['msg'] = "Either Section id or Station id are not set.";
@@ -24,19 +24,24 @@ if(isset($_POST['action'])){
 
         $stationId = trim($_POST['stationId']);
         $sectionId = trim($_POST['sectionId']);
+        $q="SELECT * FROM emp_info_rail WHERE section_id='$sectionId' && station_id='$stationId' && status != '-1'";
 
-         if(empty($_POST['stationId']) || empty($_POST['sectionId'])){
+         if(empty($_POST['stationId'])){
 
              $respo['status'] = false;
-            $respo['msg'] = "Either Section id or Station id are empty.";
+            $respo['msg'] = "Station id are empty.";
             $respo['data'] = [];
             echo json_encode($respo);
             die();
 
         }
 
+        if(empty($_POST['sectionId'])){
+            $q = "SELECT * FROM emp_info_rail WHERE station_id='$stationId' && status != '-1'";
+        }
 
-        $getQuerySection = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE section_id='$sectionId' && station_id='$stationId'");
+
+        $getQuerySection = mysqli_query($con,$q);
         if(mysqli_num_rows($getQuerySection) <= 0){
             $respo['status'] = true;
             $respo['msg'] = "Empoyee list is empty.";
@@ -129,12 +134,15 @@ if(isset($_POST['action'])){
             }
 
             
+            $emppName = implode("_", explode(" ",$sectionRun['empname']));
 
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
              $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
-
+             $emppId = $sectionRun['empid'];
+             $obj->action = "<a type='button' class='btn btn-sm btn-danger' onclick=deleteEmplyeeModal('".$emppId."','".$emppName."')>Delete</a>";
+ 
             $data[] = $obj;
 
         }
@@ -153,7 +161,7 @@ if(isset($_POST['action'])){
 
 
 
-        $getQuerySection = mysqli_query($con,"SELECT * FROM emp_info_rail");
+        $getQuerySection = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE status != '-1'");
         if(mysqli_num_rows($getQuerySection) <= 0){
             $respo['status'] = true;
             $respo['msg'] = "Empoyee list is empty.";
@@ -166,6 +174,7 @@ if(isset($_POST['action'])){
         while($sectionRun = mysqli_fetch_array($getQuerySection)){
 
             $obj = new stdClass();
+            $emppName = implode("_", explode(" ",$sectionRun['empname']));
             $obj->id = $sectionRun['id'];
             $obj->section_name = $sectionRun['section_name'];
             $obj->section_id = $sectionRun['section_id'];
@@ -252,6 +261,8 @@ if(isset($_POST['action'])){
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
             $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
+            $emppId = $sectionRun['empid'];
+            $obj->action = "<a type='button' class='btn btn-sm btn-danger' onclick=deleteEmplyeeModal('".$emppId."','".$emppName."')>Delete</a>";
 
             $data[] = $obj;
 
@@ -263,6 +274,92 @@ if(isset($_POST['action'])){
 
         echo json_encode($respo);
         die();
+
+    }
+
+    if($action == "deleteEmployee"){
+        if(!isset($_POST['empId']) || empty(trim($_POST['empId']))){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Employee Id is not set, try again.";
+            echo json_encode($respo);
+            die();
+    
+        }
+
+        $empId = trim($_POST['empId']);
+
+       $emplyeeStatusUpdate = "UPDATE emp_info_rail SET status = '-1' WHERE empid = '$empId'";
+
+        if(mysqli_query($con,$emplyeeStatusUpdate)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Employee deleted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+        
+
+    }
+
+    if($action == "deletePmeRmeRow"){
+        //
+        if(!isset($_POST['deletePmeRmeId']) || empty(trim($_POST['deletePmeRmeId']))){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Row Id is not set, try again.";
+            echo json_encode($respo);
+            die();
+    
+        }
+
+        $deletePmeRmeId = trim($_POST['deletePmeRmeId']);
+
+        // check data
+        $check = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE id = '$deletePmeRmeId'");
+        if(mysqli_num_rows($check) <=0){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid row Id, try again.";
+            echo json_encode($respo);
+            die();
+        }
+
+        // $run = mysqli_fetch_array($check);
+
+        // $pme_date = $run['pme_date'];
+        // $rme_date = $run['rme_date'];
+        // if($pme_date != '0000-00-00' || $rme_date != '0000-00-00' ){
+
+        // }
+
+    //    $deleteQuery = "DELETE FROM pmerme_info_rail WHERE id = '$deletePmeRmeId'";
+       $deleteQuery = "UPDATE pmerme_info_rail SET status = '-1' WHERE id = '$deletePmeRmeId'";
+
+
+        if(mysqli_query($con,$deleteQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Row Data deleted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+        
 
     }
 
@@ -618,7 +715,7 @@ if(isset($_POST['action'])){
 
        $empId = $_POST['empId'];
 
-       $getQuery = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE empid='$empId'");
+       $getQuery = mysqli_query($con,"SELECT * FROM pmerme_info_rail WHERE empid='$empId' && status !='-1'");
 
        if(mysqli_num_rows($getQuery) <= 0){
 
@@ -698,7 +795,7 @@ if(isset($_POST['action'])){
 
 
 
-
+        $obj->action = "<a type='button' class='btn btn-sm btn-danger' onclick=deleteEmplyeeModal('".$iddd."')>Delete</a>";
 
 
         
@@ -965,7 +1062,7 @@ if(isset($_POST['action'])){
         
         $empId = trim($_POST['empId']);
         
-        $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE empid='$empId'");
+        $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE empid='$empId' && status != '-1'");
         if(mysqli_num_rows($query) <= 0){
               $respo['status'] = false;
             $respo['msg'] = "Invalid Employee Id.";

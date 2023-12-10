@@ -21,7 +21,7 @@ $selectedEmpId = '';
                         <select name="empId" id="empId" class="form-control" onchange="getSectionByEmpId(this.value)">
                             <option value="">Select Employee</option>
                             <?php
-                            $query = mysqli_query($con,"SELECT * FROM emp_info_rail");
+                            $query = mysqli_query($con,"SELECT * FROM emp_info_rail WHERE status != '-1'");
                             // echo mysqli_num_rows($query);
 
                                 while($empBasicData = mysqli_fetch_array($query)){

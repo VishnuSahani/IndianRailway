@@ -130,6 +130,8 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
                             <th>PME File</th>
                             <!-- <th>Refresher File</th> -->
                             <th>Competency</th>
+                            <!-- <th>Action</th> -->
+                            
                         </tr>
 
                     </thead>
@@ -256,9 +258,69 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
 </div>
 
 
+<!-- delete Modal -->
+<div class="modal fade" id="empDeleteModal" tabindex="-1" aria-labelledby="empDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="empDeleteModalLabel">Confirm</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you want to delete this data?
+        <input type="hidden" id="deletePmeRmeId">
+        <div class="my-3 text-danger" id="deleteStatus"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="deleteEmplyeeConfirm()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 const chooseFile = document.getElementById("choose-file");
 const imgPreview = document.getElementById("img-preview");
+
+function deleteEmplyeeModal(deletePmeRmeId){
+  $('#deletePmeRmeId').val(deletePmeRmeId);
+  $("#empDeleteModal").modal("show");
+}
+
+
+function deleteEmplyeeConfirm(){
+
+let deletePmeRmeId = $("#deletePmeRmeId").val();
+if(deletePmeRmeId != null && deletePmeRmeId != undefined && deletePmeRmeId != ''){
+  $.ajax({
+    type:"POST",
+    url:"query/action.php",
+    data:{action:"deletePmeRmeRow",deletePmeRmeId:deletePmeRmeId},
+    beforeSend:()=>{
+      $("#loader_show").removeClass('d-none');
+
+    },
+    success:(response)=>{
+      $("#loader_show").addClass('d-none');
+      let respo = JSON.parse(response)
+      $("#deleteStatus").html(respo['msg']);
+      if(respo['status']){
+          $("#empDeleteModal").modal("hide");
+          getPmeRmeData()
+        }
+        
+    },
+    complete:()=>{
+        setTimeout(() => {
+            $("#deleteStatus").html("");
+        }, 5000);
+    }
+  });
+}
+
+}
 
 function getImgData() {
     const files = chooseFile.files[0];
@@ -335,6 +397,9 @@ $(document).ready(() => {
             {
                 data: 'competency'
             },
+           /* {
+                data: 'action'
+            },*/
 
         ]
     });
