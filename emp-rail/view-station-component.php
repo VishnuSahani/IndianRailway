@@ -14,7 +14,11 @@
 
 ?>
 
-
+<style>
+    .dropdown-item{
+        cursor: pointer;
+    }
+</style>
 
 
 
@@ -87,50 +91,56 @@
 <div class="modal fade" id="componentForm_EP1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabel">
-                    <span class="badge badge-success h3" id="modalComponentName">
-                        Schedule Code: EP1
-                    </span>
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabel">
+                        <span class="badge badge-success h3" id="modalComponentName">
+                            Schedule Code: EP1  
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
 
-                    <!-- <span id="modalSubCompoName"></span>
-                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                        <!-- <span id="modalSubCompoName"></span>
+                        <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                    Quarterly
+
+                </div>
+                <div class="modal-body table-responsive">
+                    <!-- <form id="modalFormComponent">
+                    
+                    </form> -->
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Check the following</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ep1_body">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <div id="ep1Form_status"></div>
+                    <div>
+                        <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                        <button type='button' id="ep1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                    </div>
+                </div>
+
             </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-
-                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
-                Quarterly
-
-            </div>
-            <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ep1_body">
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card-footer d-flex justify-content-between">
-                <div id="ep1Form_status"></div>
-                <button type='button' id="ep1FormBtn" class="btn btn-success">Final Submit</button>
-            </div>
-
-        </div>
+        </form>
     </div>
 </div>
 
@@ -138,12 +148,15 @@
 <div class="modal fade" id="componentForm_EP2" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabel2">
                     <span class="badge badge-success h3">
                         Schedule Code: EP2
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -435,11 +448,15 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="ep2Form_status"></div>
-                <button type='button' id="ep2FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+                    <button class="btn btn-sm btn-danger" type="reset">Reset</button>
+                    <button type='button' id="ep2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
             </form>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -448,12 +465,14 @@
 <div class="modal fade" id="componentForm_EP4" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel4" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabel4">
                     <span class="badge badge-success h3">
                         Schedule Code: EP4
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -487,10 +506,15 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="ep4Form_status"></div>
-                <button type='button' id="ep4FormBtn" class="btn btn-success">Final Submit</button>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ep4FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -498,12 +522,14 @@
 <div class="modal fade" id="componentForm_EP5" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel4" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabel5">
                     <span class="badge badge-success h3">
                         Schedule Code: EP5
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -536,10 +562,14 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="ep5Form_status"></div>
-                <button type='button' id="ep5FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ep5FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -547,6 +577,7 @@
 <!-- Modal T1 -->
 <div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT1" aria-hidden="true">
+    <form>
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -554,6 +585,7 @@
                     <span class="badge badge-success h3">
                         Schedule Code: T1
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -569,9 +601,7 @@
 
             </div>
             <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
+
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -687,28 +717,36 @@
                 </table>
 
             
-                </table>
+               
             </div>
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="t1Form_status"></div>
-                <button type='button' id="t1FormBtn" class="btn btn-success">Final Submit</button>
+
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="t1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
     </div>
+</form>
 </div>
 
 <!-- Modal T2 -->
 <div class="modal fade" id="componentForm_T2" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelT2">
                     <span class="badge badge-success h3">
                         Schedule Code: T2
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -743,10 +781,15 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="t2Form_status"></div>
-                <button type='button' id="t2FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="t2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -755,12 +798,14 @@
 <div class="modal fade" id="componentForm_T3" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT3" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelT3">
                     <span class="badge badge-success h3">
                         Schedule Code: T3
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -795,10 +840,16 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="t3Form_status"></div>
-                <button type='button' id="t3FormBtn" class="btn btn-success">Final Submit</button>
+
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="t3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -807,12 +858,14 @@
 <div class="modal fade" id="componentForm_T5" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT5" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelT5">
                     <span class="badge badge-success h3">
                         Schedule Code: T5
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -847,10 +900,15 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="t5Form_status"></div>
-                <button type='button' id="t5FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="t5FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -858,12 +916,14 @@
 <div class="modal fade" id="componentForm_CS1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelCS1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelCS1">
                     <span class="badge badge-success h3">
                         Schedule Code: CS1
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -878,9 +938,7 @@
 
             </div>
             <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
+
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -1157,16 +1215,19 @@
                     
                 </table>
 
-            
-                </table>
             </div>
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="cs1Form_status"></div>
-                <button type='button' id="cs1FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="cs1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -1174,12 +1235,14 @@
 <div class="modal fade" id="componentForm_CS2" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelCS2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelCS2">
                     <span class="badge badge-success h3">
                         Schedule Code: T2
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -1215,10 +1278,15 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="cs2Form_status"></div>
-                <button type='button' id="cs2FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="cs2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -1226,12 +1294,14 @@
 <div class="modal fade" id="componentForm_DL1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelDL1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDL1">
                     <span class="badge badge-success h3">
                         Schedule Code: DL1
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -1264,10 +1334,15 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="dl1Form_status"></div>
-                <button type='button' id="dl1FormBtn" class="btn btn-success">Final Submit</button>
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="dl1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -1275,12 +1350,14 @@
 <div class="modal fade" id="componentForm_DL2" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelDL2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDL2">
                     <span class="badge badge-success h3">
                         Schedule Code: DL2
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -1314,10 +1391,16 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="dl2Form_status"></div>
-                <button type='button' id="dl2FormBtn" class="btn btn-success">Final Submit</button>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="dl2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -1325,12 +1408,15 @@
 <div class="modal fade" id="componentForm_DL3" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelDL3" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDL3">
                     <span class="badge badge-success h3">
                         Schedule Code: DL3
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -1360,10 +1446,16 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="dl3Form_status"></div>
-                <button type='button' id="dl3FormBtn" class="btn btn-success">Final Submit</button>
+
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="dl3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -1371,12 +1463,15 @@
 <div class="modal fade" id="componentForm_DL4" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelDL4" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDL4">
                     <span class="badge badge-success h3">
                     Schedule Code: DL4 (only for SSE/DLMC)
                     </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -1405,10 +1500,16 @@
 
             <div class="card-footer d-flex justify-content-between">
                 <div id="dl4Form_status"></div>
-                <button type='button' id="dl4FormBtn" class="btn btn-success">Final Submit</button>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="dl4FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
             </div>
 
         </div>
+        </form>
     </div>
 </div>
 
@@ -1636,6 +1737,7 @@ function get_EP_formData(EPtype, subCompo, compo) {
     // data-toggle="modal" data-target="#exampleModal"
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
+    $(".displaySubcompoName").html(subCompo);
 
     if (EPtype === 'EP2') {
         $("#EP2_1").val(new Date().toISOString().split("T")[0]);
@@ -4601,6 +4703,9 @@ switch (typeOfForm) {
 
 dataList.forEach((element, index) => {
 
+    if(typeOfForm == 'T1' && (index == 6 || index == 7)){
+        
+    }else{    
 
     displayHtml += `
         <tr>
@@ -4622,7 +4727,7 @@ dataList.forEach((element, index) => {
         </td>
         </tr>
     `;
-
+    }
 
 });
 
@@ -4633,6 +4738,8 @@ document.getElementById(tableId).innerHTML = displayHtml;
 function get_T_formData(tType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
+    $(".displaySubcompoName").html(subCompo);
+
 
     $.ajax({
         type: "POST",
@@ -4861,6 +4968,8 @@ document.getElementById(tableId).innerHTML = displayHtml;
 function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
+    $(".displaySubcompoName").html(subCompo);
+
 
     if(csType == 'CS1'){
         $("#componentForm_CS1").modal("show");
@@ -4902,6 +5011,7 @@ function get_CS_formData(csType,subCompo,compo){
 function get_DL_formData(dL_Type,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
+    $(".displaySubcompoName").html(subCompo);
 
     // if(dL_Type == 'CS1'){
     //     $("#componentForm_CS1").modal("show");
