@@ -36,7 +36,18 @@
             <div class="col-12">
                 <form>
                     <div class="row">
-                        <div class="form-group col-xl-6 col-lg-6 col-12">
+                    <div class="form-group col-md-4 col-12">
+
+                        <label for="language">Select Form Language <span class="text-danger">*</span></label>
+                        <select name="language" id="language" class="form-control">
+                            <!-- <option value="">Select Lnguage</option> -->
+                            <option value="Hindi">Hindi</option>
+                            <option value="English">English</option>
+
+                        </select>
+
+                    </div>
+                        <div class="form-group col-md-4 col-12">
                             <label for="sectionName">Section Name</label>
                             <input type="text" id="sectionName" class="form-control" disabled
                                 value="<?php echo $empSectionName;?>">
@@ -46,7 +57,7 @@
                             <input type="hidden" id="subcompoNameTmp">
                         </div>
 
-                        <div class="form-group col-xl-6 col-lg-6 col-12">
+                        <div class="form-group col-md-4 col-12">
                             <label for="stationName">Station Name</label>
                             <input type="text" id="stationName" class="form-control" disabled
                                 value="<?php echo $empStationName;?>">
@@ -148,7 +159,7 @@
 <div class="modal fade" id="componentForm_EP2" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="FormEP2">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabel2">
@@ -171,7 +182,7 @@
                 SSE/JE(Signal): Monthly SSE(Signal)/Incharge: Quarterly
 
             </div>
-            <form id="FormEP2">
+            
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
                    
@@ -345,7 +356,7 @@
                                             फ्रिक्शन क्लच स्लिप कर रहा है या नहीं
                                         </td>
                                             <td>
-                                                <input type="number" id="friction_c_s" class="form-control">
+                                                <input type="text" id="friction_c_s" class="form-control">
                                             </td>
                                         </tr>
 
@@ -354,7 +365,7 @@
                                             Track Locking Test
                                         </td>
                                             <td>
-                                                <input type="number" id="track_locking" class="form-control">
+                                                <input type="text" id="track_locking" class="form-control">
                                             </td>
                                         </tr>
                                        
@@ -364,7 +375,7 @@
                                             रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण
                                         </td>
                                             <td>
-                                                <input type="number" id="remark_brief" class="form-control">
+                                                <input type="text" id="remark_brief" class="form-control">
                                             </td>
                                         </tr>
 
@@ -453,7 +464,7 @@
                     <button type='button' id="ep2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
                 </div>
             </div>
-            </form>
+         
 
         </div>
         </form>
@@ -1301,7 +1312,7 @@
                     <span class="badge badge-success h3">
                         Schedule Code: DL1
                     </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+                    <!--<span class="badge badge-danger h3 displaySubcompoName"></span>-->
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -1357,7 +1368,7 @@
                     <span class="badge badge-success h3">
                         Schedule Code: DL2
                     </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+                    <!--<span class="badge badge-danger h3 displaySubcompoName"></span>-->
 
                     <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
@@ -1415,7 +1426,7 @@
                     <span class="badge badge-success h3">
                         Schedule Code: DL3
                     </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+                    <!--<span class="badge badge-danger h3 displaySubcompoName"></span>-->
 
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1470,7 +1481,7 @@
                     <span class="badge badge-success h3">
                     Schedule Code: DL4 (only for SSE/DLMC)
                     </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+                    <!--<span class="badge badge-danger h3 displaySubcompoName"></span>-->
 
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1584,6 +1595,9 @@ function createSubComponent(val) {
     document.getElementById("subComponentDisplay").innerHTML = "";
 
     let componentName = val.target.innerHTML;
+    let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1]
+    let stationComName = val.target.id.split("_")[1]
+
     // alert()
     let componetData = g_st_compList.filter(x => x['station_component'] == componentName);
     console.log("vishnu componetData ", componetData);
@@ -1593,7 +1607,35 @@ function createSubComponent(val) {
         return;
     }
 
+    //sub component == component new check
 
+    if(componetData[0]['sub_component'].length == 0 || componetData[0]['sub_component'] == ''){
+
+    let elv1 = document.getElementById("subComponentDisplay");
+    let divAlert1 = document.createElement("div");
+    divAlert1.className = "alert alert-warning text-center h6";
+    divAlert1.innerHTML = "Form List";
+
+    let divWrap1 = document.createElement("div");
+    divWrap1.className = "d-flex flex-wrap my-2";
+    let btn1 = `
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL1','NA','${stationComName}')">DL 1</button>
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL2','NA','${stationComName}')">DL 2</button>
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL3','NA','${stationComName}')">DL 3</button>
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL4','NA','${stationComName}')">DL 4</button>
+    `;
+
+
+    divWrap1.innerHTML = btn1
+
+
+
+    elv1.appendChild(divAlert1)
+    elv1.appendChild(divWrap1)
+
+    }else{
+
+    
     let subComponentData = componetData[0]['sub_component'].split(',');
 
 
@@ -1605,9 +1647,7 @@ function createSubComponent(val) {
     divWrap.className = "d-flex flex-wrap my-2";
 
     let btn = '';
-    let stationComName = val.target.id.split("_")[1]
 
-    let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1]
     subComponentData.forEach((value, index) => {
 
         btn += `<div class="dropdown m-2" id='subCompo_${value}'>
@@ -1670,6 +1710,8 @@ btn +=`
     let elv = document.getElementById("subComponentDisplay");
     elv.appendChild(divAlert)
     elv.appendChild(divWrap)
+
+}
 
 
 }
@@ -1738,6 +1780,7 @@ function get_EP_formData(EPtype, subCompo, compo) {
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
     $(".displaySubcompoName").html(subCompo);
+    let language = $("#language").val();
 
     if (EPtype === 'EP2') {
         $("#EP2_1").val(new Date().toISOString().split("T")[0]);
@@ -1751,6 +1794,7 @@ function get_EP_formData(EPtype, subCompo, compo) {
         data: {
             "action": "getEP_FormDetails",
             "formType": EPtype,
+            "language":language
 
         },
         beforeSend: function() {
@@ -1852,6 +1896,7 @@ $(document).ready(function() {
 
     $("#ep1FormBtn").click(function() {
         if (confirm("Do you want to final submit EP1 Form")) {
+            let language = $("#language").val();
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -2030,6 +2075,7 @@ $(document).ready(function() {
                     "EP1_9": EP1_9,
                     "EP1_10": EP1_10,
                     "EP1_11": EP1_11,
+                    "language":language
                 },
                 beforeSend: function() {
                     $("#loader_show").removeClass('d-none');
@@ -2057,6 +2103,8 @@ $(document).ready(function() {
 
     $("#ep2FormBtn").click(function() {
         if (confirm("Do you want to final submit EP2 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -2408,6 +2456,7 @@ $(document).ready(function() {
                     "track_locking": track_locking,
                     "remark_brief": remark_brief,
                     // "signature": signature,
+                    language:language
                 },
                 beforeSend: function() {
                     $("#loader_show").removeClass('d-none');
@@ -2415,6 +2464,8 @@ $(document).ready(function() {
                 },
                 success: function(response) {
                     let respo = JSON.parse(response);
+                    $("#loader_show").addClass('d-none');
+
                     if (respo['status']) {
                         $("#ep2Form_status").html(respo['msg']).css("color", "green");
 
@@ -2436,6 +2487,8 @@ $(document).ready(function() {
 
     $("#ep4FormBtn").click(function() {
         if (confirm("Do you want to final submit EP4 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -2529,6 +2582,7 @@ $(document).ready(function() {
                     "EP4_2": EP4_2,
                     "EP4_3": EP4_3,
                     "EP4_4": EP4_4,
+                    language:language
 
                 },
                 beforeSend: function() {
@@ -2566,6 +2620,8 @@ $(document).ready(function() {
 
     $("#ep5FormBtn").click(function() {
         if (confirm("Do you want to final submit EP5 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -2683,6 +2739,7 @@ $(document).ready(function() {
                     "EP5_4": EP5_4,
                     "EP5_5": EP5_5,
                     "EP5_6": EP5_6,
+                    language:language
 
                 },
                 beforeSend: function() {
@@ -2721,6 +2778,8 @@ $(document).ready(function() {
     $("#t1FormBtn").click(function() {
         
         if (confirm("Do you want to final submit T1 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -3140,7 +3199,8 @@ $(document).ready(function() {
                     magneticPart:magneticPart,
                     railFlag2:railFlag2,
                     jumberwireStatus:jumberwireStatus,
-                    remark2:remark2
+                    remark2:remark2,
+                    language:language
 
                 },
                 beforeSend: function() {
@@ -3178,6 +3238,8 @@ $(document).ready(function() {
     
     $("#t2FormBtn").click(function() {
         if (confirm("Do you want to final submit T2 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -3256,7 +3318,8 @@ $(document).ready(function() {
                     "subcompoNameTmp": subcompoNameTmp,
                     "t2_1": t2_1,
                     "t2_2": t2_2,
-                    "t2_3": t2_3,                  
+                    "t2_3": t2_3,  
+                    language:language                
 
                 },
                 beforeSend: function() {
@@ -3294,6 +3357,8 @@ $(document).ready(function() {
 
     $("#t3FormBtn").click(function() {
         if (confirm("Do you want to final submit T3 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -3384,7 +3449,8 @@ $(document).ready(function() {
                     "t3_1": t3_1,
                     "t3_2": t3_2,
                     "t3_3": t3_3,                  
-                    "t3_4": t3_4,                  
+                    "t3_4": t3_4,   
+                    language:language               
 
                 },
                 beforeSend: function() {
@@ -3421,6 +3487,8 @@ $(document).ready(function() {
     });
     $("#t5FormBtn").click(function() {
         if (confirm("Do you want to final submit T5 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -3490,6 +3558,7 @@ $(document).ready(function() {
                     "subcompoNameTmp": subcompoNameTmp,
                     "t5_1": t5_1,
                     "t5_2": t5_2,
+                    language:language
                 },
                 beforeSend: function() {
                     $("#loader_show").removeClass('d-none');
@@ -3529,6 +3598,8 @@ $(document).ready(function() {
     $("#cs1FormBtn").click(function() {
         
         if (confirm("Do you want to final submit CS1 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -3890,7 +3961,8 @@ $(document).ready(function() {
                     shout:shout,
                     nut_bolt:nut_bolt,
                     cover:cover,
-                    remark:remark,       
+                    remark:remark,    
+                    language:language   
 
                 },
                 beforeSend: function() {
@@ -3929,6 +4001,8 @@ $(document).ready(function() {
     $("#cs2FormBtn").click(function() {
         
         if (confirm("Do you want to final submit CS2 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -4070,7 +4144,8 @@ $(document).ready(function() {
                     "cs2_5a": cs2_5a,                  
                     "cs2_5b": cs2_5b,                  
                     "cs2_6": cs2_6,                  
-                    "cs2_7": cs2_7                    
+                    "cs2_7": cs2_7,
+                    language:language                    
                 },
                 beforeSend: function() {
                     $("#loader_show").removeClass('d-none');
@@ -4110,6 +4185,8 @@ $(document).ready(function() {
     $("#dl1FormBtn").click(function() {
         
         if (confirm("Do you want to final submit DL1 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -4277,7 +4354,8 @@ $(document).ready(function() {
                     "dl1_7": dl1_7,                    
                     "dl1_8a": dl1_8a,                    
                     "dl1_8b": dl1_8b,                    
-                    "dl1_9": dl1_9,                    
+                    "dl1_9": dl1_9,  
+                    language:language                  
                 },
                 beforeSend: function() {
                     $("#loader_show").removeClass('d-none');
@@ -4315,6 +4393,8 @@ $(document).ready(function() {
     $("#dl2FormBtn").click(function() {
         
         if (confirm("Do you want to final submit DL2 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -4339,8 +4419,8 @@ $(document).ready(function() {
 
             let dl2_1 = $("#dl2_1").val();
             let dl2_2 = $("#dl2_2").val();
-            let dl2_3a = $("#dl2_3a").val(); 
-            let dl2_3b = $("#dl2_3b").val();           
+            let dl2_3 = $("#dl2_3").val(); 
+            // let dl2_3b = $("#dl2_3b").val();           
                      
             
             if (dl2_1 == '' || dl2_1.length == 0 || dl2_1 == null) {
@@ -4364,25 +4444,25 @@ $(document).ready(function() {
 
             }
 
-            if (dl2_3a == '' || dl2_3a.length == 0 || dl2_3a == null) {
-                $("#dl2_3a").addClass("is-invalid");
+            if (dl2_3 == '' || dl2_3.length == 0 || dl2_3 == null) {
+                $("#dl2_3").addClass("is-invalid");
                 $("#dl2Form_status").html("Serial no 3 is required").css("color", "red");
                 return;
             } else {
                 $("#dl2Form_status").html("");
-                $("#dl2_3a").removeClass("is-invalid");
+                $("#dl2_3").removeClass("is-invalid");
 
             }
 
-            if (dl2_3b == '' || dl2_3b.length == 0 || dl2_3b == null) {
-                $("#dl2_3b").addClass("is-invalid");
-                $("#dl2Form_status").html("Serial no 4 is required").css("color", "red");
-                return;
-            } else {
-                $("#dl2Form_status").html("");
-                $("#dl2_3b").removeClass("is-invalid");
+            // if (dl2_3b == '' || dl2_3b.length == 0 || dl2_3b == null) {
+            //     $("#dl2_3b").addClass("is-invalid");
+            //     $("#dl2Form_status").html("Serial no 4 is required").css("color", "red");
+            //     return;
+            // } else {
+            //     $("#dl2Form_status").html("");
+            //     $("#dl2_3b").removeClass("is-invalid");
 
-            }
+            // }
 
 
             let userID = '<?php echo $_SESSION['userretailer']; ?>';
@@ -4406,8 +4486,9 @@ $(document).ready(function() {
                     "subcompoNameTmp": subcompoNameTmp,
                     "dl2_1": dl2_1,
                     "dl2_2": dl2_2,
-                    "dl2_3a": dl2_3a,                  
-                    "dl2_3b": dl2_3b,                  
+                    "dl2_3": dl2_3,                  
+                    // "dl2_3b": dl2_3b,  
+                    language:language                
                                       
                 },
                 beforeSend: function() {
@@ -4445,6 +4526,8 @@ $(document).ready(function() {
     $("#dl3FormBtn").click(function() {
         
         if (confirm("Do you want to final submit DL3 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -4469,7 +4552,7 @@ $(document).ready(function() {
 
             let dl3_1 = $("#dl3_1").val();
             let dl3_2 = $("#dl3_2").val();          
-                     
+            let dl3_3 = $("#dl3_3").val();         
             
             if (dl3_1 == '' || dl3_1.length == 0 || dl3_1 == null) {
                 $("#dl3_1").addClass("is-invalid");
@@ -4489,6 +4572,16 @@ $(document).ready(function() {
             } else {
                 $("#dl3Form_status").html("");
                 $("#dl3_2").removeClass("is-invalid");
+
+            }
+            
+            if (dl3_3 == '' || dl3_3.length == 0 || dl3_3 == null) {
+                $("#dl3_3").addClass("is-invalid");
+                $("#dl3Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl3Form_status").html("");
+                $("#dl3_3").removeClass("is-invalid");
 
             }
 
@@ -4514,7 +4607,9 @@ $(document).ready(function() {
                     "compoNameTmp": compoNameTmp,
                     "subcompoNameTmp": subcompoNameTmp,
                     "dl3_1": dl3_1,
-                    "dl3_2": dl3_2,                  
+                    "dl3_2": dl3_2, 
+                    "dl3_3": dl3_3, 
+                    language:language                 
                                       
                 },
                 beforeSend: function() {
@@ -4552,6 +4647,8 @@ $(document).ready(function() {
     $("#dl4FormBtn").click(function() {
         
         if (confirm("Do you want to final submit DL4 Form")) {
+            let language = $("#language").val();
+
             let sectionName = $("#sectionName").val();
             let sectionId = $("#sectionId").val();
 
@@ -4577,6 +4674,7 @@ $(document).ready(function() {
             let dl4_1 = $("#dl4_1").val();
             let dl4_2 = $("#dl4_2").val();
             let dl4_3 = $("#dl4_3").val(); 
+            let dl4_4 = $("#dl4_4").val(); 
                      
             
             if (dl4_1 == '' || dl4_1.length == 0 || dl4_1 == null) {
@@ -4609,6 +4707,16 @@ $(document).ready(function() {
                 $("#dl4_3").removeClass("is-invalid");
 
             }
+            
+            if (dl4_4 == '' || dl4_4.length == 0 || dl4_4 == null) {
+                $("#dl4_4").addClass("is-invalid");
+                $("#dl4Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#dl4Form_status").html("");
+                $("#dl4_4").removeClass("is-invalid");
+
+            }
 
 
             let userID = '<?php echo $_SESSION['userretailer']; ?>';
@@ -4632,7 +4740,9 @@ $(document).ready(function() {
                     "subcompoNameTmp": subcompoNameTmp,
                     "dl4_1": dl4_1,
                     "dl4_2": dl4_2,
-                    "dl4_3": dl4_3,                  
+                    "dl4_3": dl4_3,   
+                    "dl4_4": dl4_4,   
+                    language:language               
                                       
                 },
                 beforeSend: function() {
@@ -4739,6 +4849,7 @@ function get_T_formData(tType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
     $(".displaySubcompoName").html(subCompo);
+    let language = $("#language").val();
 
 
     $.ajax({
@@ -4747,7 +4858,7 @@ function get_T_formData(tType,subCompo,compo){
         data: {
             "action": "getT_FormDetails",
             "formType": tType,
-
+            language:language
         },
         beforeSend: function() {
             $("#loader_show").removeClass('d-none');
@@ -4797,7 +4908,7 @@ dataList.forEach((element, index) => {
 
     if(element['cs_id'] == 'cs2_5'){
 
-        
+    if(language == 'English'){
     displayHtml += `
         <tr>
             <th rowspan="3" scope="row">${index+1}</th>
@@ -4829,6 +4940,40 @@ dataList.forEach((element, index) => {
             </td>
         </tr>
     `;
+    }else{
+            
+    displayHtml += `
+        <tr>
+            <th rowspan="3" scope="row">${index+1}</th>
+            <td>सिग्नल पोस्ट पर निकटतम ट्रैक की केंद्र रेखा से इम्प्लांटेशन दूरी को निकटतम ट्रैक की ओर इंगित करने वाले तीर के साथ निम्नलिखित रंगों में चित्रित किया जाना चाहिए</td>
+            <td style="vertical-align:middle;width:22%" >
+              
+            </td>
+        </tr>
+
+        <tr>
+            <td>(ए) सामान्य प्रत्यारोपण के लिए सफेद पृष्ठभूमि पर काला।</td>
+            <td style="vertical-align:middle;width:22%" >
+                <select class="custom-select CS2Class" id="cs2_5a">
+                    <option value="">Select Action</option>
+                    <option value="ठीक है">ठीक है</option>
+                    <option value="ठीक नहीं है">ठीक नहीं है</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>(बी) प्रत्यारोपण दूरी <2.36 मीटर के लिए सफेद पृष्ठभूमि पर लाल।</td>
+            <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select CS2Class" id="cs2_5b">
+                    <option value="">Select Action</option>
+                    <option value="ठीक है">ठीक है</option>
+                    <option value="ठीक नहीं है">ठीक नहीं है</option>
+                </select>
+            </td>
+        </tr>
+    `;
+    }
 
     }else{
 
@@ -4969,6 +5114,7 @@ function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
     $(".displaySubcompoName").html(subCompo);
+    let language = $("#language").val();
 
 
     if(csType == 'CS1'){
@@ -4982,7 +5128,7 @@ function get_CS_formData(csType,subCompo,compo){
         data: {
             "action": "getCS_FormDetails",
             "formType": csType,
-
+            language:language
         },
         beforeSend: function() {
             $("#loader_show").removeClass('d-none');
@@ -5011,7 +5157,9 @@ function get_CS_formData(csType,subCompo,compo){
 function get_DL_formData(dL_Type,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
-    $(".displaySubcompoName").html(subCompo);
+    let language = $("#language").val();
+
+    // $(".displaySubcompoName").html(subCompo);
 
     // if(dL_Type == 'CS1'){
     //     $("#componentForm_CS1").modal("show");
@@ -5024,7 +5172,7 @@ function get_DL_formData(dL_Type,subCompo,compo){
         data: {
             "action": "getDL_FormDetails",
             "formType": dL_Type,
-
+            language:language
         },
         beforeSend: function() {
             $("#loader_show").removeClass('d-none');

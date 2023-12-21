@@ -362,6 +362,8 @@ if(isset($_POST['action'])){
         }
 
         $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
         $tableName = "";
         switch ($formType) {
             case 'EP1':
@@ -387,45 +389,44 @@ if(isset($_POST['action'])){
                 $respo['msg'] = "Invalid request!";
                 $respo['data'] = [];
                 echo json_encode($respo);
-                die();
-                break;
+                die();                
         }
 
         try{
 
-            $query = "SELECT * FROM ".$tableName;
-        $queryExe = mysqli_query($con,$query);
-        if(mysqli_num_rows($queryExe) <= 0){
-            $respo['status'] = false;
-            $respo['msg'] = "Data not found";
-            $respo['data'] = [];
+            $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
+            $queryExe = mysqli_query($con,$query);
+            if(mysqli_num_rows($queryExe) <= 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+        
+            while($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+            $obj->id = $q_run['id'];
+            $obj->ep_id = $q_run['ep_id'];
+            $obj->ep_details = $q_run['ep_details'];
+            $obj->ep_option = $q_run['ep_option'];
+            $data[] = $obj;
+                
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
             echo json_encode($respo);
             die();
-        }
-
-        $data = [];
-        
-        while($q_run = mysqli_fetch_array($queryExe)) {
-            $obj = new stdClass();
-           $obj->id = $q_run['id'];
-           $obj->ep_id = $q_run['ep_id'];
-           $obj->ep_details = $q_run['ep_details'];
-           $obj->ep_option = $q_run['ep_option'];
-           $data[] = $obj;
-            
-        }
-
-       $respo['status'] = true;
-       $respo['msg'] = "List found";
-       $respo['data'] = $data;
-
-       echo json_encode($respo);
-       die();
 
         }catch(Exception $err){
 
             $respo['status'] = false;
-            $respo['msg'] = $err;
+            $respo['msg'] = "Catch error";//$err;
             $respo['data'] = [];
 
             echo json_encode($respo);
@@ -450,6 +451,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -517,7 +519,7 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO ep1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep1_1,ep1_2,ep1_3,ep1_4,ep1_5,ep1_6,ep1_7,ep1_8,ep1_9,ep1_10,ep1_11,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep1_1','$ep1_2','$ep1_3','$ep1_4','$ep1_5','$ep1_6','$ep1_7','$ep1_8','$ep1_9','$ep1_10','$ep1_11','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO ep1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep1_1,ep1_2,ep1_3,ep1_4,ep1_5,ep1_6,ep1_7,ep1_8,ep1_9,ep1_10,ep1_11,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep1_1','$ep1_2','$ep1_3','$ep1_4','$ep1_5','$ep1_6','$ep1_7','$ep1_8','$ep1_9','$ep1_10','$ep1_11','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -557,6 +559,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -620,8 +623,8 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO ep2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,EP2_1,EP2_2,EP2_3,EP2_4,EP2_5,op_v_N_R,op_v_R_N,ob_v_N_R,ob_v_R_N,det_v_N_R,det_v_R_N,nwc_N_R,nwc_R_N,ob_sc_N_R,ob_sc_R_N,ob_t_N_R,gt_N_R,operatingTimeSecond,operatingTime_dbt,friction_c_s,track_locking,remark_brief,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$EP2_1','$EP2_2','$EP2_3','$EP2_4','$EP2_5','$op_v_N_R','$op_v_R_N','$ob_v_N_R','$ob_v_R_N','$det_v_N_R','$det_v_R_N',
-        '$nwc_N_R','$nwc_R_N','$ob_sc_N_R','$ob_sc_R_N','$ob_t_N_R','$gt_N_R','$operatingTimeSecond','$operatingTime_dbt','$friction_c_s','$track_locking','$remark_brief','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO ep2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,EP2_1,EP2_2,EP2_3,EP2_4,EP2_5,op_v_N_R,op_v_R_N,ob_v_N_R,ob_v_R_N,det_v_N_R,det_v_R_N,nwc_N_R,nwc_R_N,ob_sc_N_R,ob_sc_R_N,ob_t_N_R,gt_N_R,operatingTimeSecond,operatingTime_dbt,friction_c_s,track_locking,remark_brief,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$EP2_1','$EP2_2','$EP2_3','$EP2_4','$EP2_5','$op_v_N_R','$op_v_R_N','$ob_v_N_R','$ob_v_R_N','$det_v_N_R','$det_v_R_N',
+        '$nwc_N_R','$nwc_R_N','$ob_sc_N_R','$ob_sc_R_N','$ob_t_N_R','$gt_N_R','$operatingTimeSecond','$operatingTime_dbt','$friction_c_s','$track_locking','$remark_brief','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -661,6 +664,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -705,7 +709,7 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO ep4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep4_1,ep4_2,ep4_3,ep4_4,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep4_1','$ep4_2','$ep4_3','$ep4_4','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO ep4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep4_1,ep4_2,ep4_3,ep4_4,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep4_1','$ep4_2','$ep4_3','$ep4_4','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -745,6 +749,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -791,7 +796,7 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO ep5_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep5_1,ep5_2,ep5_3,ep5_4,ep5_5,ep5_6,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep5_1','$ep5_2','$ep5_3','$ep5_4','$ep5_5','$ep5_6','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO ep5_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep5_1,ep5_2,ep5_3,ep5_4,ep5_5,ep5_6,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep5_1','$ep5_2','$ep5_3','$ep5_4','$ep5_5','$ep5_6','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -826,6 +831,8 @@ if(isset($_POST['action'])){
         }
 
         $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
         $tableName = "";
         switch ($formType) {
             case 'T1':
@@ -852,12 +859,11 @@ if(isset($_POST['action'])){
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
-                break;
         }
 
         try{
 
-            $query = "SELECT * FROM ".$tableName;
+            $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
         $queryExe = mysqli_query($con,$query);
         if(mysqli_num_rows($queryExe) <= 0){
             $respo['status'] = false;
@@ -915,6 +921,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -982,7 +989,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO t1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t1_1,t1_2,t1_3,t1_4,t1_5,t1_6,t1_7,t1_8,date1,sale1_spg,sale1_v,sale2_spg,sale2_v,sale3_spg,sale3_v,charging_v,charging_current,feedVoltage,nearBlock,wireStatus,remark1,date2,railVoltage,vt_value,wireStatus2,magneticPart,railFlag2,jumberwireStatus,remark2,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t1_1','$t1_2','$t1_3','$t1_4','$t1_5','$t1_6','$t1_7','$t1_8','$date1','$sale1_spg','$sale1_v','$sale2_spg','$sale2_v','$sale3_spg','$sale3_v','$charging_v','$charging_current','$feedVoltage','$nearBlock','$wireStatus','$remark1','$date2','$railVoltage','$vt_value','$wireStatus2','$magneticPart','$railFlag2','$jumberwireStatus','$remark2','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO t1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t1_1,t1_2,t1_3,t1_4,t1_5,t1_6,t1_7,t1_8,date1,sale1_spg,sale1_v,sale2_spg,sale2_v,sale3_spg,sale3_v,charging_v,charging_current,feedVoltage,nearBlock,wireStatus,remark1,date2,railVoltage,vt_value,wireStatus2,magneticPart,railFlag2,jumberwireStatus,remark2,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t1_1','$t1_2','$t1_3','$t1_4','$t1_5','$t1_6','$t1_7','$t1_8','$date1','$sale1_spg','$sale1_v','$sale2_spg','$sale2_v','$sale3_spg','$sale3_v','$charging_v','$charging_current','$feedVoltage','$nearBlock','$wireStatus','$remark1','$date2','$railVoltage','$vt_value','$wireStatus2','$magneticPart','$railFlag2','$jumberwireStatus','$remark2','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1021,6 +1028,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1064,7 +1072,7 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO t2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t2_1,t2_2,t2_3,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t2_1','$t2_2','$t2_3','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO t2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t2_1,t2_2,t2_3,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t2_1','$t2_2','$t2_3','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1103,6 +1111,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1143,7 +1152,7 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO t3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t3_1,t3_2,t3_3,t3_4,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t3_1','$t3_2','$t3_3','$t3_4','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO t3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t3_1,t3_2,t3_3,t3_4,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t3_1','$t3_2','$t3_3','$t3_4','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1182,6 +1191,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1224,7 +1234,7 @@ if(isset($_POST['action'])){
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO t5_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t5_1,t5_2,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t5_1','$t5_2','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO t5_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t5_1,t5_2,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t5_1','$t5_2','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1257,6 +1267,8 @@ if(isset($_POST['action'])){
         }
 
         $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
         $tableName = "";
         switch ($formType) {
             // case 'CS1':
@@ -1273,12 +1285,12 @@ if(isset($_POST['action'])){
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
-                break;
+                
         }
 
         try{
 
-            $query = "SELECT * FROM ".$tableName;
+            $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
         $queryExe = mysqli_query($con,$query);
         if(mysqli_num_rows($queryExe) <= 0){
             $respo['status'] = false;
@@ -1336,6 +1348,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1400,7 +1413,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO cs1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs1_1,cs1_2,cs1_3,cs1_4,cs1_5,cs1_6,cs1_7,cs1_8,cs1_9,cs1_10,cs1_11,cs1_12a,cs1_12b,cs1_12c,date,rg,hg,dg,hhg,route,c_on,shout,nut_bolt,cover,remark,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs1_1','$cs1_2','$cs1_3','$cs1_4','$cs1_5','$cs1_6','$cs1_7','$cs1_8','$cs1_9','$cs1_10','$cs1_11','$cs1_12a','$cs1_12b','$cs1_12c','$date','$rg','$hg','$dg','$hhg','$route','$c_on','$shout','$nut_bolt','$cover','$remark','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO cs1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs1_1,cs1_2,cs1_3,cs1_4,cs1_5,cs1_6,cs1_7,cs1_8,cs1_9,cs1_10,cs1_11,cs1_12a,cs1_12b,cs1_12c,date,rg,hg,dg,hhg,route,c_on,shout,nut_bolt,cover,remark,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs1_1','$cs1_2','$cs1_3','$cs1_4','$cs1_5','$cs1_6','$cs1_7','$cs1_8','$cs1_9','$cs1_10','$cs1_11','$cs1_12a','$cs1_12b','$cs1_12c','$date','$rg','$hg','$dg','$hhg','$route','$c_on','$shout','$nut_bolt','$cover','$remark','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1439,6 +1452,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1485,7 +1499,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO cs2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs2_1,cs2_2,cs2_3,cs2_4,cs2_5a,cs2_5b,cs2_6,cs2_7,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs2_1','$cs2_2','$cs2_3','$cs2_4','$cs2_5a','$cs2_5b','$cs2_6','$cs2_7','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO cs2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs2_1,cs2_2,cs2_3,cs2_4,cs2_5a,cs2_5b,cs2_6,cs2_7,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs2_1','$cs2_2','$cs2_3','$cs2_4','$cs2_5a','$cs2_5b','$cs2_6','$cs2_7','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1519,6 +1533,8 @@ if(isset($_POST['action'])){
         }
 
         $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
         $tableName = "";
         switch ($formType) {
             case 'DL1':
@@ -1541,12 +1557,12 @@ if(isset($_POST['action'])){
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
-                break;
+                
         }
 
         try{
 
-                $query = "SELECT * FROM ".$tableName;
+                $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
             $queryExe = mysqli_query($con,$query);
             if(mysqli_num_rows($queryExe) <= 0){
                 $respo['status'] = false;
@@ -1603,6 +1619,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1651,7 +1668,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO dl1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl1_1,dl1_2,dl1_3,dl1_4,dl1_5,dl1_6,dl1_7,dl1_8a,dl1_8b,dl1_9,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl1_1','$dl1_2','$dl1_3','$dl1_4','$dl1_5','$dl1_6','$dl1_7','$dl1_8a','$dl1_8b','$dl1_9','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO dl1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl1_1,dl1_2,dl1_3,dl1_4,dl1_5,dl1_6,dl1_7,dl1_8a,dl1_8b,dl1_9,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl1_1','$dl1_2','$dl1_3','$dl1_4','$dl1_5','$dl1_6','$dl1_7','$dl1_8a','$dl1_8b','$dl1_9','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1690,6 +1707,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1718,13 +1736,13 @@ if(isset($_POST['action'])){
 
         $dl2_1 = trim($_POST['dl2_1']);
         $dl2_2 = trim($_POST['dl2_2']);
-        $dl2_3a = trim($_POST['dl2_3a']);
-        $dl2_3b = trim($_POST['dl2_3b']);
+        $dl2_3 = trim($_POST['dl2_3']);
+        // $dl2_3b = trim($_POST['dl2_3b']);
 
 
       
 
-        if(empty($dl2_1) || empty($dl2_2) || empty($dl2_3a) || empty($dl2_3b) ){
+        if(empty($dl2_1) || empty($dl2_2) || empty($dl2_3)  ){
 
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
@@ -1732,7 +1750,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO dl2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl2_1,dl2_2,dl2_3a,dl2_3b,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl2_1','$dl2_2','$dl2_3a','$dl2_3b','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO dl2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl2_1,dl2_2,dl2_3,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl2_1','$dl2_2','$dl2_3','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1771,6 +1789,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1799,11 +1818,12 @@ if(isset($_POST['action'])){
 
         $dl3_1 = trim($_POST['dl3_1']);
         $dl3_2 = trim($_POST['dl3_2']);
+        $dl3_3= trim($_POST['dl3_3']);
         
 
       
 
-        if(empty($dl3_1) || empty($dl3_2)){
+        if(empty($dl3_1) || empty($dl3_2)|| empty($dl3_3)){
 
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
@@ -1811,7 +1831,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO dl3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl3_1,dl3_2,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl3_1','$dl3_2','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO dl3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl3_1,dl3_2,dl3_3,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl3_1','$dl3_2','$dl3_3','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -1850,6 +1870,7 @@ if(isset($_POST['action'])){
         $stationId = trim($_POST['stationId']);
         $compoNameTmp = trim($_POST['compoNameTmp']);
         $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
         
         $createdDateTime = date("Y-m-d h:i:s");
 
@@ -1879,10 +1900,11 @@ if(isset($_POST['action'])){
         $dl4_1 = trim($_POST['dl4_1']);
         $dl4_2 = trim($_POST['dl4_2']);
         $dl4_3 = trim($_POST['dl4_3']);
+        $dl4_4 = trim($_POST['dl4_4']);
 
       
 
-        if(empty($dl4_1) || empty($dl4_2) || empty($dl4_3) ){
+        if(empty($dl4_1) || empty($dl4_2) || empty($dl4_3) || empty($dl4_4) ){
 
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
@@ -1890,7 +1912,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO dl4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl4_1,dl4_2,dl4_3,created_date,updated_date) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl4_1','$dl4_2','$dl4_3','$createdDateTime','$createdDateTime')";
+        $insertQuery = "INSERT INTO dl4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dl4_1,dl4_2,dl4_3,dl4_4,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dl4_1','$dl4_2','$dl4_3','$dl4_4','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){

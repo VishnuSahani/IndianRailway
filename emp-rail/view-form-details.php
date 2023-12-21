@@ -2282,7 +2282,15 @@ function openDialog(typeOfForm, dataList, id) {
                 <option value='Done'>Done</option>
             </select> <button type="button" onclick="updateSingleValue('Done','${typeOfForm}','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
 
-        } else {
+        }else if (value == 'नहीं किया') {
+
+            displayHtml +=
+                `<select class="form-control">
+                <option>${value}</option>
+                <option value='हो गया'>हो गया</option>
+            </select> <button type="button" onclick="updateSingleValue('हो गया','${typeOfForm}','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+
+            } else {
             // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
             displayHtml += `<div class="">${value}</div>`;
         }
@@ -2446,7 +2454,7 @@ function fillEP2FormData(id) {
 }
 
 
-function showFormDetails(id, EPtype) {
+function showFormDetails(id, EPtype,language) {
 
     // where EPtype = is EP1, EP4, EP5
 
@@ -2465,7 +2473,7 @@ function showFormDetails(id, EPtype) {
             data: {
                 "action": "getEP_FormDetails",
                 "formType": EPtype,
-
+                "language":language
             },
             beforeSend: function() {
                 $("#loader_show").removeClass('d-none');
@@ -3050,7 +3058,7 @@ function showTable(formKeyName, subcomponame) {
     `;
         if (formKeyName.startsWith("EP")) {
             displayHtml += `
-        <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}')">
+        <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
         </button>
        `;
