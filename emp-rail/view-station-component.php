@@ -1,13 +1,12 @@
-<?php require('header.php');?>
+<?php require('header.php'); ?>
 <?php require('include/db_config.php');
 
- //Include database configuration file
-    $id="";
+//Include database configuration file
+$id = "";
 
-    if(isset($_SESSION['userretailer']))
-{
-  $id=$_SESSION['userretailer'];  
-   
+if (isset($_SESSION['userretailer'])) {
+    $id = $_SESSION['userretailer'];
+
 }
 
 // echo $name;
@@ -50,9 +49,9 @@
                         <div class="form-group col-md-4 col-12">
                             <label for="sectionName">Section Name</label>
                             <input type="text" id="sectionName" class="form-control" disabled
-                                value="<?php echo $empSectionName;?>">
+                                value="<?php echo $empSectionName; ?>">
                             <input type="hidden" id="sectionId" class="form-control" disabled
-                                value="<?php echo $empSectionId;?>">
+                                value="<?php echo $empSectionId; ?>">
                             <input type="hidden" id="compoNameTmp">
                             <input type="hidden" id="subcompoNameTmp">
                         </div>
@@ -60,9 +59,9 @@
                         <div class="form-group col-md-4 col-12">
                             <label for="stationName">Station Name</label>
                             <input type="text" id="stationName" class="form-control" disabled
-                                value="<?php echo $empStationName;?>">
+                                value="<?php echo $empStationName; ?>">
                             <input type="hidden" id="stationId" class="form-control" disabled
-                                value="<?php echo $empStationId;?>">
+                                value="<?php echo $empStationId; ?>">
                         </div>
 
 
@@ -219,21 +218,36 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td colspan="2">Date</td>
+                                            <td colspan="2">                                                
+                                                <span class="ep2_details_english">Date</span>
+                                                <span class="ep2_details_hindi">दिनांक</span>
+                                            </td>
                                             <td>
                                                 <input type="date" id="EP2_1" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Operating Voltage (>100 Volts)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;" rowspan="2">
+                                            
+                                            <span class="ep2_details_english">Operating Voltage (>100 Volts)</span>
+                                            <span class="ep2_details_hindi">सामान्य ऑपरेटिंग वोल्टेज (>100 वोल्ट)</span>
+                                        </td>
+                                            <td>
+                                                
+                                                <span class="ep2_details_english">(N to R)</span>
+                                            <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>
+                                            </td>
                                             <td>
                                                 <input type="number" id="op_v_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>(R to N)</td>
+                                            <td>
+                                            <span class="ep2_details_english">(R to N)</span>
+                                            <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span>    
+                                            
+                                        </td>
                                             <td>
                                                 <input type="number" id="op_v_R_N" class="form-control">
                                             </td>
@@ -241,69 +255,116 @@
 
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Obstruction Voltage (>80 Volts)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;" rowspan="2">
+                                            
+                                            <span class="ep2_details_english">Obstruction Voltage (>80 Volts)</span>
+                                            <span class="ep2_details_hindi">बाधा वोल्टेज (>80 वोल्ट)</span>
+                                        </td>
+                                            <td>
+                                            <span class="ep2_details_english">(N to R)</span>
+                                            <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="ob_v_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>(R to N)</td>
+                                            <td>
+                                            <span class="ep2_details_english">(R to N)</span>
+                                            <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="ob_v_R_N" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Detection Voltage (>24 Volts)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;" rowspan="2">
+                                            <span class="ep2_details_english">Detection Voltage (>24 Volts)</span>
+                                            <span class="ep2_details_hindi">डिटेक्शन वोल्टेज (>24 वोल्ट)*</span>
+                                            </td>
+                                            <td>
+                                            <span class="ep2_details_english">(N to R)</span>
+                                            <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="det_v_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>(R to N)</td>
+                                            <td>
+                                            <span class="ep2_details_english">(R to N)</span>
+                                            <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="det_v_R_N" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Normal Working Current (1.5 - 2.5 Amp.)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;" rowspan="2">
+                                            <span class="ep2_details_english">Normal Working Current (1.5 - 2.5 Amp.)</span>
+                                            <span class="ep2_details_hindi">सामान्य कार्यशील धारा (1.5 - 2.5 एम्पियर)</span>
+                                            </td>
+                                            <td>
+                                            <span class="ep2_details_english">(N to R)</span>
+                                            <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="nwc_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>(R to N)</td>
+                                            <td>
+                                            <span class="ep2_details_english">(R to N)</span>
+                                            <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="nwc_R_N" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;" rowspan="2">Obstruction/Slipping Current (3-5 Amp.)</td>
-                                            <td>(N to R)</td>
+                                            <td style="vertical-align: middle;" rowspan="2">
+                                            <span class="ep2_details_english">Obstruction/Slipping Current (3-5 Amp.)</span>
+                                            <span class="ep2_details_hindi">रुकावट/स्लिपिंग करंट (3-5 एम्पियर)</span>
+                                            </td>
+                                            <td>
+                                            <span class="ep2_details_english">(N to R)</span>
+                                            <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="ob_sc_N_R" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>(R to N)</td>
+                                            <td>
+                                            <span class="ep2_details_english">(R to N)</span>
+                                            <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span>    
+                                            </td>
                                             <td>
                                                 <input type="number" id="ob_sc_R_N" class="form-control">
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td style="vertical-align: middle;"  colspan="2">Obstruction Test (3.25 mm)</td>
+                                            <td style="vertical-align: middle;"  colspan="2">
+                                            <span class="ep2_details_english">Obstruction Test (3.25 mm)</span>
+                                            <span class="ep2_details_hindi">रुकावट परीक्षण (3.25 मिमी)*</span>
+                                            </td>
                                             <!-- <td>(N to R)</td> -->
                                             <td>
                                                 <select id="ob_t_N_R" class="custom-select">
                                                     <option value="">Select</option>
-                                                    <option value="OK">OK</option>
-                                                    <option value="Not OK">Not OK</option>
+                                                   
+                                                    <option class="ep2_details_english" value="OK">OK</option>
+                                                    <option class="ep2_details_english" value="Not OK">Not OK</option>
+                                                   
+                                            
+                                                    <option  class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option  class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
+                                                    
                                                 </select>
                                             </td>
                                         </tr>
@@ -316,13 +377,22 @@
 
 
                                         <tr>
-                                            <td style="vertical-align: middle;"  colspan="2">Go Test (1.6 mm Fail Safe Test)</td>
+                                            <td style="vertical-align: middle;"  colspan="2">
+                                            <span class="ep2_details_english">Go Test (1.6 mm Fail Safe Test)</span>
+                                            <span class="ep2_details_hindi">गो टेस्ट (1.6 मिमी असफल सुरक्षित परीक्षण)*</span>
+                                            </td>
                                             <!-- <td>(N to R)</td> -->
                                             <td>
                                                 <select id="gt_N_R" class="custom-select">
-                                                    <option value="">Select</option>
-                                                    <option value="OK">OK</option>
-                                                    <option value="Not OK">Not OK</option>
+                                                <option value="">Select</option>
+                                                    
+                                                    <option class="ep2_details_english" value="OK">OK</option>
+                                                    <option class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
                                                 </select>
                                             </td>
                                         </tr>
@@ -334,7 +404,10 @@
                                         </tr> -->
 
                                         <tr>
-                                            <td style="vertical-align: middle;" colspan="2">Operating Time (4-5 Seconds)</td>
+                                            <td style="vertical-align: middle;" colspan="2">
+                                            <span class="ep2_details_english">Operating Time (4-5 Seconds)</span>
+                                            <span class="ep2_details_hindi">परिचालन समय (4-5 सेकंड)*</span>
+                                            </td>
                                             <td>
                                                 <input type="number" id="operatingTimeSecond" class="form-control">
                                             </td>
@@ -343,7 +416,9 @@
                                         <tr>
                                             <td style="vertical-align: middle;" colspan="2">
                                             <!-- Operating time during barrier test (>10 Seconds) -->
-                                            अवरोध परिक्षण के दौरान परिचालन समय
+                                            <span class="ep2_details_english">अवरोध परिक्षण के दौरान परिचालन समय*</span>
+                                            <span class="ep2_details_hindi">अवरोध परिक्षण के दौरान परिचालन समय*</span>
+                                            
                                         </td>
                                             <td>
                                                 <input type="number" id="operatingTime_dbt" class="form-control">
@@ -353,26 +428,55 @@
                                         <tr>
                                             <td style="vertical-align: middle;" colspan="2">
                                             <!-- Is the friction clutch slipping or not? -->
-                                            फ्रिक्शन क्लच स्लिप कर रहा है या नहीं
+                                            <span class="ep2_details_english">फ्रिक्शन क्लच स्लिप कर रहा है या नहीं</span>
+                                            <span class="ep2_details_hindi">फ्रिक्शन क्लच स्लिप कर रहा है या नहीं</span>
+                                           
                                         </td>
                                             <td>
-                                                <input type="text" id="friction_c_s" class="form-control">
+                                                <!-- <input type="text" id="friction_c_s" class="form-control"> -->
+                                                <select id="friction_c_s" class="custom-select">
+                                                <option value="">Select</option>
+                                                
+                                                    <option  class="ep2_details_english" value="OK">OK</option>
+                                                    <option  class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
+                                                </select>
+                                                
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td style="vertical-align: middle;" colspan="2">
-                                            Track Locking Test
+                                            <span class="ep2_details_english">Track Locking Test</span>
+                                            <span class="ep2_details_hindi">ट्रैक लॉकिंग टेस्ट*</span>
+                                            
                                         </td>
                                             <td>
-                                                <input type="text" id="track_locking" class="form-control">
+                                                <!-- <input type="text" id="track_locking" class="form-control"> -->
+                                                <select id="track_locking" class="custom-select">
+                                                <option value="">Select</option>
+                                                    
+                                                    <option class="ep2_details_english" value="OK">OK</option>
+                                                    <option class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="उत्तीर्ण">उत्तीर्ण</option>
+                                                    <option class="ep2_details_hindi" value="अनुत्तीर्ण">अनुत्तीर्ण</option>
+                                            
+                                                </select>
                                             </td>
                                         </tr>
                                        
                                         <tr>
                                             <td style="vertical-align: middle;" colspan="2">
                                             <!-- Remark's inspection/brief description of maintenance -->
-                                            रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण
+                                            <span class="ep2_details_english">रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण*</span>
+                                            <span class="ep2_details_hindi">रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण*</span>
+                                            
                                         </td>
                                             <td>
                                                 <input type="text" id="remark_brief" class="form-control">
@@ -398,41 +502,70 @@
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Checking of feed disconnection time under obstruction is not less than 10 Seconds.</td>
+                            <td>
+                            <span class="ep2_details_english">
+                                Checking of feed disconnection time under obstruction is not less than 10 Seconds.</span>
+                                            <span class="ep2_details_hindi">रुकावट के तहत फ़ीड वियोग का समय जांचने में 10 सेकंड से कम नहीं है।</span>    
+                            </td>
                             <td>
                                 <select class="custom-select EP2Class" id="EP2_2">
                                     <option value="">Select Action</option>
-                                    <option value="Done">Done</option>
-                                    <option value="Not Done">Not Done</option>
+                                    <option  class="ep2_details_english" value="OK">OK</option>
+                                                    <option  class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Ensure Hose pipe/GI pipe in good condition and without gaps/access.</td>
+                            <td>
+                            <span class="ep2_details_english">
+                                Ensure Hose pipe/GI pipe in good condition and without gaps/access.</span>
+                                            <span class="ep2_details_hindi">सुनिश्चित करें कि होज़ पाइप/जीआई पाइप अच्छी स्थिति में और बिना किसी गैप/पहुँच के हो।</span>    
+                            </td>
                             <td>
                                 <select class="custom-select EP2Class" id="EP2_3">
                                     <option value="">Select Action</option>
-                                    <option value="OK">OK</option>
-                                    <option value="Not OK">Not OK</option>
+                                    <option  class="ep2_details_english" value="OK">OK</option>
+                                                    <option  class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
-                            <td>Check MS pins of Switch Extension piece/‘P’ bracket for any rib formation or excessive
-                                wear.</td>
+                            <td>
+                            <span class="ep2_details_english">
+                            Check MS pins of Switch Extension piece/‘P’ bracket for any rib formation or excessive
+                                wear.
+                            </span>
+                                            <span class="ep2_details_hindi">किसी भी पसली गठन या अत्यधिक घिसाव के लिए स्विच एक्सटेंशन पीस/'पी' ब्रैकेट के MS पिन की जांच करें।</span>    
+                            </td>
                             <td>
                                 <select class="custom-select EP2Class" id="EP2_4">
                                     <option value="">Select Action</option>
-                                    <option value="Done">Done</option>
-                                    <option value="Not Done">Not Done</option>
+                                    <option  class="ep2_details_english" value="OK">OK</option>
+                                                    <option  class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">5</th>
                             <td>
+                                <div class="ep2_details_english">
                                 In case of Clamp type point machine, Lubricate the following moving parts of the clamp
                                 lock.
                                 <div>
@@ -442,13 +575,29 @@
                                         <li> Between machine of lock bar and lock arm assembly</li>
                                     </ol>
                                 </div>
+                                </div>
+                                <div class="ep2_details_hindi">
+                                क्लैंप प्रकार की पॉइंट मशीन के मामले में, क्लैंप लॉक के निम्नलिखित गतिशील हिस्सों को चिकनाई दें।
+                                <ul>
+                                        <li>(ए) स्टॉक रेल ब्रैकेट ग्रूव.</li>
+                                        <li>(बी) टंग रेल और लॉक आर्म असेंबली का गतिशील भाग। </li>
+                                        <li>(सी) लॉक बार और लॉक आर्म असेंबली की मशीन के बीच ।  </li>
+                                    </ul>
+                                </div>
+                                
+                               
 
                             </td>
                             <td style="vertical-align: middle;">
                                 <select class="custom-select EP2Class" id="EP2_5">
                                     <option value="">Select Action</option>
-                                    <option value="Done">Done</option>
-                                    <option value="Not Done">Not Done</option>
+                                    <option  class="ep2_details_english" value="OK">OK</option>
+                                                    <option  class="ep2_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep2_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep2_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
                                 </select>
                             </td>
                         </tr>
@@ -471,6 +620,203 @@
     </div>
 </div>
 
+<!-- Modal EP3 -->
+<div class="modal fade" id="componentForm_EP3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelEP3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabelEP3">
+                        <span class="badge badge-success h3" id="modalComponentName">
+                            Schedule Code: EP3  
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                        <!-- <span id="modalSubCompoName"></span>
+                        <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                    Quarterly
+
+                </div>
+                <div class="modal-body table-responsive">
+                    <!-- <form id="modalFormComponent">
+                    
+                    </form> -->
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Check the following</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ep3_body">
+                            <tr>
+                                <td scope="row">1</td>
+                                <td scope="row">
+                                    
+                                    <div class="ep3_details_english">
+                                        Joint check with JE/SSE (P-Way), of points & crossing for leveling, squaring; creeping, packing, clearance of ballast and other P-Way fittings, etc. and measurement of LH, RH switch opening are as given below for normal point and as per proforma circulated by RDSO dated 14.2.19 for Thick Web Switches.
+
+                                        <table class="table">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th colspan="2">Normal Point (143mm)</th>
+                                                    <th colspan="2">Thick Web Point(220mm)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">OPENING (Tolerance)</th>
+                                                    <th colspan="2">OPENING (Tolerance)</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>LH END</td>
+                                                    <td>RH END</td>
+                                                    <td>LH END</td>
+                                                    <td>RH END</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>115+-3mm</td>
+                                                    <td>115+-3mm</td>
+                                                    <td>160+-3mm</td>
+                                                    <td>160+-3mm</td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="ep3_details_hindi">
+
+                                    कांटों और क्रॉसिंग की लेवलिंग, स्क्वायरिंग, रेंगना(creeping), पैकिंग, गिट्टी और अन्य पी-वे फिटिंग आदि की निकासी और LH, RH स्विच खोलने का माप सामान्य कांटों के लिए नीचे दिया गया है और थिक वेब स्विच(TWS) के लिए RDSO दिनांक 14.02.19 द्वारा प्रसारित प्रोफार्मा के अनुसार है इसकी जेई/सीसेई (पी-वे) के साथ संयुक्त जांच । 
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th colspan="2">सामान्य कांटा(143mm)</th>
+            <th colspan="2">थीक वेब कांटा(220mm)</th>
+        </tr>
+        <tr>
+            <th colspan="2">
+            प्रारंभण  ( सहनशीलता )
+            </th>
+            <th colspan="2">
+            प्रारंभण  ( सहनशीलता )
+            </th>
+        </tr>
+        <tr>
+            <td>LH अंत</td>
+            <td>RH अंत</td>
+            <td>LH अंत</td>
+            <td>RH अंत</td>
+        </tr>
+        <tr>
+            <td>115+-3 मिमी</td>
+            <td>115+-3 मिमी</td>
+            <td>160+-3 मिमी</td>
+            <td>160+-3 मिमी</td>
+        </tr>
+    </thead>
+</table>
+                                        
+                                    </div>
+                                           
+                                </td>
+                                <td scope="row" style="width: 25%;vertical-align: middle;">
+                                <select id="ep3_1" class="custom-select">
+                                                <option value="">Select</option>
+                                                
+                                                    <option  class="ep3_details_english" value="OK">OK</option>
+                                                    <option  class="ep3_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep3_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep3_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="ep3_details_english">
+                                    Joint checking of SSD Setting and its arm insulation with P-Way supervisor.
+                                        
+                                    </div>
+                                        <div class="ep3_details_hindi">
+                                        पी-वे सुपरवाइजर के साथ SSD सेटिंग और उसके आर्म इंसुलेशन की संयुक्त जांच।
+                                        </div>
+                                </td>
+                                <td>
+                                <select id="ep3_2" class="custom-select">
+                                                <option value="">Select</option>
+                                                
+                                                    <option  class="ep3_details_english" value="OK">OK</option>
+                                                    <option  class="ep3_details_english" value="Not OK">Not OK</option>
+                                                    
+                                            
+                                                    <option class="ep3_details_hindi" value="ठीक है">ठीक है</option>
+                                                    <option class="ep3_details_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                            
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="ep3_details_english">
+                                        Remarks by Signal Supervisor.
+                                    </div>
+                                    <div class="ep3_details_hindi">
+                                            Remarks by Signal Supervisor.
+                                            
+                                        </div>
+                                </td>
+                                <td>
+                                    <input type="text" id="ep3_3" class="form-control">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="ep3_details_english">
+                                        Remarks by P.Way  Supervisor.
+                                    </div>
+                                    <div class="ep3_details_hindi">
+                                            Remarks by P.Way  Supervisor.
+                                            
+                                        </div>
+                                </td>
+                                <td>
+                                <input type="text" id="ep3_4" class="form-control">
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <div id="ep1Form_status"></div>
+                    <div>
+                        <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                        <button type='button' id="ep1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- Modal EP4 -->
 <div class="modal fade" id="componentForm_EP4" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -1784,8 +2130,27 @@ function get_EP_formData(EPtype, subCompo, compo) {
 
     if (EPtype === 'EP2') {
         $("#EP2_1").val(new Date().toISOString().split("T")[0]);
+        
+        if(language == "Hindi"){
+            $(".ep2_details_english").addClass('d-none')
+            $(".ep2_details_hindi").removeClass('d-none')
+        }else{
+            $(".ep2_details_hindi").addClass('d-none')
+            $(".ep2_details_english").removeClass('d-none')
+        }
         $("#componentForm_EP2").modal("show");
         return;
+    }else if(EPtype === 'EP3'){
+        if(language == "Hindi"){
+            $(".ep3_details_english").addClass('d-none')
+            $(".ep3_details_hindi").removeClass('d-none')
+        }else{
+            $(".ep3_details_hindi").addClass('d-none')
+            $(".ep3_details_english").removeClass('d-none')
+        }
+        $("#componentForm_EP3").modal("show");
+
+        return; //no need to go below
     }
 
     $.ajax({
