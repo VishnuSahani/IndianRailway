@@ -1936,6 +1936,174 @@ if (isset($_SESSION['userretailer'])) {
     </div>
 </div>
 
+<!-- Modal MLB1 -->
+<div class="modal fade" id="componentForm_MLB1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMLB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Mechanical Lifting Barrier MLB1
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Fortnightly,
+            Sectional SSE/JE (Signal): Monthly
+            SSE(Signal)/ Incharge : Quarterly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlb1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mlb1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mlb1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal MLB2 -->
+<div class="modal fade" id="componentForm_MLB2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMLB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB2">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Mechanical Lifting Barrier MLB2
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Quarterly,
+            Sectional SSE/JE (Signal): Monthly
+            SSE(Signal)/ Incharge : Half-yearly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlb2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mlb2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mlb2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal MLB3 -->
+<div class="modal fade" id="componentForm_MLB3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMLB3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB3">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Mechanical Lifting Barrier MLB3
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Quarterly,
+            Sectional SSE/JE (Signal): Half-yearly
+            SSE(Signal)/ Incharge : Yearly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlb3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mlb3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mlb3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
 
 <script>
 
@@ -2098,6 +2266,14 @@ btn +=`
  <a class="dropdown-item" onclick="get_DL_formData('DL2','${value}','${stationComName}')">DL2</a>
  <a class="dropdown-item" onclick="get_DL_formData('DL3','${value}','${stationComName}')">DL3</a>
  <a class="dropdown-item" onclick="get_DL_formData('DL4','${value}','${stationComName}')">DL4</a>
+ `;
+
+}else if(componentName == "MLB"){
+
+btn +=`
+ <a class="dropdown-item" onclick="get_MLB_formData('MLB1','${value}','${stationComName}')">MLB1</a>
+ <a class="dropdown-item" onclick="get_MLB_formData('MLB2','${value}','${stationComName}')">MLB2</a>
+ <a class="dropdown-item" onclick="get_MLB_formData('MLB3','${value}','${stationComName}')">MLB3</a>
  `;
 
 }
@@ -2323,7 +2499,7 @@ function getComponent() {
 
 
 $(document).ready(function() {
-    getComponent();
+    getComponent(); // init first
 
     $("#ep1FormBtn").click(function() {
         if (confirm("Do you want to final submit EP1 Form")) {
@@ -5465,8 +5641,347 @@ $(document).ready(function() {
 
         }
     });
-});
 
+
+    $("#mlb1FormBtn").click(function() {
+        if (confirm("Do you want to final submit MLB1 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let mlb1_1 = $("#mlb1_1").val();
+            let mlb1_2 = $("#mlb1_2").val();
+            let mlb1_3 = $("#mlb1_3").val();
+            let mlb1_4 = $("#mlb1_4").val();
+            let mlb1_5 = $("#mlb1_5").val();
+            let mlb1_6 = $("#mlb1_6").val();
+            
+            if (mlb1_1 == undefined  || mlb1_1 == null || mlb1_1 == '' || mlb1_1.length == 0) {
+                $("#mlb1_1").addClass("is-invalid");
+                $("#mlb1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb1Form_status").html("");
+                $("#mlb1_1").removeClass("is-invalid");
+
+            }
+
+            if (mlb1_2 == undefined  || mlb1_2 == null || mlb1_2 == '' || mlb1_2.length == 0) {
+                $("#mlb1_2").addClass("is-invalid");
+                $("#mlb1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb1Form_status").html("");
+                $("#mlb1_2").removeClass("is-invalid");
+
+            }
+
+            if (mlb1_3 == undefined  || mlb1_3 == null || mlb1_3 == '' || mlb1_3.length == 0) {
+                $("#mlb1_3").addClass("is-invalid");
+                $("#mlb1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb1Form_status").html("");
+                $("#mlb1_3").removeClass("is-invalid");
+
+            }
+
+            if (mlb1_4 == undefined  || mlb1_4 == null || mlb1_4 == '' || mlb1_4.length == 0) {
+                $("#mlb1_4").addClass("is-invalid");
+                $("#mlb1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb1Form_status").html("");
+                $("#mlb1_4").removeClass("is-invalid");
+
+            }
+
+            if (mlb1_5 == undefined  || mlb1_5 == null || mlb1_5 == '' || mlb1_5.length == 0) {
+                $("#mlb1_5").addClass("is-invalid");
+                $("#mlb1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb1Form_status").html("");
+                $("#mlb1_5").removeClass("is-invalid");
+
+            }
+
+            if (mlb1_6 == undefined  || mlb1_6 == null || mlb1_6 == '' || mlb1_6.length == 0) {
+                $("#mlb1_6").addClass("is-invalid");
+                $("#mlb1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb1Form_status").html("");
+                $("#mlb1_6").removeClass("is-invalid");
+
+            }
+
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#mlb1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "MLB1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "mlb1_1": mlb1_1,
+                    "mlb1_2": mlb1_2,
+                    "mlb1_3": mlb1_3,
+                    "mlb1_4": mlb1_4,
+                    "mlb1_5": mlb1_5,
+                    "mlb1_6": mlb1_6,              
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#mlb1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#mlb1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+    
+    $("#mlb2FormBtn").click(function() {
+        if (confirm("Do you want to final submit MLB2 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let mlb2_1 = $("#mlb2_1").val();
+            let mlb2_2 = $("#mlb2_2").val();
+         
+            
+            if (mlb2_1 == undefined  || mlb2_1 == null || mlb2_1 == '' || mlb2_1.length == 0) {
+                $("#mlb2_1").addClass("is-invalid");
+                $("#mlb2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb2Form_status").html("");
+                $("#mlb2_1").removeClass("is-invalid");
+
+            }
+
+            if (mlb2_2 == undefined  || mlb2_2 == null || mlb2_2 == '' || mlb2_2.length == 0) {
+                $("#mlb2_2").addClass("is-invalid");
+                $("#mlb2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb2Form_status").html("");
+                $("#mlb2_2").removeClass("is-invalid");
+
+            }
+
+
+
+
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#mlb2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "MLB2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "mlb2_1": mlb2_1,
+                    "mlb2_2": mlb2_2,
+                               
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#mlb2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#mlb2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+
+    $("#mlb3FormBtn").click(function() {
+        if (confirm("Do you want to final submit MLB3 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let mlb3_1 = $("#mlb3_1").val();
+         
+            
+            if (mlb3_1 == undefined  || mlb3_1 == null || mlb3_1 == '' || mlb3_1.length == 0) {
+                $("#mlb3_1").addClass("is-invalid");
+                $("#mlb3Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#mlb3Form_status").html("");
+                $("#mlb3_1").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#mlb3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "MLB3_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "mlb3_1": mlb3_1,
+                               
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#mlb3Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#mlb3Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+
+
+});
+//form insert javascript above
 
 
 
@@ -5803,6 +6318,62 @@ document.getElementById(tableId).innerHTML = displayHtml;
 
 }
 
+
+
+function openDialog_MLB(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "MLB1":
+        tableId = "mlb1_body";
+        $("#componentForm_MLB1").modal("show");
+        break;
+    case "MLB2":
+        tableId = "mlb2_body";
+        $("#componentForm_MLB2").modal("show");
+        break;
+    case "MLB3":
+        tableId = "mlb3_body";
+        $("#componentForm_MLB3").modal("show");
+        break;
+
+
+}
+
+
+dataList.forEach((element, index) => {
+
+
+        
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['mlb_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['mlb_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['mlb_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
 function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
@@ -5836,6 +6407,45 @@ function get_CS_formData(csType,subCompo,compo){
             if (response['status']) {
 
                 openDialog_CS(csType, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+
+
+function get_MLB_formData(mlb_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo); // no change here
+    $("#subcompoNameTmp").val(subCompo); // no change here
+    let language = $("#language").val(); // no change here
+    $(".displaySubcompoName").html(subCompo);
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getMLB_FormDetails",
+            "formType": mlb_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_MLB(mlb_Type, response['data']);
 
             }
 
