@@ -648,6 +648,89 @@ if(isset($_POST['action'])){
 
     }
 
+    elseif ($action == "EP3_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM ep3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+             $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+
+            }
+
+            
+
+        }
+
+        $ep3_1 = trim($_POST['ep3_1']);
+        $ep3_2 = trim($_POST['ep3_2']);
+        $ep3_3 = trim($_POST['ep3_3']);
+        $ep3_4 = trim($_POST['ep3_4']);
+
+        if(empty($ep3_1) || empty($ep3_2)){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO ep3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep3_1,ep3_2,ep3_3,ep3_4,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep3_1','$ep3_2','$ep3_3','$ep3_4','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
     elseif ($action == "EP4_formSubmit"){
         if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
             $respo['status'] = false;
@@ -1175,6 +1258,84 @@ if(isset($_POST['action'])){
 
 
     }
+    elseif ($action == "T4_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM t4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+        }
+
+        $t4_1 = trim($_POST['t4_1']);
+        $t4_2 = trim($_POST['t4_2']);
+        $t4_3 = trim($_POST['t4_3']);
+        $t4_4 = trim($_POST['t4_4']);
+        $t4_5 = trim($_POST['t4_5']);
+      
+
+        if(empty($t4_1) || empty($t4_2) || empty($t4_3) || empty($t4_4) || empty($t4_5)){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO t4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t4_1,t4_2,t4_3,t4_4,t4_5,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t4_1','$t4_2','$t4_3','$t4_5','$t4_5','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+    }
+    
     elseif ($action == "T5_formSubmit"){
         if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
             $respo['status'] = false;

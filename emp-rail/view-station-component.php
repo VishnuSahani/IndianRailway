@@ -624,7 +624,7 @@ if (isset($_SESSION['userretailer'])) {
 <div class="modal fade" id="componentForm_EP3" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelEP3" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formEP3">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelEP3">
@@ -695,34 +695,34 @@ if (isset($_SESSION['userretailer'])) {
 
                                     कांटों और क्रॉसिंग की लेवलिंग, स्क्वायरिंग, रेंगना(creeping), पैकिंग, गिट्टी और अन्य पी-वे फिटिंग आदि की निकासी और LH, RH स्विच खोलने का माप सामान्य कांटों के लिए नीचे दिया गया है और थिक वेब स्विच(TWS) के लिए RDSO दिनांक 14.02.19 द्वारा प्रसारित प्रोफार्मा के अनुसार है इसकी जेई/सीसेई (पी-वे) के साथ संयुक्त जांच । 
 
-<table class="table">
-    <thead class="table-dark">
-        <tr>
-            <th colspan="2">सामान्य कांटा(143mm)</th>
-            <th colspan="2">थीक वेब कांटा(220mm)</th>
-        </tr>
-        <tr>
-            <th colspan="2">
-            प्रारंभण  ( सहनशीलता )
-            </th>
-            <th colspan="2">
-            प्रारंभण  ( सहनशीलता )
-            </th>
-        </tr>
-        <tr>
-            <td>LH अंत</td>
-            <td>RH अंत</td>
-            <td>LH अंत</td>
-            <td>RH अंत</td>
-        </tr>
-        <tr>
-            <td>115+-3 मिमी</td>
-            <td>115+-3 मिमी</td>
-            <td>160+-3 मिमी</td>
-            <td>160+-3 मिमी</td>
-        </tr>
-    </thead>
-</table>
+                            <table class="table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th colspan="2">सामान्य कांटा(143mm)</th>
+                                        <th colspan="2">थीक वेब कांटा(220mm)</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2">
+                                        प्रारंभण  ( सहनशीलता )
+                                        </th>
+                                        <th colspan="2">
+                                        प्रारंभण  ( सहनशीलता )
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>LH अंत</td>
+                                        <td>RH अंत</td>
+                                        <td>LH अंत</td>
+                                        <td>RH अंत</td>
+                                    </tr>
+                                    <tr>
+                                        <td>115+-3 मिमी</td>
+                                        <td>115+-3 मिमी</td>
+                                        <td>160+-3 मिमी</td>
+                                        <td>160+-3 मिमी</td>
+                                    </tr>
+                                </thead>
+                            </table>
                                         
                                     </div>
                                            
@@ -806,10 +806,10 @@ if (isset($_SESSION['userretailer'])) {
                 </div>
 
                 <div class="card-footer d-flex justify-content-between">
-                    <div id="ep1Form_status"></div>
+                    <div id="ep3Form_status"></div>
                     <div>
                         <button type="reset" class="btn btn-sm btn-danger">Reset</button>
-                        <button type='button' id="ep1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                        <button type='button' id="ep3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
                     </div>
                 </div>
 
@@ -1210,6 +1210,72 @@ if (isset($_SESSION['userretailer'])) {
     </div>
 </div>
 
+<!-- Modal T4 -->
+<div class="modal fade" id="componentForm_T4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT4">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T4
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Sectional SSE/JE (Signal)
+                SSE (Signal)/Incharge: Half yearly (Sectional
+                SSE/JE (Signal) & SSE (Signal) /Incharge to carry out alternatively once in six months)
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">
+                                Check the following 
+                            </th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td></td>
+                        <td class="text-center">Joint check with JE/SSE (P-way) of track circuited portion for</td>
+                        <td></td>
+                    </tr>
+                    <tbody id="t4_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t4Form_status"></div>
+
+                <div>
+
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="t4FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
 
 <!-- Modal T5 -->
 <div class="modal fade" id="componentForm_T5" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -2850,6 +2916,116 @@ $(document).ready(function() {
         }
     });
 
+
+    
+    $("#ep3FormBtn").click(function() {
+        if (confirm("Do you want to final submit EP3 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let ep3_1 = $("#ep3_1").val();
+            let ep3_2 = $("#ep3_2").val();
+            let ep3_3 = $("#ep3_3").val();
+            let ep3_4 = $("#ep3_4").val();
+          
+
+            if (ep3_1 == '' || ep3_1.length == 0 || ep3_1 == null) {
+                $("#ep3_1").addClass("is-invalid");
+                $("#ep3Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#ep3Form_status").html("");
+                $("#ep3_1").removeClass("is-invalid");
+
+            }
+
+            if (ep3_2 == '' || ep3_2.length == 0 || ep3_2 == null) {
+                $("#ep3_2").addClass("is-invalid");
+                $("#ep3Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#ep3Form_status").html("");
+                $("#ep3_2").removeClass("is-invalid");
+
+            }
+
+
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ep3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "EP3_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "ep3_1": ep3_1,
+                    "ep3_2": ep3_2,
+                    "ep3_3": ep3_3,
+                    "ep3_4": ep3_4,                    
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#ep3Form_status").html(respo['msg']).css("color", "green");
+
+                    } else {
+                        $("#ep3Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error:(er)=>{                    
+                    $("#loader_show").addClass('d-none');
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#ep3Form_status").html('');
+                        
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
     $("#ep4FormBtn").click(function() {
         if (confirm("Do you want to final submit EP4 Form")) {
             let language = $("#language").val();
@@ -3850,6 +4026,154 @@ $(document).ready(function() {
 
         }
     });
+
+
+    
+    $("#t4FormBtn").click(function() {
+        if (confirm("Do you want to final submit T4 Form")) {
+            let language = $("#language").val();
+
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let t4_1 = $("#t4_1").val();
+            let t4_2 = $("#t4_2").val();
+            let t4_3 = $("#t4_3").val();           
+            let t4_4 = $("#t4_4").val();           
+            let t4_5 = $("#t4_5").val();           
+
+            if (t4_1 == '' || t4_1.length == 0 || t4_1 == null) {
+                $("#t4_1").addClass("is-invalid");
+                $("#t4Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#t4Form_status").html("");
+                $("#t4_1").removeClass("is-invalid");
+
+            }
+
+            if (t4_2 == '' || t4_2.length == 0 || t4_2 == null) {
+                $("#t4_2").addClass("is-invalid");
+                $("#t4Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#t4Form_status").html("");
+                $("#t4_2").removeClass("is-invalid");
+
+            }
+
+            if (t4_3 == '' || t4_3.length == 0 || t4_3 == null) {
+                $("#t4_3").addClass("is-invalid");
+                $("#t4Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#t4Form_status").html("");
+                $("#t4_3").removeClass("is-invalid");
+
+            }
+
+            
+            if (t4_4 == '' || t4_4.length == 0 || t4_4 == null) {
+                $("#t4_4").addClass("is-invalid");
+                $("#t4Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#t4Form_status").html("");
+                $("#t4_4").removeClass("is-invalid");
+
+            }
+
+            
+            if (t4_5 == '' || t4_5.length == 0 || t4_5 == null) {
+                $("#t4_5").addClass("is-invalid");
+                $("#t4Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#t4Form_status").html("");
+                $("#t4_5").removeClass("is-invalid");
+
+            }
+
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#t4Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "T4_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "t4_1": t4_1,
+                    "t4_2": t4_2,
+                    "t4_3": t4_3,  
+                    "t4_4": t4_4,  
+                    "t4_5": t4_5,  
+                    language:language                
+
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#t4Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#t4Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                error: (e) => {
+                    $("#t4Form_status").html(e).css("color", "red");
+
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#t4Form_status").html("");
+
+
+                    }, 5000);
+
+                }
+            });
+
+        }
+    });
+
     $("#t5FormBtn").click(function() {
         if (confirm("Do you want to final submit T5 Form")) {
             let language = $("#language").val();
@@ -5165,6 +5489,10 @@ switch (typeOfForm) {
     case "T3":
         tableId = "t3_body";
         $("#componentForm_T3").modal("show");
+        break;
+    case "T4":
+        tableId = "t4_body";
+        $("#componentForm_T4").modal("show");
         break;
 
     case "T5":
