@@ -1663,7 +1663,7 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelCS2">
                     <span class="badge badge-success h3">
-                        Schedule Code: T2
+                        Schedule Code: CS2
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
@@ -2222,6 +2222,317 @@ if (isset($_SESSION['userretaileremp'])) {
         </form>
     </div>
 </div>
+
+<!-- For ELB -->
+<!-- Modal ELB1 -->
+<div class="modal fade" id="componentForm_ELB1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelELB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                   Maintenance Schedule of Power Operated Lifting Barrier LC1
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           Periodicity: Technician (Signal): Fortnightly,
+                          Sectional SSE/JE (Signal): Monthly,
+                     SSE(Signal)/Incharge: Quarterly
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elb1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="elb1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="elb1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal ELB2 -->
+<div class="modal fade" id="componentForm_ELB2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelELB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                  Maintenance Schedule of Power Operated Lifting Barrier LC2
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          Periodicity: Technician (Signal): Monthly,
+                          Sectional SSE/JE (Signal): Quarterly,
+                     SSE(Signal)/Incharge: Half-yearly
+
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elb2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="elb2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="elb2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal ELB3 -->
+<div class="modal fade" id="componentForm_ELB3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelELB4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                  Maintenance Schedule of Power Operated Lifting Barrier LC3
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          Periodicity: Technician (Signal): Monthly,
+                          Sectional SSE/JE (Signal): Quarterly,
+                     SSE(Signal)/Incharge: Half-yearly
+
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elb3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="elb3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="elb3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal ELB4 -->
+<div class="modal fade" id="componentForm_ELB4" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelELB4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                  Maintenance Schedule of Power Operated Lifting Barrier LC4
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          Periodicity: Technician (Signal): Monthly,
+                          Sectional SSE/JE (Signal): Quarterly,
+                     SSE(Signal)/Incharge: Half-yearly
+
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elb4_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="elb4Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="elb4FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal ELB5 -->
+<div class="modal fade" id="componentForm_ELB5" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelELB5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                  Maintenance Schedule of Power Operated Lifting Barrier LC5
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          Periodicity: Technician (Signal): Monthly,
+                          Sectional SSE/JE (Signal): Quarterly,
+                     SSE(Signal)/Incharge: Half-yearly
+
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elb5_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="elb5Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="elb5FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
 <script>
 
 var g_st_compList = [];
@@ -2398,6 +2709,17 @@ btn +=`
 btn +=`
  <a class="dropdown-item" onclick="get_SLB_formData('SLB1','${value}','${stationComName}')">SLB1</a>
  <a class="dropdown-item" onclick="get_SLB_formData('SLB2','${value}','${stationComName}')">SLB2</a>
+ 
+ `;
+
+}else if(componentName == "ELB"){
+
+btn +=`
+ <a class="dropdown-item" onclick="get_ELB_formData('ELB1','${value}','${stationComName}')">ELB1</a>
+ <a class="dropdown-item" onclick="get_ELB_formData('ELB2','${value}','${stationComName}')">ELB2</a>
+  <a class="dropdown-item" onclick="get_ELB_formData('ELB3','${value}','${stationComName}')">ELB3</a>
+ <a class="dropdown-item" onclick="get_ELB_formData('ELB4','${value}','${stationComName}')">ELB4</a>
+ <a class="dropdown-item" onclick="get_ELB_formData('ELB5','${value}','${stationComName}')">ELB5</a>
  
  `;
 
@@ -6388,6 +6710,798 @@ $("#slb1FormBtn").click(function() {
     });
 
 
+    // for ELB1
+
+
+ 
+    $("#elb1FormBtn").click(function() {
+        if (confirm("Do you want to final submit ELB1 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let elb1_1 = $("#elb1_1").val();
+            let elb1_2 = $("#elb1_2").val();
+            let elb1_3 = $("#elb1_3").val();
+            let elb1_4 = $("#elb1_4").val();
+            let elb1_5 = $("#elb1_5").val();
+            let elb1_6 = $("#elb1_6").val();
+            let elb1_7 = $("#elb1_7").val();
+            let elb1_8 = $("#elb1_8").val();
+            let elb1_9 = $("#elb1_9").val();
+            let elb1_10 = $("#elb1_10").val();
+            let elb1_11 = $("#elb1_11").val();
+
+
+            if (elb1_1 == undefined  || elb1_1 == null || elb1_1 == '' || elb1_1.length == 0) {
+                $("#elb1_1").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_1").removeClass("is-invalid");
+
+            }
+
+            if (elb1_2 == undefined  || elb1_2 == null || elb1_2 == '' || elb1_2.length == 0) {
+                $("#elb1_2").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_2").removeClass("is-invalid");
+
+            }
+
+            if (elb1_3 == undefined  || elb1_3 == null || elb1_3 == '' || elb1_3.length == 0) {
+                $("#elb1_3").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_3").removeClass("is-invalid");
+
+            }
+
+            if (elb1_4 == undefined  || elb1_4 == null || elb1_4 == '' || elb1_4.length == 0) {
+                $("#elb1_4").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_4").removeClass("is-invalid");
+
+            }
+
+            if (elb1_5 == undefined  || elb1_5 == null || elb1_5 == '' || elb1_5.length == 0) {
+                $("#elb1_5").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_5").removeClass("is-invalid");
+
+            }
+
+            if (elb1_6 == undefined  || elb1_6 == null || elb1_6 == '' || elb1_6.length == 0) {
+                $("#elb1_6").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_6").removeClass("is-invalid");
+
+            }
+
+            if (elb1_7 == undefined  || elb1_7 == null || elb1_7 == '' || elb1_7.length == 0) {
+                $("#elb1_7").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_7").removeClass("is-invalid");
+            }
+
+            if (elb1_8 == undefined  || elb1_8 == null || elb1_8 == '' || elb1_8.length == 0) {
+                $("#elb1_8").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_8").removeClass("is-invalid");
+            }
+
+            if (elb1_9 == undefined  || elb1_9 == null || elb1_9 == '' || elb1_9.length == 0) {
+                $("#elb1_9").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_9").removeClass("is-invalid");
+            }
+
+            if (elb1_10 == undefined  || elb1_10 == null || elb1_10 == '' || elb1_10.length == 0) {
+                $("#elb1_10").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 10 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_10").removeClass("is-invalid");
+            }
+
+            if (elb1_11 == undefined  || elb1_11 == null || elb1_11 == '' || elb1_11.length == 0) {
+                $("#elb1_11").addClass("is-invalid");
+                $("#elb1Form_status").html("Serial no 11 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_11").removeClass("is-invalid");
+            }
+
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#elb1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "ELB1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "elb1_1": elb1_1,
+                    "elb1_2": elb1_2,
+                    "elb1_3": elb1_3,
+                    "elb1_4": elb1_4,
+                    "elb1_5": elb1_5,
+                    "elb1_6": elb1_6,              
+                    "elb1_7": elb1_7, 
+                    "elb1_8": elb1_8,
+                    "elb1_9": elb1_9,
+                    "elb1_10": elb1_10,              
+                    "elb1_11": elb1_11,             
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#elb1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#elb1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+// for ELB2
+
+     $("#elb2FormBtn").click(function() {
+        if (confirm("Do you want to final submit ELB2 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let elb2_1 = $("#elb2_1").val();
+            let elb2_2 = $("#elb2_2").val();
+            let elb2_3 = $("#elb2_3").val();
+            let elb2_4 = $("#elb2_4").val();
+            let elb2_5 = $("#elb2_5").val();
+            let elb2_6 = $("#elb2_6").val();
+            let elb2_7 = $("#elb2_7").val();
+            let elb2_8 = $("#elb2_8").val();
+    
+
+
+            if (elb2_1 == undefined  || elb2_1 == null || elb2_1 == '' || elb2_1.length == 0) {
+                $("#elb2_1").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_1").removeClass("is-invalid");
+
+            }
+
+            if (elb2_2 == undefined  || elb2_2 == null || elb2_2 == '' || elb2_2.length == 0) {
+                $("#elb2_2").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb1Form_status").html("");
+                $("#elb1_2").removeClass("is-invalid");
+
+            }
+
+            if (elb2_3 == undefined  || elb2_3 == null || elb2_3 == '' || elb2_3.length == 0) {
+                $("#elb2_3").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_3").removeClass("is-invalid");
+
+            }
+
+            if (elb2_4 == undefined  || elb2_4 == null || elb2_4 == '' || elb2_4.length == 0) {
+                $("#elb2_4").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_4").removeClass("is-invalid");
+
+            }
+
+            if (elb2_5 == undefined  || elb2_5 == null || elb2_5 == '' || elb2_5.length == 0) {
+                $("#elb2_5").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_5").removeClass("is-invalid");
+
+            }
+
+            if (elb2_6 == undefined  || elb2_6 == null || elb2_6 == '' || elb2_6.length == 0) {
+                $("#elb2_6").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_6").removeClass("is-invalid");
+
+            }
+
+            if (elb2_7 == undefined  || elb2_7 == null || elb2_7 == '' || elb2_7.length == 0) {
+                $("#elb2_7").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_7").removeClass("is-invalid");
+            }
+
+            if (elb2_8 == undefined  || elb2_8 == null || elb2_8 == '' || elb2_8.length == 0) {
+                $("#elb2_8").addClass("is-invalid");
+                $("#elb2Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb2Form_status").html("");
+                $("#elb2_8").removeClass("is-invalid");
+            }
+
+            
+
+            
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#elb2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "ELB2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "elb2_1": elb2_1,
+                    "elb2_2": elb2_2,
+                    "elb2_3": elb2_3,
+                    "elb2_4": elb2_4,
+                    "elb2_5": elb2_5,
+                    "elb2_6": elb2_6,              
+                    "elb2_7": elb2_7, 
+                    "elb2_8": elb2_8,
+                                 
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#elb2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#elb2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+// for ELB3
+    $("#elb3FormBtn").click(function() {
+        if (confirm("Do you want to final submit ELB3 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let elb3_1 = $("#elb3_1").val();
+            let elb3_2 = $("#elb3_2").val();
+            let elb3_3 = $("#elb3_3").val();
+            let elb3_4 = $("#elb3_4").val();
+            let elb3_5 = $("#elb3_5").val();
+            let elb3_6 = $("#elb3_6").val();
+         
+    
+
+
+            if (elb3_1 == undefined  || elb3_1 == null || elb3_1 == '' || elb3_1.length == 0) {
+                $("#elb3_1").addClass("is-invalid");
+                $("#elb3Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb3Form_status").html("");
+                $("#elb3_1").removeClass("is-invalid");
+
+            }
+
+            if (elb3_2 == undefined  || elb3_2 == null || elb3_2 == '' || elb3_2.length == 0) {
+                $("#elb3_2").addClass("is-invalid");
+                $("#elb3Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb3Form_status").html("");
+                $("#elb3_2").removeClass("is-invalid");
+
+            }
+
+            if (elb3_3 == undefined  || elb3_3 == null || elb3_3 == '' || elb3_3.length == 0) {
+                $("#elb3_3").addClass("is-invalid");
+              $("#elb3Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb3Form_status").html("");
+                $("#elb3_3").removeClass("is-invalid");
+
+            }
+
+            if (elb3_4 == undefined  || elb3_4 == null || elb3_4 == '' || elb3_4.length == 0) {
+                $("#elb3_4").addClass("is-invalid");
+                $("#elb3Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb3Form_status").html("");
+                $("#elb3_4").removeClass("is-invalid");
+
+            }
+
+            if (elb3_5 == undefined  || elb3_5 == null || elb3_5 == '' || elb3_5.length == 0) {
+                $("#elb3_5").addClass("is-invalid");
+                $("#elb3Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb3Form_status").html("");
+                $("#elb3_5").removeClass("is-invalid");
+
+            }
+
+            if (elb3_6 == undefined  || elb3_6 == null || elb3_6 == '' || elb3_6.length == 0) {
+                $("#elb3_6").addClass("is-invalid");
+                $("#elb3Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb3Form_status").html("");
+                $("#elb3_6").removeClass("is-invalid");3
+            }
+
+
+
+            
+
+            
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#elb3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "ELB3_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "elb3_1": elb3_1,
+                    "elb3_2": elb3_2,
+                    "elb3_3": elb3_3,
+                    "elb3_4": elb3_4,
+                    "elb3_5": elb3_5,
+                    "elb3_6": elb3_6,              
+                   
+                                 
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#elb3Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#elb3Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+// for ELB4
+
+     $("#elb4FormBtn").click(function() {
+        if (confirm("Do you want to final submit ELB4 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let elb4_1 = $("#elb4_1").val();
+            let elb4_2 = $("#elb4_2").val();
+            let elb4_3 = $("#elb4_3").val();
+            let elb4_4 = $("#elb4_4").val();
+            let elb4_5 = $("#elb4_5").val();
+            let elb4_6 = $("#elb4_6").val();
+            let elb4_7 = $("#elb4_7").val();
+          
+   4
+
+
+            if (elb4_1 == undefined  || elb4_1 == null || elb4_1 == '' || elb4_1.length == 0) {
+                $("#elb4_1").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_1").removeClass("is-invalid");
+
+            }
+
+            if (elb4_2 == undefined  || elb4_2 == null || elb4_2 == '' || elb4_2.length == 0) {
+                $("#elb4_2").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_2").removeClass("is-invalid");
+
+            }
+
+            if (elb4_3 == undefined  || elb4_3 == null || elb4_3 == '' || elb4_3.length == 0) {
+                $("#elb4_3").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_3").removeClass("is-invalid");
+
+            }
+
+            if (elb4_4 == undefined  || elb4_4 == null || elb4_4 == '' || elb4_4.length == 0) {
+                $("#elb4_4").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_4").removeClass("is-invalid");
+
+            }
+
+            if (elb4_5 == undefined  || elb4_5 == null || elb4_5 == '' || elb4_5.length == 0) {
+                $("#elb4_5").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_5").removeClass("is-invalid");
+
+            }
+
+            if (elb4_6 == undefined  || elb4_6 == null || elb4_6 == '' || elb4_6.length == 0) {
+                $("#elb4_6").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_6").removeClass("is-invalid");
+
+            }
+
+            if (elb4_7 == undefined  || elb4_7 == null || elb4_7 == '' || elb4_7.length == 0) {
+                $("#elb4_7").addClass("is-invalid");
+                $("#elb4Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb4Form_status").html("");
+                $("#elb4_7").removeClass("is-invalid");
+            }
+
+            
+
+            
+
+            
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#elb2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "ELB4_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "elb4_1": elb4_1,
+                    "elb4_2": elb4_2,
+                    "elb4_3": elb4_3,
+                    "elb4_4": elb4_4,
+                    "elb4_5": elb4_5,
+                    "elb4_6": elb4_6,              
+                    "elb4_7": elb4_7, 
+                    
+                                 
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#elb4Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#elb4Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+// for ELB5
+
+     $("#elb5FormBtn").click(function() {
+        if (confirm("Do you want to final submit ELB5 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let elb5_1 = $("#elb5_1").val();
+           
+          
+   
+
+
+            if (elb5_1 == undefined  || elb5_1 == null || elb5_1 == '' || elb5_1.length == 0) {
+                $("#elb5_1").addClass("is-invalid");
+                $("#elb5Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#elb5Form_status").html("");
+                $("#elb5_1").removeClass("is-invalid");
+
+            }
+
+            
+
+            
+
+            
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#elb2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "ELB5_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "elb5_1": elb5_1,
+                    
+                    
+                                 
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#elb5Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#elb5Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+
 });
 //form insert javascript above
 
@@ -6836,6 +7950,72 @@ document.getElementById(tableId).innerHTML = displayHtml;
 }
 
 
+// for ELB
+
+
+function openDialog_ELB(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "ELB1":
+        tableId = "elb1_body";
+        $("#componentForm_ELB1").modal("show");
+        break;
+    case "ELB2":
+        tableId = "elb2_body";
+        $("#componentForm_ELB2").modal("show");
+        break;
+   
+    case "ELB3":
+        tableId = "elb3_body";
+        $("#componentForm_ELB3").modal("show");
+        break;
+    case "ELB4":
+        tableId = "elb4_body";
+        $("#componentForm_ELB4").modal("show");
+        break;    
+     case "ELB5":
+        tableId = "elb5_body";
+        $("#componentForm_ELB5").modal("show");
+        break;     
+}
+
+
+dataList.forEach((element, index) => {
+
+
+        
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['elb_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['elb_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['elb_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+//
+
+
 
 function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
@@ -6909,6 +8089,45 @@ function get_SLB_formData(slb_Type,subCompo,compo){
             if (response['status']) {
 
                 openDialog_SLB(slb_Type, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+// ELB form details
+
+function get_ELB_formData(elb_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo); // no change here
+    $("#subcompoNameTmp").val(subCompo); // no change here
+    let language = $("#language").val(); // no change here
+    $(".displaySubcompoName").html(subCompo);
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getELB_FormDetails",
+            "formType": elb_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_ELB(elb_Type, response['data']);
 
             }
 

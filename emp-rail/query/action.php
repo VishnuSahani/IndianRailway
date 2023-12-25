@@ -2668,6 +2668,533 @@ if(isset($_POST['action'])){
     
     }
 
+    // ELB
+
+
+
+    elseif ($action == 'getELB_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'ELB1':
+                $tableName = 'elb1_info';
+                break;
+
+            case 'ELB2':
+                $tableName = 'elb2_info';
+                break;
+            
+            case 'ELB3':
+                $tableName = 'elb3_info';
+                break;
+
+            case 'ELB4':
+                $tableName = 'elb4_info';
+                break;  
+
+            case 'ELB5':
+                $tableName = 'elb5_info';
+                break;      
+
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                
+        }
+
+        try{
+
+                $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
+            $queryExe = mysqli_query($con,$query);
+            if(mysqli_num_rows($queryExe) <= 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+            
+            while($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->elb_id = $q_run['elb_id'];
+                $obj->elb_details = $q_run['elb_details'];
+                $obj->elb_option = $q_run['elb_option'];
+                $obj->elb_status = $q_run['status'];
+
+                $data[] = $obj;
+                
+            }
+
+        $respo['status'] = true;
+        $respo['msg'] = "List found";
+        $respo['data'] = $data;
+
+        echo json_encode($respo);
+        die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
+
+    elseif ($action == "ELB1_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM elb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+         $elb1_1 = trim($_POST['elb1_1']);
+        $elb1_2 = trim($_POST['elb1_2']);
+        $elb1_3 = trim($_POST['elb1_3']);
+        $elb1_4 = trim($_POST['elb1_4']);
+        $elb1_5 = trim($_POST['elb1_5']);
+        $elb1_6 = trim($_POST['elb1_6']);
+        $elb1_7 = trim($_POST['elb1_7']);
+        $elb1_8 = trim($_POST['elb1_8']);
+        $elb1_9 = trim($_POST['elb1_9']);
+        $elb1_10 = trim($_POST['elb1_10']);
+        $elb1_11 = trim($_POST['elb1_11']);
+
+        if(empty($elb1_1) || empty($elb1_2) || empty($elb1_3) || empty($elb1_4) || empty($elb1_5) || empty($elb1_6) || empty($elb1_7) || empty($elb1_8) || empty($elb1_9)|| empty($elb1_10) || empty($elb1_11)){
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+         $insertQuery = "INSERT INTO elb1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,elb1_1,elb1_2,elb1_3,elb1_4,elb1_5,elb1_6,elb1_7,elb1_8,elb1_9,elb1_10,elb1_11,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$elb1_1','$elb1_2','$elb1_3','$elb1_4','$elb1_5','$elb1_6','$elb1_7','$elb1_8','$elb1_9','$elb1_10','$elb1_11','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
+    elseif ($action == "ELB2_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM elb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+      
+        $elb2_1 = trim($_POST['elb2_1']);
+        $elb2_2 = trim($_POST['elb2_2']);
+        $elb2_3 = trim($_POST['elb2_3']);
+        $elb2_4 = trim($_POST['elb2_4']);
+        $elb2_5 = trim($_POST['elb2_5']);
+        $elb2_6 = trim($_POST['elb2_6']);
+        $elb2_7 = trim($_POST['elb2_7']);
+        $elb2_8 = trim($_POST['elb2_8']);
+     
+
+
+       if(empty($elb2_1) || empty($elb2_2) || empty($elb2_3) || empty($elb2_4) || empty($elb2_5) || empty($elb2_6) || empty($elb2_7) || empty($elb2_8) ){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+       $insertQuery = "INSERT INTO elb2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,elb2_1,elb2_2,elb2_3,elb2_4,elb2_5,elb2_6,elb2_7,elb2_8,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$elb2_1','$elb2_2','$elb2_3','$elb2_4','$elb2_5','$elb2_6','$elb2_7','$elb2_8','$createdDateTime','$createdDateTime','$language')";
+
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
+   
+    elseif ($action == "ELB3_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM elb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+      
+        $elb3_1 = trim($_POST['elb3_1']);
+        $elb3_2 = trim($_POST['elb3_2']);
+        $elb3_3 = trim($_POST['elb3_3']);
+        $elb3_4 = trim($_POST['elb3_4']);
+        $elb3_5 = trim($_POST['elb3_5']);
+        $elb3_6 = trim($_POST['elb3_6']);
+      
+     
+
+
+       if(empty($elb3_1) || empty($elb3_2) || empty($elb3_3) || empty($elb3_4) || empty($elb3_5) || empty($elb3_6)  ){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+       $insertQuery = "INSERT INTO elb3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,elb3_1,elb3_2,elb3_3,elb3_4,elb3_5,elb3_6,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$elb3_1','$elb3_2','$elb3_3','$elb3_4','$elb3_5','$elb3_6','$createdDateTime','$createdDateTime','$language')";
+
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
+    elseif ($action == "ELB4_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM elb4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+      
+        $elb4_1 = trim($_POST['elb4_1']);
+        $elb4_2 = trim($_POST['elb4_2']);
+        $elb4_3 = trim($_POST['elb4_3']);
+        $elb4_4 = trim($_POST['elb4_4']);
+        $elb4_5 = trim($_POST['elb4_5']);
+        $elb4_6 = trim($_POST['elb4_6']);
+        $elb4_7 = trim($_POST['elb4_7']);
+      
+     
+
+
+       if(empty($elb4_1) || empty($elb4_2) || empty($elb4_3) || empty($elb4_4) || empty($elb4_5) || empty($elb4_6) || empty($elb4_7 )){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+       $insertQuery = "INSERT INTO elb4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,elb4_1,elb4_2,elb4_3,elb4_4,elb4_5,elb4_6,elb4_7,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$elb4_1','$elb4_2','$elb4_3','$elb4_4','$elb4_5','$elb4_6','$elb4_7','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
+    elseif ($action == "ELB5_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM elb5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+      
+        $elb5_1 = trim($_POST['elb5_1']);
+      
+     
+
+
+        if(empty($elb5_1) ){
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+     $insertQuery = "INSERT INTO elb5_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,elb5_1,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$elb5_1','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
     else{
 
         $respo['status'] = false;

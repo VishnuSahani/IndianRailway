@@ -123,7 +123,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3" id="modalComponentName">
                             Schedule Code: EP1
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
 
 
                         <!-- <span id="modalSubCompoName"></span>
@@ -221,7 +221,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: EP2
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -644,6 +644,8 @@ if (isset($_SESSION['userretaileremp'])) {
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <form id="formEP3">
             <div class="modal-content">
+                <div id="pdfBodyEP3">
+
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelEP3">
                         <span class="badge badge-success h3" id="modalComponentName">
@@ -654,9 +656,9 @@ if (isset($_SESSION['userretaileremp'])) {
                         <!-- <span id="modalSubCompoName"></span>
                         <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button> -->
                 </div>
                 <div class="row mx-2 px-2 py-1">
                     <div class="col-6">
@@ -838,13 +840,19 @@ if (isset($_SESSION['userretaileremp'])) {
                     </table>
                 </div>
 
-                <!-- <div class="card-footer d-flex justify-content-between">
+                </div>
+
+
+                <div class="card-footer d-flex justify-content-between">
                     <div id="ep3Form_status"></div>
                     <div>
-                        <button type="reset" class="btn btn-sm btn-danger">Reset</button>
-                        <button type='button' id="ep3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                    <button type='button' id="ep3PdfBtn" onclick="generatePdf('EP3','pdfBodyEP3')"
+                    class="btn btn-success btn-sm">PDF</button>
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
                     </div>
-                </div> -->
+                </div>
 
             </div>
         </form>
@@ -862,7 +870,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: EP4
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -958,7 +966,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: EP5
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -1055,7 +1063,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: T1
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -1308,7 +1316,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: T2
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -1406,7 +1414,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: T3
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -1579,7 +1587,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: T5
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -1675,7 +1683,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: CS1
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -2057,7 +2065,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: CS2
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -2152,7 +2160,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: DL1
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -2246,7 +2254,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: DL2
                         </span>
-
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
                     </h5>
@@ -2340,6 +2348,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: DL3
                         </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                     </h5>
                     <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -2431,6 +2440,7 @@ if (isset($_SESSION['userretaileremp'])) {
                         <span class="badge badge-success h3">
                             Schedule Code: DL4 (only for SSE/DLMC)
                         </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
                     </h5>
                     <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -2524,9 +2534,9 @@ if (isset($_SESSION['userretaileremp'])) {
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
 
             <div class="row mx-2 px-2 py-1">
@@ -2627,9 +2637,9 @@ if (isset($_SESSION['userretaileremp'])) {
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
 
             <div class="row mx-2 px-2 py-1">
@@ -2729,9 +2739,9 @@ if (isset($_SESSION['userretaileremp'])) {
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
 
             <div class="row mx-2 px-2 py-1">
@@ -3385,7 +3395,6 @@ function fillEP3FormData(id) {
 
 
 function showFormDetails(id, EPtype,language) {
-
     // where EPtype = is EP1, EP4, EP5
 
     // EP2 here
@@ -4159,15 +4168,18 @@ function showTable(formKeyName, subcomponame) {
     formData.forEach((element, index) => {
 
         displayHtml += `
-    <tr>
-    <th scope="row">${index+1}</th>
-    <td>${element['component_name']}</td>
-    <td>${formKeyName}</td>
-    <td>${element['sub_component']}</td>
-    <td>${element['created_date']}</td>
-    <td>${element['updated_date']}</td>
-    <td style="vertical-align:middle;width:22%" >
-    `;
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['component_name']}</td>
+        <td>${formKeyName}</td>
+        <td>${element['sub_component']}</td>
+        <td>${element['created_date']}</td>
+        <td>${element['updated_date']}</td>
+        <td style="vertical-align:middle;width:22%" >
+        `;
+        
+        $(".displaySubcompoName").html(element['sub_component']);
+
         if (formKeyName.startsWith("EP")) {
             displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${formKeyName}','${element['language']}')">
@@ -4188,6 +4200,8 @@ function showTable(formKeyName, subcomponame) {
         </button>
        `;
         } else if (formKeyName.startsWith("DL")) {
+        $(".displaySubcompoName").html(''); // empty because no sub component in this component
+
             displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="get_DL_formData('${element['id']}','${formKeyName}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
