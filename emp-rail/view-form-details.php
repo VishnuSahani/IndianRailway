@@ -305,7 +305,10 @@ if (isset($_SESSION['userretailer'])) {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2">Date</td>
+                                                <td colspan="2">
+                                                    <span class="ep2_details_english">Date</span>
+                                                    <span class="ep2_details_hindi">दिनांक</span>
+                                                </td>
                                                 <td>
                                                     <!-- <input type="date" id="EP2_1" disabled class="form-control"> -->
                                                     <div id="EP2_1" ></div>
@@ -313,15 +316,24 @@ if (isset($_SESSION['userretailer'])) {
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Operating Voltage (>100 Volts)</td>
-                                                <td>(N to R)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">                                           
+                                                     <span class="ep2_details_english">Operating Voltage (>100 Volts)</span>
+                                                    <span class="ep2_details_hindi">सामान्य ऑपरेटिंग वोल्टेज (>100 वोल्ट)</span>
+                                                </td>
+                                                <td>
+                                                    <span class="ep2_details_english">(N to R)</span>
+                                                    <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="op_v_N_R" class="form-control"> -->
                                                     <div id="op_v_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>(R to N)</td>
+                                                <td>
+                                                    <span class="ep2_details_english">(R to N)</span>
+                                                    <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="op_v_R_N" class="form-control"> -->
                                                     <div id="op_v_R_N"></div>
@@ -330,15 +342,24 @@ if (isset($_SESSION['userretailer'])) {
 
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Obstruction Voltage (>80 Volts)</td>
-                                                <td>(N to R)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">
+                                                    <span class="ep2_details_english">Obstruction Voltage (>80 Volts)</span>
+                                                    <span class="ep2_details_hindi">बाधा वोल्टेज (>80 वोल्ट)</span>
+                                                </td>
+                                                <td>
+                                                    <span class="ep2_details_english">(N to R)</span>
+                                                    <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="ob_v_N_R" class="form-control"> -->
                                                     <div id="ob_v_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>(R to N)</td>
+                                                <td>
+                                                    <span class="ep2_details_english">(R to N)</span>
+                                                    <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="ob_v_R_N" class="form-control"> -->
                                                     <div id="ob_v_R_N"></div>
@@ -346,15 +367,25 @@ if (isset($_SESSION['userretailer'])) {
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Detection Voltage (>24 Volts)</td>
-                                                <td>(N to R)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">
+                                                    <span class="ep2_details_english">Detection Voltage (>24 Volts)</span>
+                                                    <span class="ep2_details_hindi">डिटेक्शन वोल्टेज (>24 वोल्ट)*</span>
+
+                                                </td>
+                                                <td>
+                                                    <span class="ep2_details_english">(N to R)</span>
+                                                    <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span>
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="det_v_N_R" class="form-control"> -->
                                                     <div id="det_v_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>(R to N)</td>
+                                                <td>
+                                                    <span class="ep2_details_english">(R to N)</span>
+                                                    <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="det_v_R_N" class="form-control"> -->
                                                     <div id="det_v_R_N"></div>
@@ -362,15 +393,24 @@ if (isset($_SESSION['userretailer'])) {
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Normal Working Current (1.5 - 2.5 Amp.)</td>
-                                                <td>(N to R)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">
+                                                    <span class="ep2_details_english">Normal Working Current (1.5 - 2.5 Amp.)</span>
+                                                    <span class="ep2_details_hindi">सामान्य कार्यशील धारा (1.5 - 2.5 एम्पियर)</span>
+                                                </td>
+                                                <td>
+                                                    <span class="ep2_details_english">(N to R)</span>
+                                                    <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="nwc_N_R" class="form-control"> -->
                                                     <div id="nwc_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>(R to N)</td>
+                                                <td>
+                                                    <span class="ep2_details_english">(R to N)</span>
+                                                    <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="nwc_R_N" class="form-control"> -->
                                                     <div id="nwc_R_N"></div>
@@ -378,15 +418,24 @@ if (isset($_SESSION['userretailer'])) {
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" rowspan="2">Obstruction/Slipping Current (3-5 Amp.)</td>
-                                                <td>(N to R)</td>
+                                                <td style="vertical-align: middle;" rowspan="2">
+                                                    <span class="ep2_details_english">Obstruction/Slipping Current (3-5 Amp.)</span>
+                                                    <span class="ep2_details_hindi">रुकावट/स्लिपिंग करंट (3-5 एम्पियर)</span>
+                                                 </td>
+                                                <td>
+                                                    <span class="ep2_details_english">(N to R)</span>
+                                                    <span class="ep2_details_hindi">नॉर्मल से रिर्वस</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="ob_sc_N_R" class="form-control"> -->
                                                     <div id="ob_sc_N_R"></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>(R to N)</td>
+                                                <td>
+                                                    <span class="ep2_details_english">(R to N)</span>
+                                                    <span class="ep2_details_hindi">रिवर्स से नॉर्मल</span> 
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="ob_sc_R_N" class="form-control"> -->
                                                     <div id="ob_sc_R_N"></div>
@@ -394,7 +443,10 @@ if (isset($_SESSION['userretailer'])) {
                                             </tr>
 
                                             <tr>
-                                                <td style="vertical-align: middle;" colspan="2">Obstruction Test (3.25 mm)</td>
+                                                <td style="vertical-align: middle;" colspan="2">
+                                                    <span class="ep2_details_english">Obstruction Test (3.25 mm)</span>
+                                                    <span class="ep2_details_hindi">रुकावट परीक्षण (3.25 मिमी)*</span>
+                                                </td>
                                                 <!-- <td>(N to R)</td> -->
                                                 <td>
                                                     <!-- <input type="text" disabled id="ob_t_N_R" class="form-control"> -->
@@ -406,7 +458,10 @@ if (isset($_SESSION['userretailer'])) {
 
 
                                             <tr>
-                                                <td style="vertical-align: middle;" colspan="2">Go Test (1.6 mm Fail Safe Test)</td>
+                                                <td style="vertical-align: middle;" colspan="2">
+                                                    <span class="ep2_details_english">Go Test (1.6 mm Fail Safe Test)</span>
+                                                    <span class="ep2_details_hindi">गो टेस्ट (1.6 मिमी असफल सुरक्षित परीक्षण)*</span>
+                                                </td>
                                                 <!-- <td>(N to R)</td> -->
                                                 <td>
                                                     <!-- <input type="text" disabled id="gt_N_R" class="custom-select"> -->
@@ -417,7 +472,11 @@ if (isset($_SESSION['userretailer'])) {
 
 
                                             <tr>
-                                                <td style="vertical-align: middle;" colspan="2">Operating Time (4-5 Seconds)</td>
+                                                <td style="vertical-align: middle;" colspan="2">
+                                            
+                                                    <span class="ep2_details_english">Operating Time (4-5 Seconds)</span>
+                                                    <span class="ep2_details_hindi">परिचालन समय (4-5 सेकंड)*</span>
+                                                </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="operatingTimeSecond" class="form-control"> -->
                                                     <div id="operatingTimeSecond"></div>
@@ -426,8 +485,8 @@ if (isset($_SESSION['userretailer'])) {
 
                                             <tr>
                                                 <td style="vertical-align: middle;" colspan="2">
-                                                    <!-- Operating time during barrier test (>10 Seconds) -->
-                                                    अवरोध परिक्षण के दौरान परिचालन समय
+                                                    <span class="ep2_details_english">अवरोध परिक्षण के दौरान परिचालन समय*</span>
+                                                    <span class="ep2_details_hindi">अवरोध परिक्षण के दौरान परिचालन समय*</span>
                                                 </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="operatingTime_dbt" class="form-control"> -->
@@ -438,7 +497,8 @@ if (isset($_SESSION['userretailer'])) {
                                             <tr>
                                                 <td style="vertical-align: middle;" colspan="2">
                                                     <!-- Is the friction clutch slipping or not? -->
-                                                    फ्रिक्शन क्लच स्लिप कर रहा है या नहीं
+                                                    <span class="ep2_details_english">फ्रिक्शन क्लच स्लिप कर रहा है या नहीं</span>
+                                                     <span class="ep2_details_hindi">फ्रिक्शन क्लच स्लिप कर रहा है या नहीं</span>
                                                 </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="friction_c_s" class="form-control"> -->
@@ -448,7 +508,8 @@ if (isset($_SESSION['userretailer'])) {
 
                                             <tr>
                                                 <td style="vertical-align: middle;" colspan="2">
-                                                    Track Locking Test
+                                                    <span class="ep2_details_english">Track Locking Test</span>
+                                                    <span class="ep2_details_hindi">ट्रैक लॉकिंग टेस्ट*</span>
                                                 </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="track_locking" class="form-control"> -->
@@ -459,7 +520,8 @@ if (isset($_SESSION['userretailer'])) {
                                             <tr>
                                                 <td style="vertical-align: middle;" colspan="2">
                                                     <!-- Remark's inspection/brief description of maintenance -->
-                                                    रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण
+                                                    <span class="ep2_details_english">रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण*</span>
+                                                    <span class="ep2_details_hindi">रिमार्क एवं निरिक्षण/अनुरक्षण का सञ्चिपट विवरण*</span>
                                                 </td>
                                                 <td>
                                                     <!-- <input type="number" disabled id="remark_brief" class="form-control"> -->
@@ -479,7 +541,11 @@ if (isset($_SESSION['userretailer'])) {
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Checking of feed disconnection time under obstruction is not less than 10 Seconds.
+                                <td>
+                                <span class="ep2_details_english">
+                                    Checking of feed disconnection time under obstruction is not less than 10 Seconds.
+                                </span>
+                                <span class="ep2_details_hindi">रुकावट के तहत फ़ीड वियोग का समय जांचने में 10 सेकंड से कम नहीं है।</span> 
                                 </td>
                                 <td>
                                     <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_2"> -->
@@ -489,7 +555,12 @@ if (isset($_SESSION['userretailer'])) {
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>Ensure Hose pipe/GI pipe in good condition and without gaps/access.</td>
+                                <td>
+                                    <span class="ep2_details_english">
+                                    Ensure Hose pipe/GI pipe in good condition and without gaps/access.</span>
+                                    <span class="ep2_details_hindi">सुनिश्चित करें कि होज़ पाइप/जीआई पाइप अच्छी स्थिति में और बिना किसी गैप/पहुँच के हो।</span>    
+                                    
+                                </td>
                                 <td>
                                     <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_3"> -->
                                     <div id="EP2_3"></div>
@@ -498,9 +569,15 @@ if (isset($_SESSION['userretailer'])) {
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td>Check MS pins of Switch Extension piece/ 'P' bracket for any rib formation or
-                                    excessive
-                                    wear.</td>
+                                <td>
+                                <span class="ep2_details_english">
+                                    Check MS pins of Switch Extension piece/'P' bracket for any rib formation or excessive
+                                    wear.
+                                </span>
+                                <span class="ep2_details_hindi">किसी भी पसली गठन या अत्यधिक घिसाव के लिए स्विच एक्सटेंशन पीस/'पी' ब्रैकेट के MS पिन की जांच करें।</span>    
+                            
+                            
+                                </td>
                                 <td>
                                     <!-- <input type="text" disabled class="custom-select EP2Class" id="EP2_4"> -->
                                     <div id="EP2_4"></div>
@@ -510,16 +587,25 @@ if (isset($_SESSION['userretailer'])) {
                             <tr>
                                 <th scope="row">5</th>
                                 <td>
-                                    In case of Clamp type point machine, Lubricate the following moving parts of the
-                                    clamp
-                                    lock.
-                                    <div>
-                                        <ol type="a">
-                                            <li>Stock rail bracket groove.</li>
-                                            <li>Moving part of tongue rail and lock arm assembly. </li>
-                                            <li> Between machine of lock bar and lock arm assembly</li>
-                                        </ol>
-                                    </div>
+                                <div class="ep2_details_english">
+                                In case of Clamp type point machine, Lubricate the following moving parts of the clamp
+                                lock.
+                                <div>
+                                    <ol type="a">
+                                        <li>Stock rail bracket groove.</li>
+                                        <li>Moving part of tongue rail and lock arm assembly. </li>
+                                        <li> Between machine of lock bar and lock arm assembly</li>
+                                    </ol>
+                                </div>
+                                </div>
+                                <div class="ep2_details_hindi">
+                                क्लैंप प्रकार की पॉइंट मशीन के मामले में, क्लैंप लॉक के निम्नलिखित गतिशील हिस्सों को चिकनाई दें।
+                                <ul>
+                                        <li>(ए) स्टॉक रेल ब्रैकेट ग्रूव.</li>
+                                        <li>(बी) टंग रेल और लॉक आर्म असेंबली का गतिशील भाग। </li>
+                                        <li>(सी) लॉक बार और लॉक आर्म असेंबली की मशीन के बीच ।  </li>
+                                    </ul>
+                                </div>
 
                                 </td>
                                 <td style="vertical-align: middle;">
@@ -548,6 +634,220 @@ if (isset($_SESSION['userretailer'])) {
             </div>
 
         </div>
+    </div>
+</div>
+
+
+<!-- Modal EP3 -->
+<div class="modal fade" id="componentForm_EP3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelEP3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form id="formEP3">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabelEP3">
+                        <span class="badge badge-success h3" id="modalComponentName">
+                            Schedule Code: EP3  
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                        <!-- <span id="modalSubCompoName"></span>
+                        <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretailer']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                    Quarterly
+
+                </div>
+                <div class="modal-body table-responsive">
+                    <!-- <form id="modalFormComponent">
+                    
+                    </form> -->
+                    <table class="table table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Check the following</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ep3_body">
+                            <tr>
+                                <td scope="row">1</td>
+                                <td scope="row">
+                                    
+                                    <div class="ep3_details_english">
+                                        Joint check with JE/SSE (P-Way), of points & crossing for leveling, squaring; creeping, packing, clearance of ballast and other P-Way fittings, etc. and measurement of LH, RH switch opening are as given below for normal point and as per proforma circulated by RDSO dated 14.2.19 for Thick Web Switches.
+
+                                        <table class="table">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th colspan="2">Normal Point (143mm)</th>
+                                                    <th colspan="2">Thick Web Point(220mm)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">OPENING (Tolerance)</th>
+                                                    <th colspan="2">OPENING (Tolerance)</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>LH END</td>
+                                                    <td>RH END</td>
+                                                    <td>LH END</td>
+                                                    <td>RH END</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>115+-3mm</td>
+                                                    <td>115+-3mm</td>
+                                                    <td>160+-3mm</td>
+                                                    <td>160+-3mm</td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="ep3_details_hindi">
+
+                                    कांटों और क्रॉसिंग की लेवलिंग, स्क्वायरिंग, रेंगना(creeping), पैकिंग, गिट्टी और अन्य पी-वे फिटिंग आदि की निकासी और LH, RH स्विच खोलने का माप सामान्य कांटों के लिए नीचे दिया गया है और थिक वेब स्विच(TWS) के लिए RDSO दिनांक 14.02.19 द्वारा प्रसारित प्रोफार्मा के अनुसार है इसकी जेई/सीसेई (पी-वे) के साथ संयुक्त जांच । 
+
+                            <table class="table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th colspan="2">सामान्य कांटा(143mm)</th>
+                                        <th colspan="2">थीक वेब कांटा(220mm)</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2">
+                                        प्रारंभण  ( सहनशीलता )
+                                        </th>
+                                        <th colspan="2">
+                                        प्रारंभण  ( सहनशीलता )
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>LH अंत</td>
+                                        <td>RH अंत</td>
+                                        <td>LH अंत</td>
+                                        <td>RH अंत</td>
+                                    </tr>
+                                    <tr>
+                                        <td>115+-3 मिमी</td>
+                                        <td>115+-3 मिमी</td>
+                                        <td>160+-3 मिमी</td>
+                                        <td>160+-3 मिमी</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                                        
+                                    </div>
+                                           
+                                </td>
+                                <td scope="row" style="width: 25%;vertical-align: middle;">
+                                <div id="ep3_1"></div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="ep3_details_english">
+                                    Joint checking of SSD Setting and its arm insulation with P-Way supervisor.
+                                        
+                                    </div>
+                                        <div class="ep3_details_hindi">
+                                        पी-वे सुपरवाइजर के साथ SSD सेटिंग और उसके आर्म इंसुलेशन की संयुक्त जांच।
+                                        </div>
+                                </td>
+                                <td>
+                                <div id="ep3_2"></div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="ep3_details_english">
+                                        Remarks by Signal Supervisor.
+                                    </div>
+                                    <div class="ep3_details_hindi">
+                                            Remarks by Signal Supervisor.
+                                            
+                                        </div>
+                                </td>
+                                <td>
+                                <div id="ep3_3"></div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="ep3_details_english">
+                                        Remarks by P.Way  Supervisor.
+                                    </div>
+                                    <div class="ep3_details_hindi">
+                                            Remarks by P.Way  Supervisor.
+                                            
+                                        </div>
+                                </td>
+                                <td>
+                                <div id="ep3_4"></div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- <div class="card-footer d-flex justify-content-between">
+                    <div id="ep3Form_status"></div>
+                    <div>
+                        <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                        <button type='button' id="ep3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                    </div>
+                </div> -->
+
+            </div>
+        </form>
     </div>
 </div>
 
@@ -1192,6 +1492,80 @@ if (isset($_SESSION['userretailer'])) {
     </div>
 </div>
 
+<!-- Modal T4 -->
+<div class="modal fade" id="componentForm_T4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelT4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyT4">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelT4">
+                    <span class="badge badge-success h3">
+                        Schedule Code: T4
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                    <!-- <span id="modalSubCompoName"></span>
+                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                Periodicity: Sectional SSE/JE (Signal)
+                SSE (Signal)/Incharge: Half yearly (Sectional
+                SSE/JE (Signal) & SSE (Signal) /Incharge to carry out alternatively once in six months)
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">
+                                Check the following 
+                            </th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td></td>
+                        <td class="text-center">Joint check with JE/SSE (P-way) of track circuited portion for</td>
+                        <td></td>
+                    </tr>
+                    <tbody id="t4_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+       
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="t4Form_status"></div>
+
+                <div>
+
+                <button type='button' id="t4PdfBtn" onclick="generatePdf('T4','pdfBodyT4')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
 
 <!-- Modal T5 -->
 <div class="modal fade" id="componentForm_T5" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -1651,7 +2025,7 @@ if (isset($_SESSION['userretailer'])) {
                     </table>
 
 
-                    </table>
+                   
                 </div>
             </div>
 
@@ -2135,6 +2509,310 @@ if (isset($_SESSION['userretailer'])) {
     </div>
 </div>
 
+<!-- Modal MLB1 -->
+<div class="modal fade" id="componentForm_MLB1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMLB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyMLB1">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Mechanical Lifting Barrier MLB1
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretailer']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Fortnightly,
+            Sectional SSE/JE (Signal): Monthly
+            SSE(Signal)/ Incharge : Quarterly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlb1_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mlb1Form_status"></div>
+
+                <div>
+                    <!-- <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mlb1FormBtn" class="btn btn-sm btn-success">Final Submit</button> -->
+
+                    <button type='button' id="dl3PdfBtn" onclick="generatePdf('MLB1','pdfBodyMLB1')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                    <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                        Close
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal MLB2 -->
+<div class="modal fade" id="componentForm_MLB2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMLB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+
+            <div id="pdfBodyMLB2">
+
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB2">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Mechanical Lifting Barrier MLB2
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretailer']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Quarterly,
+            Sectional SSE/JE (Signal): Monthly
+            SSE(Signal)/ Incharge : Half-yearly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlb2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mlb2Form_status"></div>
+
+                <div>
+                    <!-- <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mlb2FormBtn" class="btn btn-sm btn-success">Final Submit</button> -->
+                    <button type='button' id="dl3PdfBtn" onclick="generatePdf('MLB2','pdfBodyMLB2')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                    <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                        Close
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal MLB3 -->
+<div class="modal fade" id="componentForm_MLB3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMLB3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyMLB3">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB3">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Mechanical Lifting Barrier MLB3
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretailer']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Quarterly,
+            Sectional SSE/JE (Signal): Half-yearly
+            SSE(Signal)/ Incharge : Yearly
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlb3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mlb3Form_status"></div>
+
+                <div>
+                    <!-- <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mlb3FormBtn" class="btn btn-sm btn-success">Final Submit</button> -->
+                    <button type='button' id="dl3PdfBtn" onclick="generatePdf('MLB3','pdfBodyMLB3')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                    <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
 
 <script>
 var g_st_compList = [];
@@ -2318,6 +2996,14 @@ function fillEP2FormData(id) {
     })[0];
 
     $("#componentForm_EP2").modal("show");
+
+    if(ep2DataObj['language'] == "Hindi"){
+        $(".ep2_details_english").addClass('d-none')
+        $(".ep2_details_hindi").removeClass('d-none')
+    }else{
+        $(".ep2_details_hindi").addClass('d-none')
+        $(".ep2_details_english").removeClass('d-none')
+    }
     /*
     $("#EP2_1").val(ep2DataObj['ep2_1']);
     $("#EP2_2").val(ep2DataObj['ep2_2']);
@@ -2454,6 +3140,33 @@ function fillEP2FormData(id) {
 }
 
 
+function fillEP3FormData(id) {
+
+    let ep2DataObj = formDataList[['EP3']].filter((x) => {
+        if (x['id'] == id) {
+            return x;
+        }
+    })[0];
+
+    $("#componentForm_EP3").modal("show");
+
+    if(ep2DataObj['language'] == "Hindi"){
+        $(".ep3_details_english").addClass('d-none')
+        $(".ep3_details_hindi").removeClass('d-none')
+    }else{
+        $(".ep3_details_hindi").addClass('d-none')
+        $(".ep3_details_english").removeClass('d-none')
+    }
+
+    $("#ep3_1").html(ep2DataObj['ep3_1']);
+    $("#ep3_2").html(ep2DataObj['ep3_2']);
+    $("#ep3_3").html(ep2DataObj['ep3_3']);
+    $("#ep3_4").html(ep2DataObj['ep3_4']);
+
+
+}
+
+
 function showFormDetails(id, EPtype,language) {
 
     // where EPtype = is EP1, EP4, EP5
@@ -2463,6 +3176,9 @@ function showFormDetails(id, EPtype,language) {
     if (EPtype == 'EP2') {
         fillEP2FormData(id);
         return;
+    }else if(EPtype == 'EP3'){
+        fillEP3FormData(id);
+        return
     }
 
     if (id != '' && EPtype != '') {
@@ -2687,7 +3403,57 @@ function openDialog_DL(typeOfForm, dataList, id) {
 }
 
 
-// T Type form
+function openDialog_MLB(typeOfForm, dataList, id) {
+
+let tableId = '';
+let displayHtml = "";
+
+let tableDataForm = formDataList[typeOfForm].filter((x) => {
+    if (x['id'] == id) {
+        return x;
+    }
+})[0];
+
+switch (typeOfForm) {
+    case "MLB1":
+        tableId = "mlb1_body";
+        $("#componentForm_MLB1").modal("show");
+        break;
+    case "MLB2":
+        tableId = "mlb2_body";
+        $("#componentForm_MLB2").modal("show");
+        break;
+
+    case "MLB3":
+        tableId = "mlb3_body";
+        $("#componentForm_MLB3").modal("show");
+        break;
+}
+
+
+dataList.forEach((element, index) => {
+
+    let value = tableDataForm[element['mlb_id'].toLowerCase()]
+
+        displayHtml += `
+            <tr>
+            <th scope="row">${index+1}</th>
+            <td>${element['mlb_details']}</td>
+            <td style="vertical-align:middle;width:22%" >
+            <div class="">${value}</div>
+            </td>
+                </tr>
+        `;
+
+
+    });
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+
+// cs Type form
 
 
 function openDialog_CS(typeOfForm, dataList, id) {
@@ -2803,6 +3569,10 @@ function openDialog_T(typeOfForm, dataList, id) {
             tableId = "t3_body";
             $("#componentForm_T3").modal("show");
             break;
+        case "T4":
+            tableId = "t4_body";
+            $("#componentForm_T4").modal("show");
+            break;
 
         case "T5":
             tableId = "t5_body";
@@ -2839,7 +3609,7 @@ function openDialog_T(typeOfForm, dataList, id) {
 
 }
 
-function get_T_formData(id, tType) {
+function get_T_formData(id, tType,language) {
 
 
     $.ajax({
@@ -2848,6 +3618,7 @@ function get_T_formData(id, tType) {
         data: {
             "action": "getT_FormDetails",
             "formType": tType,
+            language:language
 
         },
         beforeSend: function() {
@@ -2949,7 +3720,7 @@ function fillCS1FormData(id) {
     $("#remark").html(cs1DataObj['remark']);
 }
 
-function get_CS_formData(id, csType) {
+function get_CS_formData(id, csType,language) {
 
 
     if (csType == 'CS1') {
@@ -2965,6 +3736,7 @@ function get_CS_formData(id, csType) {
         data: {
             "action": "getCS_FormDetails",
             "formType": csType,
+            language:language
 
         },
         beforeSend: function() {
@@ -2993,7 +3765,7 @@ function get_CS_formData(id, csType) {
 
 // 
 
-function get_DL_formData(id, dlType) {
+function get_DL_formData(id, dlType,language) {
 
 
     // if(csType == 'CS1'){
@@ -3008,6 +3780,7 @@ function get_DL_formData(id, dlType) {
         data: {
             "action": "getDL_FormDetails",
             "formType": dlType,
+            language:language
 
         },
         beforeSend: function() {
@@ -3033,6 +3806,44 @@ function get_DL_formData(id, dlType) {
         }
     });
 }
+
+
+function get_MLB_formData(id, mlbType,language) {
+
+$.ajax({
+    type: "POST",
+    url: "./query/action.php",
+    data: {
+        "action": "getMLB_FormDetails",
+        "formType": mlbType,
+        language:language
+
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+
+
+    },
+    success: function(respo) {
+        $("#loader_show").addClass('d-none');
+
+        let response = JSON.parse(respo);
+
+        if (response['status']) {
+
+            openDialog_MLB(mlbType, response['data'], id);
+
+        }
+
+    },
+    complete: function() {
+        $("#loader_show").addClass('d-none');
+
+    }
+});
+}
+
+
 
 
 function showTable(formKeyName, subcomponame) {
@@ -3065,19 +3876,25 @@ function showTable(formKeyName, subcomponame) {
 
         } else if (formKeyName.startsWith("T")) {
             displayHtml += `
-        <button type="button" class="btn btn-sm btn-success" onclick="get_T_formData('${element['id']}','${formKeyName}')">
+        <button type="button" class="btn btn-sm btn-success" onclick="get_T_formData('${element['id']}','${formKeyName}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
         </button>
        `;
         } else if (formKeyName.startsWith("CS")) {
             displayHtml += `
-        <button type="button" class="btn btn-sm btn-success" onclick="get_CS_formData('${element['id']}','${formKeyName}')">
+        <button type="button" class="btn btn-sm btn-success" onclick="get_CS_formData('${element['id']}','${formKeyName}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
         </button>
        `;
         } else if (formKeyName.startsWith("DL")) {
             displayHtml += `
-        <button type="button" class="btn btn-sm btn-success" onclick="get_DL_formData('${element['id']}','${formKeyName}')">
+        <button type="button" class="btn btn-sm btn-success" onclick="get_DL_formData('${element['id']}','${formKeyName}','${element['language']}')">
+            See <i class="fas fa-eye-close"></i>
+        </button>
+       `;
+        } else if (formKeyName.startsWith("MLB")) {
+            displayHtml += `
+        <button type="button" class="btn btn-sm btn-success" onclick="get_MLB_formData('${element['id']}','${formKeyName}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
         </button>
        `;

@@ -1,0 +1,10 @@
+[02-Oct-2023 07:29:57 UTC] PHP Parse error:  syntax error, unexpected 'status' (T_STRING) in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 73
+[02-Oct-2023 07:30:00 UTC] PHP Parse error:  syntax error, unexpected 'status' (T_STRING) in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 73
+[02-Oct-2023 07:30:01 UTC] PHP Parse error:  syntax error, unexpected 'status' (T_STRING) in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 73
+[02-Oct-2023 07:30:02 UTC] PHP Parse error:  syntax error, unexpected 'status' (T_STRING) in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 73
+[02-Oct-2023 07:30:13 UTC] PHP Parse error:  syntax error, unexpected 'status' (T_STRING) in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 73
+[02-Oct-2023 13:56:05 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 95
+[02-Oct-2023 14:47:10 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 95
+[02-Oct-2023 14:49:48 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 95
+[02-Oct-2023 14:51:00 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 95
+[02-Oct-2023 14:51:10 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ysgz2wi6sagj/public_html/bsbdivisionsnt.in/je-rail/query/action.php on line 95
