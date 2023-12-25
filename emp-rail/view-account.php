@@ -29,9 +29,9 @@
         <?php 
                             $id="";
 
-                                if(isset($_SESSION['userretailer']))
+                                if(isset($_SESSION['userretaileremp']))
                             {
-                              echo $id=$_SESSION['userretailer'];  
+                              echo $id=$_SESSION['userretaileremp'];  
    
                             }		                          
                                $sql= "select * from user_id_details where retailer_id='$id'";

@@ -6,9 +6,9 @@ session_start();
  //Include database configuration file
     $id="";
 
-    if(isset($_SESSION['userretailer']))
+    if(isset($_SESSION['userretaileremp']))
 {
-  $id=$_SESSION['userretailer'];  
+  $id=$_SESSION['userretaileremp'];  
    
 }
     //echo $id;

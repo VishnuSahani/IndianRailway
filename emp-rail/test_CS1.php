@@ -21,7 +21,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+                            <?php echo $_SESSION['userretailerempempName'] ?? '...'; ?>
 
                         </span>
 
@@ -30,7 +30,7 @@
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -408,7 +408,7 @@
                     <div class="col-6">
                         <span>Name:</span>
                         <span class="ml-2 font-weight-bold">
-                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+                            <?php echo $_SESSION['userretailerempempName'] ?? '...'; ?>
 
                         </span>
 
@@ -417,7 +417,7 @@
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>

@@ -63,7 +63,7 @@ function submitForm(){
  <div class="form-group row">
     <label for="name" class="col-sm-3 col-form-label">Retailer Id</label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" name="sname" id="name" value="<?php echo $_SESSION['userretailer']; ?>" placeholder="Student Id" readonly required>
+      <input type="text" class="form-control" name="sname" id="name" value="<?php echo $_SESSION['userretaileremp']; ?>" placeholder="Student Id" readonly required>
     </div>
   </div>
   

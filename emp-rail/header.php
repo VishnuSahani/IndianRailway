@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['userretailer']))
+if(!isset($_SESSION['userretaileremp']))
 {
-   $_SESSION['userretailer'];
+   $_SESSION['userretaileremp'];
   //exit;
   header('location:index.php?session_error');  
   die();
@@ -101,9 +101,9 @@ background:#feeeb7a8;
     //Include database configuration file
     include('include/db_config.php');
     $id="";
-    if(isset($_SESSION['userretailer']))
+    if(isset($_SESSION['userretaileremp']))
 {
-  $id=$_SESSION['userretailer'];  
+  $id=$_SESSION['userretaileremp'];  
    
 }
     //echo $id;
@@ -111,6 +111,7 @@ background:#feeeb7a8;
 
   $row = mysqli_fetch_array($query);
   $name = $row['empname'];
+  $_SESSION['userretailerempName']=$name;
   $empSectionName = $row['section_name'];
   $empSectionId = $row['section_id'];
   $empStationName = $row['station_name'];

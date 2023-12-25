@@ -4,8 +4,8 @@
 //Include database configuration file
 $id = "";
 
-if (isset($_SESSION['userretailer'])) {
-    $id = $_SESSION['userretailer'];
+if (isset($_SESSION['userretaileremp'])) {
+    $id = $_SESSION['userretaileremp'];
 
 }
 
@@ -149,7 +149,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -242,7 +242,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -671,7 +671,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -883,7 +883,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -980,7 +980,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -1076,7 +1076,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -1330,7 +1330,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -1427,7 +1427,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -1600,7 +1600,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -1696,7 +1696,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2078,7 +2078,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2173,7 +2173,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2267,7 +2267,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2358,7 +2358,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2449,7 +2449,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2542,7 +2542,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2645,7 +2645,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2747,7 +2747,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2849,7 +2849,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -2950,7 +2950,7 @@ if (isset($_SESSION['userretailer'])) {
                         <span>Id:</span>
                         <span class="ml-2 font-weight-bold">
 
-                            <?php echo $_SESSION['userretailer']; ?>
+                            <?php echo $_SESSION['userretaileremp']; ?>
                         </span>
 
                     </div>
@@ -3100,7 +3100,7 @@ function updateSingleValue(value, tableName, columnName, id) {
     console.log("value", value);
     console.log("tableName", tableName);
     console.log("columnName", columnName);
-    let userID = '<?php echo $_SESSION['userretailer']; ?>';
+    let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
     if (userID == '' || userID == null || userID == undefined) {
 
         //  $("#t1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -4304,7 +4304,7 @@ function getComponentForm(val) {
     let stationId = ($("#stationId").val()).trim();
     let stationName = ($("#stationName").val()).trim();
 
-    let userID = '<?php echo $_SESSION['userretailer']; ?>';
+    let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
     if (userID == '' || userID == null || userID == undefined) {
 
         alert("Something went wrong with user Id, Refresh the page and try again");

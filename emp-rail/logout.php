@@ -1,6 +1,6 @@
  <?php   
  //logout.php  
  session_start();  
- unset($_SESSION['userretailer']);
+ unset($_SESSION['userretaileremp']);
  header("location:../index-emp.php");  
  ?>  

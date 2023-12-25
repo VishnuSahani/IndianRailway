@@ -32,7 +32,7 @@
                 $count = $statement->rowCount();  
                 if($count > 0)  
                 {  
-                     $_SESSION["userretailer"] = $_POST["username"];  
+                     $_SESSION["userretaileremp"] = $_POST["username"];  
                      header("location:emp-rail/index.php");  
                 }  
                 else  
