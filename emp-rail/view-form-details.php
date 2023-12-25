@@ -2830,6 +2830,13 @@ function generatePdf(formType, html_Id) {
     // var doc = new jsPDF('l', 'mm', [297, 210]);
     // var doc = new jsPDF('l', 'mm', 'letter');
     var doc = new jsPDF();
+    // doc.font('../jsPdf/font/TiroDevanagariHindi-Regular.ttf');
+
+    // doc.addFileToVFS('../jsPdf/font/TiroDevanagariHindi-Regular.ttf', nepali)  
+    // doc.addFileToVFS('TiroDevanagariHindi-Regular.ttf', '../jsPdf/font/TiroDevanagariHindi-Regular.ttf');
+
+    // doc.addFont('TiroDevanagariHindi-Regular.ttf', 'custom', 'normal');
+
 
     // Source HTMLElement or a string containing HTML.
     var elementHTML = document.querySelector("#" + html_Id);

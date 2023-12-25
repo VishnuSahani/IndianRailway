@@ -2104,7 +2104,124 @@ if (isset($_SESSION['userretailer'])) {
     </div>
 </div>
 
+<!-- Modal SLB1 -->
 
+<div class="modal fade" id="componentForm_SLB1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelSLB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Sliding Boom SLB1
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Fortnightly,
+                          Sectional SSE/JE (Signal): Monthly,
+                     SSE(Signal)/Incharge: ): Quarterly 
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="slb1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="slb1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="slb1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal SLB2 -->
+<div class="modal fade" id="componentForm_SLB2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelSLB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Sliding Boom SLB2
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          Periodicity: Technician (Signal): Monthly,
+                          Sectional SSE/JE (Signal): Quarterly,
+                     SSE(Signal)/Incharge: ): Half-Yearly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="slb2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="slb2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="slb2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
 <script>
 
 var g_st_compList = [];
@@ -2261,19 +2378,27 @@ function createSubComponent(val) {
 
   }else if(componentName == "DL"){
 
-btn +=`
- <a class="dropdown-item" onclick="get_DL_formData('DL1','${value}','${stationComName}')">DL1</a>
- <a class="dropdown-item" onclick="get_DL_formData('DL2','${value}','${stationComName}')">DL2</a>
- <a class="dropdown-item" onclick="get_DL_formData('DL3','${value}','${stationComName}')">DL3</a>
- <a class="dropdown-item" onclick="get_DL_formData('DL4','${value}','${stationComName}')">DL4</a>
- `;
+    btn +=`
+    <a class="dropdown-item" onclick="get_DL_formData('DL1','${value}','${stationComName}')">DL1</a>
+    <a class="dropdown-item" onclick="get_DL_formData('DL2','${value}','${stationComName}')">DL2</a>
+    <a class="dropdown-item" onclick="get_DL_formData('DL3','${value}','${stationComName}')">DL3</a>
+    <a class="dropdown-item" onclick="get_DL_formData('DL4','${value}','${stationComName}')">DL4</a>
+    `;
 
 }else if(componentName == "MLB"){
 
 btn +=`
- <a class="dropdown-item" onclick="get_MLB_formData('MLB1','${value}','${stationComName}')">MLB1</a>
- <a class="dropdown-item" onclick="get_MLB_formData('MLB2','${value}','${stationComName}')">MLB2</a>
- <a class="dropdown-item" onclick="get_MLB_formData('MLB3','${value}','${stationComName}')">MLB3</a>
+    <a class="dropdown-item" onclick="get_MLB_formData('MLB1','${value}','${stationComName}')">MLB1</a>
+    <a class="dropdown-item" onclick="get_MLB_formData('MLB2','${value}','${stationComName}')">MLB2</a>
+    <a class="dropdown-item" onclick="get_MLB_formData('MLB3','${value}','${stationComName}')">MLB3</a>
+    `;
+
+}else if(componentName == "SLB"){
+
+btn +=`
+ <a class="dropdown-item" onclick="get_SLB_formData('SLB1','${value}','${stationComName}')">SLB1</a>
+ <a class="dropdown-item" onclick="get_SLB_formData('SLB2','${value}','${stationComName}')">SLB2</a>
+ 
  `;
 
 }
@@ -5978,6 +6103,289 @@ $(document).ready(function() {
         }
     });
 
+// for SLB1
+
+ 
+$("#slb1FormBtn").click(function() {
+        if (confirm("Do you want to final submit SLB1 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let slb1_1 = $("#slb1_1").val();
+            let slb1_2 = $("#slb1_2").val();
+            let slb1_3 = $("#slb1_3").val();
+            let slb1_4 = $("#slb1_4").val();
+            let slb1_5 = $("#slb1_5").val();
+            let slb1_6 = $("#slb1_6").val();
+            let slb1_7 = $("#slb1_7").val();
+            
+            if (slb1_1 == undefined  || slb1_1 == null || slb1_1 == '' || slb1_1.length == 0) {
+                $("#slb1_1").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_1").removeClass("is-invalid");
+
+            }
+
+            if (slb1_2 == undefined  || slb1_2 == null || slb1_2 == '' || slb1_2.length == 0) {
+                $("#slb1_2").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_2").removeClass("is-invalid");
+
+            }
+
+            if (slb1_3 == undefined  || slb1_3 == null || slb1_3 == '' || slb1_3.length == 0) {
+                $("#slb1_3").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_3").removeClass("is-invalid");
+
+            }
+
+            if (slb1_4 == undefined  || slb1_4 == null || slb1_4 == '' || slb1_4.length == 0) {
+                $("#slb1_4").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_4").removeClass("is-invalid");
+
+            }
+
+            if (slb1_5 == undefined  || slb1_5 == null || slb1_5 == '' || slb1_5.length == 0) {
+                $("#slb1_5").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_5").removeClass("is-invalid");
+
+            }
+
+            if (slb1_6 == undefined  || slb1_6 == null || slb1_6 == '' || slb1_6.length == 0) {
+                $("#slb1_6").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_6").removeClass("is-invalid");
+
+            }
+
+            if (slb1_7 == undefined  || slb1_7 == null || slb1_7 == '' || slb1_7.length == 0) {
+                $("#slb1_7").addClass("is-invalid");
+                $("#slb1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb1Form_status").html("");
+                $("#slb1_7").removeClass("is-invalid");
+
+            }
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#slb1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "SLB1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "slb1_1": slb1_1,
+                    "slb1_2": slb1_2,
+                    "slb1_3": slb1_3,
+                    "slb1_4": slb1_4,
+                    "slb1_5": slb1_5,
+                    "slb1_6": slb1_6,              
+                    "slb1_7": slb1_7,              
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#slb1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#slb1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+
+// for SLB2
+
+ $("#slb2FormBtn").click(function() {
+        if (confirm("Do you want to final submit SLB2 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let slb2_1 = $("#slb2_1").val();
+            let slb2_2 = $("#slb2_2").val();
+            let slb2_3 = $("#slb2_3").val();
+            let slb2_4 = $("#slb2_4").val();
+         
+            
+            if (slb2_1 == undefined  || slb2_1 == null || slb1_2 == '' || slb1_2.length == 0) {
+                $("#slb2_1").addClass("is-invalid");
+                $("#slb2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb2Form_status").html("");
+                $("#slb2_1").removeClass("is-invalid");
+
+            }
+
+            if (slb2_2 == undefined  || slb2_2 == null || slb2_2 == '' || slb2_2.length == 0) {
+                $("#slb2_2").addClass("is-invalid");
+                $("#slb2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb2Form_status").html("");
+                $("#slb2_2").removeClass("is-invalid");
+
+            }
+
+            if (slb2_3 == undefined  || slb2_3 == null || slb2_3 == '' || slb2_3.length == 0) {
+                $("#slb2_3").addClass("is-invalid");
+                $("#slb2Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb2Form_status").html("");
+                $("#slb2_3").removeClass("is-invalid");
+
+            }
+
+            if (slb2_4 == undefined  || slb2_4 == null || slb2_4 == '' || slb2_4.length == 0) {
+                $("#slb2_4").addClass("is-invalid");
+                $("#slb2Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#slb2Form_status").html("");
+                $("#slb2_4").removeClass("is-invalid");
+
+            }
+
+           
+
+            let userID = '<?php echo $_SESSION['userretailer']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#slb2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "SLB2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "slb2_1": slb2_1,
+                    "slb2_2": slb2_2,
+                    "slb2_3": slb2_3,
+                    "slb2_4": slb2_4,
+                               
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#slb2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#slb2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
 
 
 });
@@ -6374,6 +6782,61 @@ document.getElementById(tableId).innerHTML = displayHtml;
 
 }
 
+// for SLB
+
+function openDialog_SLB(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "SLB1":
+        tableId = "slb1_body";
+        $("#componentForm_SLB1").modal("show");
+        break;
+    case "SLB2":
+        tableId = "slb2_body";
+        $("#componentForm_SLB2").modal("show");
+        break;
+   
+
+
+}
+
+
+dataList.forEach((element, index) => {
+
+
+        
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['slb_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['slb_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['slb_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+
+
 function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
@@ -6419,6 +6882,43 @@ function get_CS_formData(csType,subCompo,compo){
 }
 
 
+// slb for details
+function get_SLB_formData(slb_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo); // no change here
+    $("#subcompoNameTmp").val(subCompo); // no change here
+    let language = $("#language").val(); // no change here
+    $(".displaySubcompoName").html(subCompo);
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getSLB_FormDetails",
+            "formType": slb_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_SLB(slb_Type, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
 
 function get_MLB_formData(mlb_Type,subCompo,compo){
     $("#compoNameTmp").val(compo); // no change here
