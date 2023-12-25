@@ -527,6 +527,61 @@ if(isset($_POST['action'])){
         // ep1 end
 
         }
+        elseif($compoNameTmp == "SLB"){
+
+            $formType = "SLB";
+            
+            $qEP1 = mysqli_query($con,"SELECT * FROM slb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP1) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep1Data = [];
+
+                while($runEp1 = mysqli_fetch_array($qEP1)){
+
+                    $ep1Data[] = $runEp1;
+
+                }
+                
+                $formData['SLB1'] = $ep1Data ;
+
+            }
+
+
+            // slb1 end
+
+            // slb2 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM slb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['SLB2'] = $ep2Data ;
+
+            }
+
+            // 2 end
+
+
+        // ep1 end
+
+        }
         else{
             responseSend(false,"Invalid Component Name, Kindly check component name",[]);
         }

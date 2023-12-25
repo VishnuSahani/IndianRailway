@@ -2814,6 +2814,207 @@ if (isset($_SESSION['userretailer'])) {
     </div>
 </div>
 
+<!-- Modal SLB1 -->
+
+<div class="modal fade" id="componentForm_SLB1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelSLB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodySLB1">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Sliding Boom SLB1
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+            </div>
+
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretailer']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+            Periodicity: Technician (Signal): Fortnightly,
+                          Sectional SSE/JE (Signal): Monthly,
+                     SSE(Signal)/Incharge: ): Quarterly 
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="slb1_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="slb1Form_status"></div>
+
+                <div>
+                <button type='button' id="slb1PdfBtn" onclick="generatePdf('SLB1','pdfBodySLB1')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                    <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal SLB2 -->
+<div class="modal fade" id="componentForm_SLB2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelSLB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodySLB2">
+
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                    Maintenance Schedule of Sliding Boom SLB2
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+            </div>
+            
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretailer']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          Periodicity: Technician (Signal): Monthly,
+                          Sectional SSE/JE (Signal): Quarterly,
+                     SSE(Signal)/Incharge: ): Half-Yearly
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Check the following</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="slb2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+
+
+            <div class="card-footer d-flex justify-content-between">
+
+                <div>
+                <button type='button' id="slb2PdfBtn" onclick="generatePdf('SLB2','pdfBodySLB2')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                    <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
 <script>
 var g_st_compList = [];
 var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
@@ -2837,7 +3038,16 @@ function generatePdf(formType, html_Id) {
 
     // doc.addFont('TiroDevanagariHindi-Regular.ttf', 'custom', 'normal');
 
+    //new 
+    /*
+    const myFont = "../jsPdf/font/TiroDevanagariHindi-Regular.ttf" // load the *.ttf font file as binary string
 
+    // add the font to jsPDF
+    doc.addFileToVFS("TiroDevanagariHindi-Regular.ttf", myFont);
+    doc.addFont("TiroDevanagariHindi-Regular.ttf", "custom", "normal");
+    doc.setFont("custom");
+
+*/
     // Source HTMLElement or a string containing HTML.
     var elementHTML = document.querySelector("#" + html_Id);
     // Add a new page before adding content
@@ -3459,6 +3669,54 @@ document.getElementById(tableId).innerHTML = displayHtml;
 
 }
 
+// slb 
+
+
+function openDialog_SLB(typeOfForm, dataList, id) {
+
+let tableId = '';
+let displayHtml = "";
+
+let tableDataForm = formDataList[typeOfForm].filter((x) => {
+    if (x['id'] == id) {
+        return x;
+    }
+})[0];
+
+switch (typeOfForm) {
+    case "SLB1":
+        tableId = "slb1_body";
+        $("#componentForm_SLB1").modal("show");
+        break;
+    case "SLB2":
+        tableId = "slb2_body";
+        $("#componentForm_SLB2").modal("show");
+        break;
+
+}
+
+
+dataList.forEach((element, index) => {
+
+    let value = tableDataForm[element['slb_id'].toLowerCase()]
+
+        displayHtml += `
+            <tr>
+            <th scope="row">${index+1}</th>
+            <td>${element['slb_details']}</td>
+            <td style="vertical-align:middle;width:22%" >
+            <div class="">${value}</div>
+            </td>
+                </tr>
+        `;
+
+
+    });
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
 
 // cs Type form
 
@@ -3851,6 +4109,42 @@ $.ajax({
 }
 
 
+function get_SLB_formData(id, slbType,language) {
+
+$.ajax({
+    type: "POST",
+    url: "./query/action.php",
+    data: {
+        "action": "getSLB_FormDetails",
+        "formType": slbType,
+        language:language
+
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+
+
+    },
+    success: function(respo) {
+        $("#loader_show").addClass('d-none');
+
+        let response = JSON.parse(respo);
+
+        if (response['status']) {
+
+            openDialog_SLB(slbType, response['data'], id);
+
+        }
+
+    },
+    complete: function() {
+        $("#loader_show").addClass('d-none');
+
+    }
+});
+}
+
+
 
 
 function showTable(formKeyName, subcomponame) {
@@ -3902,6 +4196,12 @@ function showTable(formKeyName, subcomponame) {
         } else if (formKeyName.startsWith("MLB")) {
             displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="get_MLB_formData('${element['id']}','${formKeyName}','${element['language']}')">
+            See <i class="fas fa-eye-close"></i>
+        </button>
+       `;
+        } else if (formKeyName.startsWith("SLB")) {
+            displayHtml += `
+        <button type="button" class="btn btn-sm btn-success" onclick="get_SLB_formData('${element['id']}','${formKeyName}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
         </button>
        `;
