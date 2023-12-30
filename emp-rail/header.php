@@ -168,51 +168,6 @@ background:#feeeb7a8;
 </nav>
 
 
-<div>
-    
-    <?php
- include('include/db_config.php');
-$que="select * from notice "; 
-$run=mysqli_query($con,$que);
-   if(mysqli_num_rows($run) >= 1)
-     {
-	   $recordset = mysqli_query($con,"select * from notice where category='OFFER AND NEWS' LIMIT 1 ");
-				
-                 while($record = mysqli_fetch_array($recordset))
-			   {
-
-		 if(!empty($record["date"]))
-	       {
-	         $x= $record["date"];
-	       }
-		   
-	if(!empty($record["category"]))
-	       {
-	         $y= $record["category"];
-	       }
-		   if(!empty($record["notice"]))
-	       {
-	         $z= $record["notice"];
-	       }
-  if(!empty($record["attachment"]))
-	       {
-	         $a= $record["attachment"];
-	       }
-  ?>
-    <marquee align="baseline" onmouseover="this.stop();" onmouseout="this.start();">
-  <strong>
-<img src="images/new_red.gif">
-<a href="<?php echo "../attachment/".$y."/".$a ?>"target="_blank"><?php echo $z.'<br>'; ?></a>
-   </strong>
-   </marquee>
- <?php 
-  }
-  }
-
-  ?>
-
-    
-    </div>
 
 
 <style>

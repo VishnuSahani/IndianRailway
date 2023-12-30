@@ -119,8 +119,14 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                <span class="heading_english">
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
                     Quarterly
+                </span>
+
+                <span class="heading_hindi">
+                आवधिकता: तकनीशियन (सिग्नल): पाक्षिक अनुभागीय सीसेई/जेई (सिग्नल): मासिक सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -130,9 +136,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="ep1_body">
@@ -3019,6 +3051,14 @@ function get_EP_formData(EPtype, subCompo, compo) {
     $("#subcompoNameTmp").val(subCompo);
     $(".displaySubcompoName").html(subCompo);
     let language = $("#language").val();
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 
     if (EPtype === 'EP2') {
         $("#EP2_1").val(new Date().toISOString().split("T")[0]);
@@ -8304,6 +8344,13 @@ function get_T_formData(tType,subCompo,compo){
     $(".displaySubcompoName").html(subCompo);
     let language = $("#language").val();
 
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 
     $.ajax({
         type: "POST",
@@ -8801,7 +8848,13 @@ function get_CS_formData(csType,subCompo,compo){
     $("#subcompoNameTmp").val(subCompo);
     $(".displaySubcompoName").html(subCompo);
     let language = $("#language").val();
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 
     if(csType == 'CS1'){
         $("#componentForm_CS1").modal("show");
@@ -8847,6 +8900,15 @@ function get_SLB_formData(slb_Type,subCompo,compo){
     $("#subcompoNameTmp").val(subCompo); // no change here
     let language = $("#language").val(); // no change here
     $(".displaySubcompoName").html(subCompo);
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+
     $.ajax({
         type: "POST",
         url: "./query/action.php",
@@ -8886,6 +8948,15 @@ function get_ELB_formData(elb_Type,subCompo,compo){
     $("#subcompoNameTmp").val(subCompo); // no change here
     let language = $("#language").val(); // no change here
     $(".displaySubcompoName").html(subCompo);
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+    
     $.ajax({
         type: "POST",
         url: "./query/action.php",
@@ -8924,6 +8995,14 @@ function get_DAC_formData(dac_Type,subCompo,compo){
     $("#subcompoNameTmp").val(subCompo); // no change here
     let language = $("#language").val(); // no change here
     $(".displaySubcompoName").html(subCompo);
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
     $.ajax({
         type: "POST",
         url: "./query/action.php",
@@ -8961,6 +9040,15 @@ function get_MLB_formData(mlb_Type,subCompo,compo){
     $("#subcompoNameTmp").val(subCompo); // no change here
     let language = $("#language").val(); // no change here
     $(".displaySubcompoName").html(subCompo);
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+
     $.ajax({
         type: "POST",
         url: "./query/action.php",
@@ -8997,6 +9085,14 @@ function get_DL_formData(dL_Type,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
     let language = $("#language").val();
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 
     // $(".displaySubcompoName").html(subCompo);
 
