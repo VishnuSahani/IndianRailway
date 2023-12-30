@@ -172,9 +172,14 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge
-                    :
+                <span class="heading_english">
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
                     Quarterly
+                </span>
+
+                <span class="heading_hindi">
+                आवधिकता: तकनीशियन (सिग्नल): पाक्षिक अनुभागीय सीसेई/जेई (सिग्नल): मासिक सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -3834,10 +3839,29 @@ var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-se
 var formDataList = {};
 
 
-window.jsPDF = window.jspdf.jsPDF;
 
+function printContent(el){
 
+    var restorepage = document.body.innerHTML;
+
+    var printcontent = document.getElementById(el).innerHTML;
+
+    document.body.innerHTML = printcontent;
+
+    window.print();
+
+    document.body.innerHTML = restorepage;
+    location.reload()
+
+}
+
+// window.jsPDF = window.jspdf.jsPDF; // uncomment it when you use js pdf for pdf
 function generatePdf(formType, html_Id) {
+
+    printContent(html_Id);
+    return;
+
+
     console.log("from type", formType);
     console.log("html type", html_Id);
 
@@ -4199,7 +4223,13 @@ function fillEP3FormData(id) {
 
 function showFormDetails(id, EPtype,language) {
     // where EPtype = is EP1, EP4, EP5
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
     // EP2 here
 
     if (EPtype == 'EP2') {
@@ -4811,7 +4841,13 @@ function openDialog_T(typeOfForm, dataList, id) {
 
 function get_T_formData(id, tType,language) {
 
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
     $.ajax({
         type: "POST",
         url: "./query/action.php",
@@ -4921,7 +4957,13 @@ function fillCS1FormData(id) {
 }
 
 function get_CS_formData(id, csType,language) {
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 
     if (csType == 'CS1') {
         // openDialog_CS(csType,[],id);
@@ -4967,7 +5009,13 @@ function get_CS_formData(id, csType,language) {
 
 function get_DL_formData(id, dlType,language) {
 
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
     // if(csType == 'CS1'){
     //     fillCS1FormData(id);
 
@@ -5010,6 +5058,14 @@ function get_DL_formData(id, dlType,language) {
 
 //for ELB
 function get_ELB_formData(id, elbType,language) {
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
    
     $.ajax({
         type: "POST",
@@ -5048,7 +5104,13 @@ function get_ELB_formData(id, elbType,language) {
 
 //for DAC
 function get_DAC_formData(id, dacType,language) {
-   
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
     $.ajax({
         type: "POST",
         url: "./query/action.php",
@@ -5086,7 +5148,13 @@ function get_DAC_formData(id, dacType,language) {
 
 
 function get_MLB_formData(id, mlbType,language) {
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 $.ajax({
     type: "POST",
     url: "./query/action.php",
@@ -5122,7 +5190,13 @@ $.ajax({
 
 
 function get_SLB_formData(id, slbType,language) {
-
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
 $.ajax({
     type: "POST",
     url: "./query/action.php",
@@ -5470,6 +5544,8 @@ $(document).ready(function() {
     getComponent();
 });
 </script>
+
+
 
 </body>
 
