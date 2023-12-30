@@ -4,9 +4,9 @@
  //Include database configuration file
     $id="";
 
-    if(isset($_SESSION['userretaileremp']))
+    if(isset($_SESSION['userretailer']))
 {
-  $id=$_SESSION['userretaileremp'];  
+  $id=$_SESSION['userretailer'];  
    
 }
 
@@ -36,7 +36,7 @@
                                     while($row=mysqli_fetch_array($que))
                                     {
                                         $idOpt = $row['section_id']."__".$row['section_name'];
-                                    echo"<option value='".$idOpt."'>".$row['section_name']."</option>";
+                                    echo"<option value=".$idOpt.">".$row['section_name']."</option>";
                                     }
 
 

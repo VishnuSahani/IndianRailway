@@ -4,9 +4,9 @@
  //Include database configuration file
     $id="";
 
-    if(isset($_SESSION['userretaileremp']))
+    if(isset($_SESSION['userretailer']))
 {
-  $id=$_SESSION['userretaileremp'];  
+  $id=$_SESSION['userretailer'];  
    
 }
     //echo $id;
@@ -204,7 +204,7 @@ ajax.onreadystatechange = function(){
   $que=mysqli_query($con,"select * from section_tbl ORDER BY section_name ASC");
 while($row=mysqli_fetch_array($que))
 {
-echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_name']."</option>";
+echo"<option  name='sectionId' value=".$row['section_id'].">".$row['section_name']."</option>";
 }
 
 

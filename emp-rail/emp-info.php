@@ -232,7 +232,7 @@ ajax.onreadystatechange = function(){
   $que=mysqli_query($con,"select * from section_tbl ORDER BY section_name ASC");
 while($row=mysqli_fetch_array($que))
 {
-echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_name']."</option>";
+echo"<option  name='sectionId' value=".$row['section_id'].">".$row['section_name']."</option>";
 }
 
 
@@ -256,7 +256,7 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 
 
 <div class="table-responsive">
-<table class="table display table-striped w-100" border="0" align="center" bgcolor="#E9E9E9" id="myTable">
+<table class="table display table-striped" border="0" align="center" bgcolor="#E9E9E9" id="myTable">
 <thead class="thead-dark">
 
 <tr>

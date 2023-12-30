@@ -2,9 +2,9 @@
 session_start ();
 $id="";
 
-    if(isset($_SESSION['userretaileremp']))
+    if(isset($_SESSION['userretailer']))
 {
-  $id=$_SESSION['userretaileremp'];  
+  $id=$_SESSION['userretailer'];  
    
 }
 require('include/db_config.php');

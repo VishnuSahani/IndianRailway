@@ -5,7 +5,7 @@ include('include/db_config.php');
 if(  isset($_POST['oldpass']) && isset($_POST['newpass']) && isset($_POST['repass'])  )
 {
  
-$id=$_SESSION['userretaileremp'];
+$id=$_SESSION['userretailer'];
 $pass=$_POST['oldpass'];
 $newpass=$_POST['newpass'];
 $repass=$_POST['repass'];

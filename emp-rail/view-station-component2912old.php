@@ -199,16 +199,13 @@ if (isset($_SESSION['userretaileremp'])) {
                             <th scope="row">1</th>
                             <td colspan="2">
                                 <div class="alert alert-success">
-                                     <span class="ep2_details_english">
                                     Measurements of operating values (voltage & current) of point machines, with and
                                     without obstruction for normal
                                     and reverse operation. Current required to operate the machine in either direction
                                     shall be 1.5 to 2 times of its
                                     normal operation and friction clutch shall slip within this range. Replace machine
                                     when difference between normal
-                                    operating current and current under obstruction is less than 0.5 A.</span>
-                                    <span class="ep2_details_hindi">
-                                    सामान्य और रिवर्स ऑपरेशन के लिए रुकावट के साथ और बिना, पॉइंट मशीनों के ऑपरेटिंग मूल्यों (वोल्टेज और करंट) का माप। मशीन को किसी भी दिशा में संचालित करने के लिए आवश्यक करंट इसके सामान्य संचालन से 1.5 से 2 गुना होगा और घर्षण क्लच इस सीमा के भीतर फिसल जाएगा। मशीन को तब बदलें जब सामान्य ऑपरेटिंग करंट और रुकावट के तहत करंट के बीच का अंतर 0.5 ए से कम हो।</span>
+                                    operating current and current under obstruction is less than 0.5 A.
                                 </div>
                                 <table class="table  table-bordered">
                                     <thead class="table-secondary">
@@ -2234,9 +2231,9 @@ if (isset($_SESSION['userretaileremp'])) {
         <form>
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelELB1">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                   Maintenance Schedule of Power Operated Lifting Barrier ELB1
+                   Maintenance Schedule of Power Operated Lifting Barrier LC1
 
 
                     </span>
@@ -2294,9 +2291,9 @@ if (isset($_SESSION['userretaileremp'])) {
         <form>
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelELB2">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                  Maintenance Schedule of Power Operated Lifting Barrier ELB2
+                  Maintenance Schedule of Power Operated Lifting Barrier LC2
 
 
 
@@ -2356,9 +2353,9 @@ if (isset($_SESSION['userretaileremp'])) {
         <form>
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelELB3">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                  Maintenance Schedule of Power Operated Lifting Barrier ELB3
+                  Maintenance Schedule of Power Operated Lifting Barrier LC3
 
 
 
@@ -2418,9 +2415,9 @@ if (isset($_SESSION['userretaileremp'])) {
         <form>
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelELB4">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                  Maintenance Schedule of Power Operated Lifting Barrier ELB4
+                  Maintenance Schedule of Power Operated Lifting Barrier LC4
 
 
 
@@ -2481,9 +2478,9 @@ if (isset($_SESSION['userretaileremp'])) {
         <form>
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelELB5">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                  Maintenance Schedule of Power Operated Lifting Barrier ELB5
+                  Maintenance Schedule of Power Operated Lifting Barrier LC5
 
 
 
@@ -2527,192 +2524,6 @@ if (isset($_SESSION['userretaileremp'])) {
                 <div>
                     <button type='reset' class="btn btn-sm btn-danger">Reset</button>
                     <button type='button' id="elb5FormBtn" class="btn btn-sm btn-success">Final Submit</button>
-
-                </div>
-            </div>
-
-        </div>
-        </form>
-    </div>
-</div>
-
-<!-- for DAC -->
-<div class="modal fade" id="componentForm_DAC1" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="componentFormLabelELB1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelDAC1">
-                    <span class="badge badge-success h3">
-                  Maintenance Schedule of Digital Axle Counter DAC1
-
-
-
-                    </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
-
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-        Periodicity: Technician (Signal): Monthly
-Sectional SSE/JE (Signal): Quarterly,
-SSE (Signal) Incharge: Half Yearly
-
-
-
-            </div>
-            <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dac1_body">
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card-footer d-flex justify-content-between">
-                <div id="dac1Form_status"></div>
-
-                <div>
-                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
-                    <button type='button' id="dac1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
-
-                </div>
-            </div>
-
-        </div>
-        </form>
-    </div>
-</div>
-
-
-<!-- Modal DAC2 -->
-<div class="modal fade" id="componentForm_DAC2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelDAC2" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelDAC2">
-                    <span class="badge badge-success h3">
-                 Maintenance Schedule of Digital Axle Counter DAC2
-
-
-
-
-                    </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
-
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-       Periodicity: Sectional SSE/JE(Signal): Quarterly (to be done by ESM in presence of JE/SSE)
-SSE(Signal)/Incharge: Half Yearly
-
-
-
-
-            </div>
-            <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dac2_body">
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card-footer d-flex justify-content-between">
-                <div id="dac2Form_status"></div>
-
-                <div>
-                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
-                    <button type='button' id="dac2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
-
-                </div>
-            </div>
-
-        </div>
-        </form>
-    </div>
-</div>
-
-
-<!-- Modal DAC3 -->
-<div class="modal fade" id="componentForm_DAC3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelELB4" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelDAC1">
-                    <span class="badge badge-success h3">
-                  Maintenance Schedule of Digital Axle Counter DAC3
-
-
-
-
-                    </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
-
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-         Periodicity: Sectional SSE/JE(Signal): Yearly
-
-
-
-            </div>
-            <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dac3_body">
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card-footer d-flex justify-content-between">
-                <div id="dac3Form_status"></div>
-
-                <div>
-                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
-                    <button type='button' id="dac3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
 
                 </div>
             </div>
@@ -2901,21 +2712,7 @@ btn +=`
  
  `;
 
-}
-
-else if(componentName == "AXLE COUNTER"){
-
-btn +=`
- <a class="dropdown-item" onclick="get_DAC_formData('DAC1','${value}','${stationComName}')">DAC1</a>
- <a class="dropdown-item" onclick="get_DAC_formData('DAC2','${value}','${stationComName}')">DAC2</a>
- <a class="dropdown-item" onclick="get_DAC_formData('DAC3','${value}','${stationComName}')">DAC3</a>
- 
- `;
-
-}
-
-
-else if(componentName == "ELB"){
+}else if(componentName == "ELB"){
 
 btn +=`
  <a class="dropdown-item" onclick="get_ELB_formData('ELB1','${value}','${stationComName}')">ELB1</a>
@@ -6628,525 +6425,6 @@ $(document).ready(function() {
         }
     });
 
-
-
-//for DAC1
-    $("#dac1FormBtn").click(function() {
-        if (confirm("Do you want to final submit DAC1 Form")) {
-            let language = $("#language").val();
-            let sectionName = $("#sectionName").val();
-            let sectionId = $("#sectionId").val();
-
-            let stationName = $("#stationName").val();
-            let stationId = $("#stationId").val();
-
-            let compoNameTmp = $("#compoNameTmp").val();
-            let subcompoNameTmp = $("#subcompoNameTmp").val();
-
-            if (
-                sectionName == "" || sectionName == null || sectionName == undefined ||
-                sectionId == "" || sectionId == null || sectionId == undefined ||
-                stationName == "" || stationName == null || stationName == undefined ||
-                stationId == "" || stationId == null || stationId == undefined ||
-                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
-                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
-
-            ) {
-                alert("Something went wrong , refresh the page and try again");
-                return;
-            }
-
-            let dac1_1 = $("#dac1_1").val();
-            let dac1_2 = $("#dac1_2").val();
-             let dac1_3 = $("#dac1_3").val();
-            let dac1_4 = $("#dac1_4").val();
-             let dac1_5 = $("#dac1_5").val();
-            let dac1_6 = $("#dac1_6").val();
-             let dac1_7 = $("#dac1_7").val();
-             let dac1_8 = $("#dac1_8").val();
-            let dac1_9 = $("#dac1_9").val();
-             let dac1_10 = $("#dac1_10").val();
-            let dac1_11 = $("#dac1_11").val();
-             let dac1_12 = $("#dac1_12").val();
-            let dac1_13 = $("#dac1_13").val();
-             let dac1_14 = $("#dac1_14").val();
-             let dac1_15 = $("#dac1_15").val();
-            
-            if (dac1_1 == undefined  || dac1_1 == null || dac1_1 == '' || dac1_1.length == 0) {
-                $("#dac1_1").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 1 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_1").removeClass("is-invalid");
-
-            }
-
-            if (dac1_2 == undefined  || dac1_2 == null || dac1_2 == '' || dac1_2.length == 0) {
-                $("#dac1_2").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 2 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_2").removeClass("is-invalid");
-
-            }
-
-
-              if (dac1_3 == undefined  || dac1_3 == null || dac1_3 == '' || dac1_3.length == 0) {
-                $("#dac1_3").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 3 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_3").removeClass("is-invalid");
-
-            }
-
-              if (dac1_4 == undefined  || dac1_4 == null || dac1_4 == '' || dac1_4.length == 0) {
-                $("#dac1_4").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 4 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_4").removeClass("is-invalid");
-
-            }
-
-            if (dac1_5 == undefined  || dac1_5 == null || dac1_5 == '' || dac1_5.length == 0) {
-                $("#dac1_5").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 5 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_4").removeClass("is-invalid");
-
-            }
-
-            if (dac1_6 == undefined  || dac1_6 == null || dac1_6 == '' || dac1_6.length == 0) {
-                $("#dac1_6").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 6 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_6").removeClass("is-invalid");
-
-            }
-
-            if (dac1_7 == undefined  || dac1_7 == null || dac1_7 == '' || dac1_7.length == 0) {
-                $("#dac1_7").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 7 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_7").removeClass("is-invalid");
-
-            }
-
-              if (dac1_8 == undefined  || dac1_8 == null || dac1_8 == '' || dac1_8.length == 0) {
-                $("#dac1_8").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 8 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_8").removeClass("is-invalid");
-
-            }
-
-
-              if (dac1_9 == undefined  || dac1_9 == null || dac1_9 == '' || dac1_9.length == 0) {
-                $("#dac1_9").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 9 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_9").removeClass("is-invalid");
-
-            }
-
-
-              if (dac1_10 == undefined  || dac1_10 == null || dac1_10 == '' || dac1_10.length == 0) {
-                $("#dac1_10").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 10 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_10").removeClass("is-invalid");
-
-            }
-
-              if (dac1_11 == undefined  || dac1_11 == null || dac1_11 == '' || dac1_11.length == 0) {
-                $("#dac1_11").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 11 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_11").removeClass("is-invalid");
-
-            }
-
-              if (dac1_12 == undefined  || dac1_12 == null || dac1_12 == '' || dac1_12.length == 0) {
-                $("#dac1_12").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 12 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_12").removeClass("is-invalid");
-
-            }
-
-              if (dac1_13 == undefined  || dac1_13 == null || dac1_13 == '' || dac1_13.length == 0) {
-                $("#dac1_13").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 13 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_13").removeClass("is-invalid");
-
-            }
-
-              if (dac1_14 == undefined  || dac1_14 == null || dac1_14 == '' || dac1_14.length == 0) {
-                $("#dac1_14").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 14 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_14").removeClass("is-invalid");
-
-            }
-
-              if (dac1_15 == undefined  || dac1_15 == null || dac1_15 == '' || dac1_15.length == 0) {
-                $("#dac1_15").addClass("is-invalid");
-                $("#dac1Form_status").html("Serial no 15 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac1Form_status").html("");
-                $("#dac1_15").removeClass("is-invalid");
-
-            }
-
-            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
-            if(userID == '' || userID == null || userID == undefined){
-                
-                $("#dac1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
-                return
-            }
-
-            $.ajax({
-                type: "POST",
-                url: "query/action.php",
-                data: {
-                    "action": "DAC1_formSubmit",
-                    "userID": userID,
-                    "sectionName": sectionName,
-                    "sectionId": sectionId,
-                    "stationName": stationName,
-                    "stationId": stationId,
-                    "compoNameTmp": compoNameTmp,
-                    "subcompoNameTmp": subcompoNameTmp,
-                    "dac1_1": dac1_1,
-                    "dac1_2": dac1_2,
-                     "dac1_3": dac1_3,
-                    "dac1_4": dac1_4,
-                    "dac1_5": dac1_5,
-                    "dac1_6": dac1_6,
-                    "dac1_7": dac1_7,
-                    "dac1_8": dac1_8,
-                    "dac1_9": dac1_9,
-                     "dac1_10": dac1_10,
-                    "dac1_11": dac1_11,
-                    "dac1_12": dac1_12,
-                    "dac1_13": dac1_13,
-                    "dac1_14": dac1_14,        
-                    "dac1_14": dac1_14,        
-                    "dac1_15": dac1_15,        
-                    "language":language
-                },
-                beforeSend: function() {
-                    $("#loader_show").removeClass('d-none');
-
-                },
-                success: function(response) {
-                    let respo = JSON.parse(response);
-                    if (respo['status']) {
-                        $("#dac1Form_status").html(respo['msg']).css("color", "green");
-
-
-                    } else {
-                        $("#dac1Form_status").html(respo['msg']).css("color", "red");
-
-                    }
-                },
-                complete: function() {
-                    $("#loader_show").addClass('d-none');
-
-                }
-            });
-        }
-        
-    });
-
-//for DAC2
-    $("#dac2FormBtn").click(function() {
-        if (confirm("Do you want to final submit DAC3 Form")) {
-            let language = $("#language").val();
-            let sectionName = $("#sectionName").val();
-            let sectionId = $("#sectionId").val();
-
-            let stationName = $("#stationName").val();
-            let stationId = $("#stationId").val();
-
-            let compoNameTmp = $("#compoNameTmp").val();
-            let subcompoNameTmp = $("#subcompoNameTmp").val();
-
-            if (
-                sectionName == "" || sectionName == null || sectionName == undefined ||
-                sectionId == "" || sectionId == null || sectionId == undefined ||
-                stationName == "" || stationName == null || stationName == undefined ||
-                stationId == "" || stationId == null || stationId == undefined ||
-                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
-                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
-
-            ) {
-                alert("Something went wrong , refresh the page and try again");
-                return;
-            }
-
-            let dac2_1 = $("#dac2_1").val();
-            let dac2_2 = $("#dac2_2").val();
-             let dac2_3 = $("#dac2_3").val();
-            let dac2_4 = $("#dac2_4").val();
-             let dac2_5 = $("#dac2_5").val();
-            let dac2_6 = $("#dac2_6").val();
-             let dac2_7 = $("#dac2_7").val();
-            
-            if (dac2_1 == undefined  || dac2_1 == null || dac2_1 == '' || dac2_1.length == 0) {
-                $("#dac2_1").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 1 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac2_1").removeClass("is-invalid");
-
-            }
-
-            if (dac2_2 == undefined  || dac2_2 == null || dac2_2 == '' || dac2_2.length == 0) {
-                $("#dac2_2").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 2 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac2_2").removeClass("is-invalid");
-
-            }
-
-
-              if (dac2_3 == undefined  || dac2_3 == null || dac2_3 == '' || dac2_3.length == 0) {
-                $("#dac2_3").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 3 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac2_3").removeClass("is-invalid");
-
-            }
-
-              if (dac2_4 == undefined  || dac2_4 == null || dac2_4 == '' || dac2_4.length == 0) {
-                $("#dac2_4").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 4 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac2_4").removeClass("is-invalid");
-
-            }
-
-            if (dac2_5 == undefined  || dac2_5 == null || dac2_5 == '' || dac2_5.length == 0) {
-                $("#dac2_5").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 5 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac5_4").removeClass("is-invalid");
-
-            }
-
-            if (dac2_6 == undefined  || dac2_6 == null || dac2_6 == '' || dac2_6.length == 0) {
-                $("#dac2_6").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 6 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac2_6").removeClass("is-invalid");
-
-            }
-
-            if (dac2_7 == undefined  || dac2_7 == null || dac2_7 == '' || dac2_7.length == 0) {
-                $("#dac2_7").addClass("is-invalid");
-                $("#dac2Form_status").html("Serial no 7 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac2Form_status").html("");
-                $("#dac2_7").removeClass("is-invalid");
-
-            }
-
-            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
-            if(userID == '' || userID == null || userID == undefined){
-                
-                $("#dacForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
-                return
-            }
-
-            $.ajax({
-                type: "POST",
-                url: "query/action.php",
-                data: {
-                    "action": "DAC2_formSubmit",
-                    "userID": userID,
-                    "sectionName": sectionName,
-                    "sectionId": sectionId,
-                    "stationName": stationName,
-                    "stationId": stationId,
-                    "compoNameTmp": compoNameTmp,
-                    "subcompoNameTmp": subcompoNameTmp,
-                    "dac2_1": dac2_1,
-                    "dac2_2": dac2_2,
-                     "dac2_3": dac2_3,
-                    "dac2_4": dac2_4,
-                    "dac2_5": dac2_5,
-                    "dac2_6": dac2_6,
-                    "dac2_7": dac2_7,
-                              
-                    "language":language
-                },
-                beforeSend: function() {
-                    $("#loader_show").removeClass('d-none');
-
-                },
-                success: function(response) {
-                    let respo = JSON.parse(response);
-                    if (respo['status']) {
-                        $("#dac2Form_status").html(respo['msg']).css("color", "green");
-
-
-                    } else {
-                        $("#dac2Form_status").html(respo['msg']).css("color", "red");
-
-                    }
-                },
-                complete: function() {
-                    $("#loader_show").addClass('d-none');
-
-                }
-            });
-
-        }
-    });
-
- // for DAC3
-    $("#dac3FormBtn").click(function() {
-        if (confirm("Do you want to final submit DAC3 Form")) {
-            let language = $("#language").val();
-            let sectionName = $("#sectionName").val();
-            let sectionId = $("#sectionId").val();
-
-            let stationName = $("#stationName").val();
-            let stationId = $("#stationId").val();
-
-            let compoNameTmp = $("#compoNameTmp").val();
-            let subcompoNameTmp = $("#subcompoNameTmp").val();
-
-            if (
-                sectionName == "" || sectionName == null || sectionName == undefined ||
-                sectionId == "" || sectionId == null || sectionId == undefined ||
-                stationName == "" || stationName == null || stationName == undefined ||
-                stationId == "" || stationId == null || stationId == undefined ||
-                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
-                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
-
-            ) {
-                alert("Something went wrong , refresh the page and try again");
-                return;
-            }
-
-            let dac3_1 = $("#dac3_1").val();
-            let dac3_2 = $("#dac3_2").val();
-         
-            
-            if (dac3_1 == undefined  || dac3_1 == null || dac3_1 == '' || dac3_1.length == 0) {
-                $("#dac3_1").addClass("is-invalid");
-                $("#dac3Form_status").html("Serial no 1 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac3Form_status").html("");
-                $("#dac3_1").removeClass("is-invalid");
-
-            }
-
-            if (dac3_2 == undefined  || dac3_2 == null || dac3_2 == '' || dac3_2.length == 0) {
-                $("#dac3_2").addClass("is-invalid");
-                $("#dac3Form_status").html("Serial no 2 is required").css("color", "red");
-                return;
-            } else {
-                $("#dac3Form_status").html("");
-                $("#dac3_2").removeClass("is-invalid");
-
-            }
-
-
-
-
-
-
-            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
-            if(userID == '' || userID == null || userID == undefined){
-                
-                $("#dac3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
-                return
-            }
-
-            $.ajax({
-                type: "POST",
-                url: "query/action.php",
-                data: {
-                    "action": "DAC3_formSubmit",
-                    "userID": userID,
-                    "sectionName": sectionName,
-                    "sectionId": sectionId,
-                    "stationName": stationName,
-                    "stationId": stationId,
-                    "compoNameTmp": compoNameTmp,
-                    "subcompoNameTmp": subcompoNameTmp,
-                    "dac3_1": dac3_1,
-                    "dac3_2": dac3_2,
-                               
-                    "language":language
-                },
-                beforeSend: function() {
-                    $("#loader_show").removeClass('d-none');
-
-                },
-                success: function(response) {
-                    let respo = JSON.parse(response);
-                    if (respo['status']) {
-                        $("#dac3Form_status").html(respo['msg']).css("color", "green");
-
-
-                    } else {
-                        $("#dac3Form_status").html(respo['msg']).css("color", "red");
-
-                    }
-                },
-                complete: function() {
-                    $("#loader_show").addClass('d-none');
-
-                }
-            });
-
-        }
-    });
-
 // for SLB1
 
  
@@ -7996,7 +7274,7 @@ $("#slb1FormBtn").click(function() {
             let elb4_6 = $("#elb4_6").val();
             let elb4_7 = $("#elb4_7").val();
           
-   
+   4
 
 
             if (elb4_1 == undefined  || elb4_1 == null || elb4_1 == '' || elb4_1.length == 0) {
@@ -8224,7 +7502,6 @@ $("#slb1FormBtn").click(function() {
     });
 
 
-///
 });
 //form insert javascript above
 
@@ -8738,63 +8015,7 @@ document.getElementById(tableId).innerHTML = displayHtml;
 }
 //
 
-// for DAC
 
-function openDialog_DAC(typeOfForm, dataList) {
-
-let tableId = '';
-let displayHtml = "";
-
-switch (typeOfForm) {
-    case "DAC1":
-        tableId = "dac1_body";
-        $("#componentForm_DAC1").modal("show");
-        break;
-    case "DAC2":
-        tableId = "dac2_body";
-        $("#componentForm_DAC2").modal("show");
-        break;
-   
-    case "DAC3":
-        tableId = "dac3_body";
-        $("#componentForm_DAC3").modal("show");
-        break;
-       
-}
-
-
-dataList.forEach((element, index) => {
-
-
-        
-       
-    displayHtml += `
-        <tr>
-        <th scope="row">${index+1}</th>
-        <td>${element['dac_details']}</td>
-        <td style="vertical-align:middle;width:22%" >
-            <select class="custom-select ${typeOfForm}Class" id="${element['dac_id']}">
-                <option value="">Select Action</option>`;
-
-                let optArr = element['dac_option'].split(",");
-                optArr.forEach(opt => {
-                    displayHtml += `<option value="${opt}">${opt}</option>`;
-
-
-                });
-  
-    displayHtml += `</select>
-        </td>
-        </tr>
-    `;
-
-
-});
-
-document.getElementById(tableId).innerHTML = displayHtml;
-
-}
-//
 
 function get_CS_formData(csType,subCompo,compo){
     $("#compoNameTmp").val(compo);
@@ -8907,44 +8128,6 @@ function get_ELB_formData(elb_Type,subCompo,compo){
             if (response['status']) {
 
                 openDialog_ELB(elb_Type, response['data']);
-
-            }
-
-        },
-        complete:function(){
-            $("#loader_show").addClass('d-none');
-
-        }
-    });
-}
-
-// AXLE Counter form Details
-function get_DAC_formData(dac_Type,subCompo,compo){
-    $("#compoNameTmp").val(compo); // no change here
-    $("#subcompoNameTmp").val(subCompo); // no change here
-    let language = $("#language").val(); // no change here
-    $(".displaySubcompoName").html(subCompo);
-    $.ajax({
-        type: "POST",
-        url: "./query/action.php",
-        data: {
-            "action": "getDAC_FormDetails",
-            "formType": dac_Type,
-            language:language
-        },
-        beforeSend: function() {
-            $("#loader_show").removeClass('d-none');
-
-
-        },
-        success: function(respo) {
-            $("#loader_show").addClass('d-none');
-
-            let response = JSON.parse(respo);
-
-            if (response['status']) {
-
-                openDialog_DAC(dac_Type, response['data']);
 
             }
 

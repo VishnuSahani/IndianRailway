@@ -94,6 +94,31 @@ if(isset($_POST['action'])){
 
             // ep2 end 
 
+             // ep3 start
+
+             $qEP2 = mysqli_query($con,"SELECT * FROM ep3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+             if(mysqli_num_rows($qEP2) <=0){
+ 
+                 // $formData['EP2']=[];
+ 
+             }else{
+ 
+                 $ep2Data = [];
+ 
+                 while($runEp2 = mysqli_fetch_array($qEP2)){
+ 
+                     $ep2Data[] = $runEp2;
+ 
+                 }
+                 
+                 $formData['EP3'] = $ep2Data ;
+ 
+             }
+ 
+ 
+             // ep3 end 
+
             // ep4 start
 
             $qEP4 = mysqli_query($con,"SELECT * FROM ep4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
@@ -197,7 +222,7 @@ if(isset($_POST['action'])){
 
             // ep2 end 
 
-            // ep4 start
+            // t3 start
 
             $qEP3 = mysqli_query($con,"SELECT * FROM t3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
 
@@ -219,7 +244,31 @@ if(isset($_POST['action'])){
 
             }
 
-            // ep4 end here
+            // t3 end here
+
+             // t4 start
+
+             $qEP4 = mysqli_query($con,"SELECT * FROM t4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+             if(mysqli_num_rows($qEP4) <=0){
+ 
+                 // $formData['EP4']=[];
+ 
+             }else{
+ 
+                 $ep4Data = [];
+ 
+                 while($runEp4 = mysqli_fetch_array($qEP4)){
+ 
+                     $ep4Data[] = $runEp4;
+ 
+                 }
+                 
+                 $formData['T4'] = $ep4Data ;
+ 
+             }
+ 
+             // t4 end here
 
             // ep5 start
 
@@ -298,347 +347,8 @@ if(isset($_POST['action'])){
             }
 
         }
-        
-         elseif($compoNameTmp == "MLB"){
-            // EP 1,2,4,5 form data
-            $formType = "MLB";
-            
-            $qEP1 = mysqli_query($con,"SELECT * FROM mlb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP1) <=0){
-
-                // $formData['EP1']=[];
-
-            }else{
-
-                $ep1Data = [];
-
-                while($runEp1 = mysqli_fetch_array($qEP1)){
-
-                    $ep1Data[] = $runEp1;
-
-                }
-                
-                $formData['MLB1'] = $ep1Data ;
-
-            }
-
-
-            // ep1 end
-
-            // ep2 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM mlb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['MLB2'] = $ep2Data ;
-
-            }
-
-            // 2 end
-
-            
-            $qEP3 = mysqli_query($con,"SELECT * FROM mlb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP3) <=0){
-
-                // $formData['EP1']=[];
-
-            }else{
-
-                $ep3Data = [];
-
-                while($runEp3 = mysqli_fetch_array($qEP3)){
-
-                    $ep3Data[] = $runEp3;
-
-                }
-                
-                $formData['MLB3'] = $ep3Data ;
-
-            }
-
-
-        // 3  end
-
-
-
-        // ep1 end
-
-        }
-//
-        elseif($compoNameTmp == "ELB"){
-            // EP 1,2,4,5 form data
-            $formType = "ELB";
-            
-            $qEP1 = mysqli_query($con,"SELECT * FROM elb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP1) <=0){
-
-                // $formData['EP1']=[];
-
-            }else{
-
-                $ep1Data = [];
-
-                while($runEp1 = mysqli_fetch_array($qEP1)){
-
-                    $ep1Data[] = $runEp1;
-
-                }
-                
-                $formData['ELB1'] = $ep1Data ;
-
-            }
-
-
-            // elb1 end
-
-            // elb2 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM elb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['ELB2'] = $ep2Data ;
-
-            } 
-            //elb2 end
-
-            // elb3 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM elb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['ELB3'] = $ep2Data ;
-
-            }
-
-            // elb3 end
-
-            // elb4 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM elb4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['ELB4'] = $ep2Data ;
-
-            }
-
-            // elb4 end
-
-            // elb2 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM elb5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['ELB5'] = $ep2Data ;
-
-            }
-            //elb5 end
-
-        }
-
-         elseif($compoNameTmp == "SLB"){
-            // EP 1,2,4,5 form data
-            $formType = "SLB";
-            
-            $qEP1 = mysqli_query($con,"SELECT * FROM slb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP1) <=0){
-
-                // $formData['EP1']=[];
-
-            }else{
-
-                $ep1Data = [];
-
-                while($runEp1 = mysqli_fetch_array($qEP1)){
-
-                    $ep1Data[] = $runEp1;
-
-                }
-                
-                $formData['SLB1'] = $ep1Data ;
-
-            }
-
-
-            // slb1 end
-
-            // slb2 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM slb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['SLB2'] = $ep2Data ;
-
-            } 
-            //slb2 end
-
-            }
-
-        elseif($compoNameTmp == "AXLE COUNTER"){
-            // EP 1,2,4,5 form data
-            $formType = "DAC";
-            
-            $qEP1 = mysqli_query($con,"SELECT * FROM dac1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP1) <=0){
-
-                // $formData['EP1']=[];
-
-            }else{
-
-                $ep1Data = [];
-
-                while($runEp1 = mysqli_fetch_array($qEP1)){
-
-                    $ep1Data[] = $runEp1;
-
-                }
-                
-                $formData['DAC1'] = $ep1Data ;
-
-            }
-
-
-            // dac1 end
-
-            // dac2 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM dac2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['DAC2'] = $ep2Data ;
-
-            } 
-            //dac2 end
-
-            // dac3 start
-
-            $qEP2 = mysqli_query($con,"SELECT * FROM dac3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
-
-            if(mysqli_num_rows($qEP2) <=0){
-
-                // $formData['EP2']=[];
-
-            }else{
-
-                $ep2Data = [];
-
-                while($runEp2 = mysqli_fetch_array($qEP2)){
-
-                    $ep2Data[] = $runEp2;
-
-                }
-                
-                $formData['DAC3'] = $ep2Data ;
-
-            }
-
-            // dac3 end
-
-           
-
-           
-
-        }
-
-
-        //
         elseif($compoNameTmp == "DL"){
-            
+            // EP 1,2,4,5 form data
             $formType = "DL";
             
             $qEP1 = mysqli_query($con,"SELECT * FROM dl1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
@@ -732,6 +442,141 @@ if(isset($_POST['action'])){
             $formData['DL4'] = $ep4Data ;
 
         }
+
+
+        // ep1 end
+
+        }
+        elseif($compoNameTmp == "MLB"){
+            // EP 1,2,4,5 form data
+            $formType = "MLB";
+            
+            $qEP1 = mysqli_query($con,"SELECT * FROM mlb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP1) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep1Data = [];
+
+                while($runEp1 = mysqli_fetch_array($qEP1)){
+
+                    $ep1Data[] = $runEp1;
+
+                }
+                
+                $formData['MLB1'] = $ep1Data ;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM mlb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['MLB2'] = $ep2Data ;
+
+            }
+
+            // 2 end
+
+            
+            $qEP3 = mysqli_query($con,"SELECT * FROM mlb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP3) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep3Data = [];
+
+                while($runEp3 = mysqli_fetch_array($qEP3)){
+
+                    $ep3Data[] = $runEp3;
+
+                }
+                
+                $formData['MLB3'] = $ep3Data ;
+
+            }
+
+
+        // 3  end
+
+
+
+        // ep1 end
+
+        }
+        elseif($compoNameTmp == "SLB"){
+
+            $formType = "SLB";
+            
+            $qEP1 = mysqli_query($con,"SELECT * FROM slb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP1) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep1Data = [];
+
+                while($runEp1 = mysqli_fetch_array($qEP1)){
+
+                    $ep1Data[] = $runEp1;
+
+                }
+                
+                $formData['SLB1'] = $ep1Data ;
+
+            }
+
+
+            // slb1 end
+
+            // slb2 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM slb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['SLB2'] = $ep2Data ;
+
+            }
+
+            // 2 end
 
 
         // ep1 end
