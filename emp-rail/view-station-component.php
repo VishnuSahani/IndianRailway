@@ -17,6 +17,10 @@ if (isset($_SESSION['userretaileremp'])) {
     .dropdown-item{
         cursor: pointer;
     }
+
+    .width70{
+        width: 70px !important;
+    }
 </style>
 
 
@@ -1127,7 +1131,7 @@ if (isset($_SESSION['userretaileremp'])) {
 <div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT1" aria-hidden="true">
     <form>
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelT1">
@@ -1217,9 +1221,13 @@ if (isset($_SESSION['userretaileremp'])) {
                         <td colspan="3">
                             <table class="table table-bordered">
                                 <thead class="text-center table-dark">
-                                    <tr>
+                                    <!-- <tr>
                                     <td rowspan="3">Date</td> <td colspan="6">SPG and Volt</td> <td rowspan="3"> Charging V</td><td rowspan="3">Current V</td><td rowspan="3"> --- </td><td rowspan="3">  िफड इंड पर वोल्टेज</td><td rowspan="3">Near Block</td> <td rowspan="3">Wire status</td> <td rowspan="3">Remark</td>
                             
+                                </tr> -->
+                                <tr>
+                                    <td rowspan="3">Date</td> <td colspan="6">SPG and Volt</td> <td rowspan="3"> Charging V</td><td rowspan="3">Current V</td>
+                                                                
                                 </tr>
                                 <tr>
                                     <td colspan="2">Sale 1</td> <td colspan="2">Sale 2</td> <td colspan="2">Sale 3</td> 
@@ -1231,26 +1239,70 @@ if (isset($_SESSION['userretaileremp'])) {
                                 </tr>
                                 </thead>
 
+                                <!-- <tbody>
+                                     <tr>
+                                    <td ><input id="date1" class="form-control" type="date"></td> 
+                                    <td><input id="sale1_spg" class="form-control width70" type="text"></td>
+                                     <td ><input id="sale1_v" class="form-control width70"  type="text"></td>
+                                      <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
+                                      <td><input id="sale2_v" class="form-control width70"  type="text"></td>
+                                       <td><input id="sale3_spg" class="form-control width70"  type="text"></td>
+                                    <td ><input id="sale3_v" class="form-control width70"  type="text"></td> 
+                                 <td ><input id="charging_v" class="form-control width70"  type="text"></td> 
+                                 <td ><input id="charging_current" class="form-control width70"  type="text"></td>
+                                 <td ></td>
+                                 <td ><input id="feedVoltage" class="form-control width70"  type="text"></td> 
+                                 <td ><input id="nearBlock" class="form-control width70"  type="text"></td>
+                                   <td ><input id="wireStatus" class="form-control width70"  type="text"></td> 
+                                   <td ><input id="remark1" class="form-control width70"  type="text"></td> 
+                                    
+                            
+                                </tr>
+                                </tbody> -->
+
                                 <tbody>
                                      <tr>
                                     <td ><input id="date1" class="form-control" type="date"></td> 
-                                    <td><input id="sale1_spg" class="form-control" style="width: 120px" type="text"></td>
-                                     <td ><input id="sale1_v" class="form-control" style="width: 120px" type="text"></td>
-                                      <td><input id="sale2_spg" class="form-control" style="width: 120px" type="text"></td>
-                                      <td><input id="sale2_v" class="form-control" style="width: 120px" type="text"></td>
-                                       <td><input id="sale3_spg" class="form-control" style="width: 120px" type="text"></td>
-                                    <td ><input id="sale3_v" class="form-control" style="width: 120px" type="text"></td> 
-                                 <td ><input id="charging_v" class="form-control" style="width: 120px" type="text"></td> 
-                                 <td ><input id="charging_current" class="form-control" style="width: 120px" type="text"></td>
-                                 <td ></td>
-                                 <td ><input id="feedVoltage" class="form-control" style="width: 120px" type="text"></td> 
-                                 <td ><input id="nearBlock" class="form-control" style="width: 120px" type="text"></td>
-                                   <td ><input id="wireStatus" class="form-control" style="width: 120px" type="text"></td> 
-                                   <td ><input id="remark1" class="form-control" style="width: 120px" type="text"></td> 
+                                    <td><input id="sale1_spg" class="form-control width70" type="text"></td>
+                                     <td ><input id="sale1_v" class="form-control"  type="text"></td>
+                                      <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
+                                      <td><input id="sale2_v" class="form-control width70"  type="text"></td>
+                                       <td><input id="sale3_spg" class="form-control width70"  type="text"></td>
+                                    <td ><input id="sale3_v" class="form-control width70"  type="text"></td> 
+                                 <td ><input id="charging_v" class="form-control width70"  type="text"></td> 
+                                 <td ><input id="charging_current" class="form-control width70"  type="text"></td>                                                  
                                     
                             
                                 </tr>
                                 </tbody>
+                                <thead class="table-dark">
+                                <tr>
+                                <td> 
+                                     िफड इंड पर वोल्टेज
+                                    </td>
+                                    <td>Near Block</td>
+                                     <td>Wire status</td>
+                                      <td>Remark</td>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                <td >
+                                    <input id="feedVoltage" class="form-control"  type="text">
+                                </td> 
+                                 <td >
+                                    <input id="nearBlock" class="form-control width70"  type="text">
+                                </td>
+                                   <td >
+                                    <input id="wireStatus" class="form-control"  type="text">
+                                    </td> 
+                                   <td >
+                                    <input id="remark1" class="form-control width70"  type="text">
+                                </td> 
+                                </tr>
+                                </tbody>
+
                                 <thead class="table-dark">
                                     <tr>
                                         <td>Date</td>
@@ -1266,15 +1318,15 @@ if (isset($_SESSION['userretaileremp'])) {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input id="date2" class="form-control" style="width: 120px" type="date"></td>
-                                    <td><input id="railVoltage" class="form-control" style="width: 120px" type="text"></td>
-                                    <td><input id="vt_value" class="form-control" style="width: 120px" type="text"></td>
-                                    <td><input id="wireStatus2" class="form-control" style="width: 120px" type="text"></td>
-                                    <td><input id="magneticPart" class="form-control" style="width: 120px" type="text"></td>
+                                        <td><input id="date2" class="form-control" type="date"></td>
+                                    <td><input id="railVoltage" class="form-control width70" type="text"></td>
+                                    <td><input id="vt_value" class="form-control" type="text"></td>
+                                    <td><input id="wireStatus2" class="form-control width70" type="text"></td>
+                                    <td><input id="magneticPart" class="form-control width70" type="text"></td>
                                     <td></td>
-                                    <td><input id="railFlag2" class="form-control" style="width: 120px" type="text"></td>
-                                    <td><input id="jumberwireStatus" class="form-control" style="width: 120px" type="text"></td>
-                                    <td><input id="remark2" class="form-control" style="width: 120px" type="text"></td>
+                                    <td><input id="railFlag2" class="form-control width70" type="text"></td>
+                                    <td><input id="jumberwireStatus" class="form-control width70" type="text"></td>
+                                    <td><input id="remark2" class="form-control width70" type="text"></td>
                                     </tr>
 
                                 </tbody>
@@ -1802,7 +1854,7 @@ if (isset($_SESSION['userretaileremp'])) {
                          </span>
 
                         </td>
-                        </span>
+                       
 
                             <td style="vertical-align:middle;width:16%">
                                 <select class="custom-select CS1Class" id="cs1_1">
@@ -9537,7 +9589,7 @@ dataList.forEach((element, index) => {
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['t_details']}</td>
-        <td style="vertical-align:middle;width:22%" >
+        <td style="vertical-align:middle;width:15%" >
             <select class="custom-select ${typeOfForm}Class" id="${element['t_id']}">
                 <option value="">Select Action</option>`;
 
@@ -9950,6 +10002,8 @@ function openDialog_ELB(typeOfForm, dataList) {
 
 let tableId = '';
 let displayHtml = "";
+let language = $("#language").val(); // no change here
+
 
 switch (typeOfForm) {
     case "ELB1":
@@ -9978,9 +10032,164 @@ switch (typeOfForm) {
 
 dataList.forEach((element, index) => {
 
+    if(typeOfForm == "ELB3" && index == 2){
 
+        if(language == "English"){
+
+        displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>
+            <span>(a) For barriers without hand generator:</span>
+            <table class="table-dark">
+                <tr>
+                    <td>Type</td>
+                    <td>Rated Voltage</td>
+                    <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+                    <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+                </tr>
+                <tr>
+                    <td>AC</td>
+                    <td>110V</td>
+                    <td>2.5 Amps</td>
+                    <td>4.0 Amps</td>
+                </tr>
+                   <tr>
+                    <td>DC</td>
+                    <td>24V</td>
+                    <td>4.0 Amps</td>
+                    <td>7.0 Amps</td>
+                </tr>
+                   <tr>
+                    <td>DC</td>
+                    <td>110V</td>
+                    <td>1.0 Amps</td>
+                    <td>1.8 Amps</td>
+                </tr>
+
+            </table>
+            <span>(b) For barriers with hand generator:</span>
+      <table class="table-dark">
+                <tr>
+                    <td>Type</td>
+                    <td>Rated Voltage</td>
+                    <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+                    <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+                </tr>
+           
+                   <tr>
+                    <td>DC</td>
+                    <td>24V</td>
+                    <td>3.0 Amps</td>
+                    <td>5.0 Amps</td>
+                </tr>
+                   <tr>
+                    <td>DC</td>
+                    <td>110V</td>
+                    <td>0.7 Amps</td>
+                    <td>1.2 Amps</td>
+                </tr>
+
+            </table>
         
-    displayHtml += `
+        </td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['elb_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['elb_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+        }else{
+
+            displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>
+            <span>(a) For barriers without hand generator:</span>
+            <table class="table-dark">
+                <tr>
+                    <td>टाइप </td>
+                    <td>रेटेड वोल्टेज</td>
+                    <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+                    <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+                </tr>
+                <tr>
+                    <td>एसी</td>
+                    <td>110V</td>
+                    <td>2.5 Amps</td>
+                    <td>4.0 Amps</td>
+                </tr>
+                   <tr>
+                    <td>डीसी</td>
+                    <td>24V</td>
+                    <td>4.0 Amps</td>
+                    <td>7.0 Amps</td>
+                </tr>
+                   <tr>
+                    <td>डीसी</td>
+                    <td>110V</td>
+                    <td>1.0 Amps</td>
+                    <td>1.8 Amps</td>
+                </tr>
+
+            </table>
+            <span>(b) For barriers with hand generator:</span>
+            <table class="table-dark">
+                <tr>                  
+                    <td>टाइप </td>
+                    <td>रेटेड वोल्टेज</td>
+                    <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+                    <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+                </tr>
+           
+                   <tr>
+                        <td>डीसी</td>
+                        <td>24V</td>
+                        <td>3.0 Amps</td>
+                        <td>5.0 Amps</td>
+                    </tr>
+                   <tr>
+                        <td>डीसी</td>
+                        <td>110V</td>
+                        <td>0.7 Amps</td>
+                        <td>1.2 Amps</td>
+                    </tr>
+
+            </table>
+        
+        </td>
+        <td style="vertical-align:middle;width:22%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['elb_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['elb_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+        }
+
+
+
+    }else{
+            displayHtml += `
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['elb_details']}</td>
@@ -9999,6 +10208,10 @@ dataList.forEach((element, index) => {
         </td>
         </tr>
     `;
+
+    }
+        
+
 
 
 });

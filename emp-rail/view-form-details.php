@@ -4505,10 +4505,146 @@ function openDialog_ELB(typeOfForm, dataList, id) {
     dataList.forEach((element, index) => {
 
         let value = tableDataForm[element['elb_id'].toLowerCase()]
+        
+        if(typeOfForm == "ELB3" && index == 2){
 
-      
+if(tableDataForm.language == "English"){
 
-            displayHtml += `
+displayHtml += `
+<tr>
+<th scope="row">${index+1}</th>
+<td>
+    <span>(a) For barriers without hand generator:</span>
+    <table class="table-dark">
+        <tr>
+            <td>Type</td>
+            <td>Rated Voltage</td>
+            <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+            <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+        </tr>
+        <tr>
+            <td>AC</td>
+            <td>110V</td>
+            <td>2.5 Amps</td>
+            <td>4.0 Amps</td>
+        </tr>
+           <tr>
+            <td>DC</td>
+            <td>24V</td>
+            <td>4.0 Amps</td>
+            <td>7.0 Amps</td>
+        </tr>
+           <tr>
+            <td>DC</td>
+            <td>110V</td>
+            <td>1.0 Amps</td>
+            <td>1.8 Amps</td>
+        </tr>
+
+    </table>
+    <span>(b) For barriers with hand generator:</span>
+<table class="table-dark">
+        <tr>
+            <td>Type</td>
+            <td>Rated Voltage</td>
+            <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+            <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+        </tr>
+   
+           <tr>
+            <td>DC</td>
+            <td>24V</td>
+            <td>3.0 Amps</td>
+            <td>5.0 Amps</td>
+        </tr>
+           <tr>
+            <td>DC</td>
+            <td>110V</td>
+            <td>0.7 Amps</td>
+            <td>1.2 Amps</td>
+        </tr>
+
+    </table>
+
+</td>
+<td style="vertical-align:middle;width:22%" >
+    <div class="">${value}</div>
+</td>
+</tr>
+`;
+
+}else{
+
+    displayHtml += `
+<tr>
+<th scope="row">${index+1}</th>
+<td>
+    <span>(a) For barriers without hand generator:</span>
+    <table class="table-dark">
+        <tr>
+            <td>टाइप </td>
+            <td>रेटेड वोल्टेज</td>
+            <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+            <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+        </tr>
+        <tr>
+            <td>एसी</td>
+            <td>110V</td>
+            <td>2.5 Amps</td>
+            <td>4.0 Amps</td>
+        </tr>
+           <tr>
+            <td>डीसी</td>
+            <td>24V</td>
+            <td>4.0 Amps</td>
+            <td>7.0 Amps</td>
+        </tr>
+           <tr>
+            <td>डीसी</td>
+            <td>110V</td>
+            <td>1.0 Amps</td>
+            <td>1.8 Amps</td>
+        </tr>
+
+    </table>
+    <span>(b) For barriers with hand generator:</span>
+    <table class="table-dark">
+        <tr>                  
+            <td>टाइप </td>
+            <td>रेटेड वोल्टेज</td>
+            <td>Normal (Max.) operating current/barrier for boom length up to 9.76 meter (=10 meter)</td>
+            <td>Maximum rated current for each barrier for boom length up to 9.76 meter (=10 meter)</td>
+        </tr>
+   
+           <tr>
+                <td>डीसी</td>
+                <td>24V</td>
+                <td>3.0 Amps</td>
+                <td>5.0 Amps</td>
+            </tr>
+           <tr>
+                <td>डीसी</td>
+                <td>110V</td>
+                <td>0.7 Amps</td>
+                <td>1.2 Amps</td>
+            </tr>
+
+    </table>
+
+</td>
+<td style="vertical-align:middle;width:22%" >
+<div class="">${value}</div>
+</td>
+</tr>
+`;
+
+}
+
+
+
+}else{
+
+    displayHtml += `
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['elb_details']}</td>
@@ -4517,6 +4653,12 @@ function openDialog_ELB(typeOfForm, dataList, id) {
         </td>
         </tr>
     `;
+
+}
+
+      
+
+
 
 
         
