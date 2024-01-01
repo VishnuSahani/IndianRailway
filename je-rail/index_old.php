@@ -37,7 +37,18 @@
 <div class="container ">
     <div class="row">
         <div class="col-12 m-auto">
+
             <div class="row">
+            <div class="form-group col-xl-6 col-lg-6 col-12">
+                <label for="sectionName">Section Name</label>
+                <input type="text" class="form-control" disabled value="<?php echo $empBasicData['section_name'];?>">
+            </div>
+
+            <div class="form-group col-xl-6 col-lg-6 col-12">
+                <label for="stationName">Station Name</label>
+                <input type="text" class="form-control" disabled value="<?php echo $empBasicData['station_name'];?>">
+            </div>
+
             <div class="form-group col-xl-6 col-lg-6 col-12">
                 <label for="employeeId">Employee Id</label>
                 <input type="text" class="form-control" disabled value="<?php echo $empBasicData['empid'];?>">
@@ -47,30 +58,21 @@
                 <label for="empname">Employee Name</label>
                 <input type="text" class="form-control" disabled value="<?php echo $empBasicData['empname'];?>">
             </div>
+
+
+
+
+
+
+
+
             </div>
-        </div>
-        <!-- station name -->
-        <div class="col-12">
-            <div class="form-group">
-                <label class="font-weight-bold">Station List</label>
-                <div class="d-flex justify-content-start">
-                    <?php
-                        
-                        $query = mysqli_query($con,"SELECT * FROM assign_info_rail WHERE empid='$employeeId'");
-                        while($list = mysqli_fetch_array($query)){
 
-                            echo "<div class='badge badge-primary h2 mx-2'>".$list['station_name']."</div>";
-
-                        }
-                    ?>
-
-                </div>
-            </div>
         </div>
 
         <div class="col-12">
             <div class="table-responsive">
-            <table class="table w-100" id="myTablePmeRme">
+            <table class="table table-hover w-100" id="myTablePmeRme">
                 <thead class="table-dark">
                     <tr>
                         <!-- <th>#</th> -->
@@ -82,7 +84,7 @@
 
                 </thead>
 
-                <tbody class="table-hover" id="preRmeOldTableData">
+                <tbody id="preRmeOldTableData">
 
                 </tbody>
             </table>

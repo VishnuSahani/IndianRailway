@@ -1,102 +1,101 @@
-<?php require('header.php');?>
+<?php require('header.php'); ?>
 <?php require('include/db_config.php');
 
- //Include database configuration file
-    $id="";
+//Include database configuration file
+$id = "";
 
-    if(isset($_SESSION['userretailerje']))
-{
-  $id=$_SESSION['userretailerje'];  
-   
+if (isset($_SESSION['userretailerje'])) {
+  $id = $_SESSION['userretailerje'];
+
 }
-   
-  
+
+
 ?>
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-  
+
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 
 
-<script language="javascript" type="text/javascript">
 
-function getXMLHTTP() { //fuction to return the xml http object
-    var xmlhttp=false;  
-    try{
-      xmlhttp=new XMLHttpRequest();
-    }
-    catch(e)  {   
-      try{      
-        xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      catch(e){
-        try{
-        xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+<div class="container">
+  <div class="card-header mt-3 alert alert-primary text-center h3">View Employee </div>
+
+  <div class="row">
+  <div class="col-12">
+    <div class="form-group px-2">
+      <label class="h5">Station List</label>
+      <div class="my-1">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="allStation" value="All">
+          <label class="form-check-label h6" for="allStation">All</label>
+        </div>
+
+        <?php
+
+        $query = mysqli_query($con, "SELECT * FROM assign_info_rail WHERE empid='$id'");
+        while ($list = mysqli_fetch_array($query)) {
+
+          $stationName = $list['station_name'];
+          $stationId = $list['station_id'];
+
+          echo '<div class="form-check form-check-inline mx-2">
+                      <input class="form-check-input commonStation" type="checkbox" id="station' . $stationName . '" value="' . $stationId . '">
+                      <label class="form-check-label h6" for="station' . $stationName . '">' . $stationName . '</label>
+                    </div>';
+
         }
-        catch(e1){
-          xmlhttp=false;
-        }
-      }
-    }
-      
-    return xmlhttp;
-    }
-  
-  function getTest(Sub_Id) {    
-  
-    var strURL="Question2.php?Subjec_Name="+Sub_Id;
-    
-    var xhr = new XMLHttpRequest();
-xhr.open("GET", strURL, true);
-xhr.onreadystatechange = function() {
+        ?>
+      </div>
+    </div>
+  </div>
 
-  if (parseInt( xhr.readyState )== 4 && parseInt( xhr.status )== 200) {
-  
-    document.getElementById('stationId').innerHTML=xhr.responseText;  
-  }
-}
-xhr.send();
-    
-      
-  }
-  
-</script>
-
-<!-- <script language="javascript" type="text/javascript">
+  </div>
+  <!-- row -->
 
 
-  function getTest(Sub_Id) {    
   
-    var strURL="viewQuery.php?Subjec_Name="+Sub_Id;
-    
-    var xhr = new XMLHttpRequest();
-xhr.open("GET", strURL, true);
-xhr.onreadystatechange = function() {
+</div>
 
-  if (parseInt( xhr.readyState )== 4 && parseInt( xhr.status )== 200) {
-  
-  
-    document.getElementById('T').innerHTML=xhr.responseText;  
-  }
-}
-xhr.send();
-    
-      
-  }
-  
-</script>-->
+<div class="p-2">
+<div class="table-responsive">
+    <table class="table display table-striped" border="0" align="center" bgcolor="#E9E9E9" id="myTable">
+      <thead class="thead-dark">
+
+        <tr>
+          <!-- <th>S.No.</th> -->
+          <th>Employee Id</th>
+
+          <th>Employee Name</th>
+          <th>Employee Designation</th>
+
+          <th> PME</th>
+          <th>Refresher</th>
+          <th>Add PME/Refresher</th>
+          <th>View</th>
+
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+
+<?php require('footer.php'); ?>
+
 
 <script type="text/javascript">
 
-    var gbl_data = [];
-  var  myTableData;
+  var gbl_data = [];
+  var myTableData;
 
-  $(document).ready(()=>{
+  $(document).ready(() => {
 
-    myTableData = $('#myTable').DataTable( {
-    data: gbl_data,
-    columns: [
-    
+    myTableData = $('#myTable').DataTable({
+      data: gbl_data,
+      columns: [
+
         { data: 'empid' },
         { data: 'empname' },
         { data: 'empdesg' },
@@ -104,200 +103,107 @@ xhr.send();
         { data: 'rme_date' },
         { data: 'href' },
         { data: 'formView' }
-    ]
-} );
+      ]
+    });
 
   })
 
 
-  function _(id)
-{ 
-  return document.getElementById(id);
- }
-
- function addEditPmeRme(value){
-
-  console.log("list print ",value)
-
- }
+  function _(id) {
+    return document.getElementById(id);
+  }
 
 
- function createTablerow(dataList){
+</script>
+<script>
 
-  let htmlDisplay = '';
+  function getStationValList() {
 
-    if(dataList.length == 0){
+    let valueList = [];
+    let checkAll = [];
 
-      htmlDisplay = `<tr>
-      <td colspan="5">No data found</td>
+    // console.log("E=",e);
+    $('.commonStation').each((i, element) => {
+      checkAll.push(i);
+      // console.log("i",i);
+      // console.log("element",element.checked);
+      if (element.checked) {
+        valueList.push(element.value);
+      }
+    });
 
+    return { valueList: valueList, checkAll: checkAll }
 
-      </tr>`
+  }
 
-    }else{
+  function getEmpData(dataList) {
+    console.log(dataList);
+    if (dataList.length) {
 
-      dataList.forEach((value,index)=>{
+      let stationData = dataList.join();
+      $.ajax({
+        type: "POST",
+        url: "query/je-action.php",
+        data: {
+          JE_action: "getEmpByStation",
+          stationData: dataList
+        },
+        beforeSend: () => {
+          $("#loader_show").removeClass('d-none');
+        },
+        success: (response) => {
+          $("#loader_show").addClass('d-none');
 
-        let rowId = value['id'];
-           let className1 = value['pme_date']==''?'text-danger':'';
-        let className2 = value['rme_date']==''?'text-danger':'';
-
-
-        htmlDisplay += `<tr>
-        <td>${index+1}</td>
-         <td>${value['empid']}</td>
-          <td>${value['empname']}</td>
-           <td>${value['empdesg']}</td>
-           <td class="${className1}">${value['pme_date']==''?'No Record':value['pme_date']}</td>
-        <td class="${className2}">${value['rme_date'] == '' ? 'No Record': value['rme_date']}</td>
-            <td><a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id=${rowId}">Edit</a></td>
-        </tr>`;
-      });
-
-    }
-
-    _("tableEmpData").innerHTML = htmlDisplay ;
- }
-
-
-function getData(testData){
-
-
-  let sectionId = _("sectionId").value 
-  let tmpStation = _("stationId").value 
-  let stationId = tmpStation.split("__")[0]
-  let action = "getEmployeeData";
-
-   var formdata = new FormData();
-
-   formdata.append( "stationId", stationId);
-  formdata.append( "sectionId",sectionId);
-  formdata.append( "action",action);
-
-
-//alert(testData);
-var ajax = new XMLHttpRequest();
-ajax.open("POST","./query/action.php",true);
-    //req.open("GET", "searchStudent.php?q=" + str, true);
-
-ajax.send(formdata);
-
-ajax.onreadystatechange = function(){
-       if(ajax.readyState == 4 && ajax.status == 200) {
-
-        let respo = JSON.parse(ajax.responseText);
-        console.log(respo)
-
-                // createTablerow(respo['data']);
-
-
+          let respo = JSON.parse(response);
+          console.log("response-", respo);
+          if (respo['status']) {
             gbl_data = respo['data'];
-            
+
             myTableData.clear();
             myTableData.rows.add(gbl_data);
             myTableData.draw(false);
-
-        
-      // if(respo['status']){
+          }
 
 
-      // } else {
-     
-      // }
+        }
+      })
 
+    } else {
+      myTableData.clear();
+      myTableData.rows.add([]);
+      myTableData.draw(false);
     }
-};
+  }
 
-}
+  $(document).ready(() => {
+    $("#allStation").change((e) => {
+      let data = []
+      if ($('#allStation').is(":checked")) {
+        $('.commonStation').prop('checked', true);
+        let dataList = getStationValList();
+        data = dataList.valueList;
+      } else {
+        $('.commonStation').prop('checked', false)
+
+      }
+
+      getEmpData(data);
+
+    });
+
+    $(".commonStation").change((e) => {
+
+      let dataList = getStationValList();
+
+      if (dataList.checkAll.length == dataList.valueList.length) {
+        $('#allStation').prop('checked', true)
+      } else {
+        $('#allStation').prop('checked', false)
+      }
+
+      // console.log("valueList",dataList.valueList);
+      getEmpData(dataList.valueList);
+
+    })
+  })
 </script>
-
-
-
- <div class="container" style="margin-top:30px;">
-
-   
-   
-   <!----------------------------------------------------->
-   
-   
-   <p class="card-header alert alert-primary text-center h3" >View  Employee </p>
-   <form action="" method="">
-
-   <div class="form-row">
- 
-    <div class="form-group col-md-6">
-      <label for="inputState">Select Section</label>
-      <select name="sectionId" id="sectionId" onChange="getTest(this.value)" class="form-control">
-        <option value="">Select Section</option>
-          <?php
-  $que=mysqli_query($con,"select * from section_tbl,assign_info_rail where section_tbl.section_id=assign_info_rail.section_id and assign_info_rail.empid = '$empid'");
-while($row=mysqli_fetch_array($que))
-{
-echo"<option  name='sectionId' value=".$row['section_id'].">".$row['section_name']."</option>";
-}
-
-
-?>
-      </select>
-    </div>
-    <div class="form-group col-md-6">
-      <label>Select Station</label>
-      
-      <select name="Test_Name" class="form-control" id="stationId" onchange="getData(this.value)">
-        <option >Select Section First</option>
-        
-      </select>
-
-    </div>
-  </div>
- 
-
-   </form>
-     
-
-
-<div class="table-responsive">
-<table class="table display table-striped" border="0" align="center" bgcolor="#E9E9E9" id="myTable">
-<thead class="thead-dark">
-
-<tr>
-<!-- <th>S.No.</th> -->
-<th>Employee Id</th>
-
-<th>Employee Name</th>
-<th>Employee Designation</th>
-
-<th> PME</th>
-<th>Refresher</th>
-<th>Add PME/Refresher</th>
-<th>View</th>
-
-
-</tr>
-</thead>
-<!-- <tbody id="tableEmpData"> -->
-  <tbody>
-
-  </tbody>
-
-
-
-</table>
-</div>
-
-
-
-
-</span><!-----data from AJAX---->
-
-    </div><!--col close-->
-    
- </div>      
-   </div><!--row close-->
-   
-
-</div><!--container close-->
-
-
-<?php require('footer.php');?>
-
