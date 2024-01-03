@@ -189,9 +189,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                 <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="ep1_body">
@@ -270,8 +296,17 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Signal Technician: Monthly (to be done by ESM in the presence of SSE/JE) Sectional
-                    SSE/JE(Signal): Monthly SSE(Signal)/Incharge: Quarterly
+                    <span class="heading_english">
+                Periodicity: Signal Technician: Monthly (to be done by ESM in the presence of SSE/JE) Sectional
+                SSE/JE(Signal): Monthly SSE(Signal)/Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+               आवधिकता: तकनीशियन (सिग्नल): मासिक(अनुभागीय सीसेई/जेई (सिग्नल) की उपस्थिति में)
+                                   अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -279,9 +314,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="ep2_body">
@@ -289,15 +350,16 @@ if (isset($_SESSION['userretaileremp'])) {
                                 <th scope="row">1</th>
                                 <td colspan="2">
                                     <div class="alert alert-success">
-                                        Measurements of operating values (voltage & current) of point machines, with and
-                                        without obstruction for normal
-                                        and reverse operation. Current required to operate the machine in either
-                                        direction
-                                        shall be 1.5 to 2 times of its
-                                        normal operation and friction clutch shall slip within this range. Replace
-                                        machine
-                                        when difference between normal
-                                        operating current and current under obstruction is less than 0.5 A.
+                                        <span class="ep2_details_english">
+                                    Measurements of operating values (voltage & current) of point machines, with and
+                                    without obstruction for normal
+                                    and reverse operation. Current required to operate the machine in either direction
+                                    shall be 1.5 to 2 times of its
+                                    normal operation and friction clutch shall slip within this range. Replace machine
+                                    when difference between normal
+                                    operating current and current under obstruction is less than 0.5 A.</span>
+                                    <span class="ep2_details_hindi">
+                                    सामान्य और रिवर्स ऑपरेशन के लिए रुकावट के साथ और बिना, पॉइंट मशीनों के ऑपरेटिंग मूल्यों (वोल्टेज और करंट) का माप। मशीन को किसी भी दिशा में संचालित करने के लिए आवश्यक करंट इसके सामान्य संचालन से 1.5 से 2 गुना होगा और घर्षण क्लच इस सीमा के भीतर फिसल जाएगा। मशीन को तब बदलें जब सामान्य ऑपरेटिंग करंट और रुकावट के तहत करंट के बीच का अंतर 0.5 ए से कम हो।</span>
                                     </div>
                                     <table class="table  table-bordered">
                                         <thead class="table-secondary">
@@ -701,9 +763,18 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                    <span class="heading_english">
+                 Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
                     Quarterly
+                </span>
 
+                <span class="heading_hindi">
+              आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+(अनुभागीय सीसेई/जेई एवं प्रभारी सीसेई वैकल्पिक निरीक्षण करेंगे)
+सीसेई (सिग्नल)/प्रभारी: त्रैमासिक (अनुभागीय सीसेई/जेई और प्रभारी सीसेई वैकल्पिक निरीक्षण करेंगे)
+
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -712,9 +783,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="ep3_body">
@@ -919,9 +1016,19 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Quarterly Sectional SSE/JE(Signal): Half-yearly
-                    SSE(Signal)/Incharge :
-                    Yearly
+                    <span class="heading_english">
+                 Periodicity: Technician(Signal): Quarterly Sectional SSE/JE(Signal): Half-yearly SSE(Signal)/Incharge :
+                Yearly
+                </span>
+
+                <span class="heading_hindi">
+              आवधिकता: तकनीशियन (सिग्नल): त्रैमासिक
+                                     अनुभागीय सीसेई/जेई (सिग्नल): अर्ध-वार्षिक
+        सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -930,9 +1037,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="ep4_body">
@@ -1016,7 +1149,17 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Sectional JSSE/JE(Signal): Half-yearly SSE(Signal)/Incharge : Yearly
+                      <span class="heading_english">
+                  Periodicity: Sectional JSSE/JE(Signal): Half-yearly SSE(Signal)/Incharge : Yearly
+                </span>
+
+                <span class="heading_hindi">
+              आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्ध-वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -1025,9 +1168,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="ep5_body">
@@ -1112,9 +1281,18 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge
-                    :
-                    Quarterly
+                   
+                 <span class="heading_english">
+                  Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+                </span>
+
+                <span class="heading_hindi">
+             आवधिकता: तकनीशियन (सिग्नल): पाक्षिक,अनुभागीय सीसेई/जेई (सिग्नल): मासिक (ए, बी और सी मार्गों पर), त्रैमासिक (डी और ई मार्ग पर), सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -1124,9 +1302,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="" border="1">
                         <thead class="">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="t1_body">
@@ -1365,10 +1569,16 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+ <span class="heading_english">
+                  Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+                </span>
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge
-                    :
-                    Quarterly
+                <span class="heading_hindi">
+           आवधिकता: तकनीशियन (सिग्नल): पाक्षिक (अनुभागीय सीसेई/जेई (सिग्नल) की उपस्थिति में), अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक , सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -1378,9 +1588,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="t2_body">
@@ -1463,9 +1699,17 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge
-                    :
-                    Quarterly
+                  
+                 <span class="heading_english">
+                  Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+                </span>
+
+                <span class="heading_hindi">
+         आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल)/प्रभारी : अर्धवार्षिक
+
+
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -1475,9 +1719,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                 <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="t3_body">
@@ -1528,9 +1798,19 @@ if (isset($_SESSION['userretaileremp'])) {
             </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                Periodicity: Sectional SSE/JE (Signal)
+             <span class="heading_english">
+                  Periodicity: Sectional SSE/JE (Signal)
                 SSE (Signal)/Incharge: Half yearly (Sectional
                 SSE/JE (Signal) & SSE (Signal) /Incharge to carry out alternatively once in six months)
+                </span>
+
+                <span class="heading_hindi">
+         आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल) और सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक (अनुभागीय
+सीसेई/जेई (सिग्नल) और सीसेई (सिग्नल)/प्रभारी को सत्र में एक बार वैकल्पिक रूप से कार्य करना होगा।)
+
+
+
+                </span>
 
             </div>
             <div class="modal-body table-responsive">
@@ -1540,11 +1820,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
                             <th scope="col">
-                                Check the following 
-                            </th>
-                            <th scope="col">Action</th>
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tr>
@@ -1636,9 +1940,18 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge
-                    :
-                    Quarterly
+               <span class="heading_english">
+               
+                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                Quarterly
+                </span>
+
+                <span class="heading_hindi">
+        आवधिकता: सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -1648,9 +1961,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="t5_body">
@@ -1732,9 +2071,17 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
-                    Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In
-                    charge:
-                    Half yearly
+                     <span class="heading_english">
+               
+               Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In charge: Half yearly
+                </span>
+
+                <span class="heading_hindi">
+        आवधिकता: तकनीशियन (सिग्नल): मासिक, अनुभागीय सीसेई /जेई (सिग्नल): त्रैमासिक, सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+
+                </span>
 
                 </div>
                 <div class="modal-body table-responsive">
@@ -1742,9 +2089,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="" border='1'>
                         <thead class="">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                 <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="cs1_body">
@@ -2113,11 +2486,21 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-                    Periodicity: Sectional SSE/JE : Half yearly
-                    <div>
-                        SSE (signal)/Incharge : Yearly
-                    </div>
+                    <span class="heading_english">
+               
+               Periodicity: Sectional SSE/JE : Half yearly
+                <div>
+                    SSE (signal)/Incharge : Yearly
+                </div>
+                </span>
 
+                <span class="heading_hindi">
+        आवधिकता: अनुभागीय सीसेई/जेई – अर्धवार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक 
+
+
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -2126,9 +2509,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                 <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="cs2_body">
@@ -2163,7 +2572,12 @@ if (isset($_SESSION['userretaileremp'])) {
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelDL1">
                         <span class="badge badge-success h3">
-                            Schedule Code: DL1
+                           <span class="heading_english">
+                    Schedule Code: DL1 (only for SSE/DLMC)
+                </span>
+                    <span class="heading_hindi">
+                        डेटालॉगर का रखरखाव कार्यक्रम DL1
+                    </span>
                         </span>
                         <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
@@ -2208,10 +2622,17 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-                    Periodicity: Technician (Signal): Monthly, Sectional SSE/JE (Signal): Quarterly, SSE
-                    Signal/Incharge:
-                    Half Yearly
+                    <span class="heading_english">
+               
+                Periodicity: Technician (Signal): Monthly, Sectional SSE/JE (Signal): Quarterly, SSE (Signal/Incharge: Half Yearly
+                </span>
 
+                <span class="heading_hindi">
+        आवधिकता: तकनीशियन (सिग्नल): मासिक, अनुभागीय सीसेई /जेई (सिग्नल): त्रैमासिक, सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -2220,9 +2641,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                 <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="dl1_body">
@@ -2257,7 +2704,12 @@ if (isset($_SESSION['userretaileremp'])) {
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelDL2">
                         <span class="badge badge-success h3">
-                            Schedule Code: DL2
+                             <span class="heading_english">
+                    Schedule Code: DL2 (only for SSE/DLMC)
+                </span>
+                    <span class="heading_hindi">
+                        डेटालॉगर का रखरखाव कार्यक्रम DL2
+                    </span>
                         </span>
                         <span class="badge badge-danger h3 displaySubcompoName"></span>
                         <!-- <span id="modalSubCompoName"></span>
@@ -2302,9 +2754,20 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-                    Periodicity: Sectional SSE/JE(Signal): Half Yearly, <br>
-                    SSE (Signal)/Incharge: Yearly
+                   <span class="heading_english">
+               
+                Periodicity: Sectional SSE/JE(Signal): Half Yearly, <br>
+            SSE (Signal)/Incharge: Yearly
+                </span>
 
+                <span class="heading_hindi">
+       आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्ध-वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -2313,9 +2776,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="dl2_body">
@@ -2351,7 +2840,12 @@ if (isset($_SESSION['userretaileremp'])) {
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelDL3">
                         <span class="badge badge-success h3">
-                            Schedule Code: DL3
+                            <span class="heading_english">
+                    Schedule Code: DL3 (only for SSE/DLMC)
+                </span>
+                    <span class="heading_hindi">
+                        डेटालॉगर का रखरखाव कार्यक्रम DL3
+                    </span>
                         </span>
                         <span class="badge badge-danger h3 displaySubcompoName"></span>
                     </h5>
@@ -2394,8 +2888,16 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-                    Periodicity: Sectional SSE/JE(Signal): Yearly, SSE (Signal)/Incharge: Yearly
+                   <span class="heading_english">
+               
+                Periodicity: Sectional SSE/JE(Signal): Yearly,   SSE (Signal)/Incharge: Yearly
+                </span>
 
+                <span class="heading_hindi">
+     आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -2404,9 +2906,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                 <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="dl3_body">
@@ -2443,7 +2971,12 @@ if (isset($_SESSION['userretaileremp'])) {
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelDL4">
                         <span class="badge badge-success h3">
-                            Schedule Code: DL4 (only for SSE/DLMC)
+                           <span class="heading_english">
+                    Schedule Code: DL4 (only for SSE/DLMC)
+                </span>
+                    <span class="heading_hindi">
+                        डेटालॉगर का रखरखाव कार्यक्रम DL4
+                    </span>
                         </span>
                         <span class="badge badge-danger h3 displaySubcompoName"></span>
                     </h5>
@@ -2486,7 +3019,14 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-                    Periodicity: SSE (Signal)/Incharge: Yearly
+                    <span class="heading_english">
+               
+                Periodicity: SSE (Signal)/Incharge: Yearly
+                </span>
+
+                <span class="heading_hindi">
+    आवधिकता: सीसेई (सिग्नल)/डीएलएमसी: वार्षिक
+                </span>
                 </div>
                 <div class="modal-body table-responsive">
                     <!-- <form id="modalFormComponent">
@@ -2495,9 +3035,35 @@ if (isset($_SESSION['userretaileremp'])) {
                     <table class="table table-bordered">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">S.No</th>
-                                <th scope="col">Check the following</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="dl4_body">
@@ -2534,7 +3100,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
+                    <span class="heading_english">
                     Maintenance Schedule of Mechanical Lifting Barrier MLB1
+                </span>
+                     <span class="heading_hindi">
+                        मैकेनिकल लिफ्टिंग बैरी का रखरखाव कार्यक्रम MLB1
+                     </span>
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
@@ -2580,9 +3151,19 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
 
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-            Periodicity: Technician (Signal): Fortnightly,
+            <span class="heading_english">
+               
+                 Periodicity: Technician (Signal): Fortnightly,
             Sectional SSE/JE (Signal): Monthly
             SSE(Signal)/ Incharge : Quarterly
+                </span>
+
+                <span class="heading_hindi">
+    आवधिकता: तकनीशियन (सिग्नल): पाक्षिक
+अनुभागीय सीसेई/जेई (सिग्नल): अर्ध-वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+                </span>
             </div>
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
@@ -2591,9 +3172,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="mlb1_body">
@@ -2637,7 +3244,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB2">
                     <span class="badge badge-success h3">
+                 <span class="heading_english">
                     Maintenance Schedule of Mechanical Lifting Barrier MLB2
+                </span>
+                     <span class="heading_hindi">
+                        मैकेनिकल लिफ्टिंग बैरी का रखरखाव कार्यक्रम MLB2
+                     </span>
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
@@ -2683,9 +3295,20 @@ if (isset($_SESSION['userretaileremp'])) {
                 </div>
 
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-            Periodicity: Technician (Signal): Quarterly,
+           
+             <span class="heading_english">
+                Periodicity: Technician (Signal): Quarterly,
             Sectional SSE/JE (Signal): Monthly
             SSE(Signal)/ Incharge : Half-yearly
+                </span>
+
+                <span class="heading_hindi">
+   आवधिकता: तकनीशियन (सिग्नल): मासिक
+अनुभागीय सीसेई/जेई (सिग्नल): त्रेमासिक
+सीसेई (सिग्नल)/प्रभारी: अर्ध-वार्षिक
+
+
+                </span>
             </div>
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
@@ -2694,9 +3317,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="mlb2_body">
@@ -2739,7 +3388,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB3">
                     <span class="badge badge-success h3">
+                    <span class="heading_english">
                     Maintenance Schedule of Mechanical Lifting Barrier MLB3
+                </span>
+                     <span class="heading_hindi">
+                        मैकेनिकल लिफ्टिंग बैरी का रखरखाव कार्यक्रम MLB3
+                     </span>
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
 
@@ -2784,9 +3438,18 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-            Periodicity: Technician (Signal): Quarterly,
+            <span class="heading_english">
+              Periodicity: Technician (Signal): Quarterly,
             Sectional SSE/JE (Signal): Half-yearly
             SSE(Signal)/ Incharge : Yearly
+                </span>
+
+                <span class="heading_hindi">
+   आवधिकता: तकनीशियन (सिग्नल): त्रेमासिक
+अनुभागीय सीसेई/जेई (सिग्नल): अर्ध- वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+                </span>
             </div>
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
@@ -2840,7 +3503,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
+                   <span class="heading_english">
                     Maintenance Schedule of Sliding Boom SLB1
+                </span>
+                 <span class="heading_hindi">
+                    स्लाइडिंग बूम का रखरखाव कार्यक्रम SLB1
+                 </span>
 
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
@@ -2886,10 +3554,21 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
             </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-            Periodicity: Technician (Signal): Fortnightly,
+              <span class="heading_english">
+              Periodicity: Technician (Signal): Fortnightly,
                           Sectional SSE/JE (Signal): Monthly,
                      SSE(Signal)/Incharge: ): Quarterly 
+                </span>
 
+                <span class="heading_hindi">
+ आवधिकता: तकनीशियन (सिग्नल): पाक्षिक
+                                   अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+
+
+
+                </span>
             </div>
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
@@ -2898,9 +3577,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="slb1_body">
@@ -2940,8 +3645,14 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
+                     <span class="heading_english">
                     Maintenance Schedule of Sliding Boom SLB2
 
+
+                </span>
+                 <span class="heading_hindi">
+                    स्लाइडिंग बूम का रखरखाव कार्यक्रम SLB2
+                 </span>
 
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
@@ -2987,10 +3698,22 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
             </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Technician (Signal): Monthly,
+         <span class="heading_english">
+               Periodicity: Technician (Signal): Monthly,
                           Sectional SSE/JE (Signal): Quarterly,
                      SSE(Signal)/Incharge: ): Half-Yearly
 
+                </span>
+
+                <span class="heading_hindi">
+ आवधिकता: तकनीशियन (सिग्नल) : मासिक
+                                   अनुभागीय सीसेई/जेई (सिग्नल) : त्रैमासिक
+           सीसेई (सिग्नल)/प्रभारी : अर्ध-वार्षिक
+
+
+
+
+                </span>
             </div>
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
@@ -2999,9 +3722,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="slb2_body">
@@ -3043,7 +3792,12 @@ if (isset($_SESSION['userretaileremp'])) {
 
                 <h5 class="modal-title text-center" id="componentFormLabelELB1">
                     <span class="badge badge-success h3">
-                   Maintenance Schedule of Power Operated Lifting Barrier ELB1
+                  <span class="heading_english">
+                  Maintenance Schedule of Power Operated Lifting Barrier ELB1
+              </span>
+              <span class="heading_hindi">
+                विद्युत चालित लिफ्टिंग बैरियर का रखरखाव कार्यक्रम ELB1
+              </span>
 
 
                     </span>
@@ -3087,9 +3841,24 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-           Periodicity: Technician (Signal): Fortnightly,
+           <span class="heading_english">
+                Periodicity: Technician (Signal): Fortnightly,
                           Sectional SSE/JE (Signal): Monthly,
                      SSE(Signal)/Incharge: Quarterly
+                     
+
+                </span>
+
+                <span class="heading_hindi">
+आवधिकता: तकनीशियन (सिग्नल): पाक्षिक
+                 अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+
+
+
+
+                </span>
 
 
             </div>
@@ -3100,9 +3869,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="elb1_body">
@@ -3140,7 +3935,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelELB2">
                     <span class="badge badge-success h3">
+                   <span class="heading_english">
                   Maintenance Schedule of Power Operated Lifting Barrier ELB2
+              </span>
+              <span class="heading_hindi">
+                विद्युत चालित लिफ्टिंग बैरियर का रखरखाव कार्यक्रम ELB2
+              </span>
 
 
 
@@ -3185,9 +3985,21 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Technician (Signal): Monthly,
+          <span class="heading_english">
+               Periodicity: Technician (Signal): Monthly,
                           Sectional SSE/JE (Signal): Quarterly,
                      SSE(Signal)/Incharge: Half-yearly
+                     
+
+                </span>
+
+                <span class="heading_hindi">
+आवधिकता: तकनीशियन (सिग्नल): मासिक
+                 अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+           सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+                </span>
 
 
 
@@ -3199,9 +4011,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="elb2_body">
@@ -3240,8 +4078,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelELB3">
                     <span class="badge badge-success h3">
+                  <span class="heading_english">
                   Maintenance Schedule of Power Operated Lifting Barrier ELB3
-
+              </span>
+              <span class="heading_hindi">
+                विद्युत चालित लिफ्टिंग बैरियर का रखरखाव कार्यक्रम ELB3
+              </span>
 
 
                     </span>
@@ -3285,9 +4127,21 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Technician (Signal): Monthly,
+          <span class="heading_english">
+               Periodicity: Technician (Signal): Monthly,
                           Sectional SSE/JE (Signal): Quarterly,
                      SSE(Signal)/Incharge: Half-yearly
+                     
+
+                </span>
+
+                <span class="heading_hindi">
+आवधिकता: तकनीशियन (सिग्नल): मासिक
+                 अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+           सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+                </span>
 
 
 
@@ -3299,9 +4153,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                             <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="elb3_body">
@@ -3338,8 +4218,14 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelELB4">
                     <span class="badge badge-success h3">
+                  <span class="heading_english">
                   Maintenance Schedule of Power Operated Lifting Barrier ELB4
+              </span>
+              <span class="heading_hindi">
+                विद्युत चालित लिफ्टिंग बैरियर का रखरखाव कार्यक्रम ELB4
+              </span>
 
+                    </span>
 
 
                     </span>
@@ -3383,11 +4269,18 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Technician (Signal): Monthly,
-                          Sectional SSE/JE (Signal): Quarterly,
-                     SSE(Signal)/Incharge: Half-yearly
+          
+                      <span class="heading_english">
+              Periodicity: SSE (Signal)/Incharge : Yearly
+                     
+
+                </span>
+
+                <span class="heading_hindi">
+आवधिकता: सीसेई (सिग्नल)/प्रभारी: वार्षिक
 
 
+                </span>
 
             </div>
             <div class="modal-body table-responsive">
@@ -3397,9 +4290,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="elb4_body">
@@ -3438,8 +4357,12 @@ if (isset($_SESSION['userretaileremp'])) {
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelELB5">
                     <span class="badge badge-success h3">
+                <span class="heading_english">
                   Maintenance Schedule of Power Operated Lifting Barrier ELB5
-
+              </span>
+              <span class="heading_hindi">
+                विद्युत चालित लिफ्टिंग बैरियर का रखरखाव कार्यक्रम ELB5
+              </span>
 
 
                     </span>
@@ -3483,9 +4406,19 @@ if (isset($_SESSION['userretaileremp'])) {
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Technician (Signal): Monthly,
-                          Sectional SSE/JE (Signal): Quarterly,
-                     SSE(Signal)/Incharge: Half-yearly
+       <span class="heading_english">
+               Periodicity: SSE (Signal)/Incharge : Yearly
+                     
+
+                </span>
+
+                <span class="heading_hindi">
+आवधिकता: तकनीशियन (सिग्नल): मासिक
+                 अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+           सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+                </span>
 
 
 
@@ -3497,9 +4430,35 @@ if (isset($_SESSION['userretaileremp'])) {
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="elb5_body">
@@ -3542,8 +4501,12 @@ if (isset($_SESSION['userretaileremp'])) {
 
                 <h5 class="modal-title text-center" id="componentFormLabelDAC1">
                     <span class="badge badge-success h3">
-                   Maintenance Schedule of Digital Axle Counter
-DAC1
+                    <span class="heading_english">
+                  Maintenance Schedule of Digital Axle Counter DAC1
+              </span>
+                  <span class="heading_hindi">
+                    कंट्रोल पैनल के रखरखाव का कार्यक्रम DAC1
+                  </span>
 
 
                     </span>
@@ -3587,10 +4550,17 @@ DAC1
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-           Periodicity: Technician (Signal): Monthly
+           <span class="heading_english">
+        Periodicity: Technician (Signal): Monthly
 Sectional SSE/JE (Signal): Quarterly,
 SSE (Signal) Incharge: Half Yearly
+</span>
+    <span class="heading_hindi">
+        आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+             सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
 
+    </span>
             </div>
             <div class="modal-body table-responsive">
                 <!-- <form id="modalFormComponent">
@@ -3599,9 +4569,35 @@ SSE (Signal) Incharge: Half Yearly
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="dac1_body">
@@ -3639,9 +4635,12 @@ SSE (Signal) Incharge: Half Yearly
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                  Maintenance Schedule of Digital Axle Counter
-DAC2
-
+                    <span class="heading_english">
+                  Maintenance Schedule of Digital Axle Counter DAC2
+              </span>
+                  <span class="heading_hindi">
+                    कंट्रोल पैनल के रखरखाव का कार्यक्रम DAC2
+                  </span>
 
 
 
@@ -3686,8 +4685,14 @@ DAC2
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Sectional SSE/JE(Signal): Quarterly (to be done by ESM in presence of JE/SSE)
+          <span class="heading_english">  
+       Periodicity: Sectional SSE/JE(Signal): Quarterly (to be done by ESM in presence of JE/SSE)
 SSE(Signal)/Incharge: Half Yearly
+</span>
+        <span class="heading_hindi">
+            आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक (जेई/एसएसई की उपस्थिति में ईएसएम द्वारा किया जाना है)
+सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+</span>
 
 
 
@@ -3700,9 +4705,35 @@ SSE(Signal)/Incharge: Half Yearly
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="dac2_body">
@@ -3740,9 +4771,12 @@ SSE(Signal)/Incharge: Half Yearly
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelMLB1">
                     <span class="badge badge-success h3">
-                  Maintenance Schedule of Digital Axle Counter
-DAC3
-
+                <span class="heading_english">
+                  Maintenance Schedule of Digital Axle Counter DAC3
+              </span>
+                  <span class="heading_hindi">
+                    कंट्रोल पैनल के रखरखाव का कार्यक्रम DAC3
+                  </span>
 
 
 
@@ -3787,8 +4821,12 @@ DAC3
                     </div>
                 </div>
             <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-          Periodicity: Sectional SSE/JE(Signal): Yearly
-
+          <span class="heading_english">   
+         Periodicity: Sectional SSE/JE(Signal): Yearly
+</span>
+             <span class="heading_hindi">
+                आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): वार्षिक
+             </span>
 
 
 
@@ -3800,9 +4838,35 @@ DAC3
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
                         </tr>
                     </thead>
                     <tbody id="dac3_body">
@@ -3831,8 +4895,1128 @@ DAC3
     </div>
 </div>
 
+<!-- modal Block Instrument -->
+
+<!-- modal Block Instrument -->
+<div class="modal fade" id="componentForm_DB1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelDB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyDB1">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMLB1">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) DB1
+                            </span>
+
+                            <span class="heading_hindi">
+                ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची DB1
+
+                            </span>
 
 
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+          <span class="heading_english">
+       Periodicity: Technician(Signal): Monthly
+                               Sectional SSE/JE(Signal): Monthly
+                            SSE(Signal)/Incharge: Quarterly
+                        </span>
+                        <span class="heading_hindi">
+                            आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+             सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="db1_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dac3Form_status"></div>
+
+                <div>
+                   <button type='button' id="db1PdfBtn" onclick="generatePdf('DAC3','pdfBodyDB1')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+<!-- modal db2 -->
+<div class="modal fade" id="componentForm_DB2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelDB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyDB2">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDB2">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) DB2
+                            </span>
+
+                            <span class="heading_hindi">
+                ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची DB2
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+         <span class="heading_english">
+       Periodicity: Sectional SSE/JE(Signal): Quarterly,
+                SSE(Signal) Incharge: Half yearly
+
+                        </span>
+                        <span class="heading_hindi">
+                            आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल: त्रैमासिक
+      सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="db2_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dac3Form_status"></div>
+
+                <div>
+                   <button type='button' id="db2PdfBtn" onclick="generatePdf('DB2','pdfBodyDB2')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+<!-- modal db3 -->
+<div class="modal fade" id="componentForm_DB3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelDB3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyDB3">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDB3">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) DB3
+                            </span>
+
+                            <span class="heading_hindi">
+                ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची DB3
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+        <span class="heading_english">
+      Periodicity: Sectional SSE/JE(Signal): Half Yearly
+                     SSE(Signal)/Incharge: Yearly
+
+
+                        </span>
+                        <span class="heading_hindi">
+                            आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्धवार्षिक
+ सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="db3_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="db3Form_status"></div>
+
+                <div>
+                   <button type='button' id="db3PdfBtn" onclick="generatePdf('DB3','pdfBodyDB3')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal uf1 -->
+<div class="modal fade" id="componentForm_UF1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelUF1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyUF1">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelUF1">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) UF1
+                            </span>
+
+                            <span class="heading_hindi">
+                                ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची 
+UF1
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+       <span class="heading_english">
+       Periodicity: Technician(Signal): Monthly
+                               Sectional SSE/JE(Signal): Monthly
+                            SSE(Signal)/Incharge: Quarterly
+                        </span>
+                        <span class="heading_hindi">
+                            आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+             सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="uf1_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="db3Form_status"></div>
+
+                <div>
+                   <button type='button' id="db3PdfBtn" onclick="generatePdf('UF1','pdfBodyUF1')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal uf2 -->
+
+<!-- modal uf2 -->
+<div class="modal fade" id="componentForm_UF2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelUF2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyUF2">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelUF1">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) UF2
+                            </span>
+
+                            <span class="heading_hindi">
+                 ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची UF2
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+       <span class="heading_english">
+       Periodicity: Technician(Signal): Monthly
+                               Sectional SSE/JE(Signal): Monthly
+                            SSE(Signal)/Incharge: Quarterly
+                        </span>
+                        <span class="heading_hindi">
+                            आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+             सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="uf2_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="db3Form_status"></div>
+
+                <div>
+                   <button type='button' id="uf2PdfBtn" onclick="generatePdf('UF2','pdfBodyUF2')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal uf3 -->
+<div class="modal fade" id="componentForm_UF3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelUF3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyUF3">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelUF1">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) UF3
+                            </span>
+
+                            <span class="heading_hindi">
+                 ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची UF3
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+      <span class="heading_english">
+    Periodicity: Sectional SSE/JE(Signal): Quarterly
+                  SSE(Signal)/Incharge: Half Yearly
+
+
+                        </span>
+                        <span class="heading_hindi">
+                        आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+    सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="uf3_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="db3Form_status"></div>
+
+                <div>
+                   <button type='button' id="uf3PdfBtn" onclick="generatePdf('UF3','pdfBodyUF3')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal uf4 -->
+<div class="modal fade" id="componentForm_UF4" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelUF4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyUF4">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelUF1">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) UF4
+                            </span>
+
+                            <span class="heading_hindi">
+                 ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची UF4
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+       <span class="heading_english">
+   Periodicity: Sectional SSE/JE(Signal): Yearly                 
+
+
+                        </span>
+                        <span class="heading_hindi">
+                        आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): वार्षिक
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="uf4_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="db3Form_status"></div>
+
+                <div>
+                   <button type='button' id="uf4PdfBtn" onclick="generatePdf('UF4','pdfBodyUF4')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal uf5 -->
+<div class="modal fade" id="componentForm_UF5" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelUF5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div id="pdfBodyUF5">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelUF5">
+                    <span class="badge badge-success h3">
+                 <span class="heading_english">
+                 Maintenance Schedule of Block Instrument - Double line (Lock & Block) UF4
+                            </span>
+
+                            <span class="heading_hindi">
+                 ब्लॉक उपकरण - डबल लाइन (लॉक और ब्लॉक) का रखरखाव अनुसूची UF4
+
+                            </span>
+
+
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+             
+            </div>
+            <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['userretailerempName'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['userretaileremp']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                        <?php echo $empSectionName; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                    <span>Station:</span>
+
+                    <span class="ml-2 font-weight-bold">
+                    <?php echo $empStationName; ?>
+
+                    </span>
+
+                    </div>
+                </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+        <span class="heading_english">
+  Periodicity: Sectional SSE/JE(Signal): Half Yearly,  
+SSE(Signal)/Incharge: Yearly              
+
+
+
+                        </span>
+                        <span class="heading_hindi">
+                    आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्धवार्षिक
+    सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                           <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="uf5_body">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div id="db3Form_status"></div>
+
+                <div>
+                   <button type='button' id="uf5PdfBtn" onclick="generatePdf('UF5','pdfBodyUF5')"
+                    class="btn btn-success btn-sm">PDF</button>
+
+                <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
+                    Close
+                </button>
+
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
 <script>
 var g_st_compList = [];
 var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
@@ -4668,8 +6852,84 @@ displayHtml += `
     document.getElementById(tableId).innerHTML = displayHtml;
 
 }
+// BI
+function openDialog_BI(typeOfForm, dataList, id) {
+
+    let tableId = '';
+    let displayHtml = "";
+
+    let tableDataForm = formDataList[typeOfForm].filter((x) => {
+        if (x['id'] == id) {
+            return x;
+        }
+    })[0];
+
+    switch (typeOfForm) {
+        case "DB1":
+            tableId = "db1_body";
+            $("#componentForm_DB1").modal("show");
+            break;
+        case "DB2":
+            tableId = "db2_body";
+            $("#componentForm_DB2").modal("show");
+            break;
+
+        case "DB3":
+            tableId = "db3_body";
+            $("#componentForm_DB3").modal("show");
+            break;
+        case "UF1":
+            tableId = "uf1_body";
+            $("#componentForm_UF1").modal("show");
+            break;
+
+        case "UF2":
+            tableId = "uf2_body";
+            $("#componentForm_UF2").modal("show");
+            break;
+            
+        case "UF3":
+            tableId = "uf3_body";
+            $("#componentForm_UF3").modal("show");
+            break;
+
+         case "UF4":
+            tableId = "uf4_body";
+            $("#componentForm_UF4").modal("show");
+            break;
+            
+        case "UF5":
+            tableId = "uf5_body";
+            $("#componentForm_UF5").modal("show");
+            break;         
+
+    }
 
 
+    dataList.forEach((element, index) => {
+
+        let value = tableDataForm[element['db_id'].toLowerCase()]
+
+      
+
+            displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['db_details']}</td>
+        <td style="vertical-align:middle;width:22%" >
+        <div class="">${value}</div>
+        </td>
+        </tr>
+    `;
+
+
+        
+
+    });
+
+    document.getElementById(tableId).innerHTML = displayHtml;
+
+}
 
 // DAC
 
@@ -5147,6 +7407,51 @@ function get_CS_formData(id, csType,language) {
     });
 }
 
+//
+//for BI
+function get_DB_formData(id, biType,language) {
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+   
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getBI_FormDetails",
+            "formType": biType,
+              language:language,
+
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_BI(biType, response['data'], id);
+
+            }
+
+        },
+        complete: function() {
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
 // 
 
 function get_DL_formData(id, dlType,language) {
@@ -5443,7 +7748,21 @@ function showTable(formKeyName, subcomponame) {
        `;
         }
 
+         else if (formKeyName.startsWith("DB")) {
+            displayHtml += `
+        <button type="button" class="btn btn-sm btn-success" onclick="get_DB_formData('${element['id']}','${formKeyName}','${element['language']}')">
+            See <i class="fas fa-eye-close"></i>
+        </button>
+       `;
+        }
 
+         else if (formKeyName.startsWith("UF")) {
+            displayHtml += `
+        <button type="button" class="btn btn-sm btn-success" onclick="get_DB_formData('${element['id']}','${formKeyName}','${element['language']}')">
+            See <i class="fas fa-eye-close"></i>
+        </button>
+       `;
+        }
          else if (formKeyName.startsWith("MLB")) {
             displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="get_MLB_formData('${element['id']}','${formKeyName}','${element['language']}')">

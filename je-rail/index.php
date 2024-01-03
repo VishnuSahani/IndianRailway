@@ -52,7 +52,7 @@
         <!-- station name -->
         <div class="col-12">
             <div class="form-group">
-                <label class="font-weight-bold">Station List</label>
+                <label class="font-weight-bold">Assign Station List</label>
                 <div class="d-flex justify-content-start">
                     <?php
                         

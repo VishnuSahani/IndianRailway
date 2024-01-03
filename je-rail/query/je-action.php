@@ -53,10 +53,16 @@ if(isset($_POST['JE_action'])){
             $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
             $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
 
+            $empId_form = $sectionRun['empid'];
+            $section_id = $sectionRun['section_id'];
+            $station_id = $sectionRun['station_id'];
+
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
-             $obj->formView  = '<a  href="view-form-details.php?empid='.$sectionRun['empid'].'" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView1  = '<a  href="view-form-details.php?empid='.$sectionRun['empid'].'" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView2  = '<a  href="../commonForm/view-form.php?empid='.$sectionRun['empid'].'&from=JE" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","JE") type="button" class="btn btn-sm btn-warning">Form</a>';
 
             $data[] = $obj;
 

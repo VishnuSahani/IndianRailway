@@ -114,8 +114,35 @@ if (isset($_SESSION['userretailerje'])) {
   }
 
 
-</script>
-<script>
+function showCommonform(empid,from){
+  
+  console.log("empid",empid)
+  console.log("from",from)
+  $.ajax({
+    type:"POST",
+    url:"../commonForm/query/common-action.php",
+    data:{
+      common_action:"setSessionForFormDetails",
+      empid:empid,
+      from:from
+    },
+    beforeSend:()=>{
+      $("#loader_show").removeClass('d-none');
+
+    },
+    success:(response)=>{
+      $("#loader_show").addClass('d-none');
+      let respo = JSON.parse(response);
+      if(respo['status']){
+        window.location.href = "../commonForm/view-form.php";
+      }else{
+        alert("Something went wrong try again");
+      }
+
+    }
+    
+  });
+}
 
   function getStationValList() {
 

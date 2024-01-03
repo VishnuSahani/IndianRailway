@@ -634,7 +634,200 @@ if(isset($_POST['action'])){
            
 
         }
+        elseif($compoNameTmp == "BLOCK INSTRUMENT"){
+            // EP 1,2,4,5 form data
+            $formType = "BI";
+            
+            $qEP1 = mysqli_query($con,"SELECT * FROM dB1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
 
+            if(mysqli_num_rows($qEP1) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep1Data = [];
+
+                while($runEp1 = mysqli_fetch_array($qEP1)){
+
+                    $ep1Data[] = $runEp1;
+
+                }
+                
+                $formData['DB1'] = $ep1Data ;
+
+            }
+
+
+            // dB1 end
+
+            // dac2 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM db2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['DB2'] = $ep2Data ;
+
+            } 
+            //db2 end
+
+            // db3 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM db3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['DB3'] = $ep2Data ;
+
+            }
+
+            // dac3 end
+
+           //uf1 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF1'] = $ep2Data ;
+
+            }
+
+            // uf1 end
+            //uf2 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF2'] = $ep2Data ;
+
+            }
+
+
+            //uf2 end
+           //uf3 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF3'] = $ep2Data ;
+
+            }
+
+            //uf3 end
+
+
+            //uf4 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF4'] = $ep2Data ;
+
+            }
+
+            //uf4 end
+
+            //uf5 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF5'] = $ep2Data ;
+
+            }
+
+            //uf5 end
+
+            
+
+            //hb1 end
+            
+        }
 
         //
         elseif($compoNameTmp == "DL"){
