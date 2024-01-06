@@ -1485,7 +1485,16 @@ if (isset($_SESSION['userretaileremp'])) {
                                                     रीले एंड
                                                 </span>
                                             </td>
-                                            <td rowspan="2">रेगुलेटिंग रेजीस्टेंस के आर-पार वोल्टेज का मान</td>
+                                            <td rowspan="2">
+                                            <span class="heading_english">
+                                                Value of voltage across the regulating resistance
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                रेगुलेटिंग रेजीस्टेंस के आर-पार वोल्टेज का मान
+
+                                                </span>
+                                            </td>
                                             <td colspan="2">
                                             <span class="heading_english">
                                                 
