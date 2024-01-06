@@ -3244,7 +3244,19 @@ if(isset($_POST['action'])){
                         
             case 'UF5':
                 $tableName = 'uf5_info';
-                break;           
+                break; 
+
+            case 'HB1':
+                $tableName = 'hb1_info';
+                break;
+
+            case 'HB2':
+                $tableName = 'hb2_info';
+                break;
+            
+            case 'HB3':
+                $tableName = 'hb3_info';
+                break;              
 
 
             default:
@@ -3551,6 +3563,267 @@ elseif ($action == "DB3_formSubmit"){
     }
     
 
+
+elseif ($action == "HB1_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM hb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+         $hb1_1 = trim($_POST['hb1_1']);
+        $hb1_2 = trim($_POST['hb1_2']);
+        $hb1_3 = trim($_POST['hb1_3']);
+        $hb1_4 = trim($_POST['hb1_4']);
+        $hb1_5 = trim($_POST['hb1_5']);
+        $hb1_6 = trim($_POST['hb1_6']);
+        $hb1_7 = trim($_POST['hb1_7']);
+        $hb1_battery = trim($_POST['hb1_battery']);
+        $hb1_voltage = trim($_POST['hb1_voltage']);
+        $hb1_8 = trim($_POST['hb1_8']);
+        $hb1_9 = trim($_POST['hb1_9']);
+        $hb1_10 = trim($_POST['hb1_10']);
+        $hb1_11 = trim($_POST['hb1_11']);
+       
+
+        if(empty($hb1_1) || empty($hb1_2) || empty($hb1_3) || empty($hb1_4) || empty($hb1_5) || empty($hb1_6) || empty($hb1_7) || empty($hb1_8) || empty($hb1_9)|| empty($hb1_10) || empty($hb1_11) || empty($hb1_voltage) || empty($hb1_battery)){
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+         $insertQuery = "INSERT INTO hb1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb1_1,hb1_2,hb1_3,hb1_4,hb1_5,hb1_6,hb1_7,hb1_8,hb1_9,hb1_10,hb1_11,hb1_battery,hb1_voltage,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb1_1','$hb1_2','$hb1_3','$hb1_4','$hb1_5','$hb1_6','$hb1_7','$hb1_8','$hb1_9','$hb1_10','$hb1_11','$hb1_battery','$hb1_voltage','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
+elseif ($action == "HB2_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM hb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+         $hb2_1 = trim($_POST['hb2_1']);
+        $hb2_2 = trim($_POST['hb2_2']);
+
+        $trans_current = trim($_POST['trans_current']);
+        $trans_voltage = trim($_POST['trans_voltage']);
+        $trans_frequency = trim($_POST['trans_frequency']);
+        $receiving_current = trim($_POST['receiving_current']);
+        $receiving_voltage = trim($_POST['receiving_voltage']);
+        $receiving_frequency = trim($_POST['receiving_frequency']);
+       
+
+        if(empty($hb2_1) || empty($hb2_2) || empty($trans_current) || empty($trans_voltage) || empty($trans_frequency) || empty($receiving_current) || empty($receiving_voltage) || empty($receiving_frequency)){
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+         $insertQuery = "INSERT INTO hb2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb2_1,hb2_2,trans_current,trans_voltage,trans_frequency,receiving_current,receiving_voltage,receiving_frequency,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb2_1','$hb2_2','$trans_current','$trans_voltage','$trans_frequency','$receiving_current','$receiving_voltage','$receiving_frequency','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
+
+elseif ($action == "HB3_formSubmit"){
+        if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+        
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con,"SELECT * FROM hb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        if(mysqli_num_rows($checkData) > 0){
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+             $lastSubmitedDate = $lastInsert['created_date'];
+            $d15 = strtotime("+15 days",strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d",$d15);
+
+            $currentStrToTime =  strtotime($createdDateTime);
+
+            if($currentStrToTime < $d15){
+                
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+            
+
+        }
+
+         $hb3_1 = trim($_POST['hb3_1']);
+        $hb3_2 = trim($_POST['hb3_2']);
+        $hb3_3 = trim($_POST['hb3_3']);
+        $hb3_4 = trim($_POST['hb3_4']);
+        $hb3_5 = trim($_POST['hb3_5']);
+        $hb3_6 = trim($_POST['hb3_6']);
+        $hb3_earthValue = trim($_POST['hb3_earthValue']);
+       
+       
+
+        if(empty($hb3_1) || empty($hb3_2) || empty($hb3_3) || empty($hb3_4) || empty($hb3_5) || empty($hb3_6) || empty($hb3_earthValue)){
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+         $insertQuery = "INSERT INTO hb3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb3_1,hb3_2,hb3_3,hb3_4,hb3_5,hb3_6,hb3_earthValue,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb3_1','$hb3_2','$hb3_3','$hb3_4','$hb3_5','$hb3_6','$hb3_earthValue','$createdDateTime','$createdDateTime','$language')";
+
+
+        if(mysqli_query($con,$insertQuery)){
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        }else{
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }
 elseif ($action == "UF1_formSubmit"){
         if(!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])){
             $respo['status'] = false;

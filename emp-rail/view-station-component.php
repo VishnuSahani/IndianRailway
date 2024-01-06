@@ -21,6 +21,10 @@ if (isset($_SESSION['userretaileremp'])) {
     .width70{
         width: 70px !important;
     }
+
+    .txtWidth{
+        width: 65px !important;
+    }
 </style>
 
 
@@ -1131,367 +1135,503 @@ if (isset($_SESSION['userretaileremp'])) {
 <div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT1" aria-hidden="true">
     <form>
-    <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelT1">
-                    <span class="badge badge-success h3">
-                        Schedule Code: T1
+        <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabelT1">
+                        <span class="badge badge-success h3">
+                            Schedule Code: T1
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                        <!-- <span id="modalSubCompoName"></span>
+                        <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                    
+
+                    <span class="heading_english">
+                    Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
+                    Quarterly
                     </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
 
-                    <!-- <span id="modalSubCompoName"></span>
-                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-
-                
-
-                 <span class="heading_english">
-                  Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
-                Quarterly
-                </span>
-
-                <span class="heading_hindi">
-             आवधिकता: तकनीशियन (सिग्नल): पाक्षिक,अनुभागीय सीसेई/जेई (सिग्नल): मासिक (ए, बी और सी मार्गों पर), त्रैमासिक (डी और ई मार्ग पर), सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+                    <span class="heading_hindi">
+                आवधिकता: तकनीशियन (सिग्नल): पाक्षिक,अनुभागीय सीसेई/जेई (सिग्नल): मासिक (ए, बी और सी मार्गों पर), त्रैमासिक (डी और ई मार्ग पर), सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
 
 
 
-                </span>
+                    </span>
 
-            </div>
-            <div class="modal-body table-responsive">
+                </div>
+                <div class="modal-body table-responsive">
 
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                               <th scope="col">
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">
+                                        <span class="heading_english">
+                                        S.No
+                                        </span>
+
+                                        <span class="heading_hindi">
+                                            क्रम सं
+                                        </span>
+                                        
+                                    </th>
+                                    <th scope="col">
                                     <span class="heading_english">
-                                    S.No
+                                        Check the following
                                     </span>
 
                                     <span class="heading_hindi">
-                                        क्रम सं
+                                        निम्नलिखित की जाँच करें
                                     </span>
-                                    
-                                </th>
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Check the following
-                                </span>
-
-                                <span class="heading_hindi">
-                                    निम्नलिखित की जाँच करें
-                                </span>
-                                    
-                               </th>
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Action
-                                </span>
-
-                                <span class="heading_hindi">
-                                    कार्रवाई
-                                 </span>    
-                                </th>
-                        </tr>
-                    </thead>
-                    <tbody id="t1_body">
-
-                    </tbody>
-                    <tbody>                      
-                       <tr>
-                        <td colspan="3">
-                            <table class="table table-bordered">
-                                <thead class="text-center table-dark">
-                                    <!-- <tr>
-                                    <td rowspan="3">Date</td> <td colspan="6">SPG and Volt</td> <td rowspan="3"> Charging V</td><td rowspan="3">Current V</td><td rowspan="3"> --- </td><td rowspan="3">  िफड इंड पर वोल्टेज</td><td rowspan="3">Near Block</td> <td rowspan="3">Wire status</td> <td rowspan="3">Remark</td>
-                            
-                                </tr> -->
-                                <tr>
-                                    <td rowspan="3">
                                         
-                                        <span class="heading_english">
-                                            Date
-                                        </span>
-                                        <span class="heading_hindi">
-                                            दिनांक
-                                        </span> 
-                                    </td>
-                                     <td colspan="6">                                        
-                                        <span class="heading_english">
+                                </th>
+                                    <th scope="col">
+                                    <span class="heading_english">
+                                        Action
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        कार्रवाई
+                                    </span>    
+                                    </th>
+                            </tr>
+                        </thead>
+                        <tbody id="t1_body">
+
+                        </tbody>
+                        <tbody>                      
+                        <tr>
+                            <td colspan="3">
+                                <table class="table table-bordered">
+                                    <thead class="text-center table-dark">
+                                        <!-- <tr>
+                                        <td rowspan="3">Date</td> <td colspan="6">SPG and Volt</td> <td rowspan="3"> Charging V</td><td rowspan="3">Current V</td><td rowspan="3"> --- </td><td rowspan="3">  िफड इंड पर वोल्टेज</td><td rowspan="3">Near Block</td> <td rowspan="3">Wire status</td> <td rowspan="3">Remark</td>
+                                
+                                    </tr> -->
+                                    <tr>
+                                        <td rowspan="3">
                                             
-                                        </span>
-                                        <span class="heading_hindi">
-                                           
-                                        </span>
-                                    
-                                    </td>
-                                      <td rowspan="3"> कुल बैटरी वोल्टेज*</td>
-                                      <td rowspan="3">चार्जिंग वोल्टेज (वोल्ट)</td>
-                                      <!-- new -->
-                                      <td rowspan="3">चार्जिंग करेंट (अंपीयर)</td>
-                                                                
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <span class="heading_english">
-                                            Sale 1                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            सेल-1
-                                        </span>
-                                    </td> 
-                                    <td colspan="2">
-                                        <span class="heading_english">
-                                            Sale 2                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            सेल-2
-                                        </span>
-                                    </td>
-                                     <td colspan="2">
-                                         <span class="heading_english">
-                                            Sale 3                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            सेल-3
-                                        </span>
-                                    </td> 
-                            
-                                </tr>
-                                <tr>
-                                    <td>
+                                            <span class="heading_english">
+                                                Date
+                                            </span>
+                                            <span class="heading_hindi">
+                                                दिनांक
+                                            </span> 
+                                        </td>
+                                        <td colspan="6">                                        
+                                            <span class="heading_english">
+                                                
+                                            </span>
+                                            <span class="heading_hindi">
+                                            
+                                            </span>
                                         
-                                        <span class="heading_english">
-                                            SPG                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            विशिष्ट गुरुत्व
-                                        </span>
-                                    </td>
-                                     <td >
-                                     
-                                        <span class="heading_english">
-                                            Voltage                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            वोल्टेज
-                                        </span>
-                                     </td>
-                                      
-                                     <td>
+                                        </td>
+                                        <td rowspan="3"> 
+                                            <span class="heading_english">
+                                            Total Battery Voltage*
+                                                
+                                            </span>
+                                                <span class="heading_hindi">                                               
+                                                    कुल बैटरी वोल्टेज*
+                                                </span>
                                         
-                                        <span class="heading_english">
-                                            SPG                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            विशिष्ट गुरुत्व
-                                        </span>
-                                    </td>
-                                     <td >
-                                     
-                                        <span class="heading_english">
-                                            Voltage                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            वोल्टेज
-                                        </span>
-                                     </td>
-
-                                     <td>
+                                        </td>
+                                        <td rowspan="3">
+                                                <span class="heading_english">
+                                                Charging Voltage (V)
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    चार्जिंग वोल्टेज (वोल्ट)
+                                                </span>
+                                            
+                                        </td>
+                                        <!-- new -->
+                                        <td rowspan="3">
+                                                <span class="heading_english">
+                                                    Charging Current (A)
+                                                </span>
+                                                <span class="heading_hindi">
+                                                    चार्जिंग करेंट (अंपीयर)
+                                                
+                                                </span>
                                         
-                                        <span class="heading_english">
-                                            SPG                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            विशिष्ट गुरुत्व
-                                        </span>
-                                    </td>
-                                     <td >
-                                     
-                                        <span class="heading_english">
-                                            Voltage                                            
-                                        </span>
-                                        <span class="heading_hindi">
-                                            वोल्टेज
-                                        </span>
-                                     </td>
-                            
-                                </tr>
-                                </thead>
+                                            </td>
+                                                                    
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <span class="heading_english">
+                                                Cell 1                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                सेल-1
+                                            </span>
+                                        </td> 
+                                        <td colspan="2">
+                                            <span class="heading_english">
+                                                Cell 2                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                सेल-2
+                                            </span>
+                                        </td>
+                                        <td colspan="2">
+                                            <span class="heading_english">
+                                                Cell 3                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                सेल-3
+                                            </span>
+                                        </td> 
+                                
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                            <span class="heading_english">
+                                                Sp. Gravity                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                विशिष्ट गुरुत्व
+                                            </span>
+                                        </td>
+                                        <td >
+                                        
+                                            <span class="heading_english">
+                                                Voltage                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                वोल्टेज
+                                            </span>
+                                        </td>
+                                        
+                                        <td>
+                                            
+                                            <span class="heading_english">
+                                                Sp. Gravity                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                विशिष्ट गुरुत्व
+                                            </span>
+                                        </td>
+                                        <td >
+                                        
+                                            <span class="heading_english">
+                                                Voltage                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                वोल्टेज
+                                            </span>
+                                        </td>
 
-                                <!-- <tbody>
-                                     <tr>
-                                    <td ><input id="date1" class="form-control" type="date"></td> 
-                                    <td><input id="sale1_spg" class="form-control width70" type="text"></td>
-                                     <td ><input id="sale1_v" class="form-control width70"  type="text"></td>
-                                      <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
-                                      <td><input id="sale2_v" class="form-control width70"  type="text"></td>
-                                       <td><input id="sale3_spg" class="form-control width70"  type="text"></td>
-                                    <td ><input id="sale3_v" class="form-control width70"  type="text"></td> 
-                                 <td ><input id="charging_v" class="form-control width70"  type="text"></td> 
-                                 <td ><input id="charging_current" class="form-control width70"  type="text"></td>
-                                 <td ></td>
-                                 <td ><input id="feedVoltage" class="form-control width70"  type="text"></td> 
-                                 <td ><input id="nearBlock" class="form-control width70"  type="text"></td>
-                                   <td ><input id="wireStatus" class="form-control width70"  type="text"></td> 
-                                   <td ><input id="remark1" class="form-control width70"  type="text"></td> 
-                                    
-                            
-                                </tr>
-                                </tbody> -->
+                                        <td>
+                                            
+                                            <span class="heading_english">
+                                                Sp. Gravity                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                विशिष्ट गुरुत्व
+                                            </span>
+                                        </td>
+                                        <td >
+                                        
+                                            <span class="heading_english">
+                                                Voltage                                            
+                                            </span>
+                                            <span class="heading_hindi">
+                                                वोल्टेज
+                                            </span>
+                                        </td>
+                                
+                                    </tr>
+                                    </thead>
 
-                                <tbody>
-                                     <tr>
-                                    <td ><input id="date1" class="form-control" type="date"></td> 
-                                    <td><input id="sale1_spg" class="form-control width70" type="text"></td>
-                                     <td ><input id="sale1_v" class="form-control"  type="text"></td>
-                                      <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
-                                      <td><input id="sale2_v" class="form-control width70"  type="text"></td>
-                                       <td><input id="sale3_spg" class="form-control width70"  type="text"></td>
-                                    <td ><input id="sale3_v" class="form-control width70"  type="text"></td> 
-                                    <!-- new -->
-                                    <td ><input id="total_battery_voltage" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="charging_v" class="form-control width70"  type="text"></td> 
-                                 <td ><input id="charging_current" class="form-control width70"  type="text"></td>                                                  
-                                    
-                            
-                                </tr>
-                                </tbody>
+                                    <!-- <tbody>
+                                        <tr>
+                                        <td ><input id="date1" class="form-control" type="date"></td> 
+                                        <td><input id="sale1_spg" class="form-control width70" type="text"></td>
+                                        <td ><input id="sale1_v" class="form-control width70"  type="text"></td>
+                                        <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
+                                        <td><input id="sale2_v" class="form-control width70"  type="text"></td>
+                                        <td><input id="sale3_spg" class="form-control width70"  type="text"></td>
+                                        <td ><input id="sale3_v" class="form-control width70"  type="text"></td> 
+                                    <td ><input id="charging_v" class="form-control width70"  type="text"></td> 
+                                    <td ><input id="charging_current" class="form-control width70"  type="text"></td>
+                                    <td ></td>
+                                    <td ><input id="feedVoltage" class="form-control width70"  type="text"></td> 
+                                    <td ><input id="nearBlock" class="form-control width70"  type="text"></td>
+                                    <td ><input id="wireStatus" class="form-control width70"  type="text"></td> 
+                                    <td ><input id="remark1" class="form-control width70"  type="text"></td> 
+                                        
+                                
+                                    </tr>
+                                    </tbody> -->
+
+                                    <tbody>
+                                        <tr>
+                                        <td ><input id="date1" class="form-control" type="date"></td> 
+                                        <td><input id="sale1_spg" class="form-control width70" type="text"></td>
+                                        <td ><input id="sale1_v" class="form-control"  type="text"></td>
+                                        <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
+                                        <td><input id="sale2_v" class="form-control width70"  type="text"></td>
+                                        <td><input id="sale3_spg" class="form-control width70"  type="text"></td>
+                                        <td ><input id="sale3_v" class="form-control width70"  type="text"></td> 
+                                        <!-- new -->
+                                        <td ><input id="total_battery_voltage" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="charging_v" class="form-control width70"  type="text"></td> 
+                                    <td ><input id="charging_current" class="form-control width70"  type="text"></td>                                                  
+                                        
+                                
+                                    </tr>
+                                    </tbody>
 
 
-                                <!-- <thead class="table-dark">
-                                <tr>
-                                <td> 
-                                     िफड इंड पर वोल्टेज
-                                    </td>
-                                    <td>Near Block</td>
-                                     <td>Wire status</td>
-                                      <td>Remark</td>
-                                </tr>
-                                </thead>
+                                    <!-- <thead class="table-dark">
+                                    <tr>
+                                    <td> 
+                                        िफड इंड पर वोल्टेज
+                                        </td>
+                                        <td>Near Block</td>
+                                        <td>Wire status</td>
+                                        <td>Remark</td>
+                                    </tr>
+                                    </thead>
 
-                                <tbody>
-                                <tr>
-                                <td >
-                                    <input id="feedVoltage" class="form-control"  type="text">
-                                </td> 
-                                 <td >
-                                    <input id="nearBlock" class="form-control width70"  type="text">
-                                </td>
-                                   <td >
-                                    <input id="wireStatus" class="form-control"  type="text">
+                                    <tbody>
+                                    <tr>
+                                    <td >
+                                        <input id="feedVoltage" class="form-control"  type="text">
                                     </td> 
-                                   <td >
-                                    <input id="remark1" class="form-control width70"  type="text">
-                                </td> 
-                                </tr>
-                                </tbody>
-
-                                <thead class="table-dark">
-                                    <tr>
-                                        <td>Date</td>
-                                    <td>Rail Volt</td>
-                                    <td>VT (PU Value < 250/300%)</td>
-                                    <td>Wire status</td>
-                                    <td>Magnetic Part</td>
-                                    <td></td>
-                                    <td>Rail Flag</td>
-                                    <td>Wire status</td>
-                                    <td>Remark</td>
+                                    <td >
+                                        <input id="nearBlock" class="form-control width70"  type="text">
+                                    </td>
+                                    <td >
+                                        <input id="wireStatus" class="form-control"  type="text">
+                                        </td> 
+                                    <td >
+                                        <input id="remark1" class="form-control width70"  type="text">
+                                    </td> 
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input id="date2" class="form-control" type="date"></td>
-                                    <td><input id="railVoltage" class="form-control width70" type="text"></td>
-                                    <td><input id="vt_value" class="form-control" type="text"></td>
-                                    <td><input id="wireStatus2" class="form-control width70" type="text"></td>
-                                    <td><input id="magneticPart" class="form-control width70" type="text"></td>
-                                    <td></td>
-                                    <td><input id="railFlag2" class="form-control width70" type="text"></td>
-                                    <td><input id="jumberwireStatus" class="form-control width70" type="text"></td>
-                                    <td><input id="remark2" class="form-control width70" type="text"></td>
-                                    </tr>
+                                    </tbody>
 
-                                </tbody> -->
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <td>Date</td>
+                                        <td>Rail Volt</td>
+                                        <td>VT (PU Value < 250/300%)</td>
+                                        <td>Wire status</td>
+                                        <td>Magnetic Part</td>
+                                        <td></td>
+                                        <td>Rail Flag</td>
+                                        <td>Wire status</td>
+                                        <td>Remark</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input id="date2" class="form-control" type="date"></td>
+                                        <td><input id="railVoltage" class="form-control width70" type="text"></td>
+                                        <td><input id="vt_value" class="form-control" type="text"></td>
+                                        <td><input id="wireStatus2" class="form-control width70" type="text"></td>
+                                        <td><input id="magneticPart" class="form-control width70" type="text"></td>
+                                        <td></td>
+                                        <td><input id="railFlag2" class="form-control width70" type="text"></td>
+                                        <td><input id="jumberwireStatus" class="form-control width70" type="text"></td>
+                                        <td><input id="remark2" class="form-control width70" type="text"></td>
+                                        </tr>
 
-                                <!-- new form -->
-                                <thead class="table-dark">
-                                    <tr>
-                                        <td rowspan="2">रेगुलेटिंग रेजीस्टेंस का मान (ओम)</td>
-                                        <td colspan="2">फीड एंड</td>
-                                        <td colspan="2">रीले एंड</td>
-                                        <td rowspan="2">रेगुलेटिंग रेजीस्टेंस के आर-पार वोल्टेज का मान</td>
-                                        <td colspan="2">चोक पर वोल्टेज</td>
-                                        <td colspan="3">ट्रैक रिले पर वोल्टेज*</td>
-                                     
-                                    </tr>
-                                    <tr>
-                                        <td>वोल्टेज (वोल्ट)</td>
-                                        <td> करेंट (अंपीयर)</td>
-                                        <td>वोल्टेज (वोल्ट)</td>
-                                        <td> करेंट (अंपीयर)</td>
-                                        <td>फीड एंड</td>
-                                        <td>रीले एंड</td>
-                                        <td>R1-R2</td>
-                                        <td>A2-D2</td>
-                                        <td>A1-D1</td>
+                                    </tbody> -->
 
-                                    </tr>
+                                    <!-- new form -->
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <td rowspan="2">
+                                            <span class="heading_english">
+                                                
+                                                Regulating Resistance (Ohms)
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                रेगुलेटिंग रेजीस्टेंस का मान (ओम)
+                                                </span>
+                                            </td>
+                                            <td colspan="2">
+                                            <span class="heading_english">
+                                                Feed End
+                                                
+                                            </span>
+                                            <span class="heading_hindi">
+                                            
+                                                फीड एंड
+                                            </span>
+                                            </td>
+                                            <td colspan="2">
+                                            <span class="heading_english">
+                                                Relay End
+                                                
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    रीले एंड
+                                                </span>
+                                            </td>
+                                            <td rowspan="2">रेगुलेटिंग रेजीस्टेंस के आर-पार वोल्टेज का मान</td>
+                                            <td colspan="2">
+                                            <span class="heading_english">
+                                                
+                                                Voltage on Choke
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    चोक पर वोल्टेज
+                                                </span>
+                                            </td>
+                                            <td colspan="3">
+                                            <span class="heading_english">
+                                                
+                                                Voltage on TR*
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    ट्रैक रिले पर वोल्टेज*
+                                                </span>
+                                            </td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td> 
+                                            <span class="heading_english">
+                                                Voltage (V)
+                                                
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    वोल्टेज (वोल्ट) 
+                                                </span>
+                                            </td>
+                                            <td> 
+                                            <span class="heading_english">
+                                                
+                                                Current (A)
+                                            </span>
+                                            <span class="heading_hindi">
+                                            
+                                                करेंट (अंपीयर) 
+                                            </span>
+                                            </td>
+                                                <td> 
+                                                <span class="heading_english">
+                                                
+                                                    Voltage (V)
+                                                </span>
+                                                <span class="heading_hindi">
+                                                    वोल्टेज (वोल्ट) 
+                                                
+                                                </span>
+                                            
+                                            </td>
+                                            <td> 
+                                            <span class="heading_english">
+                                                
+                                                Current (A)
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    करेंट (अंपीयर) 
+                                                </span>
+                                                
+                                                </td>
+                                            <td> 
+                                            <span class="heading_english">
+                                                Relay End
+                                                
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    फीड एंड 
+                                                </span>
+                                            </td>
+                                            <td> 
+                                            <span class="heading_english">
+                                                
+                                                Feed End
+                                                </span>
+                                                <span class="heading_hindi">
+                                                
+                                                    रीले एंड
+                                                </span>
+                                            </td>
+                                            <td> 
+                                                R1-R2 
+                                            </td>
+                                            <td> 
+                                                A2-D2 
+                                            
+                                            </td>
+                                            <td> 
+                                                A1-D1 
+                                            
+                                            </td>
 
-                                </thead>
+                                        </tr>
 
-                                <tbody>
-                                    <tr>
-                                 <td ><input id="regulating_om" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="feed_volt" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="feed_amp" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="reed_volt" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="reel_amp" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="regulating_registance" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="check_feed" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="check_reel" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="r1_r2" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="a2_d2" class="form-control width70"  type="text"></td>                                                  
-                                 <td ><input id="a1_d1" class="form-control width70"  type="text"></td>                                                  
+                                    </thead>
 
-                                    </tr>
-                                </tbody>
-                            </table>
+                                    <tbody>
+                                        <tr>
+                                    <td ><input id="regulating_om" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="feed_volt" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="feed_amp" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="reed_volt" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="reel_amp" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="regulating_registance" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="check_feed" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="check_reel" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="r1_r2" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="a2_d2" class="form-control width70"  type="text"></td>                                                  
+                                    <td ><input id="a1_d1" class="form-control width70"  type="text"></td>                                                  
+
+                                        </tr>
+                                    </tbody>
+                                </table>
 
 
 
-                        </td>
-                       </tr>
-                     
-                    </tbody>
+                            </td>
+                        </tr>
+                        
+                        </tbody>
 
-                    
-                </table>
+                        
+                    </table>
 
-            
-               
-            </div>
-
-            <div class="card-footer d-flex justify-content-between">
-                <div id="t1Form_status"></div>
-
-                <div>
-
-                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
-                    <button type='button' id="t1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                
+                
                 </div>
-            </div>
 
+                <div class="card-footer d-flex justify-content-between">
+                    <div id="t1Form_status"></div>
+
+                    <div>
+
+                        <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                        <button type='button' id="t1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 </div>
 
 <!-- Modal T2 -->
@@ -4440,6 +4580,321 @@ SSE(Signal)/Incharge: Half Yearly
                 <div>
                     <button type='reset' class="btn btn-sm btn-danger">Reset</button>
                     <button type='button' id="db3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal hb1 -->
+
+<div class="modal fade" id="componentForm_HB1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelHB1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDAC1">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+   Maintenance Schedule of Tokenless Block Instrument - Single line (Handle Type) HB1
+
+                            </span>
+
+                            <span class="heading_hindi">
+         टोकन रहित ब्लॉक उपकरण का रखरखाव अनुसूची - सिंगल लाइन (हैंडल प्रकार) HB1
+
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+      Periodicity: Technician (Signal): Monthly,
+Sectional SSE/JE(Signal): Monthly,
+SSE(Signal)/Incharge: Quarterly
+
+
+
+                        </span>
+                        <span class="heading_hindi">
+                          आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+             सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="hb1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="hb1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="hb1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal hb2 -->
+<div class="modal fade" id="componentForm_HB2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelHB2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDAC1">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+   Maintenance Schedule of Tokenless Block Instrument - Single line (Handle Type) HB2
+
+                            </span>
+
+                            <span class="heading_hindi">
+         टोकन रहित ब्लॉक उपकरण का रखरखाव अनुसूची - सिंगल लाइन (हैंडल प्रकार) HB2
+
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+      Periodicity:  Sectional SSE/JE(Signal): Quarterly
+                    SSE(Signal)/Incharge: Half-Yearly
+
+
+
+
+                        </span>
+                        <span class="heading_hindi">
+                         आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+             सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="hb2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="hb2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="hb2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- modal hb3 -->
+<div class="modal fade" id="componentForm_HB3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelHB3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDAC1">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+   Maintenance Schedule of Tokenless Block Instrument - Single line (Handle Type) HB3
+
+                            </span>
+
+                            <span class="heading_hindi">
+         टोकन रहित ब्लॉक उपकरण का रखरखाव अनुसूची - सिंगल लाइन (हैंडल प्रकार) HB3
+
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+      Periodicity: Sectional SSE/JE (Signal): Half-Yearly
+                            SSE (Signal)/Incharge: Yearly
+
+
+                        </span>
+                        <span class="heading_hindi">
+                      आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्धवार्षिक
+                      सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- <form id="modalFormComponent">
+                   
+                </form> -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="hb3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="hb3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='button' id="hb3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
 
                 </div>
             </div>
@@ -10178,8 +10633,562 @@ $("#db3FormBtn").click(function() {
         }
     });
 
+// for hb1
+$("#hb1FormBtn").click(function() {
+        if (confirm("Do you want to final submit HB1 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let hb1_1 = $("#hb1_1").val();
+            let hb1_2 = $("#hb1_2").val();
+            let hb1_3 = $("#hb1_3").val();
+            let hb1_4 = $("#hb1_4").val();
+            let hb1_5 = $("#hb1_5").val();
+            let hb1_6 = $("#hb1_6").val();
+            let hb1_7 = $("#hb1_7").val();
+            let hb1_voltage = $("#hb1_voltage").val();
+            let hb1_battery = $("#hb1_battery").val();
+
+            let hb1_8 = $("#hb1_8").val();
+            let hb1_9 = $("#hb1_9").val();
+            let hb1_10 = $("#hb1_10").val();
+            let hb1_11 = $("#hb1_11").val();
+           ;
+
+            if (hb1_1 == undefined  || hb1_1 == null || hb1_1 == '' || hb1_1.length == 0) {
+                $("#hb1_1").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_1").removeClass("is-invalid");
+
+            }
+
+            if (hb1_2 == undefined  || hb1_2 == null || hb1_2 == '' || hb1_2.length == 0) {
+                $("#hb1_2").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_2").removeClass("is-invalid");
+
+            }
+
+            if (hb1_3 == undefined  || hb1_3 == null || hb1_3 == '' || hb1_3.length == 0) {
+                $("#hb1_3").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_3").removeClass("is-invalid");
+
+            }
+
+            if (hb1_4 == undefined  || hb1_4 == null || hb1_4 == '' || hb1_4.length == 0) {
+                $("#hb1_4").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_4").removeClass("is-invalid");
+
+            }
+
+            if (hb1_5 == undefined  || hb1_5 == null || hb1_5 == '' || hb1_5.length == 0) {
+                $("#hb1_5").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_5").removeClass("is-invalid");
+
+            }
+
+            if (hb1_6 == undefined  || hb1_6 == null || hb1_6 == '' || hb1_6.length == 0) {
+                $("#hb1_6").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_6").removeClass("is-invalid");
+
+            }
+
+            if (hb1_7 == undefined  || hb1_7 == null || hb1_7 == '' || hb1_7.length == 0) {
+                $("#hb1_7").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_7").removeClass("is-invalid");
+            }
+
+            if (hb1_voltage == undefined  || hb1_voltage == null || hb1_voltage == '' || hb1_voltage.length == 0) {
+                $("#hb1_voltage").addClass("is-invalid");
+                $("#hb1Form_status").html("Voltage is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_voltage").removeClass("is-invalid");
+            }
+
+            if (hb1_battery == undefined  || hb1_battery == null || hb1_battery == '' || hb1_battery.length == 0) {
+                $("#hb1_battery").addClass("is-invalid");
+                $("#hb1Form_status").html("Battery is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_battery").removeClass("is-invalid");
+            }
+
+            if (hb1_8 == undefined  || hb1_8 == null || hb1_8 == '' || hb1_8.length == 0) {
+                $("#hb1_8").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_8").removeClass("is-invalid");
+            }
+
+            if (hb1_9 == undefined  || hb1_9 == null || hb1_9 == '' || hb1_9.length == 0) {
+                $("#hb1_9").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_9").removeClass("is-invalid");
+            }
+
+            if (hb1_10 == undefined  || hb1_10 == null || hb1_10 == '' || hb1_10.length == 0) {
+                $("#hb1_10").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 10 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_10").removeClass("is-invalid");
+            }
+
+            if (hb1_11 == undefined  || hb1_11 == null || hb1_11 == '' || hb1_11.length == 0) {
+                $("#hb1_11").addClass("is-invalid");
+                $("#hb1Form_status").html("Serial no 11 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_11").removeClass("is-invalid");
+            }
+
+             
+
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#hb1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "HB1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "hb1_1": hb1_1,
+                    "hb1_2": hb1_2,
+                    "hb1_3": hb1_3,
+                    "hb1_4": hb1_4,
+                    "hb1_5": hb1_5,
+                    "hb1_6": hb1_6,              
+                    "hb1_7": hb1_7, 
+                    "hb1_8": hb1_8,
+                    "hb1_9": hb1_9,
+                    "hb1_10": hb1_10,              
+                    "hb1_11": hb1_11, 
+                    hb1_voltage:hb1_voltage,
+                    hb1_battery:hb1_battery,                                
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#hb1Form_status").html(respo['msg']).css("color", "green");
 
 
+                    } else {
+                        $("#hb1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+// FOR hb2
+$("#hb2FormBtn").click(function() {
+        if (confirm("Do you want to final submit HB2 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let hb2_1 = $("#hb2_1").val();
+            let hb2_2 = $("#hb2_2").val();
+
+            let trans_current = $("#trans_current").val();
+            let trans_voltage = $("#trans_voltage").val();
+            let trans_frequency = $("#trans_frequency").val();
+            let receiving_current = $("#receiving_current").val();
+            let receiving_voltage = $("#receiving_voltage").val();
+            let receiving_frequency = $("#receiving_frequency").val();
+           
+
+            if (hb2_1 == undefined  || hb2_1 == null || hb2_1 == '' || hb2_1.length == 0) {
+                $("#hb2_1").addClass("is-invalid");
+                $("#hb2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#hb2_1").removeClass("is-invalid");
+
+            }
+
+            if (hb2_2 == undefined  || hb2_2 == null || hb2_2 == '' || hb2_2.length == 0) {
+                $("#hb2_2").addClass("is-invalid");
+                $("#hb2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#hb2_2").removeClass("is-invalid");
+
+            }
+
+            if (trans_current == undefined  || trans_current == null || trans_current == '' || trans_current.length == 0) {
+                $("#trans_current").addClass("is-invalid");
+                $("#hb2Form_status").html("Transmitting current is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#trans_current").removeClass("is-invalid");
+
+            }
+
+            if (trans_voltage == undefined  || trans_voltage == null || trans_voltage == '' || trans_voltage.length == 0) {
+                $("#trans_voltage").addClass("is-invalid");
+                $("#hb2Form_status").html("Transmitting voltage is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#trans_voltage").removeClass("is-invalid");
+
+            }
+
+            if (trans_frequency == undefined  || trans_frequency == null || trans_frequency == '' || trans_frequency.length == 0) {
+                $("#trans_frequency").addClass("is-invalid");
+                $("#hb2Form_status").html("Transmitting frequency is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#trans_frequency").removeClass("is-invalid");
+
+            }
+
+            if (receiving_current == undefined  || receiving_current == null || receiving_current == '' || receiving_current.length == 0) {
+                $("#receiving_current").addClass("is-invalid");
+                $("#hb2Form_status").html("Receiving current is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#receiving_current").removeClass("is-invalid");
+
+            }
+
+            if (receiving_voltage == undefined  || receiving_voltage == null || receiving_voltage == '' || receiving_voltage.length == 0) {
+                $("#receiving_voltage").addClass("is-invalid");
+                $("#hb2Form_status").html("Receiving Voltage is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#receiving_voltage").removeClass("is-invalid");
+
+            }
+
+            if (receiving_frequency == undefined  || receiving_frequency == null || receiving_frequency == '' || receiving_frequency.length == 0) {
+                $("#receiving_frequency").addClass("is-invalid");
+                $("#hb2Form_status").html("Receiving Frequency is required").css("color", "red");
+                return;
+            } else {
+                $("#hb2Form_status").html("");
+                $("#receiving_frequency").removeClass("is-invalid");
+
+            }
+
+            
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#hb2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "HB2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "hb2_1": hb2_1,
+                    "hb2_2": hb2_2,
+                    trans_current:trans_current,
+                    trans_voltage:trans_voltage,
+                    trans_frequency:trans_frequency,
+                    receiving_current:receiving_current,
+                    receiving_voltage:receiving_voltage,
+                    receiving_frequency:receiving_frequency,                                
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#hb2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#hb2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+// for hb3
+$("#hb3FormBtn").click(function() {
+        if (confirm("Do you want to final submit HB3 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let hb3_1 = $("#hb3_1").val();
+            let hb3_2 = $("#hb3_2").val();
+            let hb3_3 = $("#hb3_3").val();
+            let hb3_4 = $("#hb3_4").val();
+            let hb3_5 = $("#hb3_5").val();
+            let hb3_6 = $("#hb3_6").val();
+            let hb3_earthValue = $("#hb3_earthValue").val();
+          
+        
+
+            if (hb3_1 == undefined  || hb3_1 == null || hb3_1 == '' || hb3_1.length == 0) {
+                $("#hb3_1").addClass("is-invalid");
+                $("#hb3Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_1").removeClass("is-invalid");
+
+            }
+
+            if (hb3_2 == undefined  || hb3_2 == null || hb3_2 == '' || hb3_2.length == 0) {
+                $("#hb3_2").addClass("is-invalid");
+                $("#hb3Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_2").removeClass("is-invalid");
+
+            }
+
+            if (hb3_3 == undefined  || hb3_3 == null || hb3_3 == '' || hb3_3.length == 0) {
+                $("#hb3_3").addClass("is-invalid");
+                $("#hb3Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_3").removeClass("is-invalid");
+
+            }
+
+            if (hb3_4 == undefined  || hb3_4 == null || hb3_4 == '' || hb3_4.length == 0) {
+                $("#hb3_4").addClass("is-invalid");
+                $("#hb3Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_4").removeClass("is-invalid");
+
+            }
+
+            if (hb3_5 == undefined  || hb3_5 == null || hb3_5 == '' || hb3_5.length == 0) {
+                $("#hb3_5").addClass("is-invalid");
+                $("#hb3Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_5").removeClass("is-invalid");
+
+            }
+
+            if (hb3_earthValue == undefined  || hb3_earthValue == null || hb3_earthValue == '' || hb3_earthValue.length == 0) {
+                $("#hb3_earthValue").addClass("is-invalid");
+                $("#hb3Form_status").html("Earth value is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_earthValue").removeClass("is-invalid");
+
+            }
+
+            if (hb3_6 == undefined  || hb3_6 == null || hb3_6 == '' || hb3_6.length == 0) {
+                $("#hb3_6").addClass("is-invalid");
+                $("#hb3Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#hb3Form_status").html("");
+                $("#hb3_6").removeClass("is-invalid");
+
+            }
+
+            
+
+            let userID = '<?php echo $_SESSION['userretaileremp']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#hb3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "HB3_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "hb3_1": hb3_1,
+                    "hb3_2": hb3_2,
+                    "hb3_3": hb3_3,
+                    "hb3_4": hb3_4,
+                    "hb3_5": hb3_5,
+                    "hb3_6": hb3_6,              
+                    hb3_earthValue:hb3_earthValue,
+                                
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#hb3Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#hb3Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
 // for uf1
 $("#uf1FormBtn").click(function() {
         if (confirm("Do you want to final submit UF1 Form")) {
@@ -11655,15 +12664,208 @@ switch (typeOfForm) {
      case "UF5":
         tableId = "uf5_body";
         $("#componentForm_UF5").modal("show");
-        break;                
+        break;
+
+    case "HB1":
+        tableId = "hb1_body";
+        $("#componentForm_HB1").modal("show");
+        break;
+    case "HB2":
+        tableId = "hb2_body";
+        $("#componentForm_HB2").modal("show");
+        break;
+    case "HB3":
+        tableId = "hb3_body";
+        $("#componentForm_HB3").modal("show");
+        break;                    
 
 }
+    let language = $("#language").val();
+
+    //for hb1
+    let battery="BATTERY";
+    let voltage="VOLTAGE";
+    let earthValue="EARTH VALUE";
+
+    if(language == "Hindi"){
+        battery="बैटरी";
+        voltage="वोल्टेज";  
+        earthValue = "अर्थ का मान";
+    }
 
 
 dataList.forEach((element, index) => {
 
+    if(typeOfForm == 'HB1' && index == 6){
 
-    displayHtml += `
+        displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>
+        ${element['db_details']}
+            <div class="">
+                <div class="input-group my-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="hb1_battery_label">
+                            ${battery}
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="hb1_battery" aria-describedby="hb1_battery_label">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="hb1_voltage_label">
+                            ${voltage}
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="hb1_voltage" aria-describedby="hb1_voltage_label">
+                </div>
+            </div>
+        </td>
+        <td style="vertical-align:middle;width:15%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
+                <option value="">Select Action</option>`;
+
+    let optArr = element['db_option'].split(",");
+    optArr.forEach(opt => {
+        displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+    }else if(typeOfForm == 'HB3' && index == 4){
+
+displayHtml += `
+            <tr>
+            <th scope="row">${index+1}</th>
+            <td>
+            ${element['db_details']}
+                <div class="">
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="hb3_earthValue_label">
+                                ${earthValue}
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="hb3_earthValue" aria-describedby="hb3_earthValue_label">
+                    </div>
+                 
+                </div>
+            </td>
+            <td style="vertical-align:middle;width:15%" >
+                <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
+                    <option value="">Select Action</option>`;
+
+            let optArr = element['db_option'].split(",");
+            optArr.forEach(opt => {
+            displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+            });
+            displayHtml += `</select>
+            </td>
+            </tr>`;
+
+    }else if(typeOfForm == 'HB2' && index == 1){
+
+        displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>`;
+
+        if(language == "Hindi"){
+
+            displayHtml += `<td>
+            ${element['db_details']}
+                <table>
+                    <tr>
+                        <td colspan="3">Transmitting End</td>
+                        <td colspan="3">Receiving End</td>
+                    </tr>
+                    <tr>
+                        <td>Line current</td>
+                        <td>Line voltage</td>
+                        <td>Frequency</td>
+                       
+                        <td>Line current</td>
+                        <td>Line voltage</td>
+                        <td>Frequency</td>
+                    </tr>
+
+                    <tr>
+                    <tr>
+                        <td><input type="text" class="txtWidth form-control" id="trans_current"></td>
+                        <td><input type="text" class="txtWidth form-control" id="trans_voltage"></td>
+                        <td><input type="text" class="txtWidth form-control" id="trans_frequency"></td>
+
+                        <td><input type="text" class="txtWidth form-control" id="receiving_current"></td>
+                        <td><input type="text" class="txtWidth form-control" id="receiving_voltage"></td>
+                        <td><input type="text" class="txtWidth form-control" id="receiving_frequency"></td>
+                      
+                     
+                    </tr>
+                    </tr>
+                </table>
+            
+            </td>`;
+        }else{
+            displayHtml += `
+            <td>${element['db_details']}
+            
+            <table>
+                    <tr>
+                        <td colspan="3">ट्रांसमीटिंग एंड</td>
+                        <td colspan="3">रिसिविंग एंड</td>
+                    </tr>
+                    <tr>
+                        <td>लाइन करेंट</td>
+                        <td>लाइन वोल्टेज</td>
+                        <td>फ्रेक्वेन्सी</td>
+                       
+                        <td>लाइन करेंट</td>
+                        <td>लाइन वोल्टेज</td>
+                        <td>फ्रेक्वेन्सी</td>
+                    </tr>
+
+                    <tr>
+                    <tr>
+                        <td><input type="text" id="trans_current"></td>
+                        <td><input type="text" id="trans_voltage"></td>
+                        <td><input type="text" id="trans_frequency"></td>
+
+                        <td><input type="text" id="receiving_current"></td>
+                        <td><input type="text" id="receiving_voltage"></td>
+                        <td><input type="text" id="receiving_frequency"></td>
+                      
+                     
+                    </tr>
+                    </tr>
+                </table>
+            </td>`;
+            
+        }
+
+        
+        displayHtml += `<td style="vertical-align:middle;width:15%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
+                <option value="">Select Action</option>`;
+
+    let optArr = element['db_option'].split(",");
+    optArr.forEach(opt => {
+        displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+
+    }else{
+        displayHtml += `
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['db_details']}</td>
@@ -11677,13 +12879,12 @@ dataList.forEach((element, index) => {
 
 
     });
-    // <option value="Done">Done</option>
-    // <option value="Not Done">Not Done</option>
     displayHtml += `</select>
         </td>
         </tr>
     `;
-    
+
+    }    
 
 });
 
