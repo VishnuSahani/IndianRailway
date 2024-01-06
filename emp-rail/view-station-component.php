@@ -12785,7 +12785,7 @@ displayHtml += `
         <tr>
         <th scope="row">${index+1}</th>`;
 
-        if(language == "Hindi"){
+        if(language == "English"){
 
             displayHtml += `<td>
             ${element['db_details']}
@@ -12805,7 +12805,6 @@ displayHtml += `
                     </tr>
 
                     <tr>
-                    <tr>
                         <td><input type="text" class="txtWidth form-control" id="trans_current"></td>
                         <td><input type="text" class="txtWidth form-control" id="trans_voltage"></td>
                         <td><input type="text" class="txtWidth form-control" id="trans_frequency"></td>
@@ -12815,7 +12814,6 @@ displayHtml += `
                         <td><input type="text" class="txtWidth form-control" id="receiving_frequency"></td>
                       
                      
-                    </tr>
                     </tr>
                 </table>
             
@@ -12840,17 +12838,15 @@ displayHtml += `
                     </tr>
 
                     <tr>
-                    <tr>
-                        <td><input type="text" id="trans_current"></td>
-                        <td><input type="text" id="trans_voltage"></td>
-                        <td><input type="text" id="trans_frequency"></td>
+                        <td><input type="text" class="txtWidth form-control" id="trans_current"></td>
+                        <td><input type="text" class="txtWidth form-control" id="trans_voltage"></td>
+                        <td><input type="text" class="txtWidth form-control" id="trans_frequency"></td>
 
-                        <td><input type="text" id="receiving_current"></td>
-                        <td><input type="text" id="receiving_voltage"></td>
-                        <td><input type="text" id="receiving_frequency"></td>
+                        <td><input type="text" class="txtWidth form-control" id="receiving_current"></td>
+                        <td><input type="text" class="txtWidth form-control" id="receiving_voltage"></td>
+                        <td><input type="text" class="txtWidth form-control" id="receiving_frequency"></td>
                       
                      
-                    </tr>
                     </tr>
                 </table>
             </td>`;

@@ -7347,7 +7347,7 @@ displayHtml += `
 <tr>
 <th scope="row">${index+1}</th>`;
 
-if(language == "Hindi"){
+if(language == "English"){
 
     displayHtml += `<td>
     ${element['db_details']}
