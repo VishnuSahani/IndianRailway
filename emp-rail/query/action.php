@@ -1073,7 +1073,7 @@ if(isset($_POST['action'])){
             die();
         }
 
-        $insertQuery = "INSERT INTO t1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t1_1,t1_2,t1_3,t1_4,t1_5,t1_6,t1_7,t1_8,date1,sale1_spg,sale1_v,sale2_spg,sale2_v,sale3_spg,sale3_v,charging_v,charging_current,total_battery_voltage,regulating_om,feed_volt,feed_amp,reed_volt,reel_amp,regulating_registance,check_feed,check_reel,r1_r2,a2_d2,a1_d1,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t1_1','$t1_2','$t1_3','$t1_4','$t1_5','$t1_6','$t1_7','$t1_8','$date1','$sale1_spg','$sale1_v','$sale2_spg','$sale2_v','$sale3_spg','$sale3_v','$charging_v','$charging_current','$total_battery_voltage','$regulating_om','$feed_volt','$feed_amp','$reed_volt','$reel_amp','$regulating_registance','$check_feed','$check_reel','$r1_r2','$a2_d2','$a1_d1','$createdDateTime','$createdDateTime','$language')";
+        $insertQuery = "INSERT INTO t1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t1_1,t1_2,t1_3,t1_4,t1_5,t1_6,t1_7,t1_8,t1_9,date1,sale1_spg,sale1_v,sale2_spg,sale2_v,sale3_spg,sale3_v,charging_v,charging_current,total_battery_voltage,regulating_om,feed_volt,feed_amp,reed_volt,reel_amp,regulating_registance,check_feed,check_reel,r1_r2,a2_d2,a1_d1,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t1_1','$t1_2','$t1_3','$t1_4','$t1_5','$t1_6','$t1_7','$t1_8','$t1_9','$date1','$sale1_spg','$sale1_v','$sale2_spg','$sale2_v','$sale3_spg','$sale3_v','$charging_v','$charging_current','$total_battery_voltage','$regulating_om','$feed_volt','$feed_amp','$reed_volt','$reel_amp','$regulating_registance','$check_feed','$check_reel','$r1_r2','$a2_d2','$a1_d1','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){
@@ -3617,20 +3617,19 @@ elseif ($action == "HB1_formSubmit"){
         $hb1_6 = trim($_POST['hb1_6']);
         $hb1_7 = trim($_POST['hb1_7']);
         $hb1_battery = trim($_POST['hb1_battery']);
-        $hb1_voltage = trim($_POST['hb1_voltage']);
         $hb1_8 = trim($_POST['hb1_8']);
         $hb1_9 = trim($_POST['hb1_9']);
         $hb1_10 = trim($_POST['hb1_10']);
         $hb1_11 = trim($_POST['hb1_11']);
        
 
-        if(empty($hb1_1) || empty($hb1_2) || empty($hb1_3) || empty($hb1_4) || empty($hb1_5) || empty($hb1_6) || empty($hb1_7) || empty($hb1_8) || empty($hb1_9)|| empty($hb1_10) || empty($hb1_11) || empty($hb1_voltage) || empty($hb1_battery)){
+        if(empty($hb1_1) || empty($hb1_2) || empty($hb1_3) || empty($hb1_4) || empty($hb1_5) || empty($hb1_6) || empty($hb1_7) || empty($hb1_8) || empty($hb1_9)|| empty($hb1_10) || empty($hb1_11) || empty($hb1_battery)){
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
             echo json_encode($respo);
             die();
         }
-         $insertQuery = "INSERT INTO hb1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb1_1,hb1_2,hb1_3,hb1_4,hb1_5,hb1_6,hb1_7,hb1_8,hb1_9,hb1_10,hb1_11,hb1_battery,hb1_voltage,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb1_1','$hb1_2','$hb1_3','$hb1_4','$hb1_5','$hb1_6','$hb1_7','$hb1_8','$hb1_9','$hb1_10','$hb1_11','$hb1_battery','$hb1_voltage','$createdDateTime','$createdDateTime','$language')";
+         $insertQuery = "INSERT INTO hb1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb1_1,hb1_2,hb1_3,hb1_4,hb1_5,hb1_6,hb1_7,hb1_8,hb1_9,hb1_10,hb1_11,hb1_battery,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb1_1','$hb1_2','$hb1_3','$hb1_4','$hb1_5','$hb1_6','$hb1_7','$hb1_8','$hb1_9','$hb1_10','$hb1_11','$hb1_battery','$createdDateTime','$createdDateTime','$language')";
 
 
         if(mysqli_query($con,$insertQuery)){

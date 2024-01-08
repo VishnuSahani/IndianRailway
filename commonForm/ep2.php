@@ -1,6 +1,8 @@
 <?php
-require('header.php');
-require('include/db_config.php');
+// require('header.php');
+// require('include/db_config.php');
+session_start();
+
 ?>
 <div class="container">
     <div class="row">

@@ -248,6 +248,30 @@ if (isset($_POST['common_action'])) {
 
             // ep4 end here
 
+                     // t4 start
+
+                     $qEP4 = mysqli_query($con, "SELECT * FROM t4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+                     if (mysqli_num_rows($qEP4) <= 0) {
+         
+                         // $formData['EP4']=[];
+         
+                     } else {
+         
+                         $ep4Data = [];
+         
+                         while ($runEp4 = mysqli_fetch_array($qEP4)) {
+         
+                             $ep4Data[] = $runEp4;
+         
+                         }
+         
+                         $formData['T4'] = $ep4Data;
+         
+                     }
+         
+                     // ep4 end here
+
             // ep5 start
 
             $qEP5 = mysqli_query($con, "SELECT * FROM t5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
@@ -886,6 +910,21 @@ if (isset($_POST['common_action'])) {
             case 'EP5':
                 $tableName = 'ep5_form';
                 break;
+            case 'T1':
+                $tableName = 't1_form';
+                break;
+            case 'T2':
+                $tableName = 't2_form';
+                break;
+            case 'T3':
+                $tableName = 't3_form';
+                break;
+            case 'T4':
+                $tableName = 't4_form';
+                break;
+            case 'T5':
+                $tableName = 't5_form';
+                break;
 
             default:
                 $respo['status'] = false;
@@ -948,17 +987,15 @@ if (isset($_POST['common_action'])) {
             case 'EP3':
                 $tableName = 'ep3_info';
                 break;
-
             case 'EP4':
                 $tableName = 'ep4_info';
                 break;
             case 'EP5':
                 $tableName = 'ep5_info';
                 break;
-
             default:
                 $respo['status'] = false;
-                $respo['msg'] = "Invalid request!";
+                $respo['msg'] = "Invalid request!123";
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();

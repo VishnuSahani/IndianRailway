@@ -1,10 +1,8 @@
 <?php
-require('header.php');
-require('include/db_config.php');
+//require('header.php');
+// require('include/db_config.php');
+session_start();
 
-// echo "EP3";
-// echo $_SESSION['empid_for_form'];
-// print_r($_SESSION);
 ?>
 <div class="container">
     <div class="row">

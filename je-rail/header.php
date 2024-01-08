@@ -92,7 +92,9 @@ background:#feeeb7a8;
    <!--  -->
  <div  class="row" >
     <div class="col-lg-6 col-6">
-      <a href="index.php"><img src="../images/logo_colour.gif" class="img-fluid"></a>
+      <div class="py-2">
+        <a href="index.php"><img src="../images/logo_colour.gif" class="img-fluid"></a>
+    </div>
     </div>
 
     <div class="col-lg-6 col-6">
@@ -116,7 +118,7 @@ background:#feeeb7a8;
   $empSectionId = $row['section_id'];
   $empStationName = $row['station_name'];
   $empStationId = $row['station_id'];
-
+  $_SESSION['portal_name'] = $name;
     ?>
 <!-- <li class="nav-item"> -->
   <p style="margin-top: 20px;" class="float-right">

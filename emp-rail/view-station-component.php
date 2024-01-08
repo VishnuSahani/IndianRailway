@@ -10675,7 +10675,6 @@ $("#hb1FormBtn").click(function() {
             let hb1_5 = $("#hb1_5").val();
             let hb1_6 = $("#hb1_6").val();
             let hb1_7 = $("#hb1_7").val();
-            let hb1_voltage = $("#hb1_voltage").val();
             let hb1_battery = $("#hb1_battery").val();
 
             let hb1_8 = $("#hb1_8").val();
@@ -10751,15 +10750,6 @@ $("#hb1FormBtn").click(function() {
             } else {
                 $("#hb1Form_status").html("");
                 $("#hb1_7").removeClass("is-invalid");
-            }
-
-            if (hb1_voltage == undefined  || hb1_voltage == null || hb1_voltage == '' || hb1_voltage.length == 0) {
-                $("#hb1_voltage").addClass("is-invalid");
-                $("#hb1Form_status").html("Voltage is required").css("color", "red");
-                return;
-            } else {
-                $("#hb1Form_status").html("");
-                $("#hb1_voltage").removeClass("is-invalid");
             }
 
             if (hb1_battery == undefined  || hb1_battery == null || hb1_battery == '' || hb1_battery.length == 0) {
@@ -10839,7 +10829,6 @@ $("#hb1FormBtn").click(function() {
                     "hb1_9": hb1_9,
                     "hb1_10": hb1_10,              
                     "hb1_11": hb1_11, 
-                    hb1_voltage:hb1_voltage,
                     hb1_battery:hb1_battery,                                
                     "language":language
                 },
@@ -12692,13 +12681,11 @@ switch (typeOfForm) {
     let language = $("#language").val();
 
     //for hb1
-    let battery="BATTERY";
-    let voltage="VOLTAGE";
+    let battery="BATTERY VOLTAGE";
     let earthValue="EARTH VALUE";
 
     if(language == "Hindi"){
-        battery="बैटरी";
-        voltage="वोल्टेज";  
+        battery="बैटरी वोल्टेज";
         earthValue = "अर्थ का मान";
     }
 
@@ -12720,14 +12707,6 @@ dataList.forEach((element, index) => {
                         </span>
                     </div>
                     <input type="text" class="form-control" id="hb1_battery" aria-describedby="hb1_battery_label">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="hb1_voltage_label">
-                            ${voltage}
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" id="hb1_voltage" aria-describedby="hb1_voltage_label">
                 </div>
             </div>
         </td>

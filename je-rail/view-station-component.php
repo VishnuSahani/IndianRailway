@@ -46,7 +46,7 @@ if (isset($_SESSION['userretailerje'])) {
             <div class="col-12">
                 <form>
                     <div class="row">
-                            <div class="form-group col-md-4 col-12">
+                            <div class="col-md-4 col-12">
 
                                 <label for="language">Select Form Language <span class="text-danger">*</span></label>
                                 <select name="language" id="language" class="form-control">
@@ -56,12 +56,9 @@ if (isset($_SESSION['userretailerje'])) {
 
                                 </select>
 
-                            </div
+                            </div>
 
-                            <div class="col-12">
-                                <form id="componentForm">
-                                    <div class="row" id="subComponentList">
-                                        <div class="form-group col-md-6 col-12">
+                            <div class="col-md-4 col-12">
 
                                             <label for="sectionId">Select Section <span class="text-danger">*</span></label>
                                             <select name="sectionId" id="sectionId" onChange="filterStation(this.value)"
@@ -69,8 +66,8 @@ if (isset($_SESSION['userretailerje'])) {
                                                 <option value="">Select Section</option>
                                             </select>
 
-                                        </div>
-                                        <div class="form-group col-md-6 col-12">
+                            </div>
+                            <div class="col-md-4 col-12">
 
                                             <label>Select Station <span class="text-danger">*</span></label>
 
@@ -80,15 +77,9 @@ if (isset($_SESSION['userretailerje'])) {
 
                                             </select>
 
-                                        </div>
-
-
-                                    </div>
-
-                                </form>
                             </div>
 
-                            <div class="form-group col-12">
+                            <div class="mt-2 col-12">
                                 <div class="alert alert-success text-center h6">
                                     Station Component List
                                 </div>

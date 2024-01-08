@@ -51,7 +51,7 @@ require('include/db_config.php');
 
 
                         <div class="form-group col-12">
-
+                        
                             <div class="d-flex flex-wrap my-2" id="componentDisplay">
 
                             </div>
@@ -61,12 +61,14 @@ require('include/db_config.php');
                             </div>
                         </div>
 
+                        
                         <div class="form-group col-12" id="formKeyDisplay">
 
                         </div>
-                        <div class="form-group my-1 col-12" id="createSubcompo">
+                        
+                        <!-- <div class="form-group my-1 col-12" id="createSubcompo">
 
-                        </div>
+                        </div> -->
 
 
 
@@ -78,7 +80,7 @@ require('include/db_config.php');
                 </form>
             </div>
 
-            <div class="table-responsive d-none" id="mainTable">
+            <!-- <div class="table-responsive d-none" id="mainTable">
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -96,7 +98,11 @@ require('include/db_config.php');
 
                     </tbody>
                 </table>
-            </div>
+            </div> -->
+        </div>
+
+        <div id="formShowBox">
+
         </div>
     </div>
 
@@ -105,68 +111,32 @@ require('include/db_config.php');
 </div>
 <!--container close-->
 
-<!-- Modal EP1 -->
-<div class="modal fade" id="componentForm_EP1" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="componentFormLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabel">
-                    <span class="badge badge-success h3" id="modalComponentName">
-                        Schedule Code: EP1
-                    </span>
-
-                    <!-- <span id="modalSubCompoName"></span>
-                    <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-
-                Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE (Signal)/Incharge :
-                Quarterly
-
-            </div>
-            <div class="modal-body table-responsive">
-                <!-- <form id="modalFormComponent">
-                   
-                </form> -->
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">S.No</th>
-                            <th scope="col">Check the following</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ep1_body">
-
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- <div class="card-footer d-flex justify-content-between">
-                <div id="ep1Form_status"></div>
-                <button type='button' id="ep1FormBtn" class="btn btn-success">Final Submit</button>
-            </div> -->
-
-        </div>
-    </div>
-</div>
-
 
 <script>
     var g_st_compList = [];
     var colorArr = ['btn-info', 'btn-success', 'btn-warning', 'btn-primary', 'btn-secondary', 'btn-dark', 'btn-danger'];
     var formDataList = {};
 
+    function formOpenTab(form){
+
+        console.log("from=",form);
+
+        $.ajax({
+            type:"GET",
+            url:`${form}.php`,
+            beforeSend:()=>{
+
+            },
+            success:(respo)=>{
+                $("#formShowBox").html(respo);
+            }
+        })
+    }
 
  //need
     function displayFormData(keyList, btnColor = 'success') {
 
-        document.getElementById("printTableData").innerHTML = "";
+        // document.getElementById("printTableData").innerHTML = "";
         $("#mainTable").addClass('d-none');
 
 
@@ -179,7 +149,8 @@ require('include/db_config.php');
 
         keyList.forEach(element => {
 
-            formKeyDisplayHtml += `<a role="button" href="${element.toLowerCase()}.php" class="btn btn-sm btn-${btnColor} mx-2">${element}</a>`
+            // formKeyDisplayHtml += `<a role="button" href="${element.toLowerCase()}.php" class="btn btn-sm btn-${btnColor} mx-2">${element}</a>`
+            formKeyDisplayHtml += `<button type="button" onclick="formOpenTab('${element.toLowerCase()}')" class="btn btn-sm btn-${btnColor} mx-2">${element}</button>`
 
         });
 
@@ -192,9 +163,11 @@ require('include/db_config.php');
 //need
     function getComponentForm(val) {
         document.getElementById("formKeyDisplay").innerHTML = "";
-        $("#createSubcompo").html("");
-        document.getElementById("printTableData").innerHTML = "";
-        $("#mainTable").addClass('d-none');
+        try{
+            $("#createSubcompo").html("");
+        }catch(e){}
+        // document.getElementById("printTableData").innerHTML = "";
+        // $("#mainTable").addClass('d-none');
 
 
 
@@ -310,8 +283,9 @@ require('include/db_config.php');
                 g_st_compList = [];
                 document.getElementById("componentDisplay").innerHTML = '';
                 document.getElementById("formKeyDisplay").innerHTML = "";
-                $("#createSubcompo").html("");
-
+                try{
+                    $("#createSubcompo").html("");
+                }catch(e){}
 
             },
             success: function (respo) {

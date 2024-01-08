@@ -2,10 +2,8 @@
 // require('header.php');
 // require('include/db_config.php');
 
-// echo "EP1";
-// echo $_SESSION['empid_for_form'];
-// print_r($_SESSION);
 session_start();
+
 ?>
 <div class="container">
     <div class="row">
@@ -24,7 +22,7 @@ session_start();
         <table class="table">
             <thead class="table-dark">
                 <tr>
-                    <td>#v</td>
+                    <td>#</td>
                     <td>Component</td>
                     <td>Language</td>
                     <td>Sub Component</td>
@@ -41,16 +39,16 @@ session_start();
     </div>
 </div>
 
-<!-- Modal EP1 -->
-<div class="modal fade" id="componentForm_EP1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+<!-- Modal T4 -->
+<div class="modal fade" id="componentForm_T4" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
-            <div id="pdfBodyEP1">
+            <div id="pdfBodyT4">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabel">
                         <span class="badge badge-success h3" id="modalComponentName">
-                            Schedule Code: EP1
+                            Schedule Code: T4
                         </span>
                         <span class="badge badge-danger h3 displaySubcompoName"></span>
 
@@ -151,7 +149,7 @@ session_start();
                                 </th>
                         </tr>
                     </thead>
-                        <tbody id="ep1_body">
+                        <tbody id="t4_body">
 
                         </tbody>
                     </table>
@@ -159,9 +157,7 @@ session_start();
             </div>
 
             <div class="card-footer d-flex justify-content-end ">
-                <!-- <div id="ep1Form_status"></div> -->
-                <!-- <button type='button' id="ep1FormBtn" class="btn btn-success">Final Submit</button> -->
-                <button type='button' id="ep1PdfBtn" onclick="generatePdf('EP1','pdfBodyEP1')"
+                <button type='button' id="t4PdfBtn" onclick="generatePdf('T4','pdfBodyT4')"
                     class="btn btn-success btn-sm">PDF</button>
                 <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
                     Close
@@ -187,15 +183,15 @@ session_start();
             }
         })[0];
 
-        $("#componentForm_EP1").modal("show");
+        $("#componentForm_T4").modal("show");
 
         dataList.forEach((element, index) => {
 
-            let value = tableDataForm[element['ep_id'].toLowerCase()]
+            let value = tableDataForm[element['t_id'].toLowerCase()]
             displayHtml += `
     <tr>
     <th scope="row">${index + 1}</th>
-    <td>${element['ep_details']}</td>
+    <td>${element['t_details']}</td>
     <td style="vertical-align:middle;width:22%" >`;
 
             if (value == 'Not Done') {
@@ -204,7 +200,7 @@ session_start();
                     `<select class="form-control">
             <option>${value}</option>
             <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','EP1','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+        </select> <button type="button" onclick="updateSingleValue('Done','T4','${element['t_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
 
             } else if (value == 'नहीं किया') {
 
@@ -212,7 +208,7 @@ session_start();
                     `<select class="form-control">
             <option>${value}</option>
             <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','EP1','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+        </select> <button type="button" onclick="updateSingleValue('हो गया','T4','${element['t_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
 
             } else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
@@ -229,7 +225,7 @@ session_start();
 
         });
 
-        document.getElementById("ep1_body").innerHTML = displayHtml;
+        document.getElementById("t4_body").innerHTML = displayHtml;
 
     }
 
@@ -250,8 +246,8 @@ session_start();
                 type: "POST",
                 url: "query/common-form-data-action.php",
                 data: {
-                    "common_action": "getEP_FormDetails",
-                    "formType": "EP1",
+                    "common_action": "getT_FormDetails",
+                    "formType": "T4",
                     "language": language
                 },
                 beforeSend: function () {
@@ -340,7 +336,7 @@ session_start();
 
         if (subCompo.length != 0) {
 
-            let createSubcompo = `<div class="text-center h5 alert alert-danger my-2">Point "EP1" Form</div>`;
+            let createSubcompo = `<div class="text-center h5 alert alert-danger my-2">Point "T4" Form</div>`;
             createSubcompo += `<div class="col-12 mt-1 mb-2">`;
 
             subCompo.forEach(element => {
@@ -368,7 +364,7 @@ session_start();
             url: "query/common-form-data-action.php",
             data: {
                 common_action: "getFormSubmitedData_new",
-                "formType": "EP1"
+                "formType": "T4"
             },
             beforeSend: function () {
                 $("#loader_show").removeClass('d-none');

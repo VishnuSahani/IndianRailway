@@ -1,10 +1,12 @@
 <?php
-require('header.php');
-require('include/db_config.php');
+// require('header.php');
+// require('include/db_config.php');
 
 // echo "EP5";
 // echo $_SESSION['empid_for_form'];
 // print_r($_SESSION);
+session_start();
+
 ?>
 <div class="container">
     <div class="row">
