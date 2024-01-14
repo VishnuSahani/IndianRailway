@@ -99,6 +99,23 @@ session_start();
                         </span>
 
                     </div>
+
+                    <div class="col-6">
+                        <span>Created Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="created_date">
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Updated Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="updated_date">
+
+                        </span>
+
+                    </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
@@ -185,6 +202,10 @@ session_start();
                 return x;
             }
         })[0];
+
+        $("#created_date").html(tableDataForm['created_date']);
+        $("#updated_date").html(tableDataForm['updated_date']);
+
 
         $("#componentForm_EP5").modal("show");
 

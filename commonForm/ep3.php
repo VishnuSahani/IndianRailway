@@ -44,6 +44,7 @@ session_start();
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <form id="formEP3">
             <div class="modal-content">
+                <div id="pdfBodyEP3">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelEP3">
                         <span class="badge badge-success h3" id="modalComponentName">
@@ -58,6 +59,60 @@ session_start();
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
+                
+                <div class="row mx-2 px-2 py-1">
+                    <div class="col-6">
+                        <span>Name:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['emp_name_tmp'] ?? '...'; ?>
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Id:</span>
+                        <span class="ml-2 font-weight-bold">
+
+                            <?php echo $_SESSION['empid_for_form']; ?>
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Section:</span>
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['section_name_tmp']; ?>
+                        </span>
+                    </div>
+                    <div class="col-6">
+                        <span>Station:</span>
+
+                        <span class="ml-2 font-weight-bold">
+                            <?php echo $_SESSION['station_name_tmp']; ?>
+
+                        </span>
+
+                    </div>
+
+                    <div class="col-6">
+                        <span>Created Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="created_date">
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Updated Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="updated_date">
+
+                        </span>
+
+                    </div>
+                </div>
+
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
                    
@@ -68,9 +123,9 @@ session_start();
                 </span>
 
                 <span class="heading_hindi">
-              आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
-(अनुभागीय सीसेई/जेई एवं प्रभारी सीसेई वैकल्पिक निरीक्षण करेंगे)
-सीसेई (सिग्नल)/प्रभारी: त्रैमासिक (अनुभागीय सीसेई/जेई और प्रभारी सीसेई वैकल्पिक निरीक्षण करेंगे)
+                            आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+                (अनुभागीय सीसेई/जेई एवं प्रभारी सीसेई वैकल्पिक निरीक्षण करेंगे)
+                सीसेई (सिग्नल)/प्रभारी: त्रैमासिक (अनुभागीय सीसेई/जेई और प्रभारी सीसेई वैकल्पिक निरीक्षण करेंगे)
 
 
                 </span>
@@ -240,9 +295,11 @@ session_start();
                         </tbody>
                     </table>
                 </div>
+                </div>
+
 
                 <div class="card-footer d-flex justify-content-end">
-                    <button type='button' id="ep1PdfBtn" onclick="generatePdf('EP1','pdfBodyEP1')"
+                    <button type='button' id="ep3PdfBtn" onclick="generatePdf('EP3','pdfBodyEP3')"
                         class="btn btn-success btn-sm">PDF</button>
                     <button type="button" class="btn btn-sm btn-secondary mx-2" data-dismiss="modal" aria-label="Close">
                         Close
@@ -268,6 +325,8 @@ session_start();
                 return x;
             }
         })[0];
+        $("#created_date").html(tableDataForm['created_date']);
+        $("#updated_date").html(tableDataForm['updated_date']);
 
         $("#componentForm_EP3").modal("show");
 
@@ -332,6 +391,10 @@ session_start();
                 return x;
             }
         })[0];
+
+        $("#created_date").html(ep3DataObj['created_date']);
+        $("#updated_date").html(ep3DataObj['updated_date']);
+
         
     $("#ep3_1").html(ep3DataObj['ep3_1']);
     $("#ep3_2").html(ep3DataObj['ep3_2']);

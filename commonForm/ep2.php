@@ -90,6 +90,23 @@ session_start();
                         </span>
 
                     </div>
+
+                    <div class="col-6">
+                        <span>Created Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="created_date">
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Updated Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="updated_date">
+
+                        </span>
+
+                    </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
                 <span class="heading_english">
@@ -519,6 +536,9 @@ session_start();
                 return x;
             }
         })[0];
+
+        $("#created_date").html(ep2DataObj['created_date']);
+        $("#updated_date").html(ep2DataObj['updated_date']);
         
     $("#EP2_1").html(ep2DataObj['ep2_1']);
     $("#EP2_2").html(ep2DataObj['ep2_2']);

@@ -1,5 +1,11 @@
 <?php
-require('header.php');
+session_start();
+if($_SESSION['from'] == "JE"){
+
+    require('je-header.php');
+}else{
+    require('header.php');
+}
 require('include/db_config.php');
 
 // print_r($_SESSION);
@@ -362,6 +368,33 @@ require('include/db_config.php');
 
         getEmployeeInfo();
     });
+
+
+    function printContent(el){
+
+var restorepage = document.body.innerHTML;
+
+var printcontent = document.getElementById(el).innerHTML;
+
+document.body.innerHTML = printcontent;
+
+window.print();
+
+document.body.innerHTML = restorepage;
+location.reload()
+
+}
+
+function generatePdf(formType, html_Id) {
+
+printContent(html_Id);
+return;
+
+
+
+}
+
+
 </script>
 
 </body>

@@ -101,12 +101,12 @@ if (isset($_POST['common_action'])) {
        if($from == 'JE' && isset($_SESSION['userretailerje'])){
         $_SESSION['empid_for_form']= $empid;
         $_SESSION['from']= 'JE';
-        $_SESSION['redirectPage']= '../je-rail/emp-info.php';
+        $_SESSION['redirectPage']= '../je-rail/';
 
        }elseif($from == 'Admin' && isset($_SESSION['userretailer'])){
         $_SESSION['empid_for_form']= $empid;
         $_SESSION['from']= 'Admin';
-        $_SESSION['redirectPage']= '../je-rail/emp-info.php';
+        $_SESSION['redirectPage']= '../admin-rail/';
 
        }else{
             sendResponse(false,"Wrong Access");

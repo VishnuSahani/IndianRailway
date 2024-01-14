@@ -98,6 +98,23 @@ session_start();
                         </span>
 
                     </div>
+
+                    <div class="col-6">
+                        <span>Created Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="created_date">
+
+                        </span>
+
+                    </div>
+                    <div class="col-6">
+                        <span>Updated Date:</span>
+
+                        <span class="ml-2 font-weight-bold" id="updated_date">
+
+                        </span>
+
+                    </div>
                 </div>
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
@@ -471,7 +488,8 @@ session_start();
         })[0];
 
         $("#componentForm_CS1").modal("show");
-
+        $("#created_date").html(cs1DataObj['created_date']);
+        $("#updated_date").html(cs1DataObj['updated_date']);
 
     $("#cs1_1").html(cs1DataObj['cs1_1']);
     $("#cs1_2").html(cs1DataObj['cs1_2']);
