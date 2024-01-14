@@ -678,9 +678,6 @@ if (isset($_POST['common_action'])) {
 
 
         }
-
-
-        //
         elseif ($compoNameTmp == "DL") {
 
             $formType = "DL";
@@ -780,7 +777,275 @@ if (isset($_POST['common_action'])) {
 
             // ep1 end
 
-        } else {
+        }
+        elseif($compoNameTmp == "BLOCK INSTRUMENT"){
+            // EP 1,2,4,5 form data
+            $formType = "BI";
+            
+            $qEP1 = mysqli_query($con,"SELECT * FROM db1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP1) <=0){
+
+                // $formData['EP1']=[];
+
+            }else{
+
+                $ep1Data = [];
+
+                while($runEp1 = mysqli_fetch_array($qEP1)){
+
+                    $ep1Data[] = $runEp1;
+
+                }
+                
+                $formData['DB1'] = $ep1Data ;
+
+            }
+
+
+            // dB1 end
+
+            // dac2 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM db2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['DB2'] = $ep2Data ;
+
+            } 
+            //db2 end
+
+            // db3 start
+
+            $qEP2 = mysqli_query($con,"SELECT * FROM db3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['DB3'] = $ep2Data ;
+
+            }
+
+            // dac3 end
+            
+                        // hb1 start
+
+                        $hb1Q = mysqli_query($con,"SELECT * FROM hb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+                        if(mysqli_num_rows($hb1Q) <=0){
+            
+                            // $formData['EP2']=[];
+            
+                        }else{
+            
+                            $hb1Data = [];
+            
+                            while($hb1_run = mysqli_fetch_array($hb1Q)){
+            
+                                $hb1Data[] = $hb1_run;
+            
+                            }
+                            
+                            $formData['HB1'] = $hb1Data ;
+            
+                        }
+            
+                        // hb1 end
+
+                                      // hb2 start
+
+                                      $hb2Q = mysqli_query($con,"SELECT * FROM hb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+                                      if(mysqli_num_rows($hb2Q) <=0){
+                          
+                                          // $formData['EP2']=[];
+                          
+                                      }else{
+                          
+                                          $hb2Data = [];
+                          
+                                          while($hb2_run = mysqli_fetch_array($hb2Q)){
+                          
+                                              $hb2Data[] = $hb2_run;
+                          
+                                          }
+                                          
+                                          $formData['HB2'] = $hb2Data ;
+                          
+                                      }
+                          
+                                      // hb1 end
+
+                                                    // hb1 start
+
+                        $hb3Q = mysqli_query($con,"SELECT * FROM hb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+                        if(mysqli_num_rows($hb3Q) <=0){
+            
+                            // $formData['EP2']=[];
+            
+                        }else{
+            
+                            $hb3Data = [];
+            
+                            while($hb3_run = mysqli_fetch_array($hb3Q)){
+            
+                                $hb3Data[] = $hb3_run;
+            
+                            }
+                            
+                            $formData['HB3'] = $hb3Data ;
+            
+                        }
+            
+                        // hb1 end
+
+           //uf1 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF1'] = $ep2Data ;
+
+            }
+
+            // uf1 end
+            //uf2 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF2'] = $ep2Data ;
+
+            }
+
+
+            //uf2 end
+           //uf3 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF3'] = $ep2Data ;
+
+            }
+
+            //uf3 end
+
+
+            //uf4 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF4'] = $ep2Data ;
+
+            }
+
+            //uf4 end
+
+            //uf5 start
+            $qEP2 = mysqli_query($con,"SELECT * FROM uf5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if(mysqli_num_rows($qEP2) <=0){
+
+                // $formData['EP2']=[];
+
+            }else{
+
+                $ep2Data = [];
+
+                while($runEp2 = mysqli_fetch_array($qEP2)){
+
+                    $ep2Data[] = $runEp2;
+
+                }
+                
+                $formData['UF5'] = $ep2Data ;
+
+            }
+
+            //uf5 end
+
+            
+
+            //hb1 end
+            
+        }
+        
+        else {
             responseSend(false, "Invalid Component Name, Kindly check component name", []);
         }
 
@@ -925,7 +1190,113 @@ if (isset($_POST['common_action'])) {
             case 'T5':
                 $tableName = 't5_form';
                 break;
+            case 'MLB1':
+                $tableName = 'mlb1_form';
+                break;
+            case 'MLB2':
+                $tableName = 'mlb2_form';
+                break;
+            case 'MLB3':
+                $tableName = 'mlb3_form';
+                break;
+            case 'MLB4':
+                $tableName = 'mlb4_form';
+                break;
+            case 'MLB5':
+                $tableName = 'mlb5_form';
+                break;
 
+            case 'SLB1':
+                $tableName = 'slb1_form';
+                break;
+            case 'SLB2':
+                $tableName = 'slb2_form';
+                break;
+            case 'SLB3':
+                $tableName = 'slb3_form';
+                break;
+            case 'SLB4':
+                $tableName = 'slb4_form';
+                break;
+            case 'SLB5':
+                $tableName = 'slb5_form';
+                break;
+
+            case 'ELB1':
+                $tableName = 'elb1_form';
+                break;
+            case 'ELB2':
+                $tableName = 'elb2_form';
+                break;
+            case 'ELB3':
+                $tableName = 'elb3_form';
+                break;
+            case 'ELB4':
+                $tableName = 'elb4_form';
+                break;
+            case 'ELB5':
+                $tableName = 'elb5_form';
+                break;
+            case 'DL1':
+                $tableName = 'dl1_form';
+                break;
+            case 'DL2':
+                $tableName = 'dl2_form';
+                break;
+            case 'DL3':
+                $tableName = 'dl3_form';
+                break;
+            case 'DL4':
+                $tableName = 'dl4_form';
+                break;
+            case 'DAC1':
+                $tableName = 'dac1_form';
+                break;
+            case 'DAC2':
+                $tableName = 'dac2_form';
+                break;
+            case 'DAC3':
+                $tableName = 'dac3_form';
+                break;
+            case 'DB1':
+                $tableName = 'db1_form';
+                break;
+            case 'DB2':
+                $tableName = 'db2_form';
+                break;
+            case 'DB3':
+                $tableName = 'db3_form';
+                break;
+            case 'HB1':
+                $tableName = 'hb1_form';
+                break;
+            case 'HB2':
+                $tableName = 'hb2_form';
+                break;
+            case 'HB3':
+                $tableName = 'hb3_form';
+                break;
+            case 'UF1':
+                $tableName = 'uf1_form';
+                break;
+            case 'UF2':
+                $tableName = 'uf2_form';
+                break;
+            case 'UF3':
+                $tableName = 'uf3_form';
+                break;
+            case 'UF4':
+                $tableName = 'uf4_form';
+                break;
+            case 'UF5':
+                $tableName = 'uf5_form';
+                break;
+            case 'CS1':
+                $tableName = 'cs1_form';
+                break;
+            case 'CS2':
+                $tableName = 'cs2_form';
+                break;
             default:
                 $respo['status'] = false;
                 $respo['msg'] = "Invalid request!";
@@ -1592,7 +1963,120 @@ if (isset($_POST['common_action'])) {
             die();
 
         }
-    } else {
+    } elseif ($action == 'getBI_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'DB1':
+                $tableName = 'db1_info';
+                break;
+
+            case 'DB2':
+                $tableName = 'db2_info';
+                break;
+            
+            case 'DB3':
+                $tableName = 'db3_info';
+                break;
+
+             case 'UF1':
+                $tableName = 'uf1_info';
+                break;   
+
+            case 'UF2':
+                $tableName = 'uf2_info';
+                break;   
+                
+            case 'UF3':
+                $tableName = 'uf3_info';
+                break;           
+
+            case 'UF4':
+                $tableName = 'uf4_info';
+                break;   
+                        
+            case 'UF5':
+                $tableName = 'uf5_info';
+                break; 
+
+            case 'HB1':
+                $tableName = 'hb1_info';
+                break;
+
+            case 'HB2':
+                $tableName = 'hb2_info';
+                break;
+            
+            case 'HB3':
+                $tableName = 'hb3_info';
+                break;              
+
+
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                
+        }
+
+        try{
+
+                $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
+            $queryExe = mysqli_query($con,$query);
+            if(mysqli_num_rows($queryExe) <= 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+            
+            while($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->db_id = $q_run['db_id'];
+                $obj->db_details = $q_run['db_details'];
+                $obj->db_option = $q_run['db_option'];
+                $obj->elb_status = $q_run['status'];
+
+                $data[] = $obj;
+                
+            }
+
+        $respo['status'] = true;
+        $respo['msg'] = "List found";
+        $respo['data'] = $data;
+
+        echo json_encode($respo);
+        die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }
+    
+    else {
         responseSend(false, "Invalid Action");
     }
 
