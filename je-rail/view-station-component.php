@@ -79,6 +79,11 @@ if (isset($_SESSION['userretailerje'])) {
 
                             </div>
 
+                            <div class="col-12 my-2 d-flex justify-content-end">
+                                <span id="formViewRespoMsg" class="mr-3 text-danger"></span>
+                                <button type="button" id="viewFormBtn" class="btn btn-info btn-sm">View My Form</button>
+                            </div>
+
                             <div class="mt-2 col-12">
                                 <div class="alert alert-success text-center h6">
                                     Station Component List
@@ -5571,6 +5576,72 @@ SSE(Signal)/Incharge: Yearly
 
     $(document).ready(() => {
         getJESectionStation();
+
+        // view je own form
+        $("#viewFormBtn").click(()=>{
+
+            let sectionName = ($("#sectionName").val()).trim();
+            let stationName = ($("#stationName").val()).trim();
+
+            let stationId = ($("#stationId").val()).trim();
+            let sectionId = ($("#sectionId").val()).trim();
+
+            if(sectionId == undefined || sectionId == null || sectionId == ""){
+                $("#sectionId").addClass("is-invalid");
+                $("#formViewRespoMsg").html("Section is required");
+                return;
+            }else{
+                $("#sectionId").removeClass("is-invalid");
+                $("#formViewRespoMsg").html("");
+
+            }
+
+            if(stationId == undefined || stationId == null || stationId == ""){
+                $("#stationId").addClass("is-invalid");
+                $("#formViewRespoMsg").html("Station is required");
+                return;
+            }else{
+                $("#stationId").removeClass("is-invalid");
+                $("#formViewRespoMsg").html("");
+
+            }
+
+            if(sectionName == undefined || sectionName == null || sectionName == "" || stationName == undefined || stationName == null || stationName == ""){
+               alert("Something went wrong, try again");
+               location.reload();
+               return;
+            }
+
+            $.ajax({
+                type:"POST",
+                url:"../commonForm/query/common-action.php",
+                data:{
+                    common_action:"setSessionForFormDetails_JE",
+                    sectionId:sectionId,
+                    stationId:stationId,
+                    sectionName:sectionName,
+                    stationName:stationName,
+                    from:"JE",
+                    viewType:"JE"
+                },
+                beforeSend:()=>{
+                    $("#loader_show").removeClass('d-none');
+                },
+                success:(response)=>{
+                    $("#loader_show").addClass('d-none');
+                    let respo = JSON.parse(response);
+                    console.log("respo=", respo);
+                    if (respo['status']) {
+                        window.location.href = "../commonForm/view-form.php";
+                    }else{
+                        alert("Something went wrong try again");
+                    }
+                }
+            });
+
+
+
+        })
     });
 </script>
 
@@ -14123,6 +14194,13 @@ function get_DL_formData(dL_Type,subCompo,compo){
         }
     });
 }
+
+
+
+
+// view je own form
+
+
 </script>
 
 </body>

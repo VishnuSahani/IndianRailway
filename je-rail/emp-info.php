@@ -124,7 +124,8 @@ function showCommonform(empid,from){
     data:{
       common_action:"setSessionForFormDetails",
       empid:empid,
-      from:from
+      from:from,
+      viewType:"Employee"
     },
     beforeSend:()=>{
       $("#loader_show").removeClass('d-none');
