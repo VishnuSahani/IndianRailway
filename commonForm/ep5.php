@@ -120,14 +120,13 @@ session_start();
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
                     <span class="heading_english">
-                        Periodicity: Technician(Signal): Fortnightly Sectional SSE/JE(Signal): Monthly SSE
-                        (Signal)/Incharge :
-                        Quarterly
+                          Periodicity: Sectional JSSE/JE(Signal): Half-yearly SSE(Signal)/Incharge : Yearly
                     </span>
 
                     <span class="heading_hindi">
-                        आवधिकता: तकनीशियन (सिग्नल): पाक्षिक अनुभागीय सीसेई/जेई (सिग्नल): मासिक सीसेई (सिग्नल)/प्रभारी:
-                        त्रैमासिक
+                        आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्ध-वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
                     </span>
 
                 </div>
