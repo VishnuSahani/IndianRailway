@@ -6,7 +6,7 @@
  $host = "localhost";  
  $username = "root";  
  $password = "";  
- $database = "indian_rail_project";  
+ $database = "indian_rail_project7";  
  $message = "";  
  try  
  {  

@@ -6,7 +6,7 @@
  $host = "localhost";  
  $username = "root";  
  $password = "";  
- $database = "indian_rail_project5";  
+ $database = "indian_rail_project7";  
  $message = ""; 
 //  $username = "ra34yshprjAvPTcs";  
 //  $password = "Ag3@!ssRVbxm@98sJEclp";  
