@@ -93,6 +93,15 @@
  
 </style>
 <style>
+
+  .pageactive
+{
+ color:#fa0000!important ;
+ background-color: white;
+ font-weight:bold;
+ 
+
+}
 #mainav a{
 text-decoration:none;
 }
@@ -195,7 +204,9 @@ display:none;
       </li>
  
    
-     
+            <li class="nav-item ">
+      <a class="nav-item nav-link " href="/BMC" style="color:#FFFFFF;">BMS </a>
+      </li>
       
       
            
@@ -203,16 +214,13 @@ display:none;
        <li class="nav-item ">
       <a class="nav-item nav-link " href="contact-us.php" style="color:#FFFFFF;">Contact us </a>
       </li>
-       <li class="nav-item ">
-      <a class="nav-item nav-link " href="./BMC/" style="color:#FFFFFF;">BMC </a>
-      </li>
 
 
    </ul>
  </div>
    <ul class="navbar-nav ml-auto" style="margin-right: 50px;">
  <li class="nav-item ">
-      <a class="dropdown-item" href="index.php"> Admin Login</a>
+      <a class="dropdown-item <?php if($page=='index'){ echo 'pageactive';}?>" href="index.php" > Admin Login</a>
 
       </li>
 
@@ -228,7 +236,10 @@ display:none;
 
       </li>
 
+      <li class="nav-item ">
+      <a class="dropdown-item" href="index-sse-incharge.php"> SSE-Incharge Login</a>
 
+      </li>
       
    </ul>
 

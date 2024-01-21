@@ -150,7 +150,7 @@ background:#feeeb7a8;
 <li class="nav-item"><a href="emp-info.php" class="nav-link  active">View Employee Data</a></li> 
 <li class="nav-item"><a href="view-station-component.php" class="nav-link  active">Maintenance</a></li> 
 <li class="nav-item"><a href="add-station-component.php" class="nav-link  active">Station Component</a></li> 
-
+<li class="nav-item"><a href="view-assigned-station-to-je.php" class="nav-link  active">View Assigned Station To JE</a></li>
 
 
 </ul>

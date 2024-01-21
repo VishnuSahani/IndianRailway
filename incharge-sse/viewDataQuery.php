@@ -1,6 +1,6 @@
 <?php 
 session_start();
- require('header.php');?>
+i<?php require('header.php');?>
 <?php require('include/db_config.php');
 
  //Include database configuration file

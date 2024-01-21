@@ -117,8 +117,6 @@ background:#feeeb7a8;
    <!--  -->
  </div>
 </div>
-
-
 <nav class="navbar  navbar-expand-sm  navbar-dark sticky-top" style="background-color: #2f539f;">
   <a class="navbar-brand" style="color:#FFFFFF;"><i class="fa fa-home"></i> </a>
 <!-- <a href="index.php" class="navbar-brand" >IBN DIGITAL</a> -->
@@ -130,32 +128,59 @@ background:#feeeb7a8;
 <div id="menubar" class="collapse navbar-collapse">
 <ul class="navbar-nav">
 
-
  <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>index.php" class="nav-link  active">Add Employee Data</a></li> 
 
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>emp-info.php" class="nav-link  active">View Employee Data</a></li> 
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>add-station-component.php" class="nav-link  active">Add station Component</a></li> 
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>view-station-component.php" class="nav-link  active">View station Component</a></li> 
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>view-emp-form.php" class="nav-link  active">View Form</a></li> 
-<li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>pme-due.php" class="nav-link  active">PME Due</a></li> 
-<li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-data.php" class="nav-link  active">View assign station</a></li> 
-
 
 
 </ul>
 
 <ul  class="navbar-nav ml-auto " >
 
-  
+<li class="nav-item dropdown">
+              
+  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        PME
+        </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>pme-due.php">PME Due Today</a>
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>pme-due-future.php">PME Due To Date</a>
+          
+       </div>
+     </li>
+  <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>refresher-due.php" class="nav-link  active">Refresher Due</a></li> 
 
+<li class="nav-item dropdown">
+              
+  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Assign/View Station
+        </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>assign.php">Assign Station To JE</a>
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-je.php">View Assigned Station To JE</a>
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>sse-incharge-assign.php">Assign Station To SSE Incharge</a>
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-sse.php">View Assigned Station To SSE Incharge</a>
+       </div>
+     </li>
 
+<!-- <li class="nav-item"><a href="assign.php" class="nav-link  active">Assign Station</a></li> 
+<li class="nav-item"><a href="view-assigned-station-to-je.php" class="nav-link  active">View Assigned Station</a></li> 
+ 
+<li class="nav-item"><a href="sse-incharge-assign.php" class="nav-link  active">Assign Station To SSE</a></li> 
+<li class="nav-item"><a href="view-assigned-station-to-sse.php" class="nav-link  active">View SSE Assigned Station</a></li>
+ -->
 <li class="nav-item">
+    
 <a class="nav-link  active" href="<?php echo $_SESSION['redirectPage']; ?>logout.php"><i class="fa fa-sign-out" style="font-size:20px; color:#af0202;"></i>Logout</a>
 </li>
 
 </ul>
 </div>
 </nav>
+
 
 
 <style>

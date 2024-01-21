@@ -171,11 +171,26 @@ $_SESSION['portal_name'] = $name;
        </div>
      </li>
   <li class="nav-item"><a href="refresher-due.php" class="nav-link  active">Refresher Due</a></li> 
-<li class="nav-item"><a href="assign.php" class="nav-link  active">Assign Station</a></li> 
+
+<li class="nav-item dropdown">
+              
+  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Assign/View Station
+        </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="assign.php">Assign Station To JE</a>
+          <a class="dropdown-item" href="view-assigned-station-to-je.php">View Assigned Station To JE</a>
+          <a class="dropdown-item" href="sse-incharge-assign.php">Assign Station To SSE Incharge</a>
+          <a class="dropdown-item" href="view-assigned-station-to-sse.php">View Assigned Station To SSE Incharge</a>
+       </div>
+     </li>
+
+<!-- <li class="nav-item"><a href="assign.php" class="nav-link  active">Assign Station</a></li> 
 <li class="nav-item"><a href="view-assigned-station-to-je.php" class="nav-link  active">View Assigned Station</a></li> 
  
-
-
+<li class="nav-item"><a href="sse-incharge-assign.php" class="nav-link  active">Assign Station To SSE</a></li> 
+<li class="nav-item"><a href="view-assigned-station-to-sse.php" class="nav-link  active">View SSE Assigned Station</a></li>
+ -->
 <li class="nav-item">
     
 <a class="nav-link  active" href="logout.php"><i class="fa fa-sign-out" style="font-size:20px; color:#af0202;"></i>Logout</a>
