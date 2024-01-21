@@ -268,7 +268,7 @@ $.ajax({
                 <td>
                   <?php echo '<button type="button" onclick=ViewCommonForm("'.$record->section_name.'","'.$record->section_id.'","'.$record->station_name.'","'.$record->station_id.'","'.$record->empid.'") class="btn btn-sm btn-success">Form</button>'; ?>
                 </td>
-                <td><a href='delete_assign_station.php?id=<?php echo $record->id; ?>'><button
+                <td><a href='delete_assign_station_from_sse.php?id=<?php echo $record->id; ?>'><button
                       class='btn btn-sm btn-outline-danger'>Delete</button></a></td>
 
 
