@@ -1,4 +1,5 @@
-<?php require('header.php');?>
+<?php require('./header.php');
+?>
 <?php require('include/db_config.php');
 
  //Include database configuration file
@@ -10,10 +11,10 @@
    
 }
     //echo $id;
-  //   $query = mysqli_query($con,"SELECT * FROM ibn_signup_retailer  WHERE binary ibn_id = '$id'");
+    $query = mysqli_query($con,"SELECT * FROM ibn_signup_retailer  WHERE binary ibn_id = '$id'");
 
-	// $row = mysqli_fetch_array($query);
-	// $idd = $row['id'];
+	$row = mysqli_fetch_array($query);
+	$idd = $row['id'];
 
 ?>
 
@@ -180,7 +181,7 @@ function submitForm12(){
 while($row=mysqli_fetch_array($que))
 {
   $optionId = $row['section_id']."__".$row['section_name'];
-echo"<option value='".$optionId."'>",$row['section_name'],"</option>";}?>
+echo"<option value=".$optionId.">",$row['section_name'],"</option>";}?>
       </select>
     </div>
     <div class="form-group col-md-6">
@@ -216,7 +217,7 @@ echo"<option value='".$optionId."'>",$row['section_name'],"</option>";}?>
     
   </div>
   
-    <div class="form-group row">
+   <div class="form-group row">
     
      <label  class="col-sm-2 col-form-label">Designation<span style="color:#FF0000; padding-left:10px;">*</span></label>
       <div class="col-sm-10">

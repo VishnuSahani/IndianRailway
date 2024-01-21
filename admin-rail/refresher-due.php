@@ -126,7 +126,7 @@ $(document).ready(function(){
       <!-- Example DataTables Card-->
       <div class="card mb-3" >
         <div class="card-heading" style="background-color:#af0202;color:#FFFFFF;">
-       <center> <i class="fa fa-graduation-cap" style="font-size:26px; color:#ffffff;"></i><font style="font-size:24px;">  <strong> PME DUE DETAILS</strong></font></center>
+       <center> <i class="fa fa-graduation-cap" style="font-size:26px; color:#ffffff;"></i><font style="font-size:24px;">  <strong> Refresher DUE DETAILS</strong></font></center>
            </div>
         <div class="card-body">
         <div class="row">
@@ -144,7 +144,7 @@ $(document).ready(function(){
                   <th>Age</th>
                   <th>Designation</th>
                   <th>Phone</th>
-                  <th>Last PME Date</th>
+                  <th>Last Refresher Date</th>
                   <th>PME Due</th>
                   
                  
@@ -158,10 +158,10 @@ $(document).ready(function(){
    include('include/db_config.php');
 
 
-   $sql="update emp_info_rail set age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), dob_emp)), '%Y') + 0";
- mysqli_query($con,$sql);
+//   $sql="update emp_info_rail set age = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), dob_emp)), '%Y') + 0";
+//  mysqli_query($con,$sql);
 
-  $sql2="update emp_info_rail set pmedue = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), pme_date)), '%Y') + 0";
+  $sql2="update emp_info_rail set rmedue = DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), rme_date)), '%Y') + 0";
  mysqli_query($con,$sql2);
 
 
@@ -170,9 +170,7 @@ $(document).ready(function(){
                   while($record = mysqli_fetch_object($recordset))
                   {
 
-                        if(($record->age>=40 and $record->age<=50 and $record->pmedue>3)
-                            or ($record->age>=50 and $record->age<=55 and $record->pmedue>2) 
-                            or ($record->age>=55 and $record->age<=60 and $record->pmedue>=0))                       
+                        if(($record->rmedue>3) )                       
    
                         {
 
@@ -184,11 +182,11 @@ $(document).ready(function(){
                                 <td>",$record->empname,"</td>
                                 <td>",$record->dob_emp,"</td>
 
-                                <td>",$record->age,"</td>
+                                <td>",$record->rme_date,"</td>
                                 <td>",$record->empdesg,"</td>
                                 <td>",$record->phone,"</td>
-                                <td>",$record->pme_date,"</td>
-                                <td>",$record->pmedue,"</td>
+                                <td>",$record->rme_date,"</td>
+                                <td>",$record->rmedue,"</td>
                                                  
 
                  ";?>

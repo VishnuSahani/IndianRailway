@@ -24,12 +24,14 @@
       $("#jeId").val(branch);
       $("#jedesigntation").val(emp_desg);
       $("#jePhone").val(emp_phone);
-
+      $("#info-row").removeClass('d-none');
+     
       }else{
         $("#jeName").val('');
       $("#jeId").val('');
       $("#jedesigntation").val('');
       $("#jePhone").val('');
+       $("#info-row").addClass('d-none');
       }
 
 
@@ -89,6 +91,39 @@
     ajax.send(formdata);
   }/*********************/
 
+  function ViewCommonForm(sectionName,sectionId,stationName,stationId,empId){
+
+$.ajax({
+    type:"POST",
+    url:"../commonForm/query/common-action.php",
+    data:{
+        common_action:"setSessionForFormDetails_JE",
+        sectionId:sectionId,
+        stationId:stationId,
+        sectionName:sectionName,
+        stationName:stationName,
+        from:"Admin",
+        viewType:"JE",
+        empId:empId
+    },
+    beforeSend:()=>{
+        $("#loader_show").removeClass('d-none');
+    },
+    success:(response)=>{
+        $("#loader_show").addClass('d-none');
+        let respo = JSON.parse(response);
+        console.log("respo=", respo);
+        if (respo['status']) {
+            window.location.href = "../commonForm/view-form.php";
+        }else{
+            alert("Something went wrong try again");
+        }
+    }
+});
+
+
+
+  }
 
 </script>
 
@@ -123,7 +158,10 @@
                   // 								{
                   // 								echo"<option>",$record->name,"</option>";
                   // 								}
-                  
+                  try
+                  {
+
+
 
                   $teacher_que = mysqli_query($con, "select empid,empname,empdesg,phone from je_info_rail where empname!='' order by empname");
                   while ($tea_run = mysqli_fetch_array($teacher_que)) {
@@ -132,6 +170,11 @@
                     echo "<option value='" . $empData . "'>(" . $tea_run['empname'] . ")" . $tea_run['empid'] . "</option>"; // this one
                   
                   }
+              } // try close
+              catch(Exception $e)
+              {
+                print_r($e);
+              }
 
                   ?>
 
@@ -148,18 +191,18 @@
 
         </div><!--row--->
 
-        <div class="row">
+        <div class="row d-none" id="info-row">
           <!-- emp info -->
           <div class="col-12 col-md-8 m-auto">
             <div class="form-row">
               <div class="col-6 form-group">
-                <label>JE Nane</label>
+                <label>JE/SSE Name</label>
                 <input type="text" disabled readonly="true" class="form-control" id="jeName">
 
               </div>
 
               <div class="col-6 form-group">
-                <label>JE ID</label>
+                <label>JE/SSE ID</label>
                 <input type="text" disabled readonly="true" class="form-control" id="jeId">
 
               </div>
@@ -190,12 +233,12 @@
               <tr>
                 <th>S.No.</th>
                 <th>Emp ID</th>
-                <th>JE Name</th>
+                <th>JE/SSE Name</th>
                 <th>Section Name</th>
                 <th>Station Name</th>
                 <th>Designtaion</th>
                 <th>Phone</th>
-
+                <th>Form</th>  
 
                 <th>Delete Assigned Station</th>
               </tr>
@@ -222,9 +265,11 @@
                                 
                                   								 
 								 "; ?>
-
+                <td>
+                  <?php echo '<button type="button" onclick=ViewCommonForm("'.$record->section_name.'","'.$record->section_id.'","'.$record->station_name.'","'.$record->station_id.'","'.$record->empid.'") class="btn btn-sm btn-success">Form</button>'; ?>
+                </td>
                 <td><a href='delete_assign_station.php?id=<?php echo $record->id; ?>'><button
-                      class='btn btn-outline-danger'>Delete</button></a></td>
+                      class='btn btn-sm btn-outline-danger'>Delete</button></a></td>
 
 
 

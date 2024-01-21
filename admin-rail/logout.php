@@ -1,6 +1,7 @@
  <?php   
  //logout.php  
  session_start();  
- unset($_SESSION['userretailer']);
+ session_destroy();
+ // session_destroy($_SESSION['userretailer']);
  header("location:../index.php");  
  ?>  

@@ -6,7 +6,7 @@
 //echo"$re2";
 
 //$query="SELECT * FROM test WHERE Sub_ID='$Subid' ORDER BY Test_Name ASC";
-$query="SELECT * FROM Station_tbl WHERE section_id='$Subid' ORDER BY station_name ASC";
+$query="SELECT * FROM station_tbl WHERE section_id='$Subid' ORDER BY station_name ASC";
 $result=mysqli_query($con,$query);
 
 ?>

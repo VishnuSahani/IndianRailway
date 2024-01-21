@@ -18,7 +18,7 @@ if(!empty($_POST['branch']))
              <th>Section Name</th>
              <th>Station Name</th>
        
-                           
+             <th>Form</th>  
           
            <th>Delete Assigned Station</th>
                 </tr>
@@ -42,7 +42,9 @@ if(!empty($_POST['branch']))
                                 <td>",$record->station_name,"</td>
                                      
                  ";?>
-                                
+                           <td>
+                  <?php echo '<button type="button" onclick=ViewCommonForm("'.$record->section_name.'","'.$record->section_id.'","'.$record->station_name.'","'.$record->station_id.'","'.$record->empid.'") class="btn btn-sm btn-success">Form</button>'; ?>
+                </td>         
 <td><a href='delete_assign_station.php?id=<?php echo $record->id; ?>'><button class='btn btn-outline-danger'>Delete</button></a></td>
                                
                  
@@ -72,7 +74,7 @@ else{
            <th>Designtaion</th>             
            <th>Phone</th> 
                            
-          
+           <th>Form</th> 
            <th>Delete Assigned Station</th>
                 </tr>
               </thead>
@@ -98,7 +100,10 @@ else{
                                 <td>",$record->empdesg,"</td>
                                 <td>",$record->phone,"</td>               
                  ";?>
-                                
+                      
+                      <td>
+                  <?php echo '<button type="button" onclick=ViewCommonForm("'.$record->section_name.'","'.$record->section_id.'","'.$record->station_name.'","'.$record->station_id.'","'.$record->empid.'") class="btn btn-sm btn-success">Form</button>'; ?>
+                </td> 
 <td><a href='delete_assign_station.php?id=<?php echo $record->id; ?>'><button class='btn btn-outline-danger'>Delete</button></a></td>
 
                                

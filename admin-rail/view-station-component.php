@@ -253,7 +253,7 @@ function createSubComponent(val) {
     let btnColor = val.target.classList[(val.target.classList).length - 1].split("-")[1]
     subComponentData.forEach((value, index) => {
 
-        btn += `<div class="dropdown mx-2" id='subCompo_${value}'>
+        btn += `<div class="dropdown m-2" id='subCompo_${value}'>
   <button class="btn btn-${btnColor} dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
     ${value}
   </button>
@@ -262,7 +262,6 @@ function createSubComponent(val) {
     <a class="dropdown-item" onclick="openDialog('EP 2','${value}','${stationComName}')">EP 2</a>
     <a class="dropdown-item" onclick="openDialog('EP 3','${value}','${stationComName}')">EP 3</a>
     <a class="dropdown-item" onclick="openDialog('EP 4','${value}','${stationComName}')">EP 4</a>
-    <a class="dropdown-item" onclick="openDialog('EP 5','${value}','${stationComName}')">EP 4</a>
   </div>
 </div>`;
 
@@ -337,7 +336,7 @@ function getComponent(stationValue) {
                     let btn = document.createElement("button");
                     btn.id = "station_" + value;
                     btn.type = "button";
-                    btn.className = "btn btn-sm mx-2";
+                    btn.className = "btn btn-sm m-2";
 
                     btn.classList.add(colorArr[index % 6])
 

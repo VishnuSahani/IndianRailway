@@ -9,7 +9,6 @@ if(isset($_POST['action'])){
     $action = trim($_POST['action']);
     $respo = [];
 
-
     if($action == "getEmployeeData"){
 
         if(!isset($_POST['stationId']) && !isset($_POST['sectionId'])){
@@ -135,12 +134,13 @@ if(isset($_POST['action'])){
 
             
             $emppName = implode("_", explode(" ",$sectionRun['empname']));
-
+            $emppId = $sectionRun['empid'];
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
-             $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
-             $emppId = $sectionRun['empid'];
+            //  $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
+            $obj->form  = '<a onclick=showCommonform("'.$emppId.'","Admin") type="button" class="btn btn-sm btn-warning">Form</a>';
+
              $obj->action = "<a type='button' class='btn btn-sm btn-danger' onclick=deleteEmplyeeModal('".$emppId."','".$emppName."')>Delete</a>";
  
             $data[] = $obj;
@@ -257,11 +257,13 @@ if(isset($_POST['action'])){
             }
 
 
+            $emppId = $sectionRun['empid'];
             // $obj->rme_date = $sectionRun['rme_date'];
             $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
             $obj->href = $a;
-            $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
-            $emppId = $sectionRun['empid'];
+            // $obj->form = '<a type="button" class="btn btn-sm btn-info" href="view-emp-form.php?id='.$sectionRun['empid'].'">Form</a>';
+            $obj->form  = '<a onclick=showCommonform("'.$emppId.'","Admin") type="button" class="btn btn-sm btn-warning">Form</a>';
+
             $obj->action = "<a type='button' class='btn btn-sm btn-danger' onclick=deleteEmplyeeModal('".$emppId."','".$emppName."')>Delete</a>";
 
             $data[] = $obj;
@@ -276,8 +278,7 @@ if(isset($_POST['action'])){
         die();
 
     }
-
-    if($action == "deleteEmployee"){
+        if($action == "deleteEmployee"){
         if(!isset($_POST['empId']) || empty(trim($_POST['empId']))){
 
             $respo['status'] = false;
@@ -596,8 +597,8 @@ if(isset($_POST['action'])){
 
 
     }
-
-    if($action == 'editPmeRmeDate'){
+    
+     if($action == 'editPmeRmeDate'){
 
         if(!isset($_POST['editPmeRmeDateValue'])){
 
@@ -701,6 +702,7 @@ if(isset($_POST['action'])){
 
     }
 
+
       if( $action == "getPmeRmeDate"){
 
         if(!isset($_POST['empId'])){
@@ -749,10 +751,13 @@ if(isset($_POST['action'])){
 
         if($sectionRun['pme_date'] == ''){
             $obj->pme_date = "No Record <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','pmeDate','')>Edit</button>";
+
             $obj->addPmeFileBtn = "<button type='button' class='btn btn-sm btn-info' disabled title='No PME Date added'>Add</button>";
         }else{
-            $p_date = $sectionRun['pme_date'];
+            // $obj->pme_date = $sectionRun['pme_date'];
+                        $p_date = $sectionRun['pme_date'];
             $obj->pme_date = $p_date."  <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','pmeDate','".$p_date."')>Edit</button>";
+
 
             if($sectionRun['pme_file']==''){
 
@@ -766,11 +771,15 @@ if(isset($_POST['action'])){
         }
 
         if($sectionRun['rme_date']==''){
-            $obj->rme_date = "No Record <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','rmeDate','')>Edit</button>";
+            // $obj->rme_date = 'No Record';
+                        $obj->rme_date = "No Record <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','rmeDate','')>Edit</button>";
+
             $obj->addRmeFileBtn = "<button type='button' class='btn btn-sm btn-info' disabled title='No Refresher Date added'>Add</button>";
         }else{
+            // $obj->rme_date = $sectionRun['rme_date'];
             $r_date = $sectionRun['rme_date'];
             $obj->rme_date = $r_date." <button type='button' class='btn btn-sm btn-success' onclick=editPmeRmeDialog('".$iddd."','rmeDate','".$r_date."')>Edit</button>";
+
 
             if($sectionRun['rme_file']==''){
 
@@ -792,12 +801,7 @@ if(isset($_POST['action'])){
 
         }
 
-
-
-
         $obj->action = "<a type='button' class='btn btn-sm btn-danger' onclick=deleteEmplyeeModal('".$iddd."')>Delete</a>";
-
-
         
 
       

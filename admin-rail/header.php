@@ -1,14 +1,11 @@
 <?php
 session_start();
+
 if(!isset($_SESSION['userretailer']))
 {
-   $_SESSION['userretailer'];
-  //exit;
-  header('location:index.php?session_error');  
-  die();
+  header('location:../index.php?session_error');   
+}	
 
- }	
-  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +41,7 @@ if(!isset($_SESSION['userretailer']))
 
 <!--------------------------------------------------------------------------->
 
-<title>INDIAN RAILWAYS --ADMIN PORTAL</title>
+
  <style>
 
 .card:hover {
@@ -70,7 +67,18 @@ background:#feeeb7a8;
   opacity: 0.5;
 }
 
+/* ============ desktop view ============ */
+@media all and (min-width: 1000px) {
+  .navbar .nav-item .dropdown-menu{ display: none; }
+  .navbar .nav-item:hover .nav-link{ color: #2874f0;font-weight:bold;  }
+  .navbar .nav-item:hover .dropdown-menu{ display: block; }
+  .navbar .nav-item .dropdown-menu{ margin-top:0; }
 
+    .dropdown:hover .dropdown-menu{ display: block; }
+    .dropdown-toggl:hover .dropdown-menu{ display: block; }
+
+
+}
 
 </style>
 </head>
@@ -111,7 +119,7 @@ background:#feeeb7a8;
 
   $row = mysqli_fetch_array($query);
   $name = $row['first_name'];
-
+$_SESSION['portal_name'] = $name;
     ?>
 <!-- <li class="nav-item"> -->
   <p style="margin-top: 20px;" class="float-right">
@@ -139,40 +147,37 @@ background:#feeeb7a8;
 <div id="menubar" class="collapse navbar-collapse">
 <ul class="navbar-nav">
 
-
-      <!-- <li class="nav-item dropdown">
-                 
-  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="product-info.php?q=Spice Money" >Spice Money</a>
-          <a class="dropdown-item" href="product-info.php?q=Roinet" >Roinet</a>
-          <a class="dropdown-item" href="product-info.php?q=Rapi Pay" >Rapi Pay</a>
-          <a class="dropdown-item" href="product-info.php?q=Bankit" >Bankit</a>
-      
-       </div>
-   
-      </li> -->
  <li class="nav-item"><a href="index.php" class="nav-link  active">Add Employee Data</a></li> 
 
 <li class="nav-item"><a href="emp-info.php" class="nav-link  active">View Employee Data</a></li> 
 <li class="nav-item"><a href="add-station-component.php" class="nav-link  active">Add station Component</a></li> 
 <li class="nav-item"><a href="view-station-component.php" class="nav-link  active">View station Component</a></li> 
 <li class="nav-item"><a href="view-emp-form.php" class="nav-link  active">View Form</a></li> 
-<li class="nav-item"><a href="pme-due.php" class="nav-link  active">PME Due</a></li> 
-<li class="nav-item"><a href="view-assigned-station-data.php" class="nav-link  active">View assign station</a></li> 
-
 
 
 </ul>
 
 <ul  class="navbar-nav ml-auto " >
 
-  
+<li class="nav-item dropdown">
+              
+  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        PME
+        </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="pme-due.php">PME Due Today</a>
+          <a class="dropdown-item" href="pme-due-future.php">PME Due To Date</a>
+          
+       </div>
+     </li>
+  <li class="nav-item"><a href="refresher-due.php" class="nav-link  active">Refresher Due</a></li> 
+<li class="nav-item"><a href="assign.php" class="nav-link  active">Assign Station</a></li> 
+<li class="nav-item"><a href="view-assigned-station-to-je.php" class="nav-link  active">View Assigned Station</a></li> 
+ 
 
 
 <li class="nav-item">
+    
 <a class="nav-link  active" href="logout.php"><i class="fa fa-sign-out" style="font-size:20px; color:#af0202;"></i>Logout</a>
 </li>
 
@@ -183,15 +188,7 @@ background:#feeeb7a8;
 
 <div>
     
-    <?php
- include('include/db_config.php');
-?>
-    <marquee align="baseline" onmouseover="this.stop();" onmouseout="this.start();">
-  <strong>
-<img src="images/new_red.gif">
-   </strong>
-   </marquee>
-
+   
 
     
     </div>

@@ -202,7 +202,7 @@ function submitForm12(){
 
 
  <div class="col-lg-10 col-md-10 card jumbotron m-auto" style="color:#000000;">
-  <p class="h3 card-header alert alert-primary text-center">Assign Station To JE <br>
+  <p class="h3 card-header alert alert-primary text-center">Assign Station To JE/SSE <br>
     <small><span style="color:#FF0000; padding-left:10px;">* means mandatory field</span></small></p>
   <form name="reg" id="emp_form" onsubmit="  check(); return false;" >
   <div class="form-row">

@@ -3,6 +3,8 @@ session_start();
 if($_SESSION['from'] == "JE"){
 
     require('je-header.php');
+}elseif($_SESSION['from'] == "Admin"){
+    require('admin-header.php');
 }else{
     require('header.php');
 }

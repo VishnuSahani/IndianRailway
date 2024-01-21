@@ -113,7 +113,8 @@ xhr.send();
 
     var gbl_data = [];
   var  myTableData;
-
+  
+   
   function deleteEmplyeeConfirm(){
 
     let deleteEmpId = $("#deleteEmpId").val();
@@ -202,16 +203,27 @@ ajax.onreadystatechange = function(){
         { data: 'station_name' },
         { data: 'pme_date' },
         { data: 'rme_date' },
-        { data: 'competency' },
+        { data: 'competency' },        
         { data: 'href' },
-        { data: 'form' },
-        { data: 'action' },
+          { data: 'form' },
+          { data: 'action' },
+
+
     ]
 } );
 
 getAllData();
 
-  })
+
+  });
+  
+  
+function resetEmpForm(){
+    //   $("#sectionId").val("")
+    //   $("#stationId").val("");
+    //   getAllData();
+    location.reload();
+}
 
 
   function _(id)
@@ -264,9 +276,6 @@ getAllData();
  }
 
 
- 
-
-
 function getData(testData){
 
 
@@ -316,15 +325,6 @@ ajax.onreadystatechange = function(){
 };
 
 }
-
-
-function resetEmpForm(){
-  // $("#sectionId").val("")
-  // $("#stationId").val("");
-  // getAllData();
-  location.reload();
-}
-
 </script>
 
 
@@ -349,13 +349,11 @@ function resetEmpForm(){
   $que=mysqli_query($con,"select * from section_tbl ORDER BY section_name ASC");
 while($row=mysqli_fetch_array($que))
 {
-echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_name']."</option>";
+echo"<option  name='sectionId' value=".$row['section_id'].">".$row['section_name']."</option>";
 }
 
 
 ?>
-
-
       </select>
     </div>
     <div class="form-group col-md-5">
@@ -364,18 +362,19 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
       <select name="Test_Name" class="form-control" id="stationId" onchange="getData(this.value)">
         <option >Select Station</option>
         <?php
-              $que2=mysqli_query($con,"select * from Station_tbl ORDER BY station_name ASC");
+              $que2=mysqli_query($con,"select * from station_tbl ORDER BY station_name ASC");
             while($row2=mysqli_fetch_array($que2))
             {
               echo "<option value='".$row2['station_id']."__".$row2['station_name']."'>",$row2['station_name'],"</option>";
             }
 
 
-        ?>
+        ?>        
       </select>
 
     </div>
-
+    
+    
     <div class="form-group d-flex align-items-end justify-content-center col-md-2">
     
 
@@ -388,7 +387,21 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
      
 
 
-<div class="table-responsive">
+
+
+
+
+
+</span><!-----data from AJAX---->
+
+    </div><!--col close-->
+    
+ </div>      
+   </div><!--row close-->
+   
+
+</div><!--container close-->
+<div class="table-responsive px-3">
 <table class="table display table-striped" border="0" align="center" bgcolor="#E9E9E9" id="myTable">
 <thead class="thead-dark">
 
@@ -396,14 +409,13 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 <!-- <th>S.No.</th> -->
 <th>Employee Id</th>
 
-<th>Name</th>
-<th>Designation</th>
+<th>Employee Name</th>
+<th>Employee Designation</th>
 <th>Station</th>
-
 <th> PME</th>
 <th>Refresher</th>
 <th>Competency</th>
-<th>Add PME/Competency</th>
+<th title="Add PME/ Refresher/Competency">+PME/Ref/Com</th>
 <th>Form</th>
 <th>Action</th>
 
@@ -420,21 +432,36 @@ echo"<option  name='sectionId' value='".$row['section_id']."'>".$row['section_na
 </table>
 </div>
 
-
-
-
-</span><!-----data from AJAX---->
-
-    </div><!--col close-->
+<script>
+  function showCommonform(empid,from){
     
- </div>      
-   </div><!--row close-->
-   
+  $.ajax({
+    type:"POST",
+    url:"../commonForm/query/common-action.php",
+    data:{
+      common_action:"setSessionForFormDetails",
+      empid:empid,
+      from:from,
+      viewType:"Employee"
+    },
+    beforeSend:()=>{
+      $("#loader_show").removeClass('d-none');
 
-</div><!--container close-->
+    },
+    success:(response)=>{
+      $("#loader_show").addClass('d-none');
+      let respo = JSON.parse(response);
+      if(respo['status']){
+        window.location.href = "../commonForm/view-form.php";
+      }else{
+        alert("Something went wrong try again");
+      }
 
-
-
+    }
+    
+  });
+}
+</script>
 
 <?php require('footer.php');?>
 

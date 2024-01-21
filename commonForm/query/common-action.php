@@ -163,7 +163,7 @@ if (isset($_POST['common_action'])) {
 
     }elseif ($action == "setSessionForFormDetails_JE"){
         session_start();
-        if(!isset($_SESSION['userretailerje']) || !isset($_POST['from']) || !isset($_POST['viewType']) || !isset($_POST['sectionId']) || !isset($_POST['stationId']) || !isset($_POST['sectionName']) || !isset($_POST['stationName'])){  
+        if(!isset($_POST['from']) || !isset($_POST['viewType']) || !isset($_POST['sectionId']) || !isset($_POST['stationId']) || !isset($_POST['sectionName']) || !isset($_POST['stationName'])){  
            
             sendResponse(false,"Something went wrong, Id not set");
        }
@@ -172,9 +172,24 @@ if (isset($_POST['common_action'])) {
            
             sendResponse(false,"Something went wrong, empty set");
         }
+        $from = trim($_POST['from']);
+        $empid = "";
 
-       $empid = trim($_SESSION['userretailerje']);
-       $from = trim($_POST['from']);
+
+        if($from == "JE" && isset($_SESSION['userretailerje']) ){
+            $empid = trim($_SESSION['userretailerje']);
+
+        }elseif($from == "Admin" && isset($_SESSION['userretailer']) ){
+            $empid = trim($_POST['empId']);
+        }else{
+            sendResponse(false,"Something went wrong with session ID");
+        }
+
+        if($empid == "" || $empid == null){
+            sendResponse(false,"Something went wrong with emp/JE Id");
+        }
+
+
        $viewType = trim($_POST['viewType']);
        
        $sectionId = trim($_POST['sectionId']);

@@ -5,6 +5,7 @@ $empId = @$_GET['id'];
 
 // echo $empId;
 
+
 /*
 The FILTER_VALIDATE_INT filter is used to validate value as integer.
 
@@ -128,10 +129,9 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
                             <th>Section Name</th>
                             <th>Station Name</th>
                             <th>PME File</th>
-                            <!-- <th>Refresher File</th> -->
+                            <!--<th>Refresher File</th>-->
                             <th>Competency</th>
                             <!-- <th>Action</th> -->
-                            
                         </tr>
 
                     </thead>
@@ -148,7 +148,7 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
 
 
 
-<!-- Modal file -->
+<!-- Modal file-->
 <div class="modal fade" id="addFileModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="addFileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -204,6 +204,7 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
         </div>
     </div>
 </div>
+
 
 <!-- Modal date update -->
 <div class="modal fade" id="editPmeRmeDateModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -280,9 +281,11 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
     </div>
   </div>
 </div>
+
 <script>
 const chooseFile = document.getElementById("choose-file");
 const imgPreview = document.getElementById("img-preview");
+
 
 function deleteEmplyeeModal(deletePmeRmeId){
   $('#deletePmeRmeId').val(deletePmeRmeId);
@@ -321,6 +324,7 @@ if(deletePmeRmeId != null && deletePmeRmeId != undefined && deletePmeRmeId != ''
 }
 
 }
+
 
 function getImgData() {
     const files = chooseFile.files[0];
@@ -397,7 +401,7 @@ $(document).ready(() => {
             {
                 data: 'competency'
             },
-           /* {
+            /* {
                 data: 'action'
             },*/
 
@@ -420,7 +424,7 @@ function checkSize(size) {
 
 function uploadFile() {
 
-
+    
     const chooseFile = document.getElementById("choose-file");
     const files = chooseFile.files[0];
     if (files && (files.type == 'image/jpeg' || files.type == "application/pdf")) {
@@ -453,8 +457,8 @@ function uploadFile() {
 
                     }
 
-
-                    $('#img-preview').html("").css("height", "auto");
+                    
+                    $('#img-preview').html("").css("height","auto");
                     setTimeout(() => {
                         $("#fileRespo").html("")
                     }, 5000);
@@ -502,55 +506,54 @@ function editPmeRmeDialog(pmeRmeId,dateType,dateValue){
 
 }
 
-
-function openDialog(pmeRmeId, fileType) {
+function openDialog(pmeRmeId,fileType) {
     //certificate
-    if (fileType == 'pmeFile') {
+    if(fileType == 'pmeFile'){
 
         $("#addFileModalLabel").html("PME File Upload");
         $("#subActionName").val("pmeFile");
 
-    } else if (fileType == "rmeFile") {
+    }else if(fileType == "rmeFile"){
 
         $("#addFileModalLabel").html("Refresher File Upload");
         $("#subActionName").val("rmeFile");
-
-    } else {
+        
+    }else{
         $("#addFileModalLabel").html("Competency Certificate File Upload");
         $("#subActionName").val("certificate");
     }
 
     $("#pmeRmeId").val(pmeRmeId);
     $("#addFileModal").modal("show")
-
+    
 
 }
 
-function deleteFile(pmeRmeId, fileType) {
+function deleteFile(pmeRmeId,fileType){
     let msgShow = "Do you want to delete Refresher file";
-    if (fileType == 'pmeFile') {
-
+    if(fileType == 'pmeFile'){
+        
         msgShow = "Do you want to delete PME file";
 
-    } else if (fileType == "certificate") {
+    }else if(fileType=="certificate"){
         msgShow = "Do you want to delete Certificate";
 
     }
-    if (confirm(msgShow) && pmeRmeId != '') {
+    if(confirm(msgShow) && pmeRmeId !=''){
         $.ajax({
-            type: "POST",
-            url: "query/action.php",
-            data: {
-                "action": "deletePmeRmeFile",
-                "pmeRmeId": pmeRmeId,
-                "subAction": fileType,
+            type:"POST",
+            url:"query/action.php",
+            data:{
+                "action" : "deletePmeRmeFile",
+                "pmeRmeId" : pmeRmeId,
+                "subAction" : fileType,
             },
-            beforeSend: function() {
+            beforeSend:function(){
 
             },
-            success: function(respo) {
+            success:function(respo){
                 let response = JSON.parse(respo);
-                if (response['status']) {
+                if(response['status']){
                     getPmeRmeData();
                 }
 
@@ -695,6 +698,7 @@ function getPmeRmeData() {
 
 
 getPmeRmeData();
+
 
 $(document).ready(()=>{
     $("#editPmeRmeForm").submit((e)=>{
