@@ -108,7 +108,7 @@ background:#feeeb7a8;
    
 }
     //echo $id;
-  $query = mysqli_query($con,"SELECT * FROM je_info_rail  WHERE binary empid = '$id'");
+  $query = mysqli_query($con,"SELECT * FROM sse_info_rail  WHERE binary empid = '$id'");
 
   $row = mysqli_fetch_array($query);
   $name = $row['empname'];

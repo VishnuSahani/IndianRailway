@@ -138,7 +138,7 @@ text-decoration:none;
 
 						<div class="form-group col-lg-6">
 
-							<input type="text" class="form-control" id="captcha" placeholder="Enter captcha" name="captcha" required="">
+							<input type="text" class="form-control" id="captcha" placeholder="Enter captcha" name="captcha" >
 						</div>
 						
 					 </div>	

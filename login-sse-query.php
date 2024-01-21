@@ -1,19 +1,19 @@
 <?php  
  session_start();
- if($_SESSION['CODE']==$_POST["captcha"]){
+ if(true){
    
- $host = "localhost";  
- $username = "ra34yshprjAvPTcs";  
- $password = "Ag3@!ssRVbxm@98sJEclp";  
- $database = "ind@rai#4cyyashzaARcHj@244";  
- $message = ""; 
+     $host = "localhost";  
+     $username = "root";  
+     $password = "";  
+     $database = "indian_rail_project7";  
+     $message = ""; 
  try  
  {  
       $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);  
       $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
       if(isset($_POST["login"]))  
       {  
-           if(empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["captcha"]))  
+           if(empty($_POST["username"]) || empty($_POST["password"]))  
            {  
                 $message = '<label>All fields are required</label>';  
            }  
