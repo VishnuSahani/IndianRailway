@@ -5,8 +5,11 @@ if($_SESSION['from'] == "JE"){
     require('je-header.php');
 }elseif($_SESSION['from'] == "Admin"){
     require('admin-header.php');
+}elseif($_SESSION['from'] == "SSE"){
+    require('sse-header.php');
 }else{
     require('header.php');
+    die();
 }
 require('include/db_config.php');
 

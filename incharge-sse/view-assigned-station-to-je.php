@@ -102,7 +102,7 @@ $.ajax({
         stationId:stationId,
         sectionName:sectionName,
         stationName:stationName,
-        from:"Admin",
+        from:"SSE",
         viewType:"JE",
         empId:empId
     },

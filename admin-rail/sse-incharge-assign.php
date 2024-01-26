@@ -85,7 +85,7 @@ xhr.send();
     var Sub_Id = data;
     $.ajax({
       type : 'post',
-      url : 'get_Teacher_name.php',
+      url : 'get_Teacher_name_sse.php',
       dataType:'JSON',
       data:{
         t_id: Sub_Id,
@@ -237,7 +237,7 @@ echo"<option value=".$optionId.">",$row['section_name'],"</option>";}?>
                          
                               <option value="">Employee ID</option>
                               <?php 
-                              $teacher_que=mysqli_query($con,"select empid,empname from je_info_rail where empname!='' order by empname");
+                              $teacher_que=mysqli_query($con,"select empid,empname from sse_info_rail where empname!='' order by empname");
                               while($tea_run=mysqli_fetch_array($teacher_que))
                               {
 echo"<option value='".$tea_run['empid']."'>(".$tea_run['empname'].")".$tea_run['empid']."</option>";

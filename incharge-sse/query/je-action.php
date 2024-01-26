@@ -62,7 +62,7 @@ if(isset($_POST['JE_action'])){
             $obj->href = $a;
              $obj->formView1  = '<a  href="view-form-details.php?empid='.$sectionRun['empid'].'" type="button" class="btn btn-sm btn-warning">Form</a>';
              $obj->formView2  = '<a  href="../commonForm/view-form.php?empid='.$sectionRun['empid'].'&from=JE" type="button" class="btn btn-sm btn-warning">Form</a>';
-             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","JE") type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","SSE") type="button" class="btn btn-sm btn-warning">Form</a>';
 
             $data[] = $obj;
 
