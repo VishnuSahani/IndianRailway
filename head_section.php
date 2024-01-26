@@ -31,6 +31,14 @@
 <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
 
 <style type="text/css">
+   .pageactive
+{
+ color:#fa0000!important ;
+ background-color: white;
+ font-weight:bold;
+ 
+
+}
   .box
   {
    /*width:800px;*/
@@ -191,7 +199,7 @@ display:none;
 
 
 <!--<div class="wrapper row2" style="font-size:12px;">-->
-<nav class="navbar  navbar-expand-sm  sticky-top row2" >
+<nav class="navbar  navbar-expand-lg  sticky-top row2" >
    <a class="navbar-brand" href="index.php" style="color:#FFFFFF;"><i class="fa fa-institution"></i> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"><i class="fa fa-navicon"></i></span>
@@ -225,22 +233,25 @@ display:none;
       </li>
 
       <li class="nav-item ">
-      <a class="dropdown-item" href="index-emp.php"> Employee Login</a>
+      <a class="dropdown-item <?php if($page=='index-emp'){ echo 'pageactive';}?>" href="index-emp.php"> ESM/MCM Login</a>
 
       </li>
 
 
  </li>
       <li class="nav-item ">
-      <a class="dropdown-item" href="index-je.php"> JE/SSE Login</a>
+      <a class="dropdown-item <?php if($page=='index-je'){ echo 'pageactive';}?>" href="index-je.php"> JE/SSE Login</a>
 
       </li>
 
       <li class="nav-item ">
-      <a class="dropdown-item" href="index-sse-incharge.php"> SSE-Incharge Login</a>
+      <a class="dropdown-item <?php if($page=='index-sse'){ echo 'pageactive';}?>" href="index-sse-incharge.php"> SSE-Incharge Login</a>
 
       </li>
-      
+      <li class="nav-item ">
+      <a class="dropdown-item <?php if($page=='index-aste'){ echo 'pageactive';}?>" href="index-aste.php"> ASTE Login</a>
+
+      </li>
    </ul>
 
 
@@ -251,7 +262,7 @@ display:none;
     <!-- ################################################################################################ -->
     <div>
     
-
+   
 
     
     </div>

@@ -1,5 +1,6 @@
-<?php
-$page='index'; 
+<?php 
+$page='index-aste'; 
+
 require('head_section.php');?>
 <style>
 .btn{
@@ -90,18 +91,18 @@ text-decoration:none;
 				<div class="col-xl-4 " >
 					<div class="card" style="margin-top: 25px; min-height:380px; ">
 						<div class="card-header">
-						 <p class="text-center text-success h3">Admin Login</p> 	
+						 <p class="text-center text-success h3">ASTE Login</p> 	
 
 						</div>
 						<!-- card header -->
 						<div class="card-body">
- <form id="my_form" action="login-retailer-query.php" method="post">  
+ <form id="my_form" action="login-aste-query.php" method="post">  
    
       <div class="input-group ">
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fa fa-user"></i></div>
         </div>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Login ID" required>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter EMP ID" required>
       </div>        <!-- input-group -->
 
 <!--  -->
@@ -109,9 +110,11 @@ text-decoration:none;
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fa fa-key"></i></div>
         </div>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Mobile No" required>
       </div>        <!-- input-group -->
-  <div class="form-row" style="margin-top: 10px;">
+  
+
+  			<div class="form-row" style="margin-top: 10px;">
 					 	<div class="form-group col-lg-1">
 					 	
 <input type="checkbox" class="form-control" onclick="myFunction()">
@@ -123,6 +126,7 @@ text-decoration:none;
 						
 					 </div>	
 
+					 
 					 <div class="form-row" style="margin-top: 10px;">
 					 	<div class="form-group col-lg-3">
 					 	<label>Captcha:	</label>
@@ -134,7 +138,7 @@ text-decoration:none;
 
 						<div class="form-group col-lg-6">
 
-							<input type="text" class="form-control" id="captcha" placeholder="Enter captcha" name="captcha" required="">
+							<input type="text" class="form-control" id="captcha" placeholder="Enter captcha" name="captcha">
 						</div>
 						
 					 </div>	
@@ -161,6 +165,26 @@ text-decoration:none;
 	<!-- row -->
 </div>
 
+<!------------------------------------------>
+
+
+
+<!---MENUS----------->
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------------->
+
+					
+	
 </div>
 
 </div>
