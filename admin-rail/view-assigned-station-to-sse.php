@@ -97,13 +97,13 @@ $.ajax({
     type:"POST",
     url:"../commonForm/query/common-action.php",
     data:{
-        common_action:"setSessionForFormDetails_JE",
+        common_action:"setSessionForFormDetails_SSE",
         sectionId:sectionId,
         stationId:stationId,
         sectionName:sectionName,
         stationName:stationName,
         from:"Admin",
-        viewType:"JE",
+        viewType:"SSE",
         empId:empId
     },
     beforeSend:()=>{

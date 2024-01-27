@@ -1,5 +1,5 @@
 <?php 
-
+$page='index-emp'; 
 
 require('head_section.php');?>
 <style>

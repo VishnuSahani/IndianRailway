@@ -5616,13 +5616,13 @@ SSE(Signal)/Incharge: Yearly
                 type:"POST",
                 url:"../commonForm/query/common-action.php",
                 data:{
-                    common_action:"setSessionForFormDetails_SSE",
+                    common_action:"setSessionForFormDetails_ASTE",
                     sectionId:sectionId,
                     stationId:stationId,
                     sectionName:sectionName,
                     stationName:stationName,
-                    from:"SSE",
-                    viewType:"SSE"
+                    from:"ASTE",
+                    viewType:"ASTE"
                 },
                 beforeSend:()=>{
                     $("#loader_show").removeClass('d-none');

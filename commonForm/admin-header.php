@@ -117,8 +117,9 @@ background:#feeeb7a8;
    <!--  -->
  </div>
 </div>
+
 <nav class="navbar  navbar-expand-sm  navbar-dark sticky-top" style="background-color: #2f539f;">
-  <a class="navbar-brand" style="color:#FFFFFF;"><i class="fa fa-home"></i> </a>
+  <a class="navbar-brand" href="<?php echo $_SESSION['redirectPage']; ?>index.php" style="color:#FFFFFF;"><i class="fa fa-home"></i> </a>
 <!-- <a href="index.php" class="navbar-brand" >IBN DIGITAL</a> -->
 
 <button type="button"  class="navbar-toggler" data-toggle="collapse" data-target="#menubar"><span class="navbar-toggler-icon"></span></button>
@@ -163,15 +164,12 @@ background:#feeeb7a8;
           <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-je.php">View Assigned Station To JE</a>
           <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>sse-incharge-assign.php">Assign Station To SSE Incharge</a>
           <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-sse.php">View Assigned Station To SSE Incharge</a>
+
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>aste-assign.php">Assign Station To ASTE</a>
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-aste.php">View Assigned Station To ASTE</a>
        </div>
      </li>
 
-<!-- <li class="nav-item"><a href="assign.php" class="nav-link  active">Assign Station</a></li> 
-<li class="nav-item"><a href="view-assigned-station-to-je.php" class="nav-link  active">View Assigned Station</a></li> 
- 
-<li class="nav-item"><a href="sse-incharge-assign.php" class="nav-link  active">Assign Station To SSE</a></li> 
-<li class="nav-item"><a href="view-assigned-station-to-sse.php" class="nav-link  active">View SSE Assigned Station</a></li>
- -->
 <li class="nav-item">
     
 <a class="nav-link  active" href="<?php echo $_SESSION['redirectPage']; ?>logout.php"><i class="fa fa-sign-out" style="font-size:20px; color:#af0202;"></i>Logout</a>
@@ -180,8 +178,6 @@ background:#feeeb7a8;
 </ul>
 </div>
 </nav>
-
-
 
 <style>
   .loader{

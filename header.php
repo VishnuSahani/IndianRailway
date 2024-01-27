@@ -63,7 +63,7 @@ background:#feeeb7a8;
 
 <body>
 
-<nav class="navbar  navbar-expand-lg  navbar-dark bg-primary sticky-top">
+<nav class="navbar  navbar-expand-sm  navbar-dark bg-primary sticky-top">
 <a href="index.php" class="navbar-brand" >MP POLYTECHNIC</a>
 
 <button type="button"  class="navbar-toggler" data-toggle="collapse" data-target="#menubar"><span class="navbar-toggler-icon"></span></button>

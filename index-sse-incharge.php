@@ -1,5 +1,5 @@
 <?php 
-
+$page='index-sse'; 
 
 require('head_section.php');?>
 <style>

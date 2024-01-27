@@ -1,5 +1,5 @@
 <?php 
-
+$page='index-je'; 
 
 require('head_section.php');?>
 <style>

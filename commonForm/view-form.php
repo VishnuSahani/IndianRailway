@@ -7,6 +7,8 @@ if($_SESSION['from'] == "JE"){
     require('admin-header.php');
 }elseif($_SESSION['from'] == "SSE"){
     require('sse-header.php');
+}elseif($_SESSION['from'] == "ASTE"){
+    require('aste-header.php');
 }else{
     require('header.php');
     die();

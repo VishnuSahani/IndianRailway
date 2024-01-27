@@ -130,6 +130,9 @@ background:#feeeb7a8;
 
 <li class="nav-item"><a href="<?php echo $redirectPage ?>view-assigned-station.php" class="nav-link  active">View Assigned Station</a></li> 
 <li class="nav-item"><a href="<?php echo $redirectPage ?>emp-info.php" class="nav-link  active">View Employee Data</a></li> 
+ 
+<li class="nav-item"><a href="<?php echo $redirectPage ?>je-info.php" class="nav-link  active">View JE Data</a></li> 
+<li class="nav-item"><a href="<?php echo $redirectPage ?>sse-info.php" class="nav-link  active">View SSC Data</a></li> 
 <li class="nav-item"><a href="<?php echo $redirectPage ?>view-station-component.php" class="nav-link  active">Maintenance</a></li> 
 <li class="nav-item"><a href="<?php echo $redirectPage ?>add-station-component.php" class="nav-link  active">Station Component</a></li> 
 

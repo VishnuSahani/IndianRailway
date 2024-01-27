@@ -34,7 +34,7 @@ if (isset($_POST['common_action'])) {
         if($viewType == "Employee"){
             $q = "SELECT * FROM emp_info_rail WHERE empid='$empId'";
 
-       }elseif($viewType == "JE" || $viewType == "SSE"){
+       }elseif($viewType == "JE" || $viewType == "SSE" || $viewType == "ASTE"){
 
         $data = [];
         $data['section_id'] = $_SESSION['section_id_tmp'];
@@ -43,7 +43,7 @@ if (isset($_POST['common_action'])) {
         $data['station_name'] = $_SESSION['station_name_tmp'];
         $data['empname'] = $_SESSION['emp_name_tmp'];
         $data['empid'] = $_SESSION['empid_for_form'];
-        sendResponse(true,"SSE data found",$data);
+        sendResponse(true,$viewType." data found",$data);
     
        }else{
             sendResponse(false,"Invalid View Type");     
@@ -157,6 +157,11 @@ if (isset($_POST['common_action'])) {
         $_SESSION['from']= 'SSE';
         $_SESSION['redirectPage']= '../incharge-sse/';
 
+       }elseif($from == 'ASTE' && isset($_SESSION['userretaileraste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'ASTE';
+        $_SESSION['redirectPage']= '../aste-rail/';
+
        }else{
             sendResponse(false,"Wrong Access");
             die();
@@ -187,6 +192,8 @@ if (isset($_POST['common_action'])) {
         }elseif($from == "Admin" && isset($_SESSION['userretailer']) ){
             $empid = trim($_POST['empId']);
         }elseif($from == "SSE" && isset($_SESSION['userretailersse']) ){
+            $empid = trim($_POST['empId']);
+        }elseif($from == "ASTE" && isset($_SESSION['userretaileraste']) ){
             $empid = trim($_POST['empId']);
         }else{
             sendResponse(false,"Something went wrong with session ID");
@@ -314,6 +321,174 @@ if (isset($_POST['common_action'])) {
         $_SESSION['empid_for_form']= $empid;
         $_SESSION['from']= 'SSE';
         $_SESSION['redirectPage']= '../incharge-sse/';
+
+       }else{
+            sendResponse(false,"Wrong Access");
+            die();
+
+       }
+
+       sendResponse(true,"Data set.");
+
+
+    }elseif ($action == "setSessionForFormDetails_ASTE"){
+        session_start();
+        if(!isset($_POST['from']) || !isset($_POST['viewType']) || !isset($_POST['sectionId']) || !isset($_POST['stationId']) || !isset($_POST['sectionName']) || !isset($_POST['stationName'])){  
+           
+            sendResponse(false,"Something went wrong, Id not set");
+       }
+
+       if(empty($_POST['from']) || empty($_POST['viewType']) || empty($_POST['sectionId']) || empty($_POST['stationId']) || empty($_POST['sectionName']) || empty($_POST['stationName'])){  
+           
+            sendResponse(false,"Something went wrong, empty set");
+        }
+        $from = trim($_POST['from']);
+        $empid = "";
+
+        if($from == "Admin" && isset($_SESSION['userretailer']) ){
+            $empid = trim($_POST['empId']);
+        }elseif($from == "ASTE" && isset($_SESSION['userretaileraste']) ){
+            $empid = trim($_SESSION['userretaileraste']);
+        }else{
+            sendResponse(false,"Something went wrong with session ID");
+        }
+
+        if($empid == "" || $empid == null){
+            sendResponse(false,"Something went wrong with aste Id");
+        }
+
+
+       $viewType = trim($_POST['viewType']);
+       
+       $sectionId = trim($_POST['sectionId']);
+       $stationId = trim($_POST['stationId']);
+       $sectionName = trim($_POST['sectionName']);
+       $stationName = trim($_POST['stationName']);
+        
+
+
+       $_SESSION['section_id_tmp']= $sectionId;
+       $_SESSION['section_name_tmp']=  $sectionName;
+       $_SESSION['station_id_tmp']= $stationId;
+       $_SESSION['station_name_tmp']= $stationName;
+       $_SESSION['viewType']= $viewType;
+       $_SESSION['empid_for_form']= $empid;
+
+       $query = mysqli_query($con,"SELECT * FROM aste_info_rail WHERE empid='$empid'");
+       if (mysqli_num_rows($query) <= 0) {           
+           sendResponse(false,"Invalid ASTE id");     
+       }
+       $run = mysqli_fetch_array($query);
+       $_SESSION['emp_name_tmp']= $run['empname'];
+
+    //    print_r($_SESSION);
+    //    die();
+
+        if($from == 'Admin' && isset($_SESSION['userretailer'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'Admin';
+        $_SESSION['redirectPage']= '../admin-rail/';
+
+       }elseif($from == 'ASTE' && isset($_SESSION['userretaileraste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'ASTE';
+        $_SESSION['redirectPage']= '../aste-rail/';
+
+       }else{
+            sendResponse(false,"Wrong Access");
+            die();
+
+       }
+
+       sendResponse(true,"Data set.");
+
+
+    }elseif ($action == "setSessionForFormDetails_Common"){
+        session_start();
+        if(!isset($_POST['from']) || !isset($_POST['viewType']) || !isset($_POST['sectionId']) || !isset($_POST['stationId']) || !isset($_POST['sectionName']) || !isset($_POST['stationName'])){  
+           
+            sendResponse(false,"Something went wrong, Id not set");
+       }
+
+       if(empty($_POST['from']) || empty($_POST['viewType']) || empty($_POST['sectionId']) || empty($_POST['stationId']) || empty($_POST['sectionName']) || empty($_POST['stationName'])){  
+           
+            sendResponse(false,"Something went wrong, empty set");
+        }
+        $from = trim($_POST['from']);
+        $empid = "";
+
+        $empid = trim($_POST['empId']);
+
+        if($empid == "" || $empid == null){
+            sendResponse(false,"Something went wrong with emp/JE Id");
+        }
+
+
+       $viewType = trim($_POST['viewType']);
+       
+       $sectionId = trim($_POST['sectionId']);
+       $stationId = trim($_POST['stationId']);
+       $sectionName = trim($_POST['sectionName']);
+       $stationName = trim($_POST['stationName']);
+        
+
+
+       $_SESSION['section_id_tmp']= $sectionId;
+       $_SESSION['section_name_tmp']=  $sectionName;
+       $_SESSION['station_id_tmp']= $stationId;
+       $_SESSION['station_name_tmp']= $stationName;
+       $_SESSION['viewType']= $viewType;
+       $_SESSION['empid_for_form']= $empid;
+
+       $query = "";
+       if($viewType == "JE"){
+           $query = mysqli_query($con,"SELECT * FROM je_info_rail WHERE empid='$empid'");
+           
+        }elseif($viewType == "SSE"){
+           $query = mysqli_query($con,"SELECT * FROM sse_info_rail WHERE empid='$empid'");
+           
+        }elseif($viewType == "ASTE"){
+           $query = mysqli_query($con,"SELECT * FROM aste_info_rail WHERE empid='$empid'");
+
+       }else{
+        sendResponse(false,"Invalid viewType");   
+       }
+
+
+
+       if (mysqli_num_rows($query) <= 0) {           
+           sendResponse(false,"Invalid ".$viewType." id");     
+       }
+       $run = mysqli_fetch_array($query);
+       $_SESSION['emp_name_tmp']= $run['empname'];
+
+    //    print_r($_SESSION);
+    //    die();
+
+       if($from == 'JE' && isset($_SESSION['userretailerje'])){
+
+        $_SESSION['from']= 'JE';
+        $_SESSION['redirectPage']= '../je-rail/';
+
+       }elseif($from == 'Admin' && isset($_SESSION['userretailer'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'Admin';
+        $_SESSION['redirectPage']= '../admin-rail/';
+
+       }elseif($from == 'Employee' && isset($_SESSION['userretaileremp'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'Employee';
+        $_SESSION['redirectPage']= '../emp-rail/';
+
+       }elseif($from == 'SSE' && isset($_SESSION['userretailersse'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'SSE';
+        $_SESSION['redirectPage']= '../incharge-sse/';
+
+       }elseif($from == 'ASTE' && isset($_SESSION['userretaileraste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'ASTE';
+        $_SESSION['redirectPage']= '../aste-rail/';
 
        }else{
             sendResponse(false,"Wrong Access");

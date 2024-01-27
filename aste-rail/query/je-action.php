@@ -62,7 +62,7 @@ if(isset($_POST['JE_action'])){
             $obj->href = $a;
              $obj->formView1  = '<a  href="view-form-details.php?empid='.$sectionRun['empid'].'" type="button" class="btn btn-sm btn-warning">Form</a>';
              $obj->formView2  = '<a  href="../commonForm/view-form.php?empid='.$sectionRun['empid'].'&from=JE" type="button" class="btn btn-sm btn-warning">Form</a>';
-             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","SSE") type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","ASTE") type="button" class="btn btn-sm btn-warning">Form</a>';
 
             $data[] = $obj;
 
@@ -71,8 +71,118 @@ if(isset($_POST['JE_action'])){
         sendResponse(true,"Employee list found",$data);
 
 
-    }
-    elseif($action == "getSectionStation"){
+    }elseif($action == "getJEByStation"){
+
+        if(!isset($_POST['stationData'])){
+            sendResponse(false,"Station data not set, try again");
+        }
+
+        $stationData = $_POST['stationData'];
+
+         if(count($stationData) <= 0){
+            sendResponse(false,"Station data is empty, try again");
+        }
+
+        $q =  "SELECT * FROM assign_info_rail WHERE station_id IN ('". implode("','", $stationData). "')";
+       
+        $getQuerySection = mysqli_query($con,$q);
+        if(mysqli_num_rows($getQuerySection) <= 0){
+            sendResponse(true,"Empoyee list is empty.");
+        }
+
+        $data = [];
+        while($sectionRun = mysqli_fetch_array($getQuerySection)){
+
+            $obj = new stdClass();
+            $obj->id = $sectionRun['id'];
+            $obj->section_name = $sectionRun['section_name'];
+            $obj->section_id = $sectionRun['section_id'];
+            $obj->station_name = $sectionRun['station_name'];
+            $obj->station_id = $sectionRun['station_id'];
+
+            $obj->empid = $sectionRun['empid'];
+            $obj->empname = $sectionRun['empname'];
+            $obj->empdesg = $sectionRun['empdesg'];
+            $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
+            $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+
+            $empId_form = $sectionRun['empid'];
+            $section_id = $sectionRun['section_id'];
+            $section_name = $sectionRun['section_name'];
+            $station_id = $sectionRun['station_id'];
+            $station_name = $sectionRun['station_name'];
+
+            // $obj->rme_date = $sectionRun['rme_date'];
+            $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
+            $obj->href = $a;
+             $obj->formView1  = '<a  href="view-form-details.php?empid='.$sectionRun['empid'].'" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView2  = '<a  href="../commonForm/view-form.php?empid='.$sectionRun['empid'].'&from=JE" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","ASTE","'.$section_id.'","'.$section_name.'","'.$station_id.'","'.$station_name.'") type="button" class="btn btn-sm btn-warning">Form</a>';
+
+            $data[] = $obj;
+
+        }
+
+        sendResponse(true,"Employee list found",$data);
+
+
+    }elseif($action == "getSSCByStation"){
+
+        if(!isset($_POST['stationData'])){
+            sendResponse(false,"Station data not set, try again");
+        }
+
+        $stationData = $_POST['stationData'];
+
+         if(count($stationData) <= 0){
+            sendResponse(false,"Station data is empty, try again");
+        }
+
+        $q =  "SELECT * FROM assign_incharge_sse_rail WHERE station_id IN ('". implode("','", $stationData). "')";
+       
+        $getQuerySection = mysqli_query($con,$q);
+        if(mysqli_num_rows($getQuerySection) <= 0){
+            sendResponse(true,"Empoyee list is empty.");
+        }
+
+        $data = [];
+        while($sectionRun = mysqli_fetch_array($getQuerySection)){
+
+            $obj = new stdClass();
+            $obj->id = $sectionRun['id'];
+            $obj->section_name = $sectionRun['section_name'];
+            $obj->section_id = $sectionRun['section_id'];
+            $obj->station_name = $sectionRun['station_name'];
+            $obj->station_id = $sectionRun['station_id'];
+
+            $obj->empid = $sectionRun['empid'];
+            $obj->empname = $sectionRun['empname'];
+            $obj->empdesg = $sectionRun['empdesg'];
+            $obj->pme_date = $sectionRun['pme_date']==''?'No Record':$sectionRun['pme_date'];
+            $obj->rme_date = $sectionRun['rme_date']==''?'No Record':$sectionRun['rme_date'];
+
+            $empId_form = $sectionRun['empid'];
+
+            $section_id = $sectionRun['section_id'];
+            $section_name = $sectionRun['section_name'];
+            $station_id = $sectionRun['station_id'];
+            $station_name = $sectionRun['station_name'];
+
+            // $obj->rme_date = $sectionRun['rme_date'];
+            $a = '<a type="button" class="btn btn-sm btn-success" href="pme-rme-add.php?id='.$sectionRun['id'].'">Edit</a>';
+            $obj->href = $a;
+             $obj->formView1  = '<a  href="view-form-details.php?empid='.$sectionRun['empid'].'" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView2  = '<a  href="../commonForm/view-form.php?empid='.$sectionRun['empid'].'&from=JE" type="button" class="btn btn-sm btn-warning">Form</a>';
+             $obj->formView  = '<a onclick=showCommonform("'.$empId_form.'","ASTE","'.$section_id.'","'.$section_name.'","'.$station_id.'","'.$station_name.'") type="button" class="btn btn-sm btn-warning">Form</a>';
+
+            $data[] = $obj;
+
+        }
+
+        sendResponse(true,"Employee list found",$data);
+
+
+    }elseif($action == "getSectionStation"){
         if(!isset($_POST['jeId'])){
             sendResponse(false,"JE ID not set, try again");
         }
