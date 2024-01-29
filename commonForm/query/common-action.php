@@ -34,7 +34,7 @@ if (isset($_POST['common_action'])) {
         if($viewType == "Employee"){
             $q = "SELECT * FROM emp_info_rail WHERE empid='$empId'";
 
-       }elseif($viewType == "JE" || $viewType == "SSE" || $viewType == "ASTE"){
+       }elseif($viewType == "JE" || $viewType == "SSE" || $viewType == "ASTE" || $viewType == 'Admin'){
 
         $data = [];
         $data['section_id'] = $_SESSION['section_id_tmp'];
@@ -450,7 +450,10 @@ if (isset($_POST['common_action'])) {
         }elseif($viewType == "ASTE"){
            $query = mysqli_query($con,"SELECT * FROM aste_info_rail WHERE empid='$empid'");
 
-       }else{
+       }elseif($viewType == "Admin"){
+        $query = mysqli_query($con,"SELECT * FROM ibn_signup_retailer WHERE ibn_id='$empid'");
+
+    }else{
         sendResponse(false,"Invalid viewType");   
        }
 
@@ -460,10 +463,15 @@ if (isset($_POST['common_action'])) {
            sendResponse(false,"Invalid ".$viewType." id");     
        }
        $run = mysqli_fetch_array($query);
-       $_SESSION['emp_name_tmp']= $run['empname'];
 
-    //    print_r($_SESSION);
-    //    die();
+       if($viewType == "Admin"){
+
+           $_SESSION['emp_name_tmp']= $run['first_name'];
+       }else{
+
+           $_SESSION['emp_name_tmp']= $run['empname'];
+       }
+
 
        if($from == 'JE' && isset($_SESSION['userretailerje'])){
 

@@ -153,6 +153,7 @@ $_SESSION['portal_name'] = $name;
 <li class="nav-item"><a href="add-station-component.php" class="nav-link  active">Add station Component</a></li> 
 <li class="nav-item"><a href="view-station-component.php" class="nav-link  active">View station Component</a></li> 
 <li class="nav-item"><a href="view-emp-form.php" class="nav-link  active">View Form</a></li> 
+<li class="nav-item"><a href="form-duration.php" class="nav-link  active">Form Duration</a></li> 
 
 
 </ul>
