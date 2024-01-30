@@ -252,6 +252,10 @@ display:none;
       <a class="dropdown-item <?php if($page=='index-aste'){ echo 'pageactive';}?>" href="index-aste.php"> ASTE Login</a>
 
       </li>
+       <li class="nav-item ">
+      <a class="dropdown-item <?php if($page=='index-dste'){ echo 'pageactive';}?>" href="index-dste.php"> DSTE Login</a>
+
+      </li>
    </ul>
 
 
