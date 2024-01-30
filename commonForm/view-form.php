@@ -9,6 +9,8 @@ if($_SESSION['from'] == "JE"){
     require('sse-header.php');
 }elseif($_SESSION['from'] == "ASTE"){
     require('aste-header.php');
+}elseif($_SESSION['from'] == "DSTE"){
+    require('dste-header.php');
 }else{
     require('header.php');
     die();

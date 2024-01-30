@@ -34,7 +34,7 @@ if (isset($_POST['common_action'])) {
         if($viewType == "Employee"){
             $q = "SELECT * FROM emp_info_rail WHERE empid='$empId'";
 
-       }elseif($viewType == "JE" || $viewType == "SSE" || $viewType == "ASTE" || $viewType == 'Admin'){
+       }elseif($viewType == "JE" || $viewType == "SSE" || $viewType == "ASTE" || $viewType == "DSTE" || $viewType == 'Admin'){
 
         $data = [];
         $data['section_id'] = $_SESSION['section_id_tmp'];
@@ -115,9 +115,6 @@ if (isset($_POST['common_action'])) {
        if($viewType == "Employee"){
             $q = "SELECT * FROM emp_info_rail WHERE empid='$empid'";
 
-       }elseif($viewType == "JE"){
-            $q = "SELECT * FROM je_info_rail WHERE empid='$empid'";
-
        }else{
             sendResponse(false,"Invalid View Type");     
        }
@@ -162,6 +159,11 @@ if (isset($_POST['common_action'])) {
         $_SESSION['from']= 'ASTE';
         $_SESSION['redirectPage']= '../aste-rail/';
 
+       }elseif($from == 'DSTE' && isset($_SESSION['userretailerdste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'DSTE';
+        $_SESSION['redirectPage']= '../dste-rail/';
+
        }else{
             sendResponse(false,"Wrong Access");
             die();
@@ -194,6 +196,8 @@ if (isset($_POST['common_action'])) {
         }elseif($from == "SSE" && isset($_SESSION['userretailersse']) ){
             $empid = trim($_POST['empId']);
         }elseif($from == "ASTE" && isset($_SESSION['userretaileraste']) ){
+            $empid = trim($_POST['empId']);
+        }elseif($from == "DSTE" && isset($_SESSION['userretailerdste']) ){
             $empid = trim($_POST['empId']);
         }else{
             sendResponse(false,"Something went wrong with session ID");
@@ -250,6 +254,11 @@ if (isset($_POST['common_action'])) {
         $_SESSION['from']= 'SSE';
         $_SESSION['redirectPage']= '../incharge-sse/';
 
+       }elseif($from == 'DSTE' && isset($_SESSION['userretailerdste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'DSTE';
+        $_SESSION['redirectPage']= '../dste-rail/';
+
        }else{
             sendResponse(false,"Wrong Access");
             die();
@@ -277,6 +286,8 @@ if (isset($_POST['common_action'])) {
             $empid = trim($_POST['empId']);
         }elseif($from == "SSE" && isset($_SESSION['userretailersse']) ){
             $empid = trim($_SESSION['userretailersse']);
+        }elseif($from == "DSTE" && isset($_SESSION['userretailerdste']) ){
+            $empid = trim($_POST['empId']);
         }else{
             sendResponse(false,"Something went wrong with session ID");
         }
@@ -322,6 +333,11 @@ if (isset($_POST['common_action'])) {
         $_SESSION['from']= 'SSE';
         $_SESSION['redirectPage']= '../incharge-sse/';
 
+       }elseif($from == 'DSTE' && isset($_SESSION['userretailerdste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'DSTE';
+        $_SESSION['redirectPage']= '../dste-rail/';
+
        }else{
             sendResponse(false,"Wrong Access");
             die();
@@ -349,6 +365,8 @@ if (isset($_POST['common_action'])) {
             $empid = trim($_POST['empId']);
         }elseif($from == "ASTE" && isset($_SESSION['userretaileraste']) ){
             $empid = trim($_SESSION['userretaileraste']);
+        }elseif($from == "DSTE" && isset($_SESSION['userretailerdste']) ){
+            $empid = trim($_POST['empId']);
         }else{
             sendResponse(false,"Something went wrong with session ID");
         }
@@ -393,6 +411,11 @@ if (isset($_POST['common_action'])) {
         $_SESSION['empid_for_form']= $empid;
         $_SESSION['from']= 'ASTE';
         $_SESSION['redirectPage']= '../aste-rail/';
+
+       }elseif($from == 'DSTE' && isset($_SESSION['userretailerdste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'DSTE';
+        $_SESSION['redirectPage']= '../dste-rail/';
 
        }else{
             sendResponse(false,"Wrong Access");
@@ -450,7 +473,10 @@ if (isset($_POST['common_action'])) {
         }elseif($viewType == "ASTE"){
            $query = mysqli_query($con,"SELECT * FROM aste_info_rail WHERE empid='$empid'");
 
-       }elseif($viewType == "Admin"){
+       }elseif($viewType == "DSTE"){
+        $query = mysqli_query($con,"SELECT * FROM dste_info_rail WHERE empid='$empid'");
+
+    }elseif($viewType == "Admin"){
         $query = mysqli_query($con,"SELECT * FROM ibn_signup_retailer WHERE ibn_id='$empid'");
 
     }else{
@@ -497,6 +523,11 @@ if (isset($_POST['common_action'])) {
         $_SESSION['empid_for_form']= $empid;
         $_SESSION['from']= 'ASTE';
         $_SESSION['redirectPage']= '../aste-rail/';
+
+       }elseif($from == 'DSTE' && isset($_SESSION['userretailerdste'])){
+        $_SESSION['empid_for_form']= $empid;
+        $_SESSION['from']= 'DSTE';
+        $_SESSION['redirectPage']= '../dste-rail/';
 
        }else{
             sendResponse(false,"Wrong Access");

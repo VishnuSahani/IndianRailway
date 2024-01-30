@@ -4,8 +4,8 @@
 //Include database configuration file
 $id = "";
 
-if (isset($_SESSION['userretailerdstedste'])) {
-    $id = $_SESSION['userretailerdstedste'];
+if (isset($_SESSION['userretailerdste'])) {
+    $id = $_SESSION['userretailerdste'];
 
 }
 
@@ -5970,7 +5970,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#ep1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -6336,7 +6336,7 @@ $(document).ready(function() {
             }
             
             
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>'
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>'
             
             if(userID == '' || userID == null || userID == undefined){
                 
@@ -6466,7 +6466,7 @@ $(document).ready(function() {
 
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#ep3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -6594,7 +6594,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#ep4Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -6749,7 +6749,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#ep5Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -7198,7 +7198,7 @@ $(document).ready(function() {
 
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#t1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -7345,7 +7345,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#t2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -7475,7 +7475,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#t2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -7621,7 +7621,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#t4Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -7733,7 +7733,7 @@ $(document).ready(function() {
            
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#t2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -8114,7 +8114,7 @@ $(document).ready(function() {
             }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#cs1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -8314,7 +8314,7 @@ $(document).ready(function() {
 
            
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#cs1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -8522,7 +8522,7 @@ $(document).ready(function() {
 
            
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#dl1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -8661,7 +8661,7 @@ $(document).ready(function() {
             // }
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#dl2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -8783,7 +8783,7 @@ $(document).ready(function() {
 
 
 
-            let userID = '<?php echo $_SESSION['userretailerdstedste']; ?>';
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
                 $("#dl3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
@@ -13956,7 +13956,7 @@ if(stationId == undefined || stationId == null || stationId == ""){
 
 if(sectionName == undefined || sectionName == null || sectionName == "" || stationName == undefined || stationName == null || stationName == ""){
    alert("Something went wrong, try again");
-   location.reload();
+//    location.reload();
    return;
 }
 
@@ -13976,8 +13976,8 @@ $.ajax({
         stationId:stationId,
         sectionName:sectionName,
         stationName:stationName,
-        from:"Admin",
-        viewType:"Admin",
+        from:"DSTE",
+        viewType:"DSTE",
         empId:empId
     },
     beforeSend:()=>{
