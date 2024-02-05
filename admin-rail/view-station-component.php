@@ -69,6 +69,8 @@ if (isset($_SESSION['userretailer'])) {
                         <div class="col-12 my-2 d-flex justify-content-end">
                                 <span id="formViewRespoMsg" class="mr-3 text-danger"></span>
                                 <button type="button" id="viewFormBtn" class="btn btn-info btn-sm">View My Form</button>
+
+                                <button type="button" id="viewFormBtn_dste" class="btn btn-info mx-1 btn-sm">View DSTE Form</button>
                             </div>
 
 
@@ -13921,14 +13923,14 @@ function get_DL_formData(dL_Type,subCompo,compo){
         })
     }
 
-    $(document).ready(()=>{
-        getSectionStation();
+    function viewForm_admin_DSTE(empId,viewType){
 
-        
-        // view own form
-        $("#viewFormBtn").click(()=>{
-
-let sectionName = ($("#sectionName").val()).trim();
+        if(empId == ''){
+            alert("Something went wrong with id, try again");
+        location.reload();
+        return;
+        }
+        let sectionName = ($("#sectionName").val()).trim();
 let stationName = ($("#stationName").val()).trim();
 
 let stationId = ($("#stationId").val()).trim();
@@ -13960,12 +13962,6 @@ if(sectionName == undefined || sectionName == null || sectionName == "" || stati
    return;
 }
 
-let empId = '<?php echo $id; ?>';
-if(empId == ''){
-    alert("Something went wrong with id, try again");
-   location.reload();
-   return;
-}
 
 $.ajax({
     type:"POST",
@@ -13977,7 +13973,7 @@ $.ajax({
         sectionName:sectionName,
         stationName:stationName,
         from:"Admin",
-        viewType:"Admin",
+        viewType:viewType,
         empId:empId
     },
     beforeSend:()=>{
@@ -13997,7 +13993,27 @@ $.ajax({
 
 
 
-})
+    }
+
+    $(document).ready(()=>{
+        getSectionStation();
+
+
+        
+
+        
+        // view own form
+        $("#viewFormBtn").click(()=>{
+            let empId = '<?php echo $id; ?>';
+            viewForm_admin_DSTE(empId,'Admin');
+
+        });
+
+        $("#viewFormBtn_dste").click(()=>{
+
+            viewForm_admin_DSTE("24129800587","DSTE");
+
+        });
 
     })
 
