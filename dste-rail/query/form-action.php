@@ -8,6 +8,19 @@ if (isset($_POST['action'])) {
 
     $action = trim($_POST['action']);
     $respo = [];
+  
+
+    function getFormDurationDay($formType,$conDB){
+        $q = mysqli_query($conDB,"SELECT duration from form_duration_info WHERE empType='DSTE' && formName = '$formType'");
+        if(mysqli_num_rows($q) > 0){
+
+            $run = mysqli_fetch_array($q);
+
+            return $run['duration'];
+        }else{
+            return 0;
+        }
+    }
 
     if ($action == "getSectionStation") {
 
@@ -192,27 +205,20 @@ if (isset($_POST['action'])) {
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("EP1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
             $day15Date = date("Y-m-d", $d15);
-            //  echo $currentDate = date("Y-m-d",strtotime($createdDateTime));
-
-            // $date1 = date_create($day15Date);
-            // $date2 = date_create($currentDate);
-
-            // $diff = date_diff($date1,$date2);
-            // echo $diff2 = $diff->format("%R%a"); //+1
-            // // $diff2 = $diff->format("%a"); // 1
-
-            // if($diff2 <= 15){
-
-            //     $respo['status'] = false;
-            //     $respo['msg'] = "You have already submited this form on=>".$lastSubmitedDate.", Now can submit after $day15Date";
-            //     echo json_encode($respo);
-            //     die();
-
-            // }
-
-
+            
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $currentStrToTime = strtotime($createdDateTime);
 
             if ($currentStrToTime < $d15) {
@@ -298,7 +304,19 @@ if (isset($_POST['action'])) {
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("EP2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -401,7 +419,18 @@ if (isset($_POST['action'])) {
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            
+            $day_duration = getFormDurationDay("EP3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));            
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -475,14 +504,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM ep4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM ep4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("EP4",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -558,7 +598,7 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM ep5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM ep5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             // $respo['status'] = false;
@@ -570,7 +610,18 @@ if (isset($_POST['action'])) {
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("EP5",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -730,14 +781,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM t1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM t1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("T1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -837,14 +899,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM t2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM t2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("T2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -919,14 +992,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM t3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM t3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("T3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -998,14 +1082,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM t4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM t4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("T4",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1074,14 +1169,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM t5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM t5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("T5",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1230,14 +1336,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM cs1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM cs1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("CS1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1333,14 +1450,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM cs2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM cs2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("CS2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1499,14 +1627,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM dl1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM dl1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DL1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1586,14 +1725,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM dl2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM dl2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DL2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1667,14 +1817,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM dl3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM dl3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DL3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1747,14 +1908,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM dl4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM dl4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DL4",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1907,14 +2079,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM mlb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM mlb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("MLB1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -1989,14 +2172,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM mlb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM mlb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("MLB2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2068,14 +2262,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM mlb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM mlb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("MLB3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2223,14 +2428,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM slb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM slb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("SLB1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2306,14 +2522,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM slb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM slb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("SLB2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2476,14 +2703,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM elb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM elb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("ELB1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2561,14 +2799,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM elb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM elb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("ELB2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2648,14 +2897,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM elb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM elb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("ELB3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2734,14 +2994,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM elb4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM elb4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("ELB4",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -2820,14 +3091,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM elb5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM elb5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("ELB5",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3016,14 +3298,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM db1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM db1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DB1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3103,14 +3396,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM db2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM db2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DB2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3180,14 +3484,26 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM db3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM db3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DB3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3260,14 +3576,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM hb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM hb1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("HB1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3347,14 +3674,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM hb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM hb2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("HB2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3431,14 +3769,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM hb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM hb3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("HB3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3514,14 +3863,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM uf1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM uf1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("UF1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+            
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3598,14 +3958,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM uf2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM uf2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("UF2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3677,14 +4048,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM uf3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM uf3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("UF3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3755,14 +4137,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM uf4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM uf4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("UF4",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3834,14 +4227,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM uf5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM uf5_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("UF5",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -3995,14 +4399,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * from dac1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * from dac1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DAC1",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -4084,14 +4499,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM dac2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM dac2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DAC2",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -4169,14 +4595,25 @@ if (isset($_POST['action'])) {
 
         $createdDateTime = date("Y-m-d h:i:s");
 
-        $checkData = mysqli_query($con, "SELECT * FROM dac3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp'");
+        $checkData = mysqli_query($con, "SELECT * FROM dac3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
         if (mysqli_num_rows($checkData) > 0) {
 
             $lastInsert = mysqli_fetch_array($checkData);
 
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
-            $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+
+            $day_duration = getFormDurationDay("DAC3",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
             $currentStrToTime = strtotime($createdDateTime);
@@ -4243,6 +4680,8 @@ if (isset($_POST['action'])) {
         die();
 
     }
+
+
 
 
 } else {

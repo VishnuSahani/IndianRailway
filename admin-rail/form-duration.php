@@ -11,28 +11,53 @@ if (isset($_SESSION['userretailer'])) {
 
 ?>
 
-<div class="container mt-2">
+<div class="container my-2">
     <div class="alert alert-success text-center h5">
         Form Duration
     </div>
 
-    <div class="table-responsive">
-        <table class="table">
-            <thead class="table-dark">
-                <tr>
-                    <td>#</td>
-                    <td>Name</td>
-                    <td>Day</td>
-                    <td>Action</td>
-                </tr>
-            </thead>
-
-            <tbody id="tableDataDuration">
-              
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <div class="form-group">
+                <label for="empType">Select Employee Type</label>
+                <select id="empType" onchange="filterDataList(this.value)" class="custom-select">
+                    <!-- <option value="">Select Employee Type</option> -->
+                    <!-- <option value="All">All</option> -->
+                    <option value="Admin">Admin</option>
+                    <option value="DSTE">DSTE</option>
+                    <option value="ASTE">ASTE</option>
+                    <option value="JE">JE</option>
+                    <option value="SSE">SSE</option>
+                    <option value="Employee">Employee</option>
+                </select>
+            </div>
+        </div>
     </div>
+
+    <div class="card bg-transparent">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <td>#</td>
+                            <td>Name</td>
+                            <td>Duration</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableDataDuration">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+
 
 
 <!-- Modal -->
@@ -49,6 +74,11 @@ if (isset($_SESSION['userretailer'])) {
 
             <div class="modal-body">
                 <form id="durationEditForm">
+                    <div class="form-group">
+
+                        <label for="empTypeShow">Employee Type <span class="text-danger">*</span></label>
+                        <input type="text" id="empTypeShow" readonly disabled class="form-control">
+                    </div>
                     <div class="form-group">
                         <label for="durationValue">Duration/Day <span class="text-danger">*</span></label>
                         <input type="number" id="durationValue" class="form-control">
@@ -67,13 +97,44 @@ if (isset($_SESSION['userretailer'])) {
 </div>
 
 <script>
-    function editModal(id,formName,durationValue){
-        console.log("formName=",id);
+
+    var g_formDurationList = [];
+
+    function filterDataList(val) {
+        let list = g_formDurationList.filter((x) => x.empType == val);
+        displayData(list);
+
+    }
+
+    function displayData(list) {
+
+        let htmlDisplay = "";
+
+        if (list.length) {
+            list.forEach((element, i) => {
+                htmlDisplay += `<tr>
+                    <td>${i + 1}</td>
+                    <td>${element.formName}</td>
+                    <td>${element.duration}</td>
+                    <td><button type="button" onclick=editModal("${element.id}","${element.formName}","${element.duration}","${element.empType}") class="btn btn-sm btn-success">Edit</button></td>
+                </tr>`
+            });
+        } else {
+            htmlDisplay = "<tr><td class='text-center' colspan='4'>No Form Duration Data Found</td></tr>";
+        }
+
+        $("#tableDataDuration").html(htmlDisplay);
+    }
+
+    function editModal(id, formName, durationValue, empTypeShow) {
+        debugger
+        console.log("formName=", id);
         $("#formName").html(formName);
         $("#durationId").val(id);
+        $("#empTypeShow").val(empTypeShow);
         $("#durationValue").val(durationValue);
         $("#durationEditModal").modal("show");
-        
+
         //clear form
         $("#durationValueError").html("");
         $("#durationValue").removeClass("is-invalid");
@@ -81,92 +142,81 @@ if (isset($_SESSION['userretailer'])) {
     }
 
 
-    function getFormDurationData(){
+    function getFormDurationData(typeEmp) {
         $.ajax({
-            type:"POST",
-            url:"./query/action.php",
-            data:{
-                action : "getFormDurationData",
+            type: "POST",
+            url: "./query/action.php",
+            data: {
+                action: "getFormDurationData",
             },
-            beforeSend:()=>{
+            beforeSend: () => {
                 $("#loader_show").removeClass('d-none');
             },
-            success:(response)=>{
+            success: (response) => {
                 $("#loader_show").addClass('d-none');
 
                 let respo = JSON.parse(response);
                 console.log(respo);
-
-                let htmlDisplay = "";
-
-                if(respo['status'] && respo['data'].length){
-
-                    respo['data'].forEach((element,i) => {
-                        htmlDisplay += `<tr>
-                            <td>${i+1}</td>
-                            <td>${element.formName}</td>
-                            <td>${element.duration}</td>
-                            <td><button type="button" onclick=editModal("${element.id}","${element.formName}","${element.duration}") class="btn btn-sm btn-success">Edit</button></td>
-                        </tr>`
-                    });
-                }else{
-                    htmlDisplay = "<tr><td class='text-center' colspan='4'>No Form Duration Data Found</td></tr>";
+                if (respo['data'].length) {
+                    g_formDurationList = respo['data'];
+                    let list = g_formDurationList.filter((x) => x.empType == typeEmp);
+                    $("#empType").val(typeEmp);
+                    displayData(list);
                 }
 
-                $("#tableDataDuration").html(htmlDisplay);
-
             },
-            error:(err)=>{
+            error: (err) => {
                 $("#loader_show").addClass('d-none');
             }
         });
-    }   
+    }
 
-    $(document).ready(()=>{
+    $(document).ready(() => {
 
-        getFormDurationData();
+        getFormDurationData("Admin");
 
-        $("#durationEditForm").submit((e)=>{
+        $("#durationEditForm").submit((e) => {
             e.preventDefault()
             let durationValue = $("#durationValue").val();
             let durationId = $("#durationId").val();
+            let typeEmp = $("#empType").val();
 
-            if(durationValue == NaN || durationValue == undefined || durationValue == ''){
+            if (durationValue == NaN || durationValue == undefined || durationValue == '') {
                 $("#durationValueError").html("Duration is required");
                 $("#durationValue").addClass("is-invalid");
                 $("#durationValue").focus();
 
-            }else{
+            } else {
                 $("#durationValueError").html("");
                 $("#durationValue").removeClass("is-invalid");
             }
 
-            if(durationId == NaN || durationId == undefined || durationId == ''){
-                $("#durationValueError").html("Refresh page and try again");             
+            if (durationId == NaN || durationId == undefined || durationId == '') {
+                $("#durationValueError").html("Refresh page and try again");
 
             }
 
             $.ajax({
-                type:"POST",
-                url:"./query/action.php",
-                data:{
-                    action:"updateFormDuration",
-                    durationValue:durationValue,
-                    durationId:durationId,
+                type: "POST",
+                url: "./query/action.php",
+                data: {
+                    action: "updateFormDuration",
+                    durationValue: durationValue,
+                    durationId: durationId,
                 },
-                beforeSend:()=>{
+                beforeSend: () => {
 
                 },
-                success:(response)=>{
+                success: (response) => {
                     let respo = JSON.parse(response);
                     $("#durationValueError").html(respo['msg']);
-                    if(respo['status']){
+                    if (respo['status']) {
                         //update table
-                        getFormDurationData();
+                        getFormDurationData(typeEmp);
 
                     }
                 },
-    
+
             })
         });
     });

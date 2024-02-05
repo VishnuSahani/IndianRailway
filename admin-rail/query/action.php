@@ -1390,7 +1390,7 @@ if (isset($_POST['action'])) {
             die();
         }
 
-        $checkData = mysqli_query($con, "SELECT * FROM basic_form_info WHERE id = '$durationId'");
+        $checkData = mysqli_query($con, "SELECT * FROM form_duration_info WHERE id = '$durationId'");
         if (mysqli_num_rows($checkData) <= 0) {
             $respo['status'] = false;
             $respo['msg'] = "No form data found of give id.";
@@ -1399,7 +1399,7 @@ if (isset($_POST['action'])) {
 
         }
 
-        $queryUpdate = "UPDATE basic_form_info SET duration = '$durationValue' WHERE id = '$durationId'";
+        $queryUpdate = "UPDATE form_duration_info SET duration = '$durationValue' WHERE id = '$durationId'";
         if (mysqli_query($con, $queryUpdate)) {
             $respo['status'] = true;
             $respo['msg'] = "Duration successfully updated";
@@ -1413,7 +1413,7 @@ if (isset($_POST['action'])) {
         die();
     } elseif ($action == "getFormDurationData") {
 
-        $checkData = mysqli_query($con, "SELECT * FROM basic_form_info WHERE status = '1'");
+        $checkData = mysqli_query($con, "SELECT * FROM form_duration_info WHERE status = '1'");
         if (mysqli_num_rows($checkData) <= 0) {
             $respo['status'] = false;
             $respo['msg'] = "No form data found of give id.";
