@@ -5446,6 +5446,1703 @@ SSE(Signal)/Incharge: Yearly
 </div>
 
 
+<!-- modal ips1 -->
+
+<div class="modal fade" id="componentForm_IPS1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelIPS1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelIPS1">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+                         Maintenance Schedules for Integrated Power Supply System IPS1
+
+                            </span>
+
+                            <span class="heading_hindi">
+                            एकीकृत विद्युत आपूर्ति प्रणाली के लिए रखरखाव अनुसूचियां IPS 1
+
+
+
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+
+                 Periodicity: Technician (Signal): Monthly 
+                                     Sectional SSE/JE(Signal): Bi-Monthly
+                             SSE(Signal)/Incharge: Quarterly
+
+
+
+                        </span>
+                        <span class="heading_hindi">
+
+                        आवधिकता: तकनीशियन (सिग्नल): मासिक,
+                                          अनुभागीय सीसेई/जेई (सिग्नल): द्वि-मासिक,
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ips1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ips1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ips1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal IPS 2 -->
+
+<div class="modal fade" id="componentForm_IPS2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelIPS2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelIPS2">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+                         Maintenance Schedules for Integrated Power Supply System IPS2
+                            </span>
+
+                            <span class="heading_hindi">
+                            एकीकृत विद्युत आपूर्ति प्रणाली के लिए रखरखाव अनुसूचियां IPS 2
+
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+                 Periodicity: Sectional SSE/JE (Signal): Quarterly
+SSE (Signal)/Incharge: : Half Yearly
+
+
+
+                        </span>
+                        <span class="heading_hindi">
+
+                        आवधिकता: तकनीशियन (सिग्नल): मासिक,
+                                          अनुभागीय सीसेई/जेई (सिग्नल): द्वि-मासिक,
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+
+
+
+
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ips2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ips2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ips2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal IPS3 -->
+
+<div class="modal fade" id="componentForm_IPS3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelIPS3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelIPS3">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+                             
+                             Maintenance Schedules for Integrated Power Supply System IPS3
+                            </span>
+                            
+                            <span class="heading_hindi">
+                                
+                                एकीकृत विद्युत आपूर्ति प्रणाली के लिए रखरखाव अनुसूचियां IPS 3      
+                                
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+                 Periodicity: Sectional SSE/JE (Signal): Yearly,
+SSE (Signal)/Incharge: Yearly duly staggered by 6 months
+
+
+
+                        </span>
+                        <span class="heading_hindi">
+
+                        आवधिकता: तकनीशियन (सिग्नल): मासिक,
+                                          अनुभागीय सीसेई/जेई (सिग्नल): द्वि-मासिक,
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                            </span>
+
+
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ips3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-danger mx-1">
+            NOTE: 1) In the month of Scheduled Inspection at SSE In charge: level, Scheduled Inspection by Section SSE/JE may not be required, since it is repetitive. However, Section SSE/JE will associate during Scheduled Inspection of SSE Incharge.
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ips3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ips3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal IPS battery -->
+<div class="modal fade" id="componentForm_IPS_battery" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabel_IPS_battery" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabel_IPS_battery">
+                        <span class="badge badge-success h3" id="modalComponentName">
+                            IPS Battery Reading
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                        <!-- <span id="modalSubCompoName"></span>
+                        <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                    <span class="heading_english">
+                        Maintenance Schedules of IPS with Battery Bank Readings
+                    </span>
+
+                    <span class="heading_hindi">
+                    बैटरी बैंक रीडिंग के साथ आईपीएस का रखरखाव कार्यक्रम
+                    </span>
+
+                </div>
+                <div class="modal-body table-responsive">
+                    <!-- 
+                    
+                     -->
+                    <table class="table">
+                        <tbody id="ips_battery_body1">
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Railway:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    रेलवे:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_railway">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Division/Station*:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    प्रभाग/स्टेशन*:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_division">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        IPS Manufacturer:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    आईपीएस निर्माता:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_manufacturer">
+
+                                </td>
+
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Battery Manufacturer:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    बैटरी निर्माता:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_batteryManufacturer">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        IPS Installation Date:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    आईपीएस स्थापना तिथि:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_installation_Date">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Battery Bank Installation Date
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    बैटरी बैंक रुकने की तिथि:           
+                                                         </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_bank_installation_Date">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        No. of working cells
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    कार्यशील कोशिकाओं की संख्या:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_workingCells">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Battery Bank Voltage
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    बैटरी बैंक वोल्टेज:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_bankVoltage">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        No. of spare cells
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    अतिरिक्त कोशिकाओं की संख्या:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_spareCells">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Capacity of Battery Bank (AH)
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    बैटरी बैंक की क्षमता (AH):
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_capacityBattery">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+
+
+                                </th>
+                                <td>
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Type of Battery
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    बैटरी का प्रकार:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_typeBattery">
+
+                                </td>
+                            </tr>
+
+                            <tr class="text-light bg-secondary">
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Specific Gravity of LMLA cell
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    एलएमएलए सेल का विशिष्ट गुरुत्व:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    1180-1220
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        VRLA cell
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    वीआरएलए सेल:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <span class="heading_english">
+                                    Specific Gravity N/A
+
+                                    </span>
+                                    <span class="heading_hindi">
+                                    विशिष्ट गुरुत्व N/A
+
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr class="text-light bg-secondary">
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Voltage of LMLA cell
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    एलएमएलए सेल का वोल्टेज:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    1.85-2.25V
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        VRLA cell Voltage
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    वीआरएलए सेल वोल्टेज:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    1.85-2.27V
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th  colspan="2" scope="col">
+                                    <span class="heading_english">
+                                        Date of Measurement:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                    माप की तिथि:
+                                    </span>
+
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_dateMeasurement">
+                                </td>
+
+                            </tr>
+                        </tbody>
+                        <!-- tbody 1 -->
+                        <tr class="bg-dark text-light">
+                            <th style="width:5%">
+                            <span class="heading_english"> Cell No.</span>
+                            <span class="heading_hindi">सेल नं.</span>
+                            
+                           
+                        
+                        </th>
+                            <th>
+                            <span class="heading_english">Specific Gravity</span>
+                            <span class="heading_hindi">विशिष्ट गुरुत्व</span>
+                            </th>
+                            <th colspan="2">
+                            <span class="heading_english">Voltage</span>
+                            <span class="heading_hindi">वोल्टेज</span>
+                            </th>
+                        </tr>
+                        <tbody id="ips_battery_body2">
+                            <tr>
+                                <th>1</th>
+                                <td><input type="text" class="form-control" id="sg_1"></td>
+                                <td><input type="text" class="form-control" id="volt_1"></td>
+                            </tr>
+
+                            <tr>
+                                <th>2</th>
+                                <td><input type="text" class="form-control" id="sg_2"></td>
+                                <td><input type="text" class="form-control" id="volt_2"></td>
+                            </tr>
+
+
+                            <tr>
+                                <th>3</th>
+                                <td><input type="text" class="form-control" id="sg_3"></td>
+                                <td><input type="text" class="form-control" id="volt_3"></td>
+                            </tr>
+
+                            <tr>
+                                <th>4</th>
+                                <td><input type="text" class="form-control" id="sg_4"></td>
+                                <td><input type="text" class="form-control" id="volt_4"></td>
+                            </tr>
+
+                            <tr>
+                                <th>5</th>
+                                <td><input type="text" class="form-control" id="sg_5"></td>
+                                <td><input type="text" class="form-control" id="volt_5"></td>
+                            </tr>
+
+                            <tr>
+                                <th>6</th>
+                                <td><input type="text" class="form-control" id="sg_6"></td>
+                                <td><input type="text" class="form-control" id="volt_6"></td>
+                            </tr>
+
+                            <tr>
+                                <th>7</th>
+                                <td><input type="text" class="form-control" id="sg_7"></td>
+                                <td><input type="text" class="form-control" id="volt_7"></td>
+                            </tr>
+
+                            <tr>
+                                <th>8</th>
+                                <td><input type="text" class="form-control" id="sg_8"></td>
+                                <td><input type="text" class="form-control" id="volt_8"></td>
+                            </tr>
+
+                            <tr>
+                                <th>9</th>
+                                <td><input type="text" class="form-control" id="sg_9"></td>
+                                <td><input type="text" class="form-control" id="volt_9"></td>
+                            </tr>
+
+                            <tr>
+                                <th>10</th>
+                                <td><input type="text" class="form-control" id="sg_10"></td>
+                                <td><input type="text" class="form-control" id="volt_10"></td>
+                            </tr>
+
+                            <tr>
+                                <th>11</th>
+                                <td><input type="text" class="form-control" id="sg_11"></td>
+                                <td><input type="text" class="form-control" id="volt_11"></td>
+                            </tr>
+
+                            <tr>
+                                <th>12</th>
+                                <td><input type="text" class="form-control" id="sg_12"></td>
+                                <td><input type="text" class="form-control" id="volt_12"></td>
+                            </tr>
+
+                            <tr>
+                                <th>13</th>
+                                <td><input type="text" class="form-control" id="sg_13"></td>
+                                <td><input type="text" class="form-control" id="volt_13"></td>
+                            </tr>
+
+                            <tr>
+                                <th>14</th>
+                                <td><input type="text" class="form-control" id="sg_14"></td>
+                                <td><input type="text" class="form-control" id="volt_14"></td>
+                            </tr>
+
+                            <tr>
+                                <th>15</th>
+                                <td><input type="text" class="form-control" id="sg_15"></td>
+                                <td><input type="text" class="form-control" id="volt_15"></td>
+                            </tr>
+
+                            <tr>
+                                <th>16</th>
+                                <td><input type="text" class="form-control" id="sg_16"></td>
+                                <td><input type="text" class="form-control" id="volt_16"></td>
+                            </tr>
+
+                            <tr>
+                                <th>17</th>
+                                <td><input type="text" class="form-control" id="sg_17"></td>
+                                <td><input type="text" class="form-control" id="volt_17"></td>
+                            </tr>
+
+                            <tr>
+                                <th>18</th>
+                                <td><input type="text" class="form-control" id="sg_18"></td>
+                                <td><input type="text" class="form-control" id="volt_18"></td>
+                            </tr>
+
+                            <tr>
+                                <th>19</th>
+                                <td><input type="text" class="form-control" id="sg_19"></td>
+                                <td><input type="text" class="form-control" id="volt_19"></td>
+                            </tr>
+
+                            <tr>
+                                <th>20</th>
+                                <td><input type="text" class="form-control" id="sg_20"></td>
+                                <td><input type="text" class="form-control" id="volt_20"></td>
+                            </tr>
+
+                            <tr>
+                                <th>21</th>
+                                <td><input type="text" class="form-control" id="sg_21"></td>
+                                <td><input type="text" class="form-control" id="volt_21"></td>
+                            </tr>
+
+                            <tr>
+                                <th>22</th>
+                                <td><input type="text" class="form-control" id="sg_22"></td>
+                                <td><input type="text" class="form-control" id="volt_22"></td>
+                            </tr>
+
+                            <tr>
+                                <th>23</th>
+                                <td><input type="text" class="form-control" id="sg_23"></td>
+                                <td><input type="text" class="form-control" id="volt_23"></td>
+                            </tr>
+
+                            <tr>
+                                <th>24</th>
+                                <td><input type="text" class="form-control" id="sg_24"></td>
+                                <td><input type="text" class="form-control" id="volt_24"></td>
+                            </tr>
+
+                            <tr>
+                                <th>25</th>
+                                <td><input type="text" class="form-control" id="sg_25"></td>
+                                <td><input type="text" class="form-control" id="volt_25"></td>
+                            </tr>
+
+                            <tr>
+                                <th>26</th>
+                                <td><input type="text" class="form-control" id="sg_26"></td>
+                                <td><input type="text" class="form-control" id="volt_26"></td>
+                            </tr>
+
+                            <tr>
+                                <th>27</th>
+                                <td><input type="text" class="form-control" id="sg_27"></td>
+                                <td><input type="text" class="form-control" id="volt_27"></td>
+                            </tr>
+
+                            <tr>
+                                <th>28</th>
+                                <td><input type="text" class="form-control" id="sg_28"></td>
+                                <td><input type="text" class="form-control" id="volt_28"></td>
+                            </tr>
+
+                            <tr>
+                                <th>29</th>
+                                <td><input type="text" class="form-control" id="sg_29"></td>
+                                <td><input type="text" class="form-control" id="volt_29"></td>
+                            </tr>
+
+                            <tr>
+                                <th>30</th>
+                                <td><input type="text" class="form-control" id="sg_30"></td>
+                                <td><input type="text" class="form-control" id="volt_30"></td>
+                            </tr>
+
+                            <tr>
+                                <th>31</th>
+                                <td><input type="text" class="form-control" id="sg_31"></td>
+                                <td><input type="text" class="form-control" id="volt_31"></td>
+                            </tr>
+
+                            <tr>
+                                <th>32</th>
+                                <td><input type="text" class="form-control" id="sg_32"></td>
+                                <td><input type="text" class="form-control" id="volt_32"></td>
+                            </tr>
+
+                            <tr>
+                                <th>33</th>
+                                <td><input type="text" class="form-control" id="sg_33"></td>
+                                <td><input type="text" class="form-control" id="volt_33"></td>
+                            </tr>
+
+                            <tr>
+                                <th>34</th>
+                                <td><input type="text" class="form-control" id="sg_34"></td>
+                                <td><input type="text" class="form-control" id="volt_34"></td>
+                            </tr>
+
+                            <tr>
+                                <th>35</th>
+                                <td><input type="text" class="form-control" id="sg_35"></td>
+                                <td><input type="text" class="form-control" id="volt_35"></td>
+                            </tr>
+
+                            <tr>
+                                <th>36</th>
+                                <td><input type="text" class="form-control" id="sg_36"></td>
+                                <td><input type="text" class="form-control" id="volt_36"></td>
+                            </tr>
+
+                            <tr>
+                                <th>37</th>
+                                <td><input type="text" class="form-control" id="sg_37"></td>
+                                <td><input type="text" class="form-control" id="volt_37"></td>
+                            </tr>
+
+                            <tr>
+                                <th>38</th>
+                                <td><input type="text" class="form-control" id="sg_38"></td>
+                                <td><input type="text" class="form-control" id="volt_38"></td>
+                            </tr>
+
+                            <tr>
+                                <th>39</th>
+                                <td><input type="text" class="form-control" id="sg_39"></td>
+                                <td><input type="text" class="form-control" id="volt_39"></td>
+                            </tr>
+
+                            <tr>
+                                <th>40</th>
+                                <td><input type="text" class="form-control" id="sg_40"></td>
+                                <td><input type="text" class="form-control" id="volt_40"></td>
+                            </tr>
+
+                            <tr>
+                                <th>41</th>
+                                <td><input type="text" class="form-control" id="sg_41"></td>
+                                <td><input type="text" class="form-control" id="volt_41"></td>
+                            </tr>
+
+                            <tr>
+                                <th>42</th>
+                                <td><input type="text" class="form-control" id="sg_42"></td>
+                                <td><input type="text" class="form-control" id="volt_42"></td>
+                            </tr>
+
+                            <tr>
+                                <th>43</th>
+                                <td><input type="text" class="form-control" id="sg_43"></td>
+                                <td><input type="text" class="form-control" id="volt_43"></td>
+                            </tr>
+
+                            <tr>
+                                <th>44</th>
+                                <td><input type="text" class="form-control" id="sg_44"></td>
+                                <td><input type="text" class="form-control" id="volt_44"></td>
+                            </tr>
+
+                            <tr>
+                                <th>45</th>
+                                <td><input type="text" class="form-control" id="sg_45"></td>
+                                <td><input type="text" class="form-control" id="volt_45"></td>
+                            </tr>
+
+                            <tr>
+                                <th>46</th>
+                                <td><input type="text" class="form-control" id="sg_46"></td>
+                                <td><input type="text" class="form-control" id="volt_46"></td>
+                            </tr>
+
+                            <tr>
+                                <th>47</th>
+                                <td><input type="text" class="form-control" id="sg_47"></td>
+                                <td><input type="text" class="form-control" id="volt_47"></td>
+                            </tr>
+
+                            <tr>
+                                <th>48</th>
+                                <td><input type="text" class="form-control" id="sg_48"></td>
+                                <td><input type="text" class="form-control" id="volt_48"></td>
+                            </tr>
+
+                            <tr>
+                                <th>49</th>
+                                <td><input type="text" class="form-control" id="sg_49"></td>
+                                <td><input type="text" class="form-control" id="volt_49"></td>
+                            </tr>
+
+                            <tr>
+                                <th>50</th>
+                                <td><input type="text" class="form-control" id="sg_50"></td>
+                                <td><input type="text" class="form-control" id="volt_50"></td>
+                            </tr>
+
+                            <tr>
+                                <th>51</th>
+                                <td><input type="text" class="form-control" id="sg_51"></td>
+                                <td><input type="text" class="form-control" id="volt_51"></td>
+                            </tr>
+
+                            <tr>
+                                <th>52</th>
+                                <td><input type="text" class="form-control" id="sg_52"></td>
+                                <td><input type="text" class="form-control" id="volt_52"></td>
+                            </tr>
+
+                            <tr>
+                                <th>53</th>
+                                <td><input type="text" class="form-control" id="sg_53"></td>
+                                <td><input type="text" class="form-control" id="volt_53"></td>
+                            </tr>
+
+                            <tr>
+                                <th>54</th>
+                                <td><input type="text" class="form-control" id="sg_54"></td>
+                                <td><input type="text" class="form-control" id="volt_54"></td>
+                            </tr>
+
+                            <tr>
+                                <th>55</th>
+                                <td><input type="text" class="form-control" id="sg_55"></td>
+                                <td><input type="text" class="form-control" id="volt_55"></td>
+                            </tr>
+
+                            <tr class="text-light bg-dark">
+                                <th colspan="2">
+                                    
+                                    <span class="heading_english">Spare Cells</span>
+                                    <span class="heading_hindi">अतिरिक्त सेल</span>
+                                </th>
+                                <th>
+                                    
+                                    <span class="heading_english">Specific Gravity</span>
+                                    <span class="heading_hindi">विशिष्ट गुरुत्व</span>
+                                </th>
+                                <th colspan="2">
+                                    Voltage
+                                    <span class="heading_english">Voltage</span>
+                                    <span class="heading_hindi">वोल्टेज</span>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                                    <span class="heading_english">Cell No1</span>
+                                    <span class="heading_hindi">सेल नंबर 1</span>                                    
+                                    
+                                </th>
+                                <td><input type="text" class="form-control" id="cell_sg_1"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_1"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                <span class="heading_english">Cell No 2</span>
+                                <span class="heading_hindi">सेल नंबर 2</span> 
+                                </th>
+                                <td><input type="text" class="form-control" id="cell_sg_2"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_2"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                <span class="heading_english">Cell No 3</span>
+                                    <span class="heading_hindi">सेल नंबर 3</span> 
+                                </th>
+                                <td><input type="text" class="form-control" id="cell_sg_3"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_3"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2"><span class="heading_english">Cell No 4</span>
+<span class="heading_hindi">सेल नंबर 4</span> </th>
+                                <td><input type="text" class="form-control" id="cell_sg_4"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_4"></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2"><span class="heading_english">Cell No 5</span>
+<span class="heading_hindi">सेल नंबर 5</span> </th>
+                                <td><input type="text" class="form-control" id="cell_sg_5"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_5"></td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                                <span class="heading_english">Total Battery Voltage:</span>
+                                <span class="heading_hindi">कुल बैटरी वोल्टेज:</span>
+                                
+                            </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_totalBatteryVoltage">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+
+                                <span class="heading_english">Battery Charging Current:</span>
+                                <span class="heading_hindi">बैटरी चार्जिंग करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_batteryCurrent">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+
+                                <span class="heading_english">Load Current:</span>
+                                <span class="heading_hindi">भार बिजली:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_loadCurrent">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                <span class="heading_english">AC Input Voltage:</span>
+                                <span class="heading_hindi">एसी इनपुट वोल्टेज:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_inputVolt">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                <span class="heading_english">AC Input Current:</span>
+                                <span class="heading_hindi">एसी इनपुट करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_inputCurrent">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">SMR 1: Voltage/Current:</span>
+                                    <span class="heading_hindi">एसएमआर 1: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">SMR 2: Voltage/Current:</span>
+<span class="heading_hindi">एसएमआर 2: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">SMR 3: Voltage/Current:</span>
+<span class="heading_hindi">एसएमआर 3: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_3">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">SMR 4: Voltage/Current:</span>
+<span class="heading_hindi">एसएमआर 4: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_4">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">SMR 1: Voltage/Current:</span>
+<span class="heading_hindi"> एसएमआर 1: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_1_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">SMR 2: Voltage/Current:</span>
+<span class="heading_hindi"> एसएमआर 2: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_2_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">SMR 3: Voltage/Current:</span>
+<span class="heading_hindi"> एसएमआर 3: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_3_3">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">SMR 4: Voltage/Current:</span>
+<span class="heading_hindi"> एसएमआर 4: वोल्टेज/करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_4_4">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">Inverter 1: Input/Output Voltage:</span>
+<span class="heading_hindi"> इन्वर्टर 1: इनपुट/आउटपुट वोल्टेज:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_volt_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">Inverter 1: Load Current:</span>
+<span class="heading_hindi"> इन्वर्टर 1 लोड करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_current_1">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">Inverter 2: Input/Output Voltage:</span>
+<span class="heading_hindi"> इन्वर्टर 2: इनपुट/आउटपुट वोल्टेज:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_volt_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">Inverter 2: Load Current:</span>
+<span class="heading_hindi">इन्वर्टर 2 लोड करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_current_2">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">CVT/AVR (Signals) 1 Input/Output Voltage:</span>
+<span class="heading_hindi"> सीवीटी/एवीआर (सिग्नल) 1 इनपुट/आउटपुट वोल्टेज:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_volt_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">CVT/AVR (Signals) 1 Load Current:</span>
+<span class="heading_hindi"> सीवीटी/एवीआर (सिग्नल) 1 लोड करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_current_1">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">CVT/AVR (Signals) 2 Input/Output Voltage:</span>
+<span class="heading_hindi">सीवीटी/एवीआर (सिग्नल) 2 लोड करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_volt_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">CVT/AVR (Signals) 2 Load Current:</span>
+<span class="heading_hindi">सीवीटी/एवीआर (ट्रैक) 1 इनपुट/आउटपुट वोल्टेज:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_current_2">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">CVT/AVR (Track) 1 Input/Output Voltage:</span>
+<span class="heading_hindi"> सीवीटी/एवीआर (ट्रैक) 1 लोड करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackVolt_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                
+                                <span class="heading_english">CVT/AVR (Track) 1 Load Current:</span>
+<span class="heading_hindi">सीवीटी/एवीआर (ट्रैक) 2 इनपुट/आउटपुट वोल्टेज:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackCurrent_1">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">CVT/AVR (Track) 2 Input/Output Voltage:</span>
+<span class="heading_hindi"> सीवीटी/एवीआर (ट्रैक) 2 लोड करंट:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackVolt_2">
+
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <th>CVT/AVR (Track) 2 Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackCurrent_2">
+
+                                </td>
+                            </tr> -->
+
+
+                            <tr>
+                                <th colspan="2">
+                                   
+                                    <span class="heading_english">110V DC for Points:</span>
+<span class="heading_hindi"> पॉइंट के लिए 110V DC:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="dcPoint">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">Battery Charging & Load Current may be included:</span>
+<span class="heading_hindi"> बैटरी चार्जिंग और लोड करंट शामिल हो सकते हैं:</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="batteryLoadInclude">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                               
+                                <span class="heading_english">Signal transformer and DC-DC converter voltage may be included</span>
+<span class="heading_hindi"> सिग्नल ट्रांसफार्मर और डीसी-डीसी कनवर्टर वोल्टेज शामिल किया जा सकता है</span>
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="signalTransformer">
+
+                                </td>
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <div id="ips_batteryForm_status"></div>
+                    <div>
+                        <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                        <button type='button' id="ips_batteryFormBtn" class="btn btn-sm btn-success">Final
+                            Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal E1 -->
+<div class="modal fade" id="componentForm_E1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelE1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelE1">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+                             
+Maintenance Schedule of Earthing (Conventional & Maintenance Free)
+And Lightning Protection
+E1                            </span>
+                            
+                            <span class="heading_hindi">
+                                
+अर्थिंग की रखरखाव अनुसूची (पारंपरिक और रखरखाव मुक्त)
+और बिजली संरक्षण E1                                
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+              Periodicity: Technician (Signal): Monthly
+                 Sectional SSE/JE (Signal): Quarterly
+                 SSE (Signal/) Incharge : Half-yearly
+
+                        </span>
+                        <span class="heading_hindi">
+
+                      आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+             सीसेई (सिग्नल)/प्रभारी: अर्ध-वार्षिक
+                            </span>
+
+
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="font-weight-bold">
+                    Description of earth (gear/location number)
+                </div>
+                <div>
+                    
+                        <input type="text" class="form-control ml-2" id="e1_decs_earth">
+                  
+                </div>
+            </div>
+            <div class="modal-body table-responsive">
+            
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="e1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="e1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="e1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal E2 -->
+<div class="modal fade" id="componentForm_E2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelE2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelE2">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+Maintenance Schedule of Earthing (Conventional & Maintenance Free)
+And Lightning Protection
+E2                           </span>
+                            
+                            <span class="heading_hindi">
+                                
+अर्थिंग की रखरखाव अनुसूची (पारंपरिक और रखरखाव मुक्त)
+और बिजली संरक्षण
+E2                               
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+             Periodicity: Sectional SSE/JE (Signal): Half-yearly
+      SSE (Signal/) Incharge : Yearly
+
+                        </span>
+                        <span class="heading_hindi">
+
+                    आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल) : अर्ध-वार्षिक
+सीसेई (सिग्नल)/प्रभारी : वार्षिक
+                            </span>
+
+
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="font-weight-bold">
+                    Description of earth (gear/location number)
+                </div>
+                <div>
+                    
+                        <input type="text" class="form-control ml-2" id="e2_decs_earth">
+                  
+                </div>
+            </div>
+
+            <div class="modal-body table-responsive">
+            
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="e2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="e2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="e2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal E3 -->
+<div class="modal fade" id="componentForm_E3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelE3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelE3">
+                    <span class="badge badge-success h3">
+                         <span class="heading_english">
+Maintenance Schedule of Earthing (Conventional & Maintenance Free)
+And Lightning Protection
+E3                         </span>
+                            
+                            <span class="heading_hindi">
+                                
+अर्थिंग की रखरखाव अनुसूची (पारंपरिक और रखरखाव मुक्त)
+और बिजली संरक्षण
+E3                             
+                            </span>
+
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                 <span class="heading_english">
+            Periodicity: Sectional SSE/JE (Signal): Yearly
+          SSE (Signal/) Incharge: Yearly
+(Note: They shall do in alternate Six months)
+
+                        </span>
+                        <span class="heading_hindi">
+आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+(नोट: वे वैकल्पिक छह महीने में ऐसा करेंगे)
+                            </span>
+
+
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="font-weight-bold">
+                    Description of earth (gear/location number)
+                </div>
+                <div>                    
+                    <input type="text" class="form-control ml-2" id="e3_decs_earth">
+                </div>
+            </div>
+
+            <div class="modal-body table-responsive">
+            
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="e3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="e3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="e3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
 <script>
 
     // this script used for section station dynamic filter for JE
@@ -5739,12 +7436,24 @@ function createSubComponent(val) {
 
     let divWrap1 = document.createElement("div");
     divWrap1.className = "d-flex flex-wrap my-2";
-    let btn1 = `
+    let btn1 = "";
+    if(componetData[0].station_component == 'DL'){
+        btn1 = `
     <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL1','NA','${stationComName}')">DL 1</button>
     <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL2','NA','${stationComName}')">DL 2</button>
     <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL3','NA','${stationComName}')">DL 3</button>
     <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL4','NA','${stationComName}')">DL 4</button>
     `;
+    } else if(componetData[0].station_component == 'IPS'){
+        btn1 = `
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS1','NA','${stationComName}')">IPS 1</button>
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS2','NA','${stationComName}')">IPS 2</button>
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS3','NA','${stationComName}')">IPS 3</button>
+    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS4','NA','${stationComName}')">IPS Battery Reading</button>
+    `;
+    }else{
+        btn1 = "Please add form form empty sub-component";
+    }
 
 
     divWrap1.innerHTML = btn1
@@ -5865,6 +7574,14 @@ btn +=`
  <a class="dropdown-item" onclick="get_ELB_formData('ELB4','${value}','${stationComName}')">ELB4</a>
  <a class="dropdown-item" onclick="get_ELB_formData('ELB5','${value}','${stationComName}')">ELB5</a>
  
+ `;
+
+}else if(componentName == "EARTHING"){
+
+btn +=`
+ <a class="dropdown-item" onclick="get_E_formData('E1','${value}','${stationComName}')">E1</a>
+ <a class="dropdown-item" onclick="get_E_formData('E2','${value}','${stationComName}')">E2</a>
+  <a class="dropdown-item" onclick="get_E_formData('E3','${value}','${stationComName}')">E3</a>
  `;
 
 }
@@ -12847,6 +14564,996 @@ $("#uf5FormBtn").click(function() {
         }
     });
 
+    $("#ips1FormBtn").click(function() {
+        if (confirm("Do you want to final submit IPS1 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let ips1_1 = $("#ips1_1").val();
+            let ips1_2 = $("#ips1_2").val();
+            let ips1_3 = $("#ips1_3").val();
+            let ips1_4 = $("#ips1_4").val();
+            let ips1_5 = $("#ips1_5").val();
+            let ips1_6 = $("#ips1_6").val();
+            let ips1_7 = $("#ips1_7").val();
+            let ips1_8 = $("#ips1_8").val();
+            let ips1_9 = $("#ips1_9").val();
+            let ips1_10 = $("#ips1_10").val();
+            let ips1_11 = $("#ips1_11").val();
+            let ips1_12 = $("#ips1_12").val();
+            let ips1_13 = $("#ips1_13").val();
+
+            let ips1_8_supply_volt = $("#ips1_8_supply_volt").val();
+            let ips1_load = $("#ips1_load").val();
+            let ips1_adcp = $("#ips1_adcp").val();
+            let ips1_dcdp = $("#ips1_dcdp").val();
+
+
+            if (ips1_1 == undefined  || ips1_1 == null || ips1_1 == '' || ips1_1.length == 0) {
+                $("#ips1_1").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_1").removeClass("is-invalid");
+
+            }
+
+            if (ips1_2 == undefined  || ips1_2 == null || ips1_2 == '' || ips1_2.length == 0) {
+                $("#ips1_2").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_2").removeClass("is-invalid");
+
+            }
+
+            if (ips1_3 == undefined  || ips1_3 == null || ips1_3 == '' || ips1_3.length == 0) {
+                $("#ips1_3").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_3").removeClass("is-invalid");
+
+            }
+
+            if (ips1_4 == undefined  || ips1_4 == null || ips1_4 == '' || ips1_4.length == 0) {
+                $("#ips1_4").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 4 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_4").removeClass("is-invalid");
+
+            }
+
+            if (ips1_5 == undefined  || ips1_5 == null || ips1_5 == '' || ips1_5.length == 0) {
+                $("#ips1_5").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 5 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_5").removeClass("is-invalid");
+
+            }
+
+            if (ips1_6 == undefined  || ips1_6 == null || ips1_6 == '' || ips1_6.length == 0) {
+                $("#ips1_6").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 6 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_6").removeClass("is-invalid");
+
+            }
+
+            if (ips1_7 == undefined  || ips1_7 == null || ips1_7 == '' || ips1_7.length == 0) {
+                $("#ips1_7").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 7 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_7").removeClass("is-invalid");
+            }
+
+            if (ips1_8 == undefined  || ips1_8 == null || ips1_8 == '' || ips1_8.length == 0) {
+                $("#ips1_8").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_8").removeClass("is-invalid");
+            }
+
+            if (ips1_8_supply_volt == undefined  || ips1_8_supply_volt == null || ips1_8_supply_volt == '' || ips1_8_supply_volt.length == 0) {
+                $("#ips1_8_supply_volt").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 8 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_8_supply_volt").removeClass("is-invalid");
+            }
+
+            if (ips1_9 == undefined  || ips1_9 == null || ips1_9 == '' || ips1_9.length == 0) {
+                $("#ips1_9").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_9").removeClass("is-invalid");
+            }
+
+            if (ips1_load == undefined  || ips1_load == null || ips1_load == '' || ips1_load.length == 0) {
+                $("#ips1_load").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_load").removeClass("is-invalid");
+            }
+            if (ips1_adcp == undefined  || ips1_adcp == null || ips1_adcp == '' || ips1_adcp.length == 0) {
+                $("#ips1_adcp").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_adcp").removeClass("is-invalid");
+            }
+            if (ips1_dcdp == undefined  || ips1_dcdp == null || ips1_dcdp == '' || ips1_dcdp.length == 0) {
+                $("#ips1_dcdp").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 9 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_dcdp").removeClass("is-invalid");
+            }
+
+            if (ips1_10 == undefined  || ips1_10 == null || ips1_10 == '' || ips1_10.length == 0) {
+                $("#ips1_10").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 10 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_10").removeClass("is-invalid");
+            }
+
+            if (ips1_11 == undefined  || ips1_11 == null || ips1_11 == '' || ips1_11.length == 0) {
+                $("#ips1_11").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 11 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_11").removeClass("is-invalid");
+            }
+
+
+            if (ips1_12 == undefined  || ips1_12 == null || ips1_12 == '' || ips1_12.length == 0) {
+                $("#ips1_12").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 12 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_12").removeClass("is-invalid");
+            }
+
+            
+            if (ips1_13 == undefined  || ips1_13 == null || ips1_13 == '' || ips1_13.length == 0) {
+                $("#ips1_13").addClass("is-invalid");
+                $("#ips1Form_status").html("Serial no 13 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips1Form_status").html("");
+                $("#ips1_13").removeClass("is-invalid");
+            }
+
+            
+
+            let userID = '<?php echo $_SESSION['userretailersse']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ips1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "IPS1_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "ips1_1": ips1_1,
+                    "ips1_2": ips1_2,
+                    "ips1_3": ips1_3,
+                    "ips1_4": ips1_4,
+                    "ips1_5": ips1_5,
+                    "ips1_6": ips1_6,              
+                    "ips1_7": ips1_7, 
+                    "ips1_8": ips1_8,
+                    ips1_8_supply_volt:ips1_8_supply_volt,
+                    "ips1_9": ips1_9,
+                    ips1_load : ips1_load,
+                    ips1_adcp : ips1_adcp,
+                    ips1_dcdp : ips1_dcdp,
+                    "ips1_10": ips1_10,              
+                    "ips1_11": ips1_11,             
+                    "ips1_12": ips1_12,             
+                    "ips1_13": ips1_13,             
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#ips1Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#ips1Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+    $("#ips2FormBtn").click(function() {
+        if (confirm("Do you want to final submit IPS2 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let ips2_1 = $("#ips2_1").val();
+            let ips2_2 = $("#ips2_2").val();
+            let ips2_3 = $("#ips2_3").val();
+     
+
+
+            if (ips2_1 == undefined  || ips2_1 == null || ips2_1 == '' || ips2_1.length == 0) {
+                $("#ips2_1").addClass("is-invalid");
+                $("#ips2Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips2Form_status").html("");
+                $("#ips2_1").removeClass("is-invalid");
+
+            }
+
+            if (ips2_2 == undefined  || ips2_2 == null || ips2_2 == '' || ips2_2.length == 0) {
+                $("#ips2_2").addClass("is-invalid");
+                $("#ips2Form_status").html("Serial no 2 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips2Form_status").html("");
+                $("#ips2_2").removeClass("is-invalid");
+
+            }
+
+            if (ips2_3 == undefined  || ips2_3 == null || ips2_3 == '' || ips2_3.length == 0) {
+                $("#ips2_3").addClass("is-invalid");
+                $("#ips2Form_status").html("Serial no 3 is required").css("color", "red");
+                return;
+            } else {
+                $("#ips2Form_status").html("");
+                $("#ips2_3").removeClass("is-invalid");
+
+            }
+
+
+            
+
+            let userID = '<?php echo $_SESSION['userretailersse']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ips2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/action.php",
+                data: {
+                    "action": "IPS2_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "ips2_1": ips2_1,
+                    "ips2_2": ips2_2,
+                    "ips2_3": ips2_3,
+                              
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#ips2Form_status").html(respo['msg']).css("color", "green");
+
+
+                    } else {
+                        $("#ips2Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        }
+    });
+
+    $("#ips3FormBtn").click(function() {
+    if (confirm("Do you want to final submit IPS3 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let ips3_1 = $("#ips3_1").val();
+        let ips3_2 = $("#ips3_2").val();
+        let ips3_3 = $("#ips3_3").val();
+        let ips3_4 = $("#ips3_4").val();
+        let ips3_5 = $("#ips3_5").val();
+        let ips3_6 = $("#ips3_6").val();
+        let ips3_7 = $("#ips3_7").val();
+        let ips3_8 = $("#ips3_8").val();
+
+
+
+        if (ips3_1 == undefined  || ips3_1 == null || ips3_1 == '' || ips3_1.length == 0) {
+            $("#ips3_1").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_1").removeClass("is-invalid");
+
+        }
+
+        if (ips3_2 == undefined  || ips3_2 == null || ips3_2 == '' || ips3_2.length == 0) {
+            $("#ips3_2").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_2").removeClass("is-invalid");
+
+        }
+
+        if (ips3_3 == undefined  || ips3_3 == null || ips3_3 == '' || ips3_3.length == 0) {
+            $("#ips3_3").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_3").removeClass("is-invalid");
+
+        }
+
+        if (ips3_4 == undefined  || ips3_4 == null || ips3_4 == '' || ips3_4.length == 0) {
+            $("#ips3_4").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_4").removeClass("is-invalid");
+
+        }
+
+        if (ips3_5 == undefined  || ips3_5 == null || ips3_5 == '' || ips3_5.length == 0) {
+            $("#ips3_5").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_5").removeClass("is-invalid");
+
+        }
+
+        if (ips3_6 == undefined  || ips3_6 == null || ips3_6 == '' || ips3_6.length == 0) {
+            $("#ips3_6").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_6").removeClass("is-invalid");
+
+        }
+
+        if (ips3_7 == undefined  || ips3_7 == null || ips3_7 == '' || ips3_7.length == 0) {
+            $("#ips3_7").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 7 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_7").removeClass("is-invalid");
+        }
+
+        if (ips3_8 == undefined  || ips3_8 == null || ips3_8 == '' || ips3_8.length == 0) {
+            $("#ips3_8").addClass("is-invalid");
+            $("#ips3Form_status").html("Serial no 8 is required").css("color", "red");
+            return;
+        } else {
+            $("#ips3Form_status").html("");
+            $("#ips3_8").removeClass("is-invalid");
+        }
+
+
+        let userID = '<?php echo $_SESSION['userretailersse']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#ips3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/action.php",
+            data: {
+                "action": "IPS3_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "ips3_1": ips3_1,
+                "ips3_2": ips3_2,
+                "ips3_3": ips3_3,
+                "ips3_4": ips3_4,
+                "ips3_5": ips3_5,
+                "ips3_6": ips3_6,              
+                "ips3_7": ips3_7, 
+                "ips3_8": ips3_8,            
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#ips3Form_status").html(respo['msg']).css("color", "green");
+
+
+                } else {
+                    $("#ips3Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+
+            }
+        });
+
+    }
+});
+
+
+$("#e1FormBtn").click(function() {
+    if (confirm("Do you want to final submit E1 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let e1_1 = $("#e1_1").val();
+        let e1_2 = $("#e1_2").val();
+        let e1_3 = $("#e1_3").val();
+        let e1_4 = $("#e1_4").val();
+        let e1_5 = $("#e1_5").val();
+        let e1_decs_earth = $("#e1_decs_earth").val();
+    
+
+        if (e1_decs_earth == undefined  || e1_decs_earth == null || e1_decs_earth == '' || e1_decs_earth.length == 0) {
+            $("#e1_decs_earth").addClass("is-invalid");
+            $("#e1Form_status").html("Description is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e1_decs_earth").removeClass("is-invalid");
+
+        }
+
+        if (e1_1 == undefined  || e1_1 == null || e1_1 == '' || e1_1.length == 0) {
+            $("#e1_1").addClass("is-invalid");
+            $("#e1Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e1_1").removeClass("is-invalid");
+
+        }
+
+        if (e1_2 == undefined  || e1_2 == null || e1_2 == '' || e1_2.length == 0) {
+            $("#e1_2").addClass("is-invalid");
+            $("#e1Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e1_2").removeClass("is-invalid");
+
+        }
+
+        if (e1_3 == undefined  || e1_3 == null || e1_3 == '' || e1_3.length == 0) {
+            $("#e1_3").addClass("is-invalid");
+            $("#e1Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e1_3").removeClass("is-invalid");
+
+        }
+
+        if (e1_4 == undefined  || e1_4 == null || e1_4 == '' || e1_4.length == 0) {
+            $("#e1_4").addClass("is-invalid");
+            $("#e1Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e1_4").removeClass("is-invalid");
+
+        }
+
+        if (e1_5 == undefined  || e1_5 == null || e1_5 == '' || e1_5.length == 0) {
+            $("#e1_5").addClass("is-invalid");
+            $("#e1Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e1_5").removeClass("is-invalid");
+
+        }
+
+
+        let userID = '<?php echo $_SESSION['userretailersse']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#e1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/action.php",
+            data: {
+                "action": "E1_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "e1_1": e1_1,
+                "e1_2": e1_2,
+                "e1_3": e1_3,
+                "e1_4": e1_4,
+                "e1_5": e1_5,
+                "e1_decs_earth": e1_decs_earth,
+                         
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#e1Form_status").html(respo['msg']).css("color", "green");
+
+
+                } else {
+                    $("#e1Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+
+            }
+        });
+
+    }
+});
+
+
+$("#e2FormBtn").click(function() {
+    if (confirm("Do you want to final submit E2 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let e2_1 = $("#e2_1").val();
+        let e2_2 = $("#e2_2").val();
+
+        let e2_decs_earth = $("#e2_decs_earth").val();
+    
+
+    if (e2_decs_earth == undefined  || e2_decs_earth == null || e2_decs_earth == '' || e2_decs_earth.length == 0) {
+        $("#e2_decs_earth").addClass("is-invalid");
+        $("#e1Form_status").html("Description is required").css("color", "red");
+        return;
+    } else {
+        $("#e1Form_status").html("");
+        $("#e2_decs_earth").removeClass("is-invalid");
+
+    }
+ 
+        if (e2_1 == undefined  || e2_1 == null || e2_1 == '' || e2_1.length == 0) {
+            $("#e2_1").addClass("is-invalid");
+            $("#e2Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#e2Form_status").html("");
+            $("#e2_1").removeClass("is-invalid");
+
+        }
+
+        if (e2_2 == undefined  || e2_2 == null || e2_2 == '' || e2_2.length == 0) {
+            $("#e2_2").addClass("is-invalid");
+            $("#e2Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#e2Form_status").html("");
+            $("#e2_2").removeClass("is-invalid");
+
+        }
+
+
+        let userID = '<?php echo $_SESSION['userretailersse']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#e2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/action.php",
+            data: {
+                "action": "E2_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "e2_1": e2_1,
+                "e2_2": e2_2,                         
+                "e2_decs_earth": e2_decs_earth,                         
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#e2Form_status").html(respo['msg']).css("color", "green");
+
+
+                } else {
+                    $("#e2Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+
+            }
+        });
+
+    }
+});
+///
+
+$("#e3FormBtn").click(function() {
+    if (confirm("Do you want to final submit E3 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let e3_1 = $("#e3_1").val();
+        let e3_2 = $("#e3_2").val();
+        let e3_3 = $("#e3_3").val();
+        let e3_4 = $("#e3_4").val();
+        let e3_5 = $("#e3_5").val();
+        let e3_6 = $("#e3_6").val();
+        
+        let e3_5_earth = $("#e3_5_earth").val();
+        let e3_6_earth = $("#e3_6_earth").val();
+
+        let e3_decs_earth = $("#e3_decs_earth").val();
+    
+
+        if (e3_decs_earth == undefined  || e3_decs_earth == null || e3_decs_earth == '' || e3_decs_earth.length == 0) {
+            $("#e3_decs_earth").addClass("is-invalid");
+            $("#e1Form_status").html("Description is required").css("color", "red");
+            return;
+        } else {
+            $("#e1Form_status").html("");
+            $("#e3_decs_earth").removeClass("is-invalid");
+
+        }
+
+        if (e3_1 == undefined  || e3_1 == null || e3_1 == '' || e3_1.length == 0) {
+            $("#e3_1").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_1").removeClass("is-invalid");
+
+        }
+
+        if (e3_2 == undefined  || e3_2 == null || e3_2 == '' || e3_2.length == 0) {
+            $("#e3_2").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_2").removeClass("is-invalid");
+
+        }
+
+        if (e3_3 == undefined  || e3_3 == null || e3_3 == '' || e3_3.length == 0) {
+            $("#e3_3").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_3").removeClass("is-invalid");
+
+        }
+
+        if (e3_4 == undefined  || e3_4 == null || e3_4 == '' || e3_4.length == 0) {
+            $("#e3_4").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_4").removeClass("is-invalid");
+
+        }
+
+        if (e3_5 == undefined  || e3_5 == null || e3_5 == '' || e3_5.length == 0) {
+            $("#e3_5").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_5").removeClass("is-invalid");
+
+        }
+
+        if (e3_5_earth == undefined  || e3_5_earth == null || e3_5_earth == '' || e3_5_earth.length == 0) {
+            $("#e3_5_earth").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_5_earth").removeClass("is-invalid");
+
+        }
+
+        if (e3_6 == undefined  || e3_6 == null || e3_6 == '' || e3_6.length == 0) {
+            $("#e3_6").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_6").removeClass("is-invalid");
+
+        }
+
+        if (e3_6_earth == undefined  || e3_6_earth == null || e3_6_earth == '' || e3_6_earth.length == 0) {
+            $("#e3_6_earth").addClass("is-invalid");
+            $("#e3Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#e3Form_status").html("");
+            $("#e3_6_earth").removeClass("is-invalid");
+
+        }
+
+
+        let userID = '<?php echo $_SESSION['userretailersse']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#e3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/action.php",
+            data: {
+                "action": "E3_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "e3_1": e3_1,
+                "e3_2": e3_2,
+                "e3_3": e3_3,
+                "e3_4": e3_4,
+                "e3_5": e3_5,
+                "e3_6": e3_6,
+                "e3_decs_earth": e3_decs_earth,
+                e3_5_earth:e3_5_earth,
+                e3_6_earth:e3_6_earth,                         
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#e3Form_status").html(respo['msg']).css("color", "green");
+
+
+                } else {
+                    $("#e3Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+
+            }
+        });
+
+    }
+});
+
 
 ///
 });
@@ -13358,7 +16065,143 @@ document.getElementById(tableId).innerHTML = displayHtml;
 
 // for DL
 
+function openDialog_IPS(typeOfForm, dataList) {
 
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "IPS1":
+        tableId = "ips1_body";
+        $("#componentForm_IPS1").modal("show");
+        break;
+    case "IPS2":
+        tableId = "ips2_body";
+        $("#componentForm_IPS2").modal("show");
+        break;
+    case "IPS3":
+        tableId = "ips3_body";
+        $("#componentForm_IPS3").modal("show");
+        break;
+
+    // case "IPS4":
+    //     tableId = "ips4_body";
+    //     $("#componentForm_IPS4").modal("show");
+    //     break;
+}
+
+let language = $("#language").val();
+
+
+dataList.forEach((element, index) => {
+
+    if(typeOfForm == 'IPS1' && index == 8){
+
+        let label = "Main Supply voltage to IPS";
+        if(language == 'Hindi'){
+            label = "मुख्य आपूर्ति वोल्टेज को आईपीएस तक मापें";
+        }
+        
+    displayHtml += `
+    <tr>
+    <th scope="row">${index + 1}</th>
+    <td>${element['ips_details']}
+    <div class="d-flex p-1 border">
+        <span>${label}</span><div class="ml-2"><input type="text" class="form-control" id="ips1_8_supply_volt"></div>
+    </div>
+    </td>
+    <td style="vertical-align:middle;width:22%" >
+        <select class="custom-select ${typeOfForm}Class" id="${element['ips_id']}">
+            <option value="">Select Action</option>`;
+
+    let optArr = element['ips_option'].split(",");
+    optArr.forEach(opt => {
+        displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+
+    displayHtml += `</select>
+    </td>
+    </tr>
+`;
+
+    }else if(typeOfForm == 'IPS1' && index == 9){
+
+let l1 = "LOAD";
+let l2 = "ACDP (V)";
+let l3 = "DCDP (V)";
+if(language == 'Hindi'){
+    l1="लोड";
+    l2="एसीडीपी (वोल्ट)";
+    l3="डीसीडीपी (वोल्ट)";
+}
+
+displayHtml += `
+<tr>
+<th scope="row">${index + 1}</th>
+<td>${element['ips_details']}
+<table class="table table-bordered">
+<tr>
+<th>${l1}</th>
+<th>${l2}</th>
+<th>${l3}</th>
+</tr>
+<tr>
+<td><input type="text" class="form-control" id="ips1_load"></td>
+<td><input type="text" class="form-control" id="ips1_adcp"></td>
+<td><input type="text" class="form-control" id="ips1_dcdp"></td>
+</tr>
+</table>
+</td>
+<td style="vertical-align:middle;width:22%" >
+<select class="custom-select ${typeOfForm}Class" id="${element['ips_id']}">
+    <option value="">Select Action</option>`;
+
+let optArr = element['ips_option'].split(",");
+optArr.forEach(opt => {
+displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+});
+
+displayHtml += `</select>
+</td>
+</tr>
+`;
+
+}else{
+
+        
+    displayHtml += `
+    <tr>
+    <th scope="row">${index + 1}</th>
+    <td>${element['ips_details']}</td>
+    <td style="vertical-align:middle;width:22%" >
+        <select class="custom-select ${typeOfForm}Class" id="${element['ips_id']}">
+            <option value="">Select Action</option>`;
+
+    let optArr = element['ips_option'].split(",");
+    optArr.forEach(opt => {
+        displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+    });
+
+    displayHtml += `</select>
+    </td>
+    </tr>
+`;
+
+    }
+
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
 
 function openDialog_DL(typeOfForm, dataList) {
 
@@ -13791,7 +16634,129 @@ document.getElementById(tableId).innerHTML = displayHtml;
 
 }
 //
+//E 
 
+function openDialog_E(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "E1":
+        tableId = "e1_body";
+        $("#componentForm_E1").modal("show");
+        break;
+    case "E2":
+        tableId = "e2_body";
+        $("#componentForm_E2").modal("show");
+        break;
+   
+    case "E3":
+        tableId = "e3_body";
+        $("#componentForm_E3").modal("show");
+        break;
+       
+}
+
+let language = $("#language").val();
+
+
+dataList.forEach((element, index) => {
+
+        if( typeOfForm == "E3" && index == 4){
+
+            let label = "Value of Earth Resistance (signaling circuit)*";
+            if(language == "Hindi"){
+                label = "अर्थ प्रतिरोध के मूल्य का माप (सिग्नलिंग सर्किट)*"
+            }
+
+                    
+            displayHtml += `
+                <tr>
+                <th scope="row">${index+1}</th>
+                <td>${element['e_details']}
+                <div class="d-flex p-1 border">
+                    <span>${label}</span><div class="ml-2"><input type="text" class="form-control" id="e3_5_earth"></div>
+                </div>
+                </td>
+                <td style="vertical-align:middle;width:22%" >
+                    <select class="custom-select ${typeOfForm}Class" id="${element['e_id']}">
+                        <option value="">Select Action</option>`;
+
+                        let optArr = element['e_option'].split(",");
+                        optArr.forEach(opt => {
+                            displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                        });
+        
+            displayHtml += `</select>
+                </td>
+                </tr>
+            `;
+
+        }else if(typeOfForm == "E3" && index == 5){
+
+            let label = "Earth Resistance *";
+            if(language == "Hindi"){
+                label = "अर्थ प्रतिरोध का माप*"
+            }
+            
+            displayHtml += `
+                <tr>
+                <th scope="row">${index+1}</th>
+                <td>${element['e_details']}
+                <div class="d-flex p-1 border">
+                    <span>${label}</span>
+                    <div class="ml-2"><input type="text" class="form-control" id="e3_6_earth"></div>
+                </div>
+                </td>
+                <td style="vertical-align:middle;width:22%" >
+                    <select class="custom-select ${typeOfForm}Class" id="${element['e_id']}">
+                        <option value="">Select Action</option>`;
+
+                        let optArr = element['e_option'].split(",");
+                        optArr.forEach(opt => {
+                            displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                        });
+        
+            displayHtml += `</select>
+                </td>
+                </tr>
+            `;
+        }else{
+                        
+            displayHtml += `
+                <tr>
+                <th scope="row">${index+1}</th>
+                <td>${element['e_details']}</td>
+                <td style="vertical-align:middle;width:22%" >
+                    <select class="custom-select ${typeOfForm}Class" id="${element['e_id']}">
+                        <option value="">Select Action</option>`;
+
+                        let optArr = element['e_option'].split(",");
+                        optArr.forEach(opt => {
+                            displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+                        });
+        
+            displayHtml += `</select>
+                </td>
+                </tr>
+            `;
+        }
+        
+
+
+
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
 // for DAC
 
 function openDialog_DAC(typeOfForm, dataList) {
@@ -13996,7 +16961,53 @@ function get_ELB_formData(elb_Type,subCompo,compo){
     });
 }
 
+// E form details
 
+function get_E_formData(e_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo); // no change here
+    $("#subcompoNameTmp").val(subCompo); // no change here
+    let language = $("#language").val(); // no change here
+    $(".displaySubcompoName").html(subCompo);
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+    
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getE_FormDetails",
+            "formType": e_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+
+
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_E(e_Type, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
 // Block Instrument form details
 
 function get_BI_formData(bi_Type,subCompo,compo){
@@ -14200,7 +17211,53 @@ function get_DL_formData(dL_Type,subCompo,compo){
 
 // view je own form
 
+function get_IPS_formData(ips_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+    let language = $("#language").val();
 
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+
+    if(ips_Type == "IPS4"){
+        $("#componentForm_IPS_battery").modal("show")
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "./query/action.php",
+        data: {
+            "action": "getIPS_FormDetails",
+            "formType": ips_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_IPS(ips_Type, response['data']);
+
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
 </script>
 
 </body>

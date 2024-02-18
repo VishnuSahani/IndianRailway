@@ -1,0 +1,894 @@
+<div class="modal fade" id="componentForm_IPS_battery" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabel_IPS_battery" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabel_IPS_battery">
+                        <span class="badge badge-success h3" id="modalComponentName">
+                            IPS Battery Reading
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                        <!-- <span id="modalSubCompoName"></span>
+                        <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+
+                    <span class="heading_english">
+                        Maintenance Schedules of IPS with Battery Bank Readings
+                    </span>
+
+                    <span class="heading_hindi">
+                        Maintenance Schedules of IPS with Battery Bank Readings
+                    </span>
+
+                </div>
+                <div class="modal-body table-responsive">
+                    <!-- 
+                    
+                     -->
+                    <table class="table">
+                        <tbody id="ips_battery_body1">
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Railway
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Railway
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_railway">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Division/Station*
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Division/Station*
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_division">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        IPS Manufacturer:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        IPS Manufacturer:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_manufacturer">
+
+                                </td>
+
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Battery Manufacturer:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Battery Manufacturer:
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_batteryManufacturer">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        IPS Installation Date
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        IPS Installation Date
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_installation_Date">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Battery Bank Installation Date
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Battery Bank Installation Date
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_bank_installation_Date">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        No. of working cells
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        No. of working cells
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_workingCells">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Battery Bank Voltage
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Battery Bank Voltage
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_bankVoltage">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        No. of spare cells
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        No. of spare cells
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_spareCells">
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Capacity of Battery Bank (AH)
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Capacity of Battery Bank (AH)
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_capacityBattery">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+
+
+                                </th>
+                                <td>
+
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Type of Battery
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Type of Battery
+                                    </span>
+
+                                </th>
+                                <td>
+                                    <input type="text" class="form-control" id="ips_typeBattery">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Specific Gravity of LMLA cell
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Specific Gravity of LMLA cell
+                                    </span>
+
+                                </th>
+                                <td>
+                                    1180-1220
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        VRLA cell
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        VRLA cell
+                                    </span>
+
+                                </th>
+                                <td>
+                                    Specific Gravity N/A
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Voltage of LMLA cell
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Voltage of LMLA cell
+                                    </span>
+
+                                </th>
+                                <td>
+                                    1.85-2.25V
+                                </td>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        VRLA cell Voltage
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        VRLA cell Voltage
+                                    </span>
+
+                                </th>
+                                <td>
+                                    1.85-2.27V
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Date of Measurement:
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        Date of Measurement:
+                                    </span>
+
+                                </th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_dateMeasurement">
+                                </td>
+
+                            </tr>
+                        </tbody>
+                        <!-- tbody 1 -->
+                        <thead class="table-dark">
+                            <th>Cell No.</th>
+                            <th>Specific Gravity</th>
+                            <th>Voltage</th>
+                        </thead>
+                        <tbody id="ips_battery_body2">
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" class="form-control" id="sg_1"></td>
+                                <td><input type="text" class="form-control" id="volt_1"></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td><input type="text" class="form-control" id="sg_2"></td>
+                                <td><input type="text" class="form-control" id="volt_2"></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>3</td>
+                                <td><input type="text" class="form-control" id="sg_3"></td>
+                                <td><input type="text" class="form-control" id="volt_3"></td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td><input type="text" class="form-control" id="sg_4"></td>
+                                <td><input type="text" class="form-control" id="volt_4"></td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td><input type="text" class="form-control" id="sg_5"></td>
+                                <td><input type="text" class="form-control" id="volt_5"></td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td><input type="text" class="form-control" id="sg_6"></td>
+                                <td><input type="text" class="form-control" id="volt_6"></td>
+                            </tr>
+
+                            <tr>
+                                <td>7</td>
+                                <td><input type="text" class="form-control" id="sg_7"></td>
+                                <td><input type="text" class="form-control" id="volt_7"></td>
+                            </tr>
+
+                            <tr>
+                                <td>8</td>
+                                <td><input type="text" class="form-control" id="sg_8"></td>
+                                <td><input type="text" class="form-control" id="volt_8"></td>
+                            </tr>
+
+                            <tr>
+                                <td>9</td>
+                                <td><input type="text" class="form-control" id="sg_9"></td>
+                                <td><input type="text" class="form-control" id="volt_9"></td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td><input type="text" class="form-control" id="sg_10"></td>
+                                <td><input type="text" class="form-control" id="volt_10"></td>
+                            </tr>
+
+                            <tr>
+                                <td>11</td>
+                                <td><input type="text" class="form-control" id="sg_11"></td>
+                                <td><input type="text" class="form-control" id="volt_11"></td>
+                            </tr>
+
+                            <tr>
+                                <td>12</td>
+                                <td><input type="text" class="form-control" id="sg_12"></td>
+                                <td><input type="text" class="form-control" id="volt_12"></td>
+                            </tr>
+
+                            <tr>
+                                <td>13</td>
+                                <td><input type="text" class="form-control" id="sg_13"></td>
+                                <td><input type="text" class="form-control" id="volt_13"></td>
+                            </tr>
+
+                            <tr>
+                                <td>14</td>
+                                <td><input type="text" class="form-control" id="sg_14"></td>
+                                <td><input type="text" class="form-control" id="volt_14"></td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td><input type="text" class="form-control" id="sg_15"></td>
+                                <td><input type="text" class="form-control" id="volt_15"></td>
+                            </tr>
+
+                            <tr>
+                                <td>16</td>
+                                <td><input type="text" class="form-control" id="sg_16"></td>
+                                <td><input type="text" class="form-control" id="volt_16"></td>
+                            </tr>
+
+                            <tr>
+                                <td>17</td>
+                                <td><input type="text" class="form-control" id="sg_17"></td>
+                                <td><input type="text" class="form-control" id="volt_17"></td>
+                            </tr>
+
+                            <tr>
+                                <td>18</td>
+                                <td><input type="text" class="form-control" id="sg_18"></td>
+                                <td><input type="text" class="form-control" id="volt_18"></td>
+                            </tr>
+
+                            <tr>
+                                <td>19</td>
+                                <td><input type="text" class="form-control" id="sg_19"></td>
+                                <td><input type="text" class="form-control" id="volt_19"></td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td><input type="text" class="form-control" id="sg_20"></td>
+                                <td><input type="text" class="form-control" id="volt_20"></td>
+                            </tr>
+
+                            <tr>
+                                <td>21</td>
+                                <td><input type="text" class="form-control" id="sg_21"></td>
+                                <td><input type="text" class="form-control" id="volt_21"></td>
+                            </tr>
+
+                            <tr>
+                                <td>22</td>
+                                <td><input type="text" class="form-control" id="sg_22"></td>
+                                <td><input type="text" class="form-control" id="volt_22"></td>
+                            </tr>
+
+                            <tr>
+                                <td>23</td>
+                                <td><input type="text" class="form-control" id="sg_23"></td>
+                                <td><input type="text" class="form-control" id="volt_23"></td>
+                            </tr>
+
+                            <tr>
+                                <td>24</td>
+                                <td><input type="text" class="form-control" id="sg_24"></td>
+                                <td><input type="text" class="form-control" id="volt_24"></td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td><input type="text" class="form-control" id="sg_25"></td>
+                                <td><input type="text" class="form-control" id="volt_25"></td>
+                            </tr>
+
+                            <tr>
+                                <td>26</td>
+                                <td><input type="text" class="form-control" id="sg_26"></td>
+                                <td><input type="text" class="form-control" id="volt_26"></td>
+                            </tr>
+
+                            <tr>
+                                <td>27</td>
+                                <td><input type="text" class="form-control" id="sg_27"></td>
+                                <td><input type="text" class="form-control" id="volt_27"></td>
+                            </tr>
+
+                            <tr>
+                                <td>28</td>
+                                <td><input type="text" class="form-control" id="sg_28"></td>
+                                <td><input type="text" class="form-control" id="volt_28"></td>
+                            </tr>
+
+                            <tr>
+                                <td>29</td>
+                                <td><input type="text" class="form-control" id="sg_29"></td>
+                                <td><input type="text" class="form-control" id="volt_29"></td>
+                            </tr>
+
+                            <tr>
+                                <td>30</td>
+                                <td><input type="text" class="form-control" id="sg_30"></td>
+                                <td><input type="text" class="form-control" id="volt_30"></td>
+                            </tr>
+
+                            <tr>
+                                <td>31</td>
+                                <td><input type="text" class="form-control" id="sg_31"></td>
+                                <td><input type="text" class="form-control" id="volt_31"></td>
+                            </tr>
+
+                            <tr>
+                                <td>32</td>
+                                <td><input type="text" class="form-control" id="sg_32"></td>
+                                <td><input type="text" class="form-control" id="volt_32"></td>
+                            </tr>
+
+                            <tr>
+                                <td>33</td>
+                                <td><input type="text" class="form-control" id="sg_33"></td>
+                                <td><input type="text" class="form-control" id="volt_33"></td>
+                            </tr>
+
+                            <tr>
+                                <td>34</td>
+                                <td><input type="text" class="form-control" id="sg_34"></td>
+                                <td><input type="text" class="form-control" id="volt_34"></td>
+                            </tr>
+
+                            <tr>
+                                <td>35</td>
+                                <td><input type="text" class="form-control" id="sg_35"></td>
+                                <td><input type="text" class="form-control" id="volt_35"></td>
+                            </tr>
+
+                            <tr>
+                                <td>36</td>
+                                <td><input type="text" class="form-control" id="sg_36"></td>
+                                <td><input type="text" class="form-control" id="volt_36"></td>
+                            </tr>
+
+                            <tr>
+                                <td>37</td>
+                                <td><input type="text" class="form-control" id="sg_37"></td>
+                                <td><input type="text" class="form-control" id="volt_37"></td>
+                            </tr>
+
+                            <tr>
+                                <td>38</td>
+                                <td><input type="text" class="form-control" id="sg_38"></td>
+                                <td><input type="text" class="form-control" id="volt_38"></td>
+                            </tr>
+
+                            <tr>
+                                <td>39</td>
+                                <td><input type="text" class="form-control" id="sg_39"></td>
+                                <td><input type="text" class="form-control" id="volt_39"></td>
+                            </tr>
+
+                            <tr>
+                                <td>40</td>
+                                <td><input type="text" class="form-control" id="sg_40"></td>
+                                <td><input type="text" class="form-control" id="volt_40"></td>
+                            </tr>
+
+                            <tr>
+                                <td>41</td>
+                                <td><input type="text" class="form-control" id="sg_41"></td>
+                                <td><input type="text" class="form-control" id="volt_41"></td>
+                            </tr>
+
+                            <tr>
+                                <td>42</td>
+                                <td><input type="text" class="form-control" id="sg_42"></td>
+                                <td><input type="text" class="form-control" id="volt_42"></td>
+                            </tr>
+
+                            <tr>
+                                <td>43</td>
+                                <td><input type="text" class="form-control" id="sg_43"></td>
+                                <td><input type="text" class="form-control" id="volt_43"></td>
+                            </tr>
+
+                            <tr>
+                                <td>44</td>
+                                <td><input type="text" class="form-control" id="sg_44"></td>
+                                <td><input type="text" class="form-control" id="volt_44"></td>
+                            </tr>
+
+                            <tr>
+                                <td>45</td>
+                                <td><input type="text" class="form-control" id="sg_45"></td>
+                                <td><input type="text" class="form-control" id="volt_45"></td>
+                            </tr>
+
+                            <tr>
+                                <td>46</td>
+                                <td><input type="text" class="form-control" id="sg_46"></td>
+                                <td><input type="text" class="form-control" id="volt_46"></td>
+                            </tr>
+
+                            <tr>
+                                <td>47</td>
+                                <td><input type="text" class="form-control" id="sg_47"></td>
+                                <td><input type="text" class="form-control" id="volt_47"></td>
+                            </tr>
+
+                            <tr>
+                                <td>48</td>
+                                <td><input type="text" class="form-control" id="sg_48"></td>
+                                <td><input type="text" class="form-control" id="volt_48"></td>
+                            </tr>
+
+                            <tr>
+                                <td>49</td>
+                                <td><input type="text" class="form-control" id="sg_49"></td>
+                                <td><input type="text" class="form-control" id="volt_49"></td>
+                            </tr>
+
+                            <tr>
+                                <td>50</td>
+                                <td><input type="text" class="form-control" id="sg_50"></td>
+                                <td><input type="text" class="form-control" id="volt_50"></td>
+                            </tr>
+
+                            <tr>
+                                <td>51</td>
+                                <td><input type="text" class="form-control" id="sg_51"></td>
+                                <td><input type="text" class="form-control" id="volt_51"></td>
+                            </tr>
+
+                            <tr>
+                                <td>52</td>
+                                <td><input type="text" class="form-control" id="sg_52"></td>
+                                <td><input type="text" class="form-control" id="volt_52"></td>
+                            </tr>
+
+                            <tr>
+                                <td>53</td>
+                                <td><input type="text" class="form-control" id="sg_53"></td>
+                                <td><input type="text" class="form-control" id="volt_53"></td>
+                            </tr>
+
+                            <tr>
+                                <td>54</td>
+                                <td><input type="text" class="form-control" id="sg_54"></td>
+                                <td><input type="text" class="form-control" id="volt_54"></td>
+                            </tr>
+
+                            <tr>
+                                <td>55</td>
+                                <td><input type="text" class="form-control" id="sg_55"></td>
+                                <td><input type="text" class="form-control" id="volt_55"></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Spare Cells
+                                </th>
+                                <th>
+                                    Specific Gravity
+                                </th>
+                                <th>
+                                    Voltage
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <td>Cell No1</td>
+                                <td><input type="text" class="form-control" id="cell_sg_1"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_1"></td>
+                            </tr>
+                            <tr>
+                                <td>Cell No2</td>
+                                <td><input type="text" class="form-control" id="cell_sg_2"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_2"></td>
+                            </tr>
+                            <tr>
+                                <td>Cell No3</td>
+                                <td><input type="text" class="form-control" id="cell_sg_3"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_3"></td>
+                            </tr>
+                            <tr>
+                                <td>Cell No4</td>
+                                <td><input type="text" class="form-control" id="cell_sg_4"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_4"></td>
+                            </tr>
+                            <tr>
+                                <td>Cell No5</td>
+                                <td><input type="text" class="form-control" id="cell_sg_5"></td>
+                                <td><input type="text" class="form-control" id="cell_volt_5"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Battery Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_totalBatteryVoltage">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Battery Charging Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_batteryCurrent">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_loadCurrent">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>AC Input Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_inputVolt">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>AC Input Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="ips_inputCurrent">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>SMR 1: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 2: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 3: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_3">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 4: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_4">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 1: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_1_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 2: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_2_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 3: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_3_3">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SMR 4: Voltage/Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="smr_4_4">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Inverter 1: Input/Output Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_volt_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Inverter 1: Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_current_1">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Inverter 2: Input/Output Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_volt_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Inverter 2: Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="inverter_current_2">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>CVT/AVR (Signals) 1 Input/Output Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_volt_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CVT/AVR (Signals) 1 Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_current_1">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th>CVT/AVR (Signals) 2 Input/Output Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_volt_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CVT/AVR (Signals) 2 Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_current_2">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th>CVT/AVR (Track) 1 Input/Output Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackVolt_1">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CVT/AVR (Track) 1 Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackCurrent_1">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th>CVT/AVR (Track) 2 Input/Output Voltage:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackVolt_2">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>CVT/AVR (Track) 2 Load Current:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="cvt_avr_trackCurrent_2">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th>110V DC for Points:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="dcPoint">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Battery Charging & Load Current may be included:</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="batteryLoadInclude">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Signal transformer and DC-DC converter voltage may be included</th>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" id="signalTransformer">
+
+                                </td>
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <div id="ips_batteryForm_status"></div>
+                    <div>
+                        <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+                        <button type='button' id="ips_batteryFormBtn" class="btn btn-sm btn-success">Final
+                            Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
