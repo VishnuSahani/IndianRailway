@@ -1435,7 +1435,105 @@ if (isset($_POST['action'])) {
         echo json_encode($respo);
         die();
 
-    } else {
+    } elseif ($action == "updateEmpStation"){
+        if (!isset($_POST['empId']) || empty(trim($_POST['empId']))) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Employee is required";
+            echo json_encode($respo);
+            die();
+        }
+
+        if (!isset($_POST['stationId']) || empty(trim($_POST['stationId']))) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Station Id is required";
+            echo json_encode($respo);
+            die();
+        }
+
+        if (!isset($_POST['stationName']) || empty(trim($_POST['stationName']))) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Refresh page and try again";
+            echo json_encode($respo);
+            die();
+        }
+        if (!isset($_POST['sectionId']) || empty(trim($_POST['sectionId']))) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Refresh page and try again";
+            echo json_encode($respo);
+            die();
+        }
+        if (!isset($_POST['sectionName']) || empty(trim($_POST['sectionName']))) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Refresh page and try again";
+            echo json_encode($respo);
+            die();
+        }
+
+        // after null empty check
+
+        $empId = trim($_POST['empId']);
+        $sectionId = trim($_POST['sectionId']);
+        $sectionName = trim($_POST['sectionName']);
+        $stationId = trim($_POST['stationId']);
+        $stationName = trim($_POST['stationName']);
+        $createdDateTime = date("Y-m-d h:i:s"); 
+
+        $checkEmp = mysqli_query($con,"SELECT id,empid,section_id,station_id,section_name,station_name FROM emp_info_rail WHERE empid='$empId'");
+        if(mysqli_num_rows($checkEmp) <= 0){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid Employee Id";
+            echo json_encode($respo);
+            die();
+        }
+
+
+        
+
+        $run_emp = mysqli_fetch_array($checkEmp);
+
+        //maintain log
+
+        $section_id = $run_emp['section_id'];
+        $station_id = $run_emp['station_id'];
+        $section_name = $run_emp['section_name'];
+        $station_name = $run_emp['station_name'];
+
+        $logQ = mysqli_query($con, "INSERT INTO station_change_log (empid,section_name,section_id,station_name,station_id,created_date) VALUES ('$empId','$section_name','$section_id','$station_name','$station_id','$createdDateTime')");
+
+        if($logQ){
+
+            $updateEmp = mysqli_query($con,"UPDATE emp_info_rail SET section_id='$sectionId', station_id='$stationId', section_name='$sectionName', station_name='$stationName',updated_date='$createdDateTime' WHERE empid='$empId'");
+
+            if($updateEmp){
+                $respo['status'] = true;
+                $respo['msg'] = "Station updated successfully.";
+                echo json_encode($respo);
+                die();
+    
+            }else{
+                $respo['status'] = false;
+                $respo['msg'] = "station is not update please try again.";
+                echo json_encode($respo);
+                die();
+            }
+
+        }else{
+
+            //else log
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with log, Please try again.";
+            echo json_encode($respo);
+            die();
+        }
+
+    }
+     else {
 
         // 
         $respo['status'] = false;

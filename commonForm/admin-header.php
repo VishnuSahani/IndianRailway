@@ -129,9 +129,24 @@ background:#feeeb7a8;
 <div id="menubar" class="collapse navbar-collapse">
 <ul class="navbar-nav">
 
- <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>index.php" class="nav-link  active">Add Employee Data</a></li> 
+ <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>index.php" class="nav-link  active">Add ESM/MCM Data</a></li> 
 
-<li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>emp-info.php" class="nav-link  active">View Employee Data</a></li> 
+<li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>emp-info.php" class="nav-link  active">View ESM/MCM Data</a></li> 
+
+<li class="nav-item dropdown">
+              
+  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        View Form
+        </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-je.php">View  JE Form</a>
+          
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-sse.php">View SSE Incharge Form</a>
+
+          <a class="dropdown-item" href="<?php echo $_SESSION['redirectPage']; ?>view-assigned-station-to-aste.php">View ASTE Form</a>
+       </div>
+     </li>
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>add-station-component.php" class="nav-link  active">Add station Component</a></li> 
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>view-station-component.php" class="nav-link  active">View station Component</a></li> 
 <li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>view-emp-form.php" class="nav-link  active">View Form</a></li> 

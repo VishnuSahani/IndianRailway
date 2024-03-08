@@ -5784,9 +5784,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                 </div>
                 <div class="modal-body table-responsive">
-                    <!-- 
-                    
-                     -->
+                   <div class="" id="ips_readForm_status"></div>
                     <table class="table">
                         <tbody id="ips_battery_body1">
 
@@ -5803,7 +5801,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                 </th>
                                 <td>
                                     <input type="text" class="form-control" id="ips_railway">
-
+                                    <input type="hidden" class="form-control" id="ips_barttertId">
                                 </td>
                                 <th scope="col">
                                     <span class="heading_english">
@@ -5816,7 +5814,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_division">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_division">
 
                                 </td>
                             </tr>
@@ -5833,7 +5831,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_manufacturer">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_manufacturer">
 
                                 </td>
 
@@ -5848,7 +5846,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_batteryManufacturer">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_batteryManufacturer">
 
                                 </td>
                             </tr>
@@ -5865,7 +5863,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_installation_Date">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_installation_Date">
 
                                 </td>
                                 <th scope="col">
@@ -5879,8 +5877,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_bank_installation_Date">
-
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_bank_installation_Date">
                                 </td>
                             </tr>
 
@@ -5896,7 +5893,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_workingCells">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_workingCells">
 
                                 </td>
                                 <th scope="col">
@@ -5910,7 +5907,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_bankVoltage">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_bankVoltage">
 
                                 </td>
                             </tr>
@@ -5927,7 +5924,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_spareCells">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_spareCells">
 
                                 </td>
                                 <th scope="col">
@@ -5941,7 +5938,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_capacityBattery">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_capacityBattery">
 
                                 </td>
                             </tr>
@@ -5965,7 +5962,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td>
-                                    <input type="text" class="form-control" id="ips_typeBattery">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_typeBattery">
 
                                 </td>
                             </tr>
@@ -6047,7 +6044,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="ips_dateMeasurement">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_dateMeasurement">
                                 </td>
 
                             </tr>
@@ -6056,8 +6053,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                         <tr class="bg-dark text-light">
                             <th style="width:5%">
                             <span class="heading_english"> Cell No.</span>
-                            <span class="heading_hindi">सेल नं.</span>
-                            
+                            <span class="heading_hindi">सेल नं.</span>                           
                            
                         
                         </th>
@@ -6073,333 +6069,333 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                         <tbody id="ips_battery_body2">
                             <tr>
                                 <th>1</th>
-                                <td><input type="text" class="form-control" id="sg_1"></td>
-                                <td><input type="text" class="form-control" id="volt_1"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_1"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_1"></td>
                             </tr>
 
                             <tr>
                                 <th>2</th>
-                                <td><input type="text" class="form-control" id="sg_2"></td>
-                                <td><input type="text" class="form-control" id="volt_2"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_2"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_2"></td>
                             </tr>
 
 
                             <tr>
                                 <th>3</th>
-                                <td><input type="text" class="form-control" id="sg_3"></td>
-                                <td><input type="text" class="form-control" id="volt_3"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_3"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_3"></td>
                             </tr>
 
                             <tr>
                                 <th>4</th>
-                                <td><input type="text" class="form-control" id="sg_4"></td>
-                                <td><input type="text" class="form-control" id="volt_4"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_4"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_4"></td>
                             </tr>
 
                             <tr>
                                 <th>5</th>
-                                <td><input type="text" class="form-control" id="sg_5"></td>
-                                <td><input type="text" class="form-control" id="volt_5"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_5"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_5"></td>
                             </tr>
 
                             <tr>
                                 <th>6</th>
-                                <td><input type="text" class="form-control" id="sg_6"></td>
-                                <td><input type="text" class="form-control" id="volt_6"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_6"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_6"></td>
                             </tr>
 
                             <tr>
                                 <th>7</th>
-                                <td><input type="text" class="form-control" id="sg_7"></td>
-                                <td><input type="text" class="form-control" id="volt_7"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_7"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_7"></td>
                             </tr>
 
                             <tr>
                                 <th>8</th>
-                                <td><input type="text" class="form-control" id="sg_8"></td>
-                                <td><input type="text" class="form-control" id="volt_8"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_8"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_8"></td>
                             </tr>
 
                             <tr>
                                 <th>9</th>
-                                <td><input type="text" class="form-control" id="sg_9"></td>
-                                <td><input type="text" class="form-control" id="volt_9"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_9"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_9"></td>
                             </tr>
 
                             <tr>
                                 <th>10</th>
-                                <td><input type="text" class="form-control" id="sg_10"></td>
-                                <td><input type="text" class="form-control" id="volt_10"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_10"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_10"></td>
                             </tr>
 
                             <tr>
                                 <th>11</th>
-                                <td><input type="text" class="form-control" id="sg_11"></td>
-                                <td><input type="text" class="form-control" id="volt_11"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_11"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_11"></td>
                             </tr>
 
                             <tr>
                                 <th>12</th>
-                                <td><input type="text" class="form-control" id="sg_12"></td>
-                                <td><input type="text" class="form-control" id="volt_12"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_12"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_12"></td>
                             </tr>
 
                             <tr>
                                 <th>13</th>
-                                <td><input type="text" class="form-control" id="sg_13"></td>
-                                <td><input type="text" class="form-control" id="volt_13"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_13"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_13"></td>
                             </tr>
 
                             <tr>
                                 <th>14</th>
-                                <td><input type="text" class="form-control" id="sg_14"></td>
-                                <td><input type="text" class="form-control" id="volt_14"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_14"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_14"></td>
                             </tr>
 
                             <tr>
                                 <th>15</th>
-                                <td><input type="text" class="form-control" id="sg_15"></td>
-                                <td><input type="text" class="form-control" id="volt_15"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_15"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_15"></td>
                             </tr>
 
                             <tr>
                                 <th>16</th>
-                                <td><input type="text" class="form-control" id="sg_16"></td>
-                                <td><input type="text" class="form-control" id="volt_16"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_16"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_16"></td>
                             </tr>
 
                             <tr>
                                 <th>17</th>
-                                <td><input type="text" class="form-control" id="sg_17"></td>
-                                <td><input type="text" class="form-control" id="volt_17"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_17"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_17"></td>
                             </tr>
 
                             <tr>
                                 <th>18</th>
-                                <td><input type="text" class="form-control" id="sg_18"></td>
-                                <td><input type="text" class="form-control" id="volt_18"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_18"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_18"></td>
                             </tr>
 
                             <tr>
                                 <th>19</th>
-                                <td><input type="text" class="form-control" id="sg_19"></td>
-                                <td><input type="text" class="form-control" id="volt_19"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_19"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_19"></td>
                             </tr>
 
                             <tr>
                                 <th>20</th>
-                                <td><input type="text" class="form-control" id="sg_20"></td>
-                                <td><input type="text" class="form-control" id="volt_20"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_20"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_20"></td>
                             </tr>
 
                             <tr>
                                 <th>21</th>
-                                <td><input type="text" class="form-control" id="sg_21"></td>
-                                <td><input type="text" class="form-control" id="volt_21"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_21"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_21"></td>
                             </tr>
 
                             <tr>
                                 <th>22</th>
-                                <td><input type="text" class="form-control" id="sg_22"></td>
-                                <td><input type="text" class="form-control" id="volt_22"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_22"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_22"></td>
                             </tr>
 
                             <tr>
                                 <th>23</th>
-                                <td><input type="text" class="form-control" id="sg_23"></td>
-                                <td><input type="text" class="form-control" id="volt_23"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_23"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_23"></td>
                             </tr>
 
                             <tr>
                                 <th>24</th>
-                                <td><input type="text" class="form-control" id="sg_24"></td>
-                                <td><input type="text" class="form-control" id="volt_24"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_24"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_24"></td>
                             </tr>
 
                             <tr>
                                 <th>25</th>
-                                <td><input type="text" class="form-control" id="sg_25"></td>
-                                <td><input type="text" class="form-control" id="volt_25"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_25"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_25"></td>
                             </tr>
 
                             <tr>
                                 <th>26</th>
-                                <td><input type="text" class="form-control" id="sg_26"></td>
-                                <td><input type="text" class="form-control" id="volt_26"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_26"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_26"></td>
                             </tr>
 
                             <tr>
                                 <th>27</th>
-                                <td><input type="text" class="form-control" id="sg_27"></td>
-                                <td><input type="text" class="form-control" id="volt_27"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_27"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_27"></td>
                             </tr>
 
                             <tr>
                                 <th>28</th>
-                                <td><input type="text" class="form-control" id="sg_28"></td>
-                                <td><input type="text" class="form-control" id="volt_28"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_28"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_28"></td>
                             </tr>
 
                             <tr>
                                 <th>29</th>
-                                <td><input type="text" class="form-control" id="sg_29"></td>
-                                <td><input type="text" class="form-control" id="volt_29"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_29"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_29"></td>
                             </tr>
 
                             <tr>
                                 <th>30</th>
-                                <td><input type="text" class="form-control" id="sg_30"></td>
-                                <td><input type="text" class="form-control" id="volt_30"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_30"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_30"></td>
                             </tr>
 
                             <tr>
                                 <th>31</th>
-                                <td><input type="text" class="form-control" id="sg_31"></td>
-                                <td><input type="text" class="form-control" id="volt_31"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_31"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_31"></td>
                             </tr>
 
                             <tr>
                                 <th>32</th>
-                                <td><input type="text" class="form-control" id="sg_32"></td>
-                                <td><input type="text" class="form-control" id="volt_32"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_32"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_32"></td>
                             </tr>
 
                             <tr>
                                 <th>33</th>
-                                <td><input type="text" class="form-control" id="sg_33"></td>
-                                <td><input type="text" class="form-control" id="volt_33"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_33"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_33"></td>
                             </tr>
 
                             <tr>
                                 <th>34</th>
-                                <td><input type="text" class="form-control" id="sg_34"></td>
-                                <td><input type="text" class="form-control" id="volt_34"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_34"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_34"></td>
                             </tr>
 
                             <tr>
                                 <th>35</th>
-                                <td><input type="text" class="form-control" id="sg_35"></td>
-                                <td><input type="text" class="form-control" id="volt_35"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_35"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_35"></td>
                             </tr>
 
                             <tr>
                                 <th>36</th>
-                                <td><input type="text" class="form-control" id="sg_36"></td>
-                                <td><input type="text" class="form-control" id="volt_36"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_36"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_36"></td>
                             </tr>
 
                             <tr>
                                 <th>37</th>
-                                <td><input type="text" class="form-control" id="sg_37"></td>
-                                <td><input type="text" class="form-control" id="volt_37"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_37"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_37"></td>
                             </tr>
 
                             <tr>
                                 <th>38</th>
-                                <td><input type="text" class="form-control" id="sg_38"></td>
-                                <td><input type="text" class="form-control" id="volt_38"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_38"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_38"></td>
                             </tr>
 
                             <tr>
                                 <th>39</th>
-                                <td><input type="text" class="form-control" id="sg_39"></td>
-                                <td><input type="text" class="form-control" id="volt_39"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_39"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_39"></td>
                             </tr>
 
                             <tr>
                                 <th>40</th>
-                                <td><input type="text" class="form-control" id="sg_40"></td>
-                                <td><input type="text" class="form-control" id="volt_40"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_40"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_40"></td>
                             </tr>
 
                             <tr>
                                 <th>41</th>
-                                <td><input type="text" class="form-control" id="sg_41"></td>
-                                <td><input type="text" class="form-control" id="volt_41"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_41"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_41"></td>
                             </tr>
 
                             <tr>
                                 <th>42</th>
-                                <td><input type="text" class="form-control" id="sg_42"></td>
-                                <td><input type="text" class="form-control" id="volt_42"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_42"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_42"></td>
                             </tr>
 
                             <tr>
                                 <th>43</th>
-                                <td><input type="text" class="form-control" id="sg_43"></td>
-                                <td><input type="text" class="form-control" id="volt_43"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_43"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_43"></td>
                             </tr>
 
                             <tr>
                                 <th>44</th>
-                                <td><input type="text" class="form-control" id="sg_44"></td>
-                                <td><input type="text" class="form-control" id="volt_44"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_44"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_44"></td>
                             </tr>
 
                             <tr>
                                 <th>45</th>
-                                <td><input type="text" class="form-control" id="sg_45"></td>
-                                <td><input type="text" class="form-control" id="volt_45"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_45"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_45"></td>
                             </tr>
 
                             <tr>
                                 <th>46</th>
-                                <td><input type="text" class="form-control" id="sg_46"></td>
-                                <td><input type="text" class="form-control" id="volt_46"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_46"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_46"></td>
                             </tr>
 
                             <tr>
                                 <th>47</th>
-                                <td><input type="text" class="form-control" id="sg_47"></td>
-                                <td><input type="text" class="form-control" id="volt_47"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_47"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_47"></td>
                             </tr>
 
                             <tr>
                                 <th>48</th>
-                                <td><input type="text" class="form-control" id="sg_48"></td>
-                                <td><input type="text" class="form-control" id="volt_48"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_48"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_48"></td>
                             </tr>
 
                             <tr>
                                 <th>49</th>
-                                <td><input type="text" class="form-control" id="sg_49"></td>
-                                <td><input type="text" class="form-control" id="volt_49"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_49"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_49"></td>
                             </tr>
 
                             <tr>
                                 <th>50</th>
-                                <td><input type="text" class="form-control" id="sg_50"></td>
-                                <td><input type="text" class="form-control" id="volt_50"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_50"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_50"></td>
                             </tr>
 
                             <tr>
                                 <th>51</th>
-                                <td><input type="text" class="form-control" id="sg_51"></td>
-                                <td><input type="text" class="form-control" id="volt_51"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_51"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_51"></td>
                             </tr>
 
                             <tr>
                                 <th>52</th>
-                                <td><input type="text" class="form-control" id="sg_52"></td>
-                                <td><input type="text" class="form-control" id="volt_52"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_52"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_52"></td>
                             </tr>
 
                             <tr>
                                 <th>53</th>
-                                <td><input type="text" class="form-control" id="sg_53"></td>
-                                <td><input type="text" class="form-control" id="volt_53"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_53"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_53"></td>
                             </tr>
 
                             <tr>
                                 <th>54</th>
-                                <td><input type="text" class="form-control" id="sg_54"></td>
-                                <td><input type="text" class="form-control" id="volt_54"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_54"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_54"></td>
                             </tr>
 
                             <tr>
                                 <th>55</th>
-                                <td><input type="text" class="form-control" id="sg_55"></td>
-                                <td><input type="text" class="form-control" id="volt_55"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="sg_55"></td>
+                                <td colspan="2"><input type="text" class="form-control ipsBatteryReading" id="volt_55"></td>
                             </tr>
 
                             <tr class="text-light bg-dark">
@@ -6413,8 +6409,8 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                     <span class="heading_english">Specific Gravity</span>
                                     <span class="heading_hindi">विशिष्ट गुरुत्व</span>
                                 </th>
-                                <th colspan="2">
-                                    Voltage
+                                <th>
+                                    
                                     <span class="heading_english">Voltage</span>
                                     <span class="heading_hindi">वोल्टेज</span>
                                 </th>
@@ -6426,36 +6422,36 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                     <span class="heading_hindi">सेल नंबर 1</span>                                    
                                     
                                 </th>
-                                <td><input type="text" class="form-control" id="cell_sg_1"></td>
-                                <td><input type="text" class="form-control" id="cell_volt_1"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_sg_1"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_volt_1"></td>
                             </tr>
                             <tr>
                                 <th colspan="2">
                                 <span class="heading_english">Cell No 2</span>
                                 <span class="heading_hindi">सेल नंबर 2</span> 
                                 </th>
-                                <td><input type="text" class="form-control" id="cell_sg_2"></td>
-                                <td><input type="text" class="form-control" id="cell_volt_2"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_sg_2"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_volt_2"></td>
                             </tr>
                             <tr>
                                 <th colspan="2">
                                 <span class="heading_english">Cell No 3</span>
                                     <span class="heading_hindi">सेल नंबर 3</span> 
                                 </th>
-                                <td><input type="text" class="form-control" id="cell_sg_3"></td>
-                                <td><input type="text" class="form-control" id="cell_volt_3"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_sg_3"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_volt_3"></td>
                             </tr>
                             <tr>
                                 <th colspan="2"><span class="heading_english">Cell No 4</span>
 <span class="heading_hindi">सेल नंबर 4</span> </th>
-                                <td><input type="text" class="form-control" id="cell_sg_4"></td>
-                                <td><input type="text" class="form-control" id="cell_volt_4"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_sg_4"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_volt_4"></td>
                             </tr>
                             <tr>
                                 <th colspan="2"><span class="heading_english">Cell No 5</span>
 <span class="heading_hindi">सेल नंबर 5</span> </th>
-                                <td><input type="text" class="form-control" id="cell_sg_5"></td>
-                                <td><input type="text" class="form-control" id="cell_volt_5"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_sg_5"></td>
+                                <td><input type="text" class="form-control ipsBatteryReading" id="cell_volt_5"></td>
                             </tr>
 
                             <tr>
@@ -6465,7 +6461,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                 
                             </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="ips_totalBatteryVoltage">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_totalBatteryVoltage">
                                 </td>
                             </tr>
                             <tr>
@@ -6475,7 +6471,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                 <span class="heading_hindi">बैटरी चार्जिंग करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="ips_batteryCurrent">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_batteryCurrent">
 
                                 </td>
                             </tr>
@@ -6486,7 +6482,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                 <span class="heading_hindi">भार बिजली:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="ips_loadCurrent">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_loadCurrent">
 
                                 </td>
                             </tr>
@@ -6496,7 +6492,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                 <span class="heading_hindi">एसी इनपुट वोल्टेज:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="ips_inputVolt">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_inputVolt">
 
                                 </td>
                             </tr>
@@ -6506,7 +6502,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                 <span class="heading_hindi">एसी इनपुट करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="ips_inputCurrent">
+                                    <input type="text" class="form-control ipsBatteryReading" id="ips_inputCurrent">
 
                                 </td>
                             </tr>
@@ -6518,7 +6514,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
                                     <span class="heading_hindi">एसएमआर 1: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_1">
 
                                 </td>
                             </tr>
@@ -6529,7 +6525,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">एसएमआर 2: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_2">
 
                                 </td>
                             </tr>
@@ -6540,7 +6536,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">एसएमआर 3: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_3">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_3">
 
                                 </td>
                             </tr>
@@ -6551,7 +6547,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">एसएमआर 4: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_4">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_4">
 
                                 </td>
                             </tr>
@@ -6562,7 +6558,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> एसएमआर 1: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_1_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_1_1">
 
                                 </td>
                             </tr>
@@ -6573,7 +6569,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> एसएमआर 2: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_2_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_2_2">
 
                                 </td>
                             </tr>
@@ -6584,7 +6580,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> एसएमआर 3: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_3_3">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_3_3">
 
                                 </td>
                             </tr>
@@ -6595,7 +6591,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> एसएमआर 4: वोल्टेज/करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="smr_4_4">
+                                    <input type="text" class="form-control ipsBatteryReading" id="smr_4_4">
 
                                 </td>
                             </tr>
@@ -6607,7 +6603,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> इन्वर्टर 1: इनपुट/आउटपुट वोल्टेज:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="inverter_volt_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="inverter_volt_1">
 
                                 </td>
                             </tr>
@@ -6618,7 +6614,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> इन्वर्टर 1 लोड करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="inverter_current_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="inverter_current_1">
 
                                 </td>
                             </tr>
@@ -6630,7 +6626,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> इन्वर्टर 2: इनपुट/आउटपुट वोल्टेज:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="inverter_volt_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="inverter_volt_2">
 
                                 </td>
                             </tr>
@@ -6641,7 +6637,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">इन्वर्टर 2 लोड करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="inverter_current_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="inverter_current_2">
 
                                 </td>
                             </tr>
@@ -6653,7 +6649,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> सीवीटी/एवीआर (सिग्नल) 1 इनपुट/आउटपुट वोल्टेज:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_volt_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_volt_1">
 
                                 </td>
                             </tr>
@@ -6664,7 +6660,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> सीवीटी/एवीआर (सिग्नल) 1 लोड करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_current_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_current_1">
 
                                 </td>
                             </tr>
@@ -6677,7 +6673,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">सीवीटी/एवीआर (सिग्नल) 2 लोड करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_volt_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_volt_2">
 
                                 </td>
                             </tr>
@@ -6688,7 +6684,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">सीवीटी/एवीआर (ट्रैक) 1 इनपुट/आउटपुट वोल्टेज:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_current_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_current_2">
 
                                 </td>
                             </tr>
@@ -6701,7 +6697,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> सीवीटी/एवीआर (ट्रैक) 1 लोड करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_trackVolt_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_trackVolt_1">
 
                                 </td>
                             </tr>
@@ -6712,7 +6708,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi">सीवीटी/एवीआर (ट्रैक) 2 इनपुट/आउटपुट वोल्टेज:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_trackCurrent_1">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_trackCurrent_1">
 
                                 </td>
                             </tr>
@@ -6725,14 +6721,14 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> सीवीटी/एवीआर (ट्रैक) 2 लोड करंट:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_trackVolt_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_trackVolt_2">
 
                                 </td>
                             </tr>
                             <!-- <tr>
                                 <th>CVT/AVR (Track) 2 Load Current:</th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="cvt_avr_trackCurrent_2">
+                                    <input type="text" class="form-control ipsBatteryReading" id="cvt_avr_trackCurrent_2">
 
                                 </td>
                             </tr> -->
@@ -6745,7 +6741,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> पॉइंट के लिए 110V DC:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="dcPoint">
+                                    <input type="text" class="form-control ipsBatteryReading" id="dcPoint">
 
                                 </td>
                             </tr>
@@ -6756,7 +6752,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> बैटरी चार्जिंग और लोड करंट शामिल हो सकते हैं:</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="batteryLoadInclude">
+                                    <input type="text" class="form-control ipsBatteryReading" id="batteryLoadInclude">
 
                                 </td>
                             </tr>
@@ -6767,7 +6763,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <span class="heading_hindi"> सिग्नल ट्रांसफार्मर और डीसी-डीसी कनवर्टर वोल्टेज शामिल किया जा सकता है</span>
                                 </th>
                                 <td colspan="2">
-                                    <input type="text" class="form-control" id="signalTransformer">
+                                    <input type="text" class="form-control ipsBatteryReading" id="signalTransformer">
 
                                 </td>
                             </tr>
@@ -7736,6 +7732,10 @@ $(document).ready(function() {
                         $("#ep1Form_status").html(respo['msg']).css("color", "red");
 
                     }
+
+                    setTimeout(()=>{
+                        $("#ep1Form_status").html("");
+                    },5000);
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
@@ -8113,13 +8113,17 @@ $(document).ready(function() {
 
                     if (respo['status']) {
                         $("#ep2Form_status").html(respo['msg']).css("color", "green");
+                        $("#FormEP2")[0].reset();
 
 
                     } else {
-                        $("#FormEP2")[0].reset();
                         $("#ep2Form_status").html(respo['msg']).css("color", "red");
 
                     }
+
+                    setTimeout(()=>{
+                        $("#ep2Form_status").html("");
+                    },5000);
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
@@ -17062,6 +17066,179 @@ $.ajax({
 })
 
     })
+
+
+
+    
+$(document).ready(()=>{
+    $(".ipsBatteryReading").on("change", function () {
+                // Get the ID and value of the changed input field
+                var inputId = $(this).attr("id"); // id as a column
+                var inputValue = $(this).val();
+                
+                // Log or use the ID and value as needed
+                console.log("ID: " + inputId + ", Value: " + inputValue);
+
+                let ips_barttertId = $("#ips_barttertId").val();
+
+                if (ips_barttertId == undefined  || ips_barttertId == null || ips_barttertId == '' || ips_barttertId.length == 0) {
+                $("#ips_railway").addClass("is-invalid");
+                $("#ips_readForm_status").html("Please fill Railway field first").css("color", "red");
+                
+                    return;
+                } else {
+                    $("#ips_readForm_status").html("");
+                    $("#ips_railway").removeClass("is-invalid");
+
+                }
+
+
+                let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+                if(userID == '' || userID == null || userID == undefined){
+                    
+                    $("#ips_readForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                    return
+                }
+
+            let language = $("#language").val();
+
+                
+            $.ajax({
+                type: "POST",
+                url: "query/form-action.php",
+                data: {
+                    "action": "IPSRead_formSubmit_update",
+                    "columnName": inputId,
+                    "userID": userID,         
+                    columnValue:inputValue,
+                    ips_barttertId:ips_barttertId,
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#"+inputId).addClass("is-valid");
+                        $("#"+inputId).removeClass("is-invalid");
+
+                    } else {
+                    
+                        $("#"+inputId).removeClass("is-valid");
+                        $("#"+inputId).addClass("is-invalid");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+
+
+
+            });
+
+
+    $("#ips_railway").change(()=>{
+
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let ips_railway = $("#ips_railway").val();
+            let ips_barttertId = $("#ips_barttertId").val();
+
+        if (ips_railway == undefined  || ips_railway == null || ips_railway == '' || ips_railway.length == 0) {
+                $("#ips_railway").addClass("is-invalid");
+                $("#ips_readForm_status").html("Railway field is required").css("color", "red");
+                return;
+            } else {
+                $("#ips_readForm_status").html("");
+                $("#ips_railway").removeClass("is-invalid");
+
+            }
+
+            let type_f="";
+            if (ips_barttertId == undefined  || ips_barttertId == null || ips_barttertId == '' || ips_barttertId.length == 0) {
+                type_f = 'create';
+             ips_barttertId="";
+            } else {
+                type_f = 'update';
+            }
+
+            
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#ips_readForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/form-action.php",
+                data: {
+                    "action": "IPSRead_formSubmit",
+                    "actionType":type_f,
+                    "columnName":"ips_railway",
+                    "userID": userID,
+                    ips_barttertId:ips_barttertId,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "ips_railway": ips_railway,          
+                            
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status'] && respo['updateId']) {
+                        $("#ips_readForm_status").html(respo['msg']).css("color", "green");
+                        $("#ips_barttertId").val(respo['updateId']);
+                    } else {
+                        $("#ips_readForm_status").html(respo['msg']).css("color", "red");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+        
+        
+    });
+
+});
 
 </script>
 

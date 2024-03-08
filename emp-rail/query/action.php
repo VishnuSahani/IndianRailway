@@ -5659,6 +5659,193 @@ if(isset($_POST['action'])){
 
 
 
+    }elseif ($action == "IPSRead_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+        $actionType = trim($_POST['actionType']);    
+
+
+        $checkData = mysqli_query($con, "SELECT * FROM ips_battery_read WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0 && $actionType == "create") {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("IPS_Battery",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $ips_railway = trim($_POST['ips_railway']);
+        
+        if (empty($ips_railway)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly fill railway field";
+            $respo['idName'] = "ips_railway";
+            echo json_encode($respo);
+            die();
+        }
+        
+        $insertQuery = "";
+        $qq = "";
+        $ips_barttertId = "";
+        $typee = "";
+        if($actionType == "update"){
+            $ips_barttertId = trim($_POST['ips_barttertId']);    
+            $insertQuery = "UPDATE ips_battery_read SET ips_railway='$ips_railway' WHERE id='$ips_barttertId'";         
+            $typee = 'updated';
+
+        }else{
+            $insertQuery = "INSERT INTO ips_battery_read (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ips_railway,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ips_railway','$createdDateTime','$createdDateTime','$language')";
+            
+            $qq = "SELECT * FROM ips_battery_read WHERE emp_id='$userID' AND section_id='$sectionId' AND station_id='$stationId' AND component_name ='$compoNameTmp' AND created_date='$createdDateTime'";
+            $typee = 'inserted';
+
+        }
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            if($actionType == "create"){                
+                $getId = mysqli_query($con,$qq);    
+                $r = mysqli_fetch_array($getId);
+                $ips_barttertId = $r['id'];
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "Railway Data ".$typee." successfully.";
+            $respo['updateId'] = $ips_barttertId;
+            
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    }elseif($action == "IPSRead_formSubmit_update"){
+        if (!isset($_POST['userID'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with user ID";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        if(!isset($_POST['columnName'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with column name";
+            echo json_encode($respo);
+            die();
+        }
+
+        if(!isset($_POST['columnValue'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with column value";
+            echo json_encode($respo);
+            die();
+        }
+        if(!isset($_POST['ips_barttertId'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with row ID";
+            echo json_encode($respo);
+            die();
+        }
+
+
+        $userID = trim($_POST['userID']);
+        $createdDateTime = date("Y-m-d h:i:s");
+        
+        $columnName = trim($_POST['columnName']);
+        $columnValue = trim($_POST['columnValue']);
+        $language = trim($_POST['language']);
+        $ips_barttertId = trim($_POST['ips_barttertId']);
+
+        if(empty($userID) || empty($columnName) || empty($columnValue) || empty($language) || empty($ips_barttertId)){
+            $respo['status'] = false;
+            $respo['msg'] = "Request value is empty";
+            echo json_encode($respo);
+            die();
+        }
+
+        $checkData = mysqli_query($con,"SELECT id,emp_id FROM ips_battery_read WHERE emp_id='$userID' && id = '$ips_barttertId'");
+
+        if(mysqli_num_rows($checkData) > 0){
+
+            $updateQuery = "UPDATE ips_battery_read SET $columnName= '$columnValue', updated_date ='$createdDateTime' WHERE id='$ips_barttertId' && emp_id='$userID'";
+
+            if(mysqli_query($con,$updateQuery)){
+                $respo['status'] = true;
+                $respo['msg'] = "Data inserted";
+                echo json_encode($respo);
+                die();
+
+            }else{
+
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong, try again";
+                echo json_encode($respo);
+                die();
+
+            }
+
+        }else{
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid Row Id provide";
+            echo json_encode($respo);
+            die();
+        }
+
+
     }
 
 

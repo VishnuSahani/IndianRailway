@@ -1043,6 +1043,150 @@ if (isset($_POST['common_action'])) {
 
             //hb1 end
             
+        } elseif ($compoNameTmp == "IPS") {
+            // EP 1,2,4,5 form data
+            $formType = "IPS";
+
+            $qEP1 = mysqli_query($con, "SELECT * FROM ips1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEP1) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ep1Data = [];
+
+                while ($runEp1 = mysqli_fetch_array($qEP1)) {
+
+                    $ep1Data[] = $runEp1;
+
+                }
+
+                $formData['IPS1'] = $ep1Data;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qEP2 = mysqli_query($con, "SELECT * FROM ips2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEP2) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $ep2Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($qEP2)) {
+
+                    $ep2Data[] = $runEp2;
+
+                }
+
+                $formData['IPS2'] = $ep2Data;
+
+            }
+
+            // 2 end
+
+
+            $qEP3 = mysqli_query($con, "SELECT * FROM ips3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEP3) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ep3Data = [];
+
+                while ($runEp3 = mysqli_fetch_array($qEP3)) {
+
+                    $ep3Data[] = $runEp3;
+
+                }
+
+                $formData['IPS3'] = $ep3Data;
+
+            }
+
+        }elseif ($compoNameTmp == "EARTHING") {
+            // EP 1,2,4,5 form data
+            $formType = "IPS";
+
+            $qEP1 = mysqli_query($con, "SELECT * FROM E1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEP1) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ep1Data = [];
+
+                while ($runEp1 = mysqli_fetch_array($qEP1)) {
+
+                    $ep1Data[] = $runEp1;
+
+                }
+
+                $formData['E1'] = $ep1Data;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qEP2 = mysqli_query($con, "SELECT * FROM e2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEP2) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $ep2Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($qEP2)) {
+
+                    $ep2Data[] = $runEp2;
+
+                }
+
+                $formData['E2'] = $ep2Data;
+
+            }
+
+            // 2 end
+
+
+            $qEP3 = mysqli_query($con, "SELECT * FROM e3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEP3) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ep3Data = [];
+
+                while ($runEp3 = mysqli_fetch_array($qEP3)) {
+
+                    $ep3Data[] = $runEp3;
+
+                }
+
+                $formData['E3'] = $ep3Data;
+
+            }
+
         }
         
         else {
@@ -1296,6 +1440,24 @@ if (isset($_POST['common_action'])) {
                 break;
             case 'CS2':
                 $tableName = 'cs2_form';
+                break;
+            case 'E1':
+                $tableName = 'e1_form';
+                break;
+            case 'E2':
+                $tableName = 'e2_form';
+                break;
+            case 'E3':
+                $tableName = 'e3_form';
+                break;
+            case 'IPS1':
+                $tableName = 'ips1_form';
+                break;
+            case 'IPS2':
+                $tableName = 'ips2_form';
+                break;
+            case 'IPS3':
+                $tableName = 'ips3_form';
                 break;
             default:
                 $respo['status'] = false;
@@ -2052,6 +2214,160 @@ if (isset($_POST['common_action'])) {
                 $obj->db_details = $q_run['db_details'];
                 $obj->db_option = $q_run['db_option'];
                 $obj->elb_status = $q_run['status'];
+
+                $data[] = $obj;
+                
+            }
+
+        $respo['status'] = true;
+        $respo['msg'] = "List found";
+        $respo['data'] = $data;
+
+        echo json_encode($respo);
+        die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    } elseif ($action == 'getE_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'E1':
+                $tableName = 'e1_info';
+                break;
+
+            case 'E2':
+                $tableName = 'e2_info';
+                break;
+            
+            case 'E3':
+                $tableName = 'e3_info';
+                break;           
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request in Earthing!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                
+        }
+
+        try{
+
+                $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
+            $queryExe = mysqli_query($con,$query);
+            if(mysqli_num_rows($queryExe) <= 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+            
+            while($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->e_id = $q_run['e_id'];
+                $obj->e_details = $q_run['e_details'];
+                $obj->e_option = $q_run['e_option'];
+                $obj->e_status = $q_run['status'];
+
+                $data[] = $obj;
+                
+            }
+
+        $respo['status'] = true;
+        $respo['msg'] = "List found";
+        $respo['data'] = $data;
+
+        echo json_encode($respo);
+        die();
+
+        }catch(Exception $err){
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }elseif ($action == 'getIPS_FormDetails'){
+        if(!isset($_POST['formType']) || empty($_POST['formType'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'IPS1':
+                $tableName = 'ips1_info';
+                break;
+
+            case 'IPS2':
+                $tableName = 'ips2_info';
+                break;
+            
+            case 'IPS3':
+                $tableName = 'ips3_info';
+                break;           
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request in IPS!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+                
+        }
+
+        try{
+
+                $query = "SELECT * FROM ".$tableName." WHERE language='$language'";
+            $queryExe = mysqli_query($con,$query);
+            if(mysqli_num_rows($queryExe) <= 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+            
+            while($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->ips_id = $q_run['ips_id'];
+                $obj->ips_details = $q_run['ips_details'];
+                $obj->ips_option = $q_run['ips_option'];
+                $obj->ips_status = $q_run['status'];
 
                 $data[] = $obj;
                 

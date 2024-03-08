@@ -147,15 +147,30 @@ $_SESSION['portal_name'] = $name;
 <div id="menubar" class="collapse navbar-collapse">
 <ul class="navbar-nav">
 
- <li class="nav-item"><a href="index.php" class="nav-link  active">Add Employee</a></li> 
+ <li class="nav-item"><a href="index.php" class="nav-link  active">Add ESM/MCM Data</a></li> 
 
-<li class="nav-item"><a href="emp-info.php" class="nav-link  active">View Employee</a></li> 
-<li class="nav-item"><a href="add-station-component.php" class="nav-link  active">Add Component</a></li> 
-<li class="nav-item"><a href="view-station-component.php" class="nav-link  active">View Component</a></li> 
-<li class="nav-item"><a href="view-emp-form.php" class="nav-link  active">View Form</a></li> 
+<li class="nav-item"><a href="emp-info.php" class="nav-link  active">View ESM/MCM Data</a></li> 
+
+<li class="nav-item dropdown">
+              
+  <a class="nav-link dropdown-toggle" href="#" style="color:#FFFFFF;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        View Form
+        </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          
+          <a class="dropdown-item" href="view-assigned-station-to-je.php">View  JE Form</a>
+          
+          <a class="dropdown-item" href="view-assigned-station-to-sse.php">View SSE Incharge Form</a>
+
+          <a class="dropdown-item" href="view-assigned-station-to-aste.php">View ASTE Form</a>
+       </div>
+     </li>
+<li class="nav-item"><a href="add-station-component.php" class="nav-link  active">Add station Component</a></li> 
+<li class="nav-item"><a href="view-station-component.php" class="nav-link  active">View station Component</a></li> 
+<!--<li class="nav-item"><a href="view-emp-form.php" class="nav-link  active">View Form</a></li> -->
+
 <li class="nav-item"><a href="form-duration.php" class="nav-link  active">Form Duration</a></li> 
 <li class="nav-item"><a href="gen-report.php" class="nav-link  active">Report</a></li> 
-
 
 </ul>
 
@@ -172,7 +187,7 @@ $_SESSION['portal_name'] = $name;
           
        </div>
      </li>
-  <li class="nav-item"><a href="refresher-due.php" class="nav-link  active">Refresher</a></li> 
+  <li class="nav-item"><a href="refresher-due.php" class="nav-link  active">Refresher Due</a></li> 
 
 <li class="nav-item dropdown">
               
@@ -187,7 +202,6 @@ $_SESSION['portal_name'] = $name;
 
           <a class="dropdown-item" href="aste-assign.php">Assign Station To ASTE</a>
           <a class="dropdown-item" href="view-assigned-station-to-aste.php">View Assigned Station To ASTE</a>
-          <a class="dropdown-item" href="view-assigned-station-to-dste.php">View Assigned Station To DSTE</a>
        </div>
      </li>
 
