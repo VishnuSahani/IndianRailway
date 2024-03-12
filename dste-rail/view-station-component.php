@@ -1128,7 +1128,7 @@ if (isset($_SESSION['userretailerdste'])) {
 <!-- Modal T1 -->
 <div class="modal fade" id="componentForm_T1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelT1" aria-hidden="true">
-    <form>
+    <form id="formT1">
         <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
             <div class="modal-content">
                 <div class="modal-header">
@@ -2021,16 +2021,16 @@ if (isset($_SESSION['userretailerdste'])) {
 <div class="modal fade" id="componentForm_CS1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelCS1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
-        <form>
+        <form id="cs1_form">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelCS1">
                     <span class="badge badge-success h3">
                        <span class="heading_english">
-                        Schedule Code: CS1
+                       Maintenance Schedule of Colour Light Signal CS1
                     </span>
                      <span class="heading_hindi">
-                         Schedule Code: CS1
+                         CS1
                      </span>
                     </span>
                     <span class="badge badge-danger h3 displaySubcompoName"></span>
@@ -2171,51 +2171,124 @@ if (isset($_SESSION['userretailerdste'])) {
                             <td>(d)  <span class="heading_english"> Shunt signal Voltage: 88 to 132 V and Current: 52.25 to 57.75 mA per LED. </span><span class="heading_hindi">शंट सिग्नल वोल्टेज: 88 से 132 V और करंट: 52.25 से 57.75 mA प्रति LED ।</span></td>
                             </tr>
                             <tr>
-                            <td>
+                            <td colspan="3">
+                                <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead class="text-center table-dark">
-                                    <tr>
-                                        <td rowspan="2">Date</td>
-                                        <td colspan="7">LED</td>
-                                        <td rowspan="2"> Nut Bolt </td>
-                                        <td rowspan="2"> Dom Clean</td>
-                                        <td rowspan="2"> Cover</td>
-                                        <td rowspan="2">Remark </td>
-                                    </tr>
-                               
                                 <tr>
-                                    <td>RG</td> 
-                                    <td >HG</td>
-                                     <td>DG</td>
-                                     <td>HHG</td>
-                                      <td>ROUTE</td>
-                                      <td >C-ON</td> 
-                                      <td>Shunt</td>                            
+                                    <td rowspan="2">Date</td>
+                                    <td colspan="2">RG</td> 
+                                    <td colspan="2">HG</td>
+                                     <td colspan="2">DG</td>
+                                     <td colspan="2">HHG</td>
+                                      <td colspan="2">ROUTE</td>
+                                      <td colspan="2">Calling-ON</td> 
+                                      <td colspan="2">Shunt</td>                            
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+
+                                    <td>
+                                        <span class="heading_english">Voltage</span>
+                                        <span class="heading_hindi">वोल्टेज</span>
+                                        (V)
+                                    </td> 
+                                    <td>
+                                        <span class="heading_english">Current</span>
+                                        <span class="heading_hindi">करेंट</span>
+                                        (mA)
+                                    </td> 
+                                                               
                                 </tr>
                                 </thead>
 
                                 <tbody>
                                      <tr>
-                                    <td ><input id="date" class="form-control" type="date"></td> 
-                                    <td><input id="rg" class="form-control" type="text"></td>
-                                     <td ><input id="hg" class="form-control" type="text"></td>
-                                      <td><input id="dg" class="form-control" type="text"></td>
-                                      <td><input id="hhg" class="form-control" type="text"></td>
-                                       <td><input id="route" class="form-control" type="text"></td>
-                                    <td ><input id="c_on" class="form-control" type="text"></td> 
-                                    <td ><input id="shout" class="form-control" type="text"></td> 
-                                 <td ><input id="nut_bolt" class="form-control" type="text"></td> 
-                                 <td ><input id="dome_clean" class="form-control" type="text"></td>
-                               
-                                 <td ><input id="cover" class="form-control" type="text"></td> 
-                                 <td ><input id="remark" class="form-control" type="text"></td>
-                                    
+                                    <td><input id="date" class="form-control" type="date"></td> 
+                                    <td><input id="rg_v" class="form-control" type="text"></td>
+                                    <td><input id="rg_c" class="form-control" type="text"></td>
+                                     <td ><input id="hg_v" class="form-control" type="text"></td>
+                                     <td ><input id="hg_c" class="form-control" type="text"></td>
+                                      <td><input id="dg_v" class="form-control" type="text"></td>
+                                      <td><input id="dg_c" class="form-control" type="text"></td>
+                                      <td><input id="hhg_v" class="form-control" type="text"></td>
+                                      <td><input id="hhg_c" class="form-control" type="text"></td>
+                                       <td><input id="route_v" class="form-control" type="text"></td>
+                                       <td><input id="route_c" class="form-control" type="text"></td>
+                                    <td ><input id="c_on_v" class="form-control" type="text"></td> 
+                                    <td ><input id="c_on_c" class="form-control" type="text"></td> 
+                                    <td ><input id="shout_v" class="form-control" type="text"></td> 
+                                    <td ><input id="shout_c" class="form-control" type="text"></td>                                  
                             
                                 </tr>
                                 </tbody>
                              
                             </table>
-
+                            </div>
                             </td>
                         </tr>
 
@@ -2409,9 +2482,18 @@ if (isset($_SESSION['userretailerdste'])) {
 
                         <tr>
                             <th rowspan="3" scope="row">12</th>
-                            <td><span class="heading_english">
+                            <td>
+                                <span class="heading_english">
                                 (a) Check that where signals are Infringing with SOD, their Implantation distance is marked on Red colour on white back ground.</span>
                         <span class="heading_hindi">जांचें कि जहां सिग्नल SOD का उल्लंघन कर रहे हैं, उनकी इम्प्लांटेशन दूरी सफेद पृष्ठभूमि पर लाल रंग में अंकित है।</span>
+
+                        (b)  <span class="heading_english">
+                                Blanking off to be done as given in chapter 19 of SEM.</span>
+                                <span class="heading_hindi">SEM के अध्याय 19 में दिए गए अनुसार Blanking Off करना होगा।</span>
+
+                                (c) <span class="heading_english">
+                                 Right hand signals to be provided with an arrow mark pointing towards the relevant track.</span>
+                                <span class="heading_hindi">दाहिने हाथ के सिग्नल को संबंधित ट्रैक की ओर इंगित करने वाले तीर के निशान के साथ प्रदान किया जाना चाहिए।</span>
 
                             </td>
                             <td style="vertical-align:middle;width:16%">
@@ -2427,44 +2509,6 @@ if (isset($_SESSION['userretailerdste'])) {
                                 </select>
                             </td>
                         </tr>
-
-                        <tr>
-                            <td> (b)  <span class="heading_english">
-                                Blanking off to be done as given in chapter 19 of SEM.</span>
-                                <span class="heading_hindi">SEM के अध्याय 19 में दिए गए अनुसार Blanking Off करना होगा।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_12b">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> (c) <span class="heading_english">
-                                 Right hand signals to be provided with an arrow mark pointing towards the relevant track.</span>
-                                <span class="heading_hindi">दाहिने हाथ के सिग्नल को संबंधित ट्रैक की ओर इंगित करने वाले तीर के निशान के साथ प्रदान किया जाना चाहिए।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_12c">
-                                    <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
-
                     </tbody>
                   
 
@@ -2477,7 +2521,7 @@ if (isset($_SESSION['userretailerdste'])) {
                 <div id="cs1Form_status"></div>
                 <div>
 
-                    <button type='reset' class="btn btn-sm btn-danger">Reset</button>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
                     <button type='button' id="cs1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
                 </div>
             </div>
@@ -4285,7 +4329,137 @@ SSE(Signal)/Incharge: Half Yearly
     </div>
 </div>
 
+<!-- Modal DAC4 -->
+<div class="modal fade" id="componentForm_DAC4" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelDAC4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form id="formDac4">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelDAC4">
+                    <span class="badge badge-success h3">
+                        <span class="heading_english">
+                        Maintenance Schedule of Digital Axle Counter DAC4
+                        </span>
 
+                        <span class="heading_hindi">
+                        डिजिटल एक्सल काउंटर के रखरखाव का कार्यक्रम DAC4
+                        </span>                        
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                <span class="heading_english">
+                    Periodicity: Sectional SSE/JE(Signal): Half Yearly SSE(Signal)/Incharge : Yearly
+                </span>
+
+                <span class="heading_hindi">
+                    आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): अर्ध वार्षिक, सीसेई(सिग्नल)/प्रभारी : वार्षिक
+                 </span>  
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="dac4_body">
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <span class="heading_english">
+                                Measurement of Earth value of SSDAC, including earth continuity up to equipment & paint its value on earth enclosures/nearest wall. Readings of earth value to be recorded in earth measurement register for future reference. It should be less than 1 ohm. Earth Value(< 1Ω)*	Blank column to enter numeric value
+                                </span>
+
+                                <span class="heading_hindi">
+                                एसएसडीएसी के पृथ्वी मूल्य का मापन, जिसमें उपकरण तक पृथ्वी की निरंतरता और पृथ्वी के बाड़ों/निकटतम दीवार पर इसके मूल्य को पेंट करना शामिल है। भविष्य के संदर्भ के लिए पृथ्वी माप रजिस्टर में पृथ्वी मूल्य की रीडिंग दर्ज की जाएगी। यह 1 ओम से कम होना चाहिए. पृथ्वी मान(< 1Ω)* संख्यात्मक मान दर्ज करने के लिए खाली कॉलम
+                                 </span> 
+
+                                 <div class="d-flex my-2 border p-3 justify-content-center align-items-center">
+                                    <span class="mr-3">
+                                        <span class="heading_english">
+                                            Earth Value(< 1Ω)* :                                            
+                                        </span> 
+                                    <span class="heading_hindi">
+                                    अर्थ मान (< 1Ω)*
+                                    </span> 
+                                    </span>
+                                    <span class="ml-4">
+                                        <input type="text" class="form-control" id="dac4_earthValue">
+                                    </span>
+                                 </div>
+                            </td>
+                            <td>
+                                <select name="dac4_1" id="dac4_1" class="custom-select">
+                                    <option value="">Select Action</option>
+
+                                    
+                                        <option class="heading_english" value="Checked">Checked</option>
+                                        <option class="heading_english" value="Not Checked">Not Checked</option>
+                                    
+
+                                
+                                    <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                    <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                
+                                
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="dac4Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="dac4FormBtn" class="btn btn-sm btn-success">Final Submit1</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
 <!-- modal Block Instrument -->
 
 <div class="modal fade" id="componentForm_DB1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelDB1" aria-hidden="true">
@@ -4588,7 +4762,7 @@ SSE(Signal)/Incharge: Half Yearly
 
 <div class="modal fade" id="componentForm_HB1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelHB1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formHB1">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDAC1">
@@ -4694,7 +4868,7 @@ SSE(Signal)/Incharge: Quarterly
 <!-- modal hb2 -->
 <div class="modal fade" id="componentForm_HB2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelHB2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formHB2">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDAC1">
@@ -4801,7 +4975,7 @@ SSE(Signal)/Incharge: Quarterly
 <!-- modal hb3 -->
 <div class="modal fade" id="componentForm_HB3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelHB3" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formHB3">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelDAC1">
@@ -6790,7 +6964,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <!-- modal E1 -->
 <div class="modal fade" id="componentForm_E1" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelE1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formE1">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelE1">
@@ -6902,7 +7076,7 @@ E1                            </span>
 <!-- modal E2 -->
 <div class="modal fade" id="componentForm_E2" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelE2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formE2">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelE2">
@@ -7013,7 +7187,7 @@ E2
 <!-- modal E3 -->
 <div class="modal fade" id="componentForm_E3" data-backdrop="static" data-keyboard="false" tabindex="-1"  aria-labelledby="componentFormLabelE3" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="formE3">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelE3">
@@ -7260,7 +7434,8 @@ btn +=`
  <a class="dropdown-item" onclick="get_DAC_formData('DAC1','${value}','${stationComName}')">DAC1</a>
  <a class="dropdown-item" onclick="get_DAC_formData('DAC2','${value}','${stationComName}')">DAC2</a>
  <a class="dropdown-item" onclick="get_DAC_formData('DAC3','${value}','${stationComName}')">DAC3</a>
- 
+ <a class="dropdown-item" onclick="get_DAC_formData('DAC4','${value}','${stationComName}')">DAC4</a>
+
  `;
 
 }
@@ -8235,7 +8410,7 @@ $(document).ready(function() {
                     $("#loader_show").addClass('d-none');
                     setTimeout(() => {
                         $("#ep3Form_status").html('');
-                        
+                        $("#formEP3")[0].reset();
                     }, 5000);
 
                 }
@@ -8998,7 +9173,7 @@ $(document).ready(function() {
                     $("#loader_show").addClass('d-none');
                     setTimeout(() => {
                         $("#t1Form_status").html("");
-
+                        $("#formT1")[0].reset();
 
                     }, 5000);
 
@@ -9556,21 +9731,23 @@ $(document).ready(function() {
             let cs1_10 = $("#cs1_10").val();   
             let cs1_11 = $("#cs1_11").val();   
             let cs1_12a = $("#cs1_12a").val();   
-            let cs1_12b= $("#cs1_12b").val();   
-            let cs1_12c = $("#cs1_12c").val();   
+            
 
             let date = $("#date").val();    
-            let rg = $("#rg").val();    
-            let hg = $("#hg").val();    
-            let dg = $("#dg").val();    
-            let hhg = $("#hhg").val();    
-            let route = $("#route").val();    
-            let c_on = $("#c_on").val();    
-            let shout = $("#shout").val();    
-            let nut_bolt = $("#nut_bolt").val();    
-            let dome_clean = $("#dome_clean").val();    
-            let cover = $("#cover").val();    
-            let remark = $("#remark").val();           
+            let rg_v = $("#rg_v").val();    
+            let rg_c = $("#rg_c").val();    
+            let hg_v = $("#hg_v").val();    
+            let hg_c = $("#hg_c").val();    
+            let dg_v = $("#dg_v").val();    
+            let dg_c = $("#dg_c").val();    
+            let hhg_v = $("#hhg_v").val();    
+            let hhg_c = $("#hhg_c").val();    
+            let route_v = $("#route_v").val();    
+            let route_c = $("#route_c").val();    
+            let c_on_v = $("#c_on_v").val();    
+            let c_on_c = $("#c_on_c").val();    
+            let shout_v = $("#shout_v").val();    
+            let shout_c = $("#shout_c").val();                
             
 
             if (cs1_1 == '' || cs1_1.length == 0 || cs1_1 == null) {
@@ -9597,114 +9774,147 @@ $(document).ready(function() {
             }
             // //////
 
-            if (rg == '' || rg.length == 0 || rg == null) {
-                $("#rg").addClass("is-invalid");
-                $("#cs1Form_status").html("Sale 1 SPG is required").css("color", "red");
+            if (rg_v == '' || rg_v.length == 0 || rg_v == null) {
+                $("#rg_v").addClass("is-invalid");
+                $("#cs1Form_status").html("RG Volt is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#rg").removeClass("is-invalid");
+                $("#rg_v").removeClass("is-invalid");
+
+            }
+            if (rg_c == '' || rg_c.length == 0 || rg_c == null) {
+                $("#rg_c").addClass("is-invalid");
+                $("#cs1Form_status").html("RG Current is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#rg_c").removeClass("is-invalid");
 
             }
 
-            if (hg == '' || hg.length == 0 || hg == null) {
-                $("#hg").addClass("is-invalid");
-                $("#cs1Form_status").html("Sale 1 Volt required").css("color", "red");
+            if (hg_v == '' || hg_v.length == 0 || hg_v == null) {
+                $("#hg_v").addClass("is-invalid");
+                $("#cs1Form_status").html("HG Volt required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#hg").removeClass("is-invalid");
+                $("#hg_v").removeClass("is-invalid");
 
             }
-
-
-            if (dg == '' || dg.length == 0 || dg == null) {
-                $("#dg").addClass("is-invalid");
-                $("#cs1Form_status").html("Sale 2 SPG is required").css("color", "red");
+            if (hg_c == '' || hg_c.length == 0 || hg_c == null) {
+                $("#hg_c").addClass("is-invalid");
+                $("#cs1Form_status").html("HG Current required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#dg").removeClass("is-invalid");
-
-            }
-
-
-            if (hhg == '' || hhg.length == 0 || hhg == null) {
-                $("#hhg").addClass("is-invalid");
-                $("#cs1Form_status").html("Sale 2 Volt is required").css("color", "red");
-                return;
-            } else {
-                $("#cs1Form_status").html("");
-                $("#hhg").removeClass("is-invalid");
+                $("#hg_c").removeClass("is-invalid");
 
             }
 
 
-            if (route == '' || route.length == 0 || route == null) {
-                $("#route").addClass("is-invalid");
-                $("#cs1Form_status").html("Sale 3 SPG is required").css("color", "red");
+            if (dg_v == '' || dg_v.length == 0 || dg_v == null) {
+                $("#dg_v").addClass("is-invalid");
+                $("#cs1Form_status").html("DG Volt is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#route").removeClass("is-invalid");
+                $("#dg_v").removeClass("is-invalid");
+
+            }
+
+            if (dg_c == '' || dg_c.length == 0 || dg_c == null) {
+                $("#dg_c").addClass("is-invalid");
+                $("#cs1Form_status").html("DG Current is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#dg_c").removeClass("is-invalid");
 
             }
 
 
-            if (c_on == '' || c_on.length == 0 || c_on == null) {
-                $("#c_on").addClass("is-invalid");
-                $("#cs1Form_status").html("Sale 3 Volt is required").css("color", "red");
+            if (hhg_v == '' || hhg_v.length == 0 || hhg_v == null) {
+                $("#hhg_v").addClass("is-invalid");
+                $("#cs1Form_status").html("HHG Volt is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#c_on").removeClass("is-invalid");
+                $("#hhg_v").removeClass("is-invalid");
+
+            }
+
+            if (hhg_c == '' || hhg_c.length == 0 || hhg_c == null) {
+                $("#hhg_c").addClass("is-invalid");
+                $("#cs1Form_status").html("HHG Current is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#hhg_c").removeClass("is-invalid");
 
             }
 
 
-            if (shout == '' || shout.length == 0 || shout == null) {
-                $("#shout").addClass("is-invalid");
-                $("#cs1Form_status").html("All field is required").css("color", "red");
+            if (route_v == '' || route_v.length == 0 || route_v == null) {
+                $("#route_v").addClass("is-invalid");
+                $("#cs1Form_status").html("Rought Volt is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#shout").removeClass("is-invalid");
+                $("#route_v").removeClass("is-invalid");
+
+            }
+
+            if (route_c == '' || route_c.length == 0 || route_c == null) {
+                $("#route_c").addClass("is-invalid");
+                $("#cs1Form_status").html("Rought Current is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#route_c").removeClass("is-invalid");
 
             }
 
 
-            if (nut_bolt == '' || nut_bolt.length == 0 || nut_bolt == null) {
-                $("#nut_bolt").addClass("is-invalid");
-                $("#cs1Form_status").html("All field is required").css("color", "red");
+            if (c_on_v == '' || c_on_v.length == 0 || c_on_v == null) {
+                $("#c_on_v").addClass("is-invalid");
+                $("#cs1Form_status").html("Calling on Volt is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#nut_bolt").removeClass("is-invalid");
+                $("#c_on_v").removeClass("is-invalid");
+
+            }
+            if (c_on_c == '' || c_on_c.length == 0 || c_on_c == null) {
+                $("#c_on_c").addClass("is-invalid");
+                $("#cs1Form_status").html("Calling on Current is required").css("color", "red");
+                return;
+            } else {
+                $("#cs1Form_status").html("");
+                $("#c_on_c").removeClass("is-invalid");
 
             }
 
 
-            if (cover == '' || cover.length == 0 || cover == null) {
-                $("#cover").addClass("is-invalid");
-                $("#cs1Form_status").html("All Field is required").css("color", "red");
+            if (shout_v == '' || shout_v.length == 0 || shout_v == null) {
+                $("#shout_v").addClass("is-invalid");
+                $("#cs1Form_status").html("Shout Volt is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#cover").removeClass("is-invalid");
+                $("#shout_v").removeClass("is-invalid");
 
             }
 
-
-            if (remark == '' || remark.length == 0 || remark == null) {
-                $("#remark").addClass("is-invalid");
-                $("#cs1Form_status").html("All field is required").css("color", "red");
+            if (shout_c == '' || shout_c.length == 0 || shout_c == null) {
+                $("#shout_c").addClass("is-invalid");
+                $("#cs1Form_status").html("Shout Current is required").css("color", "red");
                 return;
             } else {
                 $("#cs1Form_status").html("");
-                $("#remark").removeClass("is-invalid");
+                $("#shout_c").removeClass("is-invalid");
 
             }
-
 
              if (cs1_2 == '' || cs1_2.length == 0 || cs1_2 == null) {
                 $("#cs1_2").addClass("is-invalid");
@@ -9817,27 +10027,6 @@ $(document).ready(function() {
 
             }
 
-            if (cs1_12b == '' || cs1_12b.length == 0 || cs1_12b == null) {
-                $("#cs1_12b").addClass("is-invalid");
-                $("#cs1Form_status").html("Serial no 12 B is required").css("color", "red");
-                return;
-            } else {
-                $("#cs1Form_status").html("");
-                $("#cs1_12b").removeClass("is-invalid");
-
-            }
-
-            if (cs1_12c == '' || cs1_12c.length == 0 || cs1_12c == null) {
-                $("#cs1_12c").addClass("is-invalid");
-                $("#cs1Form_status").html("Serial no 12 C is required").css("color", "red");
-                return;
-            } else {
-                $("#cs1Form_status").html("");
-                $("#cs1_12c").removeClass("is-invalid");
-
-            }
-
-
             let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
             if(userID == '' || userID == null || userID == undefined){
                 
@@ -9869,19 +10058,21 @@ $(document).ready(function() {
                     "cs1_10": cs1_10,
                     "cs1_11": cs1_11,
                     "cs1_12a": cs1_12a,
-                    "cs1_12b": cs1_12b,
-                    "cs1_12c": cs1_12c,
                     date:date,
-                    rg:rg,
-                    hg:hg,
-                    dg:dg,
-                    hhg:hhg,
-                    route:route,
-                    c_on:c_on,
-                    shout:shout,
-                    nut_bolt:nut_bolt,
-                    cover:cover,
-                    remark:remark,    
+                    rg_v:rg_v,
+                    rg_c:rg_c,
+                    hg_v:hg_v,
+                    hg_c:hg_c,
+                    dg_v:dg_v,
+                    dg_c:dg_c,
+                    hhg_v:hhg_v,
+                    hhg_c:hhg_c,
+                    route_v:route_v,
+                    route_c:route_c,
+                    c_on_v:c_on_v,
+                    c_on_c:c_on_c,
+                    shout_v:shout_v,
+                    shout_c:shout_c,   
                     language:language   
 
                 },
@@ -9908,6 +10099,7 @@ $(document).ready(function() {
                     $("#loader_show").addClass('d-none');
                     setTimeout(() => {
                         $("#cs1Form_status").html("");
+                        $("#cs1_form")[0].reset()
 
 
                     }, 5000);
@@ -10836,7 +11028,10 @@ $(document).ready(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#mlb1Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -10939,7 +11134,10 @@ $(document).ready(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#mlb2Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -11026,7 +11224,10 @@ $(document).ready(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#mlb3Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -11284,7 +11485,10 @@ $(document).ready(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#dac1Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
         }
@@ -11442,7 +11646,10 @@ $(document).ready(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#dac2Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -11545,7 +11752,113 @@ $(document).ready(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#dac3Form_status").html("");
+                        
+                    }, 5000);
+                }
+            });
 
+        }
+    });
+
+    
+     // for DAC4
+     $("#dac4FormBtn").click(function() {
+        if (confirm("Do you want to final submit DAC4 Form")) {
+            let language = $("#language").val();
+            let sectionName = $("#sectionName").val();
+            let sectionId = $("#sectionId").val();
+
+            let stationName = $("#stationName").val();
+            let stationId = $("#stationId").val();
+
+            let compoNameTmp = $("#compoNameTmp").val();
+            let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+            if (
+                sectionName == "" || sectionName == null || sectionName == undefined ||
+                sectionId == "" || sectionId == null || sectionId == undefined ||
+                stationName == "" || stationName == null || stationName == undefined ||
+                stationId == "" || stationId == null || stationId == undefined ||
+                compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+                subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+            ) {
+                alert("Something went wrong , refresh the page and try again");
+                return;
+            }
+
+            let dac4_1 = $("#dac4_1").val();
+            let dac4_earthValue = $("#dac4_earthValue").val();
+         
+            
+            if (dac4_1 == undefined  || dac4_1 == null || dac4_1 == '' || dac4_1.length == 0) {
+                $("#dac4_1").addClass("is-invalid");
+                $("#dac4Form_status").html("Serial no 1 is required").css("color", "red");
+                return;
+            } else {
+                $("#dac4Form_status").html("");
+                $("#dac4_1").removeClass("is-invalid");
+
+            }
+            
+            if (dac4_earthValue == undefined  || dac4_earthValue == null || dac4_earthValue == '' || dac4_earthValue.length == 0) {
+                $("#dac4_earthValue").addClass("is-invalid");
+                $("#dac4Form_status").html("Earth value is required").css("color", "red");
+                return;
+            } else {
+                $("#dac4Form_status").html("");
+                $("#dac4_earthValue").removeClass("is-invalid");
+
+            }
+
+            let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+            if(userID == '' || userID == null || userID == undefined){
+                
+                $("#dac3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "query/form-action.php",
+                data: {
+                    "action": "DAC4_formSubmit",
+                    "userID": userID,
+                    "sectionName": sectionName,
+                    "sectionId": sectionId,
+                    "stationName": stationName,
+                    "stationId": stationId,
+                    "compoNameTmp": compoNameTmp,
+                    "subcompoNameTmp": subcompoNameTmp,
+                    "dac4_1": dac4_1,
+                    "dac4_earthValue": dac4_earthValue,
+                               
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#dac4Form_status").html(respo['msg']).css("color", "green");
+
+                    } else {
+                        $("#dac4Form_status").html(respo['msg']).css("color", "red");
+
+                    }
+
+                    setTimeout(() => {
+                        $("#dac4Form_status").html('');
+                        $("#formDac4")[0].reset();
+
+                    }, 5000);
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
                 }
             });
 
@@ -11703,7 +12016,10 @@ $("#slb1FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#slb1Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -11829,7 +12145,10 @@ $("#slb1FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#slb2Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -12051,7 +12370,10 @@ $("#slb1FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#db1Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -12150,7 +12472,10 @@ $("#db2FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#db2Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -12286,7 +12611,10 @@ $("#db3FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#db3Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -12500,7 +12828,11 @@ $("#hb1FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#hb1Form_status").html("");
+                        $("#formHB1")[0].reset();
 
+                    }, 5000);
                 }
             });
 
@@ -12671,7 +13003,11 @@ $("#hb2FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#hb2Form_status").html("");
+                        $("#formHB2")[0].reset();
 
+                    }, 5000);
                 }
             });
 
@@ -13012,7 +13348,10 @@ $("#uf1FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#uf1Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13128,7 +13467,10 @@ $("#uf2FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#uf2Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13219,7 +13561,10 @@ $("#uf3FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#uf3Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13342,7 +13687,10 @@ $("#uf4FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#uf4Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13469,7 +13817,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#uf5Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13671,7 +14022,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#elb1Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13844,7 +14198,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#elb2Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -13997,7 +14354,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#elb3Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -14163,7 +14523,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#elb4Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -14259,7 +14622,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#elb5Form_status").html("");
+                        
+                    }, 5000);
                 }
             });
 
@@ -14528,7 +14894,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $("#ips1Form_status").html('');
+                        $("#formIPS1")[0].reset();
+                    }, 5000);
                 }
             });
 
@@ -14640,7 +15009,10 @@ $("#uf5FormBtn").click(function() {
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
+                    setTimeout(() => {
+                        $("#ips2Form_status").html();
 
+                    }, 5000);
                 }
             });
 
@@ -14808,7 +15180,10 @@ $("#uf5FormBtn").click(function() {
             },
             complete: function() {
                 $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#ips3Form_status").html();
 
+                    }, 5000);
             }
         });
 
@@ -14955,7 +15330,11 @@ $("#e1FormBtn").click(function() {
             },
             complete: function() {
                 $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#e1Form_status").html();
+                        $("#formE1")[0].reset();
 
+                    }, 5000);
             }
         });
 
@@ -15066,7 +15445,11 @@ $("#e2FormBtn").click(function() {
             },
             complete: function() {
                 $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#e2Form_status").html();
+                        $("#formE2")[0].reset();
 
+                    }, 5000);
             }
         });
 
@@ -15250,7 +15633,11 @@ $("#e3FormBtn").click(function() {
             },
             complete: function() {
                 $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#e3Form_status").html();
+                        $("#formE3")[0].reset();
 
+                    }, 5000);
             }
         });
 
@@ -16768,6 +17155,12 @@ function get_DAC_formData(dac_Type,subCompo,compo){
         $(".heading_hindi").addClass('d-none')
         $(".heading_english").removeClass('d-none')
     }
+
+        if(dac_Type == 'DAC4'){
+        $("#componentForm_DAC4").modal("show");
+        return;
+    }
+
     $.ajax({
         type: "POST",
         url: "./query/form-action.php",

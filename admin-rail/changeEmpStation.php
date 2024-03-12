@@ -18,18 +18,7 @@ if (isset($_SESSION['userretailer'])) {
         <div class="col-12 col-md-4 form-group">
             <label for="empId">Employee Name<span class="text-danger">*</span></label>
             <select name="empId" id="empId" class="custom-select" >
-                <option value="">Select Employee</option>
-                <?php 
-                    $empQ = mysqli_query($con , "SELECT id,empname,empid FROM emp_info_rail WHERE status = 1");
-                    if(mysqli_num_rows($empQ) <= 0){
-                        
-                        echo "<option value=''>No Employee Data Found</option>";
-                    }else{
-                        while($rmp_run = mysqli_fetch_array($empQ)){
-                            echo "<option value='".$rmp_run['empid']."'>".$rmp_run['empname']." (".$rmp_run['empid'].")</option>";
-                        }
-                    }
-                ?>
+                <option value="">Select Employee</option>            
             </select>
         </div>
 
@@ -38,13 +27,13 @@ if (isset($_SESSION['userretailer'])) {
             <select name="stationId" id="stationId" class="custom-select" >
                 <option value="">Select Station</option>             
             </select>
-            <input type="hidden" class="form-control" id="stationName">
+            <input type="hidden" class="form-control" id="stationName" readonly>
         </div>
 
         <div class="col-12 col-md-4 form-group">
             <label for="sectionName">Section Name<span class="text-danger">*</span></label>
            <input type="text" class="form-control" id="sectionName" readonly>
-           <input type="hidden" class="form-control" id="sectionId">
+           <input type="hidden" class="form-control" id="sectionId" readonly>
         </div>
 
         <div class="col-12 form-group">
@@ -66,6 +55,51 @@ if (isset($_SESSION['userretailer'])) {
 <script>
 
     var g_stationDataList = [];
+    var g_EmpDataList = [];
+
+    function getEmployeeData(){
+        
+        $.ajax({
+            type:"POST",
+            url:"./query/action.php",
+            data:{
+                action:"getEmployeeAllData"
+            },
+            beforeSend:()=>{
+                g_EmpDataList=[];
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success:(response)=>{
+                $("#loader_show").addClass('d-none');
+
+                try{
+                    let respo =JSON.parse(response);
+                    if(respo['status']){
+                        g_EmpDataList = respo['data'];
+
+                        let displayHtml = '<option value="">Select Employee</option>';
+
+                        g_EmpDataList.forEach(element => {
+                            displayHtml += `<option value="${element['empid']}">${element['empname']} (${element['empid']})</option>`;                            
+                        });
+
+                        $("#empId").html(displayHtml);
+
+                    }
+
+
+                }catch(e){
+                    console.error(e);
+                }
+            },
+            error:(e)=>{
+                console.error(e);
+                $("#loader_show").addClass('d-none');
+
+            }
+        });
+    }
 
     function getStationData(){
 
@@ -96,6 +130,10 @@ if (isset($_SESSION['userretailer'])) {
 
                         $("#stationId").html(displayHtml);
 
+                        $("#stationName").val('');
+                        $("#sectionName").val('');
+                        $("#sectionId").val('');
+
                     }
 
 
@@ -108,11 +146,29 @@ if (isset($_SESSION['userretailer'])) {
                 $("#loader_show").addClass('d-none');
 
             }
-        })
+        });
 
     }
     $(document).ready(()=>{
         getStationData(); //stationList
+        getEmployeeData() // emp list
+
+        
+        $("#empId").on('change',function(){
+            let empId = $(this).val();
+            let selectObj = g_EmpDataList.filter((x)=> x.empid == empId)
+            console.log("selectObj=",selectObj);
+            if(selectObj.length){
+                selectObj = selectObj[0];                
+                $("#stationName").val(selectObj['station_name']);
+                $("#sectionName").val(selectObj['section_name']);
+                $("#sectionId").val(selectObj['section_id']);
+                $("#stationId").val(selectObj['station_id']);
+            }else{
+                alert("Something went wrong, refresh page and try again")
+            }
+
+        });
 
         $("#stationId").on('change',function(){
             let stationId = $(this).val();
@@ -161,6 +217,21 @@ if (isset($_SESSION['userretailer'])) {
                 return;
             }
 
+            let selectObj = g_EmpDataList.filter((x)=> x.empid == empId);
+
+            if(!selectObj.length){
+                alert("Invalid Employee Id, refresh page and try again")
+                return;
+            }
+            if(stationId == selectObj[0]['station_id']){
+                $("#stationId").addClass('is-invalid');
+                $("#respoMsg").html("Please change station").css('color','red');
+                return;
+            }
+
+            
+
+
 
             $.ajax({
                 type:"POST",
@@ -183,6 +254,10 @@ if (isset($_SESSION['userretailer'])) {
                         let respo =JSON.parse(response);
                         if(respo['status']){
                             $("#respoMsg").html(respo['msg']).css('color','green');
+
+                            getStationData(); //stationList
+                            getEmployeeData() // emp list
+
                         }else{
                             $("#respoMsg").html(respo['msg']).css('color','red');
                         }

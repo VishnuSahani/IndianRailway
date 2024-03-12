@@ -159,7 +159,7 @@ if (isset($_POST['action'])) {
 
 
 
-        $getQuerySection = mysqli_query($con, "SELECT * FROM emp_info_rail WHERE status != '-1'");
+        $getQuerySection = mysqli_query($con, "SELECT * FROM emp_info_rail WHERE status != '-1' order by empname ASC");
         if (mysqli_num_rows($getQuerySection) <= 0) {
             $respo['status'] = true;
             $respo['msg'] = "Empoyee list is empty.";

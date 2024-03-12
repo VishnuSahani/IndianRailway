@@ -1384,23 +1384,25 @@ if (isset($_POST['action'])) {
         $cs1_10 = trim($_POST['cs1_10']);
         $cs1_11 = trim($_POST['cs1_11']);
         $cs1_12a = trim($_POST['cs1_12a']);
-        $cs1_12b = trim($_POST['cs1_12b']);
-        $cs1_12c = trim($_POST['cs1_12c']);
 
         $date = trim($_POST['date']);
-        $rg = trim($_POST['rg']);
-        $hg = trim($_POST['hg']);
-        $dg = trim($_POST['dg']);
-        $hhg = trim($_POST['hhg']);
-        $route = trim($_POST['route']);
-        $c_on = trim($_POST['c_on']);
-        $shout = trim($_POST['shout']);
-        $nut_bolt = trim($_POST['nut_bolt']);
-        $cover = trim($_POST['cover']);
-        $remark = trim($_POST['remark']);
+        $rg_v = trim($_POST['rg_v']);
+        $rg_c = trim($_POST['rg_c']);
+        $hg_v = trim($_POST['hg_v']);
+        $hg_c = trim($_POST['hg_c']);
+        $dg_v = trim($_POST['dg_v']);
+        $dg_c = trim($_POST['dg_c']);
+        $hhg_v = trim($_POST['hhg_v']);
+        $hhg_c = trim($_POST['hhg_c']);
+        $route_v = trim($_POST['route_v']);
+        $route_c = trim($_POST['route_c']);
+        $c_on_v = trim($_POST['c_on_v']);
+        $c_on_c = trim($_POST['c_on_c']);
+        $shout_v = trim($_POST['shout_v']);
+        $shout_c = trim($_POST['shout_c']);
 
 
-        if (empty($cs1_1) || empty($cs1_2) || empty($cs1_3) || empty($cs1_4) || empty($cs1_5) || empty($cs1_6) || empty($cs1_7) || empty($cs1_8) || empty($cs1_9) || empty($cs1_10) || empty($cs1_11) || empty($cs1_12a) || empty($cs1_12b) || empty($cs1_12c)) {
+        if (empty($cs1_1) || empty($cs1_2) || empty($cs1_3) || empty($cs1_4) || empty($cs1_5) || empty($cs1_6) || empty($cs1_7) || empty($cs1_8) || empty($cs1_9) || empty($cs1_10) || empty($cs1_11) || empty($cs1_12a)) {
 
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
@@ -1408,7 +1410,15 @@ if (isset($_POST['action'])) {
             die();
         }
 
-        $insertQuery = "INSERT INTO cs1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs1_1,cs1_2,cs1_3,cs1_4,cs1_5,cs1_6,cs1_7,cs1_8,cs1_9,cs1_10,cs1_11,cs1_12a,cs1_12b,cs1_12c,date,rg,hg,dg,hhg,route,c_on,shout,nut_bolt,cover,remark,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs1_1','$cs1_2','$cs1_3','$cs1_4','$cs1_5','$cs1_6','$cs1_7','$cs1_8','$cs1_9','$cs1_10','$cs1_11','$cs1_12a','$cs1_12b','$cs1_12c','$date','$rg','$hg','$dg','$hhg','$route','$c_on','$shout','$nut_bolt','$cover','$remark','$createdDateTime','$createdDateTime','$language')";
+        if (empty($date) || empty($rg_v) || empty($rg_c) || empty($hg_v) || empty($hg_c) || empty($dg_v) || empty($dg_c) || empty($hhg_v) || empty($hhg_c) || empty($route_v) || empty($route_c) || empty($c_on_v) || empty($c_on_c) || empty($shout_v) || empty($shout_c)) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly fill all input field";
+            echo json_encode($respo);
+            die();
+        }
+
+        $insertQuery = "INSERT INTO cs1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cs1_1,cs1_2,cs1_3,cs1_4,cs1_5,cs1_6,cs1_7,cs1_8,cs1_9,cs1_10,cs1_11,cs1_12a,date,rg_v,rg_c,hg_v,hg_c,dg_v,dg_c,hhg_v,hhg_c,route_v,route_c,c_on_v,c_on_c,shout_v,shout_c,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cs1_1','$cs1_2','$cs1_3','$cs1_4','$cs1_5','$cs1_6','$cs1_7','$cs1_8','$cs1_9','$cs1_10','$cs1_11','$cs1_12a','$date','$rg_v','$rg_c','$hg_v','$hg_c','$dg_v','$dg_c','$hhg_v','$hhg_c','$route_v','$route_c','$c_on_v','$c_on_c','$shout_v','$shout_c','$createdDateTime','$createdDateTime','$language')";
 
 
         if (mysqli_query($con, $insertQuery)) {
@@ -4649,6 +4659,94 @@ if (isset($_POST['action'])) {
         $insertQuery = "INSERT INTO dac3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dac3_1,dac3_2,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dac3_1','$dac3_2','$createdDateTime','$createdDateTime','$language')";
 
 
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "DAC4_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM dac4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("DAC4",$con);
+            if($day_duration == 0){
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+".$day_duration." days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+            }
+        }
+
+
+        $dac4_1 = trim($_POST['dac4_1']);
+        $dac4_earthValue = trim($_POST['dac4_earthValue']);
+
+
+
+
+
+        if (empty($dac4_1) || empty($dac4_earthValue)) {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO dac4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,dac4_1,dac4_earthValue,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$dac4_1','$dac4_earthValue','$createdDateTime','$createdDateTime','$language')";
 
         if (mysqli_query($con, $insertQuery)) {
 

@@ -149,6 +149,7 @@ $_SESSION['portal_name'] = $name;
 
  <li class="nav-item"><a href="index.php" class="nav-link  active">Add ESM/MCM Data</a></li> 
 
+<li class="nav-item"><a href="changeEmpStation.php" class="nav-link  active">Change Emp</a></li> 
 <li class="nav-item"><a href="emp-info.php" class="nav-link  active">View ESM/MCM Data</a></li> 
 
 <li class="nav-item dropdown">
