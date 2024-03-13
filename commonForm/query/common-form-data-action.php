@@ -675,6 +675,27 @@ if (isset($_POST['common_action'])) {
 
 
 
+            $dac4 = mysqli_query($con, "SELECT * FROM dac4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($dac4) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $dac4Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($dac4)) {
+
+                    $dac4Data[] = $runEp2;
+
+                }
+
+                $formData['DAC4'] = $dac4Data;
+
+            }
+
+            // dac3 end
 
 
         }
@@ -1115,6 +1136,30 @@ if (isset($_POST['common_action'])) {
 
             }
 
+
+            // ips reading
+
+            $iprBattery = mysqli_query($con, "SELECT * FROM ips_battery_read WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($iprBattery) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ipsBatteryData = [];
+
+                while ($runipsBattery = mysqli_fetch_array($iprBattery)) {
+
+                    $ipsBatteryData[] = $runipsBattery;
+
+                }
+
+                $formData['IPS_Battery_Reading'] = $ipsBatteryData;
+
+            }
+
+
         }elseif ($compoNameTmp == "EARTHING") {
             // EP 1,2,4,5 form data
             $formType = "IPS";
@@ -1402,6 +1447,9 @@ if (isset($_POST['common_action'])) {
             case 'DAC3':
                 $tableName = 'dac3_form';
                 break;
+            case 'DAC4':
+                $tableName = 'dac4_form';
+                break;
             case 'DB1':
                 $tableName = 'db1_form';
                 break;
@@ -1459,6 +1507,9 @@ if (isset($_POST['common_action'])) {
             case 'IPS3':
                 $tableName = 'ips3_form';
                 break;
+            case 'IPS_Battery':
+                $tableName = 'ips_battery_read';
+                break;
             default:
                 $respo['status'] = false;
                 $respo['msg'] = "Invalid request!";
@@ -1480,7 +1531,7 @@ if (isset($_POST['common_action'])) {
                 die();
 
             } 
-            while ($query_run = mysqli_fetch_array($queryform)) {
+            while ($query_run = mysqli_fetch_object($queryform)) {
                 $data_form[] = $query_run;
             }
 

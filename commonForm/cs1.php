@@ -50,7 +50,12 @@ session_start();
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabel">
                         <span class="badge badge-success h3" id="modalComponentName">
-                            Schedule Code: CS1
+                            <span class="heading_english">
+                                Maintenance Schedule of Colour Light Signal CS1
+                            </span>
+                            <span class="heading_hindi">
+                                CS1
+                            </span>
                         </span>
                         <span class="badge badge-danger h3 displaySubcompoName"></span>
 
@@ -119,55 +124,66 @@ session_start();
                 <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
                     <span class="heading_english">
-                        Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In charge: Half yearly
+                        Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In
+                        charge: Half yearly
                     </span>
 
                     <span class="heading_hindi">
-                        आवधिकता: तकनीशियन (सिग्नल): मासिक, अनुभागीय सीसेई /जेई (सिग्नल): त्रैमासिक, सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+                        आवधिकता: तकनीशियन (सिग्नल): मासिक, अनुभागीय सीसेई /जेई (सिग्नल): त्रैमासिक, सीसेई
+                        (सिग्नल)/प्रभारी: अर्धवार्षिक
                     </span>
 
                 </div>
                 <div class="modal-body table-responsive">
-                               
-                <table class="" border='1'>
+
+                    <table class="" border='1'>
                         <thead class="">
                             <tr>
-                                 <th scope="col">
+                                <th scope="col">
                                     <span class="heading_english">
-                                    S.No
+                                        S.No
                                     </span>
 
                                     <span class="heading_hindi">
                                         क्रम सं
                                     </span>
-                                    
+
                                 </th>
                                 <th scope="col">
-                                <span class="heading_english">
-                                    Check the following
-                                </span>
+                                    <span class="heading_english">
+                                        Check the following
+                                    </span>
 
-                                <span class="heading_hindi">
-                                    निम्नलिखित की जाँच करें
-                                </span>
-                                    
-                               </th>
+                                    <span class="heading_hindi">
+                                        निम्नलिखित की जाँच करें
+                                    </span>
+
+                                </th>
                                 <th scope="col">
-                                <span class="heading_english">
-                                    Action
-                                </span>
+                                    <span class="heading_english">
+                                        Action
+                                    </span>
 
-                                <span class="heading_hindi">
-                                    कार्रवाई
-                                 </span>    
+                                    <span class="heading_hindi">
+                                        कार्रवाई
+                                    </span>
                                 </th>
                             </tr>
                         </thead>
                         <tbody id="cs1_body">
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Cleaning of LED lighting unit & current regulator/integrated LED, all terminations,
-                                    housing, signal units & around signal post.</td>
+                                <td>
+                                    <span class="heading_english">
+                                        Cleaning of LED lighting unit & current regulator/integrated LED, all
+                                        terminations, housing, signal units & around signal post.
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        LED लाइटिंग यूनिट और करंट रेगुलेटर/एकीकृत LED, सभी टर्मिनल, हाउसिंग, सिग्नल
+                                        इकाइयों और सिग्नल पोस्ट के आसपास की सफाई।
+                                    </span>
+                                </td>
                                 <td style="vertical-align:middle;width:16%">
                                     <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_1"> -->
                                     <div id="cs1_1"></div>
@@ -178,109 +194,190 @@ session_start();
 
 
                             <tr>
-                                <th scope="row" rowspan="6">2</th>
-                                <td>Measurement of input voltage & current with clamp type ammeter at input terminals of
-                                    current regulator/LED signal for all signal aspects and V/I reading shall be within
-                                    specified range as below:</td>
-                                <td rowspan="6" style="vertical-align:middle;width:16%">
+                                <th scope="row">2</th>
+                                <td>M
+                                    <span class="heading_english">
+                                        Measurement of input voltage & current with clamp type ammeter at input
+                                        terminals of current regulator/LED signal for all signal aspects and V/I reading
+                                        shall be within specified range as below:
+                                    </span>
+                                    <span class="heading_hindi">
+                                        सभी सिग्नल पहलुओं और वोल्टेज/करेंट रीडिंग के लिए करंट रेगुलेटर/LED सिग्नल के
+                                        इनपुट टर्मिनलों पर क्लैंप टाइप एमीटर के साथ इनपुट वोल्टेज और करंट का मापन नीचे
+                                        दी गई निर्दिष्ट सीमा के भीतर होगा:
+                                    </span>
+                                    <br>
+                                    (a) <span class="heading_english"> Main signal Voltage: 82.5 to137.5 V and Current:
+                                        112 to 154 mA </span>
+                                    <span class="heading_hindi">मुख्य सिग्नल वोल्टेज: 82.5 से 137.5 V और करंट: 112 से
+                                        154 mA ।</span>
+                                    <br>
+                                    (b) <span class="heading_english"> Calling on/A/AG Marker Voltage: 88 to 132 V and
+                                        current: 120 to 165 mA. </span><span class="heading_hindi">कॉलिंग ऑन/ए/एजी
+                                        मार्कर वोल्टेज: 88 से 132 V और करंट: 120 से 165 mA ।</span>
+                                    <br>
+                                    (c) <span class="heading_english"> Route signal Voltage: 88 to 132 V and Current:
+                                        23.75 to 26.25 mA per LED.</span> <span class="heading_hindi">रूट सिग्नल
+                                        वोल्टेज: 88 से 132 V और करंट: 23.75 से 26.25 mA प्रति LED ।</span>
+                                    <br>
+                                    (d) <span class="heading_english"> Shunt signal Voltage: 88 to 132 V and Current:
+                                        52.25 to 57.75 mA per LED. </span><span class="heading_hindi">शंट सिग्नल
+                                        वोल्टेज: 88 से 132 V और करंट: 52.25 से 57.75 mA प्रति LED ।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:16%">
                                     <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_2"> -->
                                     <div id="cs1_2"></div>
 
                                 </td>
 
                             </tr>
-                            <tr>
-                                <td>(a) Main signal Voltage: 82.5 to137.5 V and Current: 112 to 154 mA</td>
-
-                            </tr>
 
                             <tr>
-                                <td>(b) Calling on/A/AG Marker Voltage: 88 to 132 V and current: 120 to 165 mA.</td>
-                            </tr>
-                            <tr>
-                                <td>(c) Route signal Voltage: 88 to 132 V and Current: 23.75 to 26.25 mA per LED.</td>
-                            </tr>
-                            <tr>
-                                <td>(d) Shunt signal Voltage: 88 to 132 V and Current: 52.25 to 57.75 mA per LED.</td>
-                            </tr>
-                            <tr>
-                                <td>
+                                <td colspan="3">
                                     <table style="width:100%" border='1'>
                                         <thead>
                                             <tr>
                                                 <td rowspan="2">Date</td>
-                                                <td colspan="7">LED</td>
-                                                <td rowspan="2"> Nut Bolt </td>
-                                                <td rowspan="2"> Dom Clean</td>
-                                                <td rowspan="2"> Cover</td>
-                                                <td rowspan="2">Remark </td>
+                                                <td colspan="2">RG</td>
+                                                <td colspan="2">HG</td>
+                                                <td colspan="2">DG</td>
+                                                <td colspan="2">HHG</td>
+                                                <td colspan="2">ROUTE</td>
+                                                <td colspan="2">Calling-ON</td>
+                                                <td colspan="2">Shunt</td>
                                             </tr>
 
                                             <tr>
-                                                <td>RG</td>
-                                                <td>HG</td>
-                                                <td>DG</td>
-                                                <td>HHG</td>
-                                                <td>ROUTE</td>
-                                                <td>C-ON</td>
-                                                <td>Shunt</td>
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
+                                                <td>
+                                                    <span class="heading_english">Voltage</span>
+                                                    <span class="heading_hindi">वोल्टेज</span>
+                                                    (V)
+                                                </td>
+                                                <td>
+                                                    <span class="heading_english">Current</span>
+                                                    <span class="heading_hindi">करेंट</span>
+                                                    (mA)
+                                                </td>
+
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <!-- <input id="date" readonly disable="true" class="form-control" type="date"> -->
                                                     <div id="date"></div>
-                                                    </td>
-                                                <td>
-                                                    <!-- <input id="rg" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="rg"></div>
                                                 </td>
                                                 <td>
-                                                    <!-- <input id="hg" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="hg"></div>
+                                                    <div id="rg_v"></div>
+                                                </td>
+                                                <td>
+                                                    <div id="rg_c"></div>
+                                                </td>
+                                                <td>
+                                                    <div id="hg_v"></div>
 
                                                 </td>
                                                 <td>
-                                                    <!-- <input id="dg" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="dg"></div>
+                                                    <div id="hg_c"></div>
+
                                                 </td>
                                                 <td>
-                                                    <!-- <input id="hhg" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="hhg"></div>
+                                                    <div id="dg_v"></div>
                                                 </td>
                                                 <td>
-                                                    <!-- <input id="route" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="route"></div>
-                                                    </td>
+                                                    <div id="dg_c"></div>
+                                                </td>
                                                 <td>
-                                                    <!-- <input id="c_on" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="c_on"></div>
-                                                    </td>
+                                                    <div id="hhg_v"></div>
+                                                </td>
                                                 <td>
-                                                    <!-- <input id="shout" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="shout"></div>
-                                                    </td>
+                                                    <div id="hhg_c"></div>
+                                                </td>
                                                 <td>
-                                                    <!-- <input id="nut_bolt" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="nut_bolt"></div>
-                                                    </td>
+                                                    <div id="route_v"></div>
+                                                </td>
                                                 <td>
-                                                    <!-- <input id="dome_clean" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="dome_clean"></div>
-                                                    </td>
-
+                                                    <div id="route_c"></div>
+                                                </td>
                                                 <td>
-                                                    <!-- <input id="cover" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="cover"></div>
-                                                    </td>
+                                                    <div id="c_on_v"></div>
+                                                </td>
                                                 <td>
-                                                    <!-- <input id="remark" readonly disable="true" class="form-control" type="text"> -->
-                                                    <div id="remark"></div>
-                                                    </td>
-
-
+                                                    <div id="c_on_c"></div>
+                                                </td>
+                                                <td>
+                                                    <div id="shout_v"></div>
+                                                </td>
+                                                <td>
+                                                    <div id="shout_c"></div>
+                                                </td>
                                             </tr>
                                         </tbody>
 
@@ -292,8 +389,13 @@ session_start();
                             <tr>
                                 <th scope="row">3</th>
                                 <td>
-                                    Checking of tightness of all adjusting screws of LED signal unit as well as Current
-                                    regulator/integrated LED.
+                                    <span class="heading_english">
+                                        Checking of tightness of all adjusting screws of LED signal unit as well as
+                                        Current regulator/integrated LED.</span>
+
+                                    <span class="heading_hindi">LED सिग्नल यूनिट के साथ-साथ करंट रेगुलेटर/इंटीग्रेटेड
+                                        LED के सभी एडजस्टिंग स्क्रू की जकड़न की जाँच करना।</span>
+
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
@@ -306,8 +408,12 @@ session_start();
                             <tr>
                                 <th scope="row">4</th>
                                 <td>
-                                    Ensure condition of signal post is satisfactory.
+                                    <span class="heading_english">
+                                        Ensure condition of signal post is satisfactory.
+                                    </span>
 
+                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल पोस्ट की स्थिति संतोषजनक
+                                        है।</span>
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
                                     <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_4"> -->
@@ -319,8 +425,11 @@ session_start();
                             <tr>
                                 <th scope="row">5</th>
                                 <td>
-                                    Check condition of Signal foundation, ladder & ensure proper alignment of signal
-                                    post.
+                                    <span class="heading_english">
+                                        Check condition of Signal foundation, ladder & ensure proper alignment of signal
+                                        post.</span>
+                                    <span class="heading_hindi">सिग्नल फाउंडेशन, सीढ़ी की स्थिति की जांच करें और सिग्नल
+                                        पोस्ट का उचित संरेखण सुनिश्चित करें।</span>
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
@@ -333,8 +442,11 @@ session_start();
                             <tr>
                                 <th scope="row">6</th>
                                 <td>
-                                    Ensure Signal unit condition, closing of door & locking arrangements are
-                                    satisfactory.
+                                    <span class="heading_english">
+                                        Ensure Signal unit condition, closing of door & locking arrangements are
+                                        satisfactory.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल यूनिट की स्थिति, दरवाजा बंद
+                                        करने और लॉक करने की व्यवस्था संतोषजनक है।</span>
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
@@ -347,7 +459,11 @@ session_start();
                             <tr>
                                 <th scope="row">7</th>
                                 <td>
-                                    Ensure Signal post & CLS unit should be earthed & screen earthing is effective.
+                                    <span class="heading_english">
+                                        Ensure Signal post & CLS unit should be earthed & screen earthing is
+                                        effective.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल पोस्ट और सिग्नल यूनिट को अर्थ
+                                        किया जाना चाहिए और स्क्रीन अर्थिंग प्रभावी है।</span>
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
                                     <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_7"> -->
@@ -359,8 +475,11 @@ session_start();
                             <tr>
                                 <th scope="row">8</th>
                                 <td>
-                                    Complete signal unit should be cleaned for removing oxidation, rusting & tightened
-                                    properly.
+                                    <span class="heading_english">
+                                        Complete signal unit should be cleaned for removing oxidation, rusting &
+                                        tightened properly.</span>
+                                    <span class="heading_hindi">ऑक्सीकरण, जंग हटाने और ठीक से कसने के लिए पूरी सिग्नल
+                                        यूनिट को साफ किया जाना चाहिए।</span>
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
                                     <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_8"> -->
@@ -372,8 +491,10 @@ session_start();
                             <tr>
                                 <th scope="row">9</th>
                                 <td>
-                                    Ensure that there is no opening/access for rain water/rodent entry.
-
+                                    <span class="heading_english">
+                                        Ensure that there is no opening/access for rain water/rodent entry.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि वर्षा जल/कृंतक प्रवेश के लिए कोई
+                                        खुला/पहुँच नहीं है।</span>
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
                                     <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_9"> -->
@@ -385,9 +506,12 @@ session_start();
                             <tr>
                                 <th scope="row">10</th>
                                 <td>
-                                    Ensure the cable terminations in location box should be cleaned for removing
-                                    oxidation,
-                                    rusting & tightened properly.
+                                    <span class="heading_english">
+                                        Ensure the cable terminations in location box should be cleaned for removing
+                                        oxidation, rusting & tightened properly.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि ऑक्सीकरण, जंग हटाने और ठीक से कसने के
+                                        लिए लोकेशन बॉक्स में केबल टर्मिनेशन को साफ किया जाना चाहिए।</span>
+
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
@@ -400,8 +524,12 @@ session_start();
                             <tr>
                                 <th scope="row">11</th>
                                 <td>
-                                    Visual check of insulations of cables, PVC wires, proper termination without criss
-                                    cross, condition of rubber gasket arrangement.
+                                    <span class="heading_english">
+                                        Visual check of insulations of cables, PVC wires, proper termination without
+                                        criss cross, condition of rubber gasket arrangement.</span>
+
+                                    <span class="heading_hindi">केबलों, पीवीसी तारों के इन्सुलेशन की दृश्य जांच, क्रिस
+                                        क्रॉस के बिना उचित समाप्ति, रबर गैसकेट व्यवस्था की स्थिति।</span>
 
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
@@ -414,38 +542,30 @@ session_start();
                             <tr>
                                 <th rowspan="3" scope="row">12</th>
                                 <td>
-                                    (a) Check that where signals are Infringing with SOD, their Implantation distance is
-                                    marked on Red colour on white back ground.
+                                    <span class="heading_english">
+                                        (a) Check that where signals are Infringing with SOD, their Implantation
+                                        distance is marked on Red colour on white back ground.</span>
+                                    <span class="heading_hindi">जांचें कि जहां सिग्नल SOD का उल्लंघन कर रहे हैं, उनकी
+                                        इम्प्लांटेशन दूरी सफेद पृष्ठभूमि पर लाल रंग में अंकित है।</span>
+
+                                    (b) <span class="heading_english">
+                                        Blanking off to be done as given in chapter 19 of SEM.</span>
+                                    <span class="heading_hindi">SEM के अध्याय 19 में दिए गए अनुसार Blanking Off करना
+                                        होगा।</span>
+
+                                    (c) <span class="heading_english">
+                                        Right hand signals to be provided with an arrow mark pointing towards the
+                                        relevant track.</span>
+                                    <span class="heading_hindi">दाहिने हाथ के सिग्नल को संबंधित ट्रैक की ओर इंगित करने
+                                        वाले तीर के निशान के साथ प्रदान किया जाना चाहिए।</span>
+
                                 </td>
                                 <td style="vertical-align:middle;width:16%">
-                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_12a"> -->
                                     <div id="cs1_12a"></div>
 
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>
-                                    (b) Blanking off to be done as given in chapter 19 of SEM.
-                                </td>
-                                <td style="vertical-align:middle;width:16%">
-                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_12b"> -->
-                                    <div id="cs1_12b"></div>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    (c) Right hand signals to be provided with an arrow mark pointing towards the
-                                    relevant
-                                    track.
-                                </td>
-                                <td style="vertical-align:middle;width:16%">
-                                    <!-- <input class="form-control CS1Class" disable="true" readonly id="cs1_12c"> -->
-                                    <div id="cs1_12c"></div>
-
-                                </td>
-                            </tr>
 
                         </tbody>
 
@@ -454,7 +574,7 @@ session_start();
                     </table>
 
 
-                   
+
                 </div>
             </div>
 
@@ -501,22 +621,22 @@ session_start();
     $("#cs1_10").html(cs1DataObj['cs1_10']);
     $("#cs1_11").html(cs1DataObj['cs1_11']);
     $("#cs1_12a").html(cs1DataObj['cs1_12a']);
-    $("#cs1_12b").html(cs1DataObj['cs1_12b']);
-    $("#cs1_12c").html(cs1DataObj['cs1_12c']);
+    
     $("#date").html(cs1DataObj['date']);
-    $("#rg").html(cs1DataObj['rg']);
-    $("#hg").html(cs1DataObj['hg']);
-    // let gt_R_N = $("#gt_R_N").val();
-    $("#dg").html(cs1DataObj['dg']);
-    $("#hhg").html(cs1DataObj['hhg']);
-    $("#route").html(cs1DataObj['route']);
-    $("#c_on").html(cs1DataObj['c_on']);
-    $("#shout").html(cs1DataObj['shout']);
-    $("#nut_bolt").html(cs1DataObj['nut_bolt']);
-    $("#dome_clean").html(cs1DataObj['dome_clean']);
-    $("#cover").html(cs1DataObj['cover']);
-    $("#remark").html(cs1DataObj['remark']);
-
+    $("#rg_v").html(cs1DataObj['rg_v']);
+    $("#rg_c").html(cs1DataObj['rg_c']);
+    $("#hg_v").html(cs1DataObj['hg_v']);
+    $("#hg_c").html(cs1DataObj['hg_c']);
+    $("#dg_v").html(cs1DataObj['dg_v']);
+    $("#dg_c").html(cs1DataObj['dg_c']);
+    $("#hhg_v").html(cs1DataObj['hhg_v']);
+    $("#hhg_c").html(cs1DataObj['hhg_c']);
+    $("#route_v").html(cs1DataObj['route_v']);
+    $("#route_c").html(cs1DataObj['route_c']);
+    $("#c_on_v").html(cs1DataObj['c_on_v']);
+    $("#c_on_c").html(cs1DataObj['c_on_c']);
+    $("#shout_v").html(cs1DataObj['shout_v']);
+    $("#shout_c").html(cs1DataObj['shout_c']);
 
     }
 

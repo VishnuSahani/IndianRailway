@@ -2042,511 +2042,560 @@ if (isset($_SESSION['userretaileraste'])) {
     aria-labelledby="componentFormLabelCS1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="width:100%;max-width:100%">
         <form id="cs1_form">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="componentFormLabelCS1">
-                    <span class="badge badge-success h3">
-                       <span class="heading_english">
-                       Maintenance Schedule of Colour Light Signal CS1
-                    </span>
-                     <span class="heading_hindi">
-                         CS1
-                     </span>
-                    </span>
-                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="componentFormLabelCS1">
+                        <span class="badge badge-success h3">
+                            <span class="heading_english">
+                                Maintenance Schedule of Colour Light Signal CS1
+                            </span>
+                            <span class="heading_hindi">
+                                CS1
+                            </span>
+                        </span>
+                        <span class="badge badge-danger h3 displaySubcompoName"></span>
 
-                    <!-- <span id="modalSubCompoName"></span>
+                        <!-- <span id="modalSubCompoName"></span>
                     <span class="badge badge-danger h3" id="modalSubCompoType"></span> -->
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
-
-            
-
-            <span class="heading_english">
-               
-               Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In charge: Half yearly
-                </span>
-
-                <span class="heading_hindi">
-        आवधिकता: तकनीशियन (सिग्नल): मासिक, अनुभागीय सीसेई /जेई (सिग्नल): त्रैमासिक, सीसेई (सिग्नल)/प्रभारी: अर्धवार्षिक
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
 
 
 
-                </span>
+                    <span class="heading_english">
 
-            </div>
-            <div class="modal-body table-responsive">
+                        Periodicity: Technician(Signal): Monthly, Sectional SSE/JE(Signal): Quarterly, SSE(Signal)/In
+                        charge: Half yearly
+                    </span>
 
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                               <th scope="col">
+                    <span class="heading_hindi">
+                        आवधिकता: तकनीशियन (सिग्नल): मासिक, अनुभागीय सीसेई /जेई (सिग्नल): त्रैमासिक, सीसेई
+                        (सिग्नल)/प्रभारी: अर्धवार्षिक
+
+
+
+                    </span>
+
+                </div>
+                <div class="modal-body table-responsive">
+
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">
                                     <span class="heading_english">
-                                    S.No
+                                        S.No
                                     </span>
 
                                     <span class="heading_hindi">
                                         क्रम सं
                                     </span>
-                                    
+
                                 </th>
                                 <th scope="col">
-                                <span class="heading_english">
-                                    Check the following
-                                </span>
+                                    <span class="heading_english">
+                                        Check the following
+                                    </span>
 
-                                <span class="heading_hindi">
-                                    निम्नलिखित की जाँच करें
-                                </span>
-                                    
-                               </th>
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Action
-                                </span>
+                                    <span class="heading_hindi">
+                                        निम्नलिखित की जाँच करें
+                                    </span>
 
-                                <span class="heading_hindi">
-                                    कार्रवाई
-                                 </span>    
                                 </th>
-                        </tr>
-                    </thead>
-                    <tbody id="cs1_body">
-                    <tr>
-                            <th scope="row">1</th>
-                            
-                            <td>
-                                
-                               <span class="heading_english">  
-                            Cleaning of LED lighting unit & current regulator/integrated LED, all terminations, housing, signal units & around signal post.
-                        </span>
+                                <th scope="col">
+                                    <span class="heading_english">
+                                        Action
+                                    </span>
 
-                         <span class="heading_hindi">
-                            LED लाइटिंग यूनिट और करंट रेगुलेटर/एकीकृत LED, सभी टर्मिनल, हाउसिंग, सिग्नल इकाइयों और सिग्नल पोस्ट के आसपास की सफाई।
-                         </span>
+                                    <span class="heading_hindi">
+                                        कार्रवाई
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="cs1_body">
+                            <tr>
+                                <th scope="row">1</th>
 
-                        </td>
-                       
-
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_1">
-                                    <option value="">Select Action</option>
-                                   <option class="heading_english" value="Done">Done</option>
-                                                    <option class="heading_english" value="Not Done">Not Done</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="चेक किया गया">चेक किया गया</option>
-                                                    <option  class="heading_hindi" value="चेक नहीं किया गया">चेक नहीं किया गया</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                    
-
-                        <tr>
-                            <th scope="row" rowspan="6">2</th>
                                 <td>
-                                     <span class="heading_english"> 
-                                Measurement of input voltage & current with clamp type ammeter at input terminals of current regulator/LED signal for all signal aspects and V/I reading shall be within specified range as below:
-                            </span>
-                            <span class="heading_hindi">
-                                सभी सिग्नल पहलुओं और वोल्टेज/करेंट रीडिंग के लिए करंट रेगुलेटर/LED सिग्नल के इनपुट टर्मिनलों पर क्लैंप टाइप एमीटर के साथ इनपुट वोल्टेज और करंट का मापन नीचे दी गई निर्दिष्ट सीमा के भीतर होगा:
-                            </span>
-                            </td>
-                                <td rowspan="6" style="vertical-align:middle;width:16%">
+
+                                    <span class="heading_english">
+                                        Cleaning of LED lighting unit & current regulator/integrated LED, all
+                                        terminations, housing, signal units & around signal post.
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        LED लाइटिंग यूनिट और करंट रेगुलेटर/एकीकृत LED, सभी टर्मिनल, हाउसिंग, सिग्नल
+                                        इकाइयों और सिग्नल पोस्ट के आसपास की सफाई।
+                                    </span>
+
+                                </td>
+
+
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_1">
+                                        <option value="">Select Action</option>
+                                        <option class="heading_english" value="Done">Done</option>
+                                        <option class="heading_english" value="Not Done">Not Done</option>
+
+
+                                        <option class="heading_hindi" value="चेक किया गया">चेक किया गया</option>
+                                        <option class="heading_hindi" value="चेक नहीं किया गया">चेक नहीं किया गया
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+
+
+
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>
+                                    <span class="heading_english">
+                                        Measurement of input voltage & current with clamp type ammeter at input
+                                        terminals of current regulator/LED signal for all signal aspects and V/I reading
+                                        shall be within specified range as below:
+                                    </span>
+                                    <span class="heading_hindi">
+                                        सभी सिग्नल पहलुओं और वोल्टेज/करेंट रीडिंग के लिए करंट रेगुलेटर/LED सिग्नल के
+                                        इनपुट टर्मिनलों पर क्लैंप टाइप एमीटर के साथ इनपुट वोल्टेज और करंट का मापन नीचे
+                                        दी गई निर्दिष्ट सीमा के भीतर होगा:
+                                    </span>
+                                    <br>
+                                    (a) <span class="heading_english"> Main signal Voltage: 82.5 to137.5 V and Current:
+                                        112 to 154 mA </span>
+                                    <span class="heading_hindi">मुख्य सिग्नल वोल्टेज: 82.5 से 137.5 V और करंट: 112 से
+                                        154 mA ।</span>
+                                            <br>
+                                    (b) <span class="heading_english"> Calling on/A/AG Marker Voltage: 88 to 132 V and
+                                        current: 120 to 165 mA. </span><span class="heading_hindi">कॉलिंग ऑन/ए/एजी
+                                        मार्कर वोल्टेज: 88 से 132 V और करंट: 120 से 165 mA ।</span>
+                                        <br>
+                                    (c) <span class="heading_english"> Route signal Voltage: 88 to 132 V and Current:
+                                        23.75 to 26.25 mA per LED.</span> <span class="heading_hindi">रूट सिग्नल
+                                        वोल्टेज: 88 से 132 V और करंट: 23.75 से 26.25 mA प्रति LED ।</span>
+                                        <br>
+                                    (d) <span class="heading_english"> Shunt signal Voltage: 88 to 132 V and Current:
+                                        52.25 to 57.75 mA per LED. </span><span class="heading_hindi">शंट सिग्नल
+                                        वोल्टेज: 88 से 132 V और करंट: 52.25 से 57.75 mA प्रति LED ।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
                                     <select class="custom-select CS1Class" id="cs1_2">
-                                       
 
 
-                                           <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="Done">Done</option>
-                                                    <option class="heading_english" value="Not Done">Not Done</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="चेक किया गया">चेक किया गया</option>
-                                                    <option  class="heading_hindi" value="चेक नहीं किया गया">चेक नहीं किया गया</option>
+
+                                        <option value="">Select Action</option>
+
+                                        <option class="heading_english" value="Done">Done</option>
+                                        <option class="heading_english" value="Not Done">Not Done</option>
+
+
+                                        <option class="heading_hindi" value="चेक किया गया">चेक किया गया</option>
+                                        <option class="heading_hindi" value="चेक नहीं किया गया">चेक नहीं किया गया
+                                        </option>
                                     </select>
                                 </td>
 
                             </tr>
                             <tr>
-                            <td>(a) <span class="heading_english">  Main signal Voltage: 82.5 to137.5 V and Current: 112 to 154 mA </span>
-`                                 <span class="heading_hindi">मुख्य सिग्नल वोल्टेज: 82.5 से 137.5 V और करंट: 112 से 154 mA ।</span>
-                            </td>
-
-                            </tr>
-
-                            <tr>
-                            <td>(b)  <span class="heading_english"> Calling on/A/AG Marker Voltage: 88 to 132 V and current: 120 to 165 mA. </span><span class="heading_hindi">कॉलिंग ऑन/ए/एजी मार्कर वोल्टेज: 88 से 132 V और करंट: 120 से 165 mA ।</span></td>
-                            </tr>
-                            <tr>
-                            <td>(c) <span class="heading_english">  Route signal Voltage: 88 to 132 V and Current: 23.75 to 26.25 mA per LED.</span> <span class="heading_hindi">रूट सिग्नल वोल्टेज: 88 से 132 V और करंट: 23.75 से 26.25 mA प्रति LED ।</span></td>
-                            </tr>
-                            <tr>
-                            <td>(d)  <span class="heading_english"> Shunt signal Voltage: 88 to 132 V and Current: 52.25 to 57.75 mA per LED. </span><span class="heading_hindi">शंट सिग्नल वोल्टेज: 88 से 132 V और करंट: 52.25 से 57.75 mA प्रति LED ।</span></td>
-                            </tr>
-                            <tr>
-                            <td colspan="3">
-                                <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead class="text-center table-dark">
-                                <tr>
-                                    <td rowspan="2">Date</td>
-                                    <td colspan="2">RG</td> 
-                                    <td colspan="2">HG</td>
-                                     <td colspan="2">DG</td>
-                                     <td colspan="2">HHG</td>
-                                      <td colspan="2">ROUTE</td>
-                                      <td colspan="2">Calling-ON</td> 
-                                      <td colspan="2">Shunt</td>                            
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-
-                                    <td>
-                                        <span class="heading_english">Voltage</span>
-                                        <span class="heading_hindi">वोल्टेज</span>
-                                        (V)
-                                    </td> 
-                                    <td>
-                                        <span class="heading_english">Current</span>
-                                        <span class="heading_hindi">करेंट</span>
-                                        (mA)
-                                    </td> 
-                                                               
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                     <tr>
-                                    <td><input id="date" class="form-control" type="date"></td> 
-                                    <td><input id="rg_v" class="form-control" type="text"></td>
-                                    <td><input id="rg_c" class="form-control" type="text"></td>
-                                     <td ><input id="hg_v" class="form-control" type="text"></td>
-                                     <td ><input id="hg_c" class="form-control" type="text"></td>
-                                      <td><input id="dg_v" class="form-control" type="text"></td>
-                                      <td><input id="dg_c" class="form-control" type="text"></td>
-                                      <td><input id="hhg_v" class="form-control" type="text"></td>
-                                      <td><input id="hhg_c" class="form-control" type="text"></td>
-                                       <td><input id="route_v" class="form-control" type="text"></td>
-                                       <td><input id="route_c" class="form-control" type="text"></td>
-                                    <td ><input id="c_on_v" class="form-control" type="text"></td> 
-                                    <td ><input id="c_on_c" class="form-control" type="text"></td> 
-                                    <td ><input id="shout_v" class="form-control" type="text"></td> 
-                                    <td ><input id="shout_c" class="form-control" type="text"></td>                                  
-                            
-                                </tr>
-                                </tbody>
-                             
-                            </table>
-                            </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td><span class="heading_english">
-                                Checking of tightness of all adjusting screws of LED signal unit as well as Current regulator/integrated LED.</span>
-
-                                <span class="heading_hindi">LED सिग्नल यूनिट के साथ-साथ करंट रेगुलेटर/इंटीग्रेटेड LED के सभी एडजस्टिंग स्क्रू की जकड़न की जाँच करना।</span>
-
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_3">
-                                      <option value="">Select Action</option>
+                                <td colspan="3">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="text-center table-dark">
+                                                <tr>
+                                                    <td colspan="2" rowspan="2">Date</td>
+                                                    <td colspan="2">RG</td>
+                                                    <td colspan="2">HG</td>
+                                                    <td colspan="2">DG</td>
                                                    
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <th scope="row">4</th>
-                            <td><span class="heading_english">
-                                Ensure condition of signal post is satisfactory.
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>                                       
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><input id="date" class="form-control" type="date"></td>
+                                                    <td><input id="rg_v" class="form-control" type="text"></td>
+                                                    <td><input id="rg_c" class="form-control" type="text"></td>
+                                                    <td><input id="hg_v" class="form-control" type="text"></td>
+                                                    <td><input id="hg_c" class="form-control" type="text"></td>
+                                                    <td><input id="dg_v" class="form-control" type="text"></td>
+                                                    <td><input id="dg_c" class="form-control" type="text"></td>
+                                                
+                                                </tr>
+                                            </tbody>
+
+                                            <thead class="text-center table-dark">
+                                                <tr>                                                   
+                                                    <td colspan="2">HHG</td>
+                                                    <td colspan="2">ROUTE</td>
+                                                    <td colspan="2">Calling-ON</td>
+                                                    <td colspan="2">Shunt</td>
+                                                </tr>
+                                                <tr>
+                                               
+
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="heading_english">Volt</span>
+                                                        <span class="heading_hindi">वोल्टेज</span>
+                                                        (V)
+                                                    </td>
+                                                    <td>
+                                                        <span class="heading_english">Current</span>
+                                                        <span class="heading_hindi">करेंट</span>
+                                                        (mA)
+                                                    </td>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td><input id="hhg_v" class="form-control" type="text"></td>
+                                                    <td><input id="hhg_c" class="form-control" type="text"></td>
+                                                    <td><input id="route_v" class="form-control" type="text"></td>
+                                                    <td><input id="route_c" class="form-control" type="text"></td>
+                                                    <td><input id="c_on_v" class="form-control" type="text"></td>
+                                                    <td><input id="c_on_c" class="form-control" type="text"></td>
+                                                    <td><input id="shout_v" class="form-control" type="text"></td>
+                                                    <td><input id="shout_c" class="form-control" type="text"></td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><span class="heading_english">
+                                        Checking of tightness of all adjusting screws of LED signal unit as well as
+                                        Current regulator/integrated LED.</span>
+
+                                    <span class="heading_hindi">LED सिग्नल यूनिट के साथ-साथ करंट रेगुलेटर/इंटीग्रेटेड
+                                        LED के सभी एडजस्टिंग स्क्रू की जकड़न की जाँच करना।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_3">
+                                        <option value="">Select Action</option>
+
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
+
+
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">4</th>
+                                <td><span class="heading_english">
+                                        Ensure condition of signal post is satisfactory.
                                     </span>
 
-                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल पोस्ट की स्थिति संतोषजनक है।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_4">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
+                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल पोस्ट की स्थिति संतोषजनक
+                                        है।</span>
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_4">
+                                        <option value="">Select Action</option>
 
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>
-                                 <span class="heading_english">  
-                                Check condition of Signal foundation, ladder & ensure proper alignment of signal post.</span>
-                                 <span class="heading_hindi">सिग्नल फाउंडेशन, सीढ़ी की स्थिति की जांच करें और सिग्नल पोस्ट का उचित संरेखण सुनिश्चित करें।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_5">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
 
-                        <tr>
-                            <th scope="row">6</th>
-                            <td> <span class="heading_english">  
-                                Ensure Signal unit condition, closing of door & locking arrangements are satisfactory.</span>
-                        <span class="heading_hindi">सुनिश्चित करें कि सिग्नल यूनिट की स्थिति, दरवाजा बंद करने और लॉक करने की व्यवस्था संतोषजनक है।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_6">
-                                      <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <th scope="row">7</th>
-                            <td> <span class="heading_english"> 
-                                Ensure Signal post & CLS unit should be earthed & screen earthing is effective.</span>
-                                <span class="heading_hindi">सुनिश्चित करें कि सिग्नल पोस्ट और सिग्नल यूनिट को अर्थ किया जाना चाहिए और स्क्रीन अर्थिंग प्रभावी है।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_7">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <th scope="row">8</th>
-                            <td> <span class="heading_english"> 
-                                Complete signal unit should be cleaned for removing oxidation, rusting & tightened properly.</span>
-                                <span class="heading_hindi">ऑक्सीकरण, जंग हटाने और ठीक से कसने के लिए पूरी सिग्नल यूनिट को साफ किया जाना चाहिए।</span>
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_8">
-                                    <option value="">Select Action</option>
-                                   <option class="heading_english" value="Done">Done</option>
-                                                    <option class="heading_english" value="Not Done">Not Done</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="चेक किया गया">चेक किया गया</option>
-                                                    <option  class="heading_hindi" value="चेक नहीं किया गया">चेक नहीं किया गया</option>
-                                </select>
-                            </td>
-                        </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>
+                                    <span class="heading_english">
+                                        Check condition of Signal foundation, ladder & ensure proper alignment of signal
+                                        post.</span>
+                                    <span class="heading_hindi">सिग्नल फाउंडेशन, सीढ़ी की स्थिति की जांच करें और सिग्नल
+                                        पोस्ट का उचित संरेखण सुनिश्चित करें।</span>
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_5">
+                                        <option value="">Select Action</option>
 
-                        <tr>
-                            <th scope="row">9</th>
-                            <td> <span class="heading_english"> 
-                                Ensure that there is no opening/access for rain water/rodent entry.</span>
-                                <span class="heading_hindi">सुनिश्चित करें कि वर्षा जल/कृंतक प्रवेश के लिए कोई खुला/पहुँच नहीं है।</span>
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
 
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_9">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <th scope="row">10</th>
-                            <td> <span class="heading_english"> 
-                                Ensure the cable terminations in location box should be cleaned for removing oxidation, rusting & tightened properly.</span>
-                                <span class="heading_hindi">सुनिश्चित करें कि ऑक्सीकरण, जंग हटाने और ठीक से कसने के लिए लोकेशन बॉक्स में केबल टर्मिनेशन को साफ किया जाना चाहिए।</span>
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
 
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_10">
-                                    <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td> <span class="heading_english">
+                                        Ensure Signal unit condition, closing of door & locking arrangements are
+                                        satisfactory.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल यूनिट की स्थिति, दरवाजा बंद
+                                        करने और लॉक करने की व्यवस्था संतोषजनक है।</span>
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_6">
+                                        <option value="">Select Action</option>
 
-                        <tr>
-                            <th scope="row">11</th>
-                            <td><span class="heading_english">
-                                Visual check of insulations of cables, PVC wires, proper termination without criss cross, condition of rubber gasket arrangement.</span>
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
 
-                                <span class="heading_hindi">केबलों, पीवीसी तारों के इन्सुलेशन की दृश्य जांच, क्रिस क्रॉस के बिना उचित समाप्ति, रबर गैसकेट व्यवस्था की स्थिति।</span>
 
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_11">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <th rowspan="3" scope="row">12</th>
-                            <td>
-                                <span class="heading_english">
-                                (a) Check that where signals are Infringing with SOD, their Implantation distance is marked on Red colour on white back ground.</span>
-                        <span class="heading_hindi">जांचें कि जहां सिग्नल SOD का उल्लंघन कर रहे हैं, उनकी इम्प्लांटेशन दूरी सफेद पृष्ठभूमि पर लाल रंग में अंकित है।</span>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td> <span class="heading_english">
+                                        Ensure Signal post & CLS unit should be earthed & screen earthing is
+                                        effective.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि सिग्नल पोस्ट और सिग्नल यूनिट को अर्थ
+                                        किया जाना चाहिए और स्क्रीन अर्थिंग प्रभावी है।</span>
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_7">
+                                        <option value="">Select Action</option>
 
-                        (b)  <span class="heading_english">
-                                Blanking off to be done as given in chapter 19 of SEM.</span>
-                                <span class="heading_hindi">SEM के अध्याय 19 में दिए गए अनुसार Blanking Off करना होगा।</span>
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
 
-                                (c) <span class="heading_english">
-                                 Right hand signals to be provided with an arrow mark pointing towards the relevant track.</span>
-                                <span class="heading_hindi">दाहिने हाथ के सिग्नल को संबंधित ट्रैक की ओर इंगित करने वाले तीर के निशान के साथ प्रदान किया जाना चाहिए।</span>
 
-                            </td>
-                            <td style="vertical-align:middle;width:16%">
-                                <select class="custom-select CS1Class" id="cs1_12a">
-                                     <option value="">Select Action</option>
-                                                   
-                                                    <option class="heading_english" value="OK">OK</option>
-                                                    <option class="heading_english" value="Not OK">Not OK</option>
-                                                   
-                                            
-                                                    <option  class="heading_hindi" value="ठीक है">ठीक है</option>
-                                                    <option  class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                  
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
 
-                    
-                </table>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td> <span class="heading_english">
+                                        Complete signal unit should be cleaned for removing oxidation, rusting &
+                                        tightened properly.</span>
+                                    <span class="heading_hindi">ऑक्सीकरण, जंग हटाने और ठीक से कसने के लिए पूरी सिग्नल
+                                        यूनिट को साफ किया जाना चाहिए।</span>
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_8">
+                                        <option value="">Select Action</option>
+                                        <option class="heading_english" value="Done">Done</option>
+                                        <option class="heading_english" value="Not Done">Not Done</option>
 
-            </div>
 
-            <div class="card-footer d-flex justify-content-between">
-                <div id="cs1Form_status"></div>
-                <div>
+                                        <option class="heading_hindi" value="चेक किया गया">चेक किया गया</option>
+                                        <option class="heading_hindi" value="चेक नहीं किया गया">चेक नहीं किया गया
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
 
-                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
-                    <button type='button' id="cs1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td> <span class="heading_english">
+                                        Ensure that there is no opening/access for rain water/rodent entry.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि वर्षा जल/कृंतक प्रवेश के लिए कोई
+                                        खुला/पहुँच नहीं है।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_9">
+                                        <option value="">Select Action</option>
+
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
+
+
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">10</th>
+                                <td> <span class="heading_english">
+                                        Ensure the cable terminations in location box should be cleaned for removing
+                                        oxidation, rusting & tightened properly.</span>
+                                    <span class="heading_hindi">सुनिश्चित करें कि ऑक्सीकरण, जंग हटाने और ठीक से कसने के
+                                        लिए लोकेशन बॉक्स में केबल टर्मिनेशन को साफ किया जाना चाहिए।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_10">
+                                        <option value="">Select Action</option>
+
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
+
+
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">11</th>
+                                <td><span class="heading_english">
+                                        Visual check of insulations of cables, PVC wires, proper termination without
+                                        criss cross, condition of rubber gasket arrangement.</span>
+
+                                    <span class="heading_hindi">केबलों, पीवीसी तारों के इन्सुलेशन की दृश्य जांच, क्रिस
+                                        क्रॉस के बिना उचित समाप्ति, रबर गैसकेट व्यवस्था की स्थिति।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_11">
+                                        <option value="">Select Action</option>
+
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
+
+
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="3" scope="row">12</th>
+                                <td>
+                                    <span class="heading_english">
+                                        (a) Check that where signals are Infringing with SOD, their Implantation
+                                        distance is marked on Red colour on white back ground.</span>
+                                    <span class="heading_hindi">जांचें कि जहां सिग्नल SOD का उल्लंघन कर रहे हैं, उनकी
+                                        इम्प्लांटेशन दूरी सफेद पृष्ठभूमि पर लाल रंग में अंकित है।</span>
+
+                                    (b) <span class="heading_english">
+                                        Blanking off to be done as given in chapter 19 of SEM.</span>
+                                    <span class="heading_hindi">SEM के अध्याय 19 में दिए गए अनुसार Blanking Off करना
+                                        होगा।</span>
+
+                                    (c) <span class="heading_english">
+                                        Right hand signals to be provided with an arrow mark pointing towards the
+                                        relevant track.</span>
+                                    <span class="heading_hindi">दाहिने हाथ के सिग्नल को संबंधित ट्रैक की ओर इंगित करने
+                                        वाले तीर के निशान के साथ प्रदान किया जाना चाहिए।</span>
+
+                                </td>
+                                <td style="vertical-align:middle;width:12%">
+                                    <select class="custom-select CS1Class" id="cs1_12a">
+                                        <option value="">Select Action</option>
+
+                                        <option class="heading_english" value="OK">OK</option>
+                                        <option class="heading_english" value="Not OK">Not OK</option>
+
+
+                                        <option class="heading_hindi" value="ठीक है">ठीक है</option>
+                                        <option class="heading_hindi" value="ठीक नहीं है">ठीक नहीं है</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+
+
+
+                    </table>
+
                 </div>
-            </div>
 
-        </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <div id="cs1Form_status"></div>
+                    <div>
+
+                        <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                        <button type='button' id="cs1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+                    </div>
+                </div>
+
+            </div>
         </form>
     </div>
 </div>
@@ -18050,7 +18099,7 @@ $(document).ready(()=>{
 
             $.ajax({
                 type: "POST",
-                url: "query/form-action.php",
+                url: "query/action.php",
                 data: {
                     "action": "IPSRead_formSubmit",
                     "actionType":type_f,
