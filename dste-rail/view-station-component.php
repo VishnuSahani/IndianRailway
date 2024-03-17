@@ -4500,7 +4500,7 @@ SSE(Signal)/Incharge: Half Yearly
 
                 <div>
                     <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
-                    <button type='button' id="dac4FormBtn" class="btn btn-sm btn-success">Final Submit1</button>
+                    <button type='button' id="dac4FormBtn" class="btn btn-sm btn-success">Final Submit</button>
 
                 </div>
             </div>
@@ -5979,7 +5979,7 @@ SSE (Signal)/Incharge: Yearly duly staggered by 6 months
 <div class="modal fade" id="componentForm_IPS_battery" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabel_IPS_battery" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="ipsBatterForm">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabel_IPS_battery">
@@ -17340,6 +17340,76 @@ function get_DL_formData(dL_Type,subCompo,compo){
     });
 }
 
+function checkIPSBatteryFill(subCompo,compo){
+
+    let empid = '<?php echo $_SESSION['userretailer']; ?>';
+    if(empid == undefined || empid == 'undefined' || empid == ''){
+        alert("Refresh page and try again.");
+        return;
+    }
+
+    let sectionId =$("#sectionId").val();
+    let stationId =$("#stationId").val();
+    let language =$("#language").val();
+
+    if(sectionId == undefined || sectionId == null || sectionId == ""){
+        alert("Something went wrong with section Id, Refresh page and try again.");
+        return;
+    }
+
+    if(stationId == undefined || stationId == null || stationId == ""){
+        alert("Something went wrong with station Id, Refresh page and try again.");
+        return;
+    }
+
+    $("#ipsBatterForm")[0].reset();
+    $('#ips_readForm_status').html("");
+    $("#ips_barttertId").val(""); //id should be null
+
+
+    $.ajax({
+        type:"POST",
+        url:"../commonForm/query/common-action.php",
+        data: {
+            "common_action": "getIPSBattery_FormFill",
+            "compo": compo,
+            empid: empid,
+            sectionId:sectionId,
+            stationId:stationId,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+            $("#componentForm_IPS_battery").modal("show");
+
+            if (response['status']) {
+                $("#ips_readForm_status").html("Please complete...").css("color", "red");
+                $("#ips_barttertId").val(response['data']['id']??'');
+                let tableDataForm = response['data'];
+                Object.keys(response['data']).forEach((key,value)=>{
+                    let getIdBykey = $("#"+key);
+                    if(getIdBykey.attr("id")){
+                        getIdBykey.val(tableDataForm[key]);
+                    }
+                });
+            }
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    })
+
+
+
+
+}
 function get_IPS_formData(ips_Type,subCompo,compo){
     $("#compoNameTmp").val(compo);
     $("#subcompoNameTmp").val(subCompo);
@@ -17354,7 +17424,7 @@ function get_IPS_formData(ips_Type,subCompo,compo){
     }
 
     if(ips_Type == "IPS4"){
-        $("#componentForm_IPS_battery").modal("show")
+        checkIPSBatteryFill(subCompo,compo)
         return;
     }
 
@@ -17516,6 +17586,15 @@ $(document).ready(()=>{
     $(".ipsBatteryReading").on("change", function () {
                 // Get the ID and value of the changed input field
                 var inputId = $(this).attr("id"); // id as a column
+                // last submit
+                let isComplete = "false";
+                if(inputId == 'signalTransformer'){
+                    if (confirm("Do you want to final submit IPS Battery Reading Form")) {
+                        isComplete = 'true';
+                    }else{
+                        return;
+                    }
+                }
                 var inputValue = $(this).val();
                 
                 // Log or use the ID and value as needed
@@ -17526,6 +17605,7 @@ $(document).ready(()=>{
                 if (ips_barttertId == undefined  || ips_barttertId == null || ips_barttertId == '' || ips_barttertId.length == 0) {
                 $("#ips_railway").addClass("is-invalid");
                 $("#ips_readForm_status").html("Please fill Railway field first").css("color", "red");
+                $("#ips_railway").focus();
                 
                     return;
                 } else {
@@ -17554,6 +17634,7 @@ $(document).ready(()=>{
                     "userID": userID,         
                     columnValue:inputValue,
                     ips_barttertId:ips_barttertId,
+                    isComplete:isComplete,
                     "language":language
                 },
                 beforeSend: function() {
@@ -17564,7 +17645,16 @@ $(document).ready(()=>{
                     if (respo['status']) {
                         $("#"+inputId).addClass("is-valid");
                         $("#"+inputId).removeClass("is-invalid");
+                        if(isComplete=='true'){
+                            $(".ipsBatteryReading").removeClass("is-invalid");
+                            $(".ipsBatteryReading").removeClass("is-valid");
 
+                            setTimeout(() => {
+                                $("#ipsBatterForm")[0].reset();
+                                $('#ips_readForm_status').html("");
+                                $("#ips_barttertId").val(""); //id should be null
+                            }, 2000);
+                        }
                     } else {
                     
                         $("#"+inputId).removeClass("is-valid");
@@ -17615,6 +17705,7 @@ $(document).ready(()=>{
         if (ips_railway == undefined  || ips_railway == null || ips_railway == '' || ips_railway.length == 0) {
                 $("#ips_railway").addClass("is-invalid");
                 $("#ips_readForm_status").html("Railway field is required").css("color", "red");
+                $("#ips_railway").focus();
                 return;
             } else {
                 $("#ips_readForm_status").html("");
@@ -17672,7 +17763,9 @@ $(document).ready(()=>{
                 },
                 complete: function() {
                     $("#loader_show").addClass('d-none');
-
+                    setTimeout(() => {
+                        $('#ips_readForm_status').html("");
+                    },
                 }
             });
 

@@ -5639,6 +5639,7 @@ if (isset($_POST['action'])) {
         $columnValue = trim($_POST['columnValue']);
         $language = trim($_POST['language']);
         $ips_barttertId = trim($_POST['ips_barttertId']);
+        $isComplete = trim($_POST['isComplete']);
 
         if(empty($userID) || empty($columnName) || empty($columnValue) || empty($language) || empty($ips_barttertId)){
             $respo['status'] = false;
@@ -5651,7 +5652,7 @@ if (isset($_POST['action'])) {
 
         if(mysqli_num_rows($checkData) > 0){
 
-            $updateQuery = "UPDATE ips_battery_read SET $columnName= '$columnValue', updated_date ='$createdDateTime' WHERE id='$ips_barttertId' && emp_id='$userID'";
+            $updateQuery = "UPDATE ips_battery_read SET $columnName= '$columnValue', updated_date ='$createdDateTime',isComplete='$isComplete' WHERE id='$ips_barttertId' && emp_id='$userID'";
 
             if(mysqli_query($con,$updateQuery)){
                 $respo['status'] = true;

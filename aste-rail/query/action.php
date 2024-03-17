@@ -5897,7 +5897,8 @@ if (isset($_POST['action'])) {
             $columnValue = trim($_POST['columnValue']);
             $language = trim($_POST['language']);
             $ips_barttertId = trim($_POST['ips_barttertId']);
-    
+            $isComplete = trim($_POST['isComplete']);
+
             if(empty($userID) || empty($columnName) || empty($columnValue) || empty($language) || empty($ips_barttertId)){
                 $respo['status'] = false;
                 $respo['msg'] = "Request value is empty";
@@ -5905,7 +5906,7 @@ if (isset($_POST['action'])) {
                 die();
             }
     
-            $checkData = mysqli_query($con,"SELECT id,emp_id FROM ips_battery_read WHERE emp_id='$userID' && id = '$ips_barttertId'");
+            $updateQuery = "UPDATE ips_battery_read SET $columnName= '$columnValue', updated_date ='$createdDateTime',isComplete='$isComplete' WHERE id='$ips_barttertId' && emp_id='$userID'";
     
             if(mysqli_num_rows($checkData) > 0){
     
