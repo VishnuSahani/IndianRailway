@@ -19,8 +19,13 @@
 
 <div class="container" style="margin-top:30px;">
 
-    <p class="card-header alert alert-primary text-center h5">Add Station Component </p>
-
+<div class="card-header alert alert-primary text-center d-flex justify-content-between">
+        <div></div>
+        <div class="h5">Add Station Component</div>
+        <div class="cursor-pointer">
+            <a href="view-all-component.php">View Component</a>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
