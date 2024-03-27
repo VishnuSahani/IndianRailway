@@ -277,13 +277,13 @@ session_start();
     <td>${detailsNew}</td>
     <td style="vertical-align:middle;width:22%" >`;
 
-            if (value == 'Not Done') {
+            if (updateCheck.includes(value)) {
 
                 displayHtml +=
-                    `<select class="form-control">
+                    `<div id='${element['ips_id']}'><select class="form-control">
             <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','IPS1','${element['ips_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+            <option value='${updateValue[value]}'>${updateValue[value]}</option>
+        </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','IPS1','${element['ips_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
 
             } else if (value == 'नहीं किया') {
 

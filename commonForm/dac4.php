@@ -243,21 +243,13 @@ session_start();
 
         let value = tableDataForm['dac4_1']
 
-        if (value.toLowerCase() == 'not checked') {
+        if (updateCheck.includes(value)) {
 
                 displayHtml +=
                     `<select class="form-control w-100">
                 <option>${value}</option>
-                <option value='Checked'>Checked</option>
-                </select> <button type="button" onclick="updateSingleValue('Checked','DAC4','dac4_1','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-                } else if (value == 'ठीक नहीं है') {
-
-                displayHtml +=
-                    `<select class="form-control">
-                <option>${value}</option>
-                <option value='ठीक है'>ठीक है</option>
-                </select> <button type="button" onclick="updateSingleValue('ठीक है','DAC4','dac4_1','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+                <option value='${updateValue[value]}'>${updateValue[value]}</option>
+                </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','DAC4','dac4_1','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
 
                 } else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;

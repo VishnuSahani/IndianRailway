@@ -221,21 +221,13 @@ session_start();
     <td>${element['slb_details']}</td>
     <td style="vertical-align:middle;width:22%" >`;
 
-            if (value == 'Not Done') {
+    if (updateCheck.includes(value)) {
 
-                displayHtml +=
-                    `<select class="form-control">
+            displayHtml +=
+                `<div id='${element['slb_id']}'><select class="form-control">
             <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','SLB2','${element['slb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else if (value == 'नहीं किया') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','SLB2','${element['slb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+            <option value='${updateValue[value]}'>${updateValue[value]}</option>
+            </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','SLB2','${element['slb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
 
             } else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;

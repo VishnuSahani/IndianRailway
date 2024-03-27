@@ -232,6 +232,33 @@ session_start();
         if (element['cs_id'] == 'cs2_5') {
             let value_5a = tableDataForm['cs2_5a'];
             let value_5b = tableDataForm['cs2_5b'];
+            display5a ='';
+            display5b ='';
+            if (updateCheck.includes(value_5a)) {
+
+                display5a +=
+                    `<div id='cs2_5a'><select class="form-control">
+                <option>${value_5a}</option>
+                <option value='${updateValue[value_5a]}'>${updateValue[value_5a]}</option>
+                </select> <button type="button" onclick="updateSingleValue('${updateValue[value_5a]}','CS2','cs2_5a','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+            } else {
+                // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
+                display5a += `<div class="">${value_5a}</div>`;
+                }
+
+                if (updateCheck.includes(value_5b)) {
+
+                    display5b +=
+                        `<div id='cs2_5b'><select class="form-control">
+                    <option>${value_5b}</option>
+                    <option value='${updateValue[value_5b]}'>${updateValue[value_5b]}</option>
+                    </select> <button type="button" onclick="updateSingleValue('${updateValue[value_5b]}','CS2','cs2_5b','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+                    } else {
+                    // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
+                    display5b += `<div class="">${value_5b}</div>`;
+                    }
 
             displayHtml += `
         <tr>
@@ -245,7 +272,7 @@ session_start();
         <tr>
             <td>${ha}</td>
             <td style="vertical-align:middle;width:22%" >
-            <div class="">${value_5a}</div>
+           ${display5a}
 
             </td>
         </tr>
@@ -253,7 +280,7 @@ session_start();
         <tr>
             <td>${hb}</td>
             <td style="vertical-align:middle;width:22%" >
-            <div class="">${value_5b}</div>
+            ${display5b}
 
             </td>
         </tr>
@@ -267,23 +294,15 @@ session_start();
     <td>${element['cs_details']}</td>
     <td style="vertical-align:middle;width:22%" >`;
 
-            if (value == 'Not Done') {
+    if (updateCheck.includes(value)) {
 
                 displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','CS2','${element['cs_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+                    `<div id='${element['cs_id']}'><select class="form-control">
+                <option>${value}</option>
+                <option value='${updateValue[value]}'>${updateValue[value]}</option>
+                </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','CS2','${element['cs_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
 
-            } else if (value == 'नहीं किया') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','CS2','${element['cs_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else {
+                } else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
                 displayHtml += `<div class="">${value}</div>`;
             }

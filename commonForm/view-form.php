@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if($_SESSION['from'] == "JE"){
 
     require('je-header.php');
@@ -20,7 +21,70 @@ require('include/db_config.php');
 // print_r($_SESSION);
 
 ?>
+<script>
+    var updateCheck =[
+        "Not OK",
+    "Not Done",
+    "Not Checked",
+    "ठीक नहीं है",
+    "जांच नहीं की",
+    "चेक नहीं किया गया",
+    "नहीं किया"
+    ]
+    var updateCheckEng = [
+    "Not OK",
+    "Not Done",
+    "Not Checked"
+];
 
+var updateCheckHindi = [
+    "ठीक नहीं है",
+    "जांच नहीं की",
+    "चेक नहीं किया गया",
+    "नहीं किया"
+];
+
+var updateValue = {
+    "ठीक नहीं है": "ठीक है",
+    "जांच नहीं की" : "जांच की",
+    "चेक नहीं किया गया" : "चेक किया गया",
+    "नहीं किया":"हो गया",
+    "Not OK":"OK",
+    "Not Done":"Done",
+    "Not Checked":"Checked"
+};
+// E1
+// E2
+// E3
+// HB1
+// HB2
+// HB3
+// EP3
+
+// EP2
+// T1
+// CS1
+
+// DAC4
+// ELBS3
+// IPS1
+// IPSBATTERY
+
+
+//
+// e3,e2,db1,2,3, ips2, ips3,slb1,  - msg
+
+
+// var updateValue = {
+//     "ठीक_नहीं_है": "ठीक है",
+//     "जांच_नहीं_की" : "जांच की",
+//     "चेक_नहीं_किया_गया" : "चेक किया गया",
+//     "नहीं_किया":"हो गया",
+//     "Not_OK":"OK",
+//     "Not_Done":"Done",
+//     "Not_Checked":"Checked"
+// }
+</script>
 <div class="container" style="margin-top:30px;">
 
     <div class="alert alert-primary d-flex justify-content-between align-items-center">
@@ -404,6 +468,45 @@ return;
 }
 
 
+
+function updateSingleValue(value,tableName,columnName,id){
+    console.log("value",value);
+    console.log("tableName",tableName);
+    console.log("columnName",columnName);
+    let userID = '<?php echo $_SESSION['empid_for_form']; ?>';
+    if(userID == '' || userID == null || userID == undefined){                
+        alert("Something went wrong with user Id, Refresh the page and try again");
+        return
+     }
+
+    $.ajax({
+        type:"POST",
+        url:"./query/common-action.php",
+        data:{
+            common_action:"updateSingleValueFormData",
+            value:value,
+            tableName:tableName,
+            columnName:columnName.toLowerCase(),
+            userID:userID,
+            id:id
+        },
+        beforeSend:function(){
+
+        },
+        success:function(response){
+            console.log("update single respo", response);
+            try{
+                let respo = JSON.parse(response);
+                if(respo['status']){
+                    $("#"+columnName).html(value)
+                }
+            }catch(e){
+
+            }
+        }
+    });
+
+}
 </script>
 
 </body>

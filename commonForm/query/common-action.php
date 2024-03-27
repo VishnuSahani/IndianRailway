@@ -564,7 +564,227 @@ if (isset($_POST['common_action'])) {
            sendResponse(false,"Fill new form");
        }
 
-    }    
+    } elseif($action == "updateSingleValueFormData"){
+        if(!isset($_POST['userID']) || empty($_POST['userID'])){
+            $respo['status'] = false;
+            $respo['msg'] = "Your session is logout, try again";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        if(!isset($_POST['value']) || !isset($_POST['tableName']) || !isset($_POST['columnName']) || !isset($_POST['id'])){
+
+            $respo['status'] = false;
+           $respo['msg'] = "Something went wrong with parameter";
+           $respo['data'] = [];
+           echo json_encode($respo);
+           die();
+
+       }
+
+       $value = $_POST['value'];
+       $tbName = $_POST['tableName'];
+       $columnName = $_POST['columnName'];
+       $id = $_POST['id'];
+       $tableName = "";
+       $userID=$_POST['userID'];
+
+       switch ($tbName) {
+        case 'EP1':
+            $tableName = 'ep1_form';
+            break;
+
+        case 'EP2':
+            $tableName = 'ep2_form';
+            break;
+        case 'EP3':
+            $tableName = 'ep3_form';
+            break;
+
+        case 'EP4':
+            $tableName = 'ep4_form';
+            break;
+        case 'EP5':
+            $tableName = 'ep5_form';
+            break;
+        case 'T1':
+            $tableName = 't1_form';
+            break;
+        case 'T2':
+            $tableName = 't2_form';
+            break;
+        case 'T3':
+            $tableName = 't3_form';
+            break;
+        case 'T4':
+            $tableName = 't4_form';
+            break;
+        case 'T5':
+            $tableName = 't5_form';
+            break;
+        case 'MLB1':
+            $tableName = 'mlb1_form';
+            break;
+        case 'MLB2':
+            $tableName = 'mlb2_form';
+            break;
+        case 'MLB3':
+            $tableName = 'mlb3_form';
+            break;
+        case 'MLB4':
+            $tableName = 'mlb4_form';
+            break;
+        case 'MLB5':
+            $tableName = 'mlb5_form';
+            break;
+
+        case 'SLB1':
+            $tableName = 'slb1_form';
+            break;
+        case 'SLB2':
+            $tableName = 'slb2_form';
+            break;
+        case 'SLB3':
+            $tableName = 'slb3_form';
+            break;
+        case 'SLB4':
+            $tableName = 'slb4_form';
+            break;
+        case 'SLB5':
+            $tableName = 'slb5_form';
+            break;
+
+        case 'ELB1':
+            $tableName = 'elb1_form';
+            break;
+        case 'ELB2':
+            $tableName = 'elb2_form';
+            break;
+        case 'ELB3':
+            $tableName = 'elb3_form';
+            break;
+        case 'ELB4':
+            $tableName = 'elb4_form';
+            break;
+        case 'ELB5':
+            $tableName = 'elb5_form';
+            break;
+        case 'DL1':
+            $tableName = 'dl1_form';
+            break;
+        case 'DL2':
+            $tableName = 'dl2_form';
+            break;
+        case 'DL3':
+            $tableName = 'dl3_form';
+            break;
+        case 'DL4':
+            $tableName = 'dl4_form';
+            break;
+        case 'DAC1':
+            $tableName = 'dac1_form';
+            break;
+        case 'DAC2':
+            $tableName = 'dac2_form';
+            break;
+        case 'DAC3':
+            $tableName = 'dac3_form';
+            break;
+        case 'DAC4':
+            $tableName = 'dac4_form';
+            break;
+        case 'DB1':
+            $tableName = 'db1_form';
+            break;
+        case 'DB2':
+            $tableName = 'db2_form';
+            break;
+        case 'DB3':
+            $tableName = 'db3_form';
+            break;
+        case 'HB1':
+            $tableName = 'hb1_form';
+            break;
+        case 'HB2':
+            $tableName = 'hb2_form';
+            break;
+        case 'HB3':
+            $tableName = 'hb3_form';
+            break;
+        case 'UF1':
+            $tableName = 'uf1_form';
+            break;
+        case 'UF2':
+            $tableName = 'uf2_form';
+            break;
+        case 'UF3':
+            $tableName = 'uf3_form';
+            break;
+        case 'UF4':
+            $tableName = 'uf4_form';
+            break;
+        case 'UF5':
+            $tableName = 'uf5_form';
+            break;
+        case 'CS1':
+            $tableName = 'cs1_form';
+            break;
+        case 'CS2':
+            $tableName = 'cs2_form';
+            break;
+        case 'E1':
+            $tableName = 'e1_form';
+            break;
+        case 'E2':
+            $tableName = 'e2_form';
+            break;
+        case 'E3':
+            $tableName = 'e3_form';
+            break;
+        case 'IPS1':
+            $tableName = 'ips1_form';
+            break;
+        case 'IPS2':
+            $tableName = 'ips2_form';
+            break;
+        case 'IPS3':
+            $tableName = 'ips3_form';
+            break;
+        case 'IPS_Battery':
+            $tableName = 'ips_battery_read';
+            break;
+        default:
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request!";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+    }
+
+       $updateQuery = mysqli_query($con,"UPDATE $tableName SET $columnName = '$value' WHERE id='$id' AND emp_id = '$userID'");
+
+       if($updateQuery){
+            $respo['status'] = true;
+            $respo['msg'] = "Data successfully updated";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+       }else{
+
+        $respo['status'] = false;
+        $respo['msg'] = "Something went wrong with DB";
+        $respo['data'] = [];
+        echo json_encode($respo);
+        die();
+       }
+
+       
+
+
+
+        
+    } 
     else {
 
         sendResponse(false, "Invalid Action");

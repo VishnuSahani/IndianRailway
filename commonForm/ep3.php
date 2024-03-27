@@ -315,64 +315,6 @@ session_start();
     // global 
     var formDataList_g = [];
 
-    function openDialog(dataList, id) {
-
-        let tableId = '';
-        let displayHtml = "";
-
-        let tableDataForm = formDataList_g.filter((x) => {
-            if (x['id'] == id) {
-                return x;
-            }
-        })[0];
-        $("#created_date").html(tableDataForm['created_date']);
-        $("#updated_date").html(tableDataForm['updated_date']);
-
-        $("#componentForm_EP3").modal("show");
-
-        dataList.forEach((element, index) => {
-
-            let value = tableDataForm[element['ep_id'].toLowerCase()]
-            displayHtml += `
-    <tr>
-    <th scope="row">${index + 1}</th>
-    <td>${element['ep_details']}</td>
-    <td style="vertical-align:middle;width:22%" >`;
-
-            if (value == 'Not Done') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','EP3','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else if (value == 'नहीं किया') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','EP3','${element['ep_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else {
-                // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
-                displayHtml += `<div class="">${value}</div>`;
-            }
-
-
-
-            displayHtml += `
-    </td>
-    </tr>
-`;
-
-
-        });
-
-        document.getElementById("ep3_body").innerHTML = displayHtml;
-
-    }
 
     function showFormDetails(id, language) {
 
@@ -396,8 +338,38 @@ session_start();
         $("#updated_date").html(ep3DataObj['updated_date']);
 
         
-    $("#ep3_1").html(ep3DataObj['ep3_1']);
+
+    let displayHtml = '';
+    let displayHtml2 = '';
+    if (updateCheck.includes(ep3DataObj['ep3_1'])) {
+
+        displayHtml +=
+            `<div id='ep3_1'><select class="form-control">
+        <option>${ep3DataObj['ep3_1']}</option>
+        <option value='${updateValue[ep3DataObj['ep3_1']]}'>${updateValue[ep3DataObj['ep3_1']]}</option>
+        </select> <button type="button" onclick="updateSingleValue('${updateValue[ep3DataObj['ep3_1']]}','EP3','ep3_1','${ep3DataObj['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+        }else{               
+            displayHtml += `<div class="">${ep3DataObj['ep3_1']}</div>`;
+        }
+
+        if (updateCheck.includes(ep3DataObj['ep3_2'])) {
+
+        displayHtml2 +=
+            `<div id='ep3_2'><select class="form-control">
+        <option>${ep3DataObj['ep3_2']}</option>
+        <option value='${updateValue[ep3DataObj['ep3_2']]}'>${updateValue[ep3DataObj['ep3_2']]}</option>
+        </select> <button type="button" onclick="updateSingleValue('${updateValue[ep3DataObj['ep3_2']]}','EP3','ep3_2','${ep3DataObj['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+        }else{         
+            displayHtml2 += `<div class="">${ep3DataObj['ep3_2']}</div>`;
+        }
+
+    $("#ep3_1").html(displayHtml);
     $("#ep3_2").html(ep3DataObj['ep3_2']);
+
+
+
     $("#ep3_3").html(ep3DataObj['ep3_3']);
     $("#ep3_4").html(ep3DataObj['ep3_4']);
 

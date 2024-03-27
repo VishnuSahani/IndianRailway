@@ -217,16 +217,15 @@ session_start();
     <th scope="row">${index + 1}</th>
     <td>${element['elb_details']}</td>
     <td style="vertical-align:middle;width:22%" >`;
+            if (updateCheck.includes(value)) {
 
-            if (value == 'Not Done') {
+        displayHtml +=
+            `<div id='${element['elb_id']}'><select class="form-control">
+        <option>${value}</option>
+        <option value='${updateValue[value]}'>${updateValue[value]}</option>
+        </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','ELB1','${element['elb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
 
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','ELB1','${element['elb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else if (value == 'नहीं किया') {
+        } else if (value == 'नहीं किया') {
 
                 displayHtml +=
                     `<select class="form-control">

@@ -219,23 +219,15 @@ SSE (Signal) Incharge: Half Yearly
     <td>${element['dac_details']}</td>
     <td style="vertical-align:middace;width:22%" >`;
 
-            if (value == 'Not Done') {
+    if (updateCheck.includes(value)) {
 
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','DAC1','${element['dac_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+        displayHtml +=
+            `<div id='${element['dac_id']}'><select class="form-control">
+        <option>${value}</option>
+        <option value='${updateValue[value]}'>${updateValue[value]}</option>
+        </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','DAC1','${element['dac_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
 
-            } else if (value == 'नहीं किया') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','DAC1','${element['dac_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else {
+        } else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
                 displayHtml += `<div class="">${value}</div>`;
             }

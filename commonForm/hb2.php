@@ -333,9 +333,22 @@ if(language == "English"){
     
 }
 
+let update2 ='';
+
+if (updateCheck.includes(value)) {
+
+    update2 +=
+        `<div id='${element['db_id']}'><select class="form-control">
+    <option>${value}</option>
+    <option value='${updateValue[value]}'>${updateValue[value]}</option>
+    </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','HB2','${element['db_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+    }else {
+            update2 += `<div class="">${value}</div>`;
+        }
 
 displayHtml += `<td style="vertical-align:middle;width:15%" >
-<div class="">${value}</div>
+<div class="">${update2}</div>
 </td>
 </tr>
 `;
@@ -348,23 +361,15 @@ displayHtml += `<td style="vertical-align:middle;width:15%" >
     <td>${element['db_details']}</td>
     <td style="vertical-align:middle;width:22%" >`;
 
-            if (value == 'Not Done') {
+    if (updateCheck.includes(value)) {
 
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','HB2','${element['db_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+        displayHtml +=
+            `<div id='${element['db_id']}'><select class="form-control">
+        <option>${value}</option>
+        <option value='${updateValue[value]}'>${updateValue[value]}</option>
+        </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','HB2','${element['db_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
 
-            } else if (value == 'नहीं किया') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','HB2','${element['db_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else {
+        }else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
                 displayHtml += `<div class="">${value}</div>`;
             }

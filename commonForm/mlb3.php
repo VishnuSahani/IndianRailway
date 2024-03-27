@@ -220,24 +220,15 @@ SSE(Signal)/ Incharge : Half-yearly
     <th scope="row">${index + 1}</th>
     <td>${element['mlb_details']}</td>
     <td style="vertical-align:middle;width:22%" >`;
+    if (updateCheck.includes(value)) {
 
-            if (value == 'Not Done') {
-
-                displayHtml +=
-                    `<select class="form-control">
+            displayHtml +=
+                `<div id='${element['mlb_id']}'><select class="form-control">
             <option>${value}</option>
-            <option value='Done'>Done</option>
-        </select> <button type="button" onclick="updateSingleValue('Done','MLB3','${element['mlb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
+            <option value='${updateValue[value]}'>${updateValue[value]}</option>
+            </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','MLB3','${element['mlb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
 
-            } else if (value == 'नहीं किया') {
-
-                displayHtml +=
-                    `<select class="form-control">
-            <option>${value}</option>
-            <option value='हो गया'>हो गया</option>
-        </select> <button type="button" onclick="updateSingleValue('हो गया','MLB3','${element['mlb_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button>`;
-
-            } else {
+            }else {
                 // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
                 displayHtml += `<div class="">${value}</div>`;
             }
