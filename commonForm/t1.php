@@ -44,7 +44,7 @@ session_start();
     <div class="modal-dialog" style="max-width:100%">
         <!--  modal-dialog-centered modal-lg -->
         <div class="modal-content">
-            <div id="pdfBodyT1" style="font-size:11px">
+            <div id="pdfBodyT1" style="font-size:14px">
 
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="componentFormLabelT1">
@@ -113,7 +113,7 @@ session_start();
                     </div>
                 </div>
              
-                <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+                <div class="m-2 text-center alert alert-danger" style="font-size:16px">
 
                    
                  <span class="heading_english">
@@ -611,25 +611,57 @@ session_start();
         $("#componentForm_T1").modal("show");
 
         
+    // dataList.forEach((element, index) => {
+
+    //     let value = tableDataForm[element['t_id'].toLowerCase()]
+
+    //     displayHtml += `
+    //         <tr>
+    //         <th scope="row">${index+1}</th>
+    //         <td>${element['t_details']}</td>
+    //         <td style="vertical-align:middle;width:22%" >
+    //         <div class="">${value}</div>
+    //         `;
+
+    //     displayHtml += `
+    //         </td>
+    //         </tr>
+    //     `;
+
+
+    // });
+
     dataList.forEach((element, index) => {
 
-        let value = tableDataForm[element['t_id'].toLowerCase()]
-
-        displayHtml += `
+            let value = tableDataForm[element['t_id'].toLowerCase()]
+            displayHtml += `
             <tr>
-            <th scope="row">${index+1}</th>
+            <th scope="row">${index + 1}</th>
             <td>${element['t_details']}</td>
-            <td style="vertical-align:middle;width:22%" >
-            <div class="">${value}</div>
-            `;
+            <td style="vertical-align:middle;width:22%" >`;
 
-        displayHtml += `
+            if (updateCheck.includes(value)) {
+
+                displayHtml +=
+                    `<div id='${element['t_id']}'><select class="form-control">
+            <option>${value}</option>
+            <option value='${updateValue[value]}'>${updateValue[value]}</option>
+            </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','T1','${element['t_id']}','${tableDataForm['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+            }else {
+                // displayHtml += `<input type="text" class="form-control" disabled value="${value}">`;
+                displayHtml += `<div class="">${value}</div>`;
+            }
+
+
+
+            displayHtml += `
             </td>
             </tr>
-        `;
+            `;
 
 
-    });
+});
 
 console.log("tableDataForm=>", tableDataForm);
 

@@ -608,19 +608,38 @@ session_start();
         $("#created_date").html(cs1DataObj['created_date']);
         $("#updated_date").html(cs1DataObj['updated_date']);
 
-    $("#cs1_1").html(cs1DataObj['cs1_1']);
-    $("#cs1_2").html(cs1DataObj['cs1_2']);
-    $("#cs1_3").html(cs1DataObj['cs1_3']);
-    $("#cs1_4").html(cs1DataObj['cs1_4']);
-    $("#cs1_5").html(cs1DataObj['cs1_5']);
+        let selectList = ['cs1_1','cs1_2','cs1_3','cs1_4','cs1_5','cs1_6','cs1_7','cs1_8','cs1_9','cs1_10','cs1_11','cs1_12a'];
 
-    $("#cs1_6").html(cs1DataObj['cs1_6']);
-    $("#cs1_7").html(cs1DataObj['cs1_7']);
-    $("#cs1_8").html(cs1DataObj['cs1_8']);
-    $("#cs1_9").html(cs1DataObj['cs1_9']);
-    $("#cs1_10").html(cs1DataObj['cs1_10']);
-    $("#cs1_11").html(cs1DataObj['cs1_11']);
-    $("#cs1_12a").html(cs1DataObj['cs1_12a']);
+        selectList.forEach(element => {
+            let displayHtml = "";
+            let value = cs1DataObj[element]
+            if (updateCheck.includes(value)) {
+
+                displayHtml +=
+                    `<div id='${element}'><select class="form-control">
+                <option>${value}</option>
+                <option value='${updateValue[value]}'>${updateValue[value]}</option>
+                </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','CS1','${element}','${cs1DataObj['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+                } else {
+                    displayHtml += `<div class="">${value}</div>`;
+                }
+                $("#"+element).html(displayHtml);
+        });//for each-loop
+
+    // $("#cs1_1").html(cs1DataObj['cs1_1']);
+    // $("#cs1_2").html(cs1DataObj['cs1_2']);
+    // $("#cs1_3").html(cs1DataObj['cs1_3']);
+    // $("#cs1_4").html(cs1DataObj['cs1_4']);
+    // $("#cs1_5").html(cs1DataObj['cs1_5']);
+
+    // $("#cs1_6").html(cs1DataObj['cs1_6']);
+    // $("#cs1_7").html(cs1DataObj['cs1_7']);
+    // $("#cs1_8").html(cs1DataObj['cs1_8']);
+    // $("#cs1_9").html(cs1DataObj['cs1_9']);
+    // $("#cs1_10").html(cs1DataObj['cs1_10']);
+    // $("#cs1_11").html(cs1DataObj['cs1_11']);
+    // $("#cs1_12a").html(cs1DataObj['cs1_12a']);
     
     $("#date").html(cs1DataObj['date']);
     $("#rg_v").html(cs1DataObj['rg_v']);

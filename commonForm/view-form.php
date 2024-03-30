@@ -29,26 +29,28 @@ require('include/db_config.php');
     "ठीक नहीं है",
     "जांच नहीं की",
     "चेक नहीं किया गया",
-    "नहीं किया"
+    "नहीं किया",
+    "अनुत्तीर्ण"
     ]
-    var updateCheckEng = [
-    "Not OK",
-    "Not Done",
-    "Not Checked"
-];
+//     var updateCheckEng = [
+//     "Not OK",
+//     "Not Done",
+//     "Not Checked"
+// ];
 
-var updateCheckHindi = [
-    "ठीक नहीं है",
-    "जांच नहीं की",
-    "चेक नहीं किया गया",
-    "नहीं किया"
-];
+// var updateCheckHindi = [
+//     "ठीक नहीं है",
+//     "जांच नहीं की",
+//     "चेक नहीं किया गया",
+//     "नहीं किया"
+// ];
 
 var updateValue = {
     "ठीक नहीं है": "ठीक है",
     "जांच नहीं की" : "जांच की",
     "चेक नहीं किया गया" : "चेक किया गया",
     "नहीं किया":"हो गया",
+    "अनुत्तीर्ण":"उत्तीर्ण",
     "Not OK":"OK",
     "Not Done":"Done",
     "Not Checked":"Checked"

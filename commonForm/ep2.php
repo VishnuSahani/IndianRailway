@@ -541,10 +541,43 @@ session_start();
         $("#updated_date").html(ep2DataObj['updated_date']);
         
     $("#EP2_1").html(ep2DataObj['ep2_1']);
-    $("#EP2_2").html(ep2DataObj['ep2_2']);
-    $("#EP2_3").html(ep2DataObj['ep2_3']);
-    $("#EP2_4").html(ep2DataObj['ep2_4']);
-    $("#EP2_5").html(ep2DataObj['ep2_5']);
+
+
+    let selectList = ['ep2_2','ep2_3','ep2_4','ep2_5','ob_t_N_R','gt_N_R','operatingTime_dbt','friction_c_s','track_locking'];
+
+        selectList.forEach((element,index) => {
+            let displayHtml = "";
+            let value = ep2DataObj[element]
+            if (updateCheck.includes(value)) {
+
+                displayHtml +=
+                    `<div id='${element}'><select class="form-control">
+                <option>${value}</option>
+                <option value='${updateValue[value]}'>${updateValue[value]}</option>
+                </select> <button type="button" onclick="updateSingleValue('${updateValue[value]}','EP2','${element}','${ep2DataObj['id']}')" class="btn btn-sm btn-success my-1">Update</button></div>`;
+
+                } else {
+                    displayHtml += `<div class="">${value}</div>`;
+                }
+                if(index <=3){
+                    element = element.toUpperCase();
+                }
+                $("#"+element).html(displayHtml);
+        });//for each-loop
+
+    // $("#EP2_2").html(ep2DataObj['ep2_2']);
+    // $("#EP2_3").html(ep2DataObj['ep2_3']);
+    // $("#EP2_4").html(ep2DataObj['ep2_4']);
+    // $("#EP2_5").html(ep2DataObj['ep2_5']);
+
+    // $("#ob_t_N_R").html(ep2DataObj['ob_t_N_R']);
+    // $("#gt_N_R").html(ep2DataObj['gt_N_R']);
+
+    // $("#operatingTime_dbt").html(ep2DataObj['operatingTime_dbt']);
+    // $("#friction_c_s").html(ep2DataObj['friction_c_s']);
+    // $("#track_locking").html(ep2DataObj['track_locking']);
+
+
 
 
     $("#op_v_N_R").html(ep2DataObj['op_v_N_R']);
@@ -627,10 +660,7 @@ session_start();
     }
 
 
-    $("#ob_t_N_R").html(ep2DataObj['ob_t_N_R']);
-    // let ob_t_R_N = $("#ob_t_R_N").val();
-    $("#gt_N_R").html(ep2DataObj['gt_N_R']);
-    // let gt_R_N = $("#gt_R_N").val();
+
     $("#operatingTimeSecond").html(ep2DataObj['operatingTimeSecond']);
 
     if(parseFloat(ep2DataObj['operatingTimeSecond']) >=4 && parseFloat(ep2DataObj['operatingTimeSecond']) <=5){
@@ -641,9 +671,6 @@ session_start();
     }
 
 
-    $("#operatingTime_dbt").html(ep2DataObj['operatingTime_dbt']);
-    $("#friction_c_s").html(ep2DataObj['friction_c_s']);
-    $("#track_locking").html(ep2DataObj['track_locking']);
     $("#remark_brief").html(ep2DataObj['remark_brief']);
 
 
