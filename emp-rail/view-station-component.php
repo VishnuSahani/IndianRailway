@@ -17419,7 +17419,7 @@ function get_DL_formData(dL_Type,subCompo,compo){
 
 function checkIPSBatteryFill(subCompo,compo){
 
-let empid = '<?php echo $_SESSION['userretailer']; ?>';
+let empid = '<?php echo $_SESSION['userretaileremp']; ?>';
 if(empid == undefined || empid == 'undefined' || empid == ''){
     alert("Refresh page and try again.");
     return;
@@ -17721,7 +17721,7 @@ $(document).ready(()=>{
                     $("#loader_show").addClass('d-none');
                     setTimeout(() => {
                         $('#ips_readForm_status').html("");
-                    },
+                    }, 5000);
                 }
             });
 
