@@ -26,6 +26,29 @@ if (isset($_SESSION['userretailerdste'])) {
 </style>
 
 
+<script>
+    function checkDate(value,id){
+        console.log("value date=",value);
+        let toDate = new Date();
+        let month = toDate.getMonth() + 1;
+        let day = toDate.getDate();
+        let year = toDate.getFullYear();
+        if(month < 10){
+            month = '0' + month.toString();
+        }
+        if(day < 10){
+            day = '0' + day.toString();
+        }
+
+        let currentDate = year +"-"+month+"-"+day
+        if(value > currentDate){
+            $("#"+id).val("")
+            alert("You can not select future date")
+        }
+
+    }
+</script>
+
 <div class="container" style="margin-top:30px;">
 
     <div class="alert alert-primary d-flex justify-content-between align-items-center">
@@ -306,7 +329,7 @@ if (isset($_SESSION['userretailerdste'])) {
                                                 <span class="ep2_details_hindi">दिनांक</span>
                                             </td>
                                             <td>
-                                                <input type="date" id="EP2_1" class="form-control">
+                                                <input type="date" id="EP2_1" onchange="checkDate(this.value,'EP2_1')" class="form-control">
                                             </td>
                                         </tr>
 
@@ -1373,7 +1396,7 @@ if (isset($_SESSION['userretailerdste'])) {
 
                                     <tbody>
                                         <tr>
-                                        <td ><input id="date1" class="form-control" type="date"></td> 
+                                        <td ><input id="date1" class="form-control" onchange="checkDate(this.value,'date1')" type="date"></td> 
                                         <td><input id="sale1_spg" class="form-control width70" type="text"></td>
                                         <td ><input id="sale1_v" class="form-control"  type="text"></td>
                                         <td><input id="sale2_spg" class="form-control width70"  type="text"></td>
@@ -2233,7 +2256,7 @@ if (isset($_SESSION['userretailerdste'])) {
 
                                             <tbody>
                                                 <tr>
-                                                    <td colspan="2"><input id="date" class="form-control" type="date"></td>
+                                                    <td colspan="2"><input id="date" class="form-control" onchange="checkDate(this.value,'date')" type="date"></td>
                                                     <td><input id="rg_v" class="form-control" type="text"></td>
                                                     <td><input id="rg_c" class="form-control" type="text"></td>
                                                     <td><input id="hg_v" class="form-control" type="text"></td>
@@ -15787,7 +15810,7 @@ dataList.forEach((element, index) => {
                 </div>
             </div>
         </td>
-        <td style="vertical-align:middle;width:15%" >
+        <td style="vertical-align:middle;width:25%" >
             <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
                 <option value="">Select Action</option>`;
 
@@ -15821,7 +15844,7 @@ displayHtml += `
                  
                 </div>
             </td>
-            <td style="vertical-align:middle;width:15%" >
+            <td style="vertical-align:middle;width:25%" >
                 <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
                     <option value="">Select Action</option>`;
 
@@ -15910,7 +15933,7 @@ displayHtml += `
         }
 
         
-        displayHtml += `<td style="vertical-align:middle;width:15%" >
+        displayHtml += `<td style="vertical-align:middle;width:25%" >
             <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
                 <option value="">Select Action</option>`;
 
@@ -15930,7 +15953,7 @@ displayHtml += `
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['db_details']}</td>
-        <td style="vertical-align:middle;width:15%" >
+        <td style="vertical-align:middle;width:25%" >
             <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
                 <option value="">Select Action</option>`;
 
@@ -15994,7 +16017,7 @@ dataList.forEach((element, index) => {
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['t_details']}</td>
-        <td style="vertical-align:middle;width:15%" >
+        <td style="vertical-align:middle;width:25%" >
             <select class="custom-select ${typeOfForm}Class" id="${element['t_id']}">
                 <option value="">Select Action</option>`;
 
@@ -16460,7 +16483,7 @@ dataList.forEach((element, index) => {
         <tr>
         <th scope="row">${index+1}</th>
         <td>${element['mlb_details']}</td>
-        <td style="vertical-align:middle;width:22%" >
+        <td style="vertical-align:middle;width:25%" >
             <select class="custom-select ${typeOfForm}Class" id="${element['mlb_id']}">
                 <option value="">Select Action</option>`;
 
