@@ -3902,15 +3902,16 @@ if(isset($_POST['action'])){
         $hb1_9 = trim($_POST['hb1_9']);
         $hb1_10 = trim($_POST['hb1_10']);
         $hb1_11 = trim($_POST['hb1_11']);
+        $hb1_earth_reg = trim($_POST['hb1_earth_reg']);
 
 
-        if (empty($hb1_1) || empty($hb1_2) || empty($hb1_3) || empty($hb1_4) || empty($hb1_5) || empty($hb1_6) || empty($hb1_7) || empty($hb1_8) || empty($hb1_9) || empty($hb1_10) || empty($hb1_11) || empty($hb1_battery)) {
+        if (empty($hb1_1) || empty($hb1_2) || empty($hb1_3) || empty($hb1_4) || empty($hb1_5) || empty($hb1_6) || empty($hb1_7) || empty($hb1_8) || empty($hb1_9) || empty($hb1_10) || empty($hb1_11) || empty($hb1_battery) || empty($hb1_earth_reg)) {
             $respo['status'] = false;
             $respo['msg'] = "Kindly select all field";
             echo json_encode($respo);
             die();
         }
-        $insertQuery = "INSERT INTO hb1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb1_1,hb1_2,hb1_3,hb1_4,hb1_5,hb1_6,hb1_7,hb1_8,hb1_9,hb1_10,hb1_11,hb1_battery,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb1_1','$hb1_2','$hb1_3','$hb1_4','$hb1_5','$hb1_6','$hb1_7','$hb1_8','$hb1_9','$hb1_10','$hb1_11','$hb1_battery','$createdDateTime','$createdDateTime','$language')";
+        $insertQuery = "INSERT INTO hb1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,hb1_1,hb1_2,hb1_3,hb1_4,hb1_5,hb1_6,hb1_7,hb1_8,hb1_9,hb1_10,hb1_11,hb1_battery,hb1_earth_reg,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$hb1_1','$hb1_2','$hb1_3','$hb1_4','$hb1_5','$hb1_6','$hb1_7','$hb1_8','$hb1_9','$hb1_10','$hb1_11','$hb1_battery','$hb1_earth_reg','$createdDateTime','$createdDateTime','$language')";
 
 
         if (mysqli_query($con, $insertQuery)) {

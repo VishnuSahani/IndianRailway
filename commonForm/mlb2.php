@@ -31,6 +31,8 @@ session_start();
                     <td>Created Date </td>
                     <td>Updated Date </td>
                     <td>Action</td>
+                    <td>View</td>
+
                 </tr>
             </thead>
 
@@ -249,6 +251,36 @@ SSE(Signal)/ Incharge : Half-yearly
 
     }
 
+    function addViewFormSuccessfully(formId,empId){
+
+        let formData = formDataList_g.filter((x) => {
+            if (x['id'] == formId) {
+                return x;
+            }
+        })[0];
+
+        if(formData){
+                $.ajax({
+                type:"POST",
+                url:"./query/common-action.php",
+                data:{
+                    common_action:"whoViewMyFormAdd",
+                    empid:empId,
+                    formId:formId,
+                    section_id : formData.section_id,
+                    station_id : formData.station_id,
+                    component_name : formData.component_name,
+                    form_empid : formData.emp_id
+                },
+                success:(su)=>{
+                    console.log("su",su);
+                }
+            })
+        }
+
+
+        }
+
     function showFormDetails(id, language) {
 
         if (language == "Hindi") {
@@ -259,6 +291,7 @@ SSE(Signal)/ Incharge : Half-yearly
             $(".heading_english").removeClass('d-none')
         }
 
+        addViewFormSuccessfully(id,'<?php echo $_SESSION['myOriginalId']; ?>');
 
         if (id != '') {
 
@@ -302,7 +335,35 @@ SSE(Signal)/ Incharge : Half-yearly
 
     }
 
+    function whoViewMyFormFuntion(formId){
+        return new Promise((resolve,reject)=>{
+            $.ajax({
+            type : "POST",
+            url:"./query/common-action.php",
+            data:{
+                common_action:"whoViewMyForm",
+                who : '<?php echo $_SESSION['viewType']; ?>',
+                id : '<?php echo $_SESSION['empid_for_form']; ?>',
+                formId:formId
+            },
+            success:(response)=>{
+                try{
+                    let respo =JSON.parse(response);
+                    if(respo['data']){
+                        resolve(respo['data'])
+                    }else{
+                        resolve([])
+                    }
 
+                }catch(e){
+                    resolve([])
+
+                }
+            }
+        });
+        });
+
+    }
 
     function showTable(subcomponame) {
 
@@ -313,7 +374,17 @@ SSE(Signal)/ Incharge : Half-yearly
 
 
         formData.forEach((element, index) => {
-
+            whoViewMyFormFuntion(element['id']).then((res)=>{
+                    let formViewHtml = '';
+                    if(res.length){
+                        res.forEach(ele => {
+                            let btnClass = 'btn-outline-danger';
+                            if(ele['isView']){
+                                btnClass = 'btn-danger';
+                            }
+                            formViewHtml+= `<button class="btn m-1 btn-sm ${btnClass}">${ele['type']}</button>`
+                        });
+                    }
             displayHtml += `<tr>
         <th scope="row">${index + 1}</th>
         <td>${element['component_name']}</td>
@@ -328,16 +399,17 @@ SSE(Signal)/ Incharge : Half-yearly
             displayHtml += `
         <button type="button" class="btn btn-sm btn-success" onclick="showFormDetails('${element['id']}','${element['language']}')">
             See <i class="fas fa-eye-close"></i>
-        </button>`;
+        </button></td>`;
 
 
 
-            displayHtml += `</td></tr>`;
+        displayHtml += `<td>${formViewHtml}</td></tr>`;
+
+        document.getElementById("printTableData").innerHTML = displayHtml;
+        })
 
 
         });
-
-        document.getElementById("printTableData").innerHTML = displayHtml;
 
 
     }

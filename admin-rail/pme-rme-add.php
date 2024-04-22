@@ -131,7 +131,7 @@ if (filter_var($empId, FILTER_VALIDATE_INT)!== false) {
                             <th>PME File</th>
                             <!--<th>Refresher File</th>-->
                             <th>Competency</th>
-                            <!-- <th>Action</th> -->
+                            <th>Action</th>
                         </tr>
 
                     </thead>
@@ -401,9 +401,9 @@ $(document).ready(() => {
             {
                 data: 'competency'
             },
-            /* {
+             {
                 data: 'action'
-            },*/
+            },
 
         ]
     });

@@ -1,15 +1,16 @@
 <?php
-session_start();
-if(!isset($_SESSION['userretaileremp']))
-{
-   $_SESSION['userretaileremp'];
-  //exit;
-  header('location:index.php?session_error');  
+if (!isset($_SESSION['empid_for_form']) || !isset($_SESSION['from']) || empty($_SESSION['empid_for_form']) || empty($_SESSION['from'])) {
+  header('location:index.php');
   die();
 
- }	
-  
+}
+
+$empid_for_form = $_SESSION['empid_for_form'];
+$from = $_SESSION['from'];
+$redirectPage = $_SESSION['redirectPage'];
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +71,9 @@ background:#feeeb7a8;
   opacity: 0.5;
 }
 
-
+.cursor-pointer{
+  cursor: pointer;
+}
 
 </style>
 </head>
@@ -93,38 +96,19 @@ background:#feeeb7a8;
    <!--  -->
  <div  class="row" >
     <div class="col-lg-6 col-6">
-      <a href="index.php"><img src="../images/logo_colour.gif" class="img-fluid"></a>
+      <div class="py-2">
+        <a href="index.php"><img src="../images/logo_colour.gif" class="img-fluid"></a>
+    </div>
     </div>
 
     <div class="col-lg-6 col-6">
-      <?php
-    //Include database configuration file
-    include('include/db_config.php');
-    $id="";
-    if(isset($_SESSION['userretaileremp']))
-{
-  $id=$_SESSION['userretaileremp'];  
-   
-}
-    //echo $id;
-  $query = mysqli_query($con,"SELECT * FROM emp_info_rail  WHERE binary empid = '$id'");
 
-  $row = mysqli_fetch_array($query);
-  $name = $row['empname'];
-  $_SESSION['userretailerempName']=$name;
-  $empSectionName = $row['section_name'];
-  $empSectionId = $row['section_id'];
-  $empStationName = $row['station_name'];
-  $empStationId = $row['station_id'];
-  $_SESSION['portal_name'] = $name;
-
-    ?>
 <!-- <li class="nav-item"> -->
   <p style="margin-top: 20px;" class="float-right">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o" style="font-size:20px; color:green;"></i> <span style="font-size:15px; color:#af0202;font-weight:bold"><?php echo $id; ?></span> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o" style="font-size:20px; color:green;"></i> <span style="font-size:15px; color:#af0202;font-weight:bold"><?php echo $empid_for_form; ?></span> 
     <br>
 
-    <strong style="font-size:15px; color:#af0202;"> <?php echo $name; ?></strong> </p>
+    <strong style="font-size:15px; color:#af0202;"> <?php echo $_SESSION['portal_name']; ?></strong> </p>
 <!-- </li> -->
       
     </div>
@@ -135,8 +119,8 @@ background:#feeeb7a8;
 </div>
 
 <nav class="navbar  navbar-expand-sm  navbar-dark sticky-top" style="background-color: #2f539f;">
-  <a class="navbar-brand" href="index.php" style="color:#FFFFFF;"><i class="fa fa-home"></i> </a>
-<!-- <a href="index.php" class="navbar-brand" >IBN DIGITAL</a> -->
+  <a class="navbar-brand" style="color:#FFFFFF;"><i class="fa fa-home"></i> </a>
+
 
 <button type="button"  class="navbar-toggler" data-toggle="collapse" data-target="#menubar"><span class="navbar-toggler-icon"></span></button>
 
@@ -145,13 +129,8 @@ background:#feeeb7a8;
 <div id="menubar" class="collapse navbar-collapse">
 <ul class="navbar-nav">
 
-<li class="nav-item"><a href="index.php" class="nav-link  active">Employee Details</a></li> 
-
-
-<li class="nav-item"><a href="view-station-component.php" class="nav-link  active">Maintenance</a></li> 
-<!-- 
-<li class="nav-item"><a href="view-form-details.php" class="nav-link  active">Form</a></li>  -->
-
+<li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>index.php" class="nav-link  active">Employee Details</a></li> 
+<li class="nav-item"><a href="<?php echo $_SESSION['redirectPage']; ?>view-station-component.php" class="nav-link  active">Maintenance</a></li> 
 
 </ul>
 
@@ -161,15 +140,12 @@ background:#feeeb7a8;
 
 
 <li class="nav-item">
-<a class="nav-link  active" href="logout.php"><i class="fa fa-sign-out" style="font-size:20px; color:#af0202;"></i>Logout</a>
+<a class="nav-link  active" href="<?php echo $_SESSION['redirectPage']; ?>logout.php"><i class="fa fa-sign-out" style="font-size:20px; color:#af0202;"></i>Logout</a>
 </li>
 
 </ul>
 </div>
 </nav>
-
-
-
 
 <style>
   .loader{

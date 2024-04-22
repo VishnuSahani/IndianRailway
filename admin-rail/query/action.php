@@ -336,8 +336,8 @@ if (isset($_POST['action'])) {
 
         // }
 
-        //    $deleteQuery = "DELETE FROM pmerme_info_rail WHERE id = '$deletePmeRmeId'";
-        $deleteQuery = "UPDATE pmerme_info_rail SET status = '-1' WHERE id = '$deletePmeRmeId'";
+           $deleteQuery = "DELETE FROM pmerme_info_rail WHERE id = '$deletePmeRmeId'";
+        // $deleteQuery = "UPDATE pmerme_info_rail SET status = '-1' WHERE id = '$deletePmeRmeId'";
 
 
         if (mysqli_query($con, $deleteQuery)) {
@@ -1092,7 +1092,6 @@ if (isset($_POST['action'])) {
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
-                break;
         }
 
         try {
@@ -1242,7 +1241,6 @@ if (isset($_POST['action'])) {
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
-                break;
         }
 
         try {
@@ -1319,7 +1317,6 @@ if (isset($_POST['action'])) {
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
-                break;
         }
 
         try {

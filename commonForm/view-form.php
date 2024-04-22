@@ -2,16 +2,25 @@
 session_start();
 
 if($_SESSION['from'] == "JE"){
-
+    $_SESSION['myOriginalId'] = $_SESSION['userretailerje'];
     require('je-header.php');
 }elseif($_SESSION['from'] == "Admin"){
+    $_SESSION['myOriginalId'] = $_SESSION['userretailer'];
     require('admin-header.php');
 }elseif($_SESSION['from'] == "SSE"){
+    $_SESSION['myOriginalId'] = $_SESSION['userretailersse'];
     require('sse-header.php');
 }elseif($_SESSION['from'] == "ASTE"){
+    $_SESSION['myOriginalId'] = $_SESSION['userretaileraste'];
     require('aste-header.php');
 }elseif($_SESSION['from'] == "DSTE"){
+    $_SESSION['myOriginalId'] = $_SESSION['userretailerdste'];
+
     require('dste-header.php');
+}elseif($_SESSION['from'] == "Employee"){
+    $_SESSION['myOriginalId'] = $_SESSION['userretaileremp'];
+
+    require('emp-header.php');
 }else{
     require('header.php');
     die();

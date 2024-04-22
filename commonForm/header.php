@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if (!isset($_SESSION['empid_for_form']) || !isset($_SESSION['from']) || empty($_SESSION['empid_for_form']) || empty($_SESSION['from'])) {
   header('location:index.php');

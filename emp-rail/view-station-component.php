@@ -49,6 +49,47 @@ if (isset($_SESSION['userretaileremp'])) {
         }
 
     }
+
+    $(document).ready(()=>{
+        // view je own form
+        $("#viewFormBtn").click(()=>{
+
+            let empid = '<?php echo $id; ?>';
+
+            if(!empid){
+                alert("Something went wrong with id refresh page and try again, try again");
+               location.reload();
+               return;
+            }
+
+            $.ajax({
+                type:"POST",
+                url:"../commonForm/query/common-action.php",
+                data:{
+                    common_action:"setSessionForFormDetails",
+                    from:"Employee",
+                    viewType:"Employee",
+                    empid:empid
+                },
+                beforeSend:()=>{
+                    $("#loader_show").removeClass('d-none');
+                },
+                success:(response)=>{
+                    $("#loader_show").addClass('d-none');
+                    let respo = JSON.parse(response);
+                    console.log("respo=", respo);
+                    if (respo['status']) {
+                        window.location.href = "../commonForm/view-form.php";
+                    }else{
+                        alert("Something went wrong try again");
+                    }
+                }
+            });
+
+
+
+})
+    })
 </script>
 
 
@@ -93,6 +134,11 @@ if (isset($_SESSION['userretaileremp'])) {
                             <input type="hidden" id="stationId" class="form-control" disabled
                                 value="<?php echo $empStationId; ?>">
                         </div>
+
+                        <div class="col-12 my-2 d-flex justify-content-end">
+                                <span id="formViewRespoMsg" class="mr-3 text-danger"></span>
+                                <button type="button" id="viewFormBtn" class="btn btn-info btn-sm">View My Form</button>
+                            </div>
 
 
                         <div class="form-group col-12">
@@ -12803,7 +12849,8 @@ $("#hb1FormBtn").click(function() {
             let hb1_9 = $("#hb1_9").val();
             let hb1_10 = $("#hb1_10").val();
             let hb1_11 = $("#hb1_11").val();
-           ;
+            let hb1_earth_reg = $("#hb1_earth_reg").val();
+
 
             if (hb1_1 == undefined  || hb1_1 == null || hb1_1 == '' || hb1_1.length == 0) {
                 $("#hb1_1").addClass("is-invalid");
@@ -12910,6 +12957,16 @@ $("#hb1FormBtn").click(function() {
                 $("#hb1_10").removeClass("is-invalid");
             }
 
+                        
+            if (hb1_earth_reg == undefined  || hb1_earth_reg == null || hb1_earth_reg == '' || hb1_earth_reg.length == 0) {
+                $("#hb1_earth_reg").addClass("is-invalid");
+                $("#hb1Form_status").html("Earth Resistance is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_earth_reg").removeClass("is-invalid");
+            }
+
             if (hb1_11 == undefined  || hb1_11 == null || hb1_11 == '' || hb1_11.length == 0) {
                 $("#hb1_11").addClass("is-invalid");
                 $("#hb1Form_status").html("Serial no 11 is required").css("color", "red");
@@ -12951,7 +13008,9 @@ $("#hb1FormBtn").click(function() {
                     "hb1_9": hb1_9,
                     "hb1_10": hb1_10,              
                     "hb1_11": hb1_11, 
-                    hb1_battery:hb1_battery,                                
+                    hb1_battery:hb1_battery,    
+                    hb1_earth_reg:hb1_earth_reg,                                
+
                     "language":language
                 },
                 beforeSend: function() {
@@ -15858,10 +15917,12 @@ switch (typeOfForm) {
     //for hb1
     let battery="BATTERY VOLTAGE";
     let earthValue="EARTH VALUE";
+    let earthRegValue="EARTH RESISTANCE";
 
     if(language == "Hindi"){
         battery="बैटरी वोल्टेज";
         earthValue = "अर्थ का मान";
+        earthRegValue = "अर्थ का मान";
     }
 
 
@@ -15900,7 +15961,41 @@ dataList.forEach((element, index) => {
         </tr>
     `;
 
-    }else if(typeOfForm == 'HB3' && index == 4){
+    }else if(typeOfForm == 'HB1' && index == 10){
+
+displayHtml += `
+<tr>
+    <th scope="row">${index+1}</th>
+    <td>
+        ${element['db_details']}
+        <div class="">
+            <div class="input-group my-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="hb1_earthRes_label">
+                        ${earthRegValue}
+                    </span>
+                </div>
+                <input type="text" class="form-control" id="hb1_earth_reg" aria-describedby="hb1_earthRes_label">
+            </div>
+        </div>
+    </td>
+    <td style="vertical-align:middle;width:25%">
+        <select class="custom-select ${typeOfForm}Class" id="${element['db_id']}">
+            <option value="">Select Action</option>`;
+
+            let optArr = element['db_option'].split(",");
+            optArr.forEach(opt => {
+            displayHtml += `<option value="${opt}">${opt}</option>`;
+
+
+            });
+            displayHtml += `
+        </select>
+    </td>
+</tr>
+`;
+
+}else if(typeOfForm == 'HB3' && index == 4){
 
 displayHtml += `
             <tr>

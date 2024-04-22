@@ -12710,12 +12710,13 @@ $("#hb1FormBtn").click(function() {
             let hb1_6 = $("#hb1_6").val();
             let hb1_7 = $("#hb1_7").val();
             let hb1_battery = $("#hb1_battery").val();
-
+            
             let hb1_8 = $("#hb1_8").val();
             let hb1_9 = $("#hb1_9").val();
             let hb1_10 = $("#hb1_10").val();
             let hb1_11 = $("#hb1_11").val();
-           ;
+            let hb1_earth_reg = $("#hb1_earth_reg").val();
+           
 
             if (hb1_1 == undefined  || hb1_1 == null || hb1_1 == '' || hb1_1.length == 0) {
                 $("#hb1_1").addClass("is-invalid");
@@ -12822,6 +12823,16 @@ $("#hb1FormBtn").click(function() {
                 $("#hb1_10").removeClass("is-invalid");
             }
 
+            
+            if (hb1_earth_reg == undefined  || hb1_earth_reg == null || hb1_earth_reg == '' || hb1_earth_reg.length == 0) {
+                $("#hb1_earth_reg").addClass("is-invalid");
+                $("#hb1Form_status").html("Earth Resistance is required").css("color", "red");
+                return;
+            } else {
+                $("#hb1Form_status").html("");
+                $("#hb1_earth_reg").removeClass("is-invalid");
+            }
+
             if (hb1_11 == undefined  || hb1_11 == null || hb1_11 == '' || hb1_11.length == 0) {
                 $("#hb1_11").addClass("is-invalid");
                 $("#hb1Form_status").html("Serial no 11 is required").css("color", "red");
@@ -12864,6 +12875,7 @@ $("#hb1FormBtn").click(function() {
                     "hb1_10": hb1_10,              
                     "hb1_11": hb1_11, 
                     hb1_battery:hb1_battery,                                
+                    hb1_earth_reg:hb1_earth_reg,                                
                     "language":language
                 },
                 beforeSend: function() {
@@ -15772,10 +15784,12 @@ switch (typeOfForm) {
     //for hb1
     let battery="BATTERY VOLTAGE";
     let earthValue="EARTH VALUE";
+    let earthRegValue="EARTH RESISTANCE";
 
     if(language == "Hindi"){
         battery="बैटरी वोल्टेज";
         earthValue = "अर्थ का मान";
+        earthRegValue = "अर्थ का मान";
     }
 
 
@@ -15824,11 +15838,11 @@ ${element['db_details']}
     <div class="">
         <div class="input-group my-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="hb1_battery_label">
-                    ${battery}
+                <span class="input-group-text" id="hb1_earthRes_label">
+                    ${earthRegValue}
                 </span>
             </div>
-            <input type="text" class="form-control" id="hb1_battery" aria-describedby="hb1_battery_label">
+            <input type="text" class="form-control" id="hb1_earth_reg" aria-describedby="hb1_earthRes_label">
         </div>
     </div>
 </td>
