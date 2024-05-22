@@ -2,22 +2,23 @@
 
 if (isset($_POST['action'])) {
 
-    include("../include/db_config.php");
+    include ("../include/db_config.php");
     date_default_timezone_set('Asia/Kolkata');
 
 
     $action = trim($_POST['action']);
     $respo = [];
-  
 
-    function getFormDurationDay($formType,$conDB){
-        $q = mysqli_query($conDB,"SELECT duration from form_duration_info WHERE empType='Admin' && formName = '$formType'");
-        if(mysqli_num_rows($q) > 0){
+
+    function getFormDurationDay($formType, $conDB)
+    {
+        $q = mysqli_query($conDB, "SELECT duration from form_duration_info WHERE empType='Admin' && formName = '$formType'");
+        if (mysqli_num_rows($q) > 0) {
 
             $run = mysqli_fetch_array($q);
 
             return $run['duration'];
-        }else{
+        } else {
             return 0;
         }
     }
@@ -206,18 +207,18 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("EP1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("EP1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             $day15Date = date("Y-m-d", $d15);
-            
+
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $currentStrToTime = strtotime($createdDateTime);
 
@@ -305,14 +306,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("EP2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("EP2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
 
@@ -420,16 +421,16 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            
-            $day_duration = getFormDurationDay("EP3",$con);
-            if($day_duration == 0){
+
+            $day_duration = getFormDurationDay("EP3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
-            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));            
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
@@ -512,14 +513,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("EP4",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("EP4", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -558,7 +559,7 @@ if (isset($_POST['action'])) {
         }
         $insertQuery = "INSERT INTO ep4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ep4_1,ep4_2,ep4_3,ep4_4,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ep4_1','$ep4_2','$ep4_3','$ep4_4','$createdDateTime','$createdDateTime','$language')";
 
-        
+
         if (mysqli_query($con, $insertQuery)) {
 
             $respo['status'] = true;
@@ -611,14 +612,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("EP5",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("EP5", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -789,14 +790,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("T1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("T1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -907,14 +908,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("T2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("T2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1000,14 +1001,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("T3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("T3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1090,14 +1091,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("T4",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("T4", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1177,14 +1178,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("T5",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("T5", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1344,14 +1345,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("CS1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("CS1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1468,14 +1469,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("CS2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("CS2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1645,14 +1646,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DL1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DL1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1743,14 +1744,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DL2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DL2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1835,14 +1836,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DL3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DL3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -1926,14 +1927,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DL4",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DL4", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2097,14 +2098,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("MLB1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("MLB1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2190,14 +2191,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("MLB2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("MLB2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2280,14 +2281,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("MLB3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("MLB3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2446,14 +2447,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("SLB1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("SLB1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2540,14 +2541,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("SLB2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("SLB2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2721,14 +2722,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("ELB1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("ELB1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2817,14 +2818,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("ELB2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("ELB2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -2915,14 +2916,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("ELB3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("ELB3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3012,14 +3013,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("ELB4",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("ELB4", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             // $d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3109,14 +3110,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("ELB5",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("ELB5", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3316,14 +3317,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DB1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DB1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3414,14 +3415,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DB2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DB2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3502,14 +3503,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DB3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DB3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
 
@@ -3594,14 +3595,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("HB1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("HB1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3693,14 +3694,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("HB2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("HB2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3788,14 +3789,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("HB3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("HB3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -3882,16 +3883,16 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("UF1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("UF1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
-            
+
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
             $day15Date = date("Y-m-d", $d15);
 
@@ -3977,14 +3978,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("UF2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("UF2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4067,14 +4068,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("UF3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("UF3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4156,14 +4157,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("UF4",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("UF4", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4246,14 +4247,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("UF5",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("UF5", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4418,14 +4419,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DAC1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DAC1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4518,14 +4519,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DAC2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DAC2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4614,14 +4615,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DAC3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DAC3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4708,14 +4709,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("DAC4",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("DAC4", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4769,7 +4770,7 @@ if (isset($_POST['action'])) {
 
 
     }
-      // IPS
+    // IPS
     elseif ($action == 'getIPS_FormDetails') {
         if (!isset($_POST['formType']) || empty($_POST['formType'])) {
             $respo['status'] = false;
@@ -4849,7 +4850,7 @@ if (isset($_POST['action'])) {
             die();
 
         }
-    }elseif ($action == "IPS1_formSubmit") {
+    } elseif ($action == "IPS1_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -4877,14 +4878,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("IPS1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("IPS1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -4952,7 +4953,7 @@ if (isset($_POST['action'])) {
 
 
 
-    }elseif ($action == "IPS2_formSubmit") {
+    } elseif ($action == "IPS2_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -4980,14 +4981,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("IPS2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("IPS2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -5041,7 +5042,7 @@ if (isset($_POST['action'])) {
 
 
 
-    }elseif ($action == "IPS3_formSubmit") {
+    } elseif ($action == "IPS3_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -5069,14 +5070,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("IPS3",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("IPS3", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -5105,7 +5106,7 @@ if (isset($_POST['action'])) {
         $ips3_6 = trim($_POST['ips3_6']);
         $ips3_7 = trim($_POST['ips3_7']);
         $ips3_8 = trim($_POST['ips3_8']);
-      
+
 
         if (empty($ips3_1) || empty($ips3_2) || empty($ips3_3) || empty($ips3_4) || empty($ips3_5) || empty($ips3_6) || empty($ips3_7) || empty($ips3_8)) {
             $respo['status'] = false;
@@ -5210,7 +5211,7 @@ if (isset($_POST['action'])) {
             die();
 
         }
-    }elseif ($action == "E1_formSubmit") {
+    } elseif ($action == "E1_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -5238,14 +5239,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("E1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("E1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -5272,8 +5273,8 @@ if (isset($_POST['action'])) {
         $e1_4 = trim($_POST['e1_4']);
         $e1_5 = trim($_POST['e1_5']);
         $e1_decs_earth = trim($_POST['e1_decs_earth']);
-      
-      
+
+
 
         if (empty($e1_1) || empty($e1_2) || empty($e1_3) || empty($e1_4) || empty($e1_5) || empty($e1_decs_earth)) {
             $respo['status'] = false;
@@ -5303,7 +5304,7 @@ if (isset($_POST['action'])) {
 
 
 
-    }elseif ($action == "E2_formSubmit") {
+    } elseif ($action == "E2_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -5331,14 +5332,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("E2",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("E2", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -5362,9 +5363,9 @@ if (isset($_POST['action'])) {
         $e2_1 = trim($_POST['e2_1']);
         $e2_2 = trim($_POST['e2_2']);
         $e2_decs_earth = trim($_POST['e2_decs_earth']);
-       
-      
-      
+
+
+
 
         if (empty($e2_1) || empty($e2_2)) {
             $respo['status'] = false;
@@ -5394,7 +5395,7 @@ if (isset($_POST['action'])) {
 
 
 
-    }elseif ($action == "E3_formSubmit") {
+    } elseif ($action == "E3_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -5422,14 +5423,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("E1",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("E1", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -5459,8 +5460,8 @@ if (isset($_POST['action'])) {
         $e3_decs_earth = trim($_POST['e3_decs_earth']);
         $e3_5_earth = trim($_POST['e3_5_earth']);
         $e3_6_earth = trim($_POST['e3_6_earth']);
-      
-      
+
+
 
         if (empty($e3_1) || empty($e3_2) || empty($e3_3) || empty($e3_4) || empty($e3_5) || empty($e3_6) || empty($e3_decs_earth) || empty($e3_5_earth) || empty($e3_6_earth)) {
             $respo['status'] = false;
@@ -5490,7 +5491,7 @@ if (isset($_POST['action'])) {
 
 
 
-    }elseif ($action == "IPSRead_formSubmit") {
+    } elseif ($action == "IPSRead_formSubmit") {
         if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with request";
@@ -5509,7 +5510,7 @@ if (isset($_POST['action'])) {
         $language = trim($_POST['language']);
 
         $createdDateTime = date("Y-m-d h:i:s");
-        $actionType = trim($_POST['actionType']);    
+        $actionType = trim($_POST['actionType']);
 
 
         $checkData = mysqli_query($con, "SELECT * FROM ips_battery_read WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
@@ -5520,14 +5521,14 @@ if (isset($_POST['action'])) {
             // print_r($lastInsert);
             $lastSubmitedDate = $lastInsert['created_date'];
 
-            $day_duration = getFormDurationDay("IPS_Battery",$con);
-            if($day_duration == 0){
+            $day_duration = getFormDurationDay("IPS_Battery", $con);
+            if ($day_duration == 0) {
                 $respo['status'] = false;
                 $respo['msg'] = "Not get form duration day.";
                 echo json_encode($respo);
                 die();
             }
-            $setDay = "+".$day_duration." days";
+            $setDay = "+" . $day_duration . " days";
             $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
 
             //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
@@ -5549,7 +5550,7 @@ if (isset($_POST['action'])) {
         }
 
         $ips_railway = trim($_POST['ips_railway']);
-        
+
         if (empty($ips_railway)) {
             $respo['status'] = false;
             $respo['msg'] = "Kindly fill railway field";
@@ -5557,19 +5558,19 @@ if (isset($_POST['action'])) {
             echo json_encode($respo);
             die();
         }
-        
+
         $insertQuery = "";
         $qq = "";
         $ips_barttertId = "";
         $typee = "";
-        if($actionType == "update"){
-            $ips_barttertId = trim($_POST['ips_barttertId']);    
-            $insertQuery = "UPDATE ips_battery_read SET ips_railway='$ips_railway' WHERE id='$ips_barttertId'";         
+        if ($actionType == "update") {
+            $ips_barttertId = trim($_POST['ips_barttertId']);
+            $insertQuery = "UPDATE ips_battery_read SET ips_railway='$ips_railway' WHERE id='$ips_barttertId'";
             $typee = 'updated';
 
-        }else{
+        } else {
             $insertQuery = "INSERT INTO ips_battery_read (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ips_railway,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ips_railway','$createdDateTime','$createdDateTime','$language')";
-            
+
             $qq = "SELECT * FROM ips_battery_read WHERE emp_id='$userID' AND section_id='$sectionId' AND station_id='$stationId' AND component_name ='$compoNameTmp' AND created_date='$createdDateTime'";
             $typee = 'inserted';
 
@@ -5578,16 +5579,16 @@ if (isset($_POST['action'])) {
 
         if (mysqli_query($con, $insertQuery)) {
 
-            if($actionType == "create"){                
-                $getId = mysqli_query($con,$qq);    
+            if ($actionType == "create") {
+                $getId = mysqli_query($con, $qq);
                 $r = mysqli_fetch_array($getId);
                 $ips_barttertId = $r['id'];
             }
 
             $respo['status'] = true;
-            $respo['msg'] = "Railway Data ".$typee." successfully.";
+            $respo['msg'] = "Railway Data " . $typee . " successfully.";
             $respo['updateId'] = $ips_barttertId;
-            
+
             echo json_encode($respo);
             die();
 
@@ -5603,8 +5604,8 @@ if (isset($_POST['action'])) {
 
 
 
-    }elseif($action == "IPSRead_formSubmit_update"){
-        if (!isset($_POST['userID'])){
+    } elseif ($action == "IPSRead_formSubmit_update") {
+        if (!isset($_POST['userID'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with user ID";
             echo json_encode($respo);
@@ -5612,20 +5613,20 @@ if (isset($_POST['action'])) {
 
         }
 
-        if(!isset($_POST['columnName'])){
+        if (!isset($_POST['columnName'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with column name";
             echo json_encode($respo);
             die();
         }
 
-        if(!isset($_POST['columnValue'])){
+        if (!isset($_POST['columnValue'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with column value";
             echo json_encode($respo);
             die();
         }
-        if(!isset($_POST['ips_barttertId'])){
+        if (!isset($_POST['ips_barttertId'])) {
             $respo['status'] = false;
             $respo['msg'] = "Something went wrong with row ID";
             echo json_encode($respo);
@@ -5635,33 +5636,33 @@ if (isset($_POST['action'])) {
 
         $userID = trim($_POST['userID']);
         $createdDateTime = date("Y-m-d h:i:s");
-        
+
         $columnName = trim($_POST['columnName']);
         $columnValue = trim($_POST['columnValue']);
         $language = trim($_POST['language']);
         $ips_barttertId = trim($_POST['ips_barttertId']);
         $isComplete = trim($_POST['isComplete']);
 
-        if(empty($userID) || empty($columnName) || empty($columnValue) || empty($language) || empty($ips_barttertId)){
+        if (empty($userID) || empty($columnName) || empty($columnValue) || empty($language) || empty($ips_barttertId)) {
             $respo['status'] = false;
             $respo['msg'] = "Request value is empty";
             echo json_encode($respo);
             die();
         }
 
-        $checkData = mysqli_query($con,"SELECT id,emp_id FROM ips_battery_read WHERE emp_id='$userID' && id = '$ips_barttertId'");
+        $checkData = mysqli_query($con, "SELECT id,emp_id FROM ips_battery_read WHERE emp_id='$userID' && id = '$ips_barttertId'");
 
-        if(mysqli_num_rows($checkData) > 0){
+        if (mysqli_num_rows($checkData) > 0) {
 
             $updateQuery = "UPDATE ips_battery_read SET $columnName= '$columnValue', updated_date ='$createdDateTime',isComplete='$isComplete' WHERE id='$ips_barttertId' && emp_id='$userID'";
 
-            if(mysqli_query($con,$updateQuery)){
+            if (mysqli_query($con, $updateQuery)) {
                 $respo['status'] = true;
                 $respo['msg'] = "Data inserted";
                 echo json_encode($respo);
                 die();
 
-            }else{
+            } else {
 
                 $respo['status'] = false;
                 $respo['msg'] = "Something went wrong, try again";
@@ -5670,7 +5671,7 @@ if (isset($_POST['action'])) {
 
             }
 
-        }else{
+        } else {
             $respo['status'] = false;
             $respo['msg'] = "Invalid Row Id provide";
             echo json_encode($respo);
@@ -5678,8 +5679,1173 @@ if (isset($_POST['action'])) {
         }
 
 
-    }
-    else {
+    } elseif ($action == 'getR_FormDetails') {
+        if (!isset($_POST['formType']) || empty($_POST['formType'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'R1':
+                $tableName = 'r1_info';
+                break;
+
+            case 'R2':
+                $tableName = 'r2_info';
+                break;
+            case 'R3':
+                $tableName = 'r3_info';
+                break;
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+
+        }
+
+        try {
+
+            $query = "SELECT * FROM " . $tableName . " WHERE language='$language'";
+            $queryExe = mysqli_query($con, $query);
+            if (mysqli_num_rows($queryExe) <= 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+
+            while ($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->r_id = $q_run['r_id'];
+                $obj->r_details = $q_run['r_details'];
+                $obj->r_option = $q_run['r_option'];
+                $obj->r_status = $q_run['status'];
+                $data[] = $obj;
+
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
+            echo json_encode($respo);
+            die();
+
+        } catch (Exception $err) {
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    } elseif ($action == "R1_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM r1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("R1", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $r1_1 = trim($_POST['r1_1']);
+        $r1_2 = trim($_POST['r1_2']);
+        $r1_3 = trim($_POST['r1_3']);
+
+
+
+
+        if (empty($r1_1) || empty($r1_2) || empty($r1_3)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO r1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,r1_1,r1_2,r1_3,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$r1_1','$r1_2','$r1_3','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "R2_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM r2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("R2", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $r2_1 = trim($_POST['r2_1']);
+        $r2_2 = trim($_POST['r2_2']);
+        $r2_3 = trim($_POST['r2_3']);
+        $r2_4 = trim($_POST['r2_4']);
+        $r2_5 = trim($_POST['r2_5']);
+        $r2_6 = trim($_POST['r2_6']);
+
+
+
+
+        if (empty($r2_1) || empty($r2_2) || empty($r2_3) || empty($r2_4) || empty($r2_5) || empty($r2_6)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO r2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,r2_1,r2_2,r2_3,r2_4,r2_5,r2_6,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$r2_1','$r2_2','$r2_3','$r2_4','$r2_5','$r2_6','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "R3_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM r3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("R3", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $r3_1 = trim($_POST['r3_1']);
+        $r3_2 = trim($_POST['r3_2']);
+        $r3_3 = trim($_POST['r3_3']);
+        $r3_4 = trim($_POST['r3_4']);
+        $r3_5 = trim($_POST['r3_5']);
+        $r3_6 = trim($_POST['r3_6']);
+        $r3_7 = trim($_POST['r3_7']);
+
+
+
+
+        if (empty($r3_1) || empty($r3_2) || empty($r3_3) || empty($r3_4) || empty($r3_5) || empty($r3_6) || empty($r3_7)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO r3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,r3_1,r3_2,r3_3,r3_4,r3_5,r3_6,r3_7,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$r3_1','$r3_2','$r3_3','$r3_4','$r3_5','$r3_6','$r3_7','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == 'getCP_FormDetails') {
+        if (!isset($_POST['formType']) || empty($_POST['formType'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'CP1':
+                $tableName = 'cp1_info';
+                break;
+
+            case 'CP2':
+                $tableName = 'cp2_info';
+                break;
+            case 'CP3':
+                $tableName = 'cp3_info';
+                break;
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+
+        }
+
+        try {
+
+            $query = "SELECT * FROM " . $tableName . " WHERE language='$language'";
+            $queryExe = mysqli_query($con, $query);
+            if (mysqli_num_rows($queryExe) <= 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+
+            while ($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->cp_id = $q_run['cp_id'];
+                $obj->cp_details = $q_run['cp_details'];
+                $obj->cp_option = $q_run['cp_option'];
+                $obj->cp_status = $q_run['status'];
+                $data[] = $obj;
+
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
+            echo json_encode($respo);
+            die();
+
+        } catch (Exception $err) {
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    } elseif ($action == "CP1_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM CP1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("CP1", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $cp1_1 = trim($_POST['cp1_1']);
+        $cp1_2 = trim($_POST['cp1_2']);
+        $cp1_3 = trim($_POST['cp1_3']);
+        $cp1_4 = trim($_POST['cp1_4']);
+
+
+
+
+        if (empty($cp1_1) || empty($cp1_2) || empty($cp1_3) || empty($cp1_4)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO cp1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cp1_1,cp1_2,cp1_3,cp1_4,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cp1_1','$cp1_2','$cp1_3','$cp1_4','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "CP2_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM CP2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("CP2", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $cp2_1 = trim($_POST['cp2_1']);
+        $cp2_2 = trim($_POST['cp2_2']);
+        $cp2_3 = trim($_POST['cp2_3']);
+        $cp2_4 = trim($_POST['cp2_4']);
+        $cp2_5 = trim($_POST['cp2_5']);
+
+
+
+
+        if (empty($cp2_1) || empty($cp2_2) || empty($cp2_3) || empty($cp2_4) || empty($cp2_5)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO cp2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cp2_1,cp2_2,cp2_3,cp2_4,cp2_5,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cp2_1','$cp2_2','$cp2_3','$cp2_4','$cp2_5','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "CP3_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM CP3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("CP3", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $cp3_1 = trim($_POST['cp3_1']);
+
+
+
+
+        if (empty($cp3_1)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO cp3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,cp3_1,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$cp3_1','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == 'getEI_FormDetails') {
+        if (!isset($_POST['formType']) || empty($_POST['formType'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'EI1':
+                $tableName = 'ei1_info';
+                break;
+            case 'EI2':
+                $tableName = 'ei2_info';
+                break;
+            case 'EI3':
+                $tableName = 'ei3_info';
+                break;
+            case 'EI4':
+                $tableName = 'ei4_info';
+                break;
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+
+        }
+
+        try {
+
+            $query = "SELECT * FROM " . $tableName . " WHERE language='$language'";
+            $queryExe = mysqli_query($con, $query);
+            if (mysqli_num_rows($queryExe) <= 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+
+            while ($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->ei_id = $q_run['ei_id'];
+                $obj->ei_details = $q_run['ei_details'];
+                $obj->ei_option = $q_run['ei_option'];
+                $obj->ei_status = $q_run['status'];
+                $data[] = $obj;
+
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
+            echo json_encode($respo);
+            die();
+
+        } catch (Exception $err) {
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    } elseif ($action == "EI1_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM ei1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("EI1", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $ei1_1 = trim($_POST['ei1_1']);
+        $ei1_2 = trim($_POST['ei1_2']);
+        $ei1_3 = trim($_POST['ei1_3']);
+
+        $ei1_4 = trim($_POST['ei1_4']);
+        $ei1_5 = trim($_POST['ei1_5']);
+        $ei1_6 = trim($_POST['ei1_6']);
+        $ei1_7 = trim($_POST['ei1_7']);
+        $ei1_8 = trim($_POST['ei1_8']);
+        $ei1_9 = trim($_POST['ei1_9']);
+        $ei1_10 = trim($_POST['ei1_10']);
+        $ei1_11 = trim($_POST['ei1_11']);
+        $ei1_12 = trim($_POST['ei1_12']);
+        $ei1_13 = trim($_POST['ei1_13']);
+        $ei1_14 = trim($_POST['ei1_14']);
+        $ei1_15 = trim($_POST['ei1_15']);
+        $ei1_16 = trim($_POST['ei1_16']);
+
+
+
+        if (empty($ei1_1) || empty($ei1_2) || empty($ei1_3) || empty($ei1_4) || empty($ei1_5) || empty($ei1_6) || empty($ei1_7) || empty($ei1_8) || empty($ei1_9) || empty($ei1_10) || empty($ei1_11) || empty($ei1_12) || empty($ei1_13) || empty($ei1_14) || empty($ei1_15) || empty($ei1_16)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO ei1_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ei1_1,ei1_2,ei1_3,ei1_4,ei1_5,ei1_6,ei1_7,ei1_8,ei1_9,ei1_10,ei1_11,ei1_12,ei1_13,ei1_14,ei1_15,ei1_16,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ei1_1','$ei1_2','$ei1_3','$ei1_4','$ei1_5','$ei1_6','$ei1_7','$ei1_8','$ei1_9','$ei1_10','$ei1_11','$ei1_12','$ei1_13','$ei1_14','$ei1_15','$ei1_16','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "EI2_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM ei2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("EI2", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $ei2_1 = trim($_POST['ei2_1']);
+        $ei2_2 = trim($_POST['ei2_2']);
+        $ei2_3 = trim($_POST['ei2_3']);
+        $ei2_4 = trim($_POST['ei2_4']);
+        $ei2_5 = trim($_POST['ei2_5']);
+        $ei2_6 = trim($_POST['ei2_6']);
+        $ei2_7 = trim($_POST['ei2_7']);
+        $ei2_8 = trim($_POST['ei2_8']);
+
+
+
+
+        if (empty($ei2_1) || empty($ei2_2) || empty($ei2_3) || empty($ei2_4) || empty($ei2_5) || empty($ei2_6) || empty($ei2_7) || empty($ei2_8)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO ei2_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ei2_1,ei2_2,ei2_3,ei2_4,ei2_5,ei2_6,ei2_7,ei2_8,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ei2_1','$ei2_2','$ei2_3','$ei2_4','$ei2_5','$ei2_6','$ei2_7','$ei2_8','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "EI3_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM ei3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("EI3", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $ei3_1 = trim($_POST['ei3_1']);
+        $ei3_2 = trim($_POST['ei3_2']);
+        $ei3_3 = trim($_POST['ei3_3']);
+        $ei3_4 = trim($_POST['ei3_4']);
+        $ei3_5 = trim($_POST['ei3_5']);
+
+
+
+
+        if (empty($ei3_1) || empty($ei3_2) || empty($ei3_3) || empty($ei3_4) || empty($ei3_5)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO ei3_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ei3_1,ei3_2,ei3_3,ei3_4,ei3_5,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ei3_1','$ei3_2','$ei3_3','$ei3_4','$ei3_5','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } elseif ($action == "EI4_formSubmit") {
+        if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong with request";
+            echo json_encode($respo);
+            die();
+
+        }
+
+        $userID = trim($_POST['userID']);
+        $sectionName = trim($_POST['sectionName']);
+        $sectionId = trim($_POST['sectionId']);
+        $stationName = trim($_POST['stationName']);
+        $stationId = trim($_POST['stationId']);
+        $compoNameTmp = trim($_POST['compoNameTmp']);
+        $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+        $language = trim($_POST['language']);
+
+        $createdDateTime = date("Y-m-d h:i:s");
+
+        $checkData = mysqli_query($con, "SELECT * FROM ei4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+        if (mysqli_num_rows($checkData) > 0) {
+
+            $lastInsert = mysqli_fetch_array($checkData);
+
+            // print_r($lastInsert);
+            $lastSubmitedDate = $lastInsert['created_date'];
+
+            $day_duration = getFormDurationDay("EI4", $con);
+            if ($day_duration == 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Not get form duration day.";
+                echo json_encode($respo);
+                die();
+            }
+            $setDay = "+" . $day_duration . " days";
+            $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+
+            //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+            $day15Date = date("Y-m-d", $d15);
+
+            $currentStrToTime = strtotime($createdDateTime);
+
+            if ($currentStrToTime < $d15) {
+
+                $respo['status'] = false;
+                $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                echo json_encode($respo);
+                die();
+
+            }
+
+
+
+        }
+
+        $ei4_1 = trim($_POST['ei4_1']);
+        $ei4_2 = trim($_POST['ei4_2']);
+        $ei4_3 = trim($_POST['ei4_3']);
+        $ei4_4 = trim($_POST['ei4_4']);
+        $ei4_5 = trim($_POST['ei4_5']);
+        $ei4_6 = trim($_POST['ei4_6']);
+
+
+
+
+
+        if (empty($ei4_1) || empty($ei4_2) || empty($ei4_3) || empty($ei4_4) || empty($ei4_5) || empty($ei4_6)) {
+            $respo['status'] = false;
+            $respo['msg'] = "Kindly select all field";
+            echo json_encode($respo);
+            die();
+        }
+        $insertQuery = "INSERT INTO ei4_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,ei4_1,ei4_2,ei4_3,ei4_4,ei4_5,ei4_6,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$ei4_1','$ei4_2','$ei4_3','$ei4_4','$ei4_5','$ei4_6','$createdDateTime','$createdDateTime','$language')";
+
+
+        if (mysqli_query($con, $insertQuery)) {
+
+            $respo['status'] = true;
+            $respo['msg'] = "Data inserted successfully.";
+            echo json_encode($respo);
+            die();
+
+        } else {
+
+            $respo['status'] = false;
+            $respo['msg'] = "Something went wrong, try again.";
+            echo json_encode($respo);
+            die();
+
+        }
+
+
+
+
+    } else {
 
         // 
         $respo['status'] = false;

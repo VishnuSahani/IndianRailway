@@ -101,7 +101,7 @@ text-decoration:none;
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fa fa-user"></i></div>
         </div>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Login ID" required>
+        <input type="text" class="form-control" id="username" name="username" value="ya@sh#vee#r" placeholder="Enter Login ID" required>
       </div>        <!-- input-group -->
 
 <!--  -->
@@ -109,7 +109,7 @@ text-decoration:none;
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fa fa-key"></i></div>
         </div>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+        <input type="password" class="form-control" id="password" value="123" name="password" placeholder="Enter Password" required>
       </div>        <!-- input-group -->
   <div class="form-row" style="margin-top: 10px;">
 					 	<div class="form-group col-lg-1">
@@ -134,7 +134,7 @@ text-decoration:none;
 
 						<div class="form-group col-lg-6">
 
-							<input type="text" class="form-control" id="captcha" placeholder="Enter captcha" name="captcha" required="">
+							<input type="text" class="form-control" id="captcha" placeholder="Enter captcha" name="captcha" value="1234">
 						</div>
 						
 					 </div>	

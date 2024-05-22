@@ -7366,6 +7366,1124 @@ E3
     </div>
 </div>
 
+
+<!-- Modal CP1 -->
+<div class="modal fade" id="componentForm_CP1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelCP1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelCP1">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Maintenance Schedule of Control Panel CP1
+                    </span>
+                     <span class="heading_hindi">
+                     ट्रोल पैनल के रखरखाव का कार्यक्रम CP1
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+               
+                 Periodicity: Technician (Signal): Fortnightly,
+            Sectional SSE/JE (Signal): Monthly
+            SSE(Signal)/ Incharge : Quarterly
+                </span>
+
+                <span class="heading_hindi">
+    आवधिकता: तकनीशियन (सिग्नल): पाक्षिक
+अनुभागीय सीसेई/जेई (सिग्नल): अर्ध-वार्षिक
+सीसेई (सिग्नल)/प्रभारी: वार्षिक
+
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="cp1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="cp1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="cp1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal CP2 -->
+<div class="modal fade" id="componentForm_CP2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelCP2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelCP2">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Maintenance Schedule of Control Panel CP2
+                    </span>
+                     <span class="heading_hindi">
+                     ट्रोल पैनल के रखरखाव का कार्यक्रम CP2
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+            Periodicity: Sectional SSE/JE (Signal): Quarterly,
+        SSE (Signal) Incharge: Half-Yearly
+                </span>
+
+                <span class="heading_hindi">
+आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): त्रैमासिक
+             सीसेई (सिग्नल)/प्रभारी: अर्ध-वार्षिक
+
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="cp2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="cp2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="cp2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal CP3 -->
+<div class="modal fade" id="componentForm_CP3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelCP3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelCP3">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Maintenance Schedule of Control Panel CP3
+                    </span>
+                     <span class="heading_hindi">
+                     ट्रोल पैनल के रखरखाव का कार्यक्रम CP3
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+               
+                Periodicity: SSE (Signal)/Incharge along with ASTE: Five yearly
+                </span>
+
+                <span class="heading_hindi">
+
+                आवधिकता: सीसेई (सिग्नल)/प्रभारी का  ASTE के साथ : पांच वार्षिक
+
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="cp3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="cp3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="cp3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal R1 -->
+<div class="modal fade" id="componentForm_R1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelR1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelR1">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Maintenance Schedule of Relays & Relay Room R1
+                     </span>
+                     <span class="heading_hindi">
+                     रिले और रिले रूम का रखरखाव कार्यक्रम R1
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: Technician (Signal): Monthly
+               Sectional SSE/JE (Signal): Monthly
+            SSE(Signal)/Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+
+आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                    अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+             सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="r1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="r1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="r1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal R2 -->
+<div class="modal fade" id="componentForm_R2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelR2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelR2">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Maintenance Schedule of Relays & Relay Room R2
+                     </span>
+                     <span class="heading_hindi">
+                     रिले और रिले रूम का रखरखाव कार्यक्रम R2
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: Sectional SSE/JE (Signal): Monthly
+        SSE(Signal)/Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+
+                आवधिकता: अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+    सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="r2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="r2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="r2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal R3 -->
+<div class="modal fade" id="componentForm_R3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelR3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelR3">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Maintenance Schedule of Relays & Relay Room R3
+                     </span>
+                     <span class="heading_hindi">
+                     रिले और रिले रूम का रखरखाव कार्यक्रम R3
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: SSE(Signal)/Incharge: Yearly
+                </span>
+
+                <span class="heading_hindi">
+    आवधिकता: सीसेई (सिग्नल)/प्रभारी: वार्षिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="r3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="r3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="r3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal EI1 -->
+<div class="modal fade" id="componentForm_EI1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelEL1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelEL1">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     
+                     Maintenance Schedule of Electronic Interlocking EI1
+                     </span>
+                     <span class="heading_hindi">
+                     इलेक्ट्रॉनिक इंटरलॉकिंग का रखरखाव कार्यक्रम EI1
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: Technician (Signal): Monthly
+                Sectional SSE/JE (Signal): Monthly
+                SSE (Signal) Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+
+                आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                   अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ei1_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ei1Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ei1FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal EI2 -->
+<div class="modal fade" id="componentForm_EI2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelEI2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelEI2">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     
+                     Maintenance Schedule of Electronic Interlocking EI2
+                     </span>
+                     <span class="heading_hindi">
+                     इलेक्ट्रॉनिक इंटरलॉकिंग का रखरखाव कार्यक्रम EI2
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: Technician (Signal): Monthly
+                Sectional SSE/JE (Signal): Monthly
+                SSE (Signal) Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+
+                आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                   अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ei2_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ei2Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ei2FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal EI3 -->
+<div class="modal fade" id="componentForm_EI3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelEI3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelEI3">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     
+                     Maintenance Schedule of Electronic Interlocking EI3
+                     </span>
+                     <span class="heading_hindi">
+                     इलेक्ट्रॉनिक इंटरलॉकिंग का रखरखाव कार्यक्रम EI3
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: Technician (Signal): Monthly
+                Sectional SSE/JE (Signal): Monthly
+                SSE (Signal) Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+
+                आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                   अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ei3_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ei3Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ei3FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal EI4 -->
+<div class="modal fade" id="componentForm_EI4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelEI4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelEI4">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     
+                     Maintenance Schedule of Electronic Interlocking EI4
+                     </span>
+                     <span class="heading_hindi">
+                     इलेक्ट्रॉनिक इंटरलॉकिंग का रखरखाव कार्यक्रम EI4
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Periodicity: Technician (Signal): Monthly
+                Sectional SSE/JE (Signal): Monthly
+                SSE (Signal) Incharge: Quarterly
+                </span>
+
+                <span class="heading_hindi">
+
+                आवधिकता: तकनीशियन (सिग्नल): मासिक
+                                   अनुभागीय सीसेई/जेई (सिग्नल): मासिक
+           सीसेई (सिग्नल)/प्रभारी: त्रैमासिक
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Check the following
+                                </span>
+
+                                <span class="heading_hindi">
+                                    निम्नलिखित की जाँच करें
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Action
+                                </span>
+
+                                <span class="heading_hindi">
+                                    कार्रवाई
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ei4_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="ei4Form_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="ei4FormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Summer -->
+<div class="modal fade" id="componentForm_Summer" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelSummer" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelSummer">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Annexure-1
+                     </span>
+                     <span class="heading_hindi">
+                     Annexure-1
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Summer Precautions  <?php echo date("Y"); ?>
+                </span>
+
+                <span class="heading_hindi">
+            Summer Precautions  <?php echo date("Y"); ?>
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+                <!-- 
+                   
+                 -->
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                               <th scope="col">
+                                    <span class="heading_english">
+                                    S.No
+                                    </span>
+
+                                    <span class="heading_hindi">
+                                        क्रम सं
+                                    </span>
+                                    
+                                </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Items
+                                </span>
+
+                                <span class="heading_hindi">
+                                Items
+                                </span>
+                                    
+                               </th>
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Total No. in use
+                                </span>
+
+                                <span class="heading_hindi">
+                                Total No. in use
+                                 </span>    
+                                </th>
+
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Total No. to be Attended
+                                </span>
+
+                                <span class="heading_hindi">
+                                Total No. to be Attended
+                                 </span>    
+                                </th>
+
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Total No. to be Rectified
+                                </span>
+
+                                <span class="heading_hindi">
+                                Total No. to be Rectified
+                                 </span>    
+                                </th>
+
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Total No. Attended
+                                </span>
+
+                                <span class="heading_hindi">
+                                Total No. Attended
+                                 </span>    
+                                </th>
+
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Date Rectified on
+                                </span>
+
+                                <span class="heading_hindi">
+                                Date Rectified on
+                                 </span>    
+                                </th>
+
+                                <th scope="col">
+                                <span class="heading_english">
+                                    Balance to be done by date
+                                </span>
+
+                                <span class="heading_hindi">
+                                Balance to be done by date
+                                 </span>    
+                                </th>
+                        </tr>
+                    </thead>
+                    <tbody id="summer_body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="summerForm_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="summerFormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
 <script>
 
 var g_st_compList = [];
@@ -7403,18 +8521,45 @@ function createSubComponent(val) {
     let btn1 = "";
     if(componetData[0].station_component == 'DL'){
         btn1 = `
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL1','NA','${stationComName}')">DL 1</button>
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL2','NA','${stationComName}')">DL 2</button>
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL3','NA','${stationComName}')">DL 3</button>
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_DL_formData('DL4','NA','${stationComName}')">DL 4</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_DL_formData('DL1','NA','${stationComName}')">DL 1</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_DL_formData('DL2','NA','${stationComName}')">DL 2</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_DL_formData('DL3','NA','${stationComName}')">DL 3</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_DL_formData('DL4','NA','${stationComName}')">DL 4</button>
     `;
     } else if(componetData[0].station_component == 'IPS'){
         btn1 = `
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS1','NA','${stationComName}')">IPS 1</button>
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS2','NA','${stationComName}')">IPS 2</button>
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS3','NA','${stationComName}')">IPS 3</button>
-    <button class="btn btn-${btnColor} mx-2" type="button" onclick="get_IPS_formData('IPS4','NA','${stationComName}')">IPS Battery Reading</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_IPS_formData('IPS1','NA','${stationComName}')">IPS 1</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_IPS_formData('IPS2','NA','${stationComName}')">IPS 2</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_IPS_formData('IPS3','NA','${stationComName}')">IPS 3</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_IPS_formData('IPS4','NA','${stationComName}')">IPS Battery Reading</button>
     `;
+    }else if(componetData[0].station_component == 'CONTROL PANEL'){
+        btn1 = `
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_CP_formData('CP1','NA','${stationComName}')">CP1</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_CP_formData('CP2','NA','${stationComName}')">CP2</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_CP_formData('CP3','NA','${stationComName}')">CP3</button>
+    `;
+    }else if(componetData[0].station_component == 'RELAY ROOM'){
+        btn1 = `
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_R_formData('R1','NA','${stationComName}')">R1</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_R_formData('R2','NA','${stationComName}')">R2</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_R_formData('R3','NA','${stationComName}')">R3</button>
+    `;
+    }else if(componetData[0].station_component == 'WEATHER PRECAUTIONS'){
+        btn1 = `
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_WP_formData('SUMMER','NA','${stationComName}')">SUMMER PRECAUTIONS</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_WP_formData('MANSOON','NA','${stationComName}')">MANSOON PRECAUTIONS</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_WP_formData('WINTER','NA','${stationComName}')">WINTER PRECAUTIONS</button>
+    `;
+    
+    }else if(componetData[0].station_component == 'EL'){
+        btn1 = `
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_EI_formData('EI1','NA','${stationComName}')">EI1</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_EI_formData('EI2','NA','${stationComName}')">EI2</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_EI_formData('EI3','NA','${stationComName}')">EI3</button>
+    <button class="btn btn-${btnColor} m-2" type="button" onclick="get_EI_formData('EI4','NA','${stationComName}')">EI4</button>
+    `;
+    
     }else{
         btn1 = "Please add form form empty sub-component";
     }
@@ -15095,7 +16240,7 @@ $("#uf5FormBtn").click(function() {
                 complete: function() {
                     $("#loader_show").addClass('d-none');
                     setTimeout(() => {
-                        $("#ips2Form_status").html();
+                        $("#ips2Form_status").html("");
 
                     }, 5000);
                 }
@@ -15266,7 +16411,7 @@ $("#uf5FormBtn").click(function() {
             complete: function() {
                 $("#loader_show").addClass('d-none');
                 setTimeout(() => {
-                        $("#ips3Form_status").html();
+                        $("#ips3Form_status").html("");
 
                     }, 5000);
             }
@@ -15416,7 +16561,7 @@ $("#e1FormBtn").click(function() {
             complete: function() {
                 $("#loader_show").addClass('d-none');
                 setTimeout(() => {
-                        $("#e1Form_status").html();
+                        $("#e1Form_status").html("");
                         $("#formE1")[0].reset();
 
                     }, 5000);
@@ -15531,7 +16676,7 @@ $("#e2FormBtn").click(function() {
             complete: function() {
                 $("#loader_show").addClass('d-none');
                 setTimeout(() => {
-                        $("#e2Form_status").html();
+                        $("#e2Form_status").html("");
                         $("#formE2")[0].reset();
 
                     }, 5000);
@@ -15719,7 +16864,7 @@ $("#e3FormBtn").click(function() {
             complete: function() {
                 $("#loader_show").addClass('d-none');
                 setTimeout(() => {
-                        $("#e3Form_status").html();
+                        $("#e3Form_status").html("");
                         $("#formE3")[0].reset();
 
                     }, 5000);
@@ -15728,6 +16873,1460 @@ $("#e3FormBtn").click(function() {
 
     }
 });
+
+
+
+// Room Relay (R)
+$("#r1FormBtn").click(function() {
+    if (confirm("Do you want to final submit R1 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let r1_1 = $("#r1_1").val();
+        let r1_2 = $("#r1_2").val();
+        let r1_3 = $("#r1_3").val();
+    
+        if (r1_1 == undefined  || r1_1 == null || r1_1 == '' || r1_1.length == 0) {
+            $("#r1_1").addClass("is-invalid");
+            $("#r1Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#r1Form_status").html("");
+            $("#r1_1").removeClass("is-invalid");
+
+        }
+
+        if (r1_2 == undefined  || r1_2 == null || r1_2 == '' || r1_2.length == 0) {
+            $("#r1_2").addClass("is-invalid");
+            $("#r1Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#r1Form_status").html("");
+            $("#r1_2").removeClass("is-invalid");
+
+        }
+
+        if (r1_3 == undefined  || r1_3 == null || r1_3 == '' || r1_3.length == 0) {
+            $("#r1_3").addClass("is-invalid");
+            $("#r1Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#r1Form_status").html("");
+            $("#r1_3").removeClass("is-invalid");
+
+        }
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#r1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "R1_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "r1_1": r1_1,
+                "r1_2": r1_2,
+                "r1_3": r1_3,                        
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#r1Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#r1Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#r1Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+$("#r2FormBtn").click(function() {
+    if (confirm("Do you want to final submit R2 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let r2_1 = $("#r2_1").val();
+        let r2_2 = $("#r2_2").val();
+        let r2_3 = $("#r2_3").val();
+        let r2_4 = $("#r2_4").val();
+        let r2_5 = $("#r2_5").val();
+        let r2_6 = $("#r2_6").val();
+    
+        if (r2_1 == undefined  || r2_1 == null || r2_1 == '' || r2_1.length == 0) {
+            $("#r2_1").addClass("is-invalid");
+            $("#r2Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#r2Form_status").html("");
+            $("#r2_1").removeClass("is-invalid");
+
+        }
+
+        if (r2_2 == undefined  || r2_2 == null || r2_2 == '' || r2_2.length == 0) {
+            $("#r2_2").addClass("is-invalid");
+            $("#r2Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#r2Form_status").html("");
+            $("#r2_2").removeClass("is-invalid");
+
+        }
+
+        if (r2_3 == undefined  || r2_3 == null || r2_3 == '' || r2_3.length == 0) {
+            $("#r2_3").addClass("is-invalid");
+            $("#r2Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#r2Form_status").html("");
+            $("#r2_3").removeClass("is-invalid");
+
+        }
+        if (r2_4 == undefined  || r2_4 == null || r2_4 == '' || r2_4.length == 0) {
+            $("#r2_4").addClass("is-invalid");
+            $("#r2Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#r2Form_status").html("");
+            $("#r2_4").removeClass("is-invalid");
+
+        }
+        if (r2_5 == undefined  || r2_5 == null || r2_5 == '' || r2_5.length == 0) {
+            $("#r2_5").addClass("is-invalid");
+            $("#r2Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#r2Form_status").html("");
+            $("#r2_5").removeClass("is-invalid");
+
+        }
+        if (r2_6 == undefined  || r2_6 == null || r2_6 == '' || r2_6.length == 0) {
+            $("#r2_6").addClass("is-invalid");
+            $("#r2Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#r2Form_status").html("");
+            $("#r2_6").removeClass("is-invalid");
+
+        }
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#r2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "R2_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "r2_1": r2_1,
+                "r2_2": r2_2,
+                "r2_3": r2_3,                        
+                "r2_4": r2_4,                        
+                "r2_5": r2_5,                        
+                "r2_6": r2_6,                        
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#r2Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#r2Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#r2Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+$("#r3FormBtn").click(function() {
+    if (confirm("Do you want to final submit R3 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let r3_1 = $("#r3_1").val();
+        let r3_2 = $("#r3_2").val();
+        let r3_3 = $("#r3_3").val();
+        let r3_4 = $("#r3_4").val();
+        let r3_5 = $("#r3_5").val();
+        let r3_6 = $("#r3_6").val();
+        let r3_7 = $("#r3_7").val();
+    
+        if (r3_1 == undefined  || r3_1 == null || r3_1 == '' || r3_1.length == 0) {
+            $("#r3_1").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_1").removeClass("is-invalid");
+
+        }
+
+        if (r3_2 == undefined  || r3_2 == null || r3_2 == '' || r3_2.length == 0) {
+            $("#r3_2").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_2").removeClass("is-invalid");
+
+        }
+
+        if (r3_3 == undefined  || r3_3 == null || r3_3 == '' || r3_3.length == 0) {
+            $("#r3_3").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_3").removeClass("is-invalid");
+
+        }
+        if (r3_4 == undefined  || r3_4 == null || r3_4 == '' || r3_4.length == 0) {
+            $("#r3_4").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_4").removeClass("is-invalid");
+
+        }
+        if (r3_5 == undefined  || r3_5 == null || r3_5 == '' || r3_5.length == 0) {
+            $("#r3_5").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_5").removeClass("is-invalid");
+
+        }
+        if (r3_6 == undefined  || r3_6 == null || r3_6 == '' || r3_6.length == 0) {
+            $("#r3_6").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_6").removeClass("is-invalid");
+
+        }
+        if (r3_7 == undefined  || r3_7 == null || r3_7 == '' || r3_7.length == 0) {
+            $("#r3_7").addClass("is-invalid");
+            $("#r3Form_status").html("Serial no 7 is required").css("color", "red");
+            return;
+        } else {
+            $("#r3Form_status").html("");
+            $("#r3_7").removeClass("is-invalid");
+
+        }
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#r3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "R3_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "r3_1": r3_1,
+                "r3_2": r3_2,
+                "r3_3": r3_3,                        
+                "r3_4": r3_4,                        
+                "r3_5": r3_5,                        
+                "r3_6": r3_6,                        
+                "r3_7": r3_7,                        
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#r3Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#r3Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#r3Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+
+// Control Panel (CP)
+$("#cp1FormBtn").click(function() {
+    if (confirm("Do you want to final submit CP1 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let cp1_1 = $("#cp1_1").val();
+        let cp1_2 = $("#cp1_2").val();
+        let cp1_3 = $("#cp1_3").val();
+        let cp1_4 = $("#cp1_4").val();
+    
+        if (cp1_1 == undefined  || cp1_1 == null || cp1_1 == '' || cp1_1.length == 0) {
+            $("#cp1_1").addClass("is-invalid");
+            $("#cp1Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp1Form_status").html("");
+            $("#cp1_1").removeClass("is-invalid");
+
+        }
+
+        if (cp1_2 == undefined  || cp1_2 == null || cp1_2 == '' || cp1_2.length == 0) {
+            $("#cp1_2").addClass("is-invalid");
+            $("#cp1Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp1Form_status").html("");
+            $("#cp1_2").removeClass("is-invalid");
+
+        }
+
+        if (cp1_3 == undefined  || cp1_3 == null || cp1_3 == '' || cp1_3.length == 0) {
+            $("#cp1_3").addClass("is-invalid");
+            $("#cp1Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp1Form_status").html("");
+            $("#cp1_3").removeClass("is-invalid");
+
+        }
+        if (cp1_4 == undefined  || cp1_4 == null || cp1_4 == '' || cp1_4.length == 0) {
+            $("#cp1_4").addClass("is-invalid");
+            $("#cp1Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp1Form_status").html("");
+            $("#cp1_4").removeClass("is-invalid");
+
+        }
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#cp1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "CP1_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "cp1_1": cp1_1,
+                "cp1_2": cp1_2,
+                "cp1_3": cp1_3,                        
+                "cp1_4": cp1_4,                        
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#cp1Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#cp1Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#cp1Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+$("#cp2FormBtn").click(function() {
+    if (confirm("Do you want to final submit CP2 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let cp2_1 = $("#cp2_1").val();
+        let cp2_2 = $("#cp2_2").val();
+        let cp2_3 = $("#cp2_3").val();
+        let cp2_4 = $("#cp2_4").val();
+        let cp2_5 = $("#cp2_5").val();
+    
+        if (cp2_1 == undefined  || cp2_1 == null || cp2_1 == '' || cp2_1.length == 0) {
+            $("#cp2_1").addClass("is-invalid");
+            $("#cp2Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp2Form_status").html("");
+            $("#cp2_1").removeClass("is-invalid");
+
+        }
+
+        if (cp2_2 == undefined  || cp2_2 == null || cp2_2 == '' || cp2_2.length == 0) {
+            $("#cp2_2").addClass("is-invalid");
+            $("#cp2Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp2Form_status").html("");
+            $("#cp2_2").removeClass("is-invalid");
+
+        }
+
+        if (cp2_3 == undefined  || cp2_3 == null || cp2_3 == '' || cp2_3.length == 0) {
+            $("#cp2_3").addClass("is-invalid");
+            $("#cp2Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp2Form_status").html("");
+            $("#cp2_3").removeClass("is-invalid");
+
+        }
+        if (cp2_4 == undefined  || cp2_4 == null || cp2_4 == '' || cp2_4.length == 0) {
+            $("#cp2_4").addClass("is-invalid");
+            $("#cp2Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp2Form_status").html("");
+            $("#cp2_4").removeClass("is-invalid");
+
+        }
+
+        if (cp2_5 == undefined  || cp2_5 == null || cp2_5 == '' || cp2_5.length == 0) {
+            $("#cp2_5").addClass("is-invalid");
+            $("#cp2Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp2Form_status").html("");
+            $("#cp2_5").removeClass("is-invalid");
+
+        }
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#cp2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "CP2_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "cp2_1": cp2_1,
+                "cp2_2": cp2_2,
+                "cp2_3": cp2_3,                        
+                "cp2_4": cp2_4,                        
+                "cp2_5": cp2_5,                        
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#cp2Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#cp2Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#cp2Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+$("#cp3FormBtn").click(function() {
+    if (confirm("Do you want to final submit CP3 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let cp3_1 = $("#cp3_1").val();
+    
+        if (cp3_1 == undefined  || cp3_1 == null || cp3_1 == '' || cp3_1.length == 0) {
+            $("#cp3_1").addClass("is-invalid");
+            $("#cp3Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#cp3Form_status").html("");
+            $("#cp3_1").removeClass("is-invalid");
+
+        }
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#cp3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "CP3_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "cp3_1": cp3_1,                       
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#cp3Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#cp3Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#cp3Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+
+// EI 1
+$("#ei1FormBtn").click(function() {
+    if (confirm("Do you want to final submit EI1 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let ei1_1 = $("#ei1_1").val();
+        let ei1_2 = $("#ei1_2").val();
+        let ei1_3 = $("#ei1_3").val();
+        let ei1_4 = $("#ei1_4").val();
+        let ei1_5 = $("#ei1_5").val();
+        let ei1_6 = $("#ei1_6").val();
+        let ei1_7 = $("#ei1_7").val();
+        let ei1_8 = $("#ei1_8").val();
+        let ei1_9 = $("#ei1_9").val();
+        let ei1_10 = $("#ei1_10").val();
+        let ei1_11 = $("#ei1_11").val();
+        let ei1_12 = $("#ei1_12").val();
+        let ei1_13 = $("#ei1_13").val();
+        let ei1_14 = $("#ei1_14").val();
+        let ei1_15 = $("#ei1_15").val();
+        let ei1_16 = $("#ei1_16").val();
+    
+        if (ei1_1 == undefined  || ei1_1 == null || ei1_1 == '' || ei1_1.length == 0) {
+            $("#ei1_1").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_1").removeClass("is-invalid");
+
+        }
+
+        if (ei1_2 == undefined  || ei1_2 == null || ei1_2 == '' || ei1_2.length == 0) {
+            $("#ei1_2").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_2").removeClass("is-invalid");
+
+        }
+
+        if (ei1_3 == undefined  || ei1_3 == null || ei1_3 == '' || ei1_3.length == 0) {
+            $("#ei1_3").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_3").removeClass("is-invalid");
+
+        }
+        if (ei1_4 == undefined  || ei1_4 == null || ei1_4 == '' || ei1_4.length == 0) {
+            $("#ei1_4").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_4").removeClass("is-invalid");
+
+        }
+        if (ei1_5 == undefined  || ei1_5 == null || ei1_5 == '' || ei1_5.length == 0) {
+            $("#ei1_5").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_5").removeClass("is-invalid");
+
+        }
+        if (ei1_6 == undefined  || ei1_6 == null || ei1_6 == '' || ei1_6.length == 0) {
+            $("#ei1_6").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_6").removeClass("is-invalid");
+
+        }
+        if (ei1_7 == undefined  || ei1_7 == null || ei1_7 == '' || ei1_7.length == 0) {
+            $("#ei1_7").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 7 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_7").removeClass("is-invalid");
+
+        }
+        if (ei1_8 == undefined  || ei1_8 == null || ei1_8 == '' || ei1_8.length == 0) {
+            $("#ei1_8").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 8 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_8").removeClass("is-invalid");
+
+        }
+        if (ei1_9 == undefined  || ei1_9 == null || ei1_9 == '' || ei1_9.length == 0) {
+            $("#ei1_9").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 9 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_9").removeClass("is-invalid");
+
+        }
+        if (ei1_10 == undefined  || ei1_10 == null || ei1_10 == '' || ei1_10.length == 0) {
+            $("#ei1_10").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 10 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_10").removeClass("is-invalid");
+
+        }
+        if (ei1_11 == undefined  || ei1_11 == null || ei1_11 == '' || ei1_11.length == 0) {
+            $("#ei1_11").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 11 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_11").removeClass("is-invalid");
+
+        }
+        if (ei1_12 == undefined  || ei1_12 == null || ei1_12 == '' || ei1_12.length == 0) {
+            $("#ei1_12").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 12 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_12").removeClass("is-invalid");
+
+        }
+        if (ei1_13 == undefined  || ei1_13 == null || ei1_13 == '' || ei1_13.length == 0) {
+            $("#ei1_13").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 13 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_13").removeClass("is-invalid");
+
+        }
+        if (ei1_14 == undefined  || ei1_14 == null || ei1_14 == '' || ei1_14.length == 0) {
+            $("#ei1_14").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 14 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_14").removeClass("is-invalid");
+
+        }
+        if (ei1_15 == undefined  || ei1_15 == null || ei1_15 == '' || ei1_15.length == 0) {
+            $("#ei1_15").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 15 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_15").removeClass("is-invalid");
+
+        }
+        if (ei1_16 == undefined  || ei1_16 == null || ei1_16 == '' || ei1_16.length == 0) {
+            $("#ei1_16").addClass("is-invalid");
+            $("#ei1Form_status").html("Serial no 16 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei1Form_status").html("");
+            $("#ei1_16").removeClass("is-invalid");
+
+        }
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#ei1Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "EI1_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "ei1_1": ei1_1,
+                "ei1_2": ei1_2,
+                "ei1_3": ei1_3,                        
+                "ei1_4": ei1_4,                        
+                "ei1_5": ei1_5,                        
+                "ei1_6": ei1_6,                        
+                "ei1_7": ei1_7,                        
+                "ei1_8": ei1_8,                        
+                "ei1_9": ei1_9,                        
+                "ei1_10": ei1_10,                        
+                "ei1_11": ei1_11,                        
+                "ei1_12": ei1_12,                        
+                "ei1_13": ei1_13,                        
+                "ei1_14": ei1_14,                        
+                "ei1_15": ei1_15,                        
+                "ei1_16": ei1_16,                        
+                                     
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#ei1Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#ei1Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#ei1Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+// EI 2
+$("#ei2FormBtn").click(function() {
+    if (confirm("Do you want to final submit EI2 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let ei2_1 = $("#ei2_1").val();
+        let ei2_2 = $("#ei2_2").val();
+        let ei2_3 = $("#ei2_3").val();
+        let ei2_4 = $("#ei2_4").val();
+        let ei2_5 = $("#ei2_5").val();
+        let ei2_6 = $("#ei2_6").val();
+        let ei2_7 = $("#ei2_7").val();
+        let ei2_8 = $("#ei2_8").val();
+     
+    
+        if (ei2_1 == undefined  || ei2_1 == null || ei2_1 == '' || ei2_1.length == 0) {
+            $("#ei2_1").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_1").removeClass("is-invalid");
+
+        }
+
+        if (ei2_2 == undefined  || ei2_2 == null || ei2_2 == '' || ei2_2.length == 0) {
+            $("#ei2_2").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_2").removeClass("is-invalid");
+
+        }
+
+        if (ei2_3 == undefined  || ei2_3 == null || ei2_3 == '' || ei2_3.length == 0) {
+            $("#ei2_3").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_3").removeClass("is-invalid");
+
+        }
+        if (ei2_4 == undefined  || ei2_4 == null || ei2_4 == '' || ei2_4.length == 0) {
+            $("#ei2_4").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_4").removeClass("is-invalid");
+
+        }
+        if (ei2_5 == undefined  || ei2_5 == null || ei2_5 == '' || ei2_5.length == 0) {
+            $("#ei2_5").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_5").removeClass("is-invalid");
+
+        }
+        if (ei2_6 == undefined  || ei2_6 == null || ei2_6 == '' || ei2_6.length == 0) {
+            $("#ei2_6").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_6").removeClass("is-invalid");
+
+        }
+        if (ei2_7 == undefined  || ei2_7 == null || ei2_7 == '' || ei2_7.length == 0) {
+            $("#ei2_7").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 7 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_7").removeClass("is-invalid");
+
+        }
+        if (ei2_8 == undefined  || ei2_8 == null || ei2_8 == '' || ei2_8.length == 0) {
+            $("#ei2_8").addClass("is-invalid");
+            $("#ei2Form_status").html("Serial no 8 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei2Form_status").html("");
+            $("#ei2_8").removeClass("is-invalid");
+
+        }
+  
+
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#ei2Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "EI2_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "ei2_1": ei2_1,
+                "ei2_2": ei2_2,
+                "ei2_3": ei2_3,                        
+                "ei2_4": ei2_4,                        
+                "ei2_5": ei2_5,                        
+                "ei2_6": ei2_6,                        
+                "ei2_7": ei2_7,                        
+                "ei2_8": ei2_8,                                               
+                                     
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#ei2Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#ei2Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#ei2Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+// EI 3
+$("#ei3FormBtn").click(function() {
+    if (confirm("Do you want to final submit EI3 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let ei3_1 = $("#ei3_1").val();
+        let ei3_2 = $("#ei3_2").val();
+        let ei3_3 = $("#ei3_3").val();
+        let ei3_4 = $("#ei3_4").val();
+        let ei3_5 = $("#ei3_5").val();
+    
+        if (ei3_1 == undefined  || ei3_1 == null || ei3_1 == '' || ei3_1.length == 0) {
+            $("#ei3_1").addClass("is-invalid");
+            $("#ei3Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei3Form_status").html("");
+            $("#ei3_1").removeClass("is-invalid");
+
+        }
+
+        if (ei3_2 == undefined  || ei3_2 == null || ei3_2 == '' || ei3_2.length == 0) {
+            $("#ei3_2").addClass("is-invalid");
+            $("#ei3Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei3Form_status").html("");
+            $("#ei3_2").removeClass("is-invalid");
+
+        }
+
+        if (ei3_3 == undefined  || ei3_3 == null || ei3_3 == '' || ei3_3.length == 0) {
+            $("#ei3_3").addClass("is-invalid");
+            $("#ei3Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei3Form_status").html("");
+            $("#ei3_3").removeClass("is-invalid");
+
+        }
+        if (ei3_4 == undefined  || ei3_4 == null || ei3_4 == '' || ei3_4.length == 0) {
+            $("#ei3_4").addClass("is-invalid");
+            $("#ei3Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei3Form_status").html("");
+            $("#ei3_4").removeClass("is-invalid");
+
+        }
+        if (ei3_5 == undefined  || ei3_5 == null || ei3_5 == '' || ei3_5.length == 0) {
+            $("#ei3_5").addClass("is-invalid");
+            $("#ei3Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei3Form_status").html("");
+            $("#ei3_5").removeClass("is-invalid");
+
+        }
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#ei3Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "EI3_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "ei3_1": ei3_1,
+                "ei3_2": ei3_2,
+                "ei3_3": ei3_3,                        
+                "ei3_4": ei3_4,                        
+                "ei3_5": ei3_5,                        
+                                     
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#ei3Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#ei3Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#ei3Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
+// EI 4
+$("#ei4FormBtn").click(function() {
+    if (confirm("Do you want to final submit EI4 Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let ei4_1 = $("#ei4_1").val();
+        let ei4_2 = $("#ei4_2").val();
+        let ei4_3 = $("#ei4_3").val();
+        let ei4_4 = $("#ei4_4").val();
+        let ei4_5 = $("#ei4_5").val();
+        let ei4_6 = $("#ei4_6").val();
+       
+     
+    
+        if (ei4_1 == undefined  || ei4_1 == null || ei4_1 == '' || ei4_1.length == 0) {
+            $("#ei4_1").addClass("is-invalid");
+            $("#ei4Form_status").html("Serial no 1 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei4Form_status").html("");
+            $("#ei4_1").removeClass("is-invalid");
+
+        }
+
+        if (ei4_2 == undefined  || ei4_2 == null || ei4_2 == '' || ei4_2.length == 0) {
+            $("#ei4_2").addClass("is-invalid");
+            $("#ei4Form_status").html("Serial no 2 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei4Form_status").html("");
+            $("#ei4_2").removeClass("is-invalid");
+
+        }
+
+        if (ei4_3 == undefined  || ei4_3 == null || ei4_3 == '' || ei4_3.length == 0) {
+            $("#ei4_3").addClass("is-invalid");
+            $("#ei4Form_status").html("Serial no 3 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei4Form_status").html("");
+            $("#ei4_3").removeClass("is-invalid");
+
+        }
+        if (ei4_4 == undefined  || ei4_4 == null || ei4_4 == '' || ei4_4.length == 0) {
+            $("#ei4_4").addClass("is-invalid");
+            $("#ei4Form_status").html("Serial no 4 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei4Form_status").html("");
+            $("#ei4_4").removeClass("is-invalid");
+
+        }
+        if (ei4_5 == undefined  || ei4_5 == null || ei4_5 == '' || ei4_5.length == 0) {
+            $("#ei4_5").addClass("is-invalid");
+            $("#ei4Form_status").html("Serial no 5 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei4Form_status").html("");
+            $("#ei4_5").removeClass("is-invalid");
+
+        }
+        if (ei4_6 == undefined  || ei4_6 == null || ei4_6 == '' || ei4_6.length == 0) {
+            $("#ei4_6").addClass("is-invalid");
+            $("#ei4Form_status").html("Serial no 6 is required").css("color", "red");
+            return;
+        } else {
+            $("#ei4Form_status").html("");
+            $("#ei4_6").removeClass("is-invalid");
+
+        }
+
+
+        let userID = '<?php echo $_SESSION['userretailerdste']; ?>';
+        if(userID == '' || userID == null || userID == undefined){
+            
+            $("#ei4Form_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+            return
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "query/form-action.php",
+            data: {
+                "action": "EI4_formSubmit",
+                "userID": userID,
+                "sectionName": sectionName,
+                "sectionId": sectionId,
+                "stationName": stationName,
+                "stationId": stationId,
+                "compoNameTmp": compoNameTmp,
+                "subcompoNameTmp": subcompoNameTmp,
+                "ei4_1": ei4_1,
+                "ei4_2": ei4_2,
+                "ei4_3": ei4_3,                        
+                "ei4_4": ei4_4,                        
+                "ei4_5": ei4_5,                        
+                "ei4_6": ei4_6,                                             
+                                     
+                "language":language
+            },
+            beforeSend: function() {
+                $("#loader_show").removeClass('d-none');
+
+            },
+            success: function(response) {
+                let respo = JSON.parse(response);
+                if (respo['status']) {
+                    $("#ei4Form_status").html(respo['msg']).css("color", "green");
+                } else {
+                    $("#ei4Form_status").html(respo['msg']).css("color", "red");
+
+                }
+            },
+            complete: function() {
+                $("#loader_show").addClass('d-none');
+                setTimeout(() => {
+                        $("#ei4Form_status").html("");
+
+                    }, 5000);
+            }
+        });
+
+    }
+});
+
 
 ///
 });
@@ -17529,6 +20128,326 @@ function get_IPS_formData(ips_Type,subCompo,compo){
         }
     });
 }
+
+// control panel
+function openDialog_CP(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "CP1":
+        tableId = "cp1_body";
+        $("#componentForm_CP1").modal("show");
+        break;
+    case "CP2":
+        tableId = "cp2_body";
+        $("#componentForm_CP2").modal("show");
+        break;
+    case "CP3":
+        tableId = "cp3_body";
+        $("#componentForm_CP3").modal("show");
+        break;
+
+}
+
+dataList.forEach((element, index) => {
+
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['cp_details']}</td>
+        <td style="vertical-align:middle;width:25%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['cp_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['cp_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+
+function get_CP_formData(cp_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+    let language = $("#language").val();
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+    
+    $.ajax({
+        type: "POST",
+        url: "./query/form-action.php",
+        data: {
+            "action": "getCP_FormDetails",
+            "formType": cp_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_CP(cp_Type, response['data']);
+
+            }
+
+        },
+        error:function(e){
+            $("#loader_show").addClass('d-none');
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+// relay book
+function openDialog_R(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "R1":
+        tableId = "r1_body";
+        $("#componentForm_R1").modal("show");
+        break;
+    case "R2":
+        tableId = "r2_body";
+        $("#componentForm_R2").modal("show");
+        break;
+    case "R3":
+        tableId = "r3_body";
+        $("#componentForm_R3").modal("show");
+        break;
+
+}
+
+dataList.forEach((element, index) => {
+
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['r_details']}</td>
+        <td style="vertical-align:middle;width:25%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['r_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['r_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+
+function get_R_formData(r_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+    let language = $("#language").val();
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "./query/form-action.php",
+        data: {
+            "action": "getR_FormDetails",
+            "formType": r_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_R(r_Type, response['data']);
+
+            }
+
+        },
+        error:function(e){
+            $("#loader_show").addClass('d-none');
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+
+// EI
+
+function openDialog_EI(typeOfForm, dataList) {
+
+let tableId = '';
+let displayHtml = "";
+
+switch (typeOfForm) {
+    case "EI1":
+        tableId = "ei1_body";
+        $("#componentForm_EI1").modal("show");
+        break;
+    case "EI2":
+        tableId = "ei2_body";
+        $("#componentForm_EI2").modal("show");
+        break;
+    case "EI3":
+        tableId = "ei3_body";
+        $("#componentForm_EI3").modal("show");
+        break;
+    case "EI4":
+        tableId = "ei4_body";
+        $("#componentForm_EI4").modal("show");
+        break;
+
+}
+
+dataList.forEach((element, index) => {
+
+    displayHtml += `
+        <tr>
+        <th scope="row">${index+1}</th>
+        <td>${element['ei_details']}</td>
+        <td style="vertical-align:middle;width:25%" >
+            <select class="custom-select ${typeOfForm}Class" id="${element['ei_id']}">
+                <option value="">Select Action</option>`;
+
+                let optArr = element['ei_option'].split(",");
+                optArr.forEach(opt => {
+                    displayHtml += `<option value="${opt}">${opt}</option>`;
+                });
+  
+    displayHtml += `</select>
+        </td>
+        </tr>
+    `;
+});
+
+document.getElementById(tableId).innerHTML = displayHtml;
+
+}
+
+
+function get_EI_formData(ei_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+    let language = $("#language").val();
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "./query/form-action.php",
+        data: {
+            "action": "getEI_FormDetails",
+            "formType": ei_Type,
+            language:language
+        },
+        beforeSend: function() {
+            $("#loader_show").removeClass('d-none');
+        },
+        success: function(respo) {
+            $("#loader_show").addClass('d-none');
+
+            let response = JSON.parse(respo);
+
+            if (response['status']) {
+
+                openDialog_EI(ei_Type, response['data']);
+
+            }
+
+        },
+        error:function(e){
+            $("#loader_show").addClass('d-none');
+
+        },
+        complete:function(){
+            $("#loader_show").addClass('d-none');
+
+        }
+    });
+}
+
+
+function get_WP_formData(wp_Type,subCompo,compo){
+    $("#compoNameTmp").val(compo);
+    $("#subcompoNameTmp").val(subCompo);
+    let language = $("#language").val();
+
+    if(language == "Hindi"){
+        $(".heading_english").addClass('d-none')
+        $(".heading_hindi").removeClass('d-none')
+     }else{
+        $(".heading_hindi").addClass('d-none')
+        $(".heading_english").removeClass('d-none')
+    }
+
+    switch (wp_Type) {
+        case "SUMMER":
+            $("#componentForm_Summer").modal("show");
+            break;
+        case "MANSOON":
+            $("#componentForm_Mansoon").modal("show");
+            break;
+        case "WINTER":
+            $("#componentForm_Winter").modal("show");
+            break;
+    }
+
+}
+
 </script>
 
 
