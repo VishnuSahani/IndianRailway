@@ -24,7 +24,7 @@ session_start();
         <table class="table">
             <thead class="table-dark">
                 <tr>
-                    <td>#v</td>
+                    <td>#</td>
                     <td>Component</td>
                     <td>Language</td>
                     <td>Sub Component</td>
