@@ -6,7 +6,8 @@ include("../include/db_config.php");
 // $formArr = ["IPS_Battery"];
 // $formArr = ["DAC4"];
 // $formArr = ["R1","R2","R3","CP1","CP2","CP3"];
-$formArr = ["EL1","EL2","EL3","EL4"];
+// $formArr = ["EL1","EL2","EL3","EL4"];
+$formArr = ["Summer_Precaution"];
 $empType = ["Admin","DSTE","ASTE","SSE","JE","Employee"];
 foreach ($empType as $type) {
     echo $type;
@@ -14,7 +15,7 @@ foreach ($empType as $type) {
         echo $key;
         echo "<br>";
         $q = "INSERT INTO form_duration_info (formName,duration,empType) VALUES ('$key',10,'$type')";
-        // mysqli_query($con,$q); // uncomment to insert
+        mysqli_query($con,$q); // uncomment to insert
      }
      echo "<br>";
 

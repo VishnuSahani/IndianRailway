@@ -969,8 +969,61 @@ if (isset($_POST['common_action'])) {
 
         sendResponse(true, "Form successfully Viewed");
 
+        
+    } elseif ($action == "getSummerPrecuation_FormFill") {
 
-    } else {
+        if (!isset($_POST['empid']) || empty(trim($_POST['empid']))) {
+            sendResponse(false, "Something went wrong, Id not set");
+        }
+
+        $empid = trim($_POST['empid']);
+        $language = trim($_POST['language']);
+        $compo = trim($_POST['compo']);
+
+        $stationId = trim($_POST['stationId']);
+        $sectionId = trim($_POST['sectionId']);
+
+        if (empty($compo) || empty($language) || empty($stationId) || empty($sectionId)) {
+            sendResponse(false, "Something went wrong, request is not proper");
+        }
+
+        $checkData = mysqli_query($con, "SELECT * FROM summerprecaution_form WHERE emp_id='$empid' && section_id='$sectionId' && station_id = '$stationId' && component_name='$compo' && isComplete ='false'");
+
+        if (mysqli_num_rows($checkData) > 0) {
+            $run = mysqli_fetch_object($checkData);
+            sendResponse(true, "Data found", $run);
+        } else {
+            sendResponse(false, "Fill new form");
+        }
+
+    }elseif ($action == "getMansoonPrecuation_FormFill") {
+
+        if (!isset($_POST['empid']) || empty(trim($_POST['empid']))) {
+            sendResponse(false, "Something went wrong, Id not set");
+        }
+
+        $empid = trim($_POST['empid']);
+        $language = trim($_POST['language']);
+        $compo = trim($_POST['compo']);
+
+        $stationId = trim($_POST['stationId']);
+        $sectionId = trim($_POST['sectionId']);
+
+        if (empty($compo) || empty($language) || empty($stationId) || empty($sectionId)) {
+            sendResponse(false, "Something went wrong, request is not proper");
+        }
+
+        $checkData = mysqli_query($con, "SELECT * FROM mansoonprecaution_form WHERE emp_id='$empid' && section_id='$sectionId' && station_id = '$stationId' && component_name='$compo' && isComplete ='false'");
+
+        if (mysqli_num_rows($checkData) > 0) {
+            $run = mysqli_fetch_object($checkData);
+            sendResponse(true, "Data found", $run);
+        } else {
+            sendResponse(false, "Fill new form");
+        }
+
+    }
+    else {
 
         sendResponse(false, "Invalid Action");
     }

@@ -11,6 +11,8 @@ if (isset($_SESSION['userretailer'])) {
 
 ?>
 
+<script src="../js/precaution-info.js"></script>
+
 <style>
     .dropdown-item{
         cursor: pointer;
@@ -22,6 +24,19 @@ if (isset($_SESSION['userretailer'])) {
 
     .txtWidth{
         width: 65px !important;
+    }
+
+    .font12{
+        font-size:12px;
+        font-weight:600;
+    }
+    
+    .inputWidth{
+        width : 100px !important
+    }
+
+    .flex-fill{
+        flex:auto
     }
 </style>
 
@@ -8346,7 +8361,7 @@ E3
 <div class="modal fade" id="componentForm_Summer" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="componentFormLabelSummer" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form>
+        <form id="summerForm_form">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-center" id="componentFormLabelSummer">
@@ -8377,97 +8392,40 @@ E3
                 </span>
             </div>
             <div class="modal-body table-responsive">
-                <!-- 
-                   
-                 -->
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                               <th scope="col">
-                                    <span class="heading_english">
-                                    S.No
-                                    </span>
+               
+              
+                <div>
+                        <input type="hidden" id="summerPrecautionId" >
+                    </div>
 
-                                    <span class="heading_hindi">
-                                        क्रम सं
-                                    </span>
-                                    
-                                </th>
-                                <th scope="col">
-                                <span class="heading_english">
+                <div class="container-fluid">
+                    <div class="d-flex bg-dark text-light">
+                       <div style="width:65px" class="border py-3 px-2">
+                       <span class="heading_english">
+                             S.No
+                        </span>
+
+                        <span class="heading_hindi">
+                            क्रम सं
+                        </span>
+                       </div>
+                       <div class="flex-fill py-3 border px-2">
+                       <span class="heading_english">
                                     Items
                                 </span>
 
                                 <span class="heading_hindi">
                                 Items
                                 </span>
-                                    
-                               </th>
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Total No. in use
-                                </span>
+                       </div>
+                    </div>
+                    <!-- heading -->
+                
+                    <div id="summer_body" class="border">
 
-                                <span class="heading_hindi">
-                                Total No. in use
-                                 </span>    
-                                </th>
+                    </div>
 
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Total No. to be Attended
-                                </span>
-
-                                <span class="heading_hindi">
-                                Total No. to be Attended
-                                 </span>    
-                                </th>
-
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Total No. to be Rectified
-                                </span>
-
-                                <span class="heading_hindi">
-                                Total No. to be Rectified
-                                 </span>    
-                                </th>
-
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Total No. Attended
-                                </span>
-
-                                <span class="heading_hindi">
-                                Total No. Attended
-                                 </span>    
-                                </th>
-
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Date Rectified on
-                                </span>
-
-                                <span class="heading_hindi">
-                                Date Rectified on
-                                 </span>    
-                                </th>
-
-                                <th scope="col">
-                                <span class="heading_english">
-                                    Balance to be done by date
-                                </span>
-
-                                <span class="heading_hindi">
-                                Balance to be done by date
-                                 </span>    
-                                </th>
-                        </tr>
-                    </thead>
-                    <tbody id="summer_body">
-
-                    </tbody>
-                </table>
+                </div>
             </div>
 
             <div class="card-footer d-flex justify-content-between">
@@ -8476,6 +8434,92 @@ E3
                 <div>
                     <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
                     <button type='button' id="summerFormBtn" class="btn btn-sm btn-success">Final Submit</button>
+
+                </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- modal Mansoon -->
+<div class="modal fade" id="componentForm_Mansoon" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="componentFormLabelMansoon" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form id="mansoonForm_form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="componentFormLabelMansoon">
+                    <span class="badge badge-success h3">
+                     <span class="heading_english">
+                     Annexure-1
+                     </span>
+                     <span class="heading_hindi">
+                     Annexure-1
+                     </span>
+                    </span>
+                    <span class="badge badge-danger h3 displaySubcompoName"></span>
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-2 text-center alert alert-danger" style="font-size:13px">
+           
+
+             <span class="heading_english">
+             Mansoon Precautions  <?php echo date("Y"); ?>
+                </span>
+
+                <span class="heading_hindi">
+            Mansoon Precautions  <?php echo date("Y"); ?>
+                </span>
+            </div>
+            <div class="modal-body table-responsive">
+               
+              
+                <div>
+                        <input type="hidden" id="mansoonPrecautionId" >
+                    </div>
+
+                <div class="container-fluid">
+                    <div class="d-flex bg-dark text-light">
+                       <div style="width:65px" class="border py-3 px-2">
+                       <span class="heading_english">
+                             S.No
+                        </span>
+
+                        <span class="heading_hindi">
+                            क्रम सं
+                        </span>
+                       </div>
+                       <div class="flex-fill py-3 border px-2">
+                       <span class="heading_english">
+                                    Items
+                                </span>
+
+                                <span class="heading_hindi">
+                                Items
+                                </span>
+                       </div>
+                    </div>
+                    <!-- heading -->
+                
+                    <div id="mansoon_body" class="border">
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <div id="mansoonForm_status"></div>
+
+                <div>
+                    <button type='reset' class="btn mx-1 btn-sm btn-danger">Reset</button>
+                    <button type='button' id="mansoonFormBtn" class="btn btn-sm btn-success">Final Submit</button>
 
                 </div>
             </div>
@@ -8553,7 +8597,7 @@ function createSubComponent(val) {
     <button class="btn btn-${btnColor} m-2" type="button" onclick="get_WP_formData('WINTER','NA','${stationComName}')">WINTER PRECAUTIONS</button>
     `;
     
-    }else if(componetData[0].station_component == 'EL'){
+    }else if(componetData[0].station_component == 'EI'){
         btn1 = `
     <button class="btn btn-${btnColor} m-2" type="button" onclick="get_EI_formData('EI1','NA','${stationComName}')">EI1</button>
     <button class="btn btn-${btnColor} m-2" type="button" onclick="get_EI_formData('EI2','NA','${stationComName}')">EI2</button>
@@ -18314,6 +18358,124 @@ $("#ei4FormBtn").click(function() {
     }
 });
 
+// summer precaution
+$("#summerFormBtn").click(function() {
+    if (confirm("Do you want to final submit Summer Precaution Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let reqBody = {};
+        let isReturn = false;
+        let firstUnFillKey = '';
+
+           $(".summerInputField").each((index,ele)=>{
+            let element = $(ele);
+            let key = element.attr("id");
+            let value_check = element.val();
+            reqBody[key] = value_check;
+            if(value_check == undefined || value_check == null || value_check == ''){
+                $("#"+key).addClass("is-invalid");
+                if(!firstUnFillKey){
+                    firstUnFillKey = key;
+                }
+                isReturn = true;
+            }else{
+                $("#"+key).removeClass("is-invalid");
+            }
+        });
+        console.log("reqBody=-",reqBody);
+
+        if(isReturn){
+            $("#"+firstUnFillKey).focus();
+            return
+        }else{
+            $("#summerForm_status").html("Form successfully submitted").css("color", "green");
+        }
+
+
+       
+    }
+});
+
+// mansoon precaution
+$("#mansoonFormBtn").click(function() {
+    if (confirm("Do you want to final submit Mansoon Precaution Form")) {
+        let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+        if (
+            sectionName == "" || sectionName == null || sectionName == undefined ||
+            sectionId == "" || sectionId == null || sectionId == undefined ||
+            stationName == "" || stationName == null || stationName == undefined ||
+            stationId == "" || stationId == null || stationId == undefined ||
+            compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+            subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+        ) {
+            alert("Something went wrong , refresh the page and try again");
+            return;
+        }
+
+        let reqBody = {};
+        let isReturn = false;
+        let firstUnFillKey = '';
+
+           $(".mansoonInputField").each((index,ele)=>{
+            let element = $(ele);
+            let key = element.attr("id");
+            let value_check = element.val();
+            reqBody[key] = value_check;
+            if(value_check == undefined || value_check == null || value_check == ''){
+                $("#"+key).addClass("is-invalid");
+                if(!firstUnFillKey){
+                    firstUnFillKey = key;
+                }
+                isReturn = true;
+            }else{
+                $("#"+key).removeClass("is-invalid");
+            }
+        });
+        console.log("reqBody=-",reqBody);
+
+        if(isReturn){
+            $("#"+firstUnFillKey).focus();
+            return
+        }else{
+            $("#mansoonForm_status").html("Form successfully submitted").css("color", "green");
+        }
+
+
+       
+    }
+});
+
 });
 //form insert javascript above
 
@@ -20423,18 +20585,279 @@ function get_WP_formData(wp_Type,subCompo,compo){
         $(".heading_english").removeClass('d-none')
     }
 
+    openDialog_WP(wp_Type,subCompo,compo);
+
+
+
+}
+
+function openDialog_WP(wp_Type,subCompo,compo){
+    
+    let response = [];
+    let tableId = '';
+    let commonInputName = '';
     switch (wp_Type) {
         case "SUMMER":
+            response = SUMMER_PRECAUTION_INFO;
+            tableId = "summer_body";
+            commonInputName = 'summerInputField';
             $("#componentForm_Summer").modal("show");
+            checkSummerPrecautionFill(subCompo,compo)
             break;
-        case "MANSOON":
+            case "MANSOON":
+            response = SUMMER_PRECAUTION_INFO;
+            tableId = "mansoon_body";
+            commonInputName = 'mansoonInputField';
             $("#componentForm_Mansoon").modal("show");
+            checkMansoonPrecautionFill(subCompo,compo)
             break;
-        case "WINTER":
+            case "WINTER":
+            tableId = "winter_body";
             $("#componentForm_Winter").modal("show");
             break;
     }
 
+    let idList=[
+        "t_no_use",
+        "t_no_attend",
+        "t_no_rectified",
+        "t_no_attend_cal",
+        "t_no_rectified_date",
+        "t_no_balance_done"
+    ];
+
+    let lableList =[
+        "Total No. in use",
+        "Total No. to be attended",
+        "Total No. to be rectified",
+        "Total No. attended",
+        "Total No. rectified on",
+        "Balance to be done by date"
+    ]
+
+
+    console.log("wp=",response);
+    let displayHtml='';
+    response.forEach((element,i) => {
+        displayHtml += `<div class="d-flex alert-success">
+        <div style="width:65px" class="border py-2 px-1">${i+1}</div>
+        <div class="border px-1 py-2 flex-fill">${element.heading}</div>
+        </div>`;
+
+        if(element.data.length){
+            element.data.forEach((element1,j) => {
+
+                displayHtml += `<div class="alert my-2">`;
+
+                displayHtml += `<div class="d-flex py-1">
+                <div class="border px-1">(${j+1})</div>
+                <div class="border px-1 flex-fill">${element1.info}</div>
+                </div>`; // heading
+
+                displayHtml += `<div class="d-flex ">`;
+                element1.options.forEach((option,o) => {
+                    var input = document.createElement("input");
+                    let inputType = "number";
+                    if(idList[o] == 't_no_rectified_date' || idList[o] == 't_no_balance_done' ){
+                        inputType = 'date';
+                    }
+                    if(idList[o] == "t_no_attend_cal"){
+                        input.setAttribute("readOnly", true);
+                    }
+
+                    if(["t_no_rectified_date","t_no_balance_done"].includes(idList[o])){
+                        //width 100px not apply in date field
+                        input.className = `form-control ${commonInputName} __${idList[o]} __${i}_${j}`; 
+
+                    }else{
+                        input.className = `form-control inputWidth ${commonInputName} __${idList[o]} __${i}_${j}`; 
+
+                    }
+                    input.type = inputType;
+                    input.id = `${idList[o]}_${i}_${j}`;
+                    // if you want to add class then please add before for-control do not add at last
+
+                    displayHtml +=`<div class="border d-flex flex-column justify-content-between px-1 pb-2">
+                        <div class="font12">${lableList[o]}</div>
+                        <div class=" py-1" id="${idList[o]}_${i}_${j}_div">
+                        </div>
+                        ${input.outerHTML}
+                        </div>`;
+                
+                });// option for each                
+            displayHtml +=`</div>`; // options div
+
+
+            displayHtml +=`</div>`; // element 1 alert
+
+            //
+            if(element1.children && element1.children.length){
+
+                element1.children.forEach((element_child,k) => {
+                    displayHtml += `<div class="alert my-2">`;
+                    displayHtml += `<div class="d-flex py-1"><div class="border px-1">(${convertToRoman(k+1)})</div><div class="border px-1 flex-fill">${element_child.info}</div></div>`;
+
+                    displayHtml += `<div class="d-flex">`;
+                    element_child.options.forEach((option,o) => {
+
+                        var input = document.createElement("input");
+                        let inputType = "number";
+                        if(idList[o] == 't_no_rectified_date' || idList[o] == 't_no_balance_done' ){
+                            inputType = 'date';
+                        }
+                        if(idList[o] == "t_no_attend_cal"){
+                            input.setAttribute("readOnly", true);
+                        }
+
+                        if(["t_no_rectified_date","t_no_balance_done"].includes(idList[o])){
+                        //width 100px not apply in date field
+                        input.className = `form-control ${commonInputName} __${idList[o]} __${i}_${j}_${k}`; 
+
+                        }else{
+                            input.className = `form-control inputWidth ${commonInputName} __${idList[o]} __${i}_${j}_${k}`; 
+                        }
+
+                        input.type = inputType;
+                        input.id = `${idList[o]}_${i}_${j}_${k}`;
+
+                        // if you want to add class then please add before for-control do not add at last
+                        
+
+                        displayHtml +=`<div class="border d-flex flex-column justify-content-between px-1 pb-2">
+                            <div class="font12">${lableList[o]}</div>
+                            <div class=" py-1">
+                                ${input.outerHTML}
+                              
+                            </div>
+                            
+                            </div>`;
+
+                    });
+                    displayHtml +=`</div>`;
+                    displayHtml +=`</div>`; // element childe alert
+
+                });
+
+            }// children if check
+            //
+                
+            }); // main data for each
+        }
+
+        
+    });
+
+    var container = document.getElementById(tableId);
+
+    container.innerHTML = displayHtml; 
+
+    container.addEventListener("change", function(event) {
+    var target = event.target;
+    let formType='';
+    if (target && target.tagName === "INPUT" && (target.type === "number" || target.type === "date")) {
+        console.log("Value changed id: " + target.classList);
+        let classList = target.classList.value;
+            classList = classList.split(" ");
+            if(classList.includes("summerInputField")){
+                formType = "summer_Precaution";
+            }else if(classList.includes("mansoonInputField")){
+                formType = "mansoon_Precaution";
+            }
+            classList = classList.filter((x)=>x.startsWith("__")).map((y)=> y.replace("__",""));
+            let commonName = classList[0];
+            let commonId = classList[1];
+            // let checkBox = ["t_no_use","t_no_attend"];
+            let secondValue = 0;
+            let firstValue = 0;
+
+        // below if for init form and update form first input field
+        if( target.id == 't_no_use_0_0'){
+            firstValue = Number(target.value);
+            secondValue = document.getElementById("t_no_attend_"+commonId)?.value ?? 0;
+            if(secondValue){
+                secondValue = Number(secondValue)
+            }else{
+                secondValue = 0
+            }
+
+            if(secondValue > firstValue ){
+                // document.getElementById(commonName+"_"+commonId).value = '';
+                $("#t_no_use_0_0").addClass("is-invalid");
+                alert("Total number in use is always greater than total number to be Attended");
+                return;
+             }
+                if(formType == "summer_Precaution"){
+                    summerPrecatuinFormInit();
+                }else{
+                    mansoonPrecatuinFormInit();
+                }
+
+            var event = new Event('change', {
+            bubbles: true,
+            cancelable: true,
+            });            
+            var element_cal = document.getElementById("t_no_attend_cal_"+commonId);
+            element_cal.value = (+firstValue - +secondValue);
+            element_cal.dispatchEvent(event);
+
+        }else{
+
+            if(commonName == "t_no_use"){
+                firstValue = Number(target.value);
+                secondValue = document.getElementById("t_no_attend_"+commonId)?.value ?? 0;
+                if(secondValue){
+                    secondValue = Number(secondValue)
+                }else{
+                    secondValue = 0
+                }
+                
+            }else if(commonName == "t_no_attend"){
+                secondValue = Number(target.value);
+                firstValue = document.getElementById("t_no_use_"+commonId)?.value ?? 0;
+                if(firstValue){
+                    firstValue = Number(firstValue)
+                }else{
+                    firstValue =0
+                }
+
+            }else{
+                if(formType == "summer_Precaution"){
+                    summerPrecautionUpdate(target.id,target.value);
+                }else{
+                    mansoonPrecautionUpdate(target.id,target.value);
+                }
+
+                return;
+            }
+
+            if(secondValue > firstValue ){
+                // document.getElementById(commonName+"_"+commonId).value = '';
+                $("#"+commonName+"_"+commonId).addClass("is-invalid")
+                alert("Total number to be Attended should be less than total number in use");
+                return;
+            }
+
+              if(formType == "summer_Precaution"){
+                    summerPrecautionUpdate(target.id,target.value);
+                
+                }else{
+                    mansoonPrecautionUpdate(target.id,target.value);
+                }
+
+            // Create a new change event
+            var event = new Event('change', {
+            bubbles: true,
+            cancelable: true,
+            });            
+            var element_cal = document.getElementById("t_no_attend_cal_"+commonId);
+            element_cal.value = (+firstValue - +secondValue);
+            element_cal.dispatchEvent(event);
+
+
+        }
+        // You can perform any action you want when the value changes here
+    }
+});
 }
 
 </script>
@@ -20767,8 +21190,647 @@ $.ajax({
         
     });
 
-
 });
+
+function checkSummerPrecautionFill(subCompo,compo){
+
+let empid = '<?php echo $_SESSION['userretailer']; ?>';
+if(empid == undefined || empid == 'undefined' || empid == ''){
+    alert("Refresh page and try again.");
+    return;
+}
+
+let sectionId =$("#sectionId").val();
+let stationId =$("#stationId").val();
+let language =$("#language").val();
+
+if(sectionId == undefined || sectionId == null || sectionId == ""){
+    alert("Something went wrong with section Id, Refresh page and try again.");
+    return;
+}
+
+if(stationId == undefined || stationId == null || stationId == ""){
+    alert("Something went wrong with station Id, Refresh page and try again.");
+    return;
+}
+
+$("#summerForm_form")[0].reset();
+$('#summerForm_status').html("");
+$("#summerPrecautionId").val(""); //id should be null
+
+
+$.ajax({
+    type:"POST",
+    url:"../commonForm/query/common-action.php",
+    data: {
+        "common_action": "getSummerPrecuation_FormFill",
+        "compo": compo,
+        empid: empid,
+        sectionId:sectionId,
+        stationId:stationId,
+        language:language
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+    },
+    success: function(respo) {
+        $("#loader_show").addClass('d-none');
+
+        let response = JSON.parse(respo);
+        // $("#componentForm_Summer").modal("show");
+
+        if (response['status']) {
+            $("#summerForm_status").html("Please complete...").css("color", "red");
+
+            $("#summerPrecautionId").val(response['data']['id']??'');
+            let tableDataForm = response['data'];
+            Object.keys(response['data']).forEach((key,value)=>{
+                let getIdBykey = $("#"+key);
+                if(getIdBykey.attr("id")){
+                    getIdBykey.val(tableDataForm[key]);
+                }
+            });
+        }
+
+    },
+    complete:function(){
+        $("#loader_show").addClass('d-none');
+
+    }
+})
+
+
+
+
+}
+
+
+//summerPrecaution first text box
+function summerPrecatuinFormInit(){
+    let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+if (
+    sectionName == "" || sectionName == null || sectionName == undefined ||
+    sectionId == "" || sectionId == null || sectionId == undefined ||
+    stationName == "" || stationName == null || stationName == undefined ||
+    stationId == "" || stationId == null || stationId == undefined ||
+    compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+    subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+) {
+    alert("Something went wrong , refresh the page and try again");
+    return;
+}
+
+let t_no_use_0_0 = $("#t_no_use_0_0").val();
+let summerPrecautionId = $("#summerPrecautionId").val();
+
+if (t_no_use_0_0 == undefined  || t_no_use_0_0 == null || t_no_use_0_0 == '' || t_no_use_0_0.length == 0) {
+    $("#t_no_use_0_0").addClass("is-invalid");
+    $("#summerForm_status").html("Railway field is required").css("color", "red");
+    $("#t_no_use_0_0").focus();
+
+    return;
+} else {
+    $("#summerForm_status").html("");
+    $("#t_no_use_0_0").removeClass("is-invalid");
+
+}
+
+let type_f="";
+if (summerPrecautionId == undefined  || summerPrecautionId == null || summerPrecautionId == '' || summerPrecautionId.length == 0) {
+    type_f = 'create';
+ summerPrecautionId="";
+} else {
+    type_f = 'update';
+}
+
+
+let userID = '<?php echo $_SESSION['userretailer']; ?>';
+if(userID == '' || userID == null || userID == undefined){
+    
+    $("#summerForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+    return
+}
+
+$.ajax({
+    type: "POST",
+    url: "query/form-action.php",
+    data: {
+        "action": "summerPrecaution_formSubmit",
+        "actionType":type_f,
+        "columnName":"t_no_use_0_0",
+        "userID": userID,
+        summerPrecautionId:summerPrecautionId,
+        "sectionName": sectionName,
+        "sectionId": sectionId,
+        "stationName": stationName,
+        "stationId": stationId,
+        "compoNameTmp": compoNameTmp,
+        "subcompoNameTmp": subcompoNameTmp,
+        "t_no_use_0_0": t_no_use_0_0,          
+                
+        "language":language
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+    },
+    success: function(response) {
+        let respo = JSON.parse(response);
+        if (respo['status'] && respo['updateId']) {
+            $("#summerForm_status").html(respo['msg']).css("color", "green");
+            $("#summerPrecautionId").val(respo['updateId']);
+        } else {
+            $("#summerForm_status").html(respo['msg']).css("color", "red");
+
+        }
+    },
+    complete: function() {
+        $("#loader_show").addClass('d-none');
+        setTimeout(() => {
+            $('#summerForm_status').html("");
+        }, 5000);
+
+    }
+});
+
+
+}
+
+function summerPrecautionUpdate(inputId,inputValue){
+    
+                // Get the ID and value of the changed input field
+                // var inputId = $(this).attr("id"); // id as a column
+
+                // last submit
+                let isComplete = "false";
+                //last text box id
+                if(inputId == 't_no_balance_done_13_1'){
+                    if (confirm("Do you want to final submit Summer Precaution Form")) {
+
+                        let isReturn = false;
+
+                        $(".summerInputField").each((index,ele)=>{
+                            let element = $(ele);
+                            let key = element.attr("id");
+                            let value_check = element.val();
+                            if(value_check == undefined || value_check == null || value_check == ''){
+                                $("#"+key).addClass("is-invalid");
+                                isReturn = true;
+                            }else{
+                                $("#"+key).removeClass("is-invalid");
+                            }
+                        });
+
+                        if(isReturn){
+                            $("#"+inputId).val("");
+                            return
+                        }
+                        isComplete = 'true';
+                    }else{
+                        $("#"+inputId).val("")
+                        return;
+                    }
+                }
+                // var inputValue = $(this).val();
+                
+                // Log or use the ID and value as needed
+                console.log("ID: " + inputId + ", Value: " + inputValue);
+
+                let summerPrecautionId = $("#summerPrecautionId").val();
+
+                if (summerPrecautionId == undefined  || summerPrecautionId == null || summerPrecautionId == '' || summerPrecautionId.length == 0) {
+                $("#t_no_use_0_0").addClass("is-invalid");
+                $("#summerForm_status").html("Please fill First field first").css("color", "red");
+                $("#t_no_use_0_0").focus();
+                
+                    return;
+                } else {
+                    $("#summerForm_status").html("");
+                    $("#t_no_use_0_0").removeClass("is-invalid");
+
+                }
+
+
+                let userID = '<?php echo $_SESSION['userretailer']; ?>';
+                if(userID == '' || userID == null || userID == undefined){
+                    
+                    $("#summerForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+                    return
+                }
+
+            let language = $("#language").val();
+
+                
+            $.ajax({
+                type: "POST",
+                url: "query/form-action.php",
+                data: {
+                    "action": "summerPrecaution_formSubmit_update",
+                    "columnName": inputId,
+                    "userID": userID,         
+                    columnValue:inputValue,
+                    summerPrecautionId:summerPrecautionId,
+                    isComplete:isComplete,
+                    "language":language
+                },
+                beforeSend: function() {
+                    $("#loader_show").removeClass('d-none');
+                },
+                success: function(response) {
+                    let respo = JSON.parse(response);
+                    if (respo['status']) {
+                        $("#"+inputId).addClass("is-valid");
+                        $("#"+inputId).removeClass("is-invalid");
+                        if(isComplete=='true'){
+                            $(".summerInputField").removeClass("is-invalid");
+                            $(".summerInputField").removeClass("is-valid");
+
+                            setTimeout(() => {
+                                $("#summerForm_form")[0].reset();
+                                $('#summerForm_status').html("");
+                                $("#summerPrecautionId").val(""); //id should be null
+                            }, 2000);
+                        }
+                    } else {
+                    
+                        $("#"+inputId).removeClass("is-valid");
+                        $("#"+inputId).addClass("is-invalid");
+
+                    }
+                },
+                complete: function() {
+                    $("#loader_show").addClass('d-none');
+
+                }
+            });
+
+
+
+
+
+
+}
+
+//mansoon Precaution first text box
+function mansoonPrecatuinFormInit(){
+    let language = $("#language").val();
+        let sectionName = $("#sectionName").val();
+        let sectionId = $("#sectionId").val();
+
+        let stationName = $("#stationName").val();
+        let stationId = $("#stationId").val();
+
+        let compoNameTmp = $("#compoNameTmp").val();
+        let subcompoNameTmp = $("#subcompoNameTmp").val();
+
+if (
+    sectionName == "" || sectionName == null || sectionName == undefined ||
+    sectionId == "" || sectionId == null || sectionId == undefined ||
+    stationName == "" || stationName == null || stationName == undefined ||
+    stationId == "" || stationId == null || stationId == undefined ||
+    compoNameTmp == "" || compoNameTmp == null || compoNameTmp == undefined ||
+    subcompoNameTmp == "" || subcompoNameTmp == null || subcompoNameTmp == undefined
+
+) {
+    alert("Something went wrong , refresh the page and try again");
+    return;
+}
+
+let t_no_use_0_0 = $("#t_no_use_0_0").val();
+let mansoonPrecautionId = $("#mansoonPrecautionId").val();
+
+if (t_no_use_0_0 == undefined  || t_no_use_0_0 == null || t_no_use_0_0 == '' || t_no_use_0_0.length == 0) {
+    $("#t_no_use_0_0").addClass("is-invalid");
+    $("#mansoonForm_status").html("First input field is required").css("color", "red");
+    $("#t_no_use_0_0").focus();
+
+    return;
+} else {
+    $("#mansoonForm_status").html("");
+    $("#t_no_use_0_0").removeClass("is-invalid");
+
+}
+
+let type_f="";
+if (mansoonPrecautionId == undefined  || mansoonPrecautionId == null || mansoonPrecautionId == '' || mansoonPrecautionId.length == 0) {
+    type_f = 'create';
+ mansoonPrecautionId="";
+} else {
+    type_f = 'update';
+}
+
+
+let userID = '<?php echo $_SESSION['userretailer']; ?>';
+if(userID == '' || userID == null || userID == undefined){
+    
+    $("#mansoonForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+    return
+}
+
+$.ajax({
+    type: "POST",
+    url: "query/form-action.php",
+    data: {
+        "action": "mansoonPrecaution_formSubmit",
+        "actionType":type_f,
+        "columnName":"t_no_use_0_0",
+        "userID": userID,
+        mansoonPrecautionId:mansoonPrecautionId,
+        "sectionName": sectionName,
+        "sectionId": sectionId,
+        "stationName": stationName,
+        "stationId": stationId,
+        "compoNameTmp": compoNameTmp,
+        "subcompoNameTmp": subcompoNameTmp,
+        "t_no_use_0_0": t_no_use_0_0,          
+                
+        "language":language
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+    },
+    success: function(response) {
+        let respo = JSON.parse(response);
+        if (respo['status'] && respo['updateId']) {
+            $("#mansoonForm_status").html(respo['msg']).css("color", "green");
+            $("#mansoonPrecautionId").val(respo['updateId']);
+        } else {
+            $("#mansoonForm_status").html(respo['msg']).css("color", "red");
+
+        }
+    },
+    complete: function() {
+        $("#loader_show").addClass('d-none');
+        setTimeout(() => {
+            $('#mansoonForm_status').html("");
+        }, 5000);
+
+    }
+});
+
+
+}
+
+function mansoonPrecautionUpdate(inputId,inputValue){
+    
+    // Get the ID and value of the changed input field
+    // var inputId = $(this).attr("id"); // id as a column
+
+    // last submit
+    let isComplete = "false";
+    //last text box id
+    if(inputId == 't_no_balance_done_13_1'){
+        if (confirm("Do you want to final submit Mansoon Precaution Form")) {
+
+            let isReturn = false;
+
+            $(".mansoonInputField").each((index,ele)=>{
+                let element = $(ele);
+                let key = element.attr("id");
+                let value_check = element.val();
+                if(value_check == undefined || value_check == null || value_check == ''){
+                    $("#"+key).addClass("is-invalid");
+                    isReturn = true;
+                }else{
+                    $("#"+key).removeClass("is-invalid");
+                }
+            });
+
+            if(isReturn){
+                $("#"+inputId).val("");
+                return
+            }
+            isComplete = 'true';
+        }else{
+            $("#"+inputId).val("")
+            return;
+        }
+    }
+    // var inputValue = $(this).val();
+    
+    // Log or use the ID and value as needed
+    console.log("ID: " + inputId + ", Value: " + inputValue);
+
+    let mansoonPrecautionId = $("#mansoonPrecautionId").val();
+
+    if (mansoonPrecautionId == undefined  || mansoonPrecautionId == null || mansoonPrecautionId == '' || summerPrecautionId.length == 0) {
+    $("#t_no_use_0_0").addClass("is-invalid");
+    $("#mansoonForm_status").html("Please fill First field first").css("color", "red");
+    $("#t_no_use_0_0").focus();
+    
+        return;
+    } else {
+        $("#mansoonForm_status").html("");
+        $("#t_no_use_0_0").removeClass("is-invalid");
+
+    }
+
+
+    let userID = '<?php echo $_SESSION['userretailer']; ?>';
+    if(userID == '' || userID == null || userID == undefined){
+        
+        $("#mansoonForm_status").html("Something went wrong with user Id, Refresh the page and try again").css("color", "red");
+        return
+    }
+
+let language = $("#language").val();
+
+    
+$.ajax({
+    type: "POST",
+    url: "query/form-action.php",
+    data: {
+        "action": "mansoonPrecaution_formSubmit_update",
+        "columnName": inputId,
+        "userID": userID,         
+        columnValue:inputValue,
+        mansoonPrecautionId:mansoonPrecautionId,
+        isComplete:isComplete,
+        "language":language
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+    },
+    success: function(response) {
+        let respo = JSON.parse(response);
+        if (respo['status']) {
+            $("#"+inputId).addClass("is-valid");
+            $("#"+inputId).removeClass("is-invalid");
+            if(isComplete=='true'){
+                $(".mansoonInputField").removeClass("is-invalid");
+                $(".mansoonInputField").removeClass("is-valid");
+
+                setTimeout(() => {
+                    $("#mansoonForm_form")[0].reset();
+                    $('#mansoonForm_status').html("");
+                    $("#mansoonPrecautionId").val(""); //id should be null
+                }, 2000);
+            }
+        } else {
+        
+            $("#"+inputId).removeClass("is-valid");
+            $("#"+inputId).addClass("is-invalid");
+
+        }
+    },
+    complete: function() {
+        $("#loader_show").addClass('d-none');
+
+    }
+});
+
+
+
+
+
+
+}
+
+function checkMansoonPrecautionFill(subCompo,compo){
+
+let empid = '<?php echo $_SESSION['userretailer']; ?>';
+if(empid == undefined || empid == 'undefined' || empid == ''){
+    alert("Refresh page and try again.");
+    return;
+}
+
+let sectionId =$("#sectionId").val();
+let stationId =$("#stationId").val();
+let language =$("#language").val();
+
+if(sectionId == undefined || sectionId == null || sectionId == ""){
+    alert("Something went wrong with section Id, Refresh page and try again.");
+    return;
+}
+
+if(stationId == undefined || stationId == null || stationId == ""){
+    alert("Something went wrong with station Id, Refresh page and try again.");
+    return;
+}
+
+$("#mansoonForm_form")[0].reset();
+$('#mansoonForm_status').html("");
+$("#mansoonPrecautionId").val(""); //id should be null
+
+
+$.ajax({
+    type:"POST",
+    url:"../commonForm/query/common-action.php",
+    data: {
+        "common_action": "getMansoonPrecuation_FormFill",
+        "compo": compo,
+        empid: empid,
+        sectionId:sectionId,
+        stationId:stationId,
+        language:language
+    },
+    beforeSend: function() {
+        $("#loader_show").removeClass('d-none');
+    },
+    success: function(respo) {
+        $("#loader_show").addClass('d-none');
+
+        let response = JSON.parse(respo);
+
+        if (response['status']) {
+            $("#mansoonForm_status").html("Please complete...").css("color", "red");
+
+            $("#mansoonPrecautionId").val(response['data']['id']??'');
+            let tableDataForm = response['data'];
+            Object.keys(response['data']).forEach((key,value)=>{
+                let getIdBykey = $("#"+key);
+                if(getIdBykey.attr("id")){
+                    getIdBykey.val(tableDataForm[key]);
+                }
+            });
+        }
+
+    },
+    complete:function(){
+        $("#loader_show").addClass('d-none');
+
+    }
+})
+
+
+
+
+}
+
+/*
+console.log("SUMMER_PRECAUTION_INFO=",SUMMER_PRECAUTION_INFO);
+
+// update precaution
+// SUMMER_PRECAUTION_INFO.forEach((a,i)=>{
+//     a.data.forEach((b,j)=>{
+//         b.options.push({
+//             type:'textbox',
+//             id:`t_no_attend_cal_${i}_${j}`,
+//         });
+
+//         if(b.children && b.children.length){
+//             b.children.forEach((c,k)=>{
+//                 c.options.push({
+//                 type:'textbox',
+//                 id:`t_no_attend_cal_${i}_${j}_${k}`
+//                  });
+//             })
+//         }
+
+//     })//b
+// })//a
+
+// console.log("new=",JSON.parse(JSON.stringify(SUMMER_PRECAUTION_INFO)));
+
+
+// create query
+
+let list1 = SUMMER_PRECAUTION_INFO.map((x)=> x.data.map((y)=> y.options.map((z)=> z.id)));
+list1 = list1.flat(Infinity);
+console.log("list 1=",list1);
+
+let start = ["emp_id","section_id","section_name","station_id","station_name","component_name","sub_component"];
+let enddata = ["created_date","updated_date","status","language","is_admin_view","is_dste_view","is_aste_view","is_incharge_ssc_view","is_je_view","is_employee_view","isComplete"];
+let list2 = []
+SUMMER_PRECAUTION_INFO.forEach((a,i)=>{
+    a.data.forEach((b,j)=>{
+        list2.push(...(b.options));
+
+        if(b.children && b.children.length){
+            b.children.forEach((c,k)=>{
+
+                list2.push(...(c.options));
+            })
+        }
+
+    })//b
+})//a
+
+list2 = list2.map((x)=> x.id);
+
+let finalList = [...start, ...list2, ...enddata]
+
+let createQ = "CREATE TABLE summerPrecaution ( "
+
+console.log("finalList=",finalList);
+
+finalList.forEach(element => {
+    createQ += `${element} text,`
+});
+
+createQ +=')'
+console.log("createQ=",createQ);
+
+*/
 
 </script>
 

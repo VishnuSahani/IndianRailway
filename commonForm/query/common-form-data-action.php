@@ -1232,6 +1232,313 @@ if (isset($_POST['common_action'])) {
 
             }
 
+        }elseif ($compoNameTmp == "EI") {
+            // EP 1,2,4,5 form data
+            $formType = "EI";
+
+            $qEI1 = mysqli_query($con, "SELECT * FROM ei1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEI1) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ei1Data = [];
+
+                while ($runEp1 = mysqli_fetch_array($qEI1)) {
+
+                    $ei1Data[] = $runEp1;
+
+                }
+
+                $formData['EI1'] = $ei1Data;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qEI2 = mysqli_query($con, "SELECT * FROM ei2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEI2) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $ei2Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($qEI2)) {
+
+                    $ei2Data[] = $runEp2;
+
+                }
+
+                $formData['EI2'] = $ei2Data;
+
+            }
+
+            // 2 end
+
+
+            $qEI3 = mysqli_query($con, "SELECT * FROM ei3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEI3) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ei3Data = [];
+
+                while ($runEp3 = mysqli_fetch_array($qEI3)) {
+
+                    $ei3Data[] = $runEp3;
+
+                }
+
+                $formData['EI3'] = $ei3Data;
+
+            }
+
+            $qEI4 = mysqli_query($con, "SELECT * FROM ei4_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qEI4) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $ei4Data = [];
+
+                while ($runEp3 = mysqli_fetch_array($qEI4)) {
+
+                    $ei4Data[] = $runEp3;
+
+                }
+
+                $formData['EI4'] = $ei4Data;
+
+            }
+
+        }elseif ($compoNameTmp == "RELAY ROOM") {
+            // EP 1,2,4,5 form data
+            $formType = "RI";
+
+            $qr1 = mysqli_query($con, "SELECT * FROM r1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qr1) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $r1Data = [];
+
+                while ($runEp1 = mysqli_fetch_array($qr1)) {
+
+                    $r1Data[] = $runEp1;
+
+                }
+
+                $formData['R1'] = $r1Data;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qr2 = mysqli_query($con, "SELECT * FROM r2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qr2) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $r2Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($qr2)) {
+
+                    $r2Data[] = $runEp2;
+
+                }
+
+                $formData['R2'] = $r2Data;
+
+            }
+
+            // 2 end
+
+
+            $qr3 = mysqli_query($con, "SELECT * FROM r3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qr3) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $r3Data = [];
+
+                while ($runEp3 = mysqli_fetch_array($qr3)) {
+
+                    $r3Data[] = $runEp3;
+
+                }
+
+                $formData['R3'] = $r3Data;
+
+            }
+
+        }elseif ($compoNameTmp == "CONTROL PANEL") {
+            // EP 1,2,4,5 form data
+            $formType = "CPI";
+
+            $qcp1 = mysqli_query($con, "SELECT * FROM cp1_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qcp1) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $cp1Data = [];
+
+                while ($runEp1 = mysqli_fetch_array($qcp1)) {
+
+                    $cp1Data[] = $runEp1;
+
+                }
+
+                $formData['CP1'] = $cp1Data;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qcp2 = mysqli_query($con, "SELECT * FROM cp2_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qcp2) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $cp2Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($qcp2)) {
+
+                    $cp2Data[] = $runEp2;
+
+                }
+
+                $formData['CP2'] = $cp2Data;
+
+            }
+
+            // 2 end
+
+
+            $qcp3 = mysqli_query($con, "SELECT * FROM cp3_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qcp3) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $cp3Data = [];
+
+                while ($runEp3 = mysqli_fetch_array($qcp3)) {
+
+                    $cp3Data[] = $runEp3;
+
+                }
+
+                $formData['CP3'] = $cp3Data;
+
+            }
+
+        }elseif ($compoNameTmp == "WEATHER PRECAUTIONS") {
+            // EP 1,2,4,5 form data
+            $formType = "summer_precaution";
+
+            $qcp1 = mysqli_query($con, "SELECT * FROM summerprecaution_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qcp1) <= 0) {
+
+                // $formData['EP1']=[];
+
+            } else {
+
+                $cp1Data = [];
+
+                while ($runEp1 = mysqli_fetch_array($qcp1)) {
+
+                    $cp1Data[] = $runEp1;
+
+                }
+
+                $formData['summer_precaution'] = $cp1Data;
+
+            }
+
+
+            // ep1 end
+
+            // ep2 start
+
+            $qcp2 = mysqli_query($con, "SELECT * FROM mansoonprecaution_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            if (mysqli_num_rows($qcp2) <= 0) {
+
+                // $formData['EP2']=[];
+
+            } else {
+
+                $cp2Data = [];
+
+                while ($runEp2 = mysqli_fetch_array($qcp2)) {
+
+                    $cp2Data[] = $runEp2;
+
+                }
+
+                $formData['mansoon_precaution'] = $cp2Data;
+
+            }
+
+            // 2 end
+
+            // umcomment below when working on weather form
+
+            // $qcp3 = mysqli_query($con, "SELECT * FROM weatherprecaution_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp'");
+
+            // if (mysqli_num_rows($qcp3) <= 0) {
+
+            // } else {
+
+            //     $cp3Data = [];
+
+            //     while ($runEp3 = mysqli_fetch_array($qcp3)) {
+
+            //         $cp3Data[] = $runEp3;
+
+            //     }
+
+            //     $formData['Weather'] = $cp3Data;
+
+            // }
+
         }
         
         else {
@@ -1510,9 +1817,45 @@ if (isset($_POST['common_action'])) {
             case 'IPS_Battery':
                 $tableName = 'ips_battery_read';
                 break;
+            case 'EI1':
+                $tableName = 'ei1_form';
+                break;
+            case 'EI2':
+                $tableName = 'ei2_form';
+                break;
+            case 'EI3':
+                $tableName = 'ei3_form';
+                break;
+            case 'EI4':
+                $tableName = 'ei4_form';
+                break;
+            case 'R1':
+                $tableName = 'r1_form';
+                break;
+            case 'R2':
+                $tableName = 'r2_form';
+                break;
+            case 'R3':
+                $tableName = 'r3_form';
+                break;
+            case 'CP1':
+                $tableName = 'cp1_form';
+                break;
+            case 'CP2':
+                $tableName = 'cp2_form';
+                break;
+            case 'CP3':
+                $tableName = 'cp3_form';
+                break;
+            case 'Summer':
+                $tableName = 'summerprecaution_form';
+                break;
+            case 'Mansoon':
+                $tableName = 'mansoonprecaution_form';
+                break;
             default:
                 $respo['status'] = false;
-                $respo['msg'] = "Invalid request!";
+                $respo['msg'] = "Invalid request1!";
                 $respo['data'] = [];
                 echo json_encode($respo);
                 die();
@@ -2441,7 +2784,244 @@ if (isset($_POST['common_action'])) {
             die();
 
         }
-    }
+    } elseif ($action == 'getEI_FormDetails') {
+        if (!isset($_POST['formType']) || empty($_POST['formType'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'EI1':
+                $tableName = 'ei1_info';
+                break;
+
+            case 'EI2':
+                $tableName = 'ei2_info';
+                break;
+            case 'EI3':
+                $tableName = 'ei3_info';
+                break;
+            case 'EI4':
+                $tableName = 'ei4_info';
+                break;
+
+
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+
+        }
+
+        try {
+
+            $query = "SELECT * FROM " . $tableName . " WHERE language='$language'";
+            $queryExe = mysqli_query($con, $query);
+            if (mysqli_num_rows($queryExe) <= 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+
+            while ($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->ei_id = $q_run['ei_id'];
+                $obj->ei_details = $q_run['ei_details'];
+                $obj->ei_option = $q_run['ei_option'];
+                $obj->ei_status = $q_run['status'];
+
+                $data[] = $obj;
+
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
+            echo json_encode($respo);
+            die();
+
+        } catch (Exception $err) {
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }  elseif ($action == 'getCP_FormDetails') {
+        if (!isset($_POST['formType']) || empty($_POST['formType'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'CP1':
+                $tableName = 'cp1_info';
+                break;
+
+            case 'CP2':
+                $tableName = 'cp2_info';
+                break;
+            case 'CP3':
+                $tableName = 'cp3_info';
+                break;
+
+
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+
+        }
+
+        try {
+
+            $query = "SELECT * FROM " . $tableName . " WHERE language='$language'";
+            $queryExe = mysqli_query($con, $query);
+            if (mysqli_num_rows($queryExe) <= 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+
+            while ($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->cp_id = $q_run['cp_id'];
+                $obj->cp_details = $q_run['cp_details'];
+                $obj->cp_option = $q_run['cp_option'];
+                $obj->cp_status = $q_run['status'];
+
+                $data[] = $obj;
+
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
+            echo json_encode($respo);
+            die();
+
+        } catch (Exception $err) {
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    }   elseif ($action == 'getR_FormDetails') {
+        if (!isset($_POST['formType']) || empty($_POST['formType'])) {
+            $respo['status'] = false;
+            $respo['msg'] = "Invalid request";
+            $respo['data'] = [];
+            echo json_encode($respo);
+            die();
+        }
+
+        $formType = trim($_POST['formType']);
+        $language = trim($_POST['language']);
+
+        $tableName = "";
+        switch ($formType) {
+            case 'R1':
+                $tableName = 'r1_info';
+                break;
+
+            case 'R2':
+                $tableName = 'r2_info';
+                break;
+            case 'R3':
+                $tableName = 'r3_info';
+                break;
+
+
+            default:
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid request!";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+
+        }
+
+        try {
+
+            $query = "SELECT * FROM " . $tableName . " WHERE language='$language'";
+            $queryExe = mysqli_query($con, $query);
+            if (mysqli_num_rows($queryExe) <= 0) {
+                $respo['status'] = false;
+                $respo['msg'] = "Data not found";
+                $respo['data'] = [];
+                echo json_encode($respo);
+                die();
+            }
+
+            $data = [];
+
+            while ($q_run = mysqli_fetch_array($queryExe)) {
+                $obj = new stdClass();
+                $obj->id = $q_run['id'];
+                $obj->r_id = $q_run['r_id'];
+                $obj->r_details = $q_run['r_details'];
+                $obj->r_option = $q_run['r_option'];
+                $obj->r_status = $q_run['status'];
+
+                $data[] = $obj;
+
+            }
+
+            $respo['status'] = true;
+            $respo['msg'] = "List found";
+            $respo['data'] = $data;
+
+            echo json_encode($respo);
+            die();
+
+        } catch (Exception $err) {
+
+            $respo['status'] = false;
+            $respo['msg'] = $err;
+            $respo['data'] = [];
+
+            echo json_encode($respo);
+            die();
+
+        }
+    } 
     
     else {
         responseSend(false, "Invalid Action");

@@ -7102,6 +7102,376 @@ if (isset($_POST['action'])) {
     
     
     
+        } elseif ($action == "summerPrecaution_formSubmit") {
+            if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with request";
+                echo json_encode($respo);
+                die();
+    
+            }
+    
+            $userID = trim($_POST['userID']);
+            $sectionName = trim($_POST['sectionName']);
+            $sectionId = trim($_POST['sectionId']);
+            $stationName = trim($_POST['stationName']);
+            $stationId = trim($_POST['stationId']);
+            $compoNameTmp = trim($_POST['compoNameTmp']);
+            $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+            $language = trim($_POST['language']);
+    
+            $createdDateTime = date("Y-m-d h:i:s");
+            $actionType = trim($_POST['actionType']);
+    
+    
+            $checkData = mysqli_query($con, "SELECT * FROM summerprecaution_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+            if (mysqli_num_rows($checkData) > 0 && $actionType == "create") {
+    
+                $lastInsert = mysqli_fetch_array($checkData);
+    
+                // print_r($lastInsert);
+                $lastSubmitedDate = $lastInsert['created_date'];
+    
+                $day_duration = getFormDurationDay("Summer_Precaution", $con);
+                if ($day_duration == 0) {
+                    $respo['status'] = false;
+                    $respo['msg'] = "Not get form duration day.";
+                    echo json_encode($respo);
+                    die();
+                }
+                $setDay = "+" . $day_duration . " days";
+                $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+    
+                //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+                $day15Date = date("Y-m-d", $d15);
+    
+                $currentStrToTime = strtotime($createdDateTime);
+    
+                if ($currentStrToTime < $d15) {
+    
+                    $respo['status'] = false;
+                    $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                    echo json_encode($respo);
+                    die();
+    
+                }
+    
+    
+    
+            }
+    
+            $t_no_use_0_0 = trim($_POST['t_no_use_0_0']);
+    
+            if (empty($t_no_use_0_0)) {
+                $respo['status'] = false;
+                $respo['msg'] = "Kindly fill railway field";
+                $respo['idName'] = "First Field";
+                echo json_encode($respo);
+                die();
+            }
+    
+            $insertQuery = "";
+            $qq = "";
+            $summerPrecautionId = "";
+            $typee = "";
+            if ($actionType == "update") {
+                $summerPrecautionId = trim($_POST['summerPrecautionId']);
+                $insertQuery = "UPDATE summerprecaution_form SET t_no_use_0_0='$t_no_use_0_0' WHERE id='$summerPrecautionId'";
+                $typee = 'updated';
+    
+            } else {
+                $insertQuery = "INSERT INTO summerprecaution_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t_no_use_0_0,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t_no_use_0_0','$createdDateTime','$createdDateTime','$language')";
+    
+                $qq = "SELECT * FROM summerprecaution_form WHERE emp_id='$userID' AND section_id='$sectionId' AND station_id='$stationId' AND component_name ='$compoNameTmp' AND created_date='$createdDateTime'";
+                $typee = 'inserted';
+    
+            }
+    
+    
+            if (mysqli_query($con, $insertQuery)) {
+    
+                if ($actionType == "create") {
+                    $getId = mysqli_query($con, $qq);
+                    $r = mysqli_fetch_array($getId);
+                    $summerPrecautionId = $r['id'];
+                }
+    
+                $respo['status'] = true;
+                $respo['msg'] = "Summer Precaution Data " . $typee . " successfully.";
+                $respo['updateId'] = $summerPrecautionId;
+    
+                echo json_encode($respo);
+                die();
+    
+            } else {
+    
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong, try again.";
+                echo json_encode($respo);
+                die();
+    
+            }
+    
+        } elseif ($action == "summerPrecaution_formSubmit_update") {
+            if (!isset($_POST['userID'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with user ID";
+                echo json_encode($respo);
+                die();
+    
+            }
+    
+            if (!isset($_POST['columnName'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with column name";
+                echo json_encode($respo);
+                die();
+            }
+    
+            if (!isset($_POST['columnValue'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with column value";
+                echo json_encode($respo);
+                die();
+            }
+            if (!isset($_POST['summerPrecautionId'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with row ID";
+                echo json_encode($respo);
+                die();
+            }
+    
+    
+            $userID = trim($_POST['userID']);
+            $createdDateTime = date("Y-m-d h:i:s");
+    
+            $columnName = trim($_POST['columnName']);
+            $columnValue = trim($_POST['columnValue']);
+            $language = trim($_POST['language']);
+            $summerPrecautionId = trim($_POST['summerPrecautionId']);
+            $isComplete = trim($_POST['isComplete']);
+    
+            if (empty($userID) || empty($columnName) || $columnValue == '' || empty($language) || empty($summerPrecautionId)) {
+                $respo['status'] = false;
+                $respo['msg'] = "Request value is empty";
+                echo json_encode($respo);
+                die();
+            }
+    
+            $checkData = mysqli_query($con, "SELECT id,emp_id FROM summerprecaution_form WHERE emp_id='$userID' && id = '$summerPrecautionId'");
+    
+            if (mysqli_num_rows($checkData) > 0) {
+    
+                $updateQuery = "UPDATE summerprecaution_form SET $columnName= '$columnValue', updated_date ='$createdDateTime',isComplete='$isComplete' WHERE id='$summerPrecautionId' && emp_id='$userID'";
+    
+                if (mysqli_query($con, $updateQuery)) {
+                    $respo['status'] = true;
+                    $respo['msg'] = "Data inserted";
+                    echo json_encode($respo);
+                    die();
+    
+                } else {
+    
+                    $respo['status'] = false;
+                    $respo['msg'] = "Something went wrong, try again";
+                    echo json_encode($respo);
+                    die();
+    
+                }
+    
+            } else {
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid Row Id provide";
+                echo json_encode($respo);
+                die();
+            }
+    
+    
+        } elseif ($action == "mansoonPrecaution_formSubmit") {
+            if (!isset($_POST['userID']) || !isset($_POST['sectionName']) || !isset($_POST['sectionId']) || !isset($_POST['stationName']) || !isset($_POST['stationId']) || !isset($_POST['compoNameTmp']) || !isset($_POST['subcompoNameTmp'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with request";
+                echo json_encode($respo);
+                die();
+    
+            }
+    
+            $userID = trim($_POST['userID']);
+            $sectionName = trim($_POST['sectionName']);
+            $sectionId = trim($_POST['sectionId']);
+            $stationName = trim($_POST['stationName']);
+            $stationId = trim($_POST['stationId']);
+            $compoNameTmp = trim($_POST['compoNameTmp']);
+            $subcompoNameTmp = trim($_POST['subcompoNameTmp']);
+            $language = trim($_POST['language']);
+    
+            $createdDateTime = date("Y-m-d h:i:s");
+            $actionType = trim($_POST['actionType']);
+    
+    
+            $checkData = mysqli_query($con, "SELECT * FROM mansoonprecaution_form WHERE emp_id='$userID' && section_id='$sectionId' && station_id='$stationId' && component_name='$compoNameTmp' && sub_component = '$subcompoNameTmp' order by created_date DESC LIMIT 1");
+            if (mysqli_num_rows($checkData) > 0 && $actionType == "create") {
+    
+                $lastInsert = mysqli_fetch_array($checkData);
+    
+                // print_r($lastInsert);
+                $lastSubmitedDate = $lastInsert['created_date'];
+    
+                $day_duration = getFormDurationDay("Mansoon_Precaution", $con);
+                if ($day_duration == 0) {
+                    $respo['status'] = false;
+                    $respo['msg'] = "Not get form duration day.";
+                    echo json_encode($respo);
+                    die();
+                }
+                $setDay = "+" . $day_duration . " days";
+                $d15 = strtotime($setDay, strtotime($lastSubmitedDate));
+    
+                //$d15 = strtotime("+15 days", strtotime($lastSubmitedDate));
+                $day15Date = date("Y-m-d", $d15);
+    
+                $currentStrToTime = strtotime($createdDateTime);
+    
+                if ($currentStrToTime < $d15) {
+    
+                    $respo['status'] = false;
+                    $respo['msg'] = "You have already submited this form on=>" . $lastSubmitedDate . ", Now can submit on $day15Date";
+                    echo json_encode($respo);
+                    die();
+    
+                }
+    
+    
+    
+            }
+    
+            $t_no_use_0_0 = trim($_POST['t_no_use_0_0']);
+    
+            if (empty($t_no_use_0_0)) {
+                $respo['status'] = false;
+                $respo['msg'] = "Kindly fill first field";
+                $respo['idName'] = "First Field";
+                echo json_encode($respo);
+                die();
+            }
+    
+            $insertQuery = "";
+            $qq = "";
+            $mansoonPrecautionId = "";
+            $typee = "";
+            if ($actionType == "update") {
+                $mansoonPrecautionId = trim($_POST['mansoonPrecautionId']);
+                $insertQuery = "UPDATE mansoonprecaution_form SET t_no_use_0_0='$t_no_use_0_0' WHERE id='$mansoonPrecautionId'";
+                $typee = 'updated';
+    
+            } else {
+                $insertQuery = "INSERT INTO mansoonprecaution_form (emp_id,section_id,section_name,station_id,station_name,component_name,sub_component,t_no_use_0_0,created_date,updated_date,language) VALUES ('$userID','$sectionId','$sectionName','$stationId','$stationName','$compoNameTmp','$subcompoNameTmp','$t_no_use_0_0','$createdDateTime','$createdDateTime','$language')";
+    
+                $qq = "SELECT * FROM mansoonprecaution_form WHERE emp_id='$userID' AND section_id='$sectionId' AND station_id='$stationId' AND component_name ='$compoNameTmp' AND created_date='$createdDateTime'";
+                $typee = 'inserted';
+    
+            }
+    
+    
+            if (mysqli_query($con, $insertQuery)) {
+    
+                if ($actionType == "create") {
+                    $getId = mysqli_query($con, $qq);
+                    $r = mysqli_fetch_array($getId);
+                    $mansoonPrecautionId = $r['id'];
+                }
+    
+                $respo['status'] = true;
+                $respo['msg'] = "Mansoon Precaution Data " . $typee . " successfully.";
+                $respo['updateId'] = $mansoonPrecautionId;
+    
+                echo json_encode($respo);
+                die();
+    
+            } else {
+    
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong, try again.";
+                echo json_encode($respo);
+                die();
+    
+            }
+    
+        } elseif ($action == "mansoonPrecaution_formSubmit_update") {
+            if (!isset($_POST['userID'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with user ID";
+                echo json_encode($respo);
+                die();
+    
+            }
+    
+            if (!isset($_POST['columnName'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with column name";
+                echo json_encode($respo);
+                die();
+            }
+    
+            if (!isset($_POST['columnValue'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with column value";
+                echo json_encode($respo);
+                die();
+            }
+            if (!isset($_POST['mansoonPrecautionId'])) {
+                $respo['status'] = false;
+                $respo['msg'] = "Something went wrong with row ID";
+                echo json_encode($respo);
+                die();
+            }
+    
+    
+            $userID = trim($_POST['userID']);
+            $createdDateTime = date("Y-m-d h:i:s");
+    
+            $columnName = trim($_POST['columnName']);
+            $columnValue = trim($_POST['columnValue']);
+            $language = trim($_POST['language']);
+            $mansoonPrecautionId = trim($_POST['mansoonPrecautionId']);
+            $isComplete = trim($_POST['isComplete']);
+    
+            if (empty($userID) || empty($columnName) || $columnValue == '' || empty($language) || empty($mansoonPrecautionId)) {
+                $respo['status'] = false;
+                $respo['msg'] = "Request value is empty";
+                echo json_encode($respo);
+                die();
+            }
+    
+            $checkData = mysqli_query($con, "SELECT id,emp_id FROM mansoonprecaution_form WHERE emp_id='$userID' && id = '$mansoonPrecautionId'");
+    
+            if (mysqli_num_rows($checkData) > 0) {
+    
+                $updateQuery = "UPDATE mansoonprecaution_form SET $columnName= '$columnValue', updated_date ='$createdDateTime',isComplete='$isComplete' WHERE id='$mansoonPrecautionId' && emp_id='$userID'";
+    
+                if (mysqli_query($con, $updateQuery)) {
+                    $respo['status'] = true;
+                    $respo['msg'] = "Data inserted";
+                    echo json_encode($respo);
+                    die();
+    
+                } else {
+    
+                    $respo['status'] = false;
+                    $respo['msg'] = "Something went wrong, try again";
+                    echo json_encode($respo);
+                    die();
+    
+                }
+    
+            } else {
+                $respo['status'] = false;
+                $respo['msg'] = "Invalid Row Id provide";
+                echo json_encode($respo);
+                die();
+            }
+    
+    
         }
         
         else {

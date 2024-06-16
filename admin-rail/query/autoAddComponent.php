@@ -10,7 +10,7 @@ $getStationQ = mysqli_query($con,"SELECT * FROM station_tbl");
 // $stationComponentArr = ['IPS']; // for IPS
 $stationComponentArr = ['WEATHER PRECAUTIONS']; // for PRECAUTIONS
 // $stationComponentArr = ["RELAY ROOM",'CONTROL PANEL']; // for RELAY ROOM
-$stationComponentArr = ['EL']; // EL
+$stationComponentArr = ['EI']; // EL
 
 // $subComponent = "201 A,201 B,202 A,202 B,203 A, 203 B, 204, 204 X, 205 A, 205 B, 206, 206 X, 207 A, 207 B, 208 A, 208 B, 209 A, 209 B, 210 A, 210 B, 212 A, 212 B, 501 X";
 
